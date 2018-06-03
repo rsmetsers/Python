@@ -1,7 +1,13 @@
 Hoi!
+<<<<<<< HEAD
 
 weer
 en dan nog eens
 en weer
 weer
 
+=======
+weer
+en dan nog eens
+en weer
+>>>>>>> parent of eb27600... Revert "added a third line"
