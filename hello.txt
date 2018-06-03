@@ -1,8 +1,7 @@
 Hoi!
-<<<<<<< HEAD
+
 weer
 en dan nog eens
 en weer
-=======
 weer
->>>>>>> parent of d7a1a13... added a third line
+
