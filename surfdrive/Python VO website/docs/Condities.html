@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+    <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+
+
+<h1 id="hoofdstuk-6---condities">Python Cursus. Hoofdstuk 6 - Condities</h1>
+<hr />
+<b>Let op:</b> log eerst in bij <a href="http://repl.it">repl.it</a><br>
+<i><a href="ConditiesAfsluitendeOpgaven.html">Meteen naar de Afsluitende Opgaven over Condities</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+<hr>
+
+
+<p>In een programma zijn er vaak regels code die je alleen wilt uitvoeren onder bepaalde omstandigheden. Om dat te regelen, bieden alle programmeertalen zogeheten “conditionele statements” of “condities.” In dit hoofdstuk leg ik uit hoe condities werken in Python.</p>
+<hr />
+<h2 id="boolean-expressies">Boolean expressies</h2>
+<p>Een conditioneel statement, vaak een “if”-statement genoemd, bestaat uit een test en één of meerdere acties. De test is een zogeheten “boolean expressie.” De acties worden alleen uitgevoerd als de test evalueert als zijnde “waar.” Bijvoorbeeld, een app op een smartphone kan een waarschuwing geven als de batterij minder dan 5% vol is. Dat betekent dat de app test of een zekere variabele <code>batterij_energie</code> kleiner is dan 5, dus of de vergelijking <code>batterij_energie &lt; 5</code> als zijnde “waar” geëvalueerd wordt. Als de variabele momenteel de waarde 17 bevat, evalueert de test <code>batterij_energie &lt; 5</code> als zijnde “onwaar.”</p>
+<h3 id="booleans">Booleans</h3>
+<p>In Python wordt “waar” weergegeven door de waarde <code>True</code>, en “onwaar” door de waarde <code>False</code>.</p>
+<p><code>True</code> en <code>False</code> zijn zogeheten “boolean waardes,” die door Python zijn gedefinieerd. <code>True</code> en <code>False</code> zijn zelfs de enige booleans, en alles wat niet <code>False</code>, is automatisch <code>True</code>.</p>
+<p>Als je je afvraagt welke data type <code>True</code> en <code>False</code> hebben: ze zijn van het type <code>bool</code>. In Python kan echter elke waarde worden geïnterpreteerd als boolean, ongeacht het data type. Dus als je een test doet of iets <code>True</code> of <code>False</code> is, en je test dat van een waarde die niet van het data type <code>bool</code> is, dan wordt hetgeen je test toch als ofwel <code>True</code> ofwel <code>False</code> beschouwd. <!--
+De volgende waardes worden beschouwd als zijnde `False`:
+- De speciale waarde `False`
+- De speciale waarde `None` (die ik heb besproken in hoofdstuk 5)
+- Iedere numerieke waarde die nul is, bijvoorbeeld `0` en `0.0`
+- Iedere lege serie, bijvoorbeeld een lege string (`""`)
+- Iedere lege “afbeelding,” bijvoorbeeld een lege “dictionary” (dictionaries zijn het onderwerp van hoofdstuk 13)
+- Iedere functie of methode die één van de bovenstaande waardes retourneert (inclusief functies die niks retourneren)
+
+Iedere andere waarde wordt beschouwd als zijnde `True`.
+--> Een expressie die evalueert als <code>True</code> of <code>False</code> heet een “boolean expressie.”</p>
+
+
+
+<h3 id="opgave-6.1.1-batterij-energie"><span style="color:red">Opgave</span> 6.1.1 Batterij energie</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/844472/b37966a28bd0001eb4e8f2330c8ad5ab"></iframe>
+<!--Klik <a href="Condities_oplossingen.html#opgave-6.1.1-batterij-energie">hier</a> om je eigen oplossing te vergelijken met een model oplossing.-->
+
+
+<h3 id="vergelijkingen">Vergelijkingen</h3>
+<p>De meestgebruikte boolean expressies zijn vergelijkingen. Een vergelijking bestaat uit twee waardes met een vergelijkingsoperator ertussen. Vergelijkingsoperatoren zijn:</p>
+<pre><code>&lt;    kleiner dan
+&lt;=   kleiner of gelijk aan
+==   gelijk aan
+&gt;=   groter of gelijk aan
+&gt;    groter dan
+!=   ongelijk aan</code></pre>
+<p>Een veelgemaakte fout is om twee waardes te vergelijken met een enkele <code>=</code>. De enkele <code>=</code> is de assignment operator. Meestal (maar niet altijd) produceert Python een syntax of runtime error als je de <code>=</code> probeert te gebruiken om twee waardes te vergelijken.</p>
+<p>Je kunt vergelijksoperatoren gebruiken zowel tussen getallen als tussen strings. Vergelijkingen tussen strings zijn alfabetische vergelijkingen, waarbij je wel moet bedenken dat hoofdletters altijd beschouwd worden als kleiner dan kleine letters (en cijfers kleiner dan alle letters). Ik ga daar dieper op in in hoofdstuk 10.</p>
+<p>Hier volgen een paar voorbeelden van vergelijkingen:</p>
+<pre class="sourceCode python"><code class="sourceCode python">
+<span class="dt">print</span>( <span class="st">&quot;1.&quot;</span>, <span class="dv">2</span> &lt; <span class="dv">5</span> )
+<span class="dt">print</span>( <span class="st">&quot;2.&quot;</span>, <span class="dv">2</span> &lt;= <span class="dv">5</span> )
+<span class="dt">print</span>( <span class="st">&quot;3.&quot;</span>, <span class="dv">3</span> &gt; <span class="dv">3</span> )
+<span class="dt">print</span>( <span class="st">&quot;4.&quot;</span>, <span class="dv">3</span> &gt;= <span class="dv">3</span> )
+<span class="dt">print</span>( <span class="st">&quot;5.&quot;</span>, <span class="dv">3</span> == <span class="fl">3.0</span> )
+<span class="dt">print</span>( <span class="st">&quot;6.&quot;</span>, <span class="dv">3</span> == <span class="st">&quot;3&quot;</span> )
+<span class="dt">print</span>( <span class="st">&quot;7.&quot;</span>, <span class="st">&quot;syntax&quot;</span> == <span class="st">&quot;syntax&quot;</span> )
+<span class="dt">print</span>( <span class="st">&quot;8.&quot;</span>, <span class="st">&quot;syntax&quot;</span> == <span class="st">&quot;semantiek&quot;</span> )
+<span class="dt">print</span>( <span class="st">&quot;9.&quot;</span>, <span class="st">&quot;syntax&quot;</span> == <span class="st">&quot; syntax&quot;</span> )
+<span class="dt">print</span>( <span class="st">&quot;10.&quot;</span>, <span class="st">&quot;Python&quot;</span> != <span class="st">&quot;rotzooi&quot;</span> )
+<span class="dt">print</span>( <span class="st">&quot;11.&quot;</span>, <span class="st">&quot;Python&quot;</span> &gt; <span class="st">&quot;Perl&quot;</span> )
+<span class="dt">print</span>( <span class="st">&quot;12.&quot;</span>, <span class="st">&quot;banaan&quot;</span> &lt; <span class="st">&quot;mango&quot;</span> )
+<span class="dt">print</span>( <span class="st">&quot;13.&quot;</span>, <span class="st">&quot;banaan&quot;</span> &lt; <span class="st">&quot;Mango&quot;</span> )</code></pre>
+<h3 id="opgave-6.1.2.1-voorbeelden-van-vergelijkingen"><span style="color:red">Opgave</span> 6.1.2.1 Voorbeelden van vergelijkingen</h3>
+
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/844473/808bc3709ec8353d4d7bddca4b1dc75c"></iframe>
+Klik <a href="Condities_oplossingen.html#opgave-6.1.2.1-voorbeelden-van-vergelijkingen">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+<!--Je kunt de uitkomst van een boolean expressie aan een variabele toekennen als je wilt:
+
+
+```python
+groter = 5 > 2
+print( groter )
+groter = 5 < 2
+print( groter )
+print( type( groter ) )
+```
+-->
+
+<h3 id="opgave-6.1.2.2-enkele-vergelijkingen-testen"><span style="color:red">Opgave</span> 6.1.2.2 Enkele vergelijkingen testen</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/844475/dea399912cb77783d44ee60695646923"></iframe>
+Klik <a href="Condities_oplossingen.html#opgave-6.1.2.2-enkele-vergelijkingen-testen">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+<!-- ANTWOORD
+```python
+# Enkele vergelijkingen testen.
+
+#Code die test of `1/2` groter dan, gelijk aan, of kleiner is dan `0.5`.
+print("1/2 is groter dan 0.5 is: ", 1/2 > 0.5 )
+print("1/2 is gelijk aan 0.5 is: ", 1/2 == 0.5 )
+print("1/2 is kleiner dan 0.5 is: ", 1/2 < 0.5 )
+
+#Doe dat ook voor `1/3` en `0.33`.
+print("1/3 is groter dan 0.33 is: ", 1/3 > 0.33)
+print("1/3 is gelijk aan 0.33 is: ", 1/3 == 0.33)
+print("1/3 is kleiner dan 0.33 is: ", 1/3 < 0.33)
+
+#Doe het dan ook voor `(1/3) * 3` en `1`.
+print("(1/3)*3 is groter dan 1 is: ", (1/3)*3 > 1 )
+print("(1/3)*3 is gelijk aan 1 is: ", (1/3)*3 == 1 )
+print("(1/3)*3 is kleiner of gelijk aan 1 is: ", (1/3)*3 <= 1 )
+
+
+```
+-->
+<p>Vergelijkingen tussen data types die niet vergeleken kunnen worden, leiden meestal tot runtime errors.</p>
+<h3 id="opgave-6.1.2.3-foutmelding-bij-vergelijkingen"><span style="color:red">Opgave</span> 6.1.2.3 Foutmelding bij vergelijkingen</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/844708/abc4f4407aa7ecd561e80f375b97c701?lite=true"></iframe>
+
+
+<h3 id="opgave-6.1.2.4-controleren-op-gelijkheid-van-strings"><span style="color:red">Opgave</span> 6.1.2.4 Controleren op gelijkheid van strings <!-- OUDE TASK 13 --></h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/844710/20cd2c769539ecbfb092b04f946c9668"></iframe>
+Klik <a href="Condities_oplossingen.html#opgave-6.1.2.4-controleren-op-gelijkheid-van-strings">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+
+<h3 id="opgave-6.1.2.5-controleren-op-lengte-invoer"><span style="color:red">Opgave</span> 6.1.2.5 Controleren op lengte invoer <!-- OUDE TASK 14 --></h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/844712/8b478898c26a12960f914454a578a82d"></iframe>
+Klik <a href="Condities_oplossingen.html#opgave-6.1.2.5-controleren-op-lengte-invoer">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+
+
+<h3 id="in-operator"><code>in</code> operator</h3>
+<p>Python heeft een speciale operator die de “lidmaatschap test operator” heet, en die vanwege die onverkwikkelijke mondvol meestal de “in operator” wordt genoemd aangezien hij gecodeerd wordt als <code>in</code>. De <code>in</code> operator test of een waarde voorkomt in een collectie, als de waarde links van de in staat, en de collectie rechts van de in.</p>
+<p>Er zijn verschillende soorten collecties in Python, maar de enige die ik tot op dit moment bediscussiëerd heb is de string. Een string is een collectie van tekens. Je kunt testen of een specifiek teken, of een groepje tekens, onderdeel is van een string middels de <code>in</code> operator. De tegenhanger van de in operator is de <code>not in</code> operator, die <code>True</code> oplevert als <code>in False</code> oplevert, en vice versa. Bijvoorbeeld:</p>
+<pre class="sourceCode python">
+<code class="sourceCode python">
+<span class="dt">print</span>( <span class="st">&quot;y&quot;</span> in <span class="st">&quot;Python&quot;</span> )
+<span class="dt">print</span>( <span class="st">&quot;x&quot;</span> in <span class="st">&quot;Python&quot;</span> )
+<span class="dt">print</span>( <span class="st">&quot;p&quot;</span> in <span class="st">&quot;Python&quot;</span> )
+<span class="dt">print</span>( <span class="st">&quot;th&quot;</span> in <span class="st">&quot;Python&quot;</span> )
+<span class="dt">print</span>( <span class="st">&quot;to&quot;</span> in <span class="st">&quot;Python&quot;</span> )
+<span class="dt">print</span>( <span class="st">&quot;y&quot;</span> not in <span class="st">&quot;Python&quot;</span> )</code></pre>
+<p>Zorg er weer voor dat je deze evaluaties begrijpt!</p>
+<h3 id="opgave-6.1.3-letters-in-een-woord"><span style="color:red">Opgave</span> 6.1.3 Letters in een woord <!-- OUDE TASK 5 --></h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/844716/dedd375f29c79ffe033b630b1bd6f85c"></iframe>
+Klik <a href="Condities_oplossingen.html#opgave-6.1.3-letters-in-een-woord">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+<h3 id="logische-operatoren">Logische operatoren</h3>
+<p>Boolean expressies kunnen gecombineerd worden middels logische operatoren. Er zijn drie logische operatoren: <code>and</code>, <code>or</code>, en <code>not</code>.</p>
+<p><code>and</code> en <code>or</code> plaats je tussen twee boolean expressies.</p>
+<p>Als <code>and</code> tussen twee boolean expressies staat, is het resultaat <code>True</code> als beide expressies <code>True</code> zijn; anders is het resultaat <code>False</code>.</p>
+<p>Als <code>or</code> tussen twee boolean expressies staat, is het resultaat <code>True</code> als één of beide expressies <code>True</code> is; het resultaat is alleen <code>False</code> als beide <code>False</code> zijn.</p>
+<p><code>not</code> kun je voor een boolean expressie plaatsen om hem om te keren van <code>True</code> naar <code>False</code> en vice versa.</p>
+<p>Bijvoorbeeld:</p>
+<pre class="sourceCode python">
+<code class="sourceCode python">
+t = <span class="ot">True</span>
+f = <span class="ot">False</span>
+
+<span class="dt">print</span>( t and t )
+<span class="dt">print</span>( t and f )
+<span class="dt">print</span>( f and t )
+<span class="dt">print</span>( f and f )
+
+<span class="dt">print</span>( t or t )
+<span class="dt">print</span>( t or f )
+<span class="dt">print</span>( f or t )
+<span class="dt">print</span>( f or f )
+
+<span class="dt">print</span>( not t )
+<span class="dt">print</span>( not f )</code></pre>
+<p>Kijk uit met het gebruik van logische operatoren, want een combinatie van <code>and</code> en <code>or</code> kan leiden tot onverwachte resultaten. Gebruik haakjes om te zorgen dat ze in de gewenste volgorde geëvalueerd worden. Bijvoorbeeld, in plaats van <code>a and b or c</code> te schrijven, moet je <code>(a and b) or c</code> of <code>a and (b or c)</code> schrijven (afhankelijk van de gewenste volgorde), zodat het duidelijk is welke evaluatie je wilt uitvoeren. Zelfs als je weet in welke volgorde Python de evaluatie doet zonder haakjes, hoeft dat niet te gelden voor iemand anders die je code leest.</p>
+<p>Merk op dat hoewel je heel ingewikkelde boolean expressies kunt bouwen via logische operatoren, ik je aanraad dat je je expressies zo eenvoudig mogelijk houdt.</p>
+<h3 id="opgave-6.1.4.1-logische-operator-expressies"><span style="color:red">Opgave</span> 6.1.4.1 Logische operator expressies <!-- OUDE TASK 6 --></h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/844722/5ddcd6d109bf747e364bd3661af3d827"></iframe>
+Klik <a href="Condities_oplossingen.html#opgave-6.1.4.1-logische-operator-expressies">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+<!-- ANTWOORD
+
+naam = "Jan"
+leeftijd = 16
+
+print( naam == "Jan" or leeftijd == 17 )    # 1) Controleer of Jan heet of 17 jaar oud is.
+
+print( naam == "Jan" and not leeftijd == 23 ) #2) Controleer of Jan heet en niet 23 jaar oud is.
+
+-->
+
+<h3 id="opgave-6.1.4-het-is-weekend"><span style="color:red">Opgave</span> 6.1.4.2 Het is weekend! <!-- OUDE TASK 7--></h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/844728/c2ebf41d56e8f74ab6dce31f15673f90"></iframe>
+Klik <a href="Condities_oplossingen.html#opgave-6.1.4-het-is-weekend">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+<!--antwoord
+```python
+vandaag = "Zondag"
+
+if vandaag == "Zaterdag" or vandaag == "Zondag":
+    print( "Het is weekend!" )
+else:
+    print( "Helaas, geen weekend.")
+```
+-->
+
+
+<p>Het gebruik van haakjes geeft prioriteit aan, net als bij wiskunde. Gebruik altijd haakjes zodra je 2 of meer logische operatoren (<code>and</code> of <code>or</code>) gebruikt.
+
+
+<h3 id="opgave-6.1.4-3"><span style="color:red">6.1.4.3 Haakjes in logische expressies <!-- OUDE TASK 8 --></h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/844730/cf4346a62d7440f75b28399c6b4a67b3"></iframe>
+<!--Klik <a href="Condities_oplossingen.html#opgave-6.1.4-3">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+-->
+<!--
+Als je logische expressie maakt met alleen `ands`, of alleen `or`s, hoef je geen haakjes te gebruiken, want dan is er slechts één mogelijke evaluatie van de expressie.
+
+Boolean expressies worden van links naar rechts geëvalueerd, en Python stopt de evaluatie op het moment dat de uitkomst van de evaluatie bekend is. Neem bijvoorbeeld de volgende code:
+
+
+```python
+x = 1
+y = 0
+print( (x == 0) or (y == 0) or (x / y == 1) )
+```
+
+Als je deelt door nul, geeft Python een runtime error, dus de evaluatie van `x / y == 1` geeft een error als `y` nul is. En als je de code bestudeert, zie je dat `y` inderdaad nul is. Maar de code geeft geen foutmelding. Python evalueert de boolean expressie van links naar
+rechts, en ziet op een gegeven moment `... or (y == 0) or ...` Het deel `y == 0` evalueert als `True`. Omdat een expressie die via `or`s gecombineerd is `True` is als één van de componenten `True` is, kan Python na evaluatie van `(y == 0)` concluderen dat deze hele expressie
+`True` is. Het is dus niet nodig dat Python `x / y == 1` evalueert, en Python doet dat dan ook niet. Het is wel van belang dat `y == 0` links van `x / y == 1` staat, zodat Python `y == 0` eerst test.
+-->
+
+<hr />
+<h2 id="conditionele-statements">Conditionele statements</h2>
+<p>Zoals ik aan het begin van dit hoofdstuk aangaf bestaan conditionele statements (die ook wel “condities” of “<code>if</code> statements” worden genoemd) uit een test en één of meer acties. De acties alleen worden uitgevoerd als de test <code>True</code> oplevert.</p>
+<p>Hier is een voorbeeld:</p>
+<pre class="python">
+x = 5
+if x == 5:
+    print( "x is 5" )</pre>
+<p>De syntax van een if statement is als volgt:</p>
+<pre class="python">
+if < boolean expressie >:
+    < acties ></pre>
+<p>Let op de dubbele punt (<code>:</code>) die achter de boolean expressie staat, en het feit dat <code>&lt;acties&gt;</code> inspringt.</p>
+<h3 id="blokken-code">Blokken code</h3>
+<p>In de syntactische beschrijving van de if statement, zie je dat <code>&lt;acties&gt;</code> “inspringt,” dus één tabulatie naar rechts is geplaatst (in het Engels heet dit “indent”). Dit is opzettelijk zo gedaan en noodzakelijk. Python beschouwt statements die elkaar opvolgen en die hetzelfde niveau van inspringing hebben als één blok code. Het blok code dat onder het <code>if</code> statement staat is de lijst van acties die worden uitgevoerd als de boolean expressie <code>True</code> is. Bijvoorbeeld:</p>
+<pre class="python">
+x = 7
+if x < 10:
+    print( "Deze regel wordt alleen uitgevoerd als x < 10." )
+    print( "En dat geldt ook voor deze regel." )
+print( "Deze regel wordt echter altijd uitgevoerd." )</pre>
+<p>Dus alle regels code die onder de <code>if</code> staan en inspringen, horen tot het blok code dat wordt uitgevoerd als de boolean expressie behorende bij de <code>if</code> evalueert als <code>True</code>. Het blok code wordt daarentegen overgeslagen als de boolean expressie evalueert als <code>False</code>. Statements die volgen na de <code>if</code> en die niet inspringen (althans, niet zo diep als het blok code onder de <code>if</code>) worden uitgevoerd ongeacht het resultaat van de evaluatie van de boolean expressie.</p>
+
+<h3 id="opgave-6.2-blokken-bij-een-if"><span style="color:red">Opgave</span> 6.2 Blokken bij een if<!-- OUDE TASK 9 --></h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/844731/9a8d1a8616a72eea7b1611527d0ea31b"></iframe>
+<!--Klik <a href="Condities_oplossingen.html#opgave-6.2-blokken-bij-een-if">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+-->
+
+<h3 id="meerdere-ifs">Meerdere <code>if</code>s</h3>
+<p>Je hoeft je niet te beperken tot slechts één <code>if</code> statement. Je kunt er zoveel hebben als je wilt.</p>
+<pre class="python">
+x = 5
+if x == 5:
+    print( "x is 5" )
+if x > 4:
+    print( "x is groter dan 4" )
+if  x >= 5:
+    print( "x is groter of gelijk aan 5" )
+if x < 6:
+    print( "x is kleiner dan 6" )
+if x <= 5:
+    print( "x is kleiner of gelijk aan 5" )
+if x != 6 :
+    print( "x is ongelijk aan 6" )
+    </pre>
+
+<h3 id="opgave-6.2.1-meerdere-ifs"><span style="color:red">Opgave</span> 6.2.1 Meerdere if's <!-- OUDE TASK 10 --></h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/844746/23db14a9368b6ec6055837d56d5df2d2"></iframe>
+Klik <a href="Condities_oplossingen.html#opgave-6.2.1-meerdere-ifs">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+<h3 id="inspringen">Inspringen</h3>
+<p><strong>In Python is correct inspringen van het grootste belang!</strong> Zonder correcte inspringing kan Python niet zien welke regels code een blok vormen, en kan daarom niet je code uitvoeren zoals je bedoelt.</p>
+<!--**Even tussendoor** In veel programmeertalen (of eigenlijk in vrijwel alle programmeertalen) worden blokken code door de compiler/interpreter herkend doordat ze beginnen en eindigen met een speciaal symbool of gereserveerd woord. Bijvoorbeeld, in talen als Java en C++ worden blokken code omsloten door accolades, terwijl in talen als Pascal en Modula ze beginnen met het woord begin en eindigen met het woord end. Dat betekent dat in vrijwel alle talen correcte inspringing niet nodig is. Je ziet toch dat goede programmeurs correct inspringen, ongeacht de taal die ze gebruiken. Dat maakt het namelijk gemakkelijk te zien welke delen van de code bij elkaar horen, bijvoorbeeld, wat er hoort bij een if statement. Bij Python is het inspringen een verplichting. Voor ervaren programmeurs die voor het eerst Python leren komt dat wat vreemd over, maar ze beseffen al snel dat het ze niks uitmaakt – ze lieten hun code toch al netjes inspringen. Python maakt het echter ook voor beginnende programmeurs
+een noodzakelijkheid om netjes in te springen, wat betekent dat ze gedwongen zijn om nette code te schrijven. En dat is alleen maar nuttig voor iedereen.
+-->
+<p>Je kunt inspringen door middel van de <em>Tab</em> toets, of je kunt het doen middels spaties. Door <em>Shift</em> en <em>Tab</em> toetsen samen in te drukken kun je inspringing verwijderen.</p>
+<!--De meeste editors (ook de notebook editor) doen aan “auto-indenting,” dat wil zeggen, ze springen automatisch in als de code daartoe aanleiding geeft. Bijvoorbeeld, als je een editor hebt die Python ondersteund, en je schrijft een `if` statement, dan zal de editor de daarop volgende regel meteen laten inspringen (als dat niet gebeurt, heb je waarschijnlijk een syntax fout gemaakt, bijvoorbeeld de dubbele punt vergeten). Ook wordt het niveau van inspringing aangehouden voor iedere volgende regel, tenzij je middels de Backspace toets inspringing verwijdert.-->
+<p>In Python programma’s is inspringing normaal vier spaties, dus een druk op de <code>Tab</code> toets moet vier posities inspringen. <!--
+Zolang je in een specifieke editor werkt, kun je ofwel de `Tab` toets gebruiken, ofwel zelf de spatiebalk vier keer indrukken, om één niveau van inspringing op te schuiven. Je kunt echter in de problemen komen als je tussentijds wisselt van editor, die wellicht andere instellingen voor tabulaties gebruikt. Zelfs als je code in die andere editor er goed uitziet, kan Python toch tijdens uitvoering melden dat er “indentation conflicts” zijn (dat wil zeggen, dat tabulaties en spaties door elkaar gehutseld zijn). Dat kan gezien worden als een syntax fout. De meeste editors bieden de mogelijkheid via een optie om tabulaties automatisch te vervangen door spaties, wat vermijdt dat zulke problemen optreden. Dus als je een tekst editor gebruikt om Python code te schrijven, controleer dan of die optie bestaat, en laat hem dan automatisch tabulaties vervangen door vier spaties.
+--></p>
+<h3 id="opgave-6.2.2-inspring-fouten"><span style="color:red">Opgave</span> 6.2.2 Inspring fouten <!-- OUDE TASK 11 --></h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/844746/23db14a9368b6ec6055837d56d5df2d2"></iframe>
+Klik <a href="Condities_oplossingen.html#opgave-6.2.2-inspring-fouten">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+<!-- antwoord
+
+x = 3
+y = 4
+if x == 3 and y == 4:
+    print( "x is 3" )
+    print( "y is 4" )
+if x > 2 and y < 5:
+    print( "x > 2" )
+    print( "y < 5" )
+if x < 4 and y > 3:
+    print( "x < 4" )
+    print( "y > 3" )
+
+-->
+
+<!-- PYCHARM TEST
+def test_afgedrukte_antwoord():
+    output = get_file_output()
+    answer = ['x is 3', 'y is 4', 'x > 2', 'y < 5', 'x < 4', 'y > 3']
+
+    if all(word in output for word in answer):
+        passed()
+    else:
+        failed("Afgedrukte antwoord is niet juist")
+
+ -->
+
+<h3 id="twee-weg-beslissingen">Twee-weg beslissingen</h3>
+<p>Het komt regelmatig voor dat een beslissing twee kanten uit kan gaan, dat wil zeggen, onder bepaalde omstandigheden wil je een bepaald iets doen, en als die omstandigheden niet optreden wil je iets anders doen. Python staat dit toe door aan een <code>if</code> statement een <code>else</code> tak toe te voegen.</p>
+<!-- HIER STAAT OUDE TASK 15.. MAAR WAS EEN DOMME TASK -->
+
+<pre class ="python">
+x = 4
+if x > 2:
+    print( "x is groter dan 2" )
+else:
+    print( "x is kleiner of gelijk aan 2" )
+</pre>
+
+
+
+<p>Merk op dat er een dubbele punt achter de <code>else</code> staat, net zoals achter de <code>&lt;boolean expressie&gt;</code> bij de <code>if</code>.</p>
+<p>Het is van belang dat het woord <code>else</code> uitgelijnd is met het woord <code>if</code> waar het bij hoort. Als je ze niet correct uitlijnt, krijg je ofwel een tabulatie fout, ofwel je code doet niet wat je zou willen dat hij doet.</p>
+<p>Een consequentie van het toevoegen van een <code>else</code> tak aan een if statement is dat altijd precies één van de twee blokken <code>&lt;acties&gt;</code> wordt uitgevoerd. Als de boolean expressie <code>True</code> is, wordt het blok code onder de <code>if</code> uitgevoerd, en wordt het blok code onder de <code>else</code> overgeslagen. Als de boolean expressie <code>False</code> is, wordt het blok code onder de <code>if</code> overgeslagen, maar wordt het blok code onder de <code>else</code> uitgevoerd.</p>
+<h3 id="opgave-6.2.3-modulo"><span style="color:red">Opgave</span> 6.2.3 Modulo <!-- OUDE TASK 12 --></h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/844750/1b4de4dbcbc2a63823f7ff31df61d0ab"></iframe>
+Klik <a href="Condities_oplossingen.html#opgave-6.2.3-modulo">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+<h3 id="stroomdiagrammen">Stroomdiagrammen</h3>
+<!--In de tijd dat het beroep “programmeur” nog vrij nieuw was, gebruikten programmeurs vaak een techniek die “stroomdiagram” genoemd wordt om algoritmes te beschrijven. Vandaag de dag worden stroomdiagrammen nog slechts zelden gebruikt. Studenten hebben mij echter aangegeven dat stroomdiagrammen helpen om begrip te krijgen van de exacte werking van conditionele expressies (en van iteraties, die in het volgende hoofdstuk
+besproken worden).-->
+
+<p>Een stroomdiagram is een schematische weergave van een algoritme middels blokken met pijlen ertussen. Er zijn drie soorten blokken (althans, ik heb voldoende aan drie soorten blokken voor dit boek). Rechthoekige blokken bevatten statements die uitgevoerd worden. Ruitvormige blokken bevatten een conditie die geëvalueerd wordt als <code>True</code> of <code>False</code>. Rechthoekige blokken met ronde hoeken geven ofwel de start (met de tekst “Start”) ofwel het einde (met de tekst “Stop”) van het algoritme aan.</p>
+<p>Om een stroomdiagram te interpreteren, begin je bij het “Start” blok, en volgt de pijlen, waarbij je ieder statement dat je tegenkomt uitvoert. Als je een ruitvormig blok tegenkomt, evalueer je de conditie die erin staat, en dan volg je ofwel de pijl die met <code>True</code> gemarkeerd is als de conditie <code>True</code> is, ofwel de pijl die met <code>False</code> gemarkeerd is als de conditie <code>False</code> is. Wanneer je het “Stop” blok tegenkomt, ben je klaar.</p>
+<img src="http://course.cs.ru.nl/greenfoot/python/img/PythonAfb6.1.jpg" alt="Figuur 6.1: Stroomdiagram van een twee-weg beslissing" style="width:800px;"><br>
+<div align="center">
+Figuur 6.1: Stroomdiagram van een twee-weg beslissing.
+</div>
+<!--![Figuur 6.1: Stroomdiagram van een twee-weg beslissing](http://course.cs.ru.nl/greenfoot/python/img/PythonAfb6.1.jpg)
+Figuur 6.1: Stroomdiagram van een twee-weg beslissing-->
+
+
+<h3 id="opgave-6.2.4-stroomdiagram-naar-code-twee-weg-beslissing"><span style="color:red">Opgave</span> 6.2.4 Stroomdiagram naar code: twee-weg beslissing</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/844870/1c28b11262f00870ece7656c1e05e152"></iframe>
+Klik <a href="Condities_oplossingen.html#opgave-6.2.4-stroomdiagram-naar-code-twee-weg-beslissing">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+<!-- ANTWOORD
+x = 4
+if x > 2 :
+    print( "x > 2" )
+else:
+    print( "x <= 2" )
+
+-->
+
+<h3 id="geneste_condities">Geneste condities</h3>
+<p>Je kunt binnen een beslissing weer een beslissing hebben.</p>
+
+<pre class ="python">
+leeftijd = 21
+if leeftijd < 12:
+  print( "Je bent een kind!" )
+else:
+  if leeftijd < 18:
+    print( "Je bent een tiener!" )
+  else:
+    if leeftijd < 30:
+      print( "Je bent nog jong!" )
+    else:
+      if leeftijd < 50:
+        print( "Je bent wat ouder" )
+      else:
+        print( "Je bent echt oud!" )</pre>
+<p>Deze code is equivalent aan het algoritme dat is weergeven in het onderstaande stroomdiagram.</p>
+<!--
+![Figuur 6.2: Stroomdiagram van een geneste beslissing](http://course.cs.ru.nl/greenfoot/python/img/PythonAfb6.2.jpg)
+Figuur 6.2: Stroomdiagram van een geneste beslissing
+-->
+
+<img src="http://course.cs.ru.nl/greenfoot/python/img/PythonAfb6.2.jpg" alt="Figuur 6.2: Stroomdiagram van een geneste beslissing" style="width:1200px;"><br>
+<div align="center">
+Figuur 6.2: Stroomdiagram van een geneste beslissing.
+</div>
+<p>De syntax voor een geneste beslissing is:</p>
+<pre class="python">
+if < boolean expressie >:
+    < acties >
+else:
+    < acties >
+</pre>
+<p>Eerst wordt de boolean expressie bij de <code>if</code> geëvalueerd. Als die <code>True</code> is, wordt het blok code onder de <code>if</code> uitgevoerd. Anders wordt de boolean expressie bij de eerste <code>else</code> geëvalueerd. Als die <code>True</code> blijkt te zijn, wordt de code behorende bij deze <code>else</code> uitgevoerd.</p>
+<p>Het toevoegen van <code>else</code> is altijd optioneel. Het is echter verstandig om altijd wel een <code>else</code> te gebruiken, al is het maar voor het afvangen van fouten.</p>
+<h3 id="opgave-6.2.5-geneste-conditie"><span style="color:red">Opgave</span> 6.2.5 Geneste conditie</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/844872/997344dcf19584c80886b44af781c746"></iframe>
+<!--Klik <a href="Condities_oplossingen.html#opgave-6.2.5-geneste-conditie">hier</a> om je eigen oplossing te vergelijken met een model oplossing.-->
+
+
+<h3 id="meer-weg-beslissingen">Meer-weg beslissingen</h3>
+<p>Het komt voor dat je een situatie hebt waarbij je één van meerdere blokken code wilt uitvoeren, maar niet meer dan één. Dit soort meer-weg beslissingen kun je implementeren met een extra toevoeging aan een <code>if</code> statement, namelijk in de vorm van één of meer <code>elif</code> takken (<code>elif</code> staat voor “else if”).</p>
+<pre class="python">leeftijd = 21
+if leeftijd < 12:
+    print( "Je bent een kind!" )
+elif leeftijd < 18:
+    print( "Je bent een teenager!" )
+elif leeftijd < 30:
+    print( "Je bent nog jong!" )
+elif leeftijd < 50:
+    print( "Beginnen grijze haren te komen?" )
+else:
+    print( "Wegen de jaren zwaar?" )</pre>
+
+<p>De syntax voor een meer-weg beslissing is:</p>
+<pre class="python">
+if < boolean expressie > :
+    < acties >
+elif < boolean expressie > :
+    < acties >
+else:
+    < acties >
+</pre>
+<p>Trouwens, deze code geeft hetzelfde resultaat als de <em>geneste if</em> bij het vorige theorieblok.</p>
+<p>De syntax hierboven toont slechts één <code>elif</code>, maar je mag er meerdere hebben. De verschillende tests in een <code>if-elif-else</code> constructie worden in volgorde uitgevoerd. De eerste boolean expressie die geëvalueerd wordt als <code>True</code> laat het bijbehorende blok code uitvoeren. Geen andere blokken code in de hele constructie worden daarna nog uitgevoerd, en er worden daarna ook geen boolean expressies in de constructie meer getest.</p>
+<p>Kortom, eerst wordt de boolean expressie bij de <code>if</code> geëvalueerd. Als die <code>True</code> is, wordt het blok code onder de <code>if</code> uitgevoerd. Anders wordt de boolean expressie bij de eerste <code>elif</code> geëvalueerd. Als die <code>True</code> blijkt te zijn, wordt de code behorende bij deze <code>elif</code> uitgevoerd. Zo niet, dan wordt de boolean expressie bij de tweede <code>elif</code> geëvalueerd. Etcetera. Slechts als alle boolean expressies in de constructie <code>False</code> blijken te zijn, wordt het blok code bij de else uitgevoerd.</p>
+<p>Voor het voorbeeld hierboven betekent dit dat bij de eerste <code>elif</code> de test <code>leeftijd &lt; 18</code> volstaat, en niet hoeft te worden aangevuld met een test leeftijd &gt;= 12, want als leeftijd kleiner geweest zou zijn dan 12, dan zou de boolean expressie voor de <code>if</code> al <code>True</code> zijn geweest, en zou de boolean expressie bij de eerste <code>elif</code> niet eens door Python zijn gezien.</p>
+
+
+<h3 id="opgave-6.2.6-elif"><span style="color:red">Opgave</span> 6.2.6 elif</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/844874/94d6bdf445ffcb9d710b180fcc4b94e9"></iframe>
+<!--Klik <a href="Condities_oplossingen.html#opgave-6.2.6-elif">hier</a> om je eigen oplossing te vergelijken met een model oplossing.-->
+
+
+<!--Het toevoegen van `else` is altijd optioneel. In de meeste gevallen waarin ik zelf meerdere `elif`s gebruik, zet ik wel een `else`, al was het maar voor het afvangen van fouten.
+-->
+
+
+
+<h3 id="opgave-6.2.7-bagagetoeslag"><span style="color:red">Opgave</span> 6.2.7 Bagagetoeslag <!-- OUDE TAAK 18 --></h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/844876/7f0cf015b6d1b6e79591523f3f553fe7"></iframe>
+Klik <a href="Condities_oplossingen.html#opgave-6.2.7-bagagetoeslag">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+<!-- ANTWOORD
+```python
+# Gewichten van bagage.
+
+
+gewicht = 19
+if gewicht > 20:
+    print( "Er moet een toeslag van $25 betaald worden voor baggage die te zwaar is." )
+else:
+    if gewicht < 20:
+        print( "Goede reis!" )
+    else:
+        print( "Poeh! Dat gewicht is precies goed!" )
+```
+
+-->
+<h3 id="stroomdiagram-voor-geneste-beslissingen">Stroomdiagram voor geneste beslissingen</h3>
+<p>Geneste beslissingen kun je overzichtelijk weergeven in een stroomdiagram.</p>
+<img src="http://course.cs.ru.nl/greenfoot/python/img/PythonAfb6.3.jpg" alt="Figuur 6.3: Stroomdiagram van een geneste beslissing" style="width:1100px;"><br>
+<div align="center">
+Figuur 6.3: Stroomdiagram van een geneste beslissing.
+</div>
+<!--
+![Figuur 6.3: Stroomdiagram van een geneste beslissing](http://course.cs.ru.nl/greenfoot/python/img/PythonAfb6.3.jpg)
+Figuur 6.3: Stroomdiagram van een geneste beslissing-->
+
+<!-- Gegeven de syntactische regels voor `if-elif-else`  constructies en inspringing, is het mogelijk om `if` statements op te nemen in de code blokken behorende bij andere `if` statements.
+Zo’n geneste `if` wordt alleen uitgevoerd als de boolean expressie behorende bij het code blok waarin de geneste `if` staat `True` is.
+-->
+
+
+<h3 id="opgave-6.2.8-geneste-beslissing"><span style="color:red">Opgave</span> 6.2.8 Geneste beslissing <!-- OUDE TASK 19 --></h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/844995/87528f792f373f42c1118ae54569f116"></iframe>
+Klik <a href="Condities_oplossingen.html#opgave-6.2.8-geneste-beslissing">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+<!--
+```python
+x = 41
+if x%7 == 0:
+    # --- Hier begint een genest blok code ---
+    if x%11 == 0:
+        print( x, "is deelbaar door 7 en 11" )
+    else:
+        print( x, "is deelbaar door 7, maar niet door 11" )
+    # --- Hier eindigt een genest blok code ---
+elif x%11 == 0:
+    print( x, "is deelbaar door 11, maar niet door 7" )
+else:
+    print( x, "is niet deelbaar door 7 of 11" )
+```
+
+OUTPUT:
+41 is niet deelbaar door 7 of 11
+-->
+
+<!--
+```python
+x = 41
+if x%7 == 0:
+    # --- Hier begint een genest blok code ---
+    if x%11 == 0:
+        print( x, "is deelbaar door 7 en 11" )
+    else:
+        print( x, "is deelbaar door 7, maar niet door 11" )
+    # --- Hier eindigt een genest blok code ---
+else:
+    # --- Hier begint een genest blok code ---
+    if x%11 == 0:
+        print( x, "is deelbaar door 11, maar niet door 7" )
+    else:
+        print( x, "is niet deelbaar door 7 of 11" )
+    # --- Hier eindigt een genest blok code ---
+
+```
+-->
+
+<!--
+
+Deze code is hieronder als stroomdiagram zichtbaar.
+
+<img src="img/Chart3.png" alt="Geneste condities" style="width:400px;"><br>
+<div align="center">Figuur 6.3: Geneste condities</div>
+
+### <span style="color:red">TODO CHECK Opgave</span> <!-- OUDE TASK 16 -->
+<!-- OMSCHRIJVEN NAAR ELIF IS OUDE TASK 17 -->
+
+<p>Wijzig de waarde van <code>x</code> en controleer de resultaten.</p>
+
+
+<p>In het voorbeeld hierboven wil ik alleen maar het nesten van <code>if</code> statements demonstreren. Er zijn leesbaardere manieren om te doen wat deze code doet. Het nesten van <code>if</code> statements kan vaak vermeden worden door <code>elif</code>s te gebruiken. Bijvoorbeeld, de code hieronder doet hetzelfde als de “leeftijd” code hierboven, maar nu met geneste <code>if</code>s in plaats van <code>elif</code>s.</p>
+<pre class="python">leeftijd = 21
+if leeftijd < 12:
+  print( "Je bent een kind!" )
+else:
+  if leeftijd < 18:
+    print( "Je bent een tiener!" )
+  else:
+    if leeftijd < 30:
+      print( "Je bent nog jong!" )
+    else:
+      if leeftijd < 50:
+        print( "Je bent wat ouder" )
+      else:
+        print( "Je bent echt oud!" )</pre>
+<p>Ik neem aan dat je het ermee eens bent dat de versie met <code>elif</code>s prettiger leest.  <!--
+## Vroegtijdig afbreken
+
+Soms wil je een programma vroegtijdig beëindigen onder bepaalde condities. Bijvoorbeeld, je programma vraagt de gebruiker om een waarde, en voert met die waarde een aantal berekeningen uit. Als de gebruiker een waarde invoert die niet in de berekeningen gebruikt kan worden, wil je het programma meteen beëindigen. Dat kun je als volgt coderen:
+
+
+```python
+from pcinput import getInteger
+
+num = getInteger( "Geef een positief geheel getal: " )
+if num < 0:
+    print( "Je had een positief geheel getal moeten geven!" )
+else:
+    print( "Ik handel je getal", num , "af" )
+    print( "Nog meer code" )
+    print( "Honderden regels code" )
+```
+
+Het is irritant dat een groot deel van het programma al één inspringing diep staat, terwijl je er de voorkeur aan zou hebben gegeven als het programma gestopt was na de foutmelding, en de rest van het programma zonder inspringing geschreven zou kunnen
+worden. Je kunt dat regelen met behulp van de functie `exit()` die in de module `sys` staat. De code is dan:
+
+
+```python
+from pcinput import getInteger
+from sys import exit
+
+num = getInteger( "Geef een positief geheel getal: " )
+if num < 0:
+    print( "Je had een positief geheel getal moeten geven!" )
+    exit()
+
+print( "Ik handel je getal", num , "af" )
+print( "Nog meer code" )
+print( "Honderden regels code" )
+```
+
+Als je deze code uitvoert en een negatief getal ingeeft, kan het gebeuren dat je ziet dat Python een `SystemExit` melding genereert, die eruit ziet als een grote, lelijke fout. Dit is afhankelijk van de editor die je gebruikt. Het is geen fout, ook al ziet het er zo uit. Deze melding zegt alleen dat je het programma geforceerd beëindigd hebt, maar dat is precies wat je wilde doen. Je mag dit beschouwen als een nette manier van afbreken.
+
+In principe moet je meldingen van Python over je programma niet negeren, maar deze is een uitzondering. Je mag je programma op deze manier afbreken. In hoofdstuk 8 zal ik een andere manier van programma afbreken bespreken, die ervoor zorgt dat je deze melding niet krijgt. Dat kun je tegen die tijd gebruiken (als de melding je echt stoort), maar vooralsnog moet je hem maar accepteren.
+
+-------
+-->
+<div id="leerdoelen"><h2>Wat je geleerd hebt</h2></div>
+<p>In dit hoofdstuk is het volgende besproken:</p>
+<ul>
+<li>Wat boolean expressies zijn</li>
+<li>Boolean waardes <code>True</code> en <code>False</code></li>
+<li>Vergelijkingen met <code>&lt;</code>, <code>&lt;=</code>, <code>==</code>, <code>&gt;</code>, <code>&gt;=</code>, en <code>!=</code></li>
+<li>De <code>in</code> operator</li>
+<li>Logische operatoren <code>and</code>, <code>or</code>, en <code>not</code></li>
+<li>Conditionele statements met <code>if</code> en <code>else</code>, <code>elif</code></li>
+<li>Blokken code</li>
+<li>Inspringing</li>
+<li>Geneste condities <!-- - `exit()`--></li>
+</ul>
+<hr />
+
+<i><a href="ConditiesAfsluitendeOpgaven.html">Verder naar de Afsluitende Opgaven over Condities</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+<script>
+</script>
+</body>
+</html>

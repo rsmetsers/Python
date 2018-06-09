@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+        <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+<h1 id="hoofdstuk-6---condities">Python Cursus. Hoofdstuk 12- Lists</h1>
+<h1>Afsluitende Opgaven</h1>
+
+<i><a href="ListsFor.html">Terug naar de uitleg en gewone opgaven over Lists met For-loop</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+
+
+<hr />
+
+
+<h3 id="afsluitende-opgave-staafdiagram"><span style="color:red">Afsluitende opgave</span> 12.2 Staafdiagram</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/889275/81c7cbefc82bd6bcec6f0f3968a494f8"></iframe>
+Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="ListsFor_oplossingen.html.html#afsluitende-opgave-staafdiagram">hier</a> voor de uitwerking.
+
+
+
+<h3 id="afsluitende-opgave-12.2-kaarten-schudden"><span style="color:red">Afsluitende opgave</span> 12.3 Kaarten schudden</h3>
+
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/889292/2ddd22826ead6a6a395a6c4696a0a7d1"></iframe>
+Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="ListsFor_oplossingen.html.html#afsluitende-opgave-12.2-kaarten-schudden">hier</a> voor de uitwerking.
+
+
+
+
+<h3 id="afsluitende-opgave-12.3-boter-kaas-eieren"><span style="color:red">Afsluitende opgave</span> 12.4 Boter-Kaas-Eieren</h3>
+
+
+Schrijf een boter-kaas-eieren programma dat twee mensen het spel samen laat spelen. Om de beurt vraagt het programma iedere speler om de rij en de kolom waar ze een teken willen plaatsen.</p>
+
+-Zorg ervoor dat het programma alleen een rij/kolom combinatie toestaat die binnen het bord valt en leeg is.
+-Als een speler heeft gewonnen, eindigt het spel.
+-Als het bord vol is, eindigt het spel ook, met een gelijkspel.
+-Dit is een redelijk lang programma om te schrijven (60 regels code of zo). Gebruik maken van functies helpt.
+-Ik raad je aan een functie toon_bord() te schrijven die het bord als parameter krijgt en die het laat zien.
+-Maak ook een functie neemRijKolom() die de gebruiker om een rij/kolom combinatie vraagt en die controleert of het een legale invoer betreft.
+-Maak ook een functie winnaar() die controleert of het bord een winnaar heeft.
+-Houd bij wie aan de beurt is middels een variabele speler in het hoofdprogramma, die je kunt meegeven aan een functie als argument als de functie dit moet weten.
+-Een tip kan zijn om een functie opponent() te maken die de speler als argument krijgt en de andere speler teruggeeft; een dergelijke functie kan gemakkelijk gebruikt worden om van speler te wisselen na een zet.
+
+<!--
+Het hoofdprogramma zal er ongeveer als volgt uitzien (in pseudo-code):
+toon bord
+while True:
+vraag om de rij
+vraag om de kolom
+if de rij/kolom combinatie al bezet is:
+geef een fout-boodschap
+continue
+plaats een markering voor de speler op de rij/kolom
+toon bord
+if er is een winnaar:
+feliciteer winnaar
+break
+if bord is vol:
+zeg dat het gelijkspel is
+break
+wissel spelers
+-->
+
+<!-- ANTWOORD
+from pcinput import getInteger
+
+LEEG = "-"
+SPELERX = "X"
+SPELERO = "O"
+MAXZET = 9
+
+def toon_bord( b ):
+    print( "  1 2 3" )
+    for rij in range( 3 ):
+        print( rij+1, end=" ")
+        for kol in range( 3 ):
+            print( b[rij][kol], end=" " )
+        print()
+
+def opponent( p ):
+    if p == SPELERX:
+        return SPELERO
+    return SPELERX
+
+def neemRowKolom( speler, wat ):
+    while True:
+        num = getInteger( "Speler "+speler+", welke "+wat+
+            " kies je? " )
+        if num < 1 or num > 3:
+            print( "Geef 1, 2, of 3" )
+            continue
+        return num
+
+def winnaar( b ):
+    for rij in range( 3 ):
+        if b[rij][0] != LEEG and b[rij][0] == b[rij][1] \
+            and b[rij][0] == b[rij][2]:
+            return True
+    for kol in range( 3 ):
+        if b[0][kol] != LEEG and b[0][kol] == b[1][kol] \
+            and b[0][kol] == b[2][kol]:
+            return True
+    if b[1][1] != LEEG:
+        if b[1][1] == b[0][0] and b[1][1] == b[2][2]:
+            return True
+        if b[1][1] == b[0][2] and b[1][1] == b[2][0]:
+            return True
+    return False
+
+bord = [[LEEG,LEEG,LEEG],[LEEG,LEEG,LEEG],[LEEG,LEEG,LEEG]]
+speler = SPELERX
+
+toon_bord( bord )
+zet = 0
+while True:
+    rij = neemRowKolom( speler, "rij" )
+    kol = neemRowKolom( speler, "kolom" )
+    if bord[rij-1][kol-1] != LEEG:
+        print( "Rij", rij, "en kolom", kol, "is niet leeg" )
+        continue
+    bord[rij-1][kol-1] = speler
+    toon_bord( bord )
+    if winnaar( bord ):
+        print( "Speler", speler, "wint!" )
+        break
+    zet += 1
+    if zet == MAXZET:
+        print( "Het is gelijkspel." )
+        break
+    speler = opponent( speler )
+
+
+-->
+
+
+<h3 id="afsluitende-opgave-12.4-zeeslag"><span style="color:red">Afsluitende opgave</span> 12.5 Zeeslag</h3>
+<p>Maak een programma dat een vereenvoudigde versie van het spel “Zeeslag” speelt. De computer creëert (in het geheugen) een matrix van 3 rijen hoog en 4 kolommen breed. De rijen zijn genummerd 1, 2, en 3, en de kolommen hebben de letters A, B, C, en D. De computer verstopt in drie van de cellen een “oorlogsschip.” Ieder schip is precies één cel groot. De schepen mogen elkaar noch horizontaal, noch verticaal raken. Laat het programma de schepen per toeval plaatsen, dus niet volgens een vastgestelde configuratie.</p>
+<p>De computer vraagt de speler te “schieten” op cellen in de matrix. De speler doet dat door een kolom letter en rij cijfer in te geven (bijvoorbeeld, &quot;D3&quot;). Als de cel waarop de speler schiet niks bevat, zegt de computer “Mis!” Als de cel een schip bevat, zegt de computer “Raak!’ en verwijdert het schip (dus als de speler nog eens zou schieten op dezelfde cel dan is het automatisch een mis). Als de speler erin geslaagd is alle drie de schepen tot zinken te brengen, laat de computer zien hoeveel schoten er nodig waren, en het programma eindigt.</p>
+<p>Om te helpen bij het debuggen van het spel, laat je de computer bij de start de matrix tonen waarbij je kunt zien welke cellen een schip bevatten.</p>
+<p>Hint: Als je dit een lastige oefening vindt, start dan met een bord waarbij je de schepen al vooraf geplaatst hebt. Als de rest van de code werkt (en dit is niet erg moeilijk na de vorige opgave), voeg dan een functie toe waarbij de schepen per toeval geplaatst worden, zonder dat je controleert of ze elkaar raken. Als dat eenmaal werkt, voeg je code toe die ervoor zorgt dat de schepen elkaar niet kunnen raken.</p>
+<!-- ANTWOORD
+from pcinput import getString
+from random import randint
+
+LEEG = "."
+SCHIP = "X"
+SCHEPEN = 3
+BREEDTE = 4
+HOOGTE = 3
+
+def toonBord( b ):
+    print( "  ", end="" )
+    for kol in range( BREEDTE ):
+        print( chr( ord("A")+kol ), end=" " )
+    print()
+    for rij in range( HOOGTE ):
+        print( rij+1, end=" ")
+        for kol in range( BREEDTE ):
+            print( b[rij][kol], end=" " )
+        print()
+
+def plaatsSchepen( b ):
+    for i in range( SCHEPEN ):
+        while True:
+            x = randint( 0, BREEDTE-1 )
+            y = randint( 0, HOOGTE-1 )
+            if b[y][x] == SCHIP:
+                continue
+            if x > 0 and b[y][x-1] == SCHIP:
+                continue
+            if x < BREEDTE-1 and b[y][x+1] == SCHIP:
+                continue
+            if y > 0 and b[y-1][x] == SCHIP:
+                continue
+            if y < HOOGTE-1 and b[y+1][x] == SCHIP:
+                continue
+            break
+        b[y][x] = SCHIP
+
+def neemDoel():
+    while True:
+        cel = getString( "Welke cel kies je? " ).upper()
+        if len( cel ) != 2:
+            print( "Geef een cel in als XY,",
+                "met X een letter en Y een cijfer" )
+            continue
+        if cel[0] not in "ABCD":
+            print( "De letter moet tussen A en",
+                chr( ord("A")+BREEDTE-1 ), "liggen" )
+            continue
+        if cel[1] not in "123":
+            print( "Cijfer moet tussen 1 en", HOOGTE, "liggen" )
+            continue
+        return ord(cel[0])-ord("A"), ord(cel[1])-ord("1")
+
+bord = []
+for i in range( HOOGTE ):
+    rij = BREEDTE * [LEEG]
+    bord.append( rij )
+plaatsSchepen( bord )
+toonBord( bord )
+
+raak = 0
+zetten = 0
+while raak < SCHEPEN:
+    x, y = neemDoel()
+    if bord[y][x] == SCHIP:
+        print( "Raak!" )
+        bord[y][x] = LEEG
+        raak += 1
+    else:
+        print( "Mis!" )
+    zetten += 1
+
+print( "Je had", zetten, "zetten nodig om mij te verslaan." )
+
+-->
+
+<hr>
+
+<i><a href="ListsFor.html">Terug naar de uitleg en gewone opgaven over Lists met For-loop</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+

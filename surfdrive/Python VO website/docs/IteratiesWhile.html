@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+        <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+
+
+<h1 id="hoofdstuk-7---iteraties-for-loop">Hoofdstuk 7a - Iteraties: While-loop</h1>
+<b>Let op:</b> log eerst in bij <a href="http://repl.it">repl.it</a><br>
+<i><a href="IteratiesWhileAfsluitendeOpgaven.html">Meteen naar de Afsluitende Opgaven over While loops</a></i><br>
+<i><a href="IteratiesGemengdeOpgaven.html">Meteen naar de Gemengde Opgaven met While en For loops</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+
+<hr />
+<p>Computers raken niet verveeld. Als een computer een taak honderdduizenden malen moet herhalen, protesteert hij niet. Mensen daarentegen houden niet van teveel herhaling. Daarom moeten herhalende taken aan een computer worden overgelaten. Alle programmeertalen ondersteunen herhalingen. De klasse programmeerconstructies die herhalingen mogelijk maken heten “iteraties.” Een veelgebruikte term is “loops” (Engels, spreek uit: “loeps” – dit woord kun je netjes vertalen als “lussen,” maar dat zeggen programmeurs nooit).</p>
+<p>Dit hoofdstuk legt uit wat je moet weten over loops in Python. Als programmeren helemaal nieuw voor je is, zul je wellicht het gevoel krijgen dat loops een lastig onderwerp zijn. Als dat zo is, neem dan de tijd voor dit hoofdstuk, en werk eraan totdat je zeker weet dat je alles snapt. Loops zijn zo’n basaal programmeerconcept dat je ze goed moet begrijpen. Elk hoofdstuk dat hierna komt maakt gebruik van loops.</p>
+<hr />
+<h2 id="while-loop-intro"><code>while</code> loop intro <!-- HFSTK 7.1.1.0 --></h2>
+<p>Stel dat je vijf keer een strafregel moet schrijven, wellicht zou je dat als volgt coderen:</p>
+<pre class="python">
+print("Ik zal nooit meer vergeten om mijn informatica huiswerk te maken." )
+print("Ik zal nooit meer vergeten om mijn informatica huiswerk te maken." )
+print("Ik zal nooit meer vergeten om mijn informatica huiswerk te maken." )
+print("Ik zal nooit meer vergeten om mijn informatica huiswerk te maken." )
+print("Ik zal nooit meer vergeten om mijn informatica huiswerk te maken." )</pre>
+<p>Maar wat als je 500 strafregels moet schrijven? Hiervoor kun je een loop gebruiken.</p>
+<p>De eerste loop die ik bespreek is de <code>while</code> loop. Een <code>while</code> statement lijkt heel veel op een <code>if</code> statement. De syntax is:</p>
+<pre class="python">
+    while < boolean voorwaarde >:
+        < acties >
+</pre>
+<p>Net als bij een <code>if</code> statement, test een <code>while</code> statement een boolean expression, en als de voorwaarde <code>True</code> oplevert, wordt het blok code onder de <code>while</code> uitgevoerd. Echter, in tegenstelling tot een <code>if</code> statement, gaat Python, wanneer het blok code uitgevoerd is, terug naar de boolean voorwaarde na de <code>while</code>, en test die opnieuw. Als de voorwaarde nog steeds <code>True</code> oplevert, dan wordt het blok code nogmaals uitgevoerd. En als het is uitgevoerd, keert Python wederom terug naar de boolean voorwaarde. Dit wordt steeds herhaald, totdat de boolean voorwaarde <code>False</code> oplevert. Pas op dat moment slaat Python het blok code onder de <code>while</code> over en gaat eronder verder.</p>
+<p>Merk op dat als de boolean voorwaarde meteen <code>False</code> oplevert de eerste keer dat Python hem ziet, dan wordt het blok code onder de <code>while</code> onmiddellijk overgeslagen, net zoals gebeurt bij een <code>if</code> statement.</p>
+<p>Vaak maak je bij de <code>while</code> herhaling gebruik van de volgende opbouw:</p>
+<p><b>De variabele:</b> <br>
+<p>
+1a) Bepaal wat de variabele is, dus wat veranderd er steeds (vaak is dit een teller om te tellen hoe vaak je al herhaalt hebt).<br>
+1b) Geef de variabele een begin waarde (meestal is dit 0, maar soms een ander getal)</p><br>
+<b>De herhaling <code>while</code>:</b><p><br>
+2a) Bepaal wat de voorwaarde voor herhaling is. Wat moet <code>True</code> zijn (vaak is dit dat de teller kleiner is dan een bepaalde waarde). Dit is de boolean voorwaarde schrijf je meteen na de <code>while</code>.<br>
+2b) Bepaal wat je steeds wilt herhalen, de acties.<br>
+2c) Verander de variabele (meestal verhogen met 1).</p>
+<pre class="python">
+<variabele initialiseren>
+while < boolean voorwaarde >:
+        < acties >
+        < variabele aanpassen >
+</pre>
+<p>Het bovenstaande voorbeeld wordt met een <code>while</code> loop dan:</p>
+<pre class="python">
+aantal_strafregels_geschreven = 0 #teller
+
+while aantal_strafregels_geschreven < 5: #zolang nog geen 5 zijn afgedrukt, herhaal:
+    print("Ik zal nooit meer vergeten mijn informatica huiswerk te maken." )
+    aantal_strafregels_geschreven += 1 #verhooog de teller
+</pre>
+
+<h3 id="opgave-7.1.1.0-tellen-tot-10."><span style="color:red">Opgave</span> 7.1.1.0 Tellen tot 10.</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/848994/e5f0d419c9cd08a3d57e29e749aad56f"></iframe>
+
+
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="IteratiesWhile_oplossingen.html#opgave-7.1.1.0-tellen-tot-10.">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+<h2 id="while-loop-voorwaarde"><code>while</code> loop voorwaarde <!-- HFSTK 7.1.1.1 --></h2>
+<p>Bij de <code>while</code> loop moet je altijd voorzichtig zijn met de voorwaarde. Daar worden ook de meeste fouten gemaakt.</p>
+
+
+<h3 id="opgave-7.1.1.1-tot-en-met-10-tellen"><span style="color:red">Opgave</span> 7.1.1.1 Tot en met 10 tellen</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/848996/2aafc18362189a5397dd45eae4f911d0"></iframe>
+
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="IteratiesWhile_oplossingen.html#opgave-7.1.1.1-tot-en-met-10-tellen">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+
+<h3 id="stroomdiagram-voor-de-while-loop">Stroomdiagram voor de <code>while</code> loop <!-- 7.1.1.2 --></h3>
+<p>Het printen van de nummers 0 tot en met 4 kun je met een <code>while</code> loop als volgt doen:</p>
+<pre class="python">
+nummer = 0
+while nummer < 5:
+    print( nummer )
+    nummer += 1
+print( "Klaar" )</pre>
+<p>Deze code wordt ook weergegeven in het onderstaande stroomdiagram.</p>
+
+<img src="../img/PythonAfb7.1.jpg" alt="Stroomdiagram dat een while loop weergeeft" style="width:250px;"> <br>
+<div align="center">
+Figuur 7.1: Stroomdiagram dat een while loop weergeeft.
+</div>
+
+
+
+<!--
+![Figuur 7.1:  Stroomdiagram dat een while loop weergeeft.](http://course.cs.ru.nl/greenfoot/python/img/PythonAfb7.1.jpg)
+Figuur 7.1:  Stroomdiagram dat een while loop weergeeft.
+-->
+
+<p>Het is van essentieel belang dat je deze code snapt, dus ik neem hem stap voor stap door.</p>
+<p>De eerste regel initialiseert een variabele <code>nummer</code>. Dit is de variabele die de code gaat afdrukken, dus hij wordt geïnitialiseerd op 0, omdat 0 de eerste waarde is die afgedrukt moet worden.</p>
+<p>Dan start de <code>while</code> loop. De boolean voorwaarde zegt <code>nummer &lt;= 5</code>. Omdat <code>nummer</code> 0 is, en 0 kleiner is dan 5, levert de voorwaarde <code>True</code>. Dus wordt het blok code onder de while uitgevoerd.</p>
+<p>De eerste regel van het blok code print de waarde van <code>nummer</code>, dus 0. De tweede regel telt 1 op bij de waarde van <code>nummer</code>, zodat <code>nummer</code> nu 1 is. Python gaat daarna terug naar de boolean voorwaarde. De laatste regel van het programma, het printen van het woord “Klaar,” wordt dus (nog) niet uitgevoerd omdat hij niet in het code blok van de loop zit, en de loop nog niet afgelopen is.</p>
+
+<ul>
+<li>Omdat <code>nummer</code>gelijk aan 1 is, evalueert de boolean voorwaarde nog steeds als <code>True</code>. Het blok code wordt dus nogmaals uitgevoerd. 1 wordt afgedrukt, <code>nummer</code> krijgt waarde 2, en de code keert terug bij de boolean voorwaarde.
+
+<li>Omdat <code>nummer</code> gelijk aan 2 is, evalueert de boolean voorwaarde nog steeds als <code>True</code>. Het blok code wordt dus nogmaals uitgevoerd. 2 wordt afgedrukt, <code>nummer</code> krijgt waarde 3, en de code keert terug bij de boolean voorwaarde.
+
+<li>Omdat <code>nummer</code> gelijk aan 3 is, evalueert de boolean voorwaarde nog steeds als <code>True</code>. Het blok code wordt dus nogmaals uitgevoerd. 3 wordt afgedrukt, '<code>nummer</code>' krijgt waarde 4, en de code keert terug bij de boolean voorwaarde.
+
+<li>Omdat <code>nummer</code> gelijk aan 4 is, evalueert de boolean voorwaarde nog steeds als <code>True</code>. Het blok code wordt dus nogmaals uitgevoerd. 4 wordt afgedrukt, '<code>nummer</code> krijgt waarde 5, en de code keert terug bij de boolean voorwaarde.
+
+<li>Omdat <code>nummer</code> gelijk aan 5 is, evalueert de boolean voorwaarde als <code>False</code> (aangezien 5 niet kleiner dan 5 is). Het blok code wordt overgeslagen, en Python gaat verder met de eerste regel na het blok code. Dat is de laatste regel van het programma. Het woord “Klaar” wordt afgedrukt, en het programma eindigt.
+</ul>
+
+<h3 id="opgave-7.1.1.2-even-getallen-afdrukken"><span style="color:red">Opgave</span> 7.1.1.2 Even getallen afdrukken</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/848997/3adf5fa269157f4d6f888a9825daa4ce"></iframe>
+
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="IteratiesWhile_oplossingen.html#opgave-7.1.1.2-even-getallen-afdrukken">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+<h3 id="meer-doen-in-een-while-loop">Meer doen in een <code>while</code> loop <!-- Hoofdstuk 7.1.2.1  --></h3>
+<p>Stel dat je de gebruiker moet vragen om drie getallen, ze moet optellen, en dan het totaal moet laten zien. Zonder while loop zou dat er zo uit zien:</p>
+<pre class="python">
+totaal = 0 #houd een variabele voor het totaal bij
+
+invoer = input("Geef een getal: ") #vraag de gebruiker om invoer
+num1 = int(invoer) #zet de invoer om in een getal
+totaal += num1 #tel num1 bij het totaal op
+
+invoer = input("Geef een getal: ")
+num2 = int(invoer)
+totaal += num2 #tel num2 bij het totaal op
+
+invoer = input("Geef een getal: ")
+num3 = int(invoer)
+totaal += num3 #tel num3 bij het totaal op
+
+print( "Totaal is", totaal )
+</pre>
+
+<h3 id="opgave-7.1.2.1-som-berekenen-met-een-while-loop"><span style="color:red">Opgave</span> 7.1.2.1 Som berekenen met een <code>while</code> loop</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/848999/60d4edfb7eeb64de9125066205fb45bf"></iframe>
+
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="IteratiesWhile_oplossingen.html#opgave-7.1.2.1-som-berekenen-met-een-while-loop">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+
+<h3 id="nog-meer-doen-in-een-while-loop">Nog meer doen in een <code>while</code> loop <!-- Hoofdstuk 7.1.2.2  --></h3>
+<p>Als je de vorige voorbeeld begrijpt, begrijp je waarschijnlijk ook hoe je de gebruiker kunt vragen om vijf getallen, en dan de som van de vijf te berekenen:</p>
+<pre class="python">
+aantal_getallen = 0
+totaal = 0
+while aantal_getallen < 5:
+    invoer = input( "Geef een nummer: " ) #vraag de gebruiker om invoer
+    ingevoerde_getal = int( ingevoerde_getal ) #zet de invoer om in een getal
+    totaal += ingevoerde_getal #tel de ingevoerde waarde op bij het totaal
+    aantal_getallen += 1
+
+print( "Totaal is", totaal )
+</pre>
+
+<p>Bestudeer bovenstaande code. Er worden twee variabelen gebruikt. <code>totaal</code> wordt gebruikt om de vijf getallen in op te tellen. <code>totaal</code> begint op nul, omdat bij de start van het programma nog geen getallen ingegeven zijn, dus het totaal is nul. <code>aantal_getallen</code> wordt gebruikt om te tellen hoe vaak de loop doorlopen is. Omdat de loop vijf keer uitgevoerd moet worden, start <code>teller</code> op nul en de boolean voorwaarde voor de loop test of <code>teller</code> kleiner is dan 5. Dus <code>aantal_getallen</code> moet iedere keer dat de loop doorlopen wordt met 1 verhoogd worden, zodat na vijf keer doorlopen de boolean voorwaarde <code>False</code> is.</p>
+<p>Je vraagt je misschien af waar ik <code>aantal_getallen</code> liet starten bij 0 en de boolean voorwaarde liet testen of <code>aantal_getallen &lt; 5</code>. Waarom begon ik niet bij <code>aantal_getallen = 1</code> en heb ik niet <code>aantal_getallen &lt;= 5</code> getest? De reden is gewoonte: programmeurs zijn gewend om indices bij 0 te laten beginnen en als ze tellen, te tellen “tot maar niet inclusief.” Als je verder gaat met programmeren zul je ontdekken dat de meeste code deze gewoonte naleeft. De meeste standaard programmeerconstructies die indices gebruiken, doen het ook zo. Mijn advies is daarom dat je hieraan gewend raakt, want dat zal code gemakkelijker leesbaar maken.</p>
+<p>Opmerking: De variabele <code>aantal_getallen</code> is wat programmeurs een “wegwerp variabele” noemen. Het enige doel van deze variabele is te tellen hoe vaak de loop doorlopen is. De variabele heeft geen echte betekenis voor de loop, in de loop, of nadat de loop afgelopen is. Programmeurs kiezen vaak één-letter namen voor dit soort variabelen, meestal <code>i</code> of <code>j</code> (ik neem aan dat <code>i</code> ooit begonnen is als afkorting voor “integer,” en <code>j</code> gekozen is omdat het na <code>i</code> komt). In het voorbeeld heb ik voor de duidelijkheid de naam <code>aantal_getallen</code> gekozen, maar een <code>i</code> was acceptabel geweest.</p>
+
+
+<h3 id="opgave-7.1.2.2-gemiddelde-berekenen"><span style="color:red">Opgave</span> 7.1.2.2 Gemiddelde berekenen</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/849000/503f77d8203d9cab1dd80eddade4633d"></iframe>
+
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="IteratiesWhile_oplossingen.html#opgave-7.1.2.2-gemiddelde-berekenen">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+<!--
+### <span style="color:red">Opgave</span>  Aantal herhalingen door gebruiker laten bepalen
+
+De eerste voorbeeldcode in dit hoofdstuk vroeg de gebruiker om vijf getallen in te geven. In dat voorbeeld werd steeds de prompt “Geef nummer x: ” gebruikt, waarbij `x` een cijfer is:
+
+```python
+import pcinput
+
+nummer1 = pcinput.getInteger( "Nummer 1: " )
+nummer2 = pcinput.getInteger( "Nummer 2: " )
+nummer3 = pcinput.getInteger( "Nummer 3: " )
+nummer4 = pcinput.getInteger( "Nummer 4: " )
+nummer5 = pcinput.getInteger( "Nummer 5: " )
+
+print( "Totaal is", nummer1 + nummer2 + nummer3 + nummer4 + nummer5 )
+```
+
+Kun je deze code zo veranderen dat ook steeds een veranderende prompt wordt gebruikt voor de getallen? Tip: gebruik een loop zoals bij de vorige opgave.
+Het is de bedoeling dat de gebruiker precies dezelfde vragen krijgt.
+-->
+
+<!-- ANTWOORD
+import pcinput
+
+nummer = 1
+totaal = 0
+while ( nummer <= 5):
+    waarde = pcinput.getInteger( "Nummer " + str( nummer ) + ": " )
+    totaal += waarde
+    nummer += 1
+
+print( "Totaal is", totaal )
+
+-->
+
+
+
+<h3 id="de-while-loop-onder-controle-van-de-gebruiker">De <code>while</code> loop onder controle van de gebruiker <!-- H7.1.3 --></h3>
+<p>Als je van te voren niet precies weet hoe vaak je iets wilt herhalen, kun je geen <code>for</code> loop gebruiken. Dan moet je een <code>while</code> loop gebruiken.</p>
+<p>Met een <code>while</code> loop kan je veel meer dan met een <code>for</code> loop, maar hij is wel iets lastiger.</p>
+<p>Stel je wilt een gebruiker een aantal getallen laten invoeren en die getallen optellen. Je wil de gebruiker zoveel getallen laten ingeven als hij wil, zelfs geen getallen. Dan weet je niet weet hoe vaak de loop doorlopen moet worden. In plaats daarvan bepaalt de gebruiker hoe vaak de loop doorlopen wordt. Je kan met de gebruiker afspreken dat je steeds getallen blijft vragen totdat hij een <code>-1</code> invoert.</p>
+<p>Het algoritme is dan: zolang de gebruiker geen <code>-1</code> invoert blijven we het volgende herhalen: vraag een getal en tel deze bij mijn totaal op.</p>
+<p>De code hieronder laat zien hoe je een <code>while</code> loop kunt opzetten die de gebruiker zoveel getallen laat ingeven als gewenst. De gebruiker stopt met het ingeven van getallen door een -1 in te geven. Het totaal wordt afgedrukt wanneer de loop beëindigd is.</p>
+<pre class="python">
+invoer_nummer = 0
+totaal = 0
+
+invoer = input( "Geef een nummer (of -1 op te stoppen): " ) #vraag gebruiker eerste getal in te voeren
+invoer_nummer = int( invoer )  #zet de invoer om in een getal
+
+while invoer_nummer != -1: #zolang geen -1 is ingevoerd, herhaal dan:
+    totaal += invoer_nummer #tel ingevoerde getal bij het totaal
+    invoer =  input ( "Geef een nummer (of -1 op te stoppen): " ) #vraag gebruiker om een getal in te voeren
+    invoer_nummer = int (invoer)
+
+print( "Totaal is", totaal ) #druk aan einde het totaal af
+</pre>
+<h3 id="opgave-7.1.3-bereken-gemiddelde-de-gebruiker-bepaalt-hoeveel-getallen"><span style="color:red">Opgave</span> 7.1.3 Bereken gemiddelde, de gebruiker bepaalt hoeveel getallen</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/849001/076562eb08f2aa9489d24dc42233391e"></iframe>
+
+
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="IteratiesWhile_oplossingen.html#opgave-7.1.3-bereken-gemiddelde-de-gebruiker-bepaalt-hoeveel-getallen">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+<h3 id="eindeloze-loops">Eindeloze loops <!-- H7.1.4 --></h3>
+<!-- De code hieronder begint bij nummer 1, en telt nummers op, totdat het een nummer
+tegenkomt dat, als het gekwadrateerd wordt, deelbaar is door 1000. De loop bevat een fout. Kijk of je de fout weet te vinden (zonder de code uit te voeren!).
+-->
+
+<p>De code hieronder drukt alle getallen van 0 tot 5 (tot en met 4) op. De loop bevat een fout. Kijk of je de fout weet te vinden (zonder de code uit te voeren!).</p>
+<!--
+```python
+nummer = 1
+totaal = 0
+while (nummer * nummer) % 1000 != 0:
+    totaal += nummer
+print( "Totaal is", totaal )
+```
+-->
+
+<pre class="python">
+teller = 0
+while ( teller < 5 ):
+    print( teller )
+</pre>
+<p>De titel boven deze paragraaf gaf het antwoord natuurlijk al weg: deze code bevat een loop die nooit eindigt. Als je hem uitvoert, lijkt het alsof het programma “hangt,” dus wel draait maar niks doet. Maar het doet niet niks, het is zelfs hoogst actief, maar het is bezig een nooit-eindigende optelling uit te voeren. <code>nummer</code> begint bij 1, maar wordt in de loop niet gewijzigd. Daarom wordt de boolean voorwaarde nooit <code>False</code>. Dit is een “eindeloze loop.” Dit soort loops zijn het grootste gevaar als je <code>while</code> loops bouwt.</p>
+<!--Als je deze code uitvoert in IDLE, kun je de uitvoering afbreken door `Ctrl-C` te drukken. Andere editors hebben menu opties waarmee je de uitvoering van code kunt onderbreken. In gebruikersonvriendelijke omgevingen moet je soms het proces waarin Python draait via een systeem commando of systeem programma afbreken.-->
+
+<p>Als je deze code uitvoert kun je de uitvoering van code onderbreken door op het 'stop' te drukken.</p>
+<p>Omdat iedere programmeur zo nu en dan per ongeluk een eindeloze loop schrijft, is het een goed idee als je, wanneer je begint met het schrijven van een <code>while</code> loop, onmiddellijk een regel code toevoegt die een wijziging maakt in hetgeen getest wordt in de boolean voorwaarde, zodat je dat niet vergeet. Bijvoorbeeld, als je schrijft <code>while i &lt; 10</code>, dan schrijf je er meteen de regel <code>i += 1</code> onder, en daarna begin je de rest van de code tussen deze twee regels toe te voegen.</p>
+
+<h3 id="opgave-7.1.4-fout-herstellen-in-de-loop"><span style="color:red">Opgave</span> 7.1.4 Fout herstellen in de loop</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/849002/d4d07a818cee55f30793e853a0b668b9"></iframe>
+
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="IteratiesWhile_oplossingen.html#opgave-7.1.4-fout-herstellen-in-de-loop">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+<h2 id="loop-controle-met-een-logische-vlag">Loop controle met een logische vlag <!-- H 7.1.5 --></h2>
+<p>Soms wil je het aantal keren dat iets herhaald wordt afhankelijk is van wat er tijdens de uitvoer gebeurt. Bijvoorbeeld, iemand moet steeds een getal raden totdat ze het goed hebben. Raden ze het getal goed, dan spring je uit de lus.</p>
+<p>Dit kun je voor elkaar krijgen door een logische vlag (in het Engels: Boolean Flag) die halverwege de lus een nieuwe waarde krijgt. In het voorbeeld heet de vlag 'goed_geraden'. Deze begint op 'False' (niet waar). In de conditie van de herhaling wordt gekeken of deze nog op 'False' staat, in dat geval wordt de herhaling uitgevoerd. Zodra er goed geraden is krijgt deze een nieuwe waarde, 'True'. Hierdoor zal de herhaling niet meer uitgevoerd worden.</p>
+<pre class="python">
+TE_RADEN_GETAL = 5
+goed_geraden = False #om te beginnen staat de vlag op False
+
+while not goed_geraden: #herhaal zolang vlag nog op False staat
+    invoer = input( "3 + 2 = " ) #stel de quiz vraag
+    gebruikers_antwoord = int( invoer )
+    if gebruikers_antwoord == TE_RADEN_GETAL: #goed geraden
+        goed_geraden = True #de vlag wordt op True gezet, hierna zal de while loop niet opnieuw uitgevoerd gaan worden
+        print("Goed geraden!")
+    else: #fout geraden
+        print("Jammer, fout... probeer het opnieuw")
+
+print("Klaar")
+</pre>
+<p>Trouwens: in sommige online cursussen zul je misschien iets lezen over een 'break'opdracht om uit een lus uit te springen. Dit is een zeer slechte gewoonte en is fout.
+
+<h3 id="opgave-7.1.4-fout-herstellen-in-de-loop"><span style="color:red">Opgave</span> 7.1.5.1 Logische Vlag</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/849003/20e10fbf62a402686061e4d00d07b49f"></iframe>
+
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="IteratiesWhile_oplossingen.html#opgave-7.1.4-fout-herstellen-in-de-loop">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+
+
+
+<h2 id="uitgebreide-conditie-met-logische-vlag">Uitgebreide conditie met logische vlag <!-- H. 7.1.5.2 --></h2>
+<p>Soms heb je een uitgebreidere conditie nodig. Bijvoorbeeld, dat de gebruiker hooguit drie pogingen krijgt voor het invoeren van een pincode. Je hebt dan een teller nodig om bij te houden hoe vaak er al (fout) geraden is. Je moet in de conditie van de herhaling controleren op:</p>
+<ul>
+<li><p>de waarde van de logische vlag, en</p></li>
+<li><p>de waarde van de teller.</p></li>
+</ul>
+
+<h3 id="opgave-7.1.5.2-hooguit-3-pogingen-voor-een-pincode"><span style="color:red">Opgave</span> 7.1.5.2 Hooguit 3 pogingen voor een pincode</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/849004/ddc88b942469155e2262cf9cc459da84"></iframe>
+
+<!-- VERWIJDERD UIT OPGAVE:
+toevoegen in code van 7.1.5.2
+
+PINCODE = 1234
+goed_geraden = False #om te beginnen staat de vlag op False
+
+while not goed_geraden: #herhaal zolang vlag nog op False staat
+    invoer = input( "Voer pincode in: " ) #vraag de wachtwoord
+    gebruikers_antwoord = int( invoer )
+    if gebruikers_antwoord == PINCODE: #goed geraden
+        goed_geraden = True #de vlag wordt op True gezet, hierna zal de while loop niet opnieuw uitgevoerd gaan worden
+    else: #fout geraden
+        print("Fout... probeer het opnieuw")
+
+AAN VRAAG
+
+Opgave 7.1.5.2 Hooguit 3 pogingen voor een pincode
+
+Met de code hieronder controleer je of een gebruiker de juiste pincode heeft ingevoerd.
+
+Pas de code in het voorbeeld aan zodat:
+
+- de gebruiker hooguit drie pogingen heeft voor het invoeren van een pincode,
+- na elke foutieve poging een melding afgedrukt wordt dat de ingevoerde pincode fout is en welk poging dat was,
+- na afloop "Toegang verleend" of "Toegang geweigerd" afgedrukt wordt.
+
+CODE
+
+PINCODE = 1234
+goed_geraden = False #om te beginnen staat de vlag op False
+
+while not goed_geraden: #herhaal zolang vlag nog op False staat
+    invoer = input( "Voer pincode in: " ) #vraag de wachtwoord
+    gebruikers_antwoord = int( invoer )
+    if gebruikers_antwoord == PINCODE: #goed geraden
+        goed_geraden = True #de vlag wordt op True gezet, hierna zal de while loop niet opnieuw uitgevoerd gaan worden
+    else: #fout geraden
+        print("Fout... probeer het opnieuw")
+
+        -->
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="IteratiesWhile_oplossingen.html#uitgebreide-conditie-met-logische-vlag">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+<hr />
+
+<h2 id="leerdoelen">Wat je geleerd hebt</h2>
+<p>In dit hoofdstuk is het volgende besproken:</p>
+<ul>
+<li>Wat loops zijn</li>
+<li><code>while</code> loops</li>
+<li>Eindeloze loops <!-- Loop controle via `else`, `break`, en `continue`--></li>
+<li>Conditie met een logische vlag</li>
+</ul>
+<hr />
+<i><a href="IteratiesWhileAfsluitendeOpgaven.html">Verder naar de Afsluitende Opgaven over While loops</a></i><br>
+<i><a href="IteratiesGemengdeOpgaven.html">Verder naar de Gemengde Opgaven met While en For loops</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i> 

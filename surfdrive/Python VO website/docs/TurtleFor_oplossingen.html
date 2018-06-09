@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+        <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+
+<h1>Python Cursus. Hoofdstuk For-loops Met Turtle Graphics</h1>
+<h1>Uitwerkingen Opgaven</h1>
+<i><a href="turtleFor.html">Terug naar de opgaven over For-Loops met Turtle Graphics</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+
+<hr />
+
+
+
+<h3 id="opgave-vierkantjes-herhalen"><span style="color:red">Opgave</span> Vierkantjes herhalen</h3>
+<pre class="python">
+import turtle # importeer de turtle module
+
+#FUNCTIE DEFINITIES:
+def tekenVierkant( lengte ):
+    turtle.forward(lengte)
+    turtle.right(90)
+    turtle.forward(lengte)
+    turtle.right(90)
+    turtle.forward(lengte)
+    turtle.right(90)
+    turtle.forward(lengte)
+    turtle.right(90)
+
+#HOOFD VAN PROGRAMMA:
+turtle.speed(10) # turtle gaat ietsjes sneller lopen
+
+tekenVierkant( 100 )
+turtle.right(15)
+tekenVierkant( 100 )
+turtle.right(15)
+tekenVierkant( 100 )
+
+turtle.done() # venster naderhand even open laten staan
+</pre>
+
+
+<h3 id="opgave-vierkanten-herhalen-met-een-for-loop"><span style="color:red">Opgave</span> Vierkanten herhalen met een for-loop</h3>
+<pre class ="python">
+import turtle
+
+#tekent een driehoek van een gegeven lengte
+def tekenDriehoek( lengte ):
+    turtle.forward( lengte )
+    turtle.right(120)
+    turtle.forward( lengte )
+    turtle.right(120)
+    turtle.forward( lengte )
+
+turtle.pendown()
+turtle.speed(100)
+
+#teken 100 driehoeken van grote 200, steeds een beetje gedraaid
+for driehoek_aantal in range(100):
+    tekenDriehoek(200)
+    turtle.right(5)
+
+turtle.done()
+</pre>
+
+<h3 id="opgave-driehoeken-herhalen-met-een-for-loop"><span style="color:red">Opgave</span> Driehoeken herhalen met een for-loop</h3>
+<!-- https://www.codeavengers.com/python/100#1.7 -->
+
+<pre class ="python">
+import turtle
+
+#tekent een driehoek van een gegeven lengte
+def tekenDriehoek( lengte ):
+    turtle.forward( lengte )
+    turtle.right(120)
+    turtle.forward( lengte )
+    turtle.right(120)
+    turtle.forward( lengte )
+
+turtle.pendown()
+turtle.speed(100)
+
+#teken 100 driehoeken van grote 200, steeds een beetje gedraaid
+for driehoek_aantal in range(100):
+    tekenDriehoek(200)
+    turtle.right(5)
+turtle.done()
+</pre>
+
+<h3 id="opgave-ster-tekenen-met-een-for-loop"><span style="color:red">Opgave</span> Ster tekenen met een for-loop</h3>
+<pre class="python">
+import turtle
+
+#tekent een ster van lengte 50
+for zijde in range(5):
+    turtle.forward(50)
+    turtle.right(144)
+
+turtle.done()
+</pre>
+
+
+
+<h3 id="opgave-spiraalster-tekenen"><span style="color:red">Opgave</span> Spiraalster tekenen
+<pre class="python">
+import turtle
+
+#tekent een ster
+def tekenSter( lengte ):
+    for zijde in range (5):
+        turtle.forward( lengte )
+        turtle.right(144)
+
+turtle.speed(100) #even wat sneller
+
+#tekent 20 sterren
+for zijde in range(20):
+    tekenSter( zijde * 10 ) #elk ster steeds groter dan de vorige (0,10,20,30...)
+    turtle.right(10) #draai nadat elk ster getekend is
+
+turtle.done()
+</pre>
+
+<h3 id="opgave-eigen-creatie-met-iteraties"><span style="color:red">Opgave</span> Eigen creatie met iteraties</h3>
+-- geen oplossing beschikbaar --
+
+
+<h3 id="opgave-teken-een-rubiks-cube"><span style="color:red">Opgave</span> Teken een Rubik's cube</h3>
+-- geen oplossing beschikbaar --
+<!--
+## Waarden van turtle opvragen
+
+Je kunt ook informatie van turtle opvragen.
+```python
+position() #Vraag de positie op van de schildpad: je krijgt een x en
+een y terug.
+color() #Vraag de huidige gebruikte kleuren op. Uit deze functie komen twee
+waarden, waarbij de eerste de kleur van de pen is en de tweede de kleur waarmee je
+vlakken in kunt kleuren.
+```
+
+-->
+
+
+<!-- NOG NIET GOED UITGEWERKT
+### <span style="color:red">Opgave</span> Vierkanten herhalen met een while-loop
+We gaan nu weer een mooi plaatje maken met herhalingen van vierkanten.
+Laat de gebruiker een lengte voor de eerste vierkant invoeren.
+Die teken je. Daarna draai je 15 graden. Voordat je de volgende tekening maakt, maak je de lengte iets korter.
+Dit herhaal je totdat de lengte 0 is.
+
+
+
+1) Neem de definitie van `tekenVierkant` uit een vorige opdracht over, of uit de code hieronder.
+
+2) Test de code door een vierkant te tekenen. Hiervoor roep je natuurlijk `tekenVierkant()` aan met een parameter naar keuze.
+
+3) Vraag de gebruiker om een lengte in te voeren voor de eerste vierkant.
+
+
+6) Test je creatie. Voeg ook commentaar toe.
+
+```python
+# tekent een vierkant door 4 keer: 'loop vooruit & draai' aan te roepen
+def tekenVierkant( lengte ):
+    for i in range (4):
+        turtle.forward(lengte)
+        turtle.right(90)
+```
+-->
+<!-- ANTWOORD
+import turtle, pcinput
+
+lengte = pcinput.getInteger("Hoe groot wil je de eerste vierkant hebben (kies een tienvoud)? ")
+
+# tekent een vierkant door 4 keer: 'loop vooruit & draai' aan te roepen
+def tekenVierkant( lengte ):
+    for i in range (4):
+        turtle.forward(lengte)
+        turtle.right(90)
+
+
+turtle.speed(800) # even wat sneller tekenen, anders val ik in slaap
+
+# teken een spirograaf patroon door heel vaak een vierkant te tekenen en te draaien
+while lengte > 0:
+    tekenVierkant( lengte )
+    turtle.right(15)
+    lengte -= 10
+
+turtle.done()
+-->
+
+<hr>
+<i><a href="turtleFor.html">Terug naar de opgaven over For-Loops met Turtle Graphics</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+
+
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+<script>
+</script>
+</body>
+</html>

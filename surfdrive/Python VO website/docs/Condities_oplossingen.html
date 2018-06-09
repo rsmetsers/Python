@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+    <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+
+<h1>Python Cursus. Hoofdstuk 6 - Condities</h1>
+<h1>Uitwerkingen Opgaven</h1>
+<hr>
+<i><a href="Condities.html">Terug naar de uitleg en gewone opgaven over Condities</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+<hr>
+
+<h3 id="opgave-6.1.1-batterij-energie"><span style="color:red">Opgave</span> 6.1.1 Batterij energie</h3>
+-- geen uitwerking --
+
+<h3 id="opgave-6.1.2.1-voorbeelden-van-vergelijkingen"><span style="color:red">Opgave</span> 6.1.2.1 Voorbeelden van vergelijkingen</h3>
+<pre class="python">
+groter = 5 > 2
+print( groter )
+groter = 5 < 2
+print( groter )
+print( type( groter ) )
+</pre>
+
+<h3 id="opgave-6.1.2.2-enkele-vergelijkingen-testen"><span style="color:red">Opgave</span> 6.1.2.2 Enkele vergelijkingen testen</h3>
+<pre class="python">
+# Enkele vergelijkingen testen.
+
+#Code die test of `1/2` groter dan, gelijk aan, of kleiner is dan `0.5`.
+print("1/2 is groter dan 0.5 is: ", 1/2 > 0.5 )
+print("1/2 is gelijk aan 0.5 is: ", 1/2 == 0.5 )
+print("1/2 is kleiner dan 0.5 is: ", 1/2 < 0.5 )
+
+#Doe dat ook voor `1/3` en `0.33`.
+print("1/3 is groter dan 0.33 is: ", 1/3 > 0.33)
+print("1/3 is gelijk aan 0.33 is: ", 1/3 == 0.33)
+print("1/3 is kleiner dan 0.33 is: ", 1/3 < 0.33)
+
+#Doe het dan ook voor `(1/3) * 3` en `1`.
+print("(1/3)*3 is groter dan 1 is: ", (1/3)*3 > 1 )
+print("(1/3)*3 is gelijk aan 1 is: ", (1/3)*3 == 1 )
+print("(1/3)*3 is kleiner of gelijk aan 1 is: ", (1/3)*3 <= 1 )
+</pre>
+
+
+<h3 id="opgave-6.1.2.3-foutmelding-bij-vergelijkingen"><span style="color:red">Opgave</span> 6.1.2.3 Foutmelding bij vergelijkingen</h3>
+-- geen uitwerking -- 
+
+<h3 id="opgave-6.1.2.4-controleren-op-gelijkheid-van-strings"><span style="color:red">Opgave</span> 6.1.2.4 Controleren op gelijkheid van strings <!-- OUDE TASK 13 --></h3>
+<pre class="python">
+ingevoerdeWachtwoord = "Fiets"
+
+if ingevoerdeWachtwoord == "Geheim":
+    print("Toegang geautoriseerd!")
+else:
+    print("Toegang geweigerd!")
+</pre>
+
+<h3 id="opgave-6.1.2.5-controleren-op-lengte-invoer"><span style="color:red">Opgave</span> 6.1.2.5 Controleren op lengte invoer <!-- OUDE TASK 14 --></h3>
+<pre class="python">
+gebruikersnaam = input.getString( "Hallo. Hoe heet jij?" )
+if len(gebruikersnaam) <= 2:
+    print("De ingevoerde naam is te kort. Geef je echte naam op!")
+else:
+    print("Hallo", gebruikersnaam)
+</pre>
+
+<h3 id="opgave-6.1.3-letters-in-een-woord"><span style="color:red">Opgave</span> 6.1.3 Letters in een woord <!-- OUDE TASK 5 --></h3>
+<pre class="python">
+woord = "informatica"
+
+if "a" in "informatica":
+    print("De letter a zit in het woord informatica")
+
+if "b" in "informatica":
+    print("De letter `b` zit in het woord informatica")
+
+if "q" not in "informatica":
+    print("De letter q zit niet in het woord informatica")
+</pre>
+
+<h3 id="opgave-6.1.4.1-logische-operator-expressies"><span style="color:red">Opgave</span> 6.1.4.1 Logische operator expressies <!-- OUDE TASK 6 --></h3>
+<pre class="python">
+naam = "Jan"
+leeftijd = 16
+
+print( naam == "Jan" or leeftijd == 17 )    # 1) Controleer of Jan heet of 17 jaar oud is.
+
+print( naam == "Jan" and not leeftijd == 23 ) #2) Controleer of Jan heet en niet 23 jaar oud is.
+</pre>
+
+<h3 id="opgave-6.1.4-het-is-weekend"><span style="color:red">Opgave</span> 6.1.4.2 Het is weekend! <!-- OUDE TASK 7--></h3>
+<pre class=""python">
+vandaag = "Zondag"
+
+if vandaag == "Zaterdag" or vandaag == "Zondag":
+    print( "Het is weekend!" )
+else:
+    print( "Helaas, geen weekend.")
+</pre>
+
+
+<h3 id="opgave-6.1.4-3"><span style="color:red">6.1.4.3 Haakjes in logische expressies <!-- OUDE TASK 8 --></h3>
+-- geen oplossing beschikbaar -- 
+
+<h3 id="opgave-6.2-blokken-bij-een-if"><span style="color:red">Opgave</span> 6.2 Blokken bij een if<!-- OUDE TASK 9 --></h3>
+-- geen oplossing --
+
+
+
+<h3 id="meerdere-ifs">Meerdere <code>if</code>s</h3>
+<p>Je hoeft je niet te beperken tot slechts één <code>if</code> statement. Je kunt er zoveel hebben als je wilt.</p>
+<pre class="python">
+x = 5
+if x == 5:
+    print( "x is 5" )
+if x > 4:
+    print( "x is groter dan 4" )
+if  x >= 5:
+    print( "x is groter of gelijk aan 5" )
+if x < 6:
+    print( "x is kleiner dan 6" )
+if x <= 5:
+    print( "x is kleiner of gelijk aan 5" )
+if x != 6 :
+    print( "x is ongelijk aan 6" )
+    </pre>
+
+<h3 id="opgave-6.2.1-meerdere-ifs"><span style="color:red">Opgave</span> 6.2.1 Meerdere if's <!-- OUDE TASK 10 --></h3>
+<!--Klik <a href="Condities_oplossingen.html#opgave-6.2.1-meerdere-ifs">hier</a> om je eigen oplossing te vergelijken met een model oplossing.-->
+-- geen oplossing beschikbaar --
+
+
+<h3 id="opgave-6.2.2-inspring-fouten"><span style="color:red">Opgave</span> 6.2.2 Inspring fouten <!-- OUDE TASK 11 --></h3>
+<pre class="python">
+x = 3
+y = 4
+if x == 3 and y == 4:
+    print( "x is 3" )
+    print( "y is 4" )
+if x > 2 and y < 5:
+    print( "x > 2" )
+    print( "y < 5" )
+if x < 4 and y > 3:
+    print( "x < 4" )
+    print( "y > 3" )
+</pre>
+<!-- PYCHARM TEST
+def test_afgedrukte_antwoord():
+    output = get_file_output()
+    answer = ['x is 3', 'y is 4', 'x > 2', 'y < 5', 'x < 4', 'y > 3']
+
+    if all(word in output for word in answer):
+        passed()
+    else:
+        failed("Afgedrukte antwoord is niet juist")
+
+ -->
+
+
+<h3 id="opgave-6.2.3-modulo"><span style="color:red">Opgave</span> 6.2.3 Modulo <!-- OUDE TASK 12 --></h3>
+<pre class="python">
+invoer = input("Geef een geheel getal. ")
+getal = int(invoer)
+
+if getal%2 == 0:
+  print(getal, "is even")
+else:
+  print(getal, "is oneven")
+</pre>
+
+
+
+<h3 id="opgave-6.2.4-stroomdiagram-naar-code-twee-weg-beslissing"><span style="color:red">Opgave</span> 6.2.4 Stroomdiagram naar code: twee-weg beslissing</h3>
+<pre class="python">
+x = 4
+if x > 2 :
+    print( "x > 2" )
+else:
+    print( "x <= 2" )
+</pre>
+
+<h3 id="opgave-6.2.5-geneste-conditie"><span style="color:red">Opgave</span> 6.2.5 Geneste conditie</h3>
+-- geen oplossing --
+
+
+
+<h3 id="opgave-6.2.6-elif"><span style="color:red">Opgave</span> 6.2.6 elif</h3>
+-- geen oplossing --
+
+
+<!--Het toevoegen van `else` is altijd optioneel. In de meeste gevallen waarin ik zelf meerdere `elif`s gebruik, zet ik wel een `else`, al was het maar voor het afvangen van fouten.
+-->
+
+
+
+<h3 id="opgave-6.2.7-bagagetoeslag"><span style="color:red">Opgave</span> 6.2.7 Bagagetoeslag <!-- OUDE TAAK 18 --></h3>
+<pre class="python">
+# Gewichten van bagage.
+gewicht = 19
+if gewicht > 20:
+    print( "Er moet een toeslag van $25 betaald worden voor baggage die te zwaar is." )
+else:
+    if gewicht < 20:
+        print( "Goede reis!" )
+    else:
+        print( "Poeh! Dat gewicht is precies goed!" )
+</pre>
+
+
+<h3 id="opgave-6.2.8-geneste-beslissing"><span style="color:red">Opgave</span> 6.2.8 Geneste beslissing <!-- OUDE TASK 19 --></h3>
+<pre class="python">
+x = 41
+if x%7 == 0:
+    # --- Hier begint een genest blok code ---
+    if x%11 == 0:
+        print( x, "is deelbaar door 7 en 11" )
+    else:
+        print( x, "is deelbaar door 7, maar niet door 11" )
+    # --- Hier eindigt een genest blok code ---
+elif x%11 == 0:
+    print( x, "is deelbaar door 11, maar niet door 7" )
+else:
+    print( x, "is niet deelbaar door 7 of 11" )
+</pre>
+<!--
+OUTPUT:
+41 is niet deelbaar door 7 of 11
+-->
+of, net iets anders, maar ook goed:
+
+<pre class="python">
+x = 41
+if x%7 == 0:
+    # --- Hier begint een genest blok code ---
+    if x%11 == 0:
+        print( x, "is deelbaar door 7 en 11" )
+    else:
+        print( x, "is deelbaar door 7, maar niet door 11" )
+    # --- Hier eindigt een genest blok code ---
+else:
+    # --- Hier begint een genest blok code ---
+    if x%11 == 0:
+        print( x, "is deelbaar door 11, maar niet door 7" )
+    else:
+        print( x, "is niet deelbaar door 7 of 11" )
+    # --- Hier eindigt een genest blok code ---
+</pre>
+
+
+<hr />
+<div id="afsluitendeOpgaves"><h2>Afsluitende Opgaven</h2></div>
+
+<h3 id="afsluitende-opgave-6.1-kiesgerechtigd"><span style="color:red">Afsluitende Opgave</span> 6.1: Kiesgerechtigd <!-- OUDE TASK 20 --></h3>
+
+<pre code="python">
+leeftijd =  int(input("Geef je leeftijd op"))
+
+if leeftijd >= 18:
+    print("Je mag stemmen!")
+else:
+    print("Je mag nog niet stemmen!")
+</pre>
+
+
+
+<h3 id="afsluitende-opgave-6.2-gelukkig"><span style="color:red">Afsluitende Opgave</span> 6.2: Gelukkig</h3>
+<pre code="python">
+reactie = input("Voel je je gelukkig?")
+
+if reactie == "JA" or reactie == "Ja" or reactie == "ja" or reactie == "J" or reactie == "j":
+    print("**  **")
+    print("**  **")
+    print("**  **")
+    print("\n")
+    print("*    *")
+    print(" **** ")
+else:
+    print("**  **")
+    print("**  **")
+    print("**  **")
+    print("\n")
+    print(" ****")
+    print("*    *")
+</pre>
+
+<h3 id="afsluitende-opgave-6.3-toegangsprijzen-efteling"><span style="color:red">Afsluitende opgave</span> 6.3: Toegangsprijzen Efteling <!-- OUDE TASK 25 --></h3>
+<pre code="python">
+#tarieven zonder korting
+tarief_volwassenen = 37.50
+tarief_kinderen = 35.00
+#tarieven met korting
+tarief_volwassenen_met_korting = 35.00
+tarief_kinderen_met_korting = 30.00
+
+
+#bestelling
+online_gekocht = False
+aantal_volwassenen = 2
+aantal_kinderen = 3
+
+if ( online_gekocht == False ):
+    kosten = (aantal_kinderen * tarief_kinderen) + (aantal_volwassenen * tarief_volwassenen)
+    print( "Ter plekke gekocht:", kosten )
+else:
+    kosten = (aantal_kinderen*tarief_kinderen_met_korting) + (aantal_volwassenen * tarief_volwassenen_met_korting)
+    print( "Online gekocht:", kosten )
+</pre>
+
+
+
+<h3 id="afsluitende-opgave-6.4-amerikaans-beoordelen"><span style="color:red">Afsluitende opgave</span> 6.4: Amerikaans beoordelen</h3>
+<pre code="python">
+# Amerikaans beoordelen.
+cijfer = 8
+
+if cijfer < 0 or cijfer > 10:
+    print( "Foutmelding: Cijfers moeten tussen 0 en 10 liggen!" )
+else:
+    if cijfer >= 8.5:
+        print( "A" )
+    else:
+        if cijfer >= 7.5:
+            print( "B" )
+        else:
+            if cijfer >= 6.5:
+                print( "C" )
+            else:
+                if cijfer >= 5.5:
+                    print( "D" )
+                else:
+                    print( "F" )
+</pre>
+
+<h3 id="optioneel-afsluitende-opgave-6.5-redeneerfout"><span style="color:red">Afsluitende Opgave</span> 6.5: Redeneerfout <!-- OUDE TASK 22 --></h3>
+<pre code="python">
+score = 98.0
+if score >= 60.0:
+    oordeel = 'D'
+elif score >= 70.0:
+    oordeel = 'C'
+elif score >= 80.0:
+    oordeel = 'B'
+elif score >= 90.0:
+    oordeel = 'A'
+else:
+    oordeel = 'F'
+print( oordeel )
+</pre>
+
+<h3 id="afsluitende-opgave-6.6-verschillende-klinkers"><span style="color:red">Afsluitende Opgave</span> 6.6: Verschillende klinkers</h3>
+<pre code="python">
+invoer = "De Montessoricollege is een leuke school"
+
+count = 0
+if ("a" in invoer) or ("A" in invoer):
+    count += 1
+if ("e" in invoer) or ("E" in invoer):
+    count += 1
+if ("i" in invoer) or ("I" in invoer):
+    count += 1
+if ("o" in invoer) or ("O" in invoer):
+    count += 1
+if ("u" in invoer) or ("U" in invoer):
+    count += 1
+
+if count == 0:
+    print( "Er zitten geen klinkers in de string." )
+elif count == 1:
+    print( "Er zit maar 1 verschillende klinker in de string." )
+else:
+    print( "Er zijn", count, "verschillende klinkers." )
+</pre>
+
+
+<h3 id="afsluitende-opgave-6.6-kwadratische-vergelijkingen"><span style="color:red">Afsluitende opgave</span> 6.7: Kwadratische vergelijkingen <!-- OUDE TASK 24 --></h3>
+<pre code="python">
+# Oplossen kwadratische vergelijkingen.
+a = 3.0
+b = 2.0
+c = 1.0
+
+# bereken de oplossing(en) met de abc-formule
+if a == 0:
+    if b == 0:
+        print( "Deze vergelijking heeft geen onbekende!" )
+    else:
+        print( "Er is 1 oplossing, namelijk", -c/b )
+else:
+    discriminant = b*b - 4*a*c
+    if discriminant < 0:
+        print( "Er zijn geen oplossingen" )
+    elif discriminant == 0:
+        print( "Er is 1 oplossing, namelijk", -b/(2*a) )
+    else:
+        print( "Er zijn 2 oplossingen, namelijk",
+                ( -b + math.sqrt(discriminant))/(2*a), "en",
+                ( -b - math.sqrt(discriminant))/(2*a) )
+</pre>
+
+
+
+
+
+<h3 id="afsluitende-opgave-6.8-brugklasadvies"><span style="color:red">Afsluitende opgave</span> 6.8: Brugklasadvies <!-- OUDE TASK 26 --></h3>
+<pre code="python">
+cito_score = int( input("Geef de cito score op:") )
+
+if cito_score < 501 or cito_score > 550:
+    print("Dit is een ongeldige score.")
+elif cito_score >=501 and cito_score <= 536:
+    print("Het advies is: vmbo")
+elif cito_score >=537 and cito_score <= 539:
+    print("Het advies is: havo")
+elif cito_score >=540 and cito_score <= 544:
+    print("Het advies is: havo/vwo")
+else:
+    print("Het advies is vwo")
+</pre>
+
+<h3 id="afsluitende-opgave-6.9-geldige-gebruikersnaam"><span style="color:red">Afsluitende opgave</span> 6.9 Geldige gebruikersnaam <!-- OUDE TASK 27 --></h3>
+<pre code="python">
+gebruikersnaam = "Piepje"
+
+if len(gebruikersnaam) < 2 or len(gebruikersnaam) > 20:
+    print("De lengte van de gebruikersnaam is niet goed.")
+elif ("?" in gebruikersnaam) or ("%" in gebruikersnaam) or ("&" in gebruikersnaam):
+    print("De volgende vreemde tekens mogen niet voorkomen: ?, %, & ")
+else:
+    print("Hallo", gebruikersnaam)
+</pre>
+
+<h3 id="afsluitende-opgave-6.10-app-voor-gewicht"><span style="color:red">Afsluitende opgave</span> 6.10 App voor gewicht <!-- OUDE TASK 28 --></h3>
+<pre code="python">
+nieuwe_gewicht = 72.6
+oude_gewicht = 72.5
+
+if nieuwe_gewicht > oude_gewicht:
+    verschil = (nieuwe_gewicht - oude_gewicht)*1000
+    print("Je bent ", round(verschil,0), "gram aangekomen.")
+
+elif nieuwe_gewicht == oude_gewicht:
+    print("Je weeg nog precies hetzelfde als de vorige keer.")
+
+else:
+    verschil = (oude_gewicht - nieuwe_gewicht)*1000
+    print("Je bent ", round(verschil,0), "gram afgevallen.")
+</pre>
+
+
+
+<!-- WEGGELATEN NL CIJFER NAAR AMERIKAANS CIJFER
+
+OUDE TAAK 21
+
+## Commentaar
+
+cijfer = 8
+
+if cijfer < 0 or cijfer > 10:
+    print( "Foutmelding: Cijfers moeten tussen 0 en 10 liggen!" )
+else:
+    if cijfer >= 8.5:
+        print( "A" )
+    else:
+        if cijfer >= 7.5:
+            print( "B" )
+        else:
+            if cijfer >= 6.5:
+                print( "C" )
+            else:
+                if cijfer >= 5.5:
+                    print( "D" )
+                else:
+                    print( "F" )
+
+-->
+<hr>
+
+<i><a href="Condities.html">Terug naar de uitleg en gewone opgaven over Condities</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+
+
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+<script>
+</script>
+</body>
+</html>

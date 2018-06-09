@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+    <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+
+<h1>Python Cursus.  Hoofdstuk 10 - Strings</h1>
+<h1>Uitwerkingen Opgaven</h1>
+
+<i><a href="Strings.html">Terug naar de theorie en opgaven over Strings</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+
+<hr>
+
+<h3 id="opgave-10.1-herhaling"><span style="color:red">Opgave</span> 10.1 Strings - korte herhaling</h3>
+Geen uitwerking beschikbaar.
+
+<h3 id="opgave-10.2.1-stings-over-meerdere-regels"><span style="color:red">Opgave</span> 10.2.1 Stings over meerdere regels</h3>
+Geen uitwerking beschikbaar.
+
+<h3 id="opgave-10.2.2-newline"><span style="color:red">Opgave</span> 10.2.2 Newline</h3>
+<pre class="python">
+print( "Hoi \n hallo" )
+</pre>
+
+
+<h3 id="opgave-10.3.1-letters-uit-een-woord"><span style="color:red">Opgave</span> 10.3.1 Letters uit een woord</h3>
+<pre class="python">
+woord = "fiets"
+print( woord[0] )
+print( woord[ len(woord)-1 ])
+</pre>
+
+
+
+<h3 id="opgave-10.3.2-aantal-voorkomens-in-een-woord"><span style="color:red">Opgave</span> 10.3.2 aantal voorkomens in een woord</h3>
+<pre class="python">
+ingevoerde_woord = input( "Typ een woord:" )
+
+letter_teller = 0
+for letter in range( 0, len( ingevoerde_woord ) ):
+    if( ingevoerde_woord[letter]=="e" ):
+        letter_teller += 1
+print("De letter e komt", letter_teller,"keer voor")
+</pre>
+
+
+<h3 id="opgave-10.4.1-strip"><span style="color:red">Opgave</span> 10.4.1 <code>strip()</code></h3>
+Geen uitwerking beschikbaar.
+
+
+<h3 id="opgave-10.4.2-upper-en-lower"><span style="color:red">Opgave</span> 10.4.2 <code>upper()</code> en <code>lower()</code></h3>
+<pre class="python">
+tekst = "Humpty Dumpty zat op de muur"
+print( tekst.find( "zat" ) )
+print( tekst.find( "t" ) )
+print( tekst.find( "q" ) )
+</pre>
+
+<h3 id="opgave-10.4.3-find"><span style="color:red">Opgave</span> 10.4.3 <code>find()</code></h3>
+Code:
+<pre class="python">
+print( tekst.find( "Lang" ) )
+print( tekst.find( "lang" ) )
+print( tekst.find( "leven" ) )
+print( tekst.find( "f" ) )
+</pre>
+
+Antwoord:
+<ul>
+<li>"Lang" begint op index 0
+<li>"lang" komt niet voor en levert daarom -1 op.
+<li>"leven" begint op index 13
+<li>"f" komt niet voor en levert daarom -1 op.
+</ul>
+
+
+<h3 id="opgave-10.4.4-replace"><span style="color:red">Opgave</span> 10.4.4 <code>replace()</code></h3>
+Strings zijn onveranderbaar.
+
+Met <code>print( tekst.replace( "zat op" , "viel van" ) )</code> heb je wat veranderd en afgedrukt, maar de variabele <code>tekst</code> heb je niet aangepast (Strings zijn onveranderbaar).<br>
+Als je de verandering wilt onthouden moet je dat in een aparte variabele opslaan.
+Bijvoorbeeld met:
+<pre class="python">tekst2 = tekst.replace( "zat op" , "viel van" )</pre>
+
+
+
+<div id="afsluitendeOpgaves"><h2>Afsluitende Opgaven</h2></div>
+
+<h3 id="afsluitende-opgave-scrabble"><span style="color:red">Afsluitende Opgave</span> 10.1 Scrabble</h3>
+<pre class="python">
+scrabble_woord = "Aquarium"
+
+q_teller = 0 #teller voor aantal voorkomens van Q
+
+#doorloop alle letters van het woord
+for letter in scrabble_woord:
+    letter = letter.upper() #zet letter om in een hoofdletter
+    if letter == "Q": #Q zit er in
+        q_teller += 1  #teller ophogen
+
+score = q_teller * 10 #score berekenen
+print( "Er zitten " + str(q_teller) + " voorkomens van Q in het woord, dus score is "+ str(score) )
+</pre>
+
+
+
+<h3 id="afsluitende-opgave-klinkerloos"><span style="color:red">Afsluitende Opgave</span> 10.2 Klinkerloos</h3>
+<pre class="python">
+#de klinkerloos functie:
+#We doorlopen alle letters uit de invoerstring en kopieren een letter alleen naar een nieuwe string als het geen klinker is
+#dan hoeven we daarna alleen de gekopieerde string return te geven:
+def klinkerloos( tekst ):
+
+
+    #om het onszelf makkelijker te maken, converteren we eerst de hele invoer naar kleine letters
+    #zo hoeven we niet ook op alle hoofdletters van de klinkers te checken
+    tekst = tekst.lower()
+
+    #maak een lege string voor de uitvoer:
+    uitvoer = ""
+
+    #doorloop de letters:
+    for letter in tekst:
+        if not(letter == "a" or letter == "o" or letter == "i" or letter == "y" or letter == "e" or letter == "u"):
+            #het is geen klinker, dus verander de letter in een hoofdletter en kopieer hem naar de uitvoer:
+            uitvoer = uitvoer + letter.upper()
+
+    #de uitvoer string bevat nu de tekst zonder klinkers, dus die geven we terug:
+    return uitvoer
+
+
+
+#testen van de functie:
+invoer = input("Geef een stuk tekst als invoer: ")
+print ( klinkerloos(invoer) )
+</pre>
+
+<h3 id="afsluitende-opgave-palindroom"><span style="color:red">Afsluitende Opgave</span> 10.3 Palindroom</h3>
+<pre class="python">
+#de palindroom functie:
+#We doorlopen alle letters uit de invoerstring en kopieren alle letters naar een nieuwe string
+# maar dan wel in omgekeerde volgorde:
+
+def isPalindroom(tekst):
+    #maak een lege string om de omgedraaide versie in op te bouwen:
+    omgedraaid = ""
+
+    #doorloop de letters:
+    for letter in tekst:
+        #door de letter er voor te plakken ipv er achter komt de string in omgekeerde volgorde:
+        omgedraaid =  letter + omgedraaid
+
+    #check of de omgedraaide string hetzelfde is als de originele:
+    if omgedraaid == tekst:
+        return True
+    else:
+        return False
+
+invoer = input("Welk woord wil je checken op palindroom-heid): ")
+if isPalindroom(invoer) == True:
+    print ("Het is een palindroom!")
+else:
+    print ("Het is geen palindroom...")
+
+</pre>
+
+<hr><i><a href="Strings.html">Terug naar de theorie en opgaven over Strings</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>

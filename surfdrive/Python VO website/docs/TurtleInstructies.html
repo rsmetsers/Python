@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+    <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+
+
+<h1 id="hoofdstuk---turtle-graphics-instructies-geven">Hoofdstuk - Turtle Graphics: Instructies geven</h1>
+
+<b>Let op:</b> log eerst in bij <a href="http://repl.it">repl.it</a><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+<hr>
+
+
+<p>In deze opdracht gaan we tekenen! Hiervoor gebruiken we de library turtle, waarmee je met Python een schildpad kunt ‘besturen’, die vervolgens lijntjes tekent.</td>
+</p>
+<h2 id="import-turtle">Import turtle</h2>
+<p>Om met de turtle te kunnen tekenen moet je de module <code>turtle</code> importeren.</p>
+<pre class="python">
+import turtle       # importeer turtle graphics module
+
+turtle.pendown()    # zet pen neer
+turtle.forward(100) # 150 stappen vooruit
+turtle.right(90)    # draai 90 graden naar rechts
+turtle.forward(100)
+
+turtle.done()       # klaar met tekenen, maar sluit tekenvenster niet meteen af
+</pre>
+<p>Zoals je ziet begint je code altijd met <code>import turtle</code> en eindigt met <code>turtle.done</code>. De <code>done()</code> aan het einde van het programma zorgt ervoor dat het venster niet meteen afgesloten wordt.</p>
+
+
+
+<h3 id="opgave-vierkantje-tekenen"><span style="color:red">Opgave</span> Vierkantje tekenen</h3>
+<iframe frameborder="0" width="100%" height="800px" src="https://repl.it/student_embed/assignment/855671/2bb77469a70c37b514042604cb9badac"></iframe>
+
+<!-- ANTWOORD
+import turtle       # importeer turtle graphics module
+
+turtle.pendown()    # zet pen neer
+turtle.forward(150) # 150 stappen vooruit
+turtle.right(90)    # draai 90 graden naar rechts
+turtle.forward(150)
+turtle.right(90)
+turtle.forward(150)
+turtle.right(90)
+turtle.forward(150)
+turtle.right(90)
+
+turtle.done()       # klaar
+-->
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="TurtleInstructies_oplossingen.html#opgave-vierkantje-tekenen">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+<h2 id="turtle-functies">Turtle functies</h2>
+<p>Een paar handige functies zijn:</p>
+<pre class="python">
+pendown()               # Zet pen op papier, alle bewegingen hierna worden zichtbaar
+penup()                 # Haal pen van papier, bewegingen hierna worden niet zichtbaar
+pencolor("darkViolet")  # Kleur van de pen. Je kunt ook kiezen uit black, tan, gold, blue, red, ...
+
+right(90)               # Draai 90 graden naar rechts
+left(45)                # Draai 45 graden naar links
+forward(10)             # Loop 10 stappen vooruit
+
+goto(40, 40)            # Zet de schildpad op positie (x,y). (0,0) is het midden van het scherm
+setheading(90)          # Kijkrichting. 90 is naar boven, 0 is naar rechts
+
+fillcolor()             # Hiermee vertel je met welke kleur je de figuur wilt inkleuren.
+begin_fill()            # Dit zet je aan het begin van de figuur die ingekleurd moet worden.
+end_fill()              # Dit zet je aan het eind van de figuur die ingekleurd moet worden.
+</pre>
+<p>Als je begint staat turtle altijd op (0,0) kijkend naar rechts.</p>
+
+
+<h3 id="opgave-huisje-tekenen"><span style="color:red">Opgave</span> Huisje tekenen</h3>
+<iframe frameborder="0" width="100%" height="800px" src="https://repl.it/student_embed/assignment/855673/509dfcb3a53972e7840c18590c746c44"></iframe>
+
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="TurtleInstructies_oplossingen.html#opgave-huisje-tekenen">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+<h3 id="opgave-nederlandse-vlag"><span style="color:red">Opgave</span> Nederlandse vlag</h3>
+<p>We gaan nu de Nederlandse vlag tekenen zoals hier is afgebeeld.</p>
+<div class="figure">
+<img src="http://course.cs.ru.nl/greenfoot/python/img/NL_flag.png" alt="Nederlandse vlag" /><p class="caption">Nederlandse vlag</p>
+</div>
+
+<iframe frameborder="0" width="100%" height="800px" src="https://repl.it/student_embed/assignment/855674/1458165ff0e9b764aef966b38a02d354"></iframe>
+
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="TurtleInstructies_oplossingen.html#opgave-nederlandse-vlag">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+<h2 id="meer-turtle-functies">Meer turtle functies</h2>
+<p>Een paar handige functies zijn:</p>
+<pre class="python">
+pendown()               # Zet pen op papier, alle bewegingen hierna worden zichtbaar
+penup()                 # Haal pen van papier, bewegingen hierna worden niet zichtbaar
+pencolor("darkViolet")  # Kleur van de pen. Je kunt ook kiezen uit black, tan, gold, blue, red, ...
+pensize(8)              # Dikte van de pen
+
+right(90)               # Draai 90 graden naar rechts
+left(45)                # Draai 45 graden naar links
+forward(10)             # Loop 10 stappen vooruit
+
+goto(40, 40)            # Zet de schildpad op positie (x,y). (0,0) is het midden van het scherm
+setheading(90)          # Kijkrichting. 90 is naar boven, 0 is naar rechts
+speed(x)                # Verhoog of verlaag de snelheid waarmee de schildpad loopt/tekent
+reset(x)                # Maak het doek leeg en zet de turtle weer in het midden
+
+fillcolor()             # Hiermee vertel je met welke kleur je de figuur wilt inkleuren.
+begin_fill()            # Dit zet je aan het begin van de figuur die ingekleurd moet worden.
+end_fill()              # Dit zet je aan het eind van de figuur die ingekleurd moet worden.
+
+circle(50)              # Teken een cirkel met straal van 50 pixels
+circle(60, 180)         # Teken een halve cirkel (180 graden) met staal 60
+end_fill()              # Dit zet je aan het eind van de figuur die ingekleurd moet worden.
+</pre>
+<p>Als je begint staat turtle altijd op (0,0) kijkend naar rechts.</p>
+<p>Op <a href="https://docs.python.org/3/library/turtle.html">https://docs.python.org/3/library/turtle.html</a> kun je nog veel meer informatie en functies vinden!</p>
+
+
+<h3 id="opgave-eigen-creatie"><span style="color:red">Opgave</span> Eigen creatie</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/855676/d3a74458a0b91a4ff78c5f323ff37854"></iframe>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+    <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+
+
+<h1 id="hoofdstuk---turtle-graphics-functies-parameters">Hoofdstuk - Turtle Graphics: Functies en parameters</h1>
+<h1>Uitwerkingen Opgaven</h1>
+
+
+<b>Let op:</b> log eerst in bij <a href="http://repl.it">repl.it</a><br>
+<i><a href="TurtleFunctiesParameters.html">Terug naar de opgaven van Turtle Graphics-Functies en Parameters</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+<hr>
+
+
+
+<h3 id="opgave-vierkant-kunst"><span style="color:red">Opgave</span> Vierkant-kunst</h3>
+<pre class="python">
+import turtle
+
+#De definitie voor het tekenen van een vierkant
+def vierkant():
+    turtle.forward(50)
+    turtle.right(90)
+    turtle.forward(50)
+    turtle.right(90)
+    turtle.forward(50)
+    turtle.right(90)
+    turtle.forward(50)
+    turtle.right(90)
+
+
+turtle.pendown()
+
+vierkant()  #aanroep: teken de vierkant!
+turtle.right(60)
+turtle.pencolor("red")
+
+vierkant()
+turtle.right(60)
+turtle.pencolor("blue")
+
+vierkant()
+turtle.right(60)
+turtle.pencolor("yellow")
+
+vierkant()
+turtle.right(60)
+turtle.pencolor("pink")
+
+vierkant()
+turtle.right(60)
+turtle.pencolor("green")
+
+turtle.done()
+</pre>
+
+
+<h3 id="opgave-dorp-tekenen"><span style="color:red">Opgave</span> Dorp tekenen</h3>
+<pre class="python">
+import turtle
+
+def tekenHuis():
+    #teken zwarte vierkant
+    turtle.forward(150)
+    turtle.right(90)
+    turtle.forward(150)
+    turtle.right(90)
+    turtle.forward(150)
+    turtle.right(90)
+    turtle.forward(150)
+
+    #teken een rood gevulde driehoek
+    turtle.fillcolor("red")
+    turtle.begin_fill()
+    # teken driehoek
+    turtle.right(30)
+    turtle.forward(150)
+    turtle.right(120)
+    turtle.forward(150)
+    turtle.end_fill()
+
+#teken eerste huis
+turtle.pendown()
+tekenHuis()
+turtle.penup()
+
+#teken tweede huis
+turtle.goto(300,0)
+turtle.setheading(0)
+turtle.pendown()
+tekenHuis()
+turtle.penup()
+
+#teken derde huis
+turtle.goto(-300,0)
+turtle.setheading(0)
+turtle.pendown()
+tekenHuis()
+turtle.penup()
+
+
+turtle.done()
+</pre>
+
+<h3 id="opgave-dorp-aanpassen"><span style="color:red">Opgave</span> Dorp aanpassen</h3>
+<pre class="python">
+import turtle
+
+def tekenHuis():
+    #teken bruine vierkant
+    turtle.fillcolor("brown")
+    turtle.begin_fill()
+    turtle.forward(150)
+    turtle.right(90)
+    turtle.forward(150)
+    turtle.right(90)
+    turtle.forward(150)
+    turtle.right(90)
+    turtle.forward(150)
+    turtle.forward(150)
+    turtle.end_fill()
+
+    #teken een rood gevulde driehoek
+    turtle.fillcolor("blue")
+    turtle.begin_fill()
+    # teken driehoek
+    turtle.right(30)
+    turtle.forward(150)
+    turtle.right(120)
+    turtle.forward(150)
+    turtle.end_fill()
+
+#teken eerste huis
+turtle.pendown()
+tekenHuis()
+turtle.penup()
+
+#teken tweede huis
+turtle.goto(300,0)
+turtle.setheading(0)
+turtle.pendown()
+tekenHuis()
+turtle.penup()
+
+#teken derde huis
+turtle.goto(-300,0)
+turtle.setheading(0)
+turtle.pendown()
+tekenHuis()
+turtle.penup()
+
+turtle.done()
+</pre>
+
+
+
+
+<h3 id="opgave-nederlandse-vlag-met-functies"><span style="color:red">Opgave</span> Nederlandse vlag met functies</h3>
+
+
+Van de code voor het tekenen van een balk maak je een definitie:
+
+<pre class="python">
+def balk():
+    turtle.forward(150)
+    turtle.right(90)
+    turtle.forward(40)
+    turtle.right(90)
+    turtle.forward(150)
+    turtle.right(90)
+    turtle.forward(40)
+    turtle.right(90)
+</pre>
+
+Die kun je dan zo aanroepen: `balk()`.<br>
+
+De uiteindelijke code komt er dan zo uit te zien:
+
+<pre class="python">
+import turtle
+
+def balk():
+    turtle.begin_fill()
+    turtle.forward(300)
+    turtle.right(90)
+    turtle.forward(40)
+    turtle.right(90)
+    turtle.forward(300)
+    turtle.right(90)
+    turtle.forward(40)
+    turtle.right(90)
+    turtle.end_fill()
+
+#Ga naar de beginpositie
+#turtle.penup()
+#turtle.goto(0, 0)
+
+turtle.pendown()
+#kleur: rood
+turtle.color("red")
+#teken eerste balk
+balk()
+turtle.goto(0, -40)
+turtle.color("white")
+balk()
+turtle.goto(0, -80)
+turtle.color("blue")
+balk()
+
+# Ga weer naar de beginpositie voor het tekenen van de omlijning
+turtle.penup()
+turtle.goto(0, 0)
+turtle.pendown()
+
+# kleur: zwart
+turtle.color("black")
+# Teken de zwarte omlijning
+turtle.forward(300)
+turtle.right(90)
+turtle.forward(120)
+turtle.right(90)
+turtle.forward(300)
+turtle.right(90)
+turtle.forward(120)
+
+#vlaggenmast
+turtle.right(180)
+turtle.forward(320)
+
+turtle.done()
+</pre>
+
+
+<h3 id="opgave-vierkant-met-parameters"><span style="color:red">Opgave</span> Vierkant met parameters</h3>
+<pre class="python">
+import turtle
+
+#FUNCTIE DEFINITIE
+#Definitie: Instructies voor het tekenen van een vierkant met een gegeven `grootte`
+def vierkant( grootte ):
+    turtle.forward( grootte )
+    turtle.right(90)
+    turtle.forward( grootte )
+    turtle.right(90)
+    turtle.forward( grootte )
+    turtle.right(90)
+    turtle.forward( grootte )
+    turtle.right(90)
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+turtle.pendown()
+
+vierkant(100) #Aanroep: teken een vierkant van 100px.
+vierkant(30)
+vierkant(90)
+vierkant(250)
+
+turtle.done()
+</pre>
+
+<h3 id="opgave-driehoeken-met-functies-en-parameters"><span style="color:red">Opgave</span> <!-- https://www.codeavengers.com/python/100#1.7 --> Driehoeken met functies en parameters</h3>
+<pre class="python">
+import turtle
+
+def tekenDriehoek( lengte_zijde ):
+    turtle.right(30)
+    turtle.forward( lengte_zijde )
+    turtle.right(120)
+    turtle.forward( lengte_zijde )
+    turtle.right(120)
+    turtle.forward( lengte_zijde )
+
+tekenDriehoek( 200 )     # teken driehoek
+tekenDriehoek( 300 )     # teken driehoek
+
+turtle.done()
+</pre>
+
+<h3 id="opgave-toren-van-driehoeken"><span style="color:red">Opgave</span> Toren van driehoeken <!-- Uni Python cursus --></h3>
+-- geen uitwerkingen beschikbaar --
+
+<h2 id="decompositie-toepassen">Decompositie toepassen</h2>
+<p>Je hebt in een vorige opdracht een functie geschreven om een huis te tekenen: <code>tekenHuis()</code>. Als je het huis verder opdeelt in logische delen zie je dat het huis uit een vierkant en een driehoek bestaat. Dit heet &quot;decompositie&quot;.</p>
+<p>Omdat je nu ook al geleerd hebt om met parameters te werken kun je nu logische componenten bouwen.</p>
+
+
+
+<h3 id="opgave-huis-tekenen-met-parameters"><span style="color:red">Opgave</span> Huis tekenen met parameters</h3>
+<pre class="python">
+import turtle
+
+#FUNCTIE DEFINITIES
+#Definitie: teken zwarte vierkant
+def tekenVierkant( lengte ):
+    turtle.forward(lengte)
+    turtle.right(90)
+    turtle.forward(lengte)
+    turtle.right(90)
+    turtle.forward(lengte)
+    turtle.right(90)
+    turtle.forward(lengte)
+
+#Definitie: teken een rood gevulde driehoek
+def tekenDak( lengte, kleur ):
+    turtle.fillcolor( kleur )
+    turtle.begin_fill()
+    # teken driehoek
+    turtle.right(30)
+    turtle.forward(lengte)
+    turtle.right(120)
+    turtle.forward(lengte)
+    turtle.end_fill()
+
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+turtle.pendown()
+tekenVierkant(150) #Aanroep: tekenVierkant met lengte 150
+tekenDak ( 150, "blue") #Aanroep: teken een blauw gevulde driehoek van lengte 150
+
+turtle.done()
+</pre>
+
+
+<h3 id="opgave-eigen-creatie-met-functies-en-parameters"><span style="color:red">Opgave</span> Eigen creatie met functies en parameters</h3>
+-- geen uitwerkingen beschikbaar --
+
+<hr> 
+
+<i><a href="TurtleFunctiesParameters.html">Terug naar de opgaven van Turtle Graphics-Functies en Parameters</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+<hr>
+
+<!-- EINDE TURTLE GRAPHICS FUNCTIES EN PARAMETERS-->

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+    <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+
+<h1 id="hoofdstuk-6---condities">Python Cursus. Hoofdstuk 8 - Eigen Functies</h1>
+<h1>Uitwerkingen</h1>
+
+<i><a href="EigenFuncties.html">Terug naar de uitleg en gewone opgaven over Eigen Functies</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+
+<hr />
+
+
+<h3 id="opgave-8.1-voordelen-van-functies"><span style="color:red">Opgave</span> 8.1 Voordelen van functies</h3>
+Je zou er een heel aantal moeten kunnen herkennen.
+
+
+<h3 id="opgave-8.2.1-bereken-cijfer"><span style="color:red">Opgave</span> 8.2.1 Bereken cijfer</h3>
+<pre class="python">
+#FUNCTIE DEFINITIE
+def berekenCijfer():
+    cijfer = (40 * 9) / 60 + 1
+    print( cijfer )
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+berekenCijfer()
+</pre>
+
+<h3 id="opgave-8.2.2.1-bereken-cijfer-met-parameters"><span style="color:red">Opgave</span> 8.2.2.1 Bereken cijfer met parameters</h3>
+<pre class="python">
+#FUNCTIE DEFINITIE
+def berekenCijfer( score ):
+    cijfer = score / 60 * 9 + 1
+    print( cijfer )
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+berekenCijfer(40)
+</pre>
+
+<h3 id="opgave-8.2.2.2-wat-voor-een-getal"><span style="color:red">Opgave</span> 8.2.2.2 Wat voor een getal?</h3>
+<pre class="python">
+#FUNCTIE DEFINITIE
+#Bepaald of een getal 0, pos of negatief is.
+def bepaalSoortGetal( getal ):
+    if getal < 0:
+        print("Het getal "+ str(getal) +" is kleiner dan 0.")
+    elif getal == 0:
+        print("Het getal "+ str(getal) +" is gelijk aan 0.")
+    else:
+        print("Het getal "+ str(getal) +" is groter dan 0.")
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+bepaalSoortGetal(-1)
+bepaalSoortGetal(0)
+bepaalSoortGetal(1)
+</pre>
+
+
+<h3 id="opgave-8.2.3-de-wielen-van-de-bus"><span style="color:red">Opgave</span> 8.2.3 De wielen van de bus</h3>
+
+<pre class="python">
+#FUNCTIE DEFINITIE
+def zingCouplet( onderdeel, actie ):
+    print( "De " + onderdeel + " van de bus " + actie )
+    print( actie +", " + actie )
+    print( "De " + onderdeel + " van de bus " + actie )
+    print( "Als de bus gaat rijden" )
+    print("\n")
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+zingCouplet("wielen", "draaien rond")
+zingCouplet("deuren", "gaan open en dicht")
+zingCouplet("wissers", "gaan heen en weer")
+zingCouplet("lichten", "gaan aan en uit")
+</pre>
+
+
+
+<h3 id="opgave-8.2.4-grootste-afdrukken"><span style="color:red">Opgave</span> 8.2.4 Grootste afdrukken</h3>
+
+<pre class="python">
+#FUNCTIE DEFINITIE
+def printGrootste( getal1, getal2 ):
+  if getal1 > getal2:
+    print(getal1, "is het grootste")
+  elif getal1 == getal2:
+    print(getal1, "en", getal2, "zijn even groot.")
+  else:
+    print(getal2, "is het grootste")
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+printGrootste(4,-3)
+printGrootste(0,0)
+printGrootste(2,1)
+</pre>
+
+<h3 id="opgave-8.2.5.1-grootste-retourneren"><span style="color:red">Opgave</span> 8.2.5 Grootste waarde retourneren</h3>
+<pre class="python">
+#FUNCTIE DEFINITIE
+def bepaalMaximum( getal1, getal2 ):
+  if getal1 >= getal2:
+    return getal1
+  else:
+    return getal2
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+grootsteWaarde = bepaalMaximum(4,-3)
+print( grootsteWaarde, "is het maximum")
+</pre>
+
+Of:
+<pre class="python">
+#FUNCTIE DEFINITIE
+def bepaalMaximum( getal1, getal2 ):
+  if getal1 > getal2:
+    return getal1
+  elif getal1 == getal2:
+    return getal1
+  else:
+    return getal2
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+grootsteWaarde = bepaalMaximum(4,-3)
+print( grootsteWaarde, "is het maximum")
+</pre>
+
+
+<h3 id="opgave-8.2.5-volume-van-een-balk"><span style="color:red">Opgave</span> 8.2.6 Volume van een balk</h3>
+<pre class="python">
+#VARIABELEN EN CONSTANTEN
+lengte = 4
+breedte = 3
+hoogte = 5
+
+#FUNCTIE DEFINITIE
+#deze functie levert de volume van een balk op
+#parameters zijn de lengte, breedte en hoogte
+def berekenVolumeBalk ( lengte, breedte, hoogte ):
+        volume = lengte * breedte * hoogte
+        return volume
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+berekendeVolume = berekenVolumeBalk( lengte, breedte, hoogte )
+print( "De volume van de balk is", berekendeVolume )
+</pre>
+
+
+<h3 id="opgave-8.2.7a-omrekenen-celsius-naar-fahrenheit"><span style="color:red">Opgave</span> 8.2.7.1 Omrekenen Celsius naar Fahrenheit</h3>
+<pre class="python">
+#VARIABELEN EN CONSTANTEN
+temperatuur_in_F = 96.3
+
+#FUNCTIE DEFINITIE
+def fahrenheitNaarCelsius( temp_fahrenheit ):
+    temp_celsius = ((temp_fahrenheit) - 32) * 5/9
+    temp_celsius = round( temp_celsius, 1 )
+    return temp_celsius
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+temperatuur_in_celcius = fahrenheitNaarCelsius( temperatuur_in_F )
+print("Temperatuur in Celsius is:", temperatuur_in_celcius)
+
+</pre>
+
+
+
+<h3 id="opgave-8.2.7b-gevoelstemperatuur"><span style="color:red">Opgave</span> 8.2.7.2 Gevoelstemperatuur</h3>
+<pre class="python">
+#FUNCTIE DEFINITIE
+#Deze functie geeft een opmerking over gevoelstemperatuur terug bij invoer van graden in Celsius
+def gevoelsTemperatuur( temperatuur ):
+    if temperatuur < -50:
+        return "Zo koud kan het nooit zijn!"
+    elif temperatuur < -10:
+        return "Dat is koud."
+    elif temperatuur < 10:
+        return "Dat is fris."
+    elif temperatuur < 50:
+        return "Dat is warm."
+    else:
+        return "Zo warm kan het nooit zijn!"
+
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+gevoel = gevoelsTemperatuur( 35.7 ) # temperatuur in celsius
+print ("Gevoelstemperatuur is", gevoel)
+</pre>
+
+<!--print( temperatuur_in_fahrenheit, "graden Fahrenheit is", temperatuur_in_celcius, "graden Celsius.", gevoel)-->
+
+<h3 id="opgave-8.2.7c-fahrenheit-omgezet-in-celsius-en-gevoelstemperatuur"><span style="color:red">Opgave</span> 8.2.7.3 Fahrenheit omgezet in Celsius en gevoelstemperatuur</h3>
+<pre class="python"
+#VARIABELEN EN CON>STANTEN
+temperatuur_in_fahrenheit = 96.3
+
+#FUNCTIE DEFINITIES
+#Deze functie rekent een temperatuur in Fahrenheit om naar Celsius
+def fahrenheitNaarCelsius( temp_fahrenheit ):
+    temp_celsius = ((temp_fahrenheit) - 32) * 5/9
+    temp_celsius = round( temp_celsius, 1 )
+    return temp_celsius
+
+#Deze functie geeft een opmerking over gevoelstemperatuur terug bij invoer van graden in Celsius
+def gevoelsTemperatuur( temperatuur ):
+    if temperatuur < -50:
+        return "Zo koud kan het nooit zijn!"
+    elif temperatuur < -10:
+        return "Dat is koud."
+    elif temperatuur < 10:
+        return "Dat is fris."
+    elif temperatuur < 50:
+        return "Dat is warm."
+    else:
+        return "Zo warm kan het nooit zijn!"
+
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIES
+temperatuur_in_celcius = fahrenheitNaarCelsius( temperatuur_in_fahrenheit )
+print("Temperatuur in Celsius is:", temperatuur_in_celcius)
+gevoel = gevoelsTemperatuur( temperatuur_in_celcius )
+print ("Gevoelstemperatuur is", gevoel)
+
+print( temperatuur_in_fahrenheit, "graden Fahrenheit is", temperatuur_in_celcius, "graden Celsius.", gevoel)
+</pre>
+
+
+
+
+
+
+
+
+<h3 id="opgave-8.2.9-functies-aanroepen-vanuit-andere-functies"><span style="color:red">Opgave</span> 8.2.9 Functies aanroepen vanuit andere functies</h3>
+
+De enige aanpassing is het toevoegen van een aanroep <code>tekenVierkant()</code> binnen <code>kiesKleurEnTekenVierkant()</code>:
+<pre class="python">
+import random, turtle
+
+#VARIABELEN EN CONSTANTEN:
+kleuren = ["red", "yellow", "purple"]
+
+#FUNCTIE DEFINITIES:
+#tekent een vierkant
+def tekenVierkant():
+  turtle.forward(100)
+  turtle.right(90)
+  turtle.forward(100)
+  turtle.right(90)
+  turtle.forward(100)
+  turtle.right(90)
+  turtle.forward(100)
+  turtle.right(90)
+
+#zet pen op een willekeurige kleur uit lijst 'kleuren'
+def kiesKleurEnTekenVierkant():
+   kleur = random.choice( kleuren )
+   turtle.pencolor(kleur)
+   tekenVierkant()
+
+#HOOFDPROGRAMMA: AANROEP VAN FUNCTIE
+kiesKleurEnTekenVierkant()
+
+turtle.done()
+</pre>
+
+<h3 id="opgave-8.2.10.1-iseven"><span style="color:red">Opgave</span> 8.2.10.1 isEven</h3>
+<pre class="python">
+#FUNCTIE DEFINITIE
+def isEven(getal):
+    if getal%2 == 0:
+        return True
+    else:
+        return False
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+antwoord = isEven(4)
+print(antwoord)
+
+antwoord = isEven(1)
+print(antwoord)
+
+antwoord = isEven(0)
+print(antwoord)
+</pre>
+
+<h3 id="opgave-8.3.1.1-scope-van-variabelen"><span style="color:red">Opgave</span> 8.3.1.1 Scope van variabelen</h3>
+
+Bij <b>deel A</b>:
+Zowel `dubbeltje` als `kwartje` zijn zichtbaar in de functie `geboren()`, omdat ze gedefinieerd zijn voordat de functie is aangeroepen, en omdat het blok code van de functie op een dieper niveau van inspringing zit.
+
+Bij <b>deel B</b>:
+De variabele `kwartje` lijkt een nieuwe waarde 5 te krijgen in de functie `geboren()`, wat ertoe leidt dat de functie nu claimt dat je na je geboorte niet minder waard kunt worden.
+Maar als daarna in het hoofdprogramma de waarde van `kwartje` wordt afgedrukt, zie je dat deze variabele nog steeds het woord 25 bevat.
+
+<i>Toelichting</i>
+De reden voor het verschil is dat de variabele `kwartje` in de functie een
+andere is dan de variabele `kwartje` in het hoofdprogramma.
+
+Door in een
+functie een waarde toe te kennen aan een variabele, wordt een nieuwe,
+"lokale" variabele gecre&euml;erd. En deze variabele wordt dan gebruikt voor
+de rest van de functie. De originele variabele `kwartje` bestaat nog steeds,
+maar is onzichtbaar geworden voor de functie omdat de functie een eigen
+variabele `kwartje` heeft gemaakt.
+
+
+<h3 id="opgave-8.3.1.1-scope-van-variabelen"><span style="color:red">Opgave</span> 8.3.1.2 Levensduur van variabelen</h3>
+
+De drie functies `printfruit_1()`, `printfruit_2()`, en `printfruit_3()` printen de waardes van de variabelen `appel` en `banaan`.
+
+In `printfruit_1()` worden de variabelen `appel` en `banaan` geprint die gedefinieerd zijn buiten de functie, aangezien de functie zelf geen variabelen met deze namen definieert.
+
+In `printfruit_2()`, is `appel` een parameter van de functie, wat betekent dat de variabele lokaal is voor de functie en, omdat het een parameter is, zijn waarde krijgt van buiten de functie. De waarde de parameter krijgt is de waarde van `kers`. `banaan` is een variabele die zijn waarde krijgt in de functie. Dit is daarom een nieuwe, lokale variabele `banaan`, die niks te maken heeft met de variabele banaan in het hoofdprogramma. Deze variabele krijgt de waarde van de variabele `kers`, die niet lokaal bekend is in de functie, dus wordt de variabele `kers` van het hoofdprogramma gebruikt. Dus krijgt de lokale variabele `banaan` de waarde "kers," en dat is dus de waarde die geprint wordt.
+
+In printfruit_3() zijn `appel` en `banaan` beide parameters, dus beide zijn
+lokaal voor de functie en krijgen hun initi&euml;le waarde bij de aanroep van
+de functie. De functie cre&euml;ert een lokale variabele `kers`, die
+onafhankelijk is van de variabele `kers` uit het hoofdprogramma, en geeft
+deze variabele de waarde "mango". De variabele `banaan` krijgt vervolgens de
+waarde van `kers`. Omdat al deze wijzigingen gemaakt worden met lokale
+variabelen, hebben ze geen invloed op de waardes van de variabelen in het
+hoofdprogramma.
+
+Waar het hier vooral om gaat is het feit dat, na de aanroep van functies die op allerlei manieren met de parameters spelen en die lokale variabelen aanmaken met dezelfde namen als variabelen in het hoofdprogramma, uit het afdrukken van de variabelen in het hoofdprogramma blijkt dat die allemaal nog steeds dezelfde waarde hebben als ze hadden voordat de functies werden aangeroepen. Zodra je probeert in een functie een variabele die bestaat in het hoofdprogramma een andere waarde te geven middels een assignment, wordt in plaats daarvan een nieuwe, lokale variabele gecre&euml;erd. Een dergelijke lokale variabele is compleet onafhankelijk van het hoofdprogramma. De levensduur van zo’n lokale variabele is de periode dat de functie wordt uitgevoerd. Parameters kun je ook beschouwen als lokale variabelen.
+
+Dit is een enorm krachtige eigenschap van functies: ze hoeven geen rekening te houden met variabelen die bestaan buiten de functie, aangezien iedere variabele die ze cre&euml;ren lokaal is voor de functie.
+
+
+<h3 id="opgave-8.3.2-constanten"><span style="color:red">Opgave</span> 8.3.2 Constanten</h3>
+
+Constanten zijn bijvoorbeeld jullie namen en het kopje "Gelijk gespeeld", die veranderen niet gedurende het spel.
+
+Variabelen zijn bijvoorbeeld de huidige score, die veranderd gedurende het spel.
+
+
+
+<h3 id="opgave-volume-van-een-balk-foutafhandeling"><span style="color:red">Opgave</span> 8.4 Volume van een balk met foutafhandeling</h3>
+<pre class="python">
+#VARIABELEN EN CONSTANTEN
+lengte_eerste_zijde = 4
+lengte_tweede_zijde = 3
+lengte_derde_zijde = 5
+
+#FUNCTIE DEFINITIE
+#deze functie levert de volume van een balk op
+#parameters zijn de lengte, breedte en hoogte
+#levert -1 op bij ongeldige invoer (parameter waarden 0 of kleiner)
+def volumeBalk ( lengte, breedte, hoogte ):
+    if lengte <= 0 or breedte <= 0 or hoogte <=0:
+        return -1
+    else:
+        volume = lengte * breedte * hoogte
+        return volume
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+volume = volumeBalk( lengte_eerste_zijde, lengte_tweede_zijde, lengte_derde_zijde )
+
+#antwoord afdrukken
+if volume == -1:
+    print( "De getallen kunnen niet worden gebruikt." ) #ongeldige invoer
+else:
+    print( "De volume van de balk is", volume )
+</pre>
+
+
+<h3 id="optioneel-meerdere-retourwaardes">OPTIONEEL: Meerdere retourwaardes</h3>
+<p>Je bent niet beperkt in je functies tot slechts één retourwaarde. Je kunt meerdere waardes in één keer retourneren door er komma’s tussen te zetten. Als je deze waardes wilt gebruiken in je programma na aanroep van de functies, moet je ze toekennen aan meerdere variabelen. Die zet je allemaal aan de linkerkant van de assignment operator, ook met komma’s ertussen. Dit kan ik het beste illustreren aan de hand van een voorbeeld:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> datetime
+
+<span class="kw">def</span> plusDagen( jaar, maand, dag, ophogen ):
+    startdatum = datetime.datetime( jaar, maand, dag )
+    einddatum = startdatum + datetime.timedelta( days=ophogen )
+    <span class="kw">return</span> einddatum.year, einddatum.month, einddatum.day
+
+y, m, d = plusDagen( <span class="dv">2015</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">55</span> )
+<span class="dt">print</span>( <span class="st">&quot;Nieuw datum is:&quot;</span>, y, <span class="st">&quot;/&quot;</span>, m, <span class="st">&quot;/&quot;</span>, d  )</code></pre>
+<p>De functie <code>plusDagen()</code> krijgt vier argumenten, namelijk integers die een jaar, een maand, een dag, en een aantal dagen die je wilt optellen bij de datum die wordt weergegeven door de eerste drie argumenten. Er worden drie waardes geretourneerd, namelijk een nieuw jaar, een nieuwe maand, en een nieuwe dag. De code stopt die in de variabelen <code>y</code>, <code>m</code>, en <code>d</code>.</p>
+<p>Als je de code hierboven bestudeert, vraag je je misschien af hoe <code>plusDagen()</code> precies werkt. Zoals ik al zei, het is een voordeel van functies dat zolang ze hun werk doen en je weet wat de argumenten zijn en wat er geretourneerd wordt, dat je niet hoeft te weten hoe de functie in elkaar zit. Je kunt de functie gebruiken zonder kennis van het interne proces. Dus je mag gewoon negeren wat je in <code>plusDagen()</code> ziet staan (overigens gebruikt de code van <code>plusDagen()</code> de <code>datetime</code> module, die aan de orde komt in hoofdstuk 27).</p>
+
+
+<h3 id="optioneel-opgave-8.2.8-oplosser-voor-kwadratische-vergelijkingen"><span style="color:red">(OPTIONEEL) Opgave</span> 8.2.8 Oplosser voor kwadratische vergelijkingen</h3>
+<pre class="python">
+import math
+
+# Deze functie lost een kwadratische vergelijking op.
+# De parameters zijn numerieke waardes voor A, B, and C in de vergelijking Ax**2 + Bx + C = 0. Het retourneert drie waardes.
+# De eerste is een integer 0, 1, of 2, die aangeeft hoeveel oplossingen er zijn. Daarna volgen de oplossingen.
+# Zonder oplossingen zijn beide 0. 1 oplossing wordt geretourneerd als de eerste van de twee, en de tweede is 0.
+def wortelformule( a, b, c ):
+    if a == 0:
+        if b == 0:
+            return 0, 0, 0
+        return 1, -c/b, 0
+    discriminant = b*b - 4*a*c
+    if discriminant < 0:
+        return 0, 0, 0
+    elif discriminant == 0:
+        return 1, -b/(2*a), 0
+    else:
+        return 2, (-b+ math.sqrt(discriminant))/(2*a), \
+            (-b- math.sqrt(discriminant))/(2*a)
+
+num, opl1, opl2 = wortelformule( float(input( "A: " )), float(input( "B: " )), float(input( "C: " ))  )
+if num == 0:
+    print( "Er zijn geen oplossingen" )
+elif num == 1:
+    print( "Er is 1 oplossing, namelijk", opl1 )
+else:
+    print( "Er zijn 2 oplossingen, namelijk:", opl1, "en", opl2 )
+</pre>
+
+<h3 id="opgave-8.3.4-module-binomiaalcoëfficiënt"><span style="color:red">Opgave</span> 8.3.4 Module binomiaalcoëfficiënt</h3>
+<pre class="python">
+# Berekent de faculteit van de paremeter n, een integer.
+# Retourneert de uitkomst als integer.
+def faculteit( n ):
+    waarde = 1
+    for i in range( 2, n+1 ):
+        waarde *= i
+    return waarde
+
+# Berekent n boven k; n en k zijn integer parameters;
+# Retourneert n boven k als integer (want dat is het altijd).
+def binomiaalcoefficient( n, k ):
+    if k > n:
+        return 0
+    antwoord = int( faculteit( n ) / (faculteit( k )*faculteit( n - k )) )
+    return antwoord
+
+def main():
+    print( faculteit( 5 ) )
+    print( binomiaalcoefficient( 8, 3 ) )
+
+if __name__ == '__main__':
+    main()
+</pre>
+
+
+<hr />
+<div id="afsluitendeOpgaves"><h2>Afsluitende Opgaven</h2></div>
+<h3 id="afsluitende-opgave-8.1-functie-voor-tafel-van-vermenigvuldiging."><span style="color:red">Afsluitende opgave</span> 8.1 Functie voor tafel van vermenigvuldiging.</h3>
+<pre class="python">
+#FUNCTIE DEFINITIE
+# Functie voor tafel van vermenigvuldiging.
+# tafel krijgt een integer als parameter. Het drukt de tafel van vermenigvuldiging voor deze integer af.
+def tafel( n ):
+    i = 1
+    while i <= 10:
+        print( i, "*", n, "=", i*n )
+        i += 1
+
+#HOOFDPROGRAMMA
+invoer = input( "Geef een getal: " )
+ingevoerde_getal = int ( invoer )
+tafel( ingevoerde_getal )
+</pre>
+
+
+<h3 id="afsluitende-opgave-8.2-letters-gemeen"><span style="color:red">Afsluitende opgave</span> 8.2 Aantal letters gemeen</h3>
+<pre class="python">
+#FUNCTIE DEFINTIE
+# de functie gemeen krijgt twee strings als parameters.
+# Het retourneert het aantal tekens dat de strings gemeen hebben.
+def bepaalLettersGemeen( woord1, woord2 ):
+    tekens_overeenkomstig = ""
+    for letter in woord1:
+        if (letter in woord2) and (letter not in tekens_overeenkomstig):
+            tekens_overeenkomstig += letter
+    aantal_tekens_overeenkomstig =  len( tekens_overeenkomstig )
+    return aantal_tekens_overeenkomstig
+
+
+#HOOFDPROGRAMMA
+#gebruiker om invoer vragen
+ingevoerdeWoord1 = input( "Geef woord 1: " )
+ingevoerdeWoord2 = input( "Geef woord 2: " )
+
+aantal_letters_gemeen = bepaalLettersGemeen( ingevoerdeWoord1, ingevoerdeWoord2 )
+
+#geef feedback aan gebruiker
+if aantal_letters_gemeen <= 0:
+    print( "De woorden delen geen tekens." )
+elif aantal_letters_gemeen == 1:
+    print( "De woorden hebben 1 teken gemeen." )
+else:
+    print( "De woorden hebben", aantal_letters_gemeen, "tekens gemeen." )
+</pre>
+
+
+<h3 id="afsluitende-opgave-8.3-vind-de-fout"><span style="color:red">Afsluitende opgave</span> 8.3 Vind de fout</h3>
+De functie moet wat retourneren, niet alleen afdrukken. Omdat het niets retourneert, wordt 'None' afgedrukt.
+
+
+
+<h3 id="afsluitende-opgave-8.4-munt-opgooien"><span style="color:red">Afsluitende opgave</span> 8.4 Munt opgooien</h3>
+<pre class="python">
+import random
+
+#FUNCTIE DEFINITIE
+def gooiMunt():
+  random.seed()
+  random_getal = random.randint (0, 1)
+  if random_getal == 0:
+    return("KOP")
+  else:
+    return("MUNT")
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+print( gooiMunt() )
+</pre>
+
+<h3 id="afsluitende-opgave-8.5-spelbord"><span style="color:red">Afsluitende opgave</span> 8.5 Spelbord</h3>
+<pre class="python">
+import turtle
+
+#CONSTANTEN EN VARIABELEN:
+BOARD_SIZE = 3
+CELL_SIZE = 100
+
+#FUNCTIE DEFINITIES:
+#tekent een rechthoek
+def drawSquare( CELL_SIZE ):
+    for i in range(4):
+        turtle.forward( CELL_SIZE )
+        turtle.right(90)
+
+
+#tekent een vierkant bord met formaat bord_size * bord_size
+def drawBord( BOARD_SIZE ):
+    for column_nr in range ( BOARD_SIZE ):
+     for row_nr in range (BOARD_SIZE ):
+
+        turtle.goto( CELL_SIZE*column_nr, -CELL_SIZE*row_nr )
+        turtle.pendown()
+        drawSquare( CELL_SIZE )
+        turtle.penup()
+
+#FUNCTIE AANROEPEN:
+drawBord( BOARD_SIZE )
+turtle.done()
+</pre>
+
+<hr />
+
+<i><a href="EigenFuncties.html">Terug naar de uitleg en gewone opgaven over Eigen Functies</a></i><br>
+<i><a href="EigenFunctiesAfsluitendeOpgaven.html">Naar de afsluitende opgaven over Eigen Functies</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+<script>
+</script>
+</body>
+</html>
+

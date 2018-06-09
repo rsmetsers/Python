@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+    <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+
+
+<h1 id="hoofdstuk-8---functies">Hoofdstuk 8 - Eigen Functies</h1>
+
+<b>Let op:</b> log eerst in bij <a href="http://repl.it">repl.it</a><br>
+<i><a href="EigenFunctiesAfsluitendeOpgaven.html">Meteen naar de Afsluitende Opgaven</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+<hr>
+
+
+<hr />
+<p>In hoofdstuk 5 beschreef ik hoe je eenvoudige functies kunt gebruiken, en hoe je functies kunt importeren uit modules. Dit hoofdstuk beschrijft hoe je je eigen functies en modules kunt creëren. Als je niet meer weet wat hoofdstuk 5 over functies zei, doe je er goed aan om dat hoofdstuk nogmaals door te nemen.</p>
+<hr />
+<h2 id="het-nut-van-functies">Het nut van functies</h2>
+<p>Waarom zou je functies willen creëren? Er zijn een hoop goede redenen:</p>
+<ul>
+<li>Je hebt een bepaalde functionaliteit voor je code nodig die je onafhankelijk van de rest van je programma wilt ontwikkelen. Als je een dergelijke functionaliteit in een functie stopt, betekent dat je nadat de functie gebouwd en getest is, je de functionaliteit kunt gebruiken zonder er verder over na te denken.</li>
+<li>Er is een bepaalde functionaliteit die je op meerdere plekken in je programma nodig hebt, en je kunt beter die functionaliteit in een functie stoppen die op meerdere plekken aangeroepen wordt, dan dat je de code naar al die plekken kopieert.</li>
+<li>Je hebt een functionaliteit in je code nodig die je kunt aansturen middels parameters. Als je dergelijke functionaliteit in een functie stopt, worden de parameters duidelijker en wordt de code gemakkelijker te lezen en te onderhouden.</li>
+<li>Je programma is te lang om de inhoud goed te blijven overzien. Door de code op te splitsen in functies blijf je veel langer grip houden op de inhoud en werking.</li>
+<li>Je hebt een probleem dat je te lastig vindt om in één keer op te lossen. Je besluit het probleem op te splitsen in meerdere sub-problemen die je wel aankunt. Functies zijn een natuurlijke manier om een dergelijke aanpak vorm te geven.</li>
+<li>Een programma dat diep geneste condities of loops bevat, wordt veel leesbaarder als dieper geneste gedeeltes in een functie geplaatst worden. • Het hergebruik van code wordt goed gefaciliteerd door delen van code in functies te plaatsen.</li>
+<li>Code die beschikbaar gesteld moet worden aan andere programmeurs, kan verspreid worden door gedocumenteerde functies in modules te plaatsen.</li>
+</ul>
+<p>Over het algemeen gesproken, kunnen de voordelen van functies worden samengevat als een middel om de volgende zaken te bewerkstelligen:</p>
+<ul>
+<li><em>Encapsulatie</em>: Het &quot;inpakken&quot; van een nuttig stuk code op zo’n manier dat het gebruikt kan worden zonder kennis van de specifieke werking van de code</li>
+<li><em>Generalisatie</em>: Het geschikt maken van een stuk code voor diverse situaties door gebruik te maken van parameters</li>
+<li><em>Beheersbaarheid</em>: Het verdelen van een complex programma in gemakkelijk-te-bevatten delen</li>
+<li><em>Onderhoudbaarheid</em>: Het gebruik maken van betekenisvolle functienamen en logische opdelingen om een programma beter leesbaar en begrijpbaar te maken</li>
+<li><em>Herbruikbaarheid</em>: Het faciliteren van de overdraagbaarheid van code tussen programma’s</li>
+<li><em>Recursie</em>: Het beschikbaar maken van een techniek die &quot;recursie&quot; heet, wat het onderwerp is van hoofdstuk 9.</li>
+</ul>
+<h3 id="opgave-8.1-voordelen-van-functies"><span style="color:red">Opgave</span> 8.1 Voordelen van functies</h3>
+<p>Welke van de bovenstaande dingen herken je uit de turtle graphics opdrachten?</p>
+
+
+<h2 id="het-creëren-van-functies">Het creëren van functies</h2>
+<p>Hoofdstuk 5 beschrijft hoe iedere functie een naam heeft, nul of meer parameters, en mogelijk een retourwaarde. Als je je eigen functies maakt, moet je al deze elementen definiëren. Je gebruikt de volgende syntax:</p>
+<pre><code>def &lt; functie_naam &gt; ( &lt; parameter_lijst &gt; ):
+    &lt; acties &gt;</code></pre>
+<p>Functienamen moeten voldoen aan dezelfde eisen als variabele namen, dat wil zeggen, alleen letters, cijfers, en underscores, en ze mogen niet beginnen met een cijfer. De parameter lijst bestaat uit nul of meer variabele namen, met komma’s ertussen. Het blok code onder de functie definitie moet inspringen.</p>
+<p>Let erop dat Python je functie definitie moet hebben &quot;gezien&quot; voordat je de functie kunt aanroepen. Het is daarom de gewoonte dat functie definities bovenin een programma staan, meteen onder de import statements.</p>
+<h3 id="hoe-python-omgaat-met-functies">Hoe Python omgaat met functies</h3>
+<p>Om functies te kunnen creëren, moet je begrijpen hoe Python met functies omgaat. Bekijk het kleine Python programma hieronder. Dit programma definieert één functie, die <code>totZiens()</code> heet. Deze functie heeft geen parameters. Het blok code behorende bij de functie heeft alleen een regel die de tekst &quot;Tot ziens!&quot; print.</p>
+<p>De rest van het programma is geen deel van de functie. Het deel van de code van een programma dat niet bij een functie hoort, noemt men meestal het &quot;hoofdprogramma&quot; (Engels: &quot;main program&quot;).
+Het hoofdprogramma print de regel &quot;Hallo!,&quot; en roept daarna de functie <code>totZiens()</code> aan.</p>
+<pre class="python">
+#FUNCTIE DEFINITIE
+def totZiens():
+    print( "Tot ziens!" )
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+print( "Hallo!" )
+totZiens()
+</pre>
+<p>Als je dit programma uitvoert, zie je dat het eerst de regel &quot;Hallo!&quot; afdrukt, en daarna &quot;Tot ziens!&quot; Dit gebeurt zo ondanks het feit dat Python de code van boven naar beneden uitvoert; Python komt <code>print( &quot;Tot ziens!&quot; )</code> tegen voordat <code>print( &quot;Hallo!&quot; )</code> wordt aangetroffen. De reden dat Python toch eerst de tekst &quot;Hallo!&quot; afdrukt is dat Python de code van een functie alleen uitvoert als de functie wordt aangeroepen. Een functie die Python tegenkomt voordat de functie wordt aangeroepen wordt alleen geregistreerd – Python onthoudt dat die functie bestaat, zodat hij kan worden uitgevoerd als het hoofdprogramma (of een andere functie) de functie aanroept.</p>
+
+
+<h3 id="opgave-8.2.1-bereken-cijfer"><span style="color:red">Opgave</span> 8.2.1 Bereken cijfer</h3>
+
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/890398/b5f619500c34cae4846e2c503e3bc375"></iframe>
+Deze opdracht wordt nog niet automatisch gecontroleerd. Klik <a href="EigenFuncties_oplossingen.html#opgave-8.2.1-bereken-cijfer">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+<!-- ANTWOORD
+
+
+#FUNCTIE DEFINITIE
+def berekenCijfer():
+    cijfer = 40 / 60 * 9 + 1
+    print( cijfer )
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+berekenCijfer()
+-->
+
+<h3 id="parameters-en-argumenten">Parameters en argumenten</h3>
+<p>Bekijk de code hieronder. De code definieert een functie <code>hallo()</code> met één parameter, <code>naam</code> geheten. De functie gebruikt <code>naam</code> in het blok code. Er is geen expliciete assignment die <code>naam</code> een waarde geeft. <code>naam</code> bestaat als variabele naam omdat het een parameter is van de functie.</p>
+<p>Als een functie wordt aangeroepen, moet je een waarde geven aan iedere (verplichte) parameter die voor de functie gedefinieerd is. Zo’n waarde wordt een &quot;argument&quot; genoemd. Dus, om de functie <code>hallo()</code> aan te roepen, moet een argument waarde voor de parameter naam gespecificeerd worden. Je plaatst een argument tussen de haakjes van de functie aanroep. Merk op dat het niet nodig is dat je in het hoofdprogramma weet dat de parameter <code>naam</code> wordt genoemd in de functie. Hoe hij heet is niet belangrijk. Het enige wat je moet weten is dat er een parameter is die een waarde nodig heeft, en liefst ook de beperkingen die de functie oplegt aan de waarde (bijvoorbeeld het type parameter dat de schrijver van de functie wilt dat je meegeeft).</p>
+<pre class="python">
+#FUNCTIE DEFINITIE
+def totZiens():
+    print( "Tot ziens!" )
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+print( "Hallo!" )
+totZiens()
+</pre>
+
+<p>Parameters van een functie zijn niet meer en niet minder dan variabelen die je kunt gebruiken in de functie, en die hun (initiële) waarde krijgen van buiten de functie (namelijk via de functie aanroep). De parameters zijn &quot;lokaal&quot; voor de functie, dat wil zeggen, ze kunnen niet benaderd worden door code die niet in het blok code van de functie staat, noch kunnen ze waardes van variabelen buiten de functie beïnvloeden. Meer hierover volgt later in dit hoofdstuk.</p>
+<h3 id="opgave-8.2.2.1-bereken-cijfer-met-parameters"><span style="color:red">Opgave</span> 8.2.2.1 Bereken cijfer met parameters</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/890399/74f882ca1c8a1c55310c063fd2d30492"></iframe>
+
+Deze opdracht wordt nog niet automatisch gecontroleerd. Klik <a href="EigenFuncties_oplossingen.html#opgave-8.2.2.1-bereken-cijfer-met-parameters">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+<!--OPGAVE
+<p>We maken de functie nu algemener zodat het voor verschillende scores gebruikt kan worden.</p>
+<p>Pas de functie <code>berekenCijfer</code> aan zodat deze een <code>score</code> als parameter krijgt en je cijfer vervolgens print.</p>
+<p>Test je functie met een score van 40.</p>-->
+<!-- ANTWOORD
+#FUNCTIE DEFINITIE
+def berekenCijfer( score ):
+    cijfer = (score * 9) / 60 + 1
+    print( cijfer )
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+berekenCijfer(40)
+-->
+
+<h3 id="opgave-8.2.2.2-wat-voor-een-getal"><span style="color:red">Opgave</span> 8.2.2.2 Wat voor een getal?</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/890400/a4a9b3385bd37675f64d7aa81d2ca3ac"></iframe>
+Deze opdracht wordt nog niet automatisch gecontroleerd. Klik <a href="EigenFuncties_oplossingen.html#opgave-8.2.2.2-wat-voor-een-getal">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+<!--OPGAVE
+<p>Schrijf een functie die een getal als parameter krijgt en afdrukt of deze kleiner is dan 0, gelijk is aan 0, of groter is dan 0.</p>
+<p>Dus, als je functie het getal 2 meekrijgt moet die afdrukken: &quot;Het getal 2 is groter dan 0.&quot;</p>
+<p>Roep je functie aan met geschikte testgevallen. Tip: Je hebt minstens drie functieaanroepen nodig om je functie te testen.</p>
+-->
+<!-- antwoord
+#FUNCTIE DEFINITIE
+#Bepaald of een getal 0, pos of negatief is.
+def bepaalSoortGetal( getal ):
+    if getal < 0:
+        print("Het getal "+ str(getal) +" is kleiner dan 0.")
+    elif getal == 0:
+        print("Het getal "+ str(getal) +" is gelijk aan 0.")
+    else:
+        print("Het getal "+ str(getal) +" is groter dan 0.")
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+bepaalSoortGetal(-1)
+bepaalSoortGetal(0)
+bepaalSoortGetal(1)
+
+-->
+
+
+
+<h3 id="functies-met-meerdere-parameters">Functies met meerdere parameters</h3>
+<p>Functies kunnen meerdere parameters hebben.</p>
+<p>Bijvoorbeeld, de volgende functie krijgt twee parameters en drukt een groet af:</p>
+<pre class="python">
+#FUNCTIE DEFINITIE
+def groet( naam, land):
+    print( "Hallo " + naam + " uit " + land + "!" )
+
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+groet( "Chico", "Spanje" )
+groet( "John", "Engeland" )
+</pre>
+
+<p>Nog een voorbeeld. De volgende functie krijgt twee parameters en vermenigvuldigt hun waardes, waarna het resultaat wordt afgedrukt:</p>
+<pre class="python">
+#FUNCTIE DEFINITIE
+def vermenigvuldig( getal1, getal2 ):
+    resultaat = getal1 * getal2
+    print( resultaat )
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+vermenigvuldig( 2020, 5278238 )
+vermenigvuldig( 2, 3 )
+</pre>
+
+<h3 id="opgave-8.2.3-de-wielen-van-de-bus"><span style="color:red">Opgave</span> 8.2.3 De wielen van de bus</h3>
+<iframe frameborder="0" width="100%" height="800px" src="https://repl.it/student_embed/assignment/890401/e5a73fb76bfc04d46e48b80531f31bd6"></iframe>
+Deze opdracht wordt nog niet automatisch gecontroleerd. Klik <a href="EigenFuncties_oplossingen.html#opgave-8.2.3-de-wielen-van-de-bus">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+<!-- OPGAVE
+Hieronder staat de tekst van het kinderlied `De wielen van de bus`.
+Zoals je ziet is er best veel herhaling.
+Elk couplet lijkt veel op de vorige, alleen het `onderdeel` en de bijbehorende `actie` is anders.
+
+1) Schrijf een functie `zingCouplet` dat de eerste couplet afdrukt. Hiervoor gebruik je vier keer een `print()`: een `print()` per tekstregel.
+
+2) Pas de functie `zingCouplet` aan zodat die twee parameters meekrijgt: een `onderdeel` en `actie`.
+
+3) In de code van de functie vervang je `wielen` door `onderdeel`, en `draaien rond` vervang je door `actie`.
+
+4) Roep je functie aan met `zingCouplet( "wielen", "draaien rond")`
+
+5) Roep vervolgens de functie een paar keer aan, telkens met andere parameters aan voor de volgende drie coupletten.
+
+Tip: Een lege regel druk je af met `print( "\n" )`. Bedenk waar je dat het handigst kan doen. Je hoeft je niet druk te maken om hoofdletters.
+
+
+De wielen van de bus draaien rond
+Draaien rond, draaien rond
+De wielen van de bus draaien rond
+Als de bus gaat rijden
+
+De deuren van de bus gaan open en dicht
+Gaan open en dicht, gaan open en dicht
+De deuren van de bus gaan open en dicht
+Als de bus gaat rijden
+
+De wissers van de bus gaan heen en weer
+Gaan heen en weer, gaan heen en weer
+De wissers van de bus gaan heen en weer
+Als de bus gaat rijden
+
+De lichten van de bus gaan aan en uit
+Gaan aan en uit, gaan aan en uit
+De lichten van de bus gaan aan en uit
+Als de bus gaat rijden
+
+-->
+
+
+<!-- ANTWOORD
+```python
+#FUNCTIE DEFINITIE
+def zingCouplet( onderdeel, actie ):
+    print( "De " + onderdeel + " van de bus " + actie )
+    print( actie +", " + actie )
+    print( "De " + onderdeel + " van de bus " + actie )
+    print( "Als de bus gaat rijden" )
+    print("\n")
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+zingCouplet("wielen", "draaien rond")
+zingCouplet("deuren", "gaan open en dicht")
+zingCouplet("wissers", "gaan heen en weer")
+zingCouplet("lichten", "gaan aan en uit")
+```
+-->
+
+
+<h3 id="opgave-8.2.4-grootste-afdrukken"><span style="color:red">Opgave</span> 8.2.4 Grootste afdrukken</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/890402/6b761b3eff7fc08fc132253ec457c171"></iframe>
+Deze opdracht wordt nog niet automatisch gecontroleerd. Klik <a href="EigenFuncties_oplossingen.html#opgave-8.2.4-grootste-afdrukken">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+<!--
+ Schrijf een functie `grootste` die twee getallen meekrijgt (bijvoorbeeld: `getal1` en `getal2`) en van de twee getallen afdrukt welke de grootste is.
+ Als ze even groot zijn druk je af "... en .... zijn even groot.". Op de plaats van ... staat een getal.
+
+Om te testen roep je je functie aan met:
+
+- `grootste(4,-3)`
+
+- `grootste(0,0)`
+
+- `grootste(2,1)`
+-->
+<!-- ANTWOORD
+```python
+#FUNCTIE DEFINITIE
+def grootste( getal1, getal2 ):
+  if getal1 > getal2:
+    print(getal1, "is het grootste")
+  elif getal1 == getal2:
+    print(getal1, "en", getal2, "zijn even groot.")
+  else:
+    print(getal2, "is het grootste")
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+grootste(4,-3)
+grootste(0,0)
+grootste(2,1)
+```
+-->
+
+
+
+
+<h3 id="return"><code>return</code></h3>
+
+<p>Parameters worden gebruikt om informatie van buiten de functie naar de functie toe te communiceren. Vaak wil je ook informatie vanuit de functie naar het programma buiten de functie toe communiceren. Daartoe dient het commando <code>return</code>.</p>
+<p>Als Python <code>return</code> tegenkomt in een functie, beëindigt dat de functie. Python gaat dan verder met de code vlak na de plek waar de functie werd aangeroepen. Je mag achter het woord <code>return</code> nul, één, of meerdere waardes of variabelen opnemen. Deze waardes worden dan gecommuniceerd naar het programma buiten de functie. Als je de waardes wilt gebruiken, moet je zorgen dat ze in een variabele terecht komen. Dat krijg je voor elkaar door de functie-aanroep te doen als een assignment naar een variable.</p>
+<p>Bijvoorbeeld, stel dat een functie wordt aangeroepen als:<br> <code>&lt; variabele &gt; = &lt; functie &gt; ()</code>.<br> De functie maakt een berekening, die wordt opgeslagen in een <code>&lt; resultaat_variabele &gt;</code>. Het commando <code>return &lt; resultaat_variabele &gt;</code> beëindigt de functie, waarna de waarde die in <code>&lt; resultaat_variabele &gt;</code> staat &quot;uit de functie komt.&quot; Omdat <code>&lt; functie &gt; ()</code> was aangeroepen via een assignment, komt de waarde van <code>&lt; resultaat_variabele &gt;</code> uiteindelijk terecht in <code>&lt; variabele &gt;</code>.</p>
+<p>Bekijk het volgende voorbeeld:</p>
+<pre class="python">
+import math
+
+#FUNCTIE DEFINITIE
+#deze functie levert de lengte van de schuine zijde op van een rechthoekige driehoek
+def pythagoras( a, b ):
+    c_kwadraat = a*a + b*b
+    c = math.sqrt (c_kwadraat)
+    return c
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+lengte_schuine_zijde = pythagoras( 3, 4 )
+print( lengte_schuine_zijde )
+</pre>
+
+<p>De functie <code>pythagoras()</code> berekent de wortel van de som van de kwadraten van de parameters. De uitkomst wordt via een <code>return</code> statement geretourneerd.</p>
+<p>Het hoofdprogramma &quot;vangt&quot; de waarde door het toekennen van de waarde aan de variabele <code>lengte_schuine_zijde</code>. Daarna wordt de inhoud van <code>lengte_schuine_zijde</code> geprint.</p>
+
+
+<h3 id="opgave-8.2.5.1-grootste-retourneren"><span style="color:red">Opgave</span> 8.2.5 Grootste waarde retourneren</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/890403/6d09dff4eb44a7f6c15e8a0a3298f074"></iframe>
+Deze opdracht wordt nog niet automatisch gecontroleerd. Klik <a href="EigenFuncties_oplossingen.html#opgave-8.2.5.1-grootste-retourneren">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+<!--
+ Schrijf een functie `bepaalMaximum` die twee getallen meekrijgt (bijvoorbeeld: `getal1` en `getal2`) en de grootste waarde retourneert. Als ze even groot zijn, geef dan een van de twee getallen terug (welke maakt niet uit, want ze zijn toch even groot).
+ Sla dat getal op in een variabele.
+ Druk vervolgens af: ".. is de grootste." Op de plaats van ... staat een getal.
+
+Om te testen roep je het functie aan met:
+
+bepaalMaximum(4,-3)
+
+bepaalMaximum(0,0)
+
+bepaalMaximum(2,1)
+-->
+
+
+
+
+
+<h3 id="het-verschil-tussen-return-en-print">Het verschil tussen <code>return</code> en <code>print</code></h3>
+<p>Er is een verschil tussen een functie die een waarde retourneert, en een functie die een waarde print. Vergelijk de volgende twee stukken code:</p>
+<pre class="python">
+#FUNCTIE DEFINITIE
+#rekent kilometers om naar meters en drukt het resultaat af
+def printKmNaarMeters(afstand_in_km):
+    afstand_in_m = afstand_in_km * 1000
+    print( afstand_in_m )
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+printKmNaarMeters( 4 )
+</pre>
+
+<p>en:</p>
+<pre class="python">
+#FUNCTIE DEFINITIE
+#rekent kilometers om naar meters en levert het resultaat op
+def returnKmNaarMeters(afstand_in_km):
+    afstand_in_m = afstand_in_km * 1000
+    return( afstand_in_m )
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+afstand = returnKmNaarMeters( 4 )
+print( afstand )
+</pre>
+<p>De functie <code>printKmNaarMeters()</code> kan voor slechts één doel gebruikt worden, namelijk het tonen van het antwoord. De functie <code>returnKmNaarMeters()</code> kan echter gebruikt worden waar je ook nog iets met het antwoord wilt doen: om het te tonen, om het te gebruiken in een berekening, of om het aan een variabele toe te kennen.</p>
+<p>Bijvoorbeeld, bij de volgende code wordt het antwoordt van <code>returnKmNaarMeters()</code> gebruikt voor de berekening van de snelheid:</p>
+<pre class="python">
+#FUNCTIE DEFINITIE
+#rekent kilometers om naar meters en levert het resultaat op
+def returnKmNaarMeters(afstand_in_km):
+    afstand_in_m = afstand_in_km * 1000
+    return( afstand_in_m )
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+afstand = returnKmNaarMeters(4)
+tijd = 100 #tijd in seconden
+
+snelheid = afstand / tijd #berekent snelheid in m/s
+print( snelheid )
+</pre>
+
+<p>Met de functie <code>printKmNaarMeters()</code> had dit niet gekund omdat die geen resultaat (of antwoord) teruggeeft.</p>
+<p>Dus als je een functie wilt maken die een waarde oplevert die elders in je code gebruikt moet worden, dan moet die functie de waarde middels een <code>return</code> retourneren.</p>
+
+
+
+<h3 id="opgave-8.2.5-volume-van-een-balk"><span style="color:red">Opgave</span> 8.2.6 Volume van een balk</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/890405/6b2f50d9e8e2943ed284412d679afe8e"></iframe>
+Deze opdracht wordt nog niet automatisch gecontroleerd. Klik <a href="EigenFuncties_oplossingen.html#opgave-8.2.5-volume-van-een-balk">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+<!--
+Schrijf een functie die de volume van een balk berekent en oplevert.
+De functie krijgt drie parameters mee: lengte, breedte en hoogte.
+In je hoofdprogramma druk je het resultaat van je functie af..
+
+Tips:
+
+Definieer de variabelen en constanten altijd boven in je bestand, dat houd je code overzichtelijk.
+
+Mocht je het vergeten zijn, de volume van een balk bereken je door de lengte, breedte en hoogte met elkaar te vermenigvuldigen.
+-->
+
+
+
+<h3 id="de-functie-machine">De functie machine</h3>
+<p>Als je nog steeds moeite hebt met begrijpen hoe functies werken, denk dan als volgt:</p>
+<p>Een functie is net een grote machine, bijvoorbeeld, een machine die pannenkoeken bakt. Er zijn input sleuven aan de bovenkant, met labels &quot;melk,&quot; &quot;eieren,&quot; en &quot;meel.&quot; Dat zijn de functie parameters. Je kunt beïnvloeden wat voor pannenkoeken de machine bakt door de juiste ingrediënten in de inputs te stoppen; bijvoorbeeld, als je volkoren pannenkoeken wilt, doe je volkoren meel in de &quot;meel&quot; input. Natuurlijk kunnen de zaken dramatisch fout lopen als je eieren in de &quot;melk&quot; input doet – of als je probeert een kat in de &quot;meel&quot; input te stoppen.</p>
+<p>Als de inputs gevuld zijn, begint de machine te ratelen. Je wacht geduldig naast de output sleuf die (tot niemand’s verrassing) het label &quot;return&quot; draagt. Na enige tijd verschijnt er een pannenkoek in de uitvoer. Die pannenkoek is de retourwaarde die de machine heeft geproduceerd.</p>
+<p>De machine heeft ook een display. Als je iets incorrects in de machine stopt, komt daar wellicht een boodschap op in de trant van &quot;Kat zit vast in machine, herstarten alsjeblieft.&quot; Dit display is waar alles dat in de machine geprint wordt verschijnt.</p>
+<p>Je snapt wel dat het zinloos is als, nadat je de juiste ingrediënten geladen hebt, de machine alleen maar op de display toont &quot;Pannenkoek gereed!&quot; Je wilt een echte pannenkoek. Daarom moet de machine de pannenkoek aanreiken via de &quot;return,&quot; waarvandaan jij hem kunt aannemen en &quot;assignen&quot; aan je lunch. Een tekst alleen is onvoldoende.</p>
+<p>Een van de aardige dingen van de pannenkoek machine is dat zelfs als jij niet weet hoe je een pannenkoek moet bakken, je toch pannenkoeken kunt krijgen als je maar de juiste ingrediënten verstrekt. Dat is ook aardig aan functies: ze kunnen complexe zaken voor je regelen, zonder dat je hoeft te weten hoe ze dat doen.</p>
+
+
+De volgende drie opdrachten horen bij elkaar.
+<h3 id="opgave-8.2.7a-omrekenen-celsius-naar-fahrenheit"><span style="color:red">Opgave</span> 8.2.7.1 Omrekenen Celsius naar Fahrenheit</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/890408/1619c00af2d854f2f2a5f05c73b07918"></iframe>
+Deze opdracht wordt nog niet automatisch gecontroleerd. Klik <a href="EigenFuncties_oplossingen.html#opgave-8.2.7a-omrekenen-celsius-naar-fahrenheit">hier</a> om je eigen oplossing te vergelijken met een model oplossing. Zorg er wel voor dat je hem goed hebt, anders kom je bij een van de volgende opdrachten niet verder.
+<!--
+Je hebt een penvriend in Amerika. Hij schrijft dat het bij hem 90 graden is! Stomverbaasd hoe het zo warm kan zijn, vraag je hulp aan het internet. Je komt erachter dat hij praat over temperatuur in Fahrenheit, terwijl jij dacht aan graden Celsius. Om goed met elkaar te kunnen praten over het weer, besluit jij een website te maken, die Fahrenheit in Celsius kan omzetten en andersom. Hier is de formule voor het omrekenen.
+
+Temperatuur in Celsius = ((Temperatuur in Fahrenheit) - 32) * 5/9
+
+Schrijf een functie `fahrenheitNaarCelsius( temp_fahrenheit )` dat een temperatuur in Fahrenheit omrekent naar Celsius. Rond graden Celsius af op 1 decimaal.
+Roep je functie aan, met de variabele temperatuur_in_F.
+Sla het resultaat op in een variabele.
+Daarna druk je de variabele af.
+
+Hint: Bij hoofdstuk 5 heb je deze berekening al uitgevoerd, maar nu moet je het met een functie doen.
+-->
+
+<!-- ANTWOORD
+#VARIABELEN EN CONSTANTEN
+temperatuur_in_F = 96.3
+
+#FUNCTIE DEFINITIE
+def fahrenheitNaarCelsius( temp_fahrenheit ):
+    temp_celsius = ((temp_fahrenheit) - 32) * 5/9
+    temp_celsius = round( temp_celsius, 1 )
+    return temp_celsius
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+temperatuur_in_celcius = fahrenheitNaarCelsius( temperatuur_in_F )
+print("Temperatuur in Celsius is:", temperatuur_in_celcius)
+
+-->
+
+
+
+<h3 id="opgave-8.2.7b-gevoelstemperatuur"><span style="color:red">Opgave</span> 8.2.7.2 Gevoelstemperatuur</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/890411/ffc88569da90594810b46696e57f1d3e"></iframe>
+Deze opdracht wordt nog niet automatisch gecontroleerd. Klik <a href="EigenFuncties_oplossingen.html#opgave-8.2.7b-gevoelstemperatuur">hier</a> om je eigen oplossing te vergelijken met een model oplossing. Zorg er wel voor dat je hem goed hebt, anders kom je bij een van de volgende opdrachten niet verder.
+<!--Schrijf een functie `gevoelsTemperatuur( temperatuur )` dat voor de Celsius temperatuur aangeeft hoe warm dat gevoelsmatig is. Voeg voor de functie een regel commentaar toe om uit te leggen wat de functie binnenkrijgt en wat voor iets het retourneert.
+
+Om een snel overzicht te krijgen in hoe warm dat gevoelsmatig is, heb jij een schema gemaakt.
+
+Graden Celsius     Beoordeling
+minder dan -50	Zo koud kan het nooit zijn!
+tussen -50 en -10     Dat is koud.
+tussen -10 en 10      Dat is fris.
+tussen 10 en 50       Dat is warm.
+groter dan 50           Zo warm kan het nooit zijn!
+
+-->
+
+Nu ga je de oplossingen van de vorige twee opgaven combineren tot een oplossing.
+<p>Het kan handig zijn om een nieuwe tab-blad in je Browser te openen (met CTRL+T). Daar kun je in verder werken terwijl je in deze tab-blad terug gaat (met pijltje terug) naar je uitwerkingen van de vorige twee opgaven.</p>
+<h3 id="opgave-8.2.7c-fahrenheit-omgezet-in-celsius-en-gevoelstemperatuur"><span style="color:red">Opgave</span> 8.2.7.3 Fahrenheit omgezet in Celsius en gevoelstemperatuur</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/890412/1365b892890735d04fba755530856c99"></iframe>
+Deze opdracht wordt nog niet automatisch gecontroleerd. Klik <a href="EigenFuncties_oplossingen.html#opgave-8.2.7b-gevoelstemperatuur">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+<!--
+Schrijf een programma dat, gegeven een temperatuur in Fahrenheit, deze omrekent naar Celsius en de bijbehorende gevoelstemperatuur print.
+
+
+Gebruik hiervoor beide van de vorige twee functies `fahrenheitNaarCelsius( temp_fahrenheit )` en `gevoelsTemperatuur( temperatuur )`. Deze heb je bij de vorige opgaven gemaakt. Neem je eigen code over. Het kan handig zijn om twee tabs in je browser open te hebben (CTRL+T), en een aantal keer op pijltje terug klikken om naar je eigen uitwerkingen terug gaan.
+
+Zorg ervoor dat al je functies netjes bij elkaar staan onder het kopje FUNCTIE DEFINITIES, en je functieaanroepen bij HOOFDPROGRAMMA.
+
+Uiteindelijk moet er iets afgedrukt worden wat lijkt op:
+"96.3 graden Fahrenheit is 35.7 graden Celsius. Dat is warm."
+-->
+
+
+<h3 id="functies-aanroepen-vanuit-functies">Functies aanroepen vanuit functies</h3>
+<p>Functies mogen andere functies aanroepen, zolang die andere functies maar bekend zijn bij de aanroepende functie. Bijvoorbeeld, hieronder zie je hoe de functie <code>afstand()</code> de functie <code>pythagoras()</code> gebruikt om de afstand te berekenen tussen twee punten in een 2-dimensionale ruimte.</p>
+<pre class="python">
+import math
+
+#FUNCTIE DEFINITIES
+#deze functie levert de lengte van de schuine zijde op van een rechthoekige driehoek
+def pythagoras( a, b ):
+    if a <= 0 or b <= 0:
+        return -1
+
+    c_kwadraat = a*a + b*b
+    c = math.sqrt (c_kwadraat)
+    return c
+
+#berekent de afstand tussen twee coördinaten maakt gebruik van de functie pythagoras
+def afstand( x1, y1, x2, y2 ):
+    return pythagoras( abs( x1 - x2 ), abs( y1 - y2 ) )
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+print( afstand( 1, 1, 4, 5 ) )
+</pre>
+<p><code>afstand()</code> kent <code>pythagoras()</code>, omdat <code>pythagoras()</code> gedefinieerd is vóór <code>afstand()</code> is aangeroepen.</p>
+
+<h3 id="opgave-8.2.9-functies-aanroepen-vanuit-andere-functies"><span style="color:red">Opgave</span> 8.2.9 Functies aanroepen vanuit andere functies</h3>
+<iframe frameborder="0" width="100%" height="800px" src="https://repl.it/student_embed/assignment/890417/ccfc24919a01d67ec2885721ca20ac2b"></iframe>
+Deze opdracht wordt nog niet automatisch gecontroleerd. Klik <a href="EigenFuncties_oplossingen.html#opgave-8.2.9-functies-aanroepen-vanuit-andere-functies">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+<!-- OPGAVE
+Hiernaast staan twee definities:
+tekenVierkant():die een vierkant tekent.
+
+kiesKleurEnTekenVierkant() die een willekeurige kleur kiest voor de pen. Maar, deze doet niet wat zijn naam beloofd, hij tekent namelijk geen vierkant.
+
+Pas de code van de functie kiesKleurEnTekenVierkant() zodat na het kiezen van de kleur, meteen de functie  tekenVierkant() wordt aangeroepen.
+-->
+<!-- ANTWOORD
+import random, turtle
+
+#VARIABELEN EN CONSTANTEN:
+kleuren = ["red", "yellow", "purple"]
+
+#FUNCTIE DEFINITIES:
+#tekent een vierkant
+def tekenVierkant():
+  turtle.forward(100)
+  turtle.right(90)
+  turtle.forward(100)
+  turtle.right(90)
+  turtle.forward(100)
+  turtle.right(90)
+  turtle.forward(100)
+  turtle.right(90)
+
+#zet pen op een willekeurige kleur uit lijst 'kleuren'
+def kiesKleurEnTekenVierkant():
+   kleur = random.choice( kleuren )
+   turtle.pencolor(kleur)
+   tekenVierkant()
+
+#HOOFDPROGRAMMA: AANROEP VAN FUNCTIE
+kiesKleurEnTekenVierkant()
+
+turtle.done()
+-->
+
+<!-- OUD... VOLGORDE VAN FUNCTIES BLIJKBAAR GEEN PROBLEEM IN REPL
+<p>Voer de code in het voorbeeld uit. Zet nu in de code de definitie van <code>afstand()</code> boven de definitie van <code>pythagoras()</code>. Welk foutmelding krijg je?</p>
+-->
+
+<h3 id="functie-namen">Functie namen</h3>
+<p>Het is de gewoonte om namen van functies niet te laten beginnen met een underscore (zulke functienamen zijn voorbehouden aan de ontwikkelaars van Python zelf), en dat je probeert alleen kleine letters te gebruiken. Als een functienaam uit meerdere woorden bestaat, kun je ofwel underscores tussen die woorden zetten, ofwel ieder woord behalve het eerste laten starten met een hoofdletter. Verschillende programmeurs hebben hier verschillende meningen over, maar in de praktijk maakt het niet zoveel uit omdat je een functie altijd kunt herkennen aan het feit dat er haakjes achter de functienaam staan.</p>
+<p>Bepaalde benamingen van functies zijn typerend voor bepaalde functionaliteiten.</p>
+<p>Een functie die test of een bepaald item een bepaalde eigenschap heeft, en die dan <code>True</code> of <code>False</code> retourneert afhankelijk van het feit of de eigenschap wel of niet aanwezig is, krijgt meestal een naam die begint met het woord is, gevolgd door de naam van de eigenschap die start met een hoofdletter. Bijvoorbeeld, een functie die test of een getal even is, zou de naam isEven() krijgen.</p>
+<p>Merk op: Als je een functie als <code>isEven()</code> wilt gebruiken in een conditionele expressie hoef je alleen maar te schrijven <code>if isEven( num ):</code>, want de functie retourneert <code>True</code> of <code>False</code>.</p>
+
+
+<h3 id="opgave-8.2.10.1-iseven"><span style="color:red">Opgave</span> 8.2.10.1 isEven</h3>
+<!--Schrijf de functie `isEven()`, die bepaalt of een getal even is. Deze retourneert het resultaat `True` of `False`.
+Sla het resultaat op in een variabele.
+Druk de waarde in het hoofdprogramma af.
+Test je functie met verschillende waarden.-->
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/890420/90e4aa8f2117639834dc7e78962ef7cb"></iframe>
+Deze opdracht wordt nog niet automatisch gecontroleerd. Klik <a href="EigenFuncties_oplossingen.html#opgave-8.2.10.1-iseven">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+<h2 id="functie-commentaar"> Functie commentaar</h2>
+
+Je kunt je code goed leesbaar maken door goede namen te kiezen voor variabelen en functies,
+door gebruikte maken van spaties en witregels, en door geen gebruik te maken van "slimme" trucjes die je code een beetje sneller maken ten koste van leesbaarheid, enkel en alleen om te laten zien hoe slim je bent.
+
+Daarnaast kun je met commentaar je code uitleggen.
+
+ Het idee achter een functie is dat de gebruiker van de functie de code van de functie niet hoeft te kennen.
+ Daarom moet hetgeen de functie doet en hoe de functie werkt worden uitgelegd middels commentaar, geschreven meteen boven de functienaam.
+
+In commentaar bij een functie moet je drie zaken uitleggen:
+<ul>
+<li>Wat de functie doet
+
+<li>Welke argumenten de functie nodig heeft of accepteert
+
+<li>Wat de functie retourneert, ook bij ongeldige invoer
+
+<li>Als een functie neveneffecten heeft, dus als een functie zaken buiten de functie be&iuml;nvloedt,
+dan moet dat ook heel duidelijk in het functiecommentaar staan.
+</ul>
+
+<h2 id="scope-en-levensduur">Scope en levensduur</h2>
+<p>Scope betekend &quot;zichtbaarheid.&quot; Specifiek, waar het variabelen betreft, refereert het aan in welke delen van een programma een variabele zichtbaar is en gewijzigd kan worden. Levensduur refereert aan hoe lang een variabele in het geheugen van de computer blijft. Levensduur is gerelateerd aan scope.</p>
+
+<img src="http://course.cs.ru.nl/pythonVO/img/scope.jpg" alt="Figuur: Scope van blokken code" style="width:600px;"><br>
+
+
+<h3 id="scope-van-variabelen">Scope van variabelen</h3>
+<p>De scope van een variabele is het blok code waarin de variabele is gecreëerd, en alle blokken code die genest zijn binnen dat blok code op een dieper niveau van inspringing. Bijvoorbeeld:</p>
+<pre class="python">
+hallo = "Hallo!"
+totziens = "Tot ziens!"
+
+for teller1 in range( 3 ):
+    for teller2 in range( 2 ):
+        middag = "Goedemiddag"
+        print( totziens )
+    print( teller2 )
+    print( hallo )
+    print( middag )
+
+print( teller1 )
+print( teller2 )
+print( middag )
+
+</pre>
+<p>De variabelen <code>hallo</code> en <code>totziens</code> zijn gedefinieerd op het hoogste niveau van inspringing van het programma, wat betekent dat hun scope het hele programma is. De variabelen <code>teller1</code>, <code>teller2</code>, en <code>middag</code> zijn gedefinieerd in blokken code op een dieper niveau van inspringing. In de meeste programmeertalen zou dit betekenen dat hun scope beperkt is tot die diepere niveaus, maar Python is vriendelijk op dit gebied en laat hun scope verder reiken dan het blok code waarin de variabelen gecreëerd zijn. Daarom zijn in dit programma de variabelen zichtbaar in het hele programma, na hun creatie.</p>
+<p>Hoe werkt dit met functies?</p>
+<pre class="python">
+dubbeltje = 10
+def geboren():
+    print( "Als je voor een", dubbeltje, "geboren wordt,",
+        "dan wordt je nooit een", kwartje )
+
+kwartje = 25
+geboren()
+print( "dubbeltje =", dubbeltje, "en kwartje =", kwartje )
+</pre>
+<p>Zowel <code>dubbeltje</code> als <code>kwartje</code> zijn zichtbaar in de functie <code>geboren()</code>, omdat ze gedefinieerd zijn voordat de functie is aangeroepen, en omdat het blok code van de functie op een dieper niveau van inspringing zit. Maar kijk nu naar het volgende programma, dat een kleine wijziging bevat ten opzichte van het vorige:</p>
+<pre class="python">
+dubbeltje = 10
+def geboren():
+    kwartje = 5 #aangepast
+    print( "Als je voor een", dubbeltje, "geboren wordt,",
+        "dan wordt je nooit een", kwartje )
+
+kwartje = 25
+geboren()
+print( "dubbeltje =", dubbeltje, "en kwartje =", kwartje )
+</pre>
+
+<h3 id="opgave-8.3.1.1-scope-van-variabelen"><span style="color:red">Opgave</span> 8.3.1.1 Scope van variabelen</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/890422/fdc7e745e99ce3d61a9e3e87c7812c5f"></iframe>
+Klik <a href="EigenFuncties_oplossingen.html#opgave-8.3.1.1-scope-van-variabelen">hier</a> voor een uitleg.
+
+
+<!--Opgave 8.3.1.1 Scope van variabelen
+Deel A
+Voer de programma hiernaast uit.
+Bekijk in de code waar dubbeltje en kwartje waarden krijgen.
+Bekijk ook de output.
+
+Deel B
+Pas nu de code aan door het # weg te halen in regel 5.
+Voer de programma nu weer uit
+Bestudeer de output.
+Leg uit wat hier gebeurt.-->
+
+<!-- CODE
+dubbeltje = 10
+
+def geboren():
+    #OPDRACHT: BIJ DE VOLGENDE REGEL # WEGHALEN
+    #kwartje = 5
+    print( "Als je voor een", dubbeltje, "geboren wordt,",
+        "dan wordt je nooit een", kwartje )
+
+kwartje = 25
+geboren()
+print( "dubbeltje =", dubbeltje, "en kwartje =", kwartje )
+
+-->
+
+<p>Door in een
+functie een waarde toe te kennen aan een variabele, wordt een nieuwe,
+"lokale" variabele gecre&euml;erd. En deze variabele wordt dan gebruikt voor
+de rest van de functie. De originele variabele 'kwartje' bestaat nog steeds,
+maar is onzichtbaar geworden voor de functie omdat de functie een eigen
+variabele 'kwartje' heeft gemaakt.</p>
+
+
+<h3 id="scope-van-variabelen">Levensduur van variabelen</h3>
+
+De levensduur van de variabele 'kwartje' in de functie is de periode waarvoor
+het blok code van de functie wordt uitgevoerd. Zodra de functie eindigt
+(bijvoorbeeld omdat er een <code>return</code> in de functie staat of omdat de laatste
+regel van de functie is uitgevoerd), worden de lokale variabelen van de
+functie vernietigd. Ze staan niet langer in het geheugen van de computer, en
+kunnen niet meer benaderd worden.
+
+<!--
+<pre class="python">
+#CONSTANTEN EN VARIABELEN:
+appel = "appel"
+banaan = "banaan"
+kers = "kers"
+doerian = "doerian"
+
+#FUNCTIE DEFINITIES:
+def printfruit_1():
+    print( appel, banaan )
+
+def printfruit_2( appel ):
+    banaan = kers
+    print( appel, banaan )
+
+def printfruit_3( appel, banaan ):
+    kers = "mango"
+    banaan = kers
+    print( appel, banaan )
+
+#HOOFDPROGRAMMA
+printfruit_1()
+printfruit_2( kers )
+printfruit_3( kers, doerian )
+
+print( "appel =", appel )
+print( "banaan =", banaan )
+print( "kers =", kers )
+print( "doerian =", doerian )
+</pre>
+-->
+
+<h3 id="opgave-8.3.1.1-scope-van-variabelen"><span style="color:red">Opgave</span> 8.3.1.2 Levensduur van variabelen</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/890437/2f6e5ad79c827e64e4fd8c415f3bf888"></iframe>
+Klik <a href="EigenFuncties_oplossingen.html#opgave-8.3.1.1-scope-van-variabelen">hier</a> voor een uitleg.
+
+
+
+<p>Waar het hier vooral om gaat is het feit dat, na de aanroep van functies die op allerlei manieren met de parameters spelen en die lokale variabelen aanmaken met dezelfde namen als variabelen in het hoofdprogramma, uit het afdrukken van de variabelen in het hoofdprogramma blijkt dat die allemaal nog steeds dezelfde waarde hebben als ze hadden voordat de functies werden aangeroepen. Zodra je probeert in een functie een variabele die bestaat in het hoofdprogramma een andere waarde te geven middels een assignment, wordt in plaats daarvan een nieuwe, lokale variabele gecre&euml;erd. Een dergelijke lokale variabele is compleet onafhankelijk van het hoofdprogramma. De levensduur van zo’n lokale variabele is de periode dat de functie wordt uitgevoerd. Parameters kun je ook beschouwen als lokale variabelen.
+
+<p>Dit is een enorm krachtige eigenschap van functies: ze hoeven geen rekening te houden met variabelen die bestaan buiten de functie, aangezien iedere variabele die ze cre&euml;ren lokaal is voor de functie.
+
+
+<h3 id="globale-variabelen">Globale variabelen</h3>
+<p>Variabelen van het hoofdprogramma, die zichtbaar zijn in alle functies, worden wel &quot;globale&quot; variabelen genoemd. Variabelen die alleen binnen een functie zichtbaar zijn heten &quot;lokale&quot; variabelen.</p>
+<p>Het is een goede gewoonte om functies onafhankelijk te maken van het hoofdprogramma, dat wil zeggen, ze geen gebruik te laten maken van globale variabelen. Als je waardes van buiten een functie beschikbaar wilt maken voor de functie, kun je dat doen met parameters.</p>
+<p>Een uitzondering kan gemaakt worden voor globale variabelen die als constanten voor een programma gebruikt worden (zie hoofdstuk 4).</p>
+<p>Constantes zijn waarden die gedurende het programma niet veranderen. Voor de naam van een constante gebruik je hoofdletters.</p>
+<pre class="python">
+#VARIABELEN EN CONSTANTEN
+PI = 3.14
+
+#FUNCTIE DEFINITIE
+def berekenOmtrekCirkel( straal ):
+    omtrek_cirkel = 2*PI*straal
+    return omtrek_cirkel
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+print( berekenOmtrekCirkel(4))
+</pre>
+
+
+<h3 id="opgave-8.3.2-constanten"><span style="color:red">Opgave</span> 8.3.2 Constanten</h3>
+<p>Speel met een vriend of vriendin een paar keer steen-papier-schaar. Houd op een blaadje bij hoe vaak ieder gewonnen heeft en hoe vaak er gelijk is gespeeld.</p>
+<p>Bekijk je scoreblad en bepaal wat de constanten en wat de variabelen zijn.</p>
+Klik <a href="EigenFuncties_oplossingen.html#opgave-8.3.2-constanten">hier</a> voor een uitleg.
+
+
+
+<h2 id="optioneel-modules">(Optioneel) Afvangen van ongeldige invoer</h2>
+<p>Stel je nu voor dat je deze berekening alleen wilt uitvoeren met positieve getallen (wat niet gek zou zijn, aangezien een driehoek alleen zijden van groter dan 0 kan hebben).</p>
+<p>Je kunt dit in de code van je functie afvangen door te controleren of het positieve getallen zijn en anders een foutmelding te geven.</p>
+<p>Het hoofdprogramma verwacht dat de functie <code>pythagoras()</code> een getal teruggeeft dat afgedrukt kan worden. Dus ook als de invoer niet goed is, zal <code>pythagoras()</code> <em>iets</em> moeten opleveren. Je moet er altijd heel duidelijk over zijn wat je functie retourneert, en ervoor zorgen dat een retourwaarde ook altijd opgeleverd wordt, ongeacht de omstandigheden.</p>
+<p>Vaak is het handig om -1 te retourneren bij ongeldige invoer. Je moet er natuurlijk wel voor dat je dan een foutmelding geeft. Ook is het belangrijk om dit soort informatie in commentaar bij je functie te zetten. Als je (of iemand anders) die functie ooit ergens anders voor gebruikt dan weet je dat je daar een foutmelding voor moet schrijven.</p>
+<p>Het volgende voorbeeld vangt ongeldige invoer af:</p>
+<pre class="python">import math
+
+#VARIABELEN EN CONSTANTEN
+lengte_eerste_zijde = 4
+lengte_tweede_zijde = 3
+
+#FUNCTIE DEFINITIE
+#deze functie levert de lengte van de schuine zijde op
+#van een rechthoekige driehoek
+#levert -1 op bij ongeldige invoer (parameter waarden 0 of kleiner)
+def pythagoras( a, b ):
+    if a <= 0 or b <= 0:
+        return -1
+    else:
+        c_kwadraat = a*a + b*b
+        c = math.sqrt (c_kwadraat)
+        return c
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+lengte_schuine_zijde = pythagoras( lengte_eerste_zijde, lengte_tweede_zijde )
+
+#controleren op geldigen invoer en antwoord afdrukken
+if lengte_schuine_zijde == -1: #er is ongeldige invoer gegeven
+    print( "De getallen kunnen niet worden gebruikt." )
+else:
+    print( "De lengte van de schuine zijde is", lengte_schuine_zijde )
+</pre>
+
+<h3 id="opgave-volume-van-een-balk-foutafhandeling"><span style="color:red">(Optioneel) Opgave</span> 8.4 Volume van een balk met foutafhandeling</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/890438/77fa6106b42963483f841eb5853d0e77"></iframe>
+
+Deze opdracht wordt nog niet automatisch gecontroleerd. Klik <a href="EigenFuncties_oplossingen.html#opgave-volume-van-een-balk-foutafhandeling">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+<h3 id="optioneel-meerdere-retourwaardes">(Optioneel) Meerdere retourwaardes</h3>
+<p>Je bent niet beperkt in je functies tot slechts één retourwaarde. Je kunt meerdere waardes in één keer retourneren door er komma’s tussen te zetten. Als je deze waardes wilt gebruiken in je programma na aanroep van de functies, moet je ze toekennen aan meerdere variabelen. Die zet je allemaal aan de linkerkant van de assignment operator, ook met komma’s ertussen. Dit kan ik het beste illustreren aan de hand van een voorbeeld:</p>
+<pre class="python">
+import datetime
+
+def plusDagen( jaar, maand, dag, ophogen ):
+    startdatum = datetime.datetime( jaar, maand, dag )
+    einddatum = startdatum + datetime.timedelta( days=ophogen )
+    return einddatum.year, einddatum.month, einddatum.day
+
+y, m, d = plusDagen( 2015, 11, 13, 55 )
+print( "Nieuw datum is:", y, "/", m, "/", d  )
+</pre>
+
+<p>De functie <code>plusDagen()</code> krijgt vier argumenten, namelijk integers die een jaar, een maand, een dag, en een aantal dagen die je wilt optellen bij de datum die wordt weergegeven door de eerste drie argumenten. Er worden drie waardes geretourneerd, namelijk een nieuw jaar, een nieuwe maand, en een nieuwe dag. De code stopt die in de variabelen <code>y</code>, <code>m</code>, en <code>d</code>.</p>
+<p>Als je de code hierboven bestudeert, vraag je je misschien af hoe <code>plusDagen()</code> precies werkt. Zoals ik al zei, het is een voordeel van functies dat zolang ze hun werk doen en je weet wat de argumenten zijn en wat er geretourneerd wordt, dat je niet hoeft te weten hoe de functie in elkaar zit. Je kunt de functie gebruiken zonder kennis van het interne proces. Dus je mag gewoon negeren wat je in <code>plusDagen()</code> ziet staan (overigens gebruikt de code van <code>plusDagen()</code> de <code>datetime</code> module, die aan de orde komt in hoofdstuk 27).</p>
+
+<h3 id="optioneel-opgave-8.2.8-oplosser-voor-kwadratische-vergelijkingen"><span style="color:red">(Optioneel) Opgave</span> 8.5 Oplosser voor kwadratische vergelijkingen</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/890439/95bdfca166b77b85fcf1449b280d215a"></iframe>
+Deze opdracht wordt nog niet automatisch gecontroleerd. Klik <a href="EigenFuncties_oplossingen.html#optioneel-opgave-8.2.8-oplosser-voor-kwadratische-vergelijkingen">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+<!--
+In hoofdstuk 6 werd je gevraagd de wortelformule te implementeren om kwadratische vergelijkingen op te lossen.
+
+Een kwadratische vergelijking wordt beschreven door drie numerieke waardes, gewoonlijk `a`, `b`, en `c` genoemd. De vergelijking heeft nul, een, of twee oplossingen, afhankelijk van de discriminant (het deel van de vergelijking onder de wortel). Schrijf een functie die een kwadratische vergelijking kan oplossen.
+
+Als parameters krijgt het `a`, `b`, en `c`. De functie retourneert drie waardes.
+De eerste is een integer die het aantal oplossingen aangeeft.
+De tweede is de eerste oplossing.
+De derde is de tweede oplossing.
+Als een oplossing niet bestaat, kun je een nul retourneren voor de corresponderende retourwaarde.
+
+-->
+
+
+<h2 id="optioneel-modules">(Optioneel) Modules</h2>
+<p>Het maken van een module is eenvoudig. Je maakt gewoon een Python bestand, met de extensie <code>.py</code>, en plaatst er de functies in die je in de module wilt hebben. Je kunt dit Python bestand dan importeren in een ander Python programma (je gebruikt gewoon de naam van het bestand zonder de extensie <code>.py</code>; het bestand moet in dezelfde folder als het programma staan, of in de folder waar Python altijd zoekt naar modules), en je kunt de functies gebruiken op dezelfde manier als je functies uit de reguliere Python modules gebruikt, dat wil zeggen, je kunt ofwel specifieke functies uit de module importeren, ofwel de hele module importeren en de functies gebruiken via de <code>&lt;module&gt;.&lt;functie&gt;()</code> syntax.</p>
+<h3 id="main"><code>main()</code></h3>
+<p>Als je de code van andermans Python programma’s bekijkt, zeker programma’s die functies bevatten die je mogelijk zou willen importeren, zie je vaak een constructie als de volgende:</p>
+<pre class="python">
+def main():
+    # code...
+
+if __name__ == '__main__':
+    main()
+
+</pre>
+<p>De functie <code>main()</code> bevat feitelijk het hoofdprogramma, dat andere functies kan aanroepen.</p>
+<p>Je hoeft dit niet precies te begrijpen, maar wat hier aan de hand is, is het volgende: het Python bestand bevat code die als programma kan draaien, of de functies die het bevat kunnen geïmporteerd worden in andere programma’s. De bovenstaande constructie zorgt er voor dat de code in <code>main()</code>(dus het hoofdprogramma) alleen wordt uitgevoerd als het programma als een separaat programma is gestart, en niet als een module in een ander programma geladen is. Als in plaats daarvan het programma als module is geladen, kunnen alleen de functies in het programma worden geïmporteerd, en wordt de code voor <code>main()</code> genegeerd.</p>
+<p>Een Python bestand dat een dergelijke constructie bevat en dat voornamelijk als module wordt gebruikt, heeft vaak code in <code>main()</code> die de functies test. Dat kan nuttig zijn tijdens de ontwikkeling van de module.</p>
+<p>Deze constructie heeft echter nog een tweede toepassing. Omdat <code>main()</code> een functie is, hoef je als je het programma tussentijds wilt verlaten, niet de <code>exit()</code> functie uit de <code>sys</code> module te gebruiken. In plaats daarvan kun je gewoon <code>return</code> doen in de <code>main()</code> functie. Dit vermijdt de lelijke fout-boodschap die sommige editors geven bij gebruik van <code>exit()</code>.</p>
+
+
+<h3 id="opgave-8.3.4-module-binomiaalcoëfficiënt"><span style="color:red">(Optioneel) Opgave</span> 8.6 Module binomiaalcoëfficiënt</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/890440/f90c176aa4fa184f9949fdb4956d5b5b"></iframe>
+
+<!-- opgave
+In de statistiek wordt de binomiaalco&euml;ffici&euml;nt "n boven k," waarbij `n` groter
+dan of gelijk aan `k` moet zijn, berekend als `n!/(k!*(n-k)!)`, waarbij `n!` de faculteit van `n` is. Zoals ik in hoofdstuk 7 heb uitgelegd: de faculteit van een positief geheel getal is dat getal, vermenigvuldigd met alle positieve gehele getallen die kleiner zijn (exclusief nul). Je schrijft de faculteit als het getal met een uitroepteken erachter. Bijvoorbeeld, 5 faculteit
+is `5! = 5 ∗ 4 ∗ 3 ∗ 2 ∗ 1 = 120`. Als je alle opgaves tot nu toe gemaakt hebt, heb je hier code voor geschreven. Schrijf een functie die de bbinomiaalcoëfficiënt voor de twee parameters die de functie krijgt, en die de waarde retourneert. Schrijf de code op zo’n manier dat hij als module in een ander programma kan worden opgenomen (dus test de functie via een `main()` functie zoals hierboven is uitgelegd).
+
+-->
+<hr />
+
+<div id="leerdoelen"><h2>Wat je geleerd hebt</h2></div>
+<p>In dit hoofdstuk is het volgende besproken:</p>
+<ul>
+<li>Het nut van functies</li>
+<li>Functies creëren</li>
+<li>Parameters en argumenten</li>
+<li>Waardes uit functies retourneren middels <code>return</code></li>
+<li>Functie benamingen</li>
+<li>Commentaar in functies</li>
+<li>Variabele scope en levensduur</li>
+<li>Lokale en globale variabelen</li>
+<li>Optioneel: Modules</li>
+<li>Optioneel: Gebruik van een <code>main()</code> functie</li>
+</ul>
+
+<hr />
+
+
+<i><a href="EigenFunctiesAfsluitendeOpgaven.html">Verder naar de Afsluitende Opgaven over Eigen Functies</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+<script>
+</script>
+</body>
+</html>
+

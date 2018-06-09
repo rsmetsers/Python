@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+        <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+
+
+<h1 id="hoofdstuk-turtleGraphicsForLoops">Python Cursus. Hoofdstuk For-loops Met Turtle Graphics</h1>
+<hr />
+<b>Let op:</b> log eerst in bij <a href="http://repl.it">repl.it</a><br>
+<i><a href="IteratiesFor.html">Verder naar de gewone opgaven over For-Loops</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+<hr>
+
+<h2 id="herhalingen">Herhalingen... zijn saai</h2>
+<p>Computers zijn heel goed in het herhalen van dingen. Gelukkig maar, want meestal vinden mensen dat maar saai.</p>
+
+
+<h3 id="opgave-vierkantjes-herhalen"><span style="color:red">Opgave</span> Vierkantjes herhalen</h3>
+
+
+<iframe frameborder="0" width="100%" height="800px"  target="_blank" src="https://repl.it/student_embed/assignment/845961/72acf03eb0cd92a911ba6cd4364eb8e8"></iframe>
+
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="TurtleFor_oplossingen.html#opgave-vierkantjes-herhalen">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+
+
+
+<h2 id="loops">Loops</h2>
+<p>De code om een vierkant te schrijven heeft heel erg veel dezelfde regels code.</p>
+<pre class="python">
+def tekenVierkant( lengte ):
+    turtle.forward(lengte)
+    turtle.right(90)
+    turtle.forward(lengte)
+    turtle.right(90)
+    turtle.forward(lengte)
+    turtle.right(90)
+    turtle.forward(lengte)
+    turtle.right(90)
+</pre>
+<p>Je herhaalt namelijk 4 keer:</p>
+<pre class="python">
+turtle.forward(lengte)
+turtle.right(90)</pre>
+<p>Kun je nagaan hoeveel regels van dezelfde code je krijgt als je een dodecagon (een figuur met 12 zijden) gaat maken?</p>
+<p>Programmeurs gebruiken loops als een oplossing voor stukken code die vaak herhaald worden. Loop spreek je uit als loep. In Python ziet een for loop er zo uit:</p>
+<pre class="python">
+for i in range(4):
+   # Doe iets</pre>
+
+<p>Met deze loop wordt iets 4 keer herhaald door het stukje code: <code>range(4)</code>. De code dat herhaalt moet worden moet je laten inspringen.</p>
+<p>Als je loops wilt gebruiken bij turtle graphics, dan moet je goed nadenken welke stapjes herhaald moeten worden.</p>
+<p>Deze stapjes zet je in de loop op de plek waar in het voorbeeld staat <code># Doe iets</code>. Je moet ervoor zorgen dat deze regels een klein stukje inspringen, zodat je ook kunt zien dat ze binnen in de loop staan.</p>
+<p>Om de figuur te tekenen moet je in de loop de code zetten waarmee turtle naar voren gaat (forward), en de regel code waarmee ze de juiste hoek maakt.</p>
+
+
+<h3 id="opgave-vierkanten-herhalen-met-een-for-loop"><span style="color:red">Opgave</span> Vierkanten herhalen met een for-loop</h3>
+<iframe frameborder="0" width="100%" height="800px" src="https://repl.it/student_embed/assignment/847545/aa58e03ad1f54c4925b688d0c11acaa8"></iframe>
+
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="TurtleFor_oplossingen.html#opgave-vierkanten-herhalen-met-een-for-loop">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+<h3 id="opgave-driehoeken-herhalen-met-een-for-loop"><span style="color:red">Opgave</span> Driehoeken herhalen met een for-loop <!-- https://www.codeavengers.com/python/100#1.7 --></h3>
+<iframe frameborder="0" width="100%" height="800px" src="https://repl.it/student_embed/assignment/847548/d9587c2eab728b46d3bfaa0d0c4c7637"></iframe>
+
+
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="TurtleFor_oplossingen.html#opgave-driehoeken-herhalen-met-een-for-loop">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+<!-- antwoord
+import turtle
+
+#tekent een driehoek van een gegeven lengte
+def driehoek( lengte ):
+    turtle.forward( lengte )
+    turtle.right(120)
+    turtle.forward( lengte )
+    turtle.right(120)
+    turtle.forward( lengte )
+
+turtle.pendown()
+turtle.speed(100)
+
+#teken 100 driehoeken van grote 200, steeds een beetje gedraaid
+for i in range(100):
+    driehoek(200)
+    turtle.right(5)
+turtle.done()
+-->
+
+
+<h3 id="opgave-ster-tekenen-met-een-for-loop"><span style="color:red">Opgave</span> Ster tekenen met een for-loop</h3>
+
+<iframe frameborder="0" width="100%" height="800px" src="https://repl.it/student_embed/assignment/847549/d1a776f54e8a8fd480be9c74cf404cf5"></iframe>
+
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="TurtleFor_oplossingen.html#opgave-ster-tekenen-met-een-for-loop">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+<h3 id="opgave-spiraalster-tekenen"><span style="color:red">Opgave</span> Spiraalster tekenen</h3>
+<iframe frameborder="0" width="100%" height="800px" src="https://repl.it/student_embed/assignment/847550/de5971af3b98543f14db015aefa76ddf"></iframe>
+
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="TurtleFor_oplossingen.html#opgave-spiraalster-tekenen">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+
+<h3 id="opgave-eigen-creatie-met-iteraties"><span style="color:red">Opgave</span> Eigen creatie met iteraties</h3>
+<iframe frameborder="0" width="100%" height="800px" src="https://repl.it/student_embed/assignment/847554/2b65e5f66cebb5be7cd2237ff4d26914"></iframe>
+
+
+
+<h3 id="opgave-teken-een-rubiks-cube"><span style="color:red">Opgave</span> Teken een Rubik's cube</h3>
+<iframe frameborder="0" width="100%" height="800px" src="https://repl.it/student_embed/assignment/847555/8685e9f3387ff77ca413d4bf594c16c6"></iframe>
+
+<!--
+## Waarden van turtle opvragen
+
+Je kunt ook informatie van turtle opvragen.
+```python
+position() #Vraag de positie op van de schildpad: je krijgt een x en
+een y terug.
+color() #Vraag de huidige gebruikte kleuren op. Uit deze functie komen twee
+waarden, waarbij de eerste de kleur van de pen is en de tweede de kleur waarmee je
+vlakken in kunt kleuren.
+```
+
+-->
+
+
+<!-- NOG NIET GOED UITGEWERKT
+### <span style="color:red">Opgave</span> Vierkanten herhalen met een while-loop
+We gaan nu weer een mooi plaatje maken met herhalingen van vierkanten.
+Laat de gebruiker een lengte voor de eerste vierkant invoeren.
+Die teken je. Daarna draai je 15 graden. Voordat je de volgende tekening maakt, maak je de lengte iets korter.
+Dit herhaal je totdat de lengte 0 is.
+
+
+
+1) Neem de definitie van `tekenVierkant` uit een vorige opdracht over, of uit de code hieronder.
+
+2) Test de code door een vierkant te tekenen. Hiervoor roep je natuurlijk `tekenVierkant()` aan met een parameter naar keuze.
+
+3) Vraag de gebruiker om een lengte in te voeren voor de eerste vierkant.
+
+
+6) Test je creatie. Voeg ook commentaar toe.
+
+```python
+# tekent een vierkant door 4 keer: 'loop vooruit & draai' aan te roepen
+def tekenVierkant( lengte ):
+    for i in range (4):
+        turtle.forward(lengte)
+        turtle.right(90)
+```
+-->
+<!-- ANTWOORD
+import turtle, pcinput
+
+lengte = pcinput.getInteger("Hoe groot wil je de eerste vierkant hebben (kies een tienvoud)? ")
+
+# tekent een vierkant door 4 keer: 'loop vooruit & draai' aan te roepen
+def tekenVierkant( lengte ):
+    for i in range (4):
+        turtle.forward(lengte)
+        turtle.right(90)
+
+
+turtle.speed(800) # even wat sneller tekenen, anders val ik in slaap
+
+# teken een spirograaf patroon door heel vaak een vierkant te tekenen en te draaien
+while lengte > 0:
+    tekenVierkant( lengte )
+    turtle.right(15)
+    lengte -= 10
+
+turtle.done()
+-->
+<hr>
+<i><a href="IteratiesFor.html">Verder naar de gewone opgaven over For-Loops</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+
+

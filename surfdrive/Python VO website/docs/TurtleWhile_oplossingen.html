@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+        <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+
+
+<h1 id="hoofdstuk-turtleGraphicsForLoops">Hoofdstuk - While-loops: met Turtle Graphics</h1>
+<h1>Uitwerkingen Opgaven</h1>
+<hr />
+<b>Let op:</b> log eerst in bij <a href="http://repl.it">repl.it</a><br>
+
+<i><a href="TurtleWhile.html">Terug naar de opgaven over Turtle Graphics-While loops</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+<hr>
+
+<!-- VOORBEELD VAN EEN WHILE LATEN ZIEN -->
+<h3 id="opgave-vierkanten-while"><span style="color:red">Opgave</span> Vierkantjes herhalen met een `while`</h3>
+<pre class="python">
+import turtle
+
+
+# tekent een vierkant door 4 keer vooruit de gegeven lengte vooruit te lopen en 90 graden te draaien.
+def tekenVierkant( lengte ):
+    turtle.forward(lengte)
+    turtle.right(90)
+    turtle.forward(lengte)
+    turtle.right(90)
+    turtle.forward(lengte)
+    turtle.right(90)
+    turtle.forward(lengte)
+    turtle.right(90)
+
+lengte = 100 # begin waarde
+turtle.pendown() # beginnen met tekenen
+
+# teken 10 keer een steeds kleiner wordend vierkant in een cirkel.
+while lengte > 0:
+    tekenVierkant( lengte )
+    turtle.right(15)
+    lengte -= 10
+
+turtle.done()
+</pre>
+
+
+<h3 id="opgave-vierkanten-while-in-def"><span style="color:red">Opgave</span> Vierkantjes herhalen met een `while`</h3>
+<pre class="python">
+
+import turtle
+#tekent een vierkant door 4 keer vooruit de gegeven lengte vooruit te lopen en 90 graden te draaien.
+def tekenVierkant( lengte ):
+    aantal_zijdes_getekend = 0
+    while aantal_zijdes_getekend < 4: #herhaal 4 keer
+        turtle.forward(lengte)
+        turtle.right(90)
+        aantal_zijdes_getekend += 1
+
+turtle.pendown()
+tekenVierkant( 100 )
+turtle.done()
+</pre>
+
+<hr>
+<i><a href="TurtleWhile.html">Terug naar de opgaven over Turtle Graphics-While loops</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+

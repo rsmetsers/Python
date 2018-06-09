@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+    <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+
+
+<h1 id="hoofdstuk---turtle-graphics-functies-parameters">Hoofdstuk - Turtle Graphics: Functies en parameters</h1>
+
+<b>Let op:</b> log eerst in bij <a href="http://repl.it">repl.it</a><br>
+<i><a href="EigenFuncties.html">Door naar de gewone opgaven over Eigen Functies</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+<hr>
+
+
+<h2 id="eigen-functies-schrijven">Eigen functies schrijven</h2>
+<p>Voor code dat bij elkaar hoort kun je in een functie schrijven. Een functie heeft een naam, en een definitie: de instructies die aangeven wat er moet gebeuren. Een functie definitie begint met <code>def</code> gevolgd door een naam en <code>:</code>. Daarna spring je in voor alle code dat bij de functie hoort.</p>
+<p>Om je eigen functie aan te roepen geef je de naam gevolgd door <code>()</code>. Je hoeft er nu geen <code>turtle.</code> voor te zetten omdat de definitie in dit bestand staat (en niet in een aparte turtle module).</p>
+<p>Hier is een voorbeeld van een functie <code>vierkant()</code> voor het tekenen van een vierkant met zijdes van 50 pixels.</p>
+<pre class="python">
+import turtle
+
+#FUNCTIE DEFINITIE
+#Definitie: instructies voor het tekenen van een vierkant
+#Na afloop kijkt turtle dezelfde richting uit als in het begin.
+def vierkant():
+    turtle.forward(50)
+    turtle.right(90)
+    turtle.forward(50)
+    turtle.right(90)
+    turtle.forward(50)
+    turtle.right(90)
+    turtle.forward(50)
+    turtle.right(90)
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+turtle.pendown()
+vierkant() #Aanroep: teken de vierkant!
+turtle.done()</pre>
+
+<h3 id="opgave-vierkant-kunst"><span style="color:red">Opgave</span> Vierkant-kunst</h3>
+<iframe frameborder="0" width="100%" height="800px" src="https://repl.it/student_embed/assignment/855606/6a8fc2ab75e579e1d21e62ce88065bc6"></iframe>
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="TurtleFunctiesParameters_oplossingen.html#opgave-vierkant-kunst">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+<h2 id="hergebruik">Hergebruik</h2>
+<iframe frameborder="0" width="100%" height="800px" src="https://repl.it/student_embed/assignment/855609/b7849648ee092203ae122a8fb69af5d2"></iframe>
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="TurtleFunctiesParameters_oplossingen.html#opgave-dorp-tekenen">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+
+<h2 id="makkelijk-aanpassen">Makkelijk aanpassen</h2>
+<p>Als je functie gebruikt heb je minder code dubbel staan. Dat is vooral handig als je iets in één keer wilt aanpassen voor meerdere dingen. Hoe dat nu werk zien we nu.</p>
+
+
+<h3 id="opgave-dorp-aanpassen"><span style="color:red">Opgave</span> Dorp aanpassen</h3>
+<iframe frameborder="0" width="100%" height="800px" src="https://repl.it/student_embed/assignment/855610/508ecd1538f71af621542fb6abffcbc3"></iframe>
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="TurtleFunctiesParameters_oplossingen.html#opgave-dorp-aanpassen">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+<h2 id="eigen-functies-schrijven-1">Eigen functies schrijven</h2>
+<p>Bij het tekenen van de Nederlandse vlag heb je veel code geschreven dat zich herhaalt. Op de kleur na, is de code voor het tekenen van de blauwe balk hetzelfde als de witte balk en de rode balk.</p>
+<p>Doordat dezelfde code er nu drie keer in staat, maakt dit je code slecht te lezen, en als je wat wilt aanpassen (bijvoorbeeld de breedte) is dat ook nog eens veel werk want dat moet je dan op verschillende plaatsen in je code aanpassen. <!--(zie ook Hoofdstuk 8)-->.</p>
+<p>Van code dat bij elkaar hoort kun je een functie schrijven. Dit begint met <code>def</code> gevolgd door een naam en <code>:</code>. Daarna spring je in voor alle code dat bij de functie hoort.</p>
+
+
+
+<h3 id="opgave-nederlandse-vlag-met-functies"><span style="color:red">Opgave</span> Nederlandse vlag met functies</h3>
+<iframe frameborder="0" width="100%" height="800px" src="https://repl.it/student_embed/assignment/855611/66e890d945622d4e0c459a88bf181be6"></iframe>
+
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="TurtleFunctiesParameters_oplossingen.html#opgave-nederlandse-vlag-met-functies">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+<h2 id="parameters">Parameters</h2>
+<p>Je hebt in een vorige opdracht een functie geschreven om een vierkant te tekenen:</p>
+<pre class="python">
+
+import turtle
+
+#FUNCTIE DEFINITIE
+#Definitie: instructies voor het tekenen van een vierkant
+#Na afloop kijkt turtle dezelfde richting uit als in het begin.
+def vierkant():
+    turtle.forward(50)
+    turtle.right(90)
+    turtle.forward(50)
+    turtle.right(90)
+    turtle.forward(50)
+    turtle.right(90)
+    turtle.forward(50)
+    turtle.right(90)
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+turtle.pendown()
+vierkant() #Aanroep: teken de vierkant!
+
+turtle.done()
+</pre>
+<p>Als je dezelfde vierkant groter dan 150 wilt maken dan moet je op 4 plekken de 150 vervangen door een ander getal. Als je het 300 wilt maken, moet je dat 4 keer vervangen, en voor 310 weer. Beter is het om een parameter te gebruiken voor de grootte. Als je je functie iets aanpast, dan kan de turtle <em>elk</em> vierkant tekenen met een gegeven <code>grootte</code>. Dat doe je zo:</p>
+<pre class="python">
+import turtle
+
+#FUNCTIE DEFINITIE
+#Definitie: Instructies voor het tekenen van een vierkant met een gegeven `grootte`
+def vierkant( grootte ):
+    turtle.forward( grootte )
+    turtle.right(90)
+    turtle.forward( grootte )
+    turtle.right(90)
+    turtle.forward( grootte )
+    turtle.right(90)
+    turtle.forward( grootte )
+    turtle.right(90)
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+turtle.pendown()
+vierkant(100) #Aanroep: teken een vierkant van 100px.
+
+turtle.done()
+</pre>
+<ol style="list-style-type: decimal">
+<li><p>Je geeft in de definitie tussen haakjes aan welk gegeven je meegeeft dat steeds mag veranderen. In dit voorbeeld <code>def vierkant( grootte ):</code></p></li>
+<li><p>In de definitie gebruik je datzelfde variabele in de instructie. Bijvoorbeeld: <code>turtle.forward( grootte )</code></p></li>
+<li><p>Je roept de functie aan met de juiste waarde. In dit voorbeeld: <code>vierkant( 100 )</code>.</p></li>
+</ol>
+
+
+<h3 id="opgave-vierkant-met-parameters"><span style="color:red">Opgave</span> Vierkant met parameters</h3>
+<iframe frameborder="0" width="100%" height="800px" src="https://repl.it/student_embed/assignment/855614/e3bd3832e8019a7fa093d00afb9b7164"></iframe>
+
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="TurtleFunctiesParameters_oplossingen.html#opgave-vierkant-met-parameters">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+<h3 id="opgave-driehoeken-met-functies-en-parameters"><span style="color:red">Opgave</span> <!-- https://www.codeavengers.com/python/100#1.7 --> Driehoeken met functies en parameters</h3>
+<iframe frameborder="0" width="100%" height="800px" src="https://repl.it/student_embed/assignment/855619/25b6b7a85f866f490fa103d16ca267dc"></iframe>
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="TurtleFunctiesParameters_oplossingen.html#opgave-driehoeken-met-functies-en-parameters">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+<!-- driehoek met parameters maken -->
+<p>We maken nu een functie voor het tekenen van een gelijkzijdige driehoek (alle lengtes zijn hetzelfde, en de binnenhoeken zijn 60 graden). Eerst gebruiken we getallen voor de lengtes, daarna vervangen we deze door parameters.</p>
+<ol style="list-style-type: decimal">
+<li><p>Teken een driehoek. Gebruik 120px voor de lengte van de zijdes en 60 graden voor de binnenhoeken. Tip: voor een binnenhoek van 60 graden moet je 120 graden draaien.</p></li>
+<li><p>Test dit.</p></li>
+<li><p>Maak een definitie van je driehoek <code>def tekenDriehoek()</code> en roep de <code>tekenDriehoek</code> aan om deze te tekenen.</p></li>
+<li><p>Test dit.</p></li>
+<li><p>Pas je functie aan zodat deze een parameter meekrijgt voor de lengte van de zijdes: <code>def tekenDriehoek( lengte_zijde )</code>. Test dit.</p></li>
+<li><p>Roep je functie aan om driehoek van 300px te tekenen. Test dit.</p></li>
+<li><p>Voeg ook commentaar toe.</p></li>
+</ol>
+
+
+<h3 id="opgave-toren-van-driehoeken"><span style="color:red">Opgave</span> Toren van driehoeken <!-- Uni Python cursus --></h3>
+<p>We zullen stapsgewijs kleine tekeningetjes maken, waarbij we uiteindelijk de volgende figuur gaan tekenen:</p>
+<p><img src="http://course.cs.ru.nl/greenfoot/python/img/TorenVanDriehoeken_afbeelding.JPG" alt="Figuur: Toren van driehoeken" /> Toren van driehoeken</p>
+<p>Zoals je kunt zien bestaat de figuur uit heel veel driehoekjes. We willen de code om een driehoekje te tekenen maar een keer opschrijven. Daarom is het handig om hier een functie voor te maken.</p>
+
+<iframe frameborder="0" width="100%" height="800px" src="https://repl.it/student_embed/assignment/855620/3a597926238ea5c15e02b3c612acd983"></iframe>
+<!-- GEEN UITWERKINGEN BESCHIKBAAR: Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="TurtleFunctiesParameters_oplossingen.html#opgave-toren-van-driehoeken">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.-->
+
+
+<h3 id="opgave-huis-tekenen-met-parameters"><span style="color:red">Opgave</span> Huis tekenen met parameters</h3>
+<iframe frameborder="0" width="100%" height="800px" src="https://repl.it/student_embed/assignment/855621/90b1f6effbd65ae7fe59947b57fd5856"></iframe>
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="TurtleFunctiesParameters_oplossingen.html#opgave-huis-tekenen-met-parameters">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+
+<h3 id="opgave-eigen-creatie-met-functies-en-parameters"><span style="color:red">Opgave</span> Eigen creatie met functies en parameters</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/855622/72ae72be3c9fa38f8d6410b78b9b986f"></iframe>
+
+
+<hr><!-- EINDE TURTLE GRAPHICS FUNCTIES EN PARAMETERS-->
+<i><a href="EigenFuncties.html">Door naar de gewone opgaven over Eigen Functies</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>

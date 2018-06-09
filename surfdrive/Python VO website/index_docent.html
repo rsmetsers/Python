@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+        <link rel="stylesheet" type="text/css" href="style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='img/pythonLogo.jpg'/>
+  <div id='content'>
+
+    <h1>Demo code: Python cursus voor VO</h1>
+<div id="oefenruimte"><h3>Oefenruimte Python 3</h3></div>
+
+
+<iframe frameborder="0" width="100%" height="800px" src="https://repl.it/student_embed/assignment/857107/ccded5b695d2d0b7bf9bce73ed70b870"></iframe>
+
+<div id="oefenruimte"><h3>Oefenruimte Turtle Graphics</h3></div>
+
+<iframe frameborder="0" width="100%" height="800px" src="https://repl.it/student_embed/assignment/853800/a8abdd8765a853e929eeed47d1723868"></iframe>
+
+
+<--
+<h3 id="spirograaf"><span style="color:red">Spirograaf met verschillende kleurtjes:</h3>
+-->
+
+<h3 id="opgave-8.2.3-de-wielen-van-de-bus"><span style="color:red">Opgave</span> 8.2.3 De wielen van de bus</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/918927/1787aaaad0e08a9a6e505e7604685570"></iframe>
+
+UITWERKING:
+<pre class="python">
+def zing_couplet( onderdeel, actie ):
+    print( "De " + onderdeel + " van de bus " + actie )
+    print( actie +", " + actie )
+    print( "De " + onderdeel + " van de bus " + actie )
+    print( "Als de bus gaat rijden" )
+    print("\n")
+
+zing_couplet("wielen", "draaien rond")
+zing_couplet("deuren", "gaan open en dicht")
+zing_couplet("wissers", "gaan heen en weer")
+zing_couplet("lichten", "gaan aan en uit")
+#
+# De deuren van de bus gaan open en dicht
+# Open en dicht, open en dicht
+# De deuren van de bus gaan open en dicht
+# Als de bus gaat rijden
+#
+# De wissers van de bus gaan heen en weer
+# Heen en weer, heen en weer
+# De wissers van de bus gaan heen en weer
+# Als de bus gaat rijden
+#
+# De lichten van de bus gaan aan en uit
+# Aan en uit, aan en uit
+# De lichten van de bus gaan aan en uit
+# Als de bus gaat rijden
+#
+# De toeter van de bus gaat toet toet toet
+# Toet toet toet, toet toet toet
+# De toeter van de bus gaat toet toet toet
+# Als de bus gaat rijden
+</pre>
+
+
+
+<h3 id="opgave-8.2.3-de-wielen-van-de-bus"><span style="color:red">H8</span> Functies en parameters: berekenOmtrek</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/918942/65f56805d5fc971ad6f5d3f963c25930"></iframe>
+UITWERKING:
+<pre class="python"
+RECHTHOEK DEFINTIE MET FOUT
+#FUNCTIE DEFINITIE
+def berekenOmtrekRechthoek ( breedte, hoogte ):
+        omtrek = 2*breedte + 2*hoogte
+        print( omtrek)
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+omtrekRechthoek( 5, 3 )
+kosten = 10*omtrek
+print(kosten)
+
+
+HOOFDSTUK 8
+#FUNCTIE DEFINITIE
+def berekenOmtrekRechthoek ( breedte, hoogte ):
+        omtrek = 2*breedte + 2*hoogte
+        return omtrek
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+omtrek = omtrekRechthoek( 5, 3 )
+kosten = 10*omtrek
+print(kosten)
+</pre>
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+<script>
+</script>
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+    <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+
+<h1>Python Cursus.  Hoofdstuk 12 - Lists</h1>
+<h1>Uitwerkingen Opgaven</h1>
+<hr />
+
+<i><a href="Lists.html">Terug naar de theorie en opgaven over Lists</a></i><br>
+<i><a href="ListsAfsluitendeOpgaven.html">Terug naar de Afsluitende Opgaven</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+<hr>
+<h1 id="hoofdstuk-12---lists">Hoofdstuk 12 - Lists</h1>
+
+
+<h3 id="opgave-12.1-lijst-doorlopen-met-een-while-loop"><span style="color:red">Opgave</span> 12.1 Lijst doorlopen met een <code>while</code> loop</h3>
+
+<pre class="python">
+getallenLijst = [0, 4, 6, 8]
+
+teller = 0
+while teller < len(getallenLijst): #doorloop elk element in lijst
+  print (getallenLijst[teller]) #druk element af
+  teller +=1 #verhoog teller om volgende element te pakken
+</pre>
+
+<h3 id="opgave-12.2-lijst-aanpassen-in-een-while-loop"><span style="color:red">Opgave</span> 12.2 Lijst aanpassen in een <code>while</code> loop</h3>
+
+<!-- Stel dit is jouw (dramatische) cijferlijst:
+cijferLijst = [8.0, 5.5, 2.3, 4.6, 6.1, 5.6]
+
+
+Pas elk cijfer in je cijferlijst aan ze elk met 1 punt opgehoogd wordt.
+Doe dit met een while loop.
+Na afloop druk je de cijferLijst af.
+
+Het volgende wordt dus afgedrukt:
+[9.0, 6.5, 3.3, 5.6, 7.1, 6.6]
+
+Tips:
+- Gebruik een variabele om de positie van de cijfer in de lijst bij te houden.
+- Hoog de cijfer op een bepaalde positie met 1 op.
+- Hoog daarna de positie ook op.
+-->
+<pre class="python">
+cijferLijst = [8.0, 5.5, 2.3, 4.6, 6.1, 5.6]
+
+positie = 0
+while positie < len( cijferLijst ):
+  nieuwCijfer = cijferLijst[positie] + 1
+  cijferLijst[positie] = nieuwCijfer
+  positie += 1
+
+print( cijferLijst )
+</pre>
+
+OF
+
+<pre class="python">
+cijferLijst = [8.0, 5.5, 2.3, 4.6, 6.1, 5.6]
+
+positie = 0
+while positie < len( cijferLijst ):
+  cijferLijst[positie] += 1
+  positie += 1
+
+print( cijferLijst )
+</pre>
+
+
+<h3 id="opgave-12.3-lists-en-operatoren"><span style="color:red">Opgave</span> 12.3 Lists en operatoren</h3>
+<!--
+
+Opgave 12.3 Lists en operatoren
+Voer de code in elk van de voorbeelden hieronder uit. Zorg dat je begrijpt hoe en waarom het werkt.
+Voeg commentaar toe op de vier aangegeven regels.
+
+fruit_lijst = ["appel", "banaan"] + ["kers", "doerian"] #COMMENTAAR 1
+print( fruit_lijst )
+
+lijst_meisjes = ["Heleen", "Luna"]
+lijst_jongens = ["Piet", "Jan", "Rick"]
+klassen_lijst = lijst_meisjes  + lijst_jongens #COMMENTAAR 2
+print( klassen_lijst )
+print( "Klassenlijst:" + str(klassen_lijst) )
+
+numlist = 10 * [0]
+print( numlist )
+
+fruit_lijst = ["appel", "banaan"]
+fruit_lijst += ["kers"]  #COMMENTAAR 3
+print( fruit_lijst )
+
+fruit_lijst.append("peer") #COMMENTAAR 4
+print( fruit_lijst )
+
+-->
+<ol>
+  <li>Plakt twee lijsten achter elkaar en slaat die op in fruit_lijst</li>
+  <li>Plakt twee lijsten achter elkaar en slaat die op in klassen_lijst</li>
+  <li>Maakt een lijst aan met 10 nullen en slaat die op in numlist</li>
+  <li>Voegt element "kers" toe achteraan lijst</li>
+  <li>Voegt element "peer" toe achteraan lijst</li>
+</ol>
+
+
+
+<h2 id="list-methodes">12.4 List methodes</h2>
+<pre class="python">
+alfabet = ["a","b","c","d","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+print( alfabet )
+alfabet.insert( 4, "e" )
+print( alfabet )
+</pre>
+
+
+
+<h3 id="opgave-12.4.2-remove"><span style="color:red">Opgave</span> 12.4.2 Verwijder uit een lijst met <code>remove</code></h3>
+<pre class="python">
+cijferlijst = [9, 8, 6, 4, 7, 8]
+
+cijferlijst.remove( 4 )
+print( cijferlijst )
+</pre>
+<!--UITVOER: [9, 8, 6, 7, 8]
+-->
+
+
+
+<h3 id="opgave-12.4.5-index"><span style="color:red">Opgave</span> 12.4.5 Zoek positie op met <code>index</code></h3>
+
+<pre class="python">
+cijferlijst = [9, 8, 6, 4, 7, 8]
+
+positie = cijferlijst.index(4)
+print( positie )
+</pre>
+<!--
+UITVOER: 3
+-->
+
+
+
+<h3 id="opgave-12.4.6-count"><span style="color:red">Opgave</span> 12.4.6 Aantallen tellen met <code>count()</code></h3>
+<pre class="python">
+vervoer = ["lopend", "fiets", "auto", "fiets", "auto", "lopend", "fiets", "lopend", "fiets"]
+print( "met de auto:", vervoer.count( "auto" ) )
+print( "met de fiets:", vervoer.count( "fiets" ) )
+print( "lopend:", vervoer.count( "lopend" ) )
+</pre>
+
+
+<h3 id="opgave-12.4.7-sort"><span style="color:red">Opgave</span> 12.4.7 Lijst sorteren met <code>sort()</code></h3>
+<pre class="python">
+namenLijst = ["Piet", "Klaas", "Jip", "Heleen", "Luna", "Jan"]
+namenLijst.sort()
+print( namenLijst )
+</pre>
+
+<!--
+
+UTIVOER:['Heleen', 'Jan', 'Jip', 'Klaas', 'Luna', 'Piet']
+-->
+
+<h3 id="opgave-12.4.8-reverse"><span style="color:red">Opgave</span> 12.4.8 Omgekeerde volgorde met <code>reverse()</code></h3>
+<!-- opdracht
+Zet de getallen in  de volgende lijst in omgekeerde volgorde. Gebruik hiervoor reverse().
+
+getallenLijst = [314, 315, -12, 246, 10, 999]
+-->
+
+<!--
+UITVOER: [999, 10, 246, -12, 315, 314]
+-->
+<pre class="python">
+getallenLijst = [314, 315, -12, 246, 10, 999]
+getallenLijst.reverse()
+print( getallenLijst )
+</pre>
+
+<h3 id="opgave-12.4.9-op-alfabetische-volgorde"><span style="color:red">Opgave</span> 12.4.9 Ingevoerde waarden op alfabetische volgorde</h3>
+<!-- OPDRACHT
+Schrijf een programma dat :
+De gebruiker vraagt de namen van zijn of haar vrienden in te geven.
+Door "klaar" in te tikken geeft de gebruiker aan klaar te zijn met het ingeven van namen.
+Het programma toont dan alle ingegeven namen, alfabetisch gesorteerd. Toon daarna dezelfde data in aflopende volgorde.
+
+Tips:
+Je hoeft de module pcinput dus niet te gebruiken. Met de volgende code kun je de gebruiker vragen om iets in te voeren:
+   input("Geef de naam van een vriend of vriendin, of typ `klaar`: ")
+
+Maak eerst een lege lijst aan, daar voeg je telkens elk naam aan toe.
+-->
+
+<pre class="python">
+naamLijst = [] #lijst voor het bijhouden van namen
+
+naam = "" #maak een lege String
+while not naam == "klaar":
+    naam = input("Geef de naam van een vriend of vriendin (of typ `klaar`): ")
+    naamLijst += [naam] #voeg ingevoerde naam toe aan lijst
+
+
+naamLijst.sort() #sorteer lijst op alfabetische volgorde
+print( naamLijst )
+
+naamLijst.reverse()#sorteer lijst op aflopende alf. volgorde
+print( naamLijst )
+</pre>
+OF
+
+<pre class="python">
+naamLijst = [] #lijst voor het bijhouden van namen
+
+naam = input("Geef de naam van een vriend of vriendin (of typ `klaar`): ")
+
+while not naam == "klaar":
+    naamLijst += [naam]
+    naam = input("Geef de naam van een vriend of vriendin (of typ `klaar`): ")
+
+
+naamLijst.sort() #sorteer lijst op alfabetische volgorde
+print( naamLijst )
+
+naamLijst.reverse()#sorteer lijst op aflopende alf. volgorde
+print( naamLijst )
+</pre>
+
+
+
+
+<div id="afsluitendeOpgaves"><h2>Afsluitende Opgaven</h2></div>
+
+<h3 id="afsluitende-opgave-magic-8-ball"><span style="color:red">Afsluitende opgave</span> 12.1 Magic 8-ball</h3>
+<pre class="python">
+import random
+
+antwoord = [ "Dat is zeker", "Het is zeker zo", "Zonder twijfel",
+"Ja, zeker", "Je kunt erop vertrouwen", "Zoals ik het zie, ja",
+"Waarschijnlijk", "Ziet er goed uit", "Ja", "Lijkt van wel",
+"Vaag, probeer het nog eens", "Vraag later nog eens", "Kan ik \
+beter niet zeggen", "Kan ik nu niet voorspellen", "Concentreer \
+je en vraag nog eens", "Reken er maar niet op", "Ik zeg van \
+niet", "Mijn bronnen zeggen van niet", "Lijkt er niet op",
+"Zeer twijfelachtig" ]
+
+input( "Stel je vraag aan de magische bol: " )
+print( "De magische bol zegt:", random.choice( antwoord ) )
+</pre>
+
+
+<h3 id="afsluitende-opgave-staafdiagram-while"><span style="color:red">Afsluitende opgave</span> 12.6 Staafdiagram (met while-loop_</h3>
+
+<pre class="python">
+getallen_lijst = [4,8,5]
+
+positie = 0
+while positie < len(lijst):  #doorloop alle waardes uit de lijst
+        aantal_sterren = lijst[positie]
+        print ("*" * aantal_sterren ) #en print voor elke waarde het bijbehorende aantal *
+        positie += 1
+</pre>
+
+of met gebruik van functies
+<pre class="python">
+#FUNCTIE DEFINITIE
+#functie om de staafdiagrammen af te drukken
+def staafdiagramAfdrukken( lijst ):
+    positie = 0
+    while positie < len(lijst):  #doorloop alle waardes uit de lijst
+        aantal_sterren = lijst[positie]
+        print ("*" * aantal_sterren ) #en print voor elke waarde het bijbehorende aantal *
+        positie += 1
+
+#HOOFD PROGRAMMA
+getallen_lijst = [4,8,5]
+
+staafdiagramAfdrukken( getallen_lijst ) #getallen_lijst = [4,8,5]
+</pre>
+
+
+<h3 id="afsluitende-opgave-invoer-append"><span style="color:red">Afsluitende opgave</span> 12.7 Ingevoerde waarden toevoegen (met while-loop)</h3>
+<pre class="python">
+kleuren_lijst=[]
+kleuren_teller = 0
+
+while kleuren_teller < 3:
+  lievelings_kleur = input ("Geef een van je lievelingskleuren op: ")
+  kleuren_lijst.append (lievelings_kleur)
+  kleuren_teller +=1
+
+print(kleuren_lijst)
+</pre>
+
+<h3 id="afsluitende-opgave-woorden_raden"><span style="color:red">Afsluitende opgave</span> 12.8 Woorden raden (met while-loop)</h3>
+<!--
+Schrijf een programma voor het volgende spel:
+- Maak een lijst met een paar woorden er in
+- Vraag de gebruiker om een woord in te typen
+- Als het woord voorkomt in de lijst, haal je het woord eruit en mag de gebruiker nog een keer
+- Als het woord niet voorkomt in de lijst, is het spel afgelopen.
+
+Tips:
+- In je spel zit herhaling, maak daarom gebruik van een while-loop
+- Gebruik een boolean flag, spelIsAfgelopen. Voordat je begint met spelen staat deze op False. Je spel herhaalt zich zolang deze op False staat. Zet het op het juiste moment op True.
+-->
+<pre class="python">
+woorden_lijst = ["fiets", "huis"]
+
+spel_is_afgelopen = False
+while not spel_is_afgelopen:
+  gok = input( "Doe een gok:" )
+  if gok in woorden_lijst:
+    woorden_lijst.remove(gok)
+    #print(woorden_lijst)  #druk af om te testen
+  else:
+    spel_is_afgelopen = True
+    print("Spel is afgelopen")
+</pre>
+
+
+<h3 id="afsluitende-opgave-getal_raden"><span style="color:red">Afsluitende opgave</span> 12.9 Getal raden (met while-loop)</h3>
+<!--
+Schrijf een programma voor het volgende spel:
+- Zet een willekeurige getal in een lijst.
+- Vraag de gebruiker om een getal te raden.
+- Als de gebruiker het geheim getal raadt, of als dat getal is al eens geraden, dan is het spelletje afgelopen.
+- Anders zet je het gegokte getal in de lijst en mag de gebruiker opnieuw een nieuwe getal raden.
+
+
+Tips:
+- In je spel zit herhaling, maak daarom gebruik van een while-loop
+- Gebruik een boolean flag.
+-->
+
+<pre class="python">
+import random
+geheim_lijst = [] #maak een lege lijst aan om het geheime getal in te zetten
+
+geheim_getal = random.randint(0,10) #bepaal een geheime getal
+geheim_lijst.append(geheim_getal)  #voeg geheime getal toe aan lijst
+
+spel_is_afgelopen = False
+
+while not spel_is_afgelopen:
+  invoer = input( "Doe een gok:" )
+  gok = int ( invoer )  #zet gok om in een getal
+
+  if gok in geheim_lijst: #controleer of gok in geheim_lijst voorkomt
+    spel_is_afgelopen = True
+    print("Spel is afgelopen")
+
+  else:
+    geheim_lijst.append(gok)
+    print(geheim_lijst)  #druk af om te testen
+  </pre>
+
+
+<h3 id="afsluitende-opgave-sponsorloop"><span style="color:red">Alleen VWO: Afsluitende opgave</span> 12.10 Sponsorloop (met while-loop en functies) (met while-loop)</h3>
+
+<!--
+Je doet mee aan een sponsorloop. Om geld op te halen ga je de deuren langs.
+Je besluit dat je stopt zodra je 20 euro hebt of 5 sponsoren hebt gevonden, anders ga je nog een deur langs.
+
+Schrijf een programma dat bijhoudt hoeveel je binnen hebt gehaald en of je nog een deur langs moet.
+Maak een (lege) lijst voor het bijhouden van de sponsorbedragen. Je kunt aan de lengte van de lijst zien hoeveel sponsoren je hebt.
+Schrijf een functie klaarMetGeldOphalen() dat True retourneert (met een return) als je aan de voorwaarden hebt voldaan, en anders False retourneert.
+Schrijf een while-loop waarin je de gebruiker vraagt hoeveel hij jou gaat sponsoren. Gebruik klaarMetGeldOphalen() in de voorwaarde van je functie.
+Voeg het bedrag aan je lijst toe.
+-->
+
+<pre class="python">
+sponsor_bedragen_lijst = []
+
+def klaarMetGeldOphalen():
+  totaal = sum(sponsor_bedragen_lijst)
+  print("totaal is:", totaal)
+  aantal_sponsoren = len(sponsor_bedragen_lijst)
+  print("aantal sponsoren is:", aantal_sponsoren)
+
+  if (totaal >= 20 or aantal_sponsoren == 5):
+      return True
+  else:
+      return False
+
+while not klaarMetGeldOphalen():
+  invoer = input("Voor hoeveel ga je me sponsoren?")
+  bedrag = float ( invoer )
+  sponsor_bedragen_lijst.append(bedrag)
+
+
+print("Je hebt voldoende sponsorgeld binnen!")
+</pre>
+
+<hr>
+<i><a href="Lists.html">Terug naar de theorie en opgaven over Lists</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+

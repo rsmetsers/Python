@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+        <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+<h1 id="hoofdstuk-6---condities">Python Cursus. Hoofdstuk 8 - Eigen Functies</h1>
+<h1>Afsluitende Opgaven</h1>
+
+<hr />
+<b>Let op:</b> log eerst in bij <a href="http://repl.it">repl.it</a><br>
+<i><a href="EigenFuncties.html">Terug naar de uitleg en gewone opgaven over Eigen Functies</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+<hr>
+
+<p>In deze opgaven schrijf je functies. Je moet natuurlijk niet alleen de functies schrijven, maar ook code om de functies te testen. Om te oefenen, moet je ook je functies becommentariëren zoals in de theorie is uitgelegd.</p>
+
+<h3 id="afsluitende-opgave-8.1-functie-voor-tafel-van-vermenigvuldiging."><span style="color:red">Afsluitende opgave</span> 8.1 Functie voor tafel van vermenigvuldiging.</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/890441/9cc9ca574a0f07c712231fe691db55a3"></iframe>
+Deze opdracht wordt nog niet automatisch gecontroleerd. Klik <a href="EigenFuncties_oplossingen.html#afsluitende-opgave-8.1-functie-voor-tafel-van-vermenigvuldiging.">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+<h3 id="afsluitende-opgave-8.2-letters-gemeen"><span style="color:red">Afsluitende opgave</span> 8.2 Aantal letters gemeen</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/890442/1fe18cdb4a8d2c58a63033762c492f45"></iframe>
+Deze opdracht wordt nog niet automatisch gecontroleerd. Klik <a href="EigenFuncties_oplossingen.html#afsluitende-opgave-8.2-letters-gemeen">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+<!--
+Afsluitende opgave 8.2 Aantal letters gemeen
+Schrijf een functie die van twee woorden bepaald hoeveel tekens ze gemeen hebben.Ieder teken wordt slechts eenmalig geteld, bijvoorbeeld, de strings "een" en "peer" hebben maar een teken gemeen (de letter "e"). Je mag hoofdletters zien als verschillend van kleine letters.
+
+Vraag de gebruiker om twee woorden in te voeren.
+De functie krijgt deze twee strings mee als parameters.
+Houd een variabele bij voor de overeenkomstige tekens. Dit is dus een woord waar je steeds alle overeenkomstige letters aan toevoegt.
+Voor elk letter in de eerste woord kijk je of deze wel in de tweede woord voorkomt maar niet in de overeenkomstige tekens. In dat geval voeg je de letter toe aan je variabele voor overeenkomstige tekens.
+Het controleren of een letter in een woord voorkomt kun je doen met 'in', dus letter in woord.
+Bepaal hoeveel letters in er in je variabele overeenkomstige tekens zit.
+De functie retourneert het aantal tekens dat de strings gemeen hebben.  Merk op: de functie retourneert  het aantal tekens dat de strings gemeen hebben, en moet het dus niet in de functie printen.
+Om de functie te testen kun de retourwaarde in het hoofdprogramma printen. Dit doe je netjes met een van de volgende teksten:
+              De woorden delen geen tekens.
+              De woorden hebben 1 teken gemeen.
+              De woorden hebben ... tekens gemeen.
+-->
+
+<h3 id="afsluitende-opgave-8.3-vind-de-fout"><span style="color:red">Afsluitende opgave</span> 8.3 Vind de fout</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/890444/df67a27d22f462d38e6394e70681286e"></iframe>
+Klik <a href="EigenFuncties_oplossingen.html#afsluitende-opgave-8.3-vind-de-fout">hier</a> voor het antwoord.
+
+<h3 id="afsluitende-opgave-8.4-munt-opgooien"><span style="color:red">Afsluitende opgave</span> 8.4 Munt opgooien</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/890445/31018663f8a8950f6450519f102f10bc"></iframe>
+Deze opdracht wordt nog niet automatisch gecontroleerd. Klik <a href="EigenFuncties_oplossingen.html#afsluitende-opgave-8.4-munt-opgooien">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+<h3 id="afsluitende-opgave-8.5-spelbord"><span style="color:red">Afsluitende opgave</span> 8.5 Spelbord</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/890447/470a3ff63e3b013118df1afe89d2b59a"></iframe>
+Deze opdracht wordt nog niet automatisch gecontroleerd. Klik <a href="EigenFuncties_oplossingen.html#afsluitende-opgave-8.5-spelbord">hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+<!--
+Afsluitende opgave 8.5 Spelbord
+
+We gaan met Turtle graphics een spelbord tekenen. Een 3x3 spelbord kun je bijvoorbeeld voor boter-kaas-eieren gebruiken. Je hebt natuurlijk ook andere maten van spelborden: 8x8 voor schaken, 19x19 voor Go, en veel meer.
+
+Begin met een schets op papier van een 3x3 bord waarvan elk vakje 100x100 is.
+
+Tips:
+
+- Begin eerst met het tekenen van een 3x3.
+
+- Maak een constante om de grootte van elk cel aan te geven. Maak die 100. Bedenk dat dit een constante is en dus met hoofdletters geschreven moet worden.
+
+- Maak een functie die een vierkante cel van 100x100 tekent. Hiervoor gebruik je natuurlijk de constante.
+
+- Teken een kolom van 3 cellen onder elkaar. Gebruik `turtle.goto()` om naar een bepaalde coördinaat te gaan.
+
+- Gebruik een `for` loop om de voorgaande kolom van 3 cellen te tekenen. Gebruik de variabele van de `for` loop om te bepalen naar welk coördinaat je moet gaan.
+
+- Breid het uit met nog een `for` loop zodat ook de rijen getekend worden.
+
+- Zet alle code voor het tekenen van een bord in een functie die een grootte meekrijgt om te bepalen hoeveel cellen getekend moeten worden.
+
+- Pas je code aan zodat de gebruiker kan aangeven hoeveel cellen groot het bord moet zijn.
+
+
+-->
+
+
+<hr>
+<i><a href="EigenFuncties.html">Terug naar de uitleg en gewone opgaven over Eigen Functies</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+<script>
+</script>
+</body>
+</html>
+

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+        <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+
+<h1>Python Cursus.  Hoofdstuk 7 - Iteraties Gemengde Opgaven: While en For-loop</h1>
+<h1>Uitwerkingen Gemengde Opgaven</h1>
+
+
+<i><a href="IteratiesFor.html">Terug naar de uitleg en gewone opgaven over For-loops</a></i><br>
+<i><a href="IteratiesWhile.html">Terug naar de uitleg en gewone opgaven over While-loops</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+
+<hr />
+
+
+<h3 id="gemengde-opgave-letters-gemeen"><span style="color:red">Gemengde opgave</span> 7.1 Letters gemeen</h3> # Letters gemeen.
+<pre class="python">
+woord1 = input( "Geef woord 1: " )
+woord2 = input( "Geef woord 2: " )
+gemeen = ""
+
+for letter in woord1:
+    if (letter in woord2) and (letter not in gemeen):
+        gemeen += letter
+
+if gemeen == "":
+    print( "De woorden hebben geen tekens gemeen." )
+else:
+    print( "De woorden delen de volgende tekens:", gemeen )
+</pre>
+
+
+<h3 id="gemengde-opgave-zessen-tellen"><span style="color:red">Gemengde opgave</span> 7.2 Zessen tellen</h3>
+<pre class="python">
+#Opgave Zessen tellen
+
+#random library importeren:
+import random
+
+#invoer vragen:
+invoer = input("Hoeveel dobbelstenen? ")
+aantal = int( invoer )
+
+#teller voor aantal zessen aanmaken:
+zessenteller = 0
+
+#loop om alle dobbelstenen gooien:
+for i in range (0, aantal):
+
+    #losse worp met een dobbelsteen:
+    dobbel = random.randint(1,6)
+
+    #checken of het een 6 is
+    if dobbel == 6:
+        zessenteller = zessenteller + 1
+
+# de loop is klaar, dus we kunnen ons antwoord afdrukken:
+print ( "Het aantal zessen in", aantal, "worpen was:", zessenteller  )
+</pre>
+
+
+
+
+<h3 id="gemengde-opgave-tafel-van-vermenigvuldiging"><span style="color:red">Gemengde opgave</span> 7.3 Tafel van vermenigvuldiging</h3>
+
+<pre class="python">
+# Tafel van vermenigvuldiging.
+num = 3
+
+#druk de bovenste rij af
+print(". |", end=" ")
+for teller in range(1, num+1):
+  print(teller, end=" ")
+print()
+
+
+for teller1 in range(1, num+1):
+  print (teller1, "|", end=" ") #druk de getallen links af
+  for teller2 in range(1, num+1):
+    antwoord = teller1 * teller2
+    print (antwoord, end=" ") #druk de antwoorden af
+  print()
+</pre>
+
+
+
+
+<h3 id="gemengde-opgave-hoger-lager"><span style="color:red">Gemengde opgave</span> 7.4 Hoger-Lager</h3>
+<pre class="python">
+import random
+
+te_gokken_getal = random.randint (0, 100)
+keren_gegokt = 0
+
+goed_gegokt = False
+while goed_gegokt == False:
+    invoer = input( "Gok een getal tussen 0 en 100" )
+    gok = int( invoer )
+    if gok < 0:
+        print("Invoer moet minstens 0 zijn")
+    elif gok > 100:
+        print("Getal is kleiner of gelijk aan 100")
+    elif gok == te_gokken_getal:
+        print("GOED GERADEN!")
+        goed_gegokt = True
+    elif gok < te_gokken_getal:
+        print("HOGER!")
+    else:
+        print("LAGER!")
+    keren_gegokt +=1
+
+    print("Je hebt al", keren_gegokt, "keren gegokt.")
+
+print("Spel afgelopen.")
+</pre>
+
+
+
+
+
+
+<h3 id="gemengde-opgave-omgekeerde-hoger-lager"><span style="color:red">Gemengde opgave</span> 7.5 Omgekeerde van Hoger-Lager</h3>
+<pre class="python">
+gemaakte_pogingen = 0
+laagste = 0
+hoogste = 1001
+MAX_POGINGEN = 10
+
+print( "Denk aan een getal tussen 1 en 1000." )
+
+while gemaakte_pogingen < MAX_POGINGEN :
+    computer_gok = int( (laagste + hoogste) / 2 )
+
+    prompt = "Ik raad "+str( computer_gok )+". Is jouw getal"+\
+        " (L)ager of (H)oger, of is dit (C)orrect? "
+    antwoord = input( prompt )
+
+    gemaakte_pogingen += 1
+    print("Poging nummer: ", gemaakte_pogingen)
+
+    if antwoord == "C":
+        break
+    elif antwoord == "L":
+        hoogste = te_gokken_getal
+    elif antwoord =="H":
+        laagste = te_gokken_getal
+    else:
+        print( "Antwoord H, L, of C." )
+
+    if laagste >= hoogste-1:
+        print( "Je moet een fout gemaakt hebben,",
+            "want je hebt gezegd dat het getal hoger is dan",
+            laagste, "maar ook lager dan", hoogste )
+
+
+if gemaakte_pogingen == 1:
+    print( "In 1 keer geraden! Ik kan gedachten lezen!" )
+elif gemaakte_pogingen == MAX_POGINGEN:
+    print( "In", MAX_POGINGEN, "nog niet geraden... niet echt zo's slim programma!" )
+else:
+    print( "Ik moest", teller, "keer raden." )
+
+</pre>
+
+
+<h3 id="gemengde-opgave-priemgetal-testen"><span style="color:red">Gemengde opgave</span> 7.6 Priemgetal testen</h3>
+<pre class="python">
+invoer = input ( "Geef een nummer: " )
+getal = int( invoer )
+if getal < 2:
+    print( getal, "is niet priem" )
+else:
+    i = 2
+    delerGevonden = False
+    while i < getal and delerGevonden == False:
+        if getal%i == 0:
+            print( getal, "is niet priem" )
+            delerGevonden = True
+        i += 1
+
+    if delerGevonden == False:
+        print( getal, "is priem" )
+
+</pre>
+
+<h3 id="gemengde-opgave-fibonacci"><span style="color:red">Gemengde opgave</span> 7.7 Fibonacci</h3>
+<pre class="python">
+# Fibonacci.
+
+#invoer vragen:
+fibgetal = int( input("Tot hoeveel Fibonacci getallen moet ik uitrekenen? "))
+
+# als de invoer 1 of 2 is, kunnen we de lijst rechtstreeks afdrukken.
+# pas bij hogere invoer hoeven we te rekenen
+if fibgetal == 1:
+    print ("1")
+elif fibgetal  == 2:
+    print ("1 1")
+else:
+    #voor gevallen > 2 moeten we gaan rekenen:
+
+    #de aanpak is als volgt:
+    #   - we maken een startlijst met de eerste 2 fibonaccigetallen
+    #   - we maken een loop die steeds het volgende fibonaccigetal uitrekent en aan de lijst toevoegt
+    #   - als de loop voorbij is, drukken we de lijst op het scherm af
+
+    #startlijst met de 1e 2 fibonaccigetallen:
+    fiblijst = [1, 1]
+
+    #bijhouden hoeveel fibonaccigetallen we al hebben berekend
+    #deze begint op 2, omdat we de eerste 2 getallen al in de lijst hebben gestopt
+    stap = 2
+
+    #de loop die de volgende fibonaccigetallen gaat uitrekenen:
+    while stap < fibgetal:
+
+        #het nieuwe getal is de som van de laatste 2 elementen van de lijst
+        #bepaal eerst de lengte van de lijst
+        lengte = len(fiblijst)
+
+        #bereken het nieuwe getal door de achterste twee elementen bij elkaar op te tellen:
+        nieuw_fib = fiblijst[lengte-2] + fiblijst[lengte-1]
+
+        #voeg het nieuwe getal achteraan de lijst
+        fiblijst.append(nieuw_fib)
+
+        #niet vergeten de stap te verhogen!
+        stap = stap + 1
+
+    #De lijst is nu gevuld, dus die hoeven we alleen nog af te drukken:
+    for element in fiblijst:
+        print (element, end="")#door de end="" op het einde, blijven we op dezelfde afdrukregel
+</pre>
+
+<hr>
+<i><a href="IteratiesFor.html">Terug naar de uitleg en gewone opgaven over For-loops</a></i><br>
+<i><a href="IteratiesWhile.html">Terug naar de uitleg en gewone opgaven over While-loops</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+

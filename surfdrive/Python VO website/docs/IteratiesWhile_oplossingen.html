@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+    <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+
+<h1>Python Cursus.  Hoofdstuk 7b - Iteraties: While-loop</h1>
+<h1>Uitwerkingen Opgaven</h1>
+
+
+<i><a href="IteratiesWhile.html">Terug naar de uitleg en gewone opgaven over While-Loop</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+
+
+<hr />
+
+<h3 id="opgave-7.1.1.0-tellen-tot-10."><span style="color:red">Opgave</span> 7.1.1.0 Tellen tot 10.</h3>
+<pre class="python">
+getal = 0 #eerste getal is 0
+while ( getal < 10 ):
+    print( getal )
+    getal += 1  #verhoog getal met 1
+</pre>
+<p>Antwoord: De <code>while</code> loop is 10 keer uitgevoerd. Dit zie je omdat er 10 regels zijn afgedrukt, en dus 10 keer de <code>print()</code> is aangeroepen.</p>
+
+
+<h3 id="opgave-7.1.1.1-tot-en-met-10-tellen"><span style="color:red">Opgave</span> 7.1.1.1 Tot en met 10 tellen</h3>
+<pre class="python">
+getal = 0
+while ( getal <= 10 ):
+    print( getal )
+    getal += 1  # verhoog getal met 1
+print( "Klaar!" )
+</pre>
+
+<h3 id="opgave-7.1.1.2-even-getallen-afdrukken"><span style="color:red">Opgave</span> 7.1.1.2 Even getallen afdrukken</h3>
+<pre class="python">
+nummer = 0
+while nummer < 9: #10 zou ook goed zijn.
+    print( nummer )
+    nummer += 2
+print( "Klaar" )
+</pre>
+
+
+
+<h3 id="opgave-7.1.2.1-som-berekenen-met-een-while-loop"><span style="color:red">Opgave</span> 7.1.2.1 Som berekenen met een <code>while</code> loop</h3>
+<pre class="python">
+aantal_getallen = 0
+totaal = 0
+while aantal_getallen < 3:
+    invoer = input ( "Geef een getal: " ) #vraag de gebruiker om invoer
+    ingevoerde_getal = int( invoer ) #zet de invoer om in een getal
+    totaal += ingevoerde_getal
+    aantal_getallen += 1
+
+print( "Totaal is", totaal )
+</pre>
+
+<h3 id="opgave-7.1.2.2-gemiddelde-berekenen"><span style="color:red">Opgave</span> 7.1.2.2 Gemiddelde berekenen</h3>
+<pre class="python">
+aantal_getallen = 0
+totaal = 0
+while aantal_getallen < 5:
+    invoer= input( "Geef een nummer: " )
+    ingevoerde_getal = int( invoer )
+    totaal += ingevoerde_getal
+    aantal_getallen += 1
+
+gemiddelde = totaal / aantal_getallen
+print( "Totaal is", totaal )
+print( "Gemiddelde is", gemiddelde )
+
+</pre>
+
+
+<h3 id="opgave-7.1.3-bereken-gemiddelde-de-gebruiker-bepaalt-hoeveel-getallen"><span style="color:red">Opgave</span> 7.1.3 Bereken gemiddelde, de gebruiker bepaalt hoeveel getallen</h3>
+<pre class="python">
+aantal_getallen = 0
+totaal = 0
+
+invoer = input( "Geef een nummer (of -1 op te stoppen): " ) #vraag gebruiker om invoer
+invoer_nummer = int( invoer ) #zet invoer om in een getal
+
+while invoer_nummer != -1: #zolang geen -1 is ingevoerd, herhaal dan:
+    totaal += invoer_nummer #tel ingevoerde getal bij het totaal
+    aantal_getallen += 1
+    invoer = input( "Geef een nummer (of -1 op te stoppen): " ) #vraag gebruiker om invoer
+    invoer_nummer = int( invoer ) #zet invoer om in een getal
+
+if aantal_getallen > 0:
+    gemiddelde = totaal / aantal_getallen
+    print( "Totaal is", totaal ) #druk aan einde het totaal af
+    print( "Gemiddelde is", gemiddelde )
+else: #er zijn geen getallen ingevoerd
+    print( "Totaal is 0" ) #totaal is gelijk aan 0
+    print( "Er zijn geen getallen ingevoerd, dan kan er ook geen gemiddelde uitgerekend worden." )
+</pre>
+
+<h3 id="opgave-7.1.4-fout-herstellen-in-de-loop"><span style="color:red">Opgave</span> 7.1.4 Fout herstellen in de loop</h3>
+
+<pre class="python">
+teller = 0
+while ( teller < 5 ):
+    print( teller )
+    teller += 1
+</pre>
+
+
+
+<h3 id="opgave-7.1.4-fout-herstellen-in-de-loop"><span style="color:red">Opgave</span> 7.1.5.1 Logische Vlag</h3>
+<pre class="python">
+WACHTWOORD = "Geheim"
+goed_geraden = False #om te beginnen staat de vlag op False
+
+while not goed_geraden: #herhaal zolang vlag nog op False staat
+    gebruikers_antwoord = input( "Voer wachtwoord in: " ) #vraag de wachtwoord
+    if gebruikers_antwoord == WACHTWOORD: #goed geraden
+        goed_geraden = True #de vlag wordt op True gezet, hierna zal de while loop niet opnieuw uitgevoerd gaan worden
+        print("Welkom")
+    else: #fout geraden
+        print("Fout... probeer het opnieuw")
+</pre>
+
+
+<h3 id="opgave-7.1.5.2-hooguit-3-pogingen-voor-een-pincode"><span style="color:red">Opgave</span> 7.1.5.2 Hooguit 3 pogingen voor een pincode</h3>
+<pre class="python">
+PINCODE = 1234
+goed_geraden = False
+aantal_pogingen = 0
+
+while not goed_geraden and aantal_pogingen < 3: #herhaal zolang vlag nog op False staat en nog geen drie pogingen
+    invoer = input( "Voer pincode in: " ) #vraag de wachtwoord
+    gebruikers_antwoord = int( invoer )
+    aantal_pogingen += 1
+
+    if gebruikers_antwoord == PINCODE:
+        goed_geraden = True #goed geraden, dus vlag wordt op True gezet, hierna zal de while loop niet opnieuw uitgevoerd gaan worden
+        print("Pincode is juist!")
+    else:
+        print("Pincode is fout. Je hebt", aantal_pogingen, "keer geprobeerd.")
+
+
+if goed_geraden == True:
+  print("Toegang verleend.")
+else:
+  print("Toegang geweigerd.")
+</pre>
+
+of
+<pre class="python">
+import pcinput
+
+PINCODE = 1234
+goed_geraden = False
+aantal_pogingen = 0
+
+while not goed_geraden and aantal_pogingen < 3: #herhaal zolang vlag nog op False staat en nog geen drie pogingen
+    gebruikers_antwoord = pcinput.getInteger( "Voer pincode in: ")
+    aantal_pogingen += 1
+    if gebruikers_antwoord == PINCODE:
+        goed_geraden = True #goed geraden, dus vlag wordt op True gezet, hierna zal de while loop niet opnieuw uitgevoerd gaan worden
+        print("Pincode is juist!")
+    else:
+        print("Pincode is fout. Je hebt", aantal_pogingen, "keer geprobeerd.")
+
+
+if goed_geraden == True:
+  print("Toegang verleend.")
+else:
+  print("Toegang geweigerd.")
+</pre>
+
+<div id="afsluitendeOpgaves"><h2>Afsluitende Opgaven</h2></div>
+
+<h3 id="afsluitende-opgave-while-loop-7.1-eerste-10-kwadraten-met-while-loop"><span style="color:red">Afsluitende opgave while-loop</span> 7.1 Eerste 10 kwadraten (met while-loop)</h3>
+<pre class="python">
+teller = 0
+while teller < 10:
+    antwoord = teller ** 2
+    print( antwoord )
+    teller +=1
+</pre>
+
+
+<h3 id="afsluitende-opgave-while-loop-7.2-countdown-met-while-loop"><span style="color:red">Afsluitende opgave while-loop</span> 7.2 Countdown (met while-loop)</h3>
+<pre class="python">
+#Countdown.
+getal = 10
+while getal > 0:
+    print(getal)
+    getal -= 1
+
+print("Start!")
+</pre>
+
+<h3 id="afsluitende-opgave-while-loop-7.3-veelvouden-van-5-kleiner-of-gelijk-aan-100"><span style="color:red">Afsluitende opgave while-loop</span> 7.3 Veelvouden van 5 (kleiner of gelijk aan 100)</h3>
+<pre class="python">
+# Drukt alle veelvouden van 0 t/m 100 af
+# bv. 0 5 10 ... 100
+teller = 0
+antwoord = teller * 5
+
+while antwoord < 100:
+    antwoord = teller * 5
+    print (antwoord)
+    teller +=1
+</pre>
+
+
+<h3 id="afsluitende-opgave-while-loop-7.4-faculteit-met-while-loop"><span style="color:red">Afsluitende opgave while-loop </span> 7.4 Faculteit (met while-loop)</h3>
+<pre class="python">
+# Faculteit.
+faculteits_getal = 5
+berekende_faculteit = faculteits_getal
+
+while faculteits_getal > 1:
+    faculteits_getal -= 1
+    berekende_faculteit *= faculteits_getal
+
+print( berekende_faculteit )
+</pre>
+
+<h3 id="afsluitende-opgave-while-loop-7.5-rekenkwis"><span style="color:red">Afsluitende opgave while-loop</span> 7.5 Rekenkwis</h3>
+<pre class="python">
+import random
+
+score = 0
+aantal_vragen = 0
+
+while aantal_vragen < 5: #herhaal zolang vlag nog op False staat
+    getal1 = random.randint(0,10)
+    getal2 = random.randint(0,10)
+    print( getal1, "*", getal2, "=")
+    invoer = input( "Antwoord:" ) #vraag de gebruiker om een antwoord
+    gebruikers_antwoord = int(invoer) #zet antwoord om in een getal
+    aantal_vragen += 1
+    if gebruikers_antwoord == (getal1*getal2):
+         score += 10
+         print("Goed zo!")
+
+    else:
+        print("Jammer, fout. Het juiste antwoord is: ", getal1, "*", getal2, "=", getal1*getal2 )
+
+print("Je score is:", score)
+</pre>
+<hr />
+<i><a href="IteratiesWhile.html">Terug naar de uitleg en gewone opgaven over While-Loop</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+
+
+

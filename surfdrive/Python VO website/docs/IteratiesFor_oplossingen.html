@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+        <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+
+<h1>Python Cursus.  Hoofdstuk 7a - Iteraties: For-loop</h1>
+<h1>Uitwerkingen Opgaven</h1>
+<i><a href="IteratiesFor.html">Terug naar de uitleg en gewone opgaven over For-Loop</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+
+<hr />
+
+
+<h3 id="opgave-7.2.1-teller-in-een-for-loop"><span style="color:red">Opgave</span> 7.2.1 Teller in een for-loop</h3>
+<pre class="python">
+teller = 0
+for letter in "banaan":
+    teller += 1
+    print( letter )
+
+print( "Er zitten:", teller, "letters in het woord `banaan`." )
+</pre>
+
+<h3 id="opgave-7.2.2-controle-op-emailadres"><span style="color:red">Opgave</span> 7.2.2 Controle op emailadres</h3>
+<pre class="python">
+emailadres = "voornaam.achternaam@gmail.com"
+for letter in emailadres:
+    if letter == "@":
+        print("Ja, een '@' zit in het emailadres.")
+    elif letter == ".":
+        print("Ja, een '.' zit in het emailadres.")
+print( "Klaar" )
+</pre>
+
+
+<h3 id="opgave-7.2.3.1-strafregels"><span style="color:red">Opgave</span> 7.2.3.1 Strafregels</h3>
+<pre class="python">
+for x in range( 100 ):
+    print( "Ik mag code niet kopieren van een ander." )
+</pre>
+
+<h3 id="opgave-7.2.3.2-veelvouden-afdrukken"><span style="color:red">Opgave</span> 7.2.3.2 Veelvouden afdrukken</h3>
+<pre class="python">
+# Aftellen van 21 tot 3.
+for x in range( 21, 0, -3 ):
+    print( x )
+</pre>
+
+<h3 id="opgave-for-loop-met-een-handmatige-collectie"><span style="color:red">Opgave</span> 7.2.3.3 Collectie doorlopen met een 'for' loop</h3>
+<pre class="python">
+for x in ( "appel", "peer", "druif", "banaan", "mango", "kers" ):
+    print( x )
+</pre>
+
+
+<h3 id="opgave-7.3.1-unieke-en-ongelijke-paren-afdrukken"><span style="color:red">Opgave</span> 7.3.1 Unieke en ongelijke paren afdrukken</h3>
+<pre class="python">
+#Drukt paren af van 0 tot en met 4, zonder gelijke paren
+#Bijvoorbeeld, de volgende paren worden wel afgedrukt: (0,1) (0,2) (0,3) (0,4)
+#Maar, de volgende paren worden niet afgedrukt: (0,0) (1,1
+for i in range( 5 ):
+    for j in range( i+1, 5 ):
+        if not i==j:
+            print( "(", i, ",", j, ")" )
+
+</pre>
+
+<h3 id="opgave-7.3.2-stok-kaarten-afdrukken"><span style="color:red">Opgave</span> 7.3.2 Stok kaarten afdrukken</h3>
+
+<pre class="python">
+for kleur in range( 4 ):
+    #verander kleurgetal naar een kleur
+    if kleur == 0:
+        kleur = "Harten"
+    elif kleur == 1:
+        kleur = "Schoppen"
+    elif kleur == 2:
+        kleur = "Ruiten"
+    else:
+        kleur = "Klaveren"
+
+    for waarde in range( 0, 13 ):
+        #pas de waarde aan voor Aas, Boer, Vrouw, Koning
+        if waarde == 0:
+            waarde = "A"
+        elif waarde == 10:
+            waarde = "B"
+        elif waarde == 11:
+            waarde = "V"
+        elif waarde == 12:
+            waarde = "K"
+        #druk af
+        print( "(",kleur,",", waarde, ")" )
+</pre>
+
+
+
+
+<!--### `for` loop oefeningen
+
+Om grip te krijgen op het gebruik van for loops, zijn hier een paar oefeningen:
+-->
+<h3 id="afsluitende-opgave-for-loop-7.6-totaal-van-vijf-getallen"><span style="color:red">Afsluitende opgave for-loop</span> 7.6 Totaal van vijf getallen</h3>
+<pre class="python">
+totaal = 0
+for x in range (5):
+    invoer = input( "Geef een nummer: ")
+    ingevoerde_getal = int ( invoer )
+    totaal += ingevoerde_getal
+
+print( "Totaal is", totaal )
+</pre>
+
+<h3 id="afsluitende-opgave-for-loop-7.7-countdown-met-for-loop"><span style="color:red">Afsluitende opgave for-loop</span> 7.7 Countdown met for loop</h3>
+<pre class="python">
+# Countdown met for loop.
+getal = 10
+for x in range( getal ):
+    print(getal)
+    getal -= 1
+print("Start!")
+</pre>
+
+
+<h3 id="afsluitende-opgave-for-loop-7.8-euros-naar-centen"><span style="color:red">Afsluitende opgave for-loop</span> 7.8 Euros naar centen</h3>
+<pre class="python">
+for euros in [5, 20, 50]:
+    print( "Aantal centen: " + str(euros) + "00" )
+</pre>
+OF
+<pre class="python">
+# Zet alle items in een lijst om naar centen
+for euros in [5, 20, 50]:
+    print( euros*100 )
+</pre>
+
+
+<h3 id="afsluitende-opgave-for-loop-7.9a-regenmeter--totaal"><span style="color:red">Afsluitende opgave for-loop</span> 7.9a Regenmeter- totaal</h3>
+<pre class="python">
+regen_deze_week = [1.0, 0.1, 3.0, 0.0, 2.1, 1.9, 5.0]
+totaal_regen = 0
+for regen_vandaag in regen_deze_week:
+    print("Vandaag geregend:", regen_vandaag)
+    totaal_regen += regen_vandaag
+
+print("Totaal hoeveelheid regen gevallen deze week:", totaal_regen )
+</pre>
+
+<h3 id="afsluitende-opgave-for-loop-7.9b-regenmeter---gemiddeld"><span style="color:red">Afsluitende opgave for-loop</span> 7.9b Regenmeter - gemiddeld</h3>
+<pre class="python">
+regen_deze_week = [1.0, 0.1, 3.0, 0.0, 2.1, 1.9, 5.0]
+totaal_regen = 0
+for regen_vandaag in regen_deze_week:
+    print("Vandaag geregend:", regen_vandaag)
+    totaal_regen += regen_vandaag
+
+gemiddelde_regenval = round( totaal_regen/7, 2)
+print("Totaal hoeveelheid regen gevallen deze week:", totaal_regen )
+print("Gemiddeld is er per dag:", gemiddelde_regenval, "gevallen." )
+</pre>
+
+<h3 id="afsluitende-opgave-7.10-tafel-van-vermenigvuldiging-met-een-for"><span style="color:red">Afsluitende opgave</span> 7.10 Tafel van vermenigvuldiging (met een <code>for</code>)</h3>
+<pre class="python">
+# Tafel van vermenigvuldiging (met een for loop)
+
+tafel = 12
+for teller in range (1, 11):
+    antwoord = teller*tafel
+    print( teller, "*", tafel, "=", antwoord )
+</pre>
+
+
+<h3 id="afsluitende-opgave-7.11-alle-tafels-van-vermenigvuldiging-met-een-for"><span style="color:red">Afsluitende opgave</span> 7.11 Alle tafels van vermenigvuldiging (met een <code>for</code>)</h3>
+<pre class="python">
+#drukt alle tafels van 0 t/m 10 af
+for tafel in range(11):
+    for teller in range (11):
+        print (str(tafel) +" * " + str(teller) + " = " + str(tafel*teller), end=", ")
+    print()
+</pre>
+
+<h3 id="afsluitende-opgave-7.12-maanden-met-rrr><span style="color:red">Afsluitende opgave</span> 7.12 Maanden met een rrrrr (met een <code>for</code>)</h3>
+<pre class="python">
+maandenLijst = ["Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November", "December"]
+for maand in maandenLijst:
+    for letter in maand:
+      if letter == "r":
+        print( maand )
+
+</pre>
+
+<i><a href="IteratiesFor.html">Terug naar de uitleg en gewone opgaven over For-Loop</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+
+<hr />
+
