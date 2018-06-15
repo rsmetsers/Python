@@ -28,6 +28,7 @@ def drawGUI(window):
 
     def search_pizza():
         listboxMenu.delete(0, END)  # make sure we've cleared all entries in the listbox every time we press the View all button
+        listboxMenu.insert(0, "ID \t Gerecht \t \t Prijs")
         gezochte_pizzas = MCPizzeria.zoekPizza( pizzaNaam_text.get() )
         for row in gezochte_pizzas:
             listboxMenu.insert(END, row)
@@ -72,6 +73,7 @@ def drawGUI(window):
     #         self.list1.insert(END, row)
     def toonMenuInListboxMenu():
         listboxMenu.delete(0, END)  # make sure we've cleared all entries in the listbox every time we press the View all button
+        listboxMenu.insert(0, "ID \t Gerecht \t \t Prijs")
         for row in MCPizzeria.printPizzaTabel():
             listboxMenu.config(yscrollcommand=scrollbarlistboxMenu.set)#, takefocus=1)#, columns=('A', 'B', 'C'))
             listboxMenu.insert(END, row)# *map(unicode,row))
@@ -125,23 +127,24 @@ def drawGUI(window):
     #         listboxMenu.insert(END, row) #voeg aan het einde toe
     #
 
+    def berekenEnToonPrijs():
+        berekendeTotaalPrijs = MCPizzeria.berekenTotaalPrijs()
+        print(berekendeTotaalPrijs)
+        totaalPrijs.delete(0, 35) #verwijder tekst uit veld (max 35 tekens), voor het geval er al iets staat
+        totaalPrijs.insert(0, berekendeTotaalPrijs) #zet tekst in veld
+
+
     #invoerveldSelecteerdePizzaNaam_text, aantalGeslecteerdePizza
     def voegToeAanWinkelWagen_command():
-       # print("Keuze was", keuze)
-        print("Geselecteerde pizza was:", geselecteerdePizza.get())
-        print("Aantal geslecteerd:", aantalGeslecteerdePizza.get())
-  #      listboxWinkelwagen.insert(END, invoerveldSelecteerdePizzaNaam_text.get()+ " " + str(aantalGeslecteerdePizza.get()))
         MCPizzeria.voegToeAanWinkelWagen(geselecteerdePizza.get(), aantalGeslecteerdePizza.get() )
         listboxWinkelwagen.delete(0, END)  # make sure we've cleared all entries in the listbox every time we press the View all button
         listboxWinkelwagen.insert(0, "# \t \t Gerecht")
         for row in MCPizzeria.printWinkelWagenTabel():
             listboxWinkelwagen.insert(END, str(row[1])+"\t \t \t"+ row[0])
+        berekenEnToonPrijs()
 
 
-# Wat je eigenlijk wil is dat hij uit de gegevens haalt: tbl_pizzaWinkelWagen
-
-
-
+    # Wat je eigenlijk wil is dat hij uit de gegevens haalt: tbl_pizzaWinkelWagen
     knopVoegToeAanWinkelWagen = Button(window, text="Kies", width=12, command=voegToeAanWinkelWagen_command)
     knopVoegToeAanWinkelWagen.grid(row=10, column=4)
 

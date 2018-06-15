@@ -13,7 +13,7 @@ def maakNieuweTabellen():
         CREATE TABLE IF NOT EXISTS tbl_pizzas(
         gerechtID INTEGER PRIMARY KEY AUTOINCREMENT,
         gerechtNaam TEXT,
-        gerechtPrijs FLOAT);""")
+        gerechtPrijs DOUBLE);""")
     print("Tabel 'tbl_pizzas' aangemaakt.")
 
 
@@ -72,11 +72,9 @@ def printPizzaTabel():
 
 def printWinkelWagenTabel():
     cursor.execute("SELECT tbl_pizzas.gerechtNaam, aantal FROM tbl_winkelWagen, tbl_pizzas WHERE tbl_winkelWagen.gerechtID = tbl_pizzas.gerechtID")
-    #rows = [("Gerecht \t \t Aantal")]
     rows = cursor.fetchall()
     print("Tabel tbl_pizzas:", rows)
     return rows
-
 
 
 
@@ -88,17 +86,23 @@ def voegNieuwPizzaToe(gerechtNaam, gerechtPrijs):
 
 def voegToeAanWinkelWagen(pizzaRij, pizzaAantal):
     #Pizzarij is een tuple van drie waarden, pizza_id is daarvan de eerste
-    print("ik wil wat aan mijn bestelling toevoegen")
-
     eerste_rij = pizzaRij[0]#eerste pizza selecteren uit de lijst van pizzas
-    gerechtID = eerste_rij[0]#eerste element in de tuple is gerechtID
-    aantal = pizzaAantal
+    toeTeVoegenGerechtID = eerste_rij[0]#eerste element in de tuple is gerechtID
 
- #   print("Ik wil toevoegen " + str(gerechtID) )
-    print("Ik wil toevoegen "+ str(aantal) +" maal " + gerechtID)
- #   print("Ik wil toevoegen "+ str(aantal) +" maal " + gerechtID)
-#     c.execute("INSERT INTO tbl_pizzas VALUES(NULL, ?, ? )", (gerechtNaam, gerechtPrijs))
-    cursor.execute("INSERT INTO tbl_winkelWagen VALUES(NULL, ?, ?)", (gerechtID, aantal,))
+    cursor.execute("SELECT aantal FROM tbl_winkelWagen WHERE gerechtID = ?", (toeTeVoegenGerechtID,))
+    rows = cursor.fetchone()
+    if not rows == None:
+        aantalVanGerechtAlInWinkelWagen = rows[0]
+        print("algevonden:", rows[0])
+        #print("aantal al gevondenm, pizza soort", pizzaAlGevondenInRij[1])
+       # print("aantal al gevondenm, pizza aantal", pizzaAlGevondenInRij[2])
+        nieuw_aantal = aantalVanGerechtAlInWinkelWagen + pizzaAantal
+        #update winkelwagen tabel met nieuwe aantal
+        cursor.execute("UPDATE tbl_winkelWagen SET aantal = ? WHERE gerechtID = ?", (pizzaAantal, toeTeVoegenGerechtID,))
+    else:#pizza soort zit nog niet in wandelwagen
+        toeTeVoegenaantal = pizzaAantal
+
+        cursor.execute("INSERT INTO tbl_winkelWagen VALUES(NULL, ?, ?)", (toeTeVoegenGerechtID, toeTeVoegenaantal,))
     printTabel("tbl_winkelWagen")
 
 def verwijderPizza(gerechtID):
@@ -111,22 +115,21 @@ def voegPizzasToe():
     voegNieuwPizzaToe("Salami", 10.00)
     voegNieuwPizzaToe("Margarita", 8.75)
     voegNieuwPizzaToe("Doner", 9.50)
-    voegNieuwPizzaToe("Tutti Frutti", 10.00)
-    voegNieuwPizzaToe("Al Formaggio", 10.25)
+    voegNieuwPizzaToe("TuttiFrutti", 10.00)
+    voegNieuwPizzaToe("AlFormaggio", 10.25)
     voegNieuwPizzaToe("Verkeer", 10.75)
     voegNieuwPizzaToe("NEC", 12.00)
     voegNieuwPizzaToe("Pepperoni", 11.00)
     voegNieuwPizzaToe("Vegetarisch", 9.55)
     voegNieuwPizzaToe("Tonno", 9.25)
     voegNieuwPizzaToe("Pollo", 9.75)
-    voegNieuwPizzaToe("Quattro Stagioni", 8.75)
+    voegNieuwPizzaToe("QuattroStagioni", 8.75)
     printTabel("tbl_pizzas")
 
 #Zoek een pizza dat begint met de ingevoerde waarde
 def zoekPizza(deelVanPizzaNaam):
     print("looking for pizza")
     cursor.execute("SELECT * FROM tbl_pizzas WHERE gerechtNaam LIKE ?", ( '%'+deelVanPizzaNaam+'%', ) )
-#    c.execute("SELECT * FROM tbl_pizzas WHERE gerechtNaam LIKE ?", ( '%'+deelVanPizzaNaam+'%', )) #WERKT NIET?!?!?
     rows = cursor.fetchall()
     if rows == []:
         print("Helaas, geen match gevonden met "+ deelVanPizzaNaam)
@@ -140,6 +143,20 @@ def verwijderEvtOudeTabellen():
 #    cursor.execute("DROP TABLE IF EXISTS tbl_toppings")
     cursor.execute("DROP TABLE IF EXISTS tbl_bestellingAfrekening")
     cursor.execute("DROP TABLE IF EXISTS tbl_winkelWagen")
+
+def berekenTotaalPrijs():
+    totaalPrijs = 0.00
+    cursor.execute("SELECT * FROM tbl_winkelwagen" )
+    rows = cursor.fetchall()
+    for bestelde_item in rows:
+        print("gerechtID:", bestelde_item[1])
+        aantal =  bestelde_item[2]
+
+        cursor.execute("SELECT tbl_pizzas.gerechtPrijs FROM tbl_pizzas, tbl_winkelWagen WHERE tbl_pizzas.gerechtID = tbl_winkelWagen.gerechtID" )
+        prijs = cursor.fetchone()#eeen Select levert altijd een tabel op, in dit geval een tabel met 1 rij
+        totaalPrijs += (prijs[0] * aantal) #de prijs is de eerste waarde in mijn rij
+
+    return totaalPrijs
 
 ##OPSTARTEN
 #maak verbinding met het database bestand
@@ -155,15 +172,13 @@ voegPizzasToe()
 # zoekPizza("waii")
 #gezochte_pizza = zoekPizza("Hawaii")
 #voegPizzaToeAanBestelling(gezochte_pizza)
-
+print("bereken")
+berekenTotaalPrijs()
 #verwijderPizza(1)
 #printTabel("tbl_pizzas")
 
 #schrijf aanpassingen naar het database bestand
 #c.commit()
-
-
-
 
 
 #verbreek verbinding met het database bestand
