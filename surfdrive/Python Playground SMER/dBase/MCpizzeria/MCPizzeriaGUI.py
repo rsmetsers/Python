@@ -1,11 +1,9 @@
 from tkinter import *
 import MCPizzeria
+#from PIL import ImageTk, Image
 #import TkTreectrl as treectrl
 #from pip._vendor.appdirs import unicode
 
-
-def view_command():
-    print("Pressed View all button")
 
 def drawGUI(window):
     window.wm_title("MC Pizzeria")
@@ -67,10 +65,6 @@ def drawGUI(window):
     scrollbarlistboxMenu.config(command=listboxMenu.yview)
 
 
-    # def view_command(self):
-    #     self.list1.delete(0, END)  # make sure we've cleared all entries in the listbox every time we press the View all button
-    #     for row in database.view():
-    #         self.list1.insert(END, row)
     def toonMenuInListboxMenu():
         listboxMenu.delete(0, END)  # make sure we've cleared all entries in the listbox every time we press the View all button
         listboxMenu.insert(0, "ID \t Gerecht \t \t Prijs")
@@ -193,6 +187,9 @@ def drawGUI(window):
     knopSluit = Button(window, text="Sluiten", width=12, command=window.destroy)
     knopSluit.grid(row=16, column=4)
 
+    icoontjeR = PhotoImage(file="R_icon.png")
+    icoon_knop = Button(window, text="fsd", image=icoontjeR, height=50, width=150)
+    icoon_knop.grid(row=17, column=1)
 
 #code for the GUI (front end)
 window = Tk()
