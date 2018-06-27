@@ -13,7 +13,8 @@ def maakNieuweTabellen():
         CREATE TABLE IF NOT EXISTS tbl_pizzas(
         gerechtID INTEGER PRIMARY KEY AUTOINCREMENT,
         gerechtNaam TEXT,
-        gerechtPrijs DOUBLE);""")
+        gerechtPrijs DOUBLE,
+        gerechtFoto TEXT);""")
     print("Tabel 'tbl_pizzas' aangemaakt.")
 
 
@@ -62,6 +63,7 @@ def printTabel(tabel_naam):
 #    c.close()
 
 
+
 def printPizzaTabel():
 #    c = sqlite3.connect(DBASE_FILE).cursor()
     cursor.execute("SELECT * FROM tbl_pizzas")
@@ -69,6 +71,12 @@ def printPizzaTabel():
     print("Tabel tbl_pizzas:", rows)
     return rows
 #    c.close()
+
+def getPizzaLink(gerechtID):
+    cursor.execute("SELECT gerechtFoto FROM tbl_pizzas WHERE gerechtID = ? ",(gerechtID,))
+    gerechtFoto = cursor.fetchall()
+    print("Foto lik:", gerechtFoto)
+    return gerechtFoto
 
 def printWinkelWagenTabel():
     cursor.execute("SELECT tbl_pizzas.gerechtNaam, aantal FROM tbl_winkelWagen, tbl_pizzas WHERE tbl_winkelWagen.gerechtID = tbl_pizzas.gerechtID")
@@ -78,10 +86,10 @@ def printWinkelWagenTabel():
 
 
 
-def voegNieuwPizzaToe(gerechtNaam, gerechtPrijs):
+def voegNieuwPizzaToe(gerechtNaam, gerechtPrijs, gerechtFoto):
         #the NULL parameter is for the auto-incremented id
-    cursor.execute("INSERT INTO tbl_pizzas VALUES(NULL, ?, ? )", (gerechtNaam, gerechtPrijs))
-    print("Gerecht toegevoegd aan 'tbl_pizzas':" + gerechtNaam + " " + str(gerechtPrijs) )
+    cursor.execute("INSERT INTO tbl_pizzas VALUES(NULL, ?, ?, ? )", (gerechtNaam, gerechtPrijs, gerechtFoto))
+    print("Gerecht toegevoegd aan 'tbl_pizzas':" + gerechtNaam + " " + str(gerechtPrijs) + " " + gerechtFoto )
 
 
 def voegToeAanWinkelWagen(pizzaRij, pizzaAantal):
@@ -111,19 +119,19 @@ def verwijderPizza(gerechtID):
 
 def voegPizzasToe():
     printTabel("tbl_pizzas")
-    voegNieuwPizzaToe("Hawaii", 12.25)
-    voegNieuwPizzaToe("Salami", 10.00)
-    voegNieuwPizzaToe("Margarita", 8.75)
-    voegNieuwPizzaToe("Doner", 9.50)
-    voegNieuwPizzaToe("TuttiFrutti", 10.00)
-    voegNieuwPizzaToe("AlFormaggio", 10.25)
-    voegNieuwPizzaToe("Verkeer", 10.75)
-    voegNieuwPizzaToe("NEC", 12.00)
-    voegNieuwPizzaToe("Pepperoni", 11.00)
-    voegNieuwPizzaToe("Vegetarisch", 9.55)
-    voegNieuwPizzaToe("Tonno", 9.25)
-    voegNieuwPizzaToe("Pollo", 9.75)
-    voegNieuwPizzaToe("QuattroStagioni", 8.75)
+    voegNieuwPizzaToe("Hawaii", 12.25, "R_icon.png")
+    voegNieuwPizzaToe("Salami", 10.00, "R_icon.png")
+    voegNieuwPizzaToe("Margarita", 8.75, "R_icon.png")
+    voegNieuwPizzaToe("Doner", 9.50, "R_icon.png")
+    voegNieuwPizzaToe("TuttiFrutti", 10.00, "R_icon.png")
+    voegNieuwPizzaToe("AlFormaggio", 10.25, "R_icon.png")
+    voegNieuwPizzaToe("Verkeer", 10.75, "R_icon.png")
+    voegNieuwPizzaToe("NEC", 12.00, "R_icon.png")
+    voegNieuwPizzaToe("Pepperoni", 11.00, "fotoPepperoni.png")
+    voegNieuwPizzaToe("Vegetarisch", 9.55, "R_icon.png")
+    voegNieuwPizzaToe("Tonno", 9.25, "R_icon.png")
+    voegNieuwPizzaToe("Pollo", 9.75, "R_icon.png")
+    voegNieuwPizzaToe("QuattroStagioni", 8.75, "R_icon.png")
     printTabel("tbl_pizzas")
 
 #Zoek een pizza dat begint met de ingevoerde waarde
