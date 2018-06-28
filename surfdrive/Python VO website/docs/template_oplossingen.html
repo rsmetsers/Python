@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+    <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+<hr>
+<i><a href="ListsFor.html">Terug naar de theorie en opgaven over Lists met For-loop</a></i><br>
+<i><a href="ListsForAfsluitendeOpgaven.html">Terug naar de Afsluitende Opgaven over Lists met For-loop</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+<hr>
+
+<h1>Python Cursus.  Hoofdstuk 12b - Lists met For loop</h1>
+<h1>Uitwerkingen Opgaven</h1>
+<hr />
+
+<h3 id="opgave-12.4.10-voorkomens-tellen"><span style="color:red">Opgave</span> 12.4.10 Voorkomens tellen</h3>
+<!-- OPDRACHTE
+Opgave 12.4.10 Aantal voorkomens tellen
+Laat de gebruiker een woord intikken. Tel hoe vaak iedere letter (case-insensitive) voorkomt in het woord. Je mag alle tekens negeren die geen letter zijn. Case-insensitive betekend dat zowel een 'Q' als een 'q' als dezelfde letter meetellen.
+
+Je kunt hiervoor heel goed een list te gebruiken.
+1) Maak een lijst met 26 getallen om het aantal voorkomens bij te houden. Om te beginnen is dit een lijst met 26 nullen. Tip: dit kan je op een snelle en makkelijke manier doen met 26*[0]
+2) Voor elke voorkomen van een letter, pas je de juiste getal in de lijst af. Let op: je hoeft dit alleen voor a t/m e te doen.
+3) Wanneer de letters geteld zijn, druk je de hele lijst met tellingen af.
+
+
+Tip: Je hoeft geen gebruik van pcinput te maken. Gebruik de input("...") om de gebruiker te vragen wat in te tikken.
+-->
+<!-- PREREQUISIST: strings, for -->
+<pre class="python">
+aantalVoorkomensLettersLijst = 26*[0] #lijst voor het bijhouden van namen
+print(aantalVoorkomensLettersLijst)
+
+invoer = input("Typ een woord in: ")
+woord = invoer.lower() #zet alle letters om in kleine letters
+
+for letter in woord:
+    if letter == "a":
+        aantalVoorkomensLettersLijst[0] +=1
+        print("a gevonden")
+    if letter == "b":
+        aantalVoorkomensLettersLijst[1] +=1
+        print("b gevonden")
+    if letter == "c":
+        aantalVoorkomensLettersLijst[2] +=1
+        print("c gevonden")
+    if letter == "d":
+        aantalVoorkomensLettersLijst[3] +=1
+        print("d gevonden")
+    if letter == "e":
+        aantalVoorkomensLettersLijst[4] +=1
+        print("e gevonden")
+    # Hier evt. voor alle andere letters ook afhandelen
+
+print("Dit is een lijst met voorkomens:")
+print(aantalVoorkomensLettersLijst)
+</pre>
+
+
+
+<hr>
+<i><a href="ListsFor.html">Terug naar de theorie en opgaven over Lists met For-loop</a></i><br>
+<i><a href="ListsForAfsluitendeOpgaven.html">Terug naar de Afsluitende Opgaven over Lists met For-loop</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>

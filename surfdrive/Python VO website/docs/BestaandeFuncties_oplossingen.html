@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+        <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+<h1 id="hoofdstuk-5---BestaandeFuncties">Python Cursus. Hoofdstuk 5 - Bestaande Functies</h1>
+<h1>Afsluitende Opgaven</h1>
+
+<i><a href="BestaandeFuncties.html">Terug naar de uitleg en gewone opgaven over Bestaande Functies</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+
+<hr />
+
+
+
+
+
+<h3 id="afsluitende-opgave-5.1-lengte-van-een-naam"><span style="color:red">Afsluitende opgave 5.1 </span>Lengte van een naam</h3>
+<!-- Vraag de gebruiker om een string, en druk de lengte van de string af. Gebruik de ` input()` functie en niet de `getString()` functie, aangezien de `getString()` functie spaties verwijdert die voor en na de ingegeven tekst staan.
+-->
+
+<p>Maak een variabele naam aan. Geef die de waarde van de naam van een vriend of vriendin.</p>
+<p>Druk vervolgens af wat de lengte van zijn/haar naam is:</p>
+<p><code>Jouw naam heeft .... letters.</code></p>
+<!-- ANTWOORD
+naam = "Jan"
+lengte_naam = len( naam )
+print( "Jouw naam heeft", lengte_naam, "letters." )
+-->
+Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="BestaandeFuncties_oplossingen.html#afsluitende-opgave-5.1-lengte-van-een-naam">hier</a> voor de uitwerking.
+
+<h3 id="afsluitende-opgave-5.2-hoeveel-seconden"><span style="color:red">Afsluitende opgave 5.2 </span>Hoeveel seconden?</h3>
+<p>Het tijdstip 13 uur, 47 minuten en 28 seconden kun je omrekenen naar 13 * 60 * 60 + 47 * 60 + 28 = 49648 seconden.</p>
+<p>Schrijf een programma:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>met drie variabelen: één voor uren, één voor minuten en één voor seconden.</p></li>
+<li><p>dat het tijdstip netjes op het scherm toont, zoals <code>13:47.28</code></p></li>
+<li><p>en de omrekening naar het aantal seconden (aan de hand van de variabelen) op het scherm toont</p></li>
+<li><p>en met commentaar om de code toe te lichten.</p></li>
+</ol>
+<!-- ANTWOORD
+#toont tijdstip als 13:47.28
+uren = 13
+minuten = 47
+seconden = 28
+
+print( str(uren) + ":" + str(minuten) + "." + str(seconden) )
+
+# berekent totaal aantal seconden
+totaal_aantal_seconden = uren * 60 * 60 + minuten * 60 + seconden
+print("Totaal aantal seconden:", totaal_aantal_seconden)
+
+-->
+Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="BestaandeFuncties_oplossingen.html#afsluitende-opgave-5.2-hoeveel-seconden">hier</a> voor de uitwerking.
+
+
+<h3 id="afsluitende-opgave-5.3-bitcoins-kopen"><span style="color:red">Afsluitende opgave 5.3 </span>Bitcoins kopen</h3>
+<p>Op 14 januari 2018 was 1 bitcoin 11342,87 euro waard.</p>
+<p>Schrijf een programma dat berekent hoeveel bitcoins je voor een bepaald bedrag kan kopen:</p>
+<ul>
+<li><p>Gebruik een constante om de waarde van de bitcoin op te slaan.</p></li>
+<li><p>Gebruik een andere variabele om het aantal euro's op te slaan. Test met 20.000 euro.</p></li>
+<li><p>Reken dit bedrag om naar bitcoins. Gebruik hiervoor de variabelen/constanten. Hint: gebruik <code>round(..., ...)</code> om het bedrag af te ronden op 2 decimalen.</p></li>
+<li><p>Druk dit netjes af met een volzin zoals: ''Met 20000 euro kun je 1.76 bitcoins kopen.''</p></li>
+<li><p>Voeg ook commentaar toe.</p></li>
+</ul>
+<!-- ANTWOORD
+#rekent euro's om naar bitcoins
+BITCOIN_WAARDE = 11342.87
+euros = 20000
+
+bitcoins = round( euros / BITCOIN_WAARDE, 2)
+
+print( "Met", euros, "euro kun je", bitcoins, "bitcoins kopen.")
+
+
+-->
+Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="BestaandeFuncties_oplossingen.html#afsluitende-opgave-5.3-bitcoins-kopen">hier</a> voor de uitwerking.
+
+<h3 id="afsluitende-opgave-5.4-omrekenen-celsius-naar-fahrenheit"><span style="color:red">Afsluitende opgave 5.4</span> Omrekenen Celsius naar Fahrenheit</h3>
+<p>Je hebt een penvriend in Amerika. Hij schrijft dat het bij hem 90 graden is! Stomverbaasd hoe het zo warm kan zijn, vraag je hulp aan het internet. Je komt erachter dat hij praat over temperatuur in Fahrenheit, terwijl jij dacht aan graden Celsius. Om goed met elkaar te kunnen praten over het weer, besluit jij een website te maken, die Fahrenheit in Celsius kan omzetten en andersom. Hier zijn de formules voor het omrekenen.</p>
+<p><span class="math"><em>C</em><em>e</em><em>l</em><em>s</em><em>i</em><em>u</em><em>s</em> = (<em>F</em><em>a</em><em>h</em><em>r</em><em>e</em><em>n</em><em>h</em><em>e</em><em>i</em><em>t</em> − 32) * 5/9</p>
+<p>Schrijf een programma dat een temperatuur in Fahrenheit omrekent naar Celsius. Rond af op 1 decimaal. Druk dit netjes af met een volzin zoals:</p>
+<p><code>90 graden Fahrenheit is 32.2 graden Celsius.</code></p>
+<!-- ANTWOORD
+#FUNCTIE DEFINITIE
+
+temp_celsius = ((temp_fahrenheit) - 32) * 5/9
+temp_celsius = round( temp_celsius, 1 )
+print("Temperatuur in Celsius is:", temperatuur_in_celcius)
+
+
+-->
+Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="BestaandeFuncties_oplossingen.html#afsluitende-opgave-5.4-omrekenen-celsius-naar-fahrenheit">hier</a> voor de uitwerking.
+
+
+
+
+
+
+
+<h3 id="afsluitende-opgave-5.5-dobbelen"><span style="color:red">Afsluitende Opgave 5.5 </span>Dobbelen</h3>
+<p>Schrijf een programma dat twee willekeurige dobbelstenen voor je gooit.</p>
+<!-- ANTWOORD
+import random
+
+random.seed()
+random_getal1 = random.randint (1, 6)
+random_getal2 = random.randint (1, 6)
+print( "Ik heb twee dobbelstenen voor je gegooid:", random_getal1, "en", random_getal2)
+
+-->
+Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="BestaandeFuncties_oplossingen.html#afsluitende-opgave-5.5-dobbelen">hier</a> voor de uitwerking.
+
+<h3 id="afsluitende-opgave-5.6-min-max-en-gemiddelde"><span style="color:red">Afsluitende opgave 5.6 </span>Min, max en gemiddelde</h3>
+<p>Verwerk drie getallen:</p>
+<ul>
+<li><p>Vraag de gebruiker om drie getallen. De gebruiker mag ook kommagetallen invullen.</p></li>
+<li><p>Toon de grootste.</p></li>
+<li><p>Toon de kleinste.</p></li>
+<li><p>Toon het gemiddelde, afgerond op twee decimalen.</p></li>
+</ul>
+<!-- ANTWOORD
+import pcinput
+
+getal1 = pcinput.getFloat( "Geef de eerste getal: " )
+getal2 = pcinput.getFloat( "Geef de tweede getal: " )
+getal3 = pcinput.getFloat( "Geef een derde getal: " )
+
+print( "De grootste is", max( getal1, getal2, getal3 ) )
+print( "De kleinste is", min( getal1, getal2, getal3 ) )
+print( "Het gemiddelde is", round( (getal1 + getal2 + getal3)/3, 2 ) )
+
+
+```
+-->
+Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="BestaandeFuncties_oplossingen.html#afsluitende-opgave-12.2-kaarten-schudden">hier</a> voor de uitwerking.
+
+<h3 id="afsluitende-opgave-5.7-zieleknijper"><span style="color:red">Afsluitende opgave 5.7 </span>Zieleknijper</h3>
+<p>### <span style="color:red">Opgave 4.7 Zielekijper <!-- uit javascript --> Maak een programma waarbij je een gesprekje met een gebruiker kunt laten voeren. Het programma moet interactief zijn en minstens 5 vragen bevatten.<br />Een voorbeeld van hoe zo’n gesprekje er uit kan zien:</p>
+<pre class="python">''Hallo, ik ben dr. Zielknijper. Welkom. Mag ik je naam weten?''
+
+''Dag,  ... ''
+
+''Hoe oud ben jij?''
+
+''Wow, ben je echt al .... jaar oud?''
+
+''Waar wil je met mij over praten?''
+
+''Zo, wil je me vertellen wat je boeit aan ...''
+
+''Hmm, vertel verder''</pre>
+Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="BestaandeFuncties_oplossingen.html#afsluitende-opgave-5.7-zieleknijper">hier</a> voor de uitwerking.
+
+
+<h3 id="afsluitende-opgave-5.8-wortels-berekenen"><span style="color:red">Afsluitende opgave 5.8 </span>Wortels berekenen</h3>
+<p>Bereken de waarde van de wortel uit 0, 2 en 4, en rond af op maximaal 3 decimalen. <!-- ANTWOORD
+import math
+wortel0 = round( math.sqrt(0), 3 )
+wortel2 = round( math.sqrt(2), 3 )
+wortel4 = round( math.sqrt(4), 3 )
+print( wortel0, wortel2, wortel4 )
+
+--></p>
+<h3 id="afsluitende-opgave-5.9-stelling-van-pythagoras"><span style="color:red">Afsluitende opgave 5.9 </span>Stelling van Pythagoras</h3>
+<p>De stelling van Pythagoras zegt dat bij een rechthoekige driehoek het kwadraat van de schuine zijde gelijk is aan de som van de kwadraten van de twee andere zijden (ofwel <span class="math"><em>a</em><sup>2</sup> + <em>b</em><sup>2</sup> = <em>c</em><sup>2</sup>).</p>
+<p>Schrijf een programma dat de gebruiker om de lengte van de twee rechte zijden vraagt, en bereken dan de lengte van de schuine zijde.</p>
+<p>De lengtes kunnen kommagetallen zijn. Je hoeft geen rekening te houden met het feit dat de gebruiker ook negatieve waardes of nul zou kunnen ingeven.</p>
+<p>Uiteraard voeg je commentaar toe aan je programma.</p>
+<!-- ANTWOORD
+```python
+# Stelling van Pythagoras.
+#berekent de schuine zijde van een driehoek met behulp van Pythagoras
+import math, pcinput
+
+zijde1 = pcinput.getFloat("Geef de lengte van de eerste zijde: ")
+zijde2 = pcinput.getFloat("Geef de lengte van de tweede zijde: ")
+schuine_zijde_kwadraat = zijde1**2 + zijde2**2
+schuine_zijde = math.sqrt( schuine_zijde_kwadraat )
+print( "De schuine zijde is:", schuine_zijde )
+
+```
+
+-->
+Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="BestaandeFuncties_oplossingen.html#afsluitende-opgave-5.9-stelling-van-pythagoras">hier</a> voor de uitwerking.
+
+<h3 id="optioneel-afsluitende-opgave-5.10-duurt-het-nog-lang"><span style="color:red">OPTIONEEL Afsluitende opgave 5.10 </span>Duurt het nog lang?</h3>
+<!--<p>Schrijf een programma dat het aantal seconden omrekent naar uren, minuten, seconden. (Dit is dus het omgekeerde als de vorige opgave). Gebruik één variabele voor het aantal seconden.</p>
+<p>Hint: gebruik integer deling (ook wel genoemd “floor division”) om het aantal uren en minuten te bepalen (kijk eventueel terug naar Hoofdstuk 3).</p>
+<p>Test met 49648 seconden en kijk of het tijdstip <code>13:47.28</code> afgedrukt wordt. -->
+<!-- ANTWOORD
+
+# rekent second om naar uren, minuten en seconden
+seconden = 49648
+
+minuten = seconden // 60
+seconden = seconden % 60
+
+uren = minuten // 60
+minuten = minuten % 60
+
+print( str(uren) + ":" + str(minuten) + "." + str(seconden)  )
+-->
+Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="BestaandeFuncties_oplossingen.html#optioneel-afsluitende-opgave-5.10-duurt-het-nog-lang">hier</a> voor de uitwerking.
+
+
+<hr>
+
+<i><a href="BestaandeFuncties.html">Terug naar de uitleg en gewone opgaven over Bestaande Functies</a></i><br>
+<i><a href="BestaandeFunctiesAfsluitendeOpgaven.html">Terug naar de Afsluitende Opgaven over Bestaande Functies</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+

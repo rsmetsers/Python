@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+        <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+<h1 id="hoofdstuk-4---variabelen">Python Cursus. Hoofdstuk 4- Variabelen</h1>
+<h1>Afsluitende Opgaven</h1>
+
+<i><a href="Variabelen.html">Terug naar de uitleg en gewone opgaven over Variabelen</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+
+
+<hr />
+
+<!--
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/889292/2ddd22826ead6a6a395a6c4696a0a7d1"></iframe>
+Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="ListsFor_oplossingen.html.html#afsluitende-opgave-12.2-kaarten-schudden">hier</a> voor de uitwerking.
+-->
+<h3 id="afsluitende-opgave-4.1-seconden-per-week"><span style="color:red">Afsluitende opgave 4.1 </span>Seconden per week</h3>
+<!--
+In het vorige hoofdstuk was er een oefenopgave die je het aantal seconden in een week liet uitrekenen.
+
+
+Dit doen we opnieuw, maar deze keer met variabelen.
+
+1) Definieer variabelen `seconden_per_minuut`, `minuten_per_uur`, `uren_per_dag`, `dagen_per_week` en geef ieder een juiste waarde.
+
+2) Gebruik de variabelen om de waarde van `seconden_per_week` uit te rekenen.
+
+3) Druk dit vervolgens af.
+
+-->
+<!-- ANTWOORD
+seconden_per_minuut = 60
+minuten_per_uur = 60
+uren_per_dag = 24
+dagen_per_week = 7
+
+seconden_per_week = seconden_per_minuut * minuten_per_uur * uren_per_dag * dagen_per_week
+print( seconden_per_week )
+
+-->
+Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="Variabelen_oplossingen.html#afsluitende-opgave-4.1-seconden-per-week">hier</a> voor de uitwerking.
+
+
+<h3 id="afsluitende-opgave-4.2-gemiddelde-berekenen"><span style="color:red">Afsluitende opgave 4.2  </span>Gemiddelde berekenen </h3> <!--1) Definieer drie variabelen `var1`, `var2` en `var3`. Geef ieder een bepaalde waarde (een getal).
+
+
+2) Bereken het gemiddelde en
+stop het in een variabele `gemiddelde`.
+
+3) Print het gemiddelde.
+
+4) Voeg commentaar toe.
+-->
+
+<!-- ANTWOORD
+var1 = 4
+var2 = 7
+var3 = 5
+
+gemiddelde = ( ( var1 + var2 + var3 ) /3 )
+print( gemiddelde )
+-->
+Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="Variabelen_oplossingen.html#afsluitende-opgave-4.2-gemiddelde-berekenen">hier</a> voor de uitwerking.
+
+
+
+<h3 id="afsluitende-opgave-4.3-oppervlakte-van-een-cirkel"><span style="color:red">Afsluitende opgave 4.3  </span>Oppervlakte van een cirkel <!-- Afsluitende opgave 4.2 --></h3>
+<!--De oppervlakte van een cirkel bereken je door: $O = pi*r^2$
+
+- Schrijf code die de oppervlakte van een cirkel berekent. Maak gebruik van geschikte variabelen (bijvoorbeeld `straal`).
+Voor pi mag je de waarde 3.14 gebruiken.
+
+- Toon de uitkomst als volgt: “De oppervlakte van een cirkel met straal ... is ...”
+
+- Voeg ook commentaar toe.
+
+- Test met een waarde van 12 voor de straal.
+-->
+<!-- ANTWOORD
+```python
+# Berekent de oppervlakte van een cirkel
+PI = 3.14
+straal = 12
+oppervlakte = PI * straal * straal
+print( "De oppervlakte van een cirkel met straal", straal, "is", oppervlakte )
+
+```
+-->
+Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="Variabelen_oplossingen.html#afsluitende-opgave-4.3-oppervlakte-van-een-cirkel">hier</a> voor de uitwerking.
+
+
+<h3 id="afsluitende-opgave-4.4-verwisseltruc"><span style="color:red">Afsluitende opgave 4.4  </span>Verwisseltruc<!-- Afsluitende opgave 4.4 --></h3>
+<!--Kun je een manier bedenken om de inhoud van twee numerieke variabelen om te wisselen. Je mag een derde hulpvariabele gebruiken.
+Basiscode hiervoor is gegeven in het code blok hieronder.
+Je hoeft slechts drie regels code toe te voegen.
+a = 17
+b = 23
+print( "a =", a, "en b =", b )
+#Voeg hier drie regels toe om a en b om te wisselen
+
+print( "a =", a, "en b =", b )
+-->
+
+<!-- ANTWOORD:
+
+a = 17
+b = 23
+print( "a =", a, "en b =", b )
+tijdelijk = a
+a = b
+b = tijdelijk
+print( "a =", a, "en b =", b )
+
+-->
+Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="Variabelen_oplossingen.html#afsluitende-opgave-4.4-verwisseltruc">hier</a> voor de uitwerking.
+
+
+<h3 id="afsluitende-opgave-4.5-verwisselen-zonder-hulpvariabele"><span style="color:red">(Optioneel) Afsluitende opgave 4.5 </span> Verwisselen zonder hulpvariabele<!-- Afsluitende opgave 4.4 --></h3>
+<p>Kun je een manier bedenken om de inhoud van twee numerieke variabelen om te wisselen zonder daarbij gebruik te maken van een derde (hulp)variabele?</p>
+<p>Basiscode hiervoor is gegeven in het code blok hieronder. Probeer de inhoud van a en b te verwisselen zonder een derde variabele erbij te halen. Om je te helpen, is de eerste stap al gegeven. Je hoeft slechts twee regels code toe te voegen.</p>
+<pre class="python">
+a = 17
+b = 23
+print( ''a ='', a, ''en b ='', b )
+a += b
+#Voeg hier twee regels toe om a en b om te wisselen
+
+print( ''a ='', a, ''en b ='', b </pre>
+
+
+<!-- ANTWOORD
+```python
+a = 17
+b = 23
+print( "a =", a, "en b =", b )
+a += b
+b = a - b
+a -= b
+print( "a =", a, "en b =", b )
+
+```
+-->
+Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="Variabelen_oplossingen.html#afsluitende-opgave-4.5-verwisselen-zonder-hulpvariabele">hier</a> voor de uitwerking.
+
+
+<h3 id="afsluitende-opgave-4.6-sorteren"><span style="color:red">(Optioneel) Opgave 4.6 </span> Sorteren </h3>
+<!--UIT CS CIRCLES-->
+Een programma krijgt drie getallen: x, y en z.
+
+Sorteer: zorg ervoor dat het programma de drie getallen x, y en z sorteert in opklimmende grootte waarbij x de kleinste waarde heeft, y de daaropvolgende waarde heeft, en z de grootste waarde heeft.
+
+Bijvoorbeeld, als x de waarde 8 heeft, y de waarde 3 en z de waarde 2, dan moet na afloop van het programma: x de waarde 2 hebben, y de waarde 3 en z de waarde 8.
+
+<!-- ANTWOORD
+```python
+z = tmp
+tmp = max(x, y)
+x = min(x, y)
+tmp = max(y , z)
+x = min(x, y)
+y = tmp
+tmp = max(x, y)
+y = tmp
+y = min(y, z)
+```
+-->
+Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="Variabelen_oplossingen.html#afsluitende-opgave-4.6-sorteren">hier</a> voor de uitwerking.
+
+
+<h3 id="afsluitende-opgave-4.7-zielknijper"><span style="color:red">Opgave 4.7 </span> Zielekijper </h3>
+<!-- uit javascript -->
+Maak een programma waarbij je een gesprekje met een gebruiker kunt laten voeren.  Het programma moet interactief zijn en minstens 5 vragen bevatten.
+Een voorbeeld van hoe zo’n gesprekje er uit kan zien:
+
+
+"Hallo, ik ben dr. Zielknijper. Welkom. Mag ik je naam weten?"
+
+"Dag,  ... "
+
+"Hoe oud ben jij?"
+
+"Je bent al ... jaar oud."
+
+"Waar wil je met mij over praten?"
+
+
+"Zo, wil je me vertellen wat je boeit aan ..."
+
+"Hmm,  vertel verder"
+... enzovoorts.
+
+<!-- Tip1:
+Opmerking:     teksten en variabelen kun je aan elkaar plakken met  het + teken.
+Dus  “Hallo  ”+naam+”, hoe gaat het met u.<br  />” is een goede manier van het koppelen van teksten en variabelen
+-->
+Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="Variabelen_oplossingen.html#afsluitende-opgave-4.7-zielknijper">hier</a> voor de uitwerking.
+
+
+
+
+<hr>
+
+<i><a href="Variabelen.html">Terug naar de uitleg en gewone opgaven over Variabelen</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+

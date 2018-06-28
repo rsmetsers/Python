@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+    <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+<hr>
+<i><a href="Variabelen.html">Terug naar de theorie en opgaven over Variabelen</a></i><br>
+<i><a href="VariabelenAfsluitendeOpgaven.html">Terug naar de Afsluitende Opgaven over Variabelen</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+<hr>
+
+<h1>Python Cursus.  Hoofdstuk 4 - Variabelen</h1>
+<h1>Uitwerkingen Opgaven</h1>
+<hr />
+
+<h3 id="afsluitende-opgave-4.1-seconden-per-week"><span style="color:red">Afsluitende opgave 4.1 </span>Seconden per week</h3>
+<!-- OPDRACHTE
+-->
+<pre class="python">
+seconden_per_minuut = 60
+minuten_per_uur = 60
+uren_per_dag = 24
+dagen_per_week = 7
+
+seconden_per_week = seconden_per_minuut * minuten_per_uur * uren_per_dag * dagen_per_week
+print( seconden_per_week )
+</pre>
+
+
+
+
+<h3 id="afsluitende-opgave-4.2-gemiddelde-berekenen"><span style="color:red">Afsluitende opgave 4.2  </span>Gemiddelde berekenen</h3> <!--1) Definieer drie variabelen `var1`, `var2` en `var3`. Geef ieder een bepaalde waarde (een getal).
+
+
+2) Bereken het gemiddelde en
+stop het in een variabele `gemiddelde`.
+
+3) Print het gemiddelde.
+
+4) Voeg commentaar toe.
+-->
+
+<pre class="python">
+var1 = 4
+var2 = 7
+var3 = 5
+
+gemiddelde = ( ( var1 + var2 + var3 ) /3 )
+print( gemiddelde )
+</pre>
+
+
+<h3 id="afsluitende-opgave-4.3-oppervlakte-van-een-cirkel"><span style="color:red">Afsluitende opgave 4.3  </span>Oppervlakte van een cirkel</h3>
+<!--De oppervlakte van een cirkel bereken je door: $O = pi*r^2$
+
+- Schrijf code die de oppervlakte van een cirkel berekent. Maak gebruik van geschikte variabelen (bijvoorbeeld `straal`).
+Voor pi mag je de waarde 3.14 gebruiken.
+
+- Toon de uitkomst als volgt: “De oppervlakte van een cirkel met straal ... is ...”
+
+- Voeg ook commentaar toe.
+
+- Test met een waarde van 12 voor de straal.
+-->
+<pre class="python">
+# Berekent de oppervlakte van een cirkel
+PI = 3.14
+straal = 12
+oppervlakte = PI * straal * straal
+print( "De oppervlakte van een cirkel met straal", straal, "is", oppervlakte )
+</pre>
+
+
+<h3 id="afsluitende-opgave-4.4-verwisseltruc"><span style="color:red">Afsluitende opgave 4.4  </span>Verwisseltruc<!-- Afsluitende opgave 4.4 --></h3>
+<!--Kun je een manier bedenken om de inhoud van twee numerieke variabelen om te wisselen. Je mag een derde hulpvariabele gebruiken.
+Basiscode hiervoor is gegeven in het code blok hieronder.
+Je hoeft slechts drie regels code toe te voegen.
+a = 17
+b = 23
+print( "a =", a, "en b =", b )
+#Voeg hier drie regels toe om a en b om te wisselen
+
+print( "a =", a, "en b =", b )
+-->
+
+<pre class="python">
+a = 17
+b = 23
+print( "a =", a, "en b =", b )
+tijdelijk = a
+a = b
+b = tijdelijk
+print( "a =", a, "en b =", b )
+</pre>
+
+
+
+
+<h3 id="afsluitende-opgave-4.4-verwisseltruc-1"><span style="color:red">Afsluitende opgave 4.4 </span> Verwisseltruc<!-- Afsluitende opgave 4.4 --></h3>
+<!--Kun je een manier bedenken om de inhoud van twee numerieke variabelen om te wisselen? Tip, maak gebruik van een tijdelijke variabele.</p>
+<pre class="python"><code class="python">a = 17
+b = 23
+print( ''a ='', a, ''en b ='', b )
+#Voeg hier drie regels toe om a en b om te wisselen
+
+print( ''a ='', a, ''en b ='', b )</code></pre>
+-->
+<pre class="python">
+a = 17
+b = 23
+print( "a =", a, "en b =", b )
+tijdelijk = a
+a = b
+b = tijdelijk
+print( "a =", a, "en b =", b )
+</pre>
+
+<h3 id="afsluitende-opgave-4.5-verwisselen-zonder-hulpvariabele"><span style="color:red">(Optioneel) Afsluitende opgave 4.5 </span> Verwisselen zonder hulpvariabele<!-- Afsluitende opgave 4.4 --></h3>
+
+<!--Kun je een manier bedenken om de inhoud van twee numerieke variabelen om te wisselen zonder daarbij gebruik te maken van een derde (hulp)variabele? Basiscode hiervoor is gegeven in het code blok hieronder. Probeer de inhoud van a en b te verwisselen zonder een derde variabele erbij te halen. Om je te helpen, is de eerste stap al gegeven. Je hoeft slechts twee regels code toe te voegen.-->
+
+<pre class="python">
+a = 17
+b = 23
+print( "a =", a, "en b =", b )
+a += b
+# Voeg hier twee regels toe om a en b om te wisselen
+print( "a =", a, "en b =", b )
+</pre>
+
+</p>
+-->
+<pre class="python">
+a = 17
+b = 23
+print( "a =", a, "en b =", b )
+a += b
+b = a - b
+a -= b
+print( "a =", a, "en b =", b )
+</pre>
+
+
+<h3 id="afsluitende-opgave-4.6-sorteren"><span style="color:red">(Optioneel) Opgave 4.6 </span> Sorteren</h3>
+<!--UIT CS CIRCLES-->
+<!--
+Sorteer: zorg ervoor dat het programma de drie getallen x, y en z sorteert in opklimmende grootte waarbij x de kleinste waarde heeft, y de daaropvolgende waarde heeft, en z de grootste waarde heeft.
+-->
+<pre class="python">
+z = tmp
+tmp = max(x, y)
+x = min(x, y)
+tmp = max(y , z)
+x = min(x, y)
+y = tmp
+tmp = max(x, y)
+y = tmp
+y = min(y, z)
+</pre>
+
+
+<h3 id="afsluitende-opgave-4.7-zielknijper"><span style="color:red">Opgave 4.7 </span> Zielekijper</h3>
+Geen uitwerking beschikbaar.
+<!-- uit javascript -->
+<!--Maak een programma waarbij je een gesprekje met een gebruiker kunt laten voeren.  Het programma moet interactief zijn en minstens 5 vragen bevatten.
+Een voorbeeld van hoe zo’n gesprekje er uit kan zien:
+
+```python
+"Hallo, ik ben dr. Zielknijper. Welkom. Mag ik je naam weten?"
+
+"Dag,  ... "
+
+"Hoe oud ben jij?"
+
+"Je bent al ... jaar oud."
+
+"Waar wil je met mij over praten?"
+
+
+"Zo, wil je me vertellen wat je boeit aan ..."
+
+"Hmm,  vertel verder"
+```
+
+... enzovoorts.-->
+
+<!-- Tip1:
+Opmerking:     teksten en variabelen kun je aan elkaar plakken met  het + teken.
+Dus  “Hallo  ”+naam+”, hoe gaat het met u.<br  />” is een goede manier van het koppelen van teksten en variabelen
+-->
+
+
+
+
+
+<hr>
+<i><a href="Variabelen.html">Terug naar de theorie en opgaven over Variabelen</a></i><br>
+<i><a href="VariabelenAfsluitendeOpgaven.html">Terug naar de Afsluitende Opgaven over Variabelen</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
