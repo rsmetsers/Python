@@ -21,6 +21,90 @@
 <h1>Uitwerkingen Opgaven</h1>
 <hr />
 
+<h3 id="opgave-4.1-variabelen-toekennen"><span style="color:red">Opgave 4.1</span> Variabelen toekennen</h3>
+<pre class="python">
+x = 4
+x = x + 3
+print( x )
+</pre>
+
+<h2 id="waarden-van-variabelen-traceren">Waarden van variabelen traceren</h2>
+
+<p>In regel 1 krijgt <code>mijnGeluksgetal</code> de waarde 13. In regel 2 wordt de waarde afgedrukt, dus 13. In regel 3 wordt een waarde geprint die 1 groter is dan <code>mijnGeluksgetal</code>, maar de waarde van <code>mijnGeluksgetal</code>  zelf veranderd daardoor niet. In regel 4 wordt de waarde van <code>mijnGeluksgetal</code> wel aangepast, naar 7. Zoals je kunt zien behoudt <code>mijnGeluksgetal</code> zijn waarde 13 in de eerste twee print-opdrachten; dan verandert zijn waarde in 7. </p>
+
+<h3 id="opgave-4.1.1-waarden-van-variabelen-nalopen"><span style="color:red">Opgave 4.1.1 </span>Waarden van variabelen nalopen.</h3>
+Geen oplossing beschikbaar
+
+
+<h3 id="opgave-4.1.2-waarden-van-variabelen-traceren"><span style="color:red">Opgave 4.1.2 </span> Waarden van variabelen traceren</h3>
+<pre class="python">
+getal1 = 2
+getal2 = 3
+getal3 = getal1 * getal2
+print( "getal1: ", getal1, " getal2: ", getal2, " getal3: ", getal3)
+getal2 = getal3 - getal1
+print( "getal1: ", getal1, " getal2: ", getal2, " getal3: ", getal3)
+getal1 = getal1 + getal2 + getal3
+print( "getal1: ", getal1, " getal2: ", getal2, " getal3: ", getal3)
+getal3 = getal2 * getal1
+print( "getal1: ", getal1, " getal2: ", getal2, " getal3: ", getal3)
+
+</pre>
+
+<h3 id="opgave-4.3-debuggen"><span style="color:red">Opgave 4.3</span> Debuggen</h3>
+De foutmelding zegt dat er door 0 wordt gedeeld. Blijkbaar is <code>getal1 % getal2</code> gelijk aan 0 en probeert het programma daar door te delen. Door printjes toe te voegen krijg je hier inzicht in.
+<pre class="python">
+getal1 = 5
+getal2 = 4
+getal3 = 5
+print( "getal1: ", getal1, " getal2: ", getal2, " getal3: ", getal3)
+print( getal3 / (getal1 % getal2) )
+getal1 = getal1 + 1
+print( getal3 / (getal1 % getal2) )
+getal1 = getal1 + 1
+print( getal3 / (getal1 % getal2) )
+getal1 = getal1 + 1
+print( getal3 / (getal1 % getal2) )
+</pre>
+<h3 id="opgave-4.4a-string-afdrukken"><span style="color:red">Opgave 4.4a</span> String afdrukken</h3>
+Je probeert een getal en een tekst bij elkaar op te tellen. Dat gaat natuurlijk niet omdat de types anders zijn. Of je telt twee getallen bij elkaar op, of je plakt twee teksten aan elkaar.
+
+<h3 id="opgave-4.4b-string-afdrukken"><span style="color:red">Opgave 4.4b</span> Beste school afdrukken</h3>
+<pre class="python">
+schoolnaam = "Montessori College"
+plaatsnaam = "Nijmegen"
+print( schoolnaam + " " + plaatsnaam )
+</pre>
+
+
+<h3 id="opgave-4.4-verkorte-operatoren"><span style="color:red">Opgave 4.5a</span> Verkorte operatoren</h3>
+<pre class="python">
+aantal_bananen = 100
+aantal_bananen += 12
+aantal_bananen -= 13
+aantal_bananen *= 19
+aantal_bananen *= 0.20
+print( aantal_bananen )
+</pre>
+Dit levert op: 376.20000000000005 euro.
+
+<h3 id="opgave-4.5-waarde-ophogen"><span style="color:red">Opgave 4.5b </span>Waarde ophogen</h3>
+<pre class="python">
+score = 120
+score += 10 #muntje gepakt, 10 punten erbij
+score -= 1 #stap gezet, punt eraf
+print( score )
+</pre>
+
+<h3 id="opgave-4.6-commentaar-toevoegen"><span style="color:red">Opgave 4.6</span> Commentaar toevoegen</h3>
+<pre class="python">
+temp_gisteren = 12
+temp_vandaag = 15
+waarde = max(temp_gisteren, temp_vandaag) #berekent wat de hoogste temperatuur was
+print( waarde ) #drukt de hoogste temperatuur af
+</pre>
+
+<div id="afsluitendeOpgaves"><h2>Afsluitende Opgaven</h2></div>
 <h3 id="afsluitende-opgave-4.1-seconden-per-week"><span style="color:red">Afsluitende opgave 4.1 </span>Seconden per week</h3>
 <!-- OPDRACHTE
 -->

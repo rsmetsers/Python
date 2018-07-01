@@ -39,43 +39,51 @@
 
 
 <p>Over het algemeen is het zo dat een functie de waardes van de parameters niet kan wijzigen. Bekijk bijvoorbeeld de volgende code:</p>
-<pre class="python">x = 1.56
+<!--<pre class="python">
+x = 1.56
 print( int( x ) )
 print( x )
-</pre>
+</pre>-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th51?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 <p>Als je deze code uitvoert, zie je dat <code>int()</code> niet de waarde van <code>x</code> heeft aangepast; de functie heeft alleen aan <code>print()</code> doorgegeven wat de integer representatie van de waarde van <code>x</code> is. De reden dat dit zo is, is dat over het algemeen alleen de waarde van parameters wordt doorgegeven (Engels: “passed by value”). Dit betekent dat de functie geen toegang heeft tot de variabelen die als parameters gebruikt worden, maar dat de functie kopieën krijgt van de waardes die in de parameters staan. Ik zeg “over het algemeen” omdat dit niet geldt voor alle data types, maar het geldt in ieder geval voor de data types die tot op dit moment bediscussieerd zijn. Pas in hoofdstuk 12 ga ik spreken over data types die wel door functies gewijzigd kunnen worden, en op dat moment zal ik dat heel duidelijk maken.</p>
 <p>Als een functie meerdere parameters krijgt, maakt de volgorde uit. Bijvoorbeeld, de standaard functie <code>pow()</code> krijgt twee parameters, en rekent de waarde uit van de eerste die wordt verheven tot de macht weergegeven door de tweede.</p>
-<pre class="python">basis = 2
+<!--TH 5.1 <pre class="python">basis = 2
 exponent = 3
 antwoord = pow( basis, exponent )
-print( antwoord )</code></pre>
-<p>De namen die aan de variabelen zijn gegeven doen niet ter zake, de eerste wordt verheven tot de macht die de tweede is. </p>
+print( antwoord )</pre>-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th52?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
+<p>Welke namen je aan de variabelen geeft, hier 'basis' en 'exponent', maakt niet uit, de eerste wordt verheven tot de macht die de tweede is. </p>
+<!-- Th 5.2
 <p>Wat gebeurt er als je een functie aanroept met parameter waardes waarmee de functie niet kan werken? Bijvoorbeeld, wat gebeurt er als ik <code>int()</code> aanroep met een string die geen integer bevat, of <code>pow()</code> met strings in plaats van getallen? Dat leidt meestal tot “runtime errors” (fouten tijdens de uitvoering van code). Bijvoorbeeld, beide regels in de volgende code leiden tot runtime errors.</p>
 <pre class="python">
 x = pow( 3, ''2'' )
 y = int( ''twee-en-een-half'' )
 </pre>
-
+-->
 
 <h3 id="retour-waarde">Retour waarde</h3>
 <p>Een functie heeft vaak een retour waarde. Als een functie een waarde retourneert, kun je die in je code gebruiken. Bijvoorbeeld, de int() functie retourneert een integer representatie van de parameter die is meegegeven. Je kunt deze retour waarde in een variabele stoppen middels een assignment, of je kunt de waarde op een andere manier gebruiken, bijvoorbeeld deze onmiddellijk printen. Je kunt er zelfs voor kiezen niks met de waarde te doen, maar in dat geval had het waarschijnlijk weinig zin om de functie aan te roepen.</p>
-<pre class="python">
+<!--Th5.3 <pre class="python">
 x = 2.1
 y = '3';
 z = int( x )
 print( z )
 print( int( y ) )
-</pre>
+</pre>-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th53?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 <p>Zoals je hierboven kunt zien, kun je zelfs functie aanroepen als parameter meegeven aan een functie, bijvoorbeeld, in de laatste regel van de code hierboven krijgt de <code>print()</code> functie als waarde een aanroep van de <code>int()</code> functie mee. De aanroep van <code>int()</code> vindt dan plaats voordat de <code>print(</code> wordt afgehandeld, dus de return waarde van <code>int()</code> is een parameter voor <code>print()</code>.</p>
 <p>Niet alle functies retourneren een waarde. Bijvoorbeeld, <code>print()</code> geeft geen waarde terug. Als je niet uitkijkt, kan dit tot vreemd gedrag van je code leiden. Voer maar eens de volgende code uit:</p>
-<pre class="python">
-print( print( ''Hello, world!'' ) )
-</pre>
-<p>Je ziet dat deze code twee regels print. De eerste bevat de tekst “Hello, world!” en de tweede het woord “None.” Wat betekent dat woord “None”? Om dat te begrijpen, moet je uitpluizen hoe Python deze regel code verwerkt.</p>
+<!-- Th5.4 <pre class="python">
+print( print( "Hello, world!" ) )
+</pre>-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/54?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<p>Je ziet dat deze code twee regels print. De eerste bevat de tekst "Hello, world!" en de tweede het woord "None." Wat betekent dat woord ''None''? Om dat te begrijpen, moet je uitpluizen hoe Python deze regel code verwerkt.</p>
 <p>Wanneer Python deze regel code bekijkt, ziet het eerst <code>print( &lt;iets&gt; )</code>. Omdat <code>&lt;iets&gt;</code> een argument is, moet dat eerst geëvalueerd worden. <code>&lt;iets&gt;</code> is <code>print( &lt;nog_iets&gt; )</code>. Omdat <code>&lt;nog_iets&gt;</code> een argument is, moet Python dat eerst evalueren. <code>&lt;nog_iets&gt;</code> is de string <code>''Hello, world!''</code>. Die hoeft niet verder geëvalueerd te worden, dus <code>print()</code> wordt uitgevoerd met als argument <code>''Hello, world!''</code>, en Python “vangt” de retour waarde van deze uitvoering omdat die nodig is als <code>&lt;iets&gt;</code>.</p>
 <p>En daar is het probleem: <code>print()</code> heeft geen retourwaarde, dus er is niks wat Python kan substitueren voor <code>&lt;iets&gt;</code>. Voor dit soort situaties heeft Python een speciale waarde die <code>None</code> heet. Dus het eerste <code>print()</code> commando krijgt als argument <code>None</code> mee, en dat leidt ertoe dat Python “None” op het scherm afdrukt.</p>
-<p><code>None</code> is een speciale waarde die aangeeft “geen waarde.” Als je None probeert af te drukken, drukt Python het woord <code>None</code> af, maar dat is niet een string met de waarde ''None''. Het woord geeft slechts aan dat er niks af te drukken was. <code>None</code> is niet hetzelfde als een lege string (<code>''''</code>). Een lege string heeft nog steeds een waarde, namelijk een string met lengte nul. <code>None</code> is geen string, geen float, geen integer, niks. Dus wees voorzichting met het aanroepen van een functie als parameter; als de functie geen retour waarde heeft, kunnen er vreemde dingen gebeuren.</p>
+<p><code>None</code> is een speciale waarde die aangeeft "geen waarde". Als je None probeert af te drukken, drukt Python het woord <code>None</code> af, maar dat is niet een string met de waarde ''None''. Het woord geeft slechts aan dat er niks af te drukken was. <code>None</code> is niet hetzelfde als een lege string (<code>''''</code>). Een lege string heeft nog steeds een waarde, namelijk een string met lengte nul. <code>None</code> is geen string, geen float, geen integer, niks. Dus wees voorzichting met het aanroepen van een functie als parameter; als de functie geen retour waarde heeft, kunnen er vreemde dingen gebeuren.</p>
 
 <h3 id="een-functie-is-een-zwarte-doos">Een functie is een zwarte doos</h3>
 <p>In de wereld van programmeurs betekent een “zwarte doos” iets waar je wat in kunt stoppen en wat uit kunt halen, maar waarvan je niet kunt zien hoe het van binnen werkt. Je mag een functie beschouwen als een zwarte doos: het is niet van belang te weten hoe de functie werkt of hoe de code in de functie eruit ziet. Slechts de naam, de parameters, en de retour waarde moet je kennen om de functie te kunnen gebruiken. Het zou kunnen dat de functie intern variabelen aanmaakt en berekeningen doet, maar die hebben geen effect op de rest van de code.</p>
@@ -84,26 +92,39 @@ print( print( ''Hello, world!'' ) )
 
 
 <h2 id="opgave-5.1-afronden"><span style="color:red">Opgave 5.1 </span>Afronden</h2>
-<p>Met <code>round( a, b )</code> kun je een getal <code>a</code> afronden op een bepaald <code>b</code> aantal decimaal.</p>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1210073/302193b64bee0e17a4a957ba57ed79aa"></iframe>
+
+<!--<p>Met <code>round( a, b )</code> kun je een getal <code>a</code> afronden op een bepaald <code>b</code> aantal decimaal.</p>
 <ul>
 <li><p>Maak een variabele <code>getal</code> met de waarde 3.245.</p></li>
-<li><p>Maak een variabele <code>afronden_op_aantal_decimalen</code> voor het aantal decimaal: 2.</p></li>
+<li><p>Maak een variabele <code>afronden_op_aantal_decimalen</code> voor het aantal decimalen waar je op wilt afronden: 2.</p></li>
 <li><p>Roep de functie <code>round( )</code> aan en zet het resultaat in een variabele <code>antwoord</code>.</p></li>
 <li><p>Druk <code>antwoord</code> af.</p></li>
-</ul>
+</ul>-->
+
+Klik <a href="BestaandeFuncties_oplossingen.html#afsluitende-opgave-opgave-5.1-afronden">hier</a> voor de uitwerking.
+
+
 <hr />
 <h2 id="basis-functies">Basis functies</h2>
-<p>Ik introduceer nu een enkele basis functies die je in je programma’s kunt gebruiken.</p>
+<p>Je leert nu enkele basis functies die je in je programma’s kunt gebruiken.</p>
 <h3 id="type-casting">Type casting</h3>
-<p>Ik heb al gesproken over type casting functies in hoofdstuk 4, maar nu ik meer details van functies heb gegeven, kan ik de beschrijving completeren.</p>
+<p>We hebben al geleerd over type casting functies in hoofdstuk 4. Dat gebruik je als je de type van een variabele wilt veranderen. We gaan daar nu uitgebreider op in.</p>
 <ul>
 <li><p><code>float()</code> heeft één parameter en retourneert een floating-point representatie van de waarde van de parameter. Als de waarde een integer is, krijg je dezelfde waarde terug als float. Als de parameter een float is, krijg je dezelfde waarde terug. Als de parameter een string bevat die je als integer of float zou kunnen interpreteren, dan krijg je die float terug als waarde. Anders krijg je een runtime error.</p></li>
 <li><p><code>int()</code> heeft één parameter en retourneert een integer representatie van de waarde van de parameter. Als de waarde een integer is, krijg je dezelfde waarde terug. Als de waarde een float is, krijg je een integer terug die de waarde van de float naar beneden heeft afgerond. Als de parameter een string bevat die je als integer zou kunnen interpreteren, dan krijg je die integer terug als waarde. Anders krijg je een runtime error.</p></li>
 <li><p><code>str()</code> heeft één parameter en retourneert een string representatie van de waarde van de parameter.</p></li>
 </ul>
 <h3 id="opgave-5.2.1-type-casting-naar-integer"><span style="color:red">Opgave 5.2.1 </span>Type casting naar integer</h3>
-<p>Wat denk je dat de volgende code doet? Als je het niet weet, test dan de code.</p>
-<pre class="python">print( 10 * int( ''100000000'' ) )</code></pre>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1210075/be615de0a062a866143f7d949ad3d32f"></iframe>
+
+<!-- <p>Wat denk je dat de volgende code doet? Als je het niet weet, test dan de code.</p>
+<pre class="python">
+print( 10 * int( ''100000000'' ) )</code></pre>
+-->
+Klik <a href="BestaandeFuncties_oplossingen.html#opgave-5.2.1-type-casting-naar-integer">hier</a> voor de uitwerking.
+
+
 <!--**<span style="color:red">Opgave** De code hierboven geeft een runtime error. Los het probleem op door precies twee tekens te verwijderen.
 -->
 <h3 id="berekeningen">Berekeningen</h3>
@@ -118,8 +139,10 @@ print( print( ''Hello, world!'' ) )
 
 
 <h3 id="opgave-5.2.2-berekeningen"><span style="color:red">Opgave 5.2.2</span> Berekeningen</h3>
-<p>Bekijk de code hieronder en bedenk wat er op het scherm getoond wordt. Voer daarna de code uit en controleer of je gelijk hebt.</p>
-<pre class="python">x = -2
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1210076/40dbf0637eb5a1325a7b7ac1c956afa7"></iframe>
+<!--<p>Bekijk de code hieronder en bedenk wat er op het scherm getoond wordt. Voer daarna de code uit en controleer of je gelijk hebt.</p>
+<pre class="python">
+x = -2
 y = 3
 z = 1.27
 
@@ -127,45 +150,59 @@ print( abs( x ) )
 print( max( x, y, z ) )
 print( min( x, y, z ) )
 print( pow( x, y ) )
-print( round( z, 1 ) )</code></pre>
+print( round( z, 1 ) )</code></pre>-->
+
+
 <h3 id="len">len()</h3>
 <p><code>len()</code> is een basis functie die één parameter krijgt, en die de lengte van die parameter teruggeeft. Op dit moment is het enig zinvolle data type dat je mee kunt geven aan <code>len()</code> een string, waarvan je dan de lengte krijgt. In latere hoofdstukken volgen meer data types waarvan je de lengte kunt bepalen.</p>
 
-<h3 id="opgave-5.2.3-basis-functie-len"><span style="color:red">Opgave 5.2.3</span> Basis functie <code>len()</code></h3>
 <p>Wat print de code hieronder? Controleer of je vermoeden klopt.</p>
+<!--<h3 id="opgave-5.2.3-basis-functie-len"><span style="color:red">Opgave 5.2.3</span> Basis functie <code>len()</code></h3>
+
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1210077/72479aab4c841778850193e9713cf918"></iframe>-->
+<iframe height="300px" width="100%" src="https://repl.it/@smer/Th55?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<!--TH5.5 <p>Wat print de code hieronder? Controleer of je vermoeden klopt.</p>
 ```python
 print( len( 'man' ) )
 print( len( 'man ' ) )
 print( len( 'mango ' ) )
 print( len( "" ) ) # "" is een lege string
 ```
+-->
 
 <h3 id="input">input()</h3>
 <p>In veel programma’s wil je dat de gebruiker van het programma data verstrekt. Je kunt de gebruiker vragen een string in te typen met behulp van de functie <code>input()</code>. De functie krijgt één parameter mee, namelijk een string. Deze string is de zogeheten “prompt.” Als <code>input()</code> wordt aangeroepen, wordt de prompt op het scherm gezet en mag de gebruiker een tekst ingeven. De gebruiker mag ingeven wat hij of zij wil, inclusief niks. De gebruiker sluit het ingeven af met een druk op de <em>Enter</em> toets. De retour waarde van de functie is hetgeen de gebruiker heeft ingegeven, exclusief de <em>Enter</em>.</p>
 <p>Het hangt van de omgeving waar je je programma in draait hoe de gebruiker de ingave precies doet. Soms wordt er een rechthoek op het scherm getoond met de prompt ervoor waarin de gebruiker mag typen. Als je een Python programma draait op de commandline, moet de gebruiker ook de ingave op de command-line doen. Sommige editors tonen een popup-window waarin de gebruiker moet typen.</p>
 <p>Hier is een voorbeeld:</p>
-<pre class="python">
+<!--TH5.6 <pre class="python">
 tekst = input( ''Geef een tekst in: '' )
 print( ''Je hebt het volgende ingetypt:'', tekst )
-</pre>
+</pre>-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th56?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <p>Realiseer je dat <code>input()</code> altijd een string teruggeeft. Bekijk de volgende code:</p>
-<pre class="python">
-nummer = input( ''Geef een getal: '' )
-print( ''Je getal in het kwadraat is'', nummer * nummer )
-</pre>
-<p>Het maakt niet uit wat je ingeeft, deze code geeft een runtime error. Omdat <code>input()</code> een string teruggeeft, wordt op de tweede regel een poging gedaan twee strings met elkaar te vermenigvuldigen, en dat kan niet. Het maakt niet uit of je string een getal bevat: een string is een string. Je kunt het probleem oplossen middels type casting, bijvoorbeeld:</p>
-<pre class="python">
-nummer = input( ''Geef een getal: '' )
-nummer = float( nummer )
-print( ''Je getal in het kwadraat is'', nummer * nummer )
-</pre>
+<!--Th5.7 <pre class="python">
+nummer = input( "Geef een getal: " )
+print( "Je getal in het kwadraat is", nummer * nummer )
+</pre>-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th57?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-<p>Voor deze code geldt dat als de gebruiker een getal ingeeft, de code doet wat hij moet doen. Maar als de gebruiker iets anders ingeeft, dat niet in een getal omgezet kan worden, krijg je toch weer een runtime error. Ook dat probleem kan opgelost worden, maar ik heb nog niet de zaken uitgelegd die je nodig hebt om dit probleem aan te pakken, en het zal nog tot hoofdstuk 17 duren voordat ik eraan toekom. Tot dat moment geef ik iets later in dit hoofdstuk een methode die je kunt gebruiken om je programma om een getal te laten vragen zonder dat het “crasht” als de gebruiker een wijsneus probeert te zijn en iets anders ingeeft.</p>
+<p>Het maakt niet uit wat je ingeeft, deze code geeft een runtime error. Omdat <code>input()</code> een string teruggeeft, wordt op de tweede regel een poging gedaan twee strings met elkaar te vermenigvuldigen, en dat kan niet. Het maakt niet uit of je string een getal bevat: een string is een string. Je kunt het probleem oplossen middels type casting. Je maakt van de ingevoerde tekst eerst een <code>int</code>. Bijvoorbeeld:</p>
+<!-- Th5.8
+<pre class="python">
+invoer = input( "Geef een getal: " )
+nummer = int( invoer )
+print( "Je getal in het kwadraat is", nummer * nummer )
+</pre>-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th58?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<p>Voor deze code geldt dat als de gebruiker een getal ingeeft, de code doet wat hij moet doen. Maar als de gebruiker iets anders ingeeft, dat niet in een getal omgezet kan worden, krijg je toch weer een runtime error. </p>
 
 <h3 id="opgave-5.2.4-optelling-en-vermenigvuldiging-met-input"><span style="color:red">Opgave 5.2.4 Optelling en vermenigvuldiging met <code>input()</code></h3>
-<p>Schrijf een programma die de gebruiker twee getallen laat ingeven, en die dan toont wat de uitkomst is als je ze optelt en als je ze vermenigvuldigt.</p>
-<p>Je code mag een runtime error geven als de gebruiker iets ingeeft wat geen getal is.</p>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1210078/274adb742db1f27cfa6ea5287c850b74"></iframe>
+
+<!--<p>Schrijf een programma die de gebruiker twee getallen laat ingeven, en die dan toont wat de uitkomst is als je ze optelt en als je ze vermenigvuldigt.</p>
+<p>Je code mag een runtime error geven als de gebruiker iets ingeeft wat geen getal is.</p>-->
 <!-- ANTWOORD
 ```python
 # Optelling en vermenigvuldiging
@@ -185,27 +222,34 @@ print ("Vermenigvuldiging is:", antwoord_vermenigvuldiging )
 
 <h3 id="print"><code>print()</code></h3>
 
-<p>De functie <code>print()</code> krijgt nul of meer parameters mee, toont ze op het scherm (als het er meerdere zijn, met spaties ertussen), en gaat daarna naar de volgende regel. Dus als je twee print statements gebruikt, komt de output van de tweede onder die van de eerste te staan.</p>
-<p>Als <code>print()</code> wordt aangeroepen zonder parameters, gaat de functie alleen naar de volgende regel. Zo kun je lege regels op het scherm zetten. Je mag als parameters meegeven wat je wilt, en <code>print()</code> zal zijn best doen het op het scherm weer te geven. Vooralsnog zul je echter alleen basis data types printen.</p>
-<p><code>print()</code> kan twee speciale parameters meekrijgen, die sep en end heten.</p>
-<p><code>sep</code> geeft aan wat er getoond moet worden tussen iedere twee parameters, en is als default een spatie. Je kunt die spatie wijzigen in iets anders via <code>sep</code>, inclusief in een lege string.</p>
-<p><code>end</code> geeft aan wat <code>print()</code> moet tonen nadat alle parameters zijn getoond, en is als default een “nieuwe regel.” Door <code>end</code> te wijzigen kun je ervoor zorgen dat <code>print()</code> iets anders doet dan naar een nieuwe regel gaan als hij klaar is met het tonen van parameters.</p>
+<p>De functie <code>print()</code> drukt af in de console. Deze kan op meerdere manieren aangeroepen worden, bijvoorbeeld, met of zonder parameters (iets tussen de haakjes):
+
+<ul>
+<li>Met parameters: toont de parameters (wat tussen de haakjes meegegeven wordt) op het scherm (als het er meerdere zijn, met spaties ertussen), en gaat daarna naar de volgende regel. Dus als je twee print statements gebruikt, komt de output van de tweede onder die van de eerste te staan.</li>
+
+<li>Zonder parameters: drukt een lege regel af.</li>
+
+
+<li><code>sep</code> als speciale parameter: wat er <i>tussen</i> twee parameters afgedrukt moet worden. Standaard is dat een spatie. Je kunt die spatie wijzigen in iets anders, bijvoorbeeld niks.</li>
+
+<li><code>end</code> als speciale parameter: wat er <i>na</i> alle parameters afgedrukt moet worden. Standaard is dat een nieuwe regel. Je kunt die nieuwe regel wijzigen in iets anders, bijvoorbeeld niks.</li>
+
+</ul>
+
+<iframe height="300px" width="100%" src="https://repl.it/@smer/Th59?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 <p>Om <code>sep</code> en <code>end</code> te gebruiken, moet je speciale parameters opnemen, namelijk parameters <code>sep=&lt;string&gt;</code> en/of <code>end=&lt;string&gt;</code> (merk op: als in een beschrijving van code je iets ziet dat tussen <code>&lt;</code> en <code>&gt;</code> staat, betekent dat meestal dat je dat niet letterlijk moet typen, maar moet vervangen door van wat de term tussen de <code>&lt;</code> en <code>&gt;</code> aangeeft, dus <code>&lt;string&gt;</code> betekent dat je daar een string moet plaatsen).</p>
+</ul>
 
 <h3 id="opgave-5.2.5-print"><span style="color:red">Opgave 5.2.5 Print</h3>
-
-TODO: PAS DEZE CODE UIT ZODAT HET VOLGENDE GEBEURT:
-Voer de code uit.
-```python
-print( "X", "X", "X", sep="x" )
-print( "X", end="" )
-print( "Y", end="" )
-print( "Z" )
-```
-
-
-<p>Als je deze code uitvoert, zie je twee regels. 
-De eerste bevat “XxXxX,” aangezien er is aangegeven dat er drie keer een hoofdletter “X” afgedrukt moet worden met tussen iedere twee als separator een kleine letter “x.” De tweede regel bevat ''XYZ'', omdat weliswaar dit drie verschillende aanroepen van <code>print()</code> betreft, maar na ieder van de eerste twee er niet naar een volgende regel wordt gegaan.</p>
+<!-- Th5.9
+print("Hallo")
+print() #drukt een lege regel af
+print("hoi","hoi") #standaard wordt een spatie tussen elk parameter afgedrukt
+print( "a", "b", "c", sep="!" ) #drukt ! af tussen elk parameter
+print( "d", "e", "f", sep="" ) #drukt niks af tussen elk parameter
+print( 1,2,3, end="" ) #na afloop NIET naar nieuwe regel
+print( 4,5,6, end="fiets" ) #na afloop 'fiets' afdrukken in plaats van naar nieuwe regel
+-->
 
 <!--
 ### `format()`
@@ -317,30 +361,152 @@ print( s.format( 5, 3.75, 5 * 3.75 ) )
 -->
 
 <h2 id="modules">Modules</h2>
-<p>Python biedt basis functies, waarvan ik er een aantal hierboven besproken heb. Naast die basis functies biedt Python ook een groot aantal zogeheten “modules,” waarin zich vele nuttige functies bevinden.</p>
-<p>Om de functies van een module te gebruiken in een programma, moet je de juiste module importeren door boven in je programma <code>import &lt;modulenaam&gt;</code> op te nemen. Je kunt dan alle functies die in de betreffende module staan in je programma gebruiken, maar je moet de functie-aanroepen vooraf laten gaan door de naam van de module en een punt. Bijvoorbeeld, om de functie <code>sqrt()</code> uit de <code>math</code> module (die de wortel van een getal trekt) te gebruiken, roep je <code>math.sqrt()</code> aan nadat je <code>math</code> geïmporteerd hebt.</p>
+<p>Python biedt basis functies, waarvan er zojuist een aantal besproken zijn. Naast die basis functies heeft Python ook een groot aantal “modules”, met nog veel meer handige functies.</p>
+<p>Om de functies van een module te gebruiken, moet je de juiste module importeren door boven in je programma <code>import &lt;modulenaam&gt;</code> op te nemen, bijvoorbeeld <code>import turtle</code>. Je kunt dan alle functies die in de betreffende module staan in je programma gebruiken, maar je moet de functie-aanroepen vooraf laten gaan door de naam van de module en een punt. Bijvoorbeeld, om de functie <code>pendown()</code> uit de <code>turtle</code> module, roep je <code>turtle.pendown()</code> aan nadat je <code>turtle</code> geïmporteerd hebt.</p>
+
+
+
+
 <h3 id="math">math</h3>
-<p>De <code>math</code> module bevat een aantal nuttige wiskundige functies. Deze functies zijn meestal zeer efficiënt, en retourneren meestal een float. Ik noem hier een klein aantal van de functies; als je er meer wilt kennen kun je ze opzoeken in de Python referentie):</p>
+<p>De <code>math</code> module bevat een aantal nuttige wiskundige functies. Deze functies zijn meestal zeer efficiënt. Zie hier twee voorbeelden van functies:</p><!--, en retourneren meestal een float. Ik noem hier een klein aantal van de functies; als je er meer wilt kennen kun je ze opzoeken in de Python referentie):</p>-->
 <ul>
-<li><code>exp()</code> krijgt één numerieke parameter en retourneert <code>e</code> tot de macht van die parameter. Als je niet weet wat <code>e</code> is: <code>e</code> is een speciaal getal met veel interessante eigenschappen, en wordt veel gebruikt in natuurkunde, wiskunde, en statistiek.</li>
-<li><code>log()</code> krijgt één numerieke parameter en retourneert het natuurlijk logaritme van die parameter. Het natuurlijk logaritme is de waarde die de parameter als uitkomst heeft als je <code>e</code> verheft tot deze waarde. Net als <code>e</code> heeft het natuurlijk logaritme toepassingen in natuurkunde, wiskunde, en statistiek.</li>
-<li><code>log10()</code> krijgt één numerieke parameter en retourneert het logaritme met <code>10</code> als basis van de parameter.</li>
-<li><code>sqrt()</code>krijgt één numerieke parameter en retourneert de vierkantswortel van die parameter.</li>
+<li><code>sqrt()</code>levert de wortel van de parameter op.</li>
+<li><code>log()</code> levert het natuurlijk logaritme van de parameter op.</li>
+<li><code>log10()</code> levert het logaritme met <code>10</code> als basis van de parameter op.</li>
+<!--<li><code>exp()</code> krijgt één numerieke parameter en retourneert <code>e</code> tot de macht van die parameter. Als je niet weet wat <code>e</code> is: <code>e</code> is-->
 </ul>
+<!-- Th 5.10
+
 <p>Bijvoorbeeld:</p>
 <pre class="python">
 from math
 import exp, log
 
-print( ''De waarde van e is bij benadering'', exp( 1 ) )
+print( "De waarde van e is bij benadering", exp( 1 ) )
 e_sqr = exp( 2 )
-print( ''e kwadraat is'', e_sqr, ''wat betekent'' )
-print( ''dat log('', e_sqr, '') gelijk is aan'', log( e_sqr ) )
-</pre>
+print( "e kwadraat is", e_sqr, "wat betekent" )
+print( "dat log(", e_sqr, ") gelijk is aan", log( e_sqr ) )
+</pre>-->
+
+<iframe height="400px" width="100%" src="https://repl.it/@smer/TH510?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<h3 id="opgave-5.3.1-modules-importeren"><span style="color:red">Opgave 5.3.1</span> Modules importeren</h3>
+<!--<p>Bereken de wortel van 16. Druk het antwoord af. Gebruik <code>import math</code>.</p>-->
+<iframe frameborder="0" width="100%" height="400px" src="https://repl.it/student_embed/assignment/1211576/26190b2152cc383587d2a5ac8e936f56"></iframe>
+Klik <a href="BestaandeFuncties_oplossingen.html#opgave-5.3.1-modules-importeren">hier</a> voor de uitwerking.
 
 
-<h3 id="opgave-5.3.1-modules-importeren"><span style="color:red">Opgave 5.3.1 Modules importeren</h3>
-<p>Bereken de wortel van 16. Druk het antwoord af. Gebruik <code>import math</code>.</p>
+
+
+<h3 id="random-willekeurige-getallen">Random (willekeurige) getallen</h3>
+<p>De <code>random</code> module bevat functies die toevalsgetallen genereren.</p>
+<ul>
+<li><p><code>random()</code> krijgt geen parameters, en retourneert een toevalsgetal als een float binnen het bereik [0, 1), dat wil zeggen een bereik tussen nul en 1, waarbij 0.0 wel meedoet maar 1.0 niet.</p></li>
+<li><p><code>randint()</code> krijgt twee parameters, beide integers, waarbij de eerste kleiner dan of gelijk aan de tweede moet zijn. Het retourneert een toevalsgetal dat een integer is dat ligt binnen het bereik dat begrensd wordt door deze twee parameters, inclusief beide parameters. Bijvoorbeeld, randint(2, 5) retourneert 2, 3, 4, of 5, elk met een gelijke kans.</p></li>
+</ul>
+<!-- Th5.11
+<pre class="python">
+import random
+
+random.seed()
+print( "Een toevalsgetal tussen 1 en 10 is", random.randint( 1, 10 ) )
+print( "Een ander is", random.randint( 1, 10 ) )</code></pre>
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/TH511?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+
+<h3 id="opgave-5.3.2.1-random"><span style="color:red">Opgave 5.3.2.1</span> Willekeurig getal tussen de 0 en 100</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1211577/15247e6dcf495e28608382fee601bbfb"></iframe>
+<!--<p>Maak een variabele <code>random_getal</code> aan en geef die een willekeurige getal tussen 0 en 100 af (de getallen 0 en honderd mogen ook). Druk de variabele <code>random_getal</code> af.</p>
+-->
+<!-- ANTWOORD
+
+import random
+
+random_getal = random.randint (0, 100)
+print( "Een toevalsgetal tussen (en inclusief) 0 en 100 is:", random_getal)
+
+-->
+
+Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="BestaandeFuncties_oplossingen.html#opgave-5.3.2.1-random">hier</a> voor de uitwerking.
+
+
+<!--
+```python
+from random import random, randint, seed
+
+seed()
+print( "Een toevalsgetal tussen 1 en 10 is", randint( 1, 10 ) )
+print( "Een ander is", randint( 1, 10 ) )
+seed( 0 )
+print( "3 toevalsgetallen zijn:", random(), random(), random() )
+seed( 0 )
+print( "Dezelfde 3 zijn:", random(), random(), random() )
+```
+-->
+
+<!--
+<h3 id="optioneel-seed">(Optioneel) Seed</h3>
+<p>Een andere functie in de random module is <code>seed()</code>. Deze initialiseert de toevalsgetal generator van Python. Als je een lijst van toevalsgetallen wilt hebben die iedere keer hetzelfde is voor je programma, kun je dat voor elkaar krijgen door aan het begin van je programma seed() aan te roepen met een vast getal, bijvoorbeeld 0. Dit kan nuttig zijn bij het testen van je programma. Als je de generator weer echt toevallige getallen wilt laten genereren op een later punt in je programma, kun je seed() nogmaals aanroepen zonder parameter.</p>
+<pre class="python"><span class="ch">import random
+
+random.seed( 0 )
+print( ''3 toevalsgetallen zijn:'', random.random(), random.random(), random.random() )
+random.seed( 0 )
+print( ''Dezelfde 3 zijn:'', random.random(), random.random(), random.random() )</code></pre>
+<h3 id="opgave-5.3.2.2-random-seed"><span style="color:red">Opgave 5.3.2.2 Random seed</h3>
+<p>Onderzoek wat het effect van <code>seed()</code> en <code>seed(0)</code>.</p>
+-->
+
+
+<!--
+<h3 id="gebruikersinvoer-met-module-pcinput">Gebruikersinvoer met module <code>pcinput</code></h3>
+<p>pcinput is een module die voor dit boek geschreven is. Je kunt hem downloaden via http://www.spronck.net/pythonbook. Als het goed is zie je het ook in Pycharm staan. De module bevat vier handige functies, die de gebruiker op een veilige manier om specifieke input vragen. De functies zijn de volgende:</p>
+<ul>
+<li><p><code>getInteger()</code> krijgt één string parameter, de prompt, en vraagt de gebruiker via die prompt om een integer in te geven. Als de gebruiker iets ingeeft wat geen integer is, wordt gevraagd de input opnieuw in te geven. De functie eindigt pas als de gebruiker een correcte integer heeft ingegeven, en de functie retourneert dan de ingegeven waarde als een integer.</p></li>
+<li><p><code>getFloat()</code> krijgt één string parameter, de prompt, en vraagt de gebruiker via die prompt om een float in te geven. Als de gebruiker iets ingeeft wat geen float is, wordt gevraagd de input opnieuw in te geven. De functie eindigt pas als de gebruiker een correcte float heeft ingegeven, en de functie retourneert dan de ingegeven waarde als een float.</p></li>
+<li><p><code>getString()</code> krijgt één string parameter, de prompt, en vraagt de gebruiker via die prompt om een string in te geven. Alles wat de gebruiker ingeeft wordt als correct beschouwd. De functie retourneert de ingegeven waarde, waarbij spaties voor en na de ingegeven tekst verwijderd zijn.</p></li>
+<li><p><code>getLetter()</code> krijgt één string parameter, de prompt, en vraagt de gebruiker via die prompt om één letter in te geven. Alleen letters van het alfabet zijn acceptabel. Pas als de gebruiker precies één letter heeft ingegeven eindigt de functie, en de letter wordt dan als een hoofdletter geretourneerd.</p></li>
+</ul>
+<p>Deze functies helpen je dus om code te schrijven die de gebruiker vraagt om input met een specifiek data type te verstrekken, omdat ze garanderen dat het programma inderdaad iets binnenkrijgt dat van het gevraagde data type is. De code geeft geen runtime error als de gebruiker iets anders ingeeft. De functies zijn niet erg netjes, omdat ze foutmeldingen geven in het Nederlands als iets fouts ingegeven wordt. Dat betekent dat je deze functies niet moet gebruiken als je een Engelstalig programma schrijft (daar heb ik een andere versie van de module voor), maar om Python te leren zijn deze functies afdoende.</p>
+<p>Voorbeeld waarbij een gebruiker wordt gevraagd een geheel getal in te voeren:</p>
+<pre class="python">geluksgetal = pcinput.getInteger( ''Wat is je geluksgetal?'' )</code></pre>
+<h3 id="opgave-5.5.3.1-gebruikersinvoer-met-pcinput-getallen"><span style="color:red">Opgave 5.5.3.1 Gebruikersinvoer met <code>pcinput</code> (getallen)</h3>
+<p>Vraag de gebruiker om twee getallen in te voeren en druk de som af:</p>
+<ul>
+<li><p>De pcinput module staat in de map waar je nu werkt. Importeer de module.</p></li>
+<li><p>Vraag de gebruiker een getal in te voeren, sla deze in een variabele op.</p></li>
+<li><p>Vraag de gebruiker een tweede getal in te voeren, sla deze in een variabele op.</p></li>
+<li><p>Tel de twee variabelen bij elkaar op, sla het resultaat op in een variabele.</p></li>
+<li><p>Print dan naar het scherm: <code>''... + ... = ....''</code>. Op de plek van ... staat natuurlijk een getal (de variabele met het resultaat van de optelling).</p></li>
+<li><p>Voer het programma uit en test het.</p></li>
+</ul>
+-->
+<!-- ANTWOORD
+import pcinput
+
+getal1 = pcinput.getInteger( "Geef een geheel getal: " )
+getal2 = pcinput.getInteger( "Geef een ander geheel getal: " )
+som = getal1 + getal2
+
+print( getal1, "+", getal2, "=", som )
+
+-->
+<!--
+<h3 id="opgave-5.3.3.2-in-gesprek-gebruikersinvoer-met-pcinput-getallen-en-tekst"><span style="color:red">Opgave 5.3.3.2 In gesprek: gebruikersinvoer met <code>pcinput</code> (getallen en tekst)</h3>
+<p>Ga een gesprek aan met de gebruiker.</p>
+<ul>
+<li><p>Vraag de gebruiker om zijn naam in te typen en sla dit op in een variabele.</p></li>
+<li><p>Gebruik die variabele (zijn naam) om ''Hallo ... '' terug te zeggen. Op de plaats van ... staat natuurlijk zijn naam.</p></li>
+<li><p>Vraag de gebruiker om zijn leeftijd in te typen en sla dit op in een variabele.</p></li>
+<li><p>Gebruik dan dat getal (zijn leeftijd) om ''Hallo ... van ... jaar oud!'' terug te zeggen. Op de plaats van ... staat natuurlijk de eerste keer zijn naam en de tweede keer zijn leeftijd.</p></li>
+</ul>
+-->
+<!-- Merk op: Ik leg niet uit hoe `pcinput` werkt, omdat ik er concepten voor gebruik die pas in hoofdstuk 17 aan bod komen. Je zult later leren hoe je zelf dit soort functies kunt maken. Je hoeft je vooralsnog niet druk te maken over hoe ze werken, je hoeft ze alleen maar te gebruiken. Dat is de houding die je tegenover de meeste standaardfuncties moet hebben: zolang je maar weet wat ze doen, welke parameters ze nodig hebben, en wat ze retourneren, heeft het geen zin na te denken over hoe ze werken.
+-->
+
+
+
 <h2 id="optioneel-theorie-5.3.2-modules-met-from">OPTIONEEL Theorie 5.3.2 Modules met <code>from</code></h2>
 <p>Als alternatief kun je ook specifieke functies vanuit een module importeren, via: <code>from &lt;module&gt; import &lt;functie1&gt;, &lt;functie2&gt;, &lt;functie3&gt;, ...</code><br></p>
 <p>Het voordeel van een dergelijke manier van functies importeren is dat je in je code niet de naam van de module voor de functie-aanroep hoeft te zetten.</p>
@@ -368,102 +534,7 @@ print( squareroot( 4 ) )
 ```
 -->
 
-
-
-<h3 id="random-willekeurige-getallen">Random (willekeurige) getallen</h3>
-<p>De random module bevat functies die pseudo-toevalsgetallen genereren. Ik zeg “pseudo-toevalsgetallen” en niet “toevalsgetallen,” aangezien het onmogelijk is voor digitale computers om echt toevalsgetallen te genereren. Maar voor alle toepassingen mag je ervan uitgaan dat deze module toevalsgetallen genereert.</p>
-<ul>
-<li><p><code>random()</code> krijgt geen parameters, en retourneert een toevalsgetal als een float binnen het bereik [0, 1), dat wil zeggen een bereik tussen nul en 1, waarbij 0.0 wel meedoet maar 1.0 niet.</p></li>
-<li><p><code>randint()</code> krijgt twee parameters, beide integers, waarbij de eerste kleiner dan of gelijk aan de tweede moet zijn. Het retourneert een toevalsgetal dat een integer is dat ligt binnen het bereik dat begrensd wordt door deze twee parameters, inclusief beide parameters. Bijvoorbeeld, randint(2, 5) retourneert 2, 3, 4, of 5, elk met een gelijke kans.</p></li>
-</ul>
-<p>Bijvoorbeeld:</p>
-TODO: LEAVE OUT RANDOM SEED, CHECK IF STILL WORKS
-<pre class="python">
-import random
-
-random.seed()
-print( ''Een toevalsgetal tussen 1 en 10 is'', random.randint( 1, 10 ) )
-print( ''Een ander is'', random.randint( 1, 10 ) )</code></pre>
-<h3 id="opgave-5.3.2.1-random-seed"><span style="color:red">Opgave 5.3.2.1 Random seed</h3>
-<p>Maak een variabele <code>random_getal</code> aan en geef die een willekeurige getal tussen 0 en 100 af (de getallen 0 en honderd mogen ook). Druk de variabele <code>random_getal</code> af.</p>
-<!-- ANTWOORD
-
-import random
-
-random.seed()
-random_getal = random.randint (0, 100)
-print( "Een toevalsgetal tussen (en inclusief) 0 en 100 is:", random_getal)
-
--->
-
-<!--
-```python
-from random import random, randint, seed
-
-seed()
-print( "Een toevalsgetal tussen 1 en 10 is", randint( 1, 10 ) )
-print( "Een ander is", randint( 1, 10 ) )
-seed( 0 )
-print( "3 toevalsgetallen zijn:", random(), random(), random() )
-seed( 0 )
-print( "Dezelfde 3 zijn:", random(), random(), random() )
-```
--->
-
-
-<h3 id="optioneel-seed">(Optioneel) Seed</h3>
-<p>Een andere functie in de random module is <code>seed()</code>. Deze initialiseert de toevalsgetal generator van Python. Als je een lijst van toevalsgetallen wilt hebben die iedere keer hetzelfde is voor je programma, kun je dat voor elkaar krijgen door aan het begin van je programma seed() aan te roepen met een vast getal, bijvoorbeeld 0. Dit kan nuttig zijn bij het testen van je programma. Als je de generator weer echt toevallige getallen wilt laten genereren op een later punt in je programma, kun je seed() nogmaals aanroepen zonder parameter.</p>
-<pre class="python"><span class="ch">import random
-
-random.seed( 0 )
-print( ''3 toevalsgetallen zijn:'', random.random(), random.random(), random.random() )
-random.seed( 0 )
-print( ''Dezelfde 3 zijn:'', random.random(), random.random(), random.random() )</code></pre>
-<h3 id="opgave-5.3.2.2-random-seed"><span style="color:red">Opgave 5.3.2.2 Random seed</h3>
-<p>Onderzoek wat het effect van <code>seed()</code> en <code>seed(0)</code>.</p>
-<h3 id="gebruikersinvoer-met-module-pcinput">Gebruikersinvoer met module <code>pcinput</code></h3>
-<p>pcinput is een module die voor dit boek geschreven is. Je kunt hem downloaden via http://www.spronck.net/pythonbook. Als het goed is zie je het ook in Pycharm staan. De module bevat vier handige functies, die de gebruiker op een veilige manier om specifieke input vragen. De functies zijn de volgende:</p>
-<ul>
-<li><p><code>getInteger()</code> krijgt één string parameter, de prompt, en vraagt de gebruiker via die prompt om een integer in te geven. Als de gebruiker iets ingeeft wat geen integer is, wordt gevraagd de input opnieuw in te geven. De functie eindigt pas als de gebruiker een correcte integer heeft ingegeven, en de functie retourneert dan de ingegeven waarde als een integer.</p></li>
-<li><p><code>getFloat()</code> krijgt één string parameter, de prompt, en vraagt de gebruiker via die prompt om een float in te geven. Als de gebruiker iets ingeeft wat geen float is, wordt gevraagd de input opnieuw in te geven. De functie eindigt pas als de gebruiker een correcte float heeft ingegeven, en de functie retourneert dan de ingegeven waarde als een float.</p></li>
-<li><p><code>getString()</code> krijgt één string parameter, de prompt, en vraagt de gebruiker via die prompt om een string in te geven. Alles wat de gebruiker ingeeft wordt als correct beschouwd. De functie retourneert de ingegeven waarde, waarbij spaties voor en na de ingegeven tekst verwijderd zijn.</p></li>
-<li><p><code>getLetter()</code> krijgt één string parameter, de prompt, en vraagt de gebruiker via die prompt om één letter in te geven. Alleen letters van het alfabet zijn acceptabel. Pas als de gebruiker precies één letter heeft ingegeven eindigt de functie, en de letter wordt dan als een hoofdletter geretourneerd.</p></li>
-</ul>
-<p>Deze functies helpen je dus om code te schrijven die de gebruiker vraagt om input met een specifiek data type te verstrekken, omdat ze garanderen dat het programma inderdaad iets binnenkrijgt dat van het gevraagde data type is. De code geeft geen runtime error als de gebruiker iets anders ingeeft. De functies zijn niet erg netjes, omdat ze foutmeldingen geven in het Nederlands als iets fouts ingegeven wordt. Dat betekent dat je deze functies niet moet gebruiken als je een Engelstalig programma schrijft (daar heb ik een andere versie van de module voor), maar om Python te leren zijn deze functies afdoende.</p>
-<p>Voorbeeld waarbij een gebruiker wordt gevraagd een geheel getal in te voeren:</p>
-<pre class="python">geluksgetal = pcinput.getInteger( ''Wat is je geluksgetal?'' )</code></pre>
-<h3 id="opgave-5.5.3.1-gebruikersinvoer-met-pcinput-getallen"><span style="color:red">Opgave 5.5.3.1 Gebruikersinvoer met <code>pcinput</code> (getallen)</h3>
-<p>Vraag de gebruiker om twee getallen in te voeren en druk de som af:</p>
-<ul>
-<li><p>De pcinput module staat in de map waar je nu werkt. Importeer de module.</p></li>
-<li><p>Vraag de gebruiker een getal in te voeren, sla deze in een variabele op.</p></li>
-<li><p>Vraag de gebruiker een tweede getal in te voeren, sla deze in een variabele op.</p></li>
-<li><p>Tel de twee variabelen bij elkaar op, sla het resultaat op in een variabele.</p></li>
-<li><p>Print dan naar het scherm: <code>''... + ... = ....''</code>. Op de plek van ... staat natuurlijk een getal (de variabele met het resultaat van de optelling).</p></li>
-<li><p>Voer het programma uit en test het.</p></li>
-</ul>
-<!-- ANTWOORD
-import pcinput
-
-getal1 = pcinput.getInteger( "Geef een geheel getal: " )
-getal2 = pcinput.getInteger( "Geef een ander geheel getal: " )
-som = getal1 + getal2
-
-print( getal1, "+", getal2, "=", som )
-
--->
-<h3 id="opgave-5.3.3.2-in-gesprek-gebruikersinvoer-met-pcinput-getallen-en-tekst"><span style="color:red">Opgave 5.3.3.2 In gesprek: gebruikersinvoer met <code>pcinput</code> (getallen en tekst)</h3>
-<p>Ga een gesprek aan met de gebruiker.</p>
-<ul>
-<li><p>Vraag de gebruiker om zijn naam in te typen en sla dit op in een variabele.</p></li>
-<li><p>Gebruik die variabele (zijn naam) om ''Hallo ... '' terug te zeggen. Op de plaats van ... staat natuurlijk zijn naam.</p></li>
-<li><p>Vraag de gebruiker om zijn leeftijd in te typen en sla dit op in een variabele.</p></li>
-<li><p>Gebruik dan dat getal (zijn leeftijd) om ''Hallo ... van ... jaar oud!'' terug te zeggen. Op de plaats van ... staat natuurlijk de eerste keer zijn naam en de tweede keer zijn leeftijd.</p></li>
-</ul>
-<!-- Merk op: Ik leg niet uit hoe `pcinput` werkt, omdat ik er concepten voor gebruik die pas in hoofdstuk 17 aan bod komen. Je zult later leren hoe je zelf dit soort functies kunt maken. Je hoeft je vooralsnog niet druk te maken over hoe ze werken, je hoeft ze alleen maar te gebruiken. Dat is de houding die je tegenover de meeste standaardfuncties moet hebben: zolang je maar weet wat ze doen, welke parameters ze nodig hebben, en wat ze retourneren, heeft het geen zin na te denken over hoe ze werken.
--->
-
-<div id="leerdoelen"><h2>Wat je geleerd hebt</h2></div>
+<div id="leerdoelen"><h2>Wat je geleerd hebt over Bestaande Functies:</h2></div>
 <p>In dit hoofdstuk is het volgende besproken:</p>
 <ul>
 <li>Wat functies zijn</li>
@@ -472,14 +543,14 @@ print( getal1, "+", getal2, "=", som )
 <li>Functie retourwaardes</li>
 <li>Details van type casting functies <code>float()</code>, <code>int()</code>, en <code>str()</code></li>
 <li>Basis berekeningen met <code>abs()</code>, <code>max()</code>, <code>min()</code>, <code>pow()</code>, en <code>round()</code></li>
-<li><code>len()</code></li>
-<li><code>input()</code></li>
+<li>Het aantal letters in een woord berekenen met <code>len()</code></li>
+<li>De gebruiker vragen iets in te voeren met <code>input()</code></li>
 <li>Details van de <code>print()</code> functie</li>
 <!--<li>String formattering met <code>format()</code></li>-->
 <li>Wat modules zijn</li>
 <li>De math functies <code>exp()</code>, <code>log()</code>, <code>log10()</code>, en <code>sqrt()</code></li>
 <li>De random functies <code>random()</code>, <code>randint()</code>, en (optioneel) <code>seed()</code></li>
-<li>De <code>pcinput</code> functies <code>getInteger()</code>, <code>getFloat()</code>, <code>getString()</code>, en <code>getLetter()</code></li>
+<!--<li>De <code>pcinput</code> functies <code>getInteger()</code>, <code>getFloat()</code>, <code>getString()</code>, en <code>getLetter()</code></li>-->
 </ul>
 <hr />
 

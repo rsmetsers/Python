@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+        <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+    <h1>Python Cursus - Inleiding</h1>
+
+<i><a href="InleidingReplitPython.html">Door naar de Opgaven</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+<hr>
+<h1 id="hoofdstuk-1---introductie">Hoofdstuk 1 - Inleiding</h1>
+<hr />
+<p>Computers zijn prachtige machines. De meeste machines (auto’s, televisies, magnetrons) zijn gemaakt voor een speciﬁek doel dat ze effectief en efﬁciënt kunnen bereiken. Computers daarentegen zijn doelloze machines, die alles wat je maar wilt aangeleerd kunnen krijgen. De kunde die je in staat stelt om computers te laten doen wat je wilt, heet “programmeren.”</p>
+<p>In iedere wetenschappelijke richting en in elk beroep, moeten mensen vandaag de dag omgaan met grote hoeveelheden data. Zij die in staat zijn de kracht van computers in te zetten om gebruik te maken van die data, met andere woorden, zij die kunnen programmeren, zijn veel beter in staat hun beroep uit te oefenen dan zij die dat niet kunnen. Ik durf zelfs te stellen dat in de zeer nabije toekomst zij die niet kunnen programmeren niet meer arbeidsgeschikt zijn. Daarom zie ik het als een noodzaak dat iedereen tijdens zijn of haar opleiding leert programmeren.</p>
+<p>Programmeren betekent niet alleen dat je weet wat programmeerregels doen; het betekent ook dat je kunt denken als een programmeur, en dat je problemen kunt analyseren vanuit het perspectief dat ze opgelost moeten worden door een computer. Deze vaardigheden kun je niet leren uit een boek. Je kunt ze alleen leren door daadwerkelijk programma’s te maken.</p>
+<p>Deze cursus is geschreven om je de basis van de Python 3 computertaal te leren. Met dit boek leer je niet alleen de taal te gebruiken, maar doe je er ook oefeningen mee.</p>
+<hr />
+
+<h2 id="aannames-en-veronderstellingen">Aannames en veronderstellingen</h2>
+<p>Deze cursus gaat er van uit dat je geen programmeervaardigheden hebt, maar dat je die wilt aanleren. Het veronderstelt ook dat je in ieder geval het vermogen hebt om abstract te denken.</p>
+<p>Realiseer je dat om te leren programmeren je een ﬂinke hoeveelheid tijd moet investeren. Je kunt niet volstaan met het materiaal doorlezen en hier en daar een kleine oefening doen. Je moet daadwerkelijk met de stof oefenen door ook de grotere opgaven te doen.</p>
+<hr />
+<h2 id="waarompython">Waarom Python?</h2>
+<p>Python wordt door velen gezien als een taal die bij uitstek geschikt is om mensen te leren programmeren. Het is een krachtige taal, die gemakkelijk te gebruiken is, en die alle mogelijkheden biedt die andere talen ook bieden. Je kunt Python programma’s draaien op verschillende machines en verschillende besturingssystemen. Het is gratis verkrijgbaar. Voor beginnende programmeurs heeft het het voordeel dat het dwingt om nette code te schrijven. Python wordt ook in de praktijk veel gebruikt, soms als basis voor complete programma’s, soms als uitbreiding op programma’s die in een andere taal geschreven zijn.</p>
+<p>Het belangrijkste voordeel is dat Python het mogelijk maakt om je te concentreren op “denken als een programmeur,” in plaats van op alle excentrieke afwijkingen die een speciﬁeke taal heeft. Hier volgt een voorbeeld van het verschil tussen Python en een aantal andere populaire programmeertalen: Het eerste programma dat iedereen schrijft in een computertaal is <em>Hello World</em>. Dit is een programma dat de tekst “Hello, world!” op het scherm zet. In de zeer populaire taal C++, wordt <em>Hello World</em> als volgt gecodeerd:</p>
+<pre><code>#include &lt;iostream&gt;
+int main() {
+    std::cout &lt;&lt; &quot;Hello, world!&quot;;
+}</code></pre>
+<p>In C#, de populaire variant can C++ die uitgebracht is door Microsoft, is het:</p>
+<pre><code>using System;
+namespace HelloWorld {
+    class Hello {
+        static void Main() {
+            Console.WriteLine( &quot;Hello, world!&quot; );
+            Console.ReadKey();
+        }
+    }
+}</code></pre>
+<p>In Objective-C, Apple’s variant op C++, is het nog erger:</p>
+<pre><code>#import &lt;Foundation/Foundation.h&gt;
+int main ( int argc, const char * argv[] ) {
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    NSLog (@&quot;Hello, world!&quot;);
+    [pool drain];
+    return 0;
+}</code></pre>
+<p>In Java, dat voor veel studenten aan universiteiten en hogescholen de eerst-geleerde taal is, wordt het:</p>
+<pre><code>class Hello {
+    public static void main( String[] args ) {
+        System.out.println( &quot;Hello, world!&quot; );
+    }
+}</code></pre>
+<p>En zie nu wat <em>Hello World</em> in Python is:</p>
+<pre><code>print( &quot;Hello, world!&quot; )</code></pre>
+<p>Ik neem aan dat we het met elkaar eens zijn dat de Python versie van dit programma leesbaarder en begrijpelijker is dan de andere varianten – zelfs als je de taal niet kent.</p>
+<hr />
+<h2 id="pythons-beperkingen-als-programmeertaal">Python’s beperkingen als programmeertaal</h2>
+<p>Python is een universele programmeertaal. Dat betekent dat je het kunt gebruiken voor alles wat je maar met een programmeertaal zou willen of kunnen doen. Mag je dan concluderen dat als je eenmaal Python beheerst, je nooit meer een andere taal hoeft te leren?</p>
+<p>Het antwoord is dat dat afhangt van wat je wilt bereiken. Python kun je inderdaad voor alles gebruiken, maar het is niet voor alles het meest geschikt. Bijvoorbeeld, game ontwikkelaars gebruiken meestal C++ of C#, omdat die talen heel snelle programma’s opleveren, en snelheid is van groot belang voor games. Mensen die complexe statistische berekeningen moeten doen hebben ook hun eigen talen. Soms moet je programma’sschrijven die moeten samenwerken met andere programma’s die in een speciﬁeke taal geschreven zijn, en moet je ook die taal gebruiken. En voor sommige programmeertaken zijn talen met een andere ﬁlosoﬁe tot het schrijven van code het meest geschikt.</p>
+<p>Samenvattend heeft Python op zich geen beperkingen, maar zijn voor speciﬁeke problemen speciﬁeke andere talen geschikter. Dat gezegd hebbende, voor de meeste mensen is kennis van Python voldoende om alles te doen wat nodig is voor hun studie of beroep. Daarbij komt dat als je eenmaal Python beheerst, je een sterke basis hebt om andere talen te leren. Daarom denk ik dat Python uitermate geschikt is om beginnelingen te leren programmeren.</p>
+<hr />
+<h2 id="wat-betekent-denken-als-een-programmeur">Wat betekent “denken als een programmeur?”</h2>
+<p>Dit boek heeft niet alleen als doel om je Python te leren, maar ook om je te leren denken als een programmeur, omdat denken als een programmeur noodzakelijk is om te begrijpen waarvoor je computers kunt gebruiken en hoe je ze moet gebruiken. Maar wat betekent het om te “denken als een programmeur”? Ik zal die vraag beantwoorden door hem te illustreren met een taak:</p>
+<p>Stel je voor dat je een stapel kaarten hebt, en op iedere kaart staat een verschillend getal geschreven. Je moet deze kaarten sorteren van laag naar hoog, met het laagste getal bovenop. De meeste mensen kunnen die taak uitvoeren. Voor de meeste mensen geldt ook dat als je ze vraagt hoe ze de taak uitvoeren, ze je vragend aan zullen kijken en zeggen: “Eh..., ik sorteer ze van laag naar hoog... wat bedoel je met hoe ik dat doe?” Anderen zullen zeggen: “Ik zoek eerst de hoogste kaart en die leg ik onderop. Dan zoek ik de op-een-na-hoogste en die leg ik erbovenop. Enzovoorts.” Dit legt min of meer uit hoe ze het doen, maar als je dan vraagt: “Maar hoe vind je de hoogste kaart?” zullen ze je ook vragend aankijken.</p>
+<p>Het probleem is dat als je een computer moet uitleggen hoe een stapel kaarten gesorteerd moet worden, je niet kunt veronderstellen dat de computer iets kan met vage uitspraken, zelfs als die uitspraken voor mensen duidelijk zijn. Je kunt niet tegen de computer zeggen: “Zoek de hoogste kaart,” want zelfs als de computer Nederlands zou begrijpen, dan zou hij nog vragen hoe hij de hoogste kaart moet vinden. Je moet heel expliciet zijn over de handelingen die moeten worden uitgevoerd. Je moet iets zeggen als: “Neem de bovenste kaart in je linkerhand. Doe dan het volgende totdat de stapel leeg is: Neem de bovenste kaart in je rechterhand. Als het getal op de kaart in je rechterhand hoger is dan het getal op de kaart in je linkerhand, dan stop je de kaart in je linkerhand in de aﬂegstapel en stopt de kaart in je rechterhand in je linkerhand. Anders stop je de kaart in je rechterhand in de aﬂegstapel. Als de stapel leeg is en je rechterhand ook leeg is, is de kaart in je linkerhand de hoogste kaart.”</p>
+<p>Natuurlijk heeft een computer geen handen en begrijpt hij ook geen Nederlands. Maar een computer begrijpt wel computertaal. Computertalen hebben een zeer precieze syntax en een zeer precieze semantiek, wat betekent dat een programma een ondubbelzinnige manier is om te beschrijven hoe een taak uitgevoerd moet worden. Dus om een computer een taak uit te laten voeren, moet je met behulp van een computertaal de computer stap voor stap uitleggen hoe de taak uitgevoerd moet worden. Slechts dan kan de computer de taak uitvoeren.</p>
+<p>Omdat het vaak lastig is om alle stappen te overzien die een computer moet zetten om een taak uit te voeren, moet je de taak verdelen in kleinere subtaken, die je misschien ook weer moet opdelen in subtaken, totdat de subtaken zo klein zijn dat je gemakkelijk de stappen kunt zien die je nodig hebt om zulke subtaken uit te voeren. Je kunt dan ieder van de subtaken implementeren, en ze samenvoegen om een programma voor de grote taak te vormen.</p>
+<p>Denken als een programmeur betekent dat je een taak kunt beschouwen vanuit het perspectief dat een computerprogramma geschreven moet worden om de taak op te lossen, dat je in staat bent een logische opdeling van een taak in subtaken te maken, en dat je kunt herkennen wanneer de subtaken klein genoeg zijn dat je ze kunt implementeren. Dit is een vaardigheid die de meeste mensen kunnen leren, maar die veel oefening vereist omdat er een denkproces voor nodig is dat anders is dan waar de meeste mensen aan gewend zijn.</p>
+<p>Door te leren programmeren in Python, beginnend met kleine programma’s die groeien in complexiteit, breng je jezelf langzaamaan ook de denkprocessen bij die een programmeur van nature beheerst.</p>
+<hr />
+<h2 id="de-kunst-van-het-programmeren">De kunst van het programmeren</h2>
+<p>Programmeren is een kunstvorm. Een docent programmeren is in veel opzichten vergelijkbaar met een tekenleraar.</p>
+<p>Veel mensen krijgen tekenlessen op de middelbare school. Een tekenleraar vertelt eerst over materialen: potloden en papier, verschillende kleuren, verschillende hardheden, gummen, inkt, inktpennen, verf, etcetera. De leerlingen maken hun eerste tekeningen en schilderijen op basis van die kennis. De leraar legt technieken uit: het mengen van verf, het creëren van speciale effecten, de combinatie van technieken, het gebruiken van perspectief, etcetera. De leerlingen krijgen opdrachten als “teken een kat,” en de leraar geeft een beoordeling zowel wat betreft het gebruik van materialen als in hoeverre wat door de leerlingen geproduceerd wordt daadwerkelijk lijkt op een kat.</p>
+<p>Een docent programmeren heeft vergelijkbare taken. Eerst vertelt hij de studenten over programmeerprincipes, basis taalelementen die in iedere computertaal aanwezig zijn. Hij vertelt hoe die taalelementen gebruikt kunnen worden om eenvoudige programma’s te schrijven. Daarna gaat hij dieper op de taal in, en bespreekt geavanceerde technieken die de studenten kunnen gebruiken om complexere programma’s te maken, en lastige concepten op een eenvoudige manier in programma’s op te nemen. Studenten krijgen worden.opdrachten als “schrijf een programma dat een tekst alfabetiseert,” en ze worden beoordeeld zowel op de mate waarin ze programmeertechnieken beheersen, als in hoeverre hun programma’s in staat zijn de taak uit te voeren.</p>
+<p>Een tekenleraar zal stellen dat een student die voor de opdracht “teken een kat” een cirkel met twee driehoekjes erboven en twee puntjes in het midden inlevert weliswaar een kat heeft getekend, maar niet de materiaaltechnieken beheerst. Een student die een prachtige tekening van een boom inlevert is misschien een meester in materiaaltechnieken, maar kan ze niet gebruiken om een taak uit te voeren. En twee studenten die precies dezelfde tekening van een kat inleveren, hebben overduidelijk plagiaat gepleegd. Dat gezegd hebbende, er is niet slechts één acceptabele tekening van een kat. Er zijn vele mogelijke tekeningen van een kat die leerlingen kunnen inleveren om aan te tonen dat ze op weg zijn artiesten te worden.</p>
+<p>Op dezelfde wijze wil een docent programmeren die een opdracht geeft, zien dat zijn studenten de kennis die ze hebben opgedaan creatief inzetten om een versie van een programma te creëren dat aan de opdracht voldoet. Studenten die de technieken niet beheersen kunnen de taak niet oplossen, of kunnen slechts een gedeeltelijke oplossing inleveren. Studenten die de technieken wel beheersen kunnen nog steeds niet in staat zijn om wat ze hebben geleerd te combineren op nieuwe, originele manieren om een oplossing te produceren. En twee studenten die exact dezelfde oplossing inleveren, hebben die ergens vandaan gekopieerd en proberen weg te komen met plagiaat.</p>
+<p>Programmeren is een kunstvorm, waarvoor je niet alleen technieken moet leren beheersen, maar ook moet leren die technieken op een creatieve manier in te zetten om problemen op te lossen. Het grootste verschil tussen het bouwen van programma’s en het maken van schilderijen is dat je wat betreft schilderen nog kunt debatteren of een plaatje van een bulldog met puntoren volstaat als weergave van een kat, terwijl het bij programmeren veel gemakkelijker is om programma’s te diskwaliﬁceren als oplossing voor een speciﬁek probleem.</p>
+<p>Iedereen weet dat je nooit een goede artiest zult worden als je alleen materialen bestudeert. Je moet met de materialen oefenen, en je vaardigheden trainen door verschillende taken uit te voeren. Voor programmeren geldt precies hetzelfde: je kunt niet leren programmeren zonder een hoop programma’s te schrijven. Programmeren vereist niet alleen kennis, maar ook vaardigheden die door toepassing ontwikkeld worden, en een soort creativiteit die je in staat stelt je vaardigheden uit te breiden en nieuwe taken aan te pakken.</p>
+<p>Het ligt voor de hand dat er slechts weinig meester-kunstenaars zijn wiens werk in tentoonstellingen te zien is. Maar we kunnen allemaal tekeningen van een kat maken, en dat volstaat voor wat we dagelijks nodig hebben. Op dezelfde manier zijn slechts weinigen in de wieg gelegd om meester-programmeur te worden, maar dat is voor de meesten onder ons ook niet nodig zolang we maar in staat zijn om de programmeerproblemen op te lossen die we tegenkomen in studie en werk. Maar besef wel dat het niet volstaat om slechts de basistechnieken te beheersen: creativiteit is altijd nodig.</p>
+<hr />
+<h2 id="groei-van-klein-naar-groot">Groei van klein naar groot</h2>
+<p>Dit is niet de enige beschikbare Pythoncursus, maar de meeste boeken veronderstellen behoorlijk wat achtergrondkennis en ervaring. Boeken voor beginners zijn zeldzaam. Een groot probleem met Pythoncursussen voor beginners is dat ze programmeren aantrekkelijk proberen te maken door van meet af aan applicaties te maken die nuttig of leuk zijn.
+ Een typische titel is “Leer Games Maken met Python!”</p>
+<p>Een dergelijke aanpak is misleidend. Op de eerste plaats, als je zulke boeken doorneemt, zul je ontdekken dat er slechts eenvoudige woord- en getalspelletjes worden gebouwd, en niet de nieuwe <em>Halo</em>, <em>Civilization</em>, <em>Bejeweled</em>, of zelfs iets simpels als <em>Flappy Bird</em>. Dit is niet wat een student verwacht van een boek over games programmeren. Bovendien zul je ontdekken dat zelfs de simpele spelletjes die het boek gebruikt te lastig zijn voor nieuwelingen om te leren programmeren. Ik snap dat een dergelijk boek enthousiasme bij de studenten probeert te kweken door inherent aantrekkelijk materiaal aan te bieden. Maar zulk enthousiasme verdwijnt snel wanneer de studenten zich realiseren dat het materiaal niet is wat ze verwachtten, en op dat punt wordt het onderwerp meer een obstructie dan een stimulans.</p>
+<p>Ongeacht hoe je tegen het onderwerp aankijkt, om te leren programmeren moet je starten met basisconcepten voordat je kunt overgaan naar aantrekkelijke en nuttige toepassingen. De wens of noodzaak om te leren programmeren moet de student motiveren, en niet de loze verwachting dat je na een paar uur studeren een leuk spel in elkaar kunt zetten. Deze cursus begint daarom klein, met basis programmeerkennis, en bouwt gestaag op naar complexere zaken.</p>
+<p>Als je wilt leren programmeren en je de opgaven maakt, zal deze cursus je alles leren wat je moet weten om iedere applicatie die je maar wilt te bouwen – zelfs leuke spelletjes als je dat aanspreekt.</p>
+<hr />
+
+<h2 id="opgaven">Opgaven</h2>
+<p>Tussen de theorie staan kleine opgaven. Die opgaven zijn bedoeld om iets uit te leggen of als een snelle test of je alles nog steeds begrijpt. Je moet die opgaven meteen doen als je ze tegenkomt. Als je ze niet kunt maken moet je de voorgaande tekst opnieuw bestuderen totdat je het wel kunt. Als het dan nog steeds niet lukt, kun je beter om hulp vragen.</p>
+<p>Aan het einde van ieder hoofdstuk is een sectie getiteld “Afsluitende Opgaven”. Je moet al die opgaven proberen te maken, en je moet ze zelfstandig maken (dus zonder hulp en zonder de antwoorden op te zoeken). Ant- woorden voor die opgaven zijn via een linkje onder de opgave te bekijken. Ik wil de volgende punten expliciet onder de aandacht brengen:</p>
+<ul>
+<li><p>Je moet aan de opgaven werken totdat je ze opgelost hebt. Het volstaat niet om een beetje te proberen en dan het antwoord op te zoeken. Een dergelijke aanpak is volstrekt zinloos. Je zult nooit leren programmeren als je niet nadenkt over oplossingsmethodieken, code schrijft, en code test. Als je een opgave niet kunt oplossen zelfs als je er lange tijd aan hebt gewerkt, doe je er beter aan hulp te vragen dan hetantwoord op te zoeken. Het niet kunnen oplossen van een opgave betekent dat er iets in het materiaal zit dat je nog niet begrijpt, en het is belangrijk dat je ontdekt wat dat is, zodat je dat gebrek kunt verhelpen.</p></li>
+<li><p>Je moet alle opgaven maken. De enige manier om te leren programmeren is te oefenen. Je zult veel code moeten schrijven om de praktijk van het programmeren te internaliseren. De paar opgaven die ik aan het einde van ieder hoofdstuk op heb genomen zijn nog niet voldoende om dat te bereiken, maar ze zijn een begin. Als je niet de moeite neemt om al die opgaven te doen, hoef je ook niet de moeite te doen om te proberen programmeren te leren.</p></li>
+<li><p>Je moet de opgaven zelfstandig maken. Aan de opgaven werken in groepsverband laat één persoon leren terwijl de rest erbij zit en toekijkt. Studenten vertellen me vaak dat ze een leermethode hebben waarbij ze aan opdrachten werken in groepsverband en antwoorden bediscussiëren. Dat werkt misschien voor het analyseren van teksten en het opzetten van experimenten, maar werkt meestal niet voor coderen. Toekijken hoe iemand anders code schrijft leert je erg weinig over het schrijven van code. Je moet zelf code schrijven.</p></li>
+<li><p>Voor geen van de opgaven is informatie nodig die nog niet naar voren was gebracht op het moment dat de opgave in het boek verschijnt. Vaak zijn er wel betere manieren om een opgave op te lossen door gebruik te maken van Python constructies die later in het boek komen. Maar die zijn op zich niet nodig. Het doel van de opgaven is te oefenen met het materiaal dat je op dat moment kent. Ze zijn niet bedoeld om toekomstig materiaal te bestuderen. Zelfs als je bekend bent met andere manieren van oplossen, probeer je dan toch te beperken tot het materiaal dat voor de opgave staat. Als je dat eenmaal gedaan hebt, en je wilt later terugkeren bij een opgave om het op een andere manier te doen, is dat natuurlijk uitstekend.</p></li>
+<li><p>Als je een opgave hebt opgelost en je je oplossing goed getest hebt, kun je je oplossing vergelijken met het antwoord dat ik geef. Je zult vaak zien dat mijn antwoord anders is dan het jouwe. Dat betekent niet dat jouw antwoord fout is! Er zijn meestal veel verschillende manieren om een programmeerprobleem op te lossen. Sommige zijn “beter” in bepaalde opzichten dan andere. Vele zijn “precies even goed.” Wat van belang is dat je een probleem kunt oplossen door code te schrijven, niet dat je een probleem kunt oplossen door de meest efﬁciënte code te schrijven. Het volstaat om het probleem op te lossen; oplossingen efﬁciënt maken is van veel minder belang. Bijvoorbeeld, “efﬁciëntie” is minder belangrijk dan “begrijpbaarheid” en “onderhoudbaarheid.”</p></li>
+</ul>
+<!--
+<p>Hieronder staan alvast twee genummerde opgaven voor dit eerste hoofdstuk. Leer ervan.</p>
+
+
+<h3 id="opgave-1.1"><span style="color:red">Opgave</span> 1.1</h3>
+<p>Ga samen zitten met een andere persoon, en doe de volgende opgave. Neem vier speelkaarten met verschillende waardes. Schud ze, en leg ze met de voorkant naar beneden op tafel. Eén van jullie moet ze sorteren, van laag naar hoog. Deze persoonmag de kaarten verplaatsen, maar mag niet kijken naar de voorkant van de kaarten. Hij of zij mag wel twee kaarten aanwijzen, die de ander dan oppakt, bekijkt, en terug legt, aangevend welke van de twee hoger is. Houd bij hoeveel van die vergelijkingen nodig zijn. Als de eerste persoon denkt dat de kaarten gesorteerd zijn, draai je ze om en controleert of het correct gedaan is.</p>
+<p>De eerste person vervult de rol van het programma, dat instructies uitvoert zonder ze te begrijpen. De tweede persoon speelt de rol van processor, die bepaalde handelingen kan uitvoeren voor het programma, zoals, in dit geval, het vergelijken van getallen.</p>
+<p>Als je niet in staat bleek de kaarten te sorteren, denk dan na over hoe je de taak kunt uitvoeren onder de gegeven omstandigheden, en probeer het dan nog eens. Als het je wel is gelukt, maar je had meer dan zes vergelijkingen nodig, denk dan na over hoe je het met zes kunt doen. Als je precies zes nodig had, denk dan na over of het ook kan met minder dan zes. Als je het met minder dan zes deed, bedenk dan of je aanpak inderdaad garandeert dat de kaarten gesorteerd worden.</p>
+<h3 id="opgave-1.2"><span style="color:red">Opgave</span> 1.2</h3>
+<p>Nadat je de eerste opgave hebt gedaan, schrijf dan samen met je partner instructies die in gewoon Nederlands uitleggen hoe je onder de gegeven omstandigheden kaarten kunt sorteren. Haal er dan een derde persoon bij, en vraag die persoon de instructies te volgen, terwijl een van de eerste twee de rol van processor op zich neemt. Zeg dat de derde persoon de instructies zo exact mogelijk moet volgen, zonder ze te interpreteren. Deze oefening is het meest illustratief als de derde persoon geen idee heeft van wat de bedoeling van de instructies is. Als de poging tot sorteren gedaan is, controleer je of het resultaat correct is.</p>
+<p>De tekstuele instructie is vergelijkbaar met een programma. Als de derde persoon de stappen niet kan volgen, lijkt dat op een syntax fout. Als de derde persoon de stappen kan volgen maar het resultaat is niet wat het moet zijn, is er een functionele fout gemaakt. Beide soorten fouten kom je tegen als je computers programmeert.</p>
+<p>Opmerking: Het is best lastig dergelijke instructies te schrijven. Gelukkig is dit gemakkelijker in een computertaal, omdat syntax en semantiek van een computertaal strak gedeﬁnieerd zijn. Het Nederlands is, net als iedere andere menselijke taal, niet geschikt om ondubbelzinnige instructies te schrijven.</p>
+<hr />-->
+
+<hr>
+<i><a href="InleidingReplitPython.html">Door naar de Opgaven</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>

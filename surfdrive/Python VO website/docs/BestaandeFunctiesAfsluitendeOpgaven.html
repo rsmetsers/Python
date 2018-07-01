@@ -14,17 +14,14 @@
 
 <h1 id="hoofdstuk-5---BestaandeFuncties">Python Cursus. Hoofdstuk 5 - Bestaande Functies</h1>
 <h1>Afsluitende Opgaven</h1>
-
 <i><a href="BestaandeFuncties.html">Terug naar de uitleg en gewone opgaven over Bestaande Functies</a></i><br>
 <i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
-
 <hr />
 
 
-
-
-
 <h3 id="afsluitende-opgave-5.1-lengte-van-een-naam"><span style="color:red">Afsluitende opgave 5.1 </span>Lengte van een naam</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1211882/2f8a34921527f262cbe1cdad4b719a43"></iframe>
+
 <!-- Vraag de gebruiker om een string, en druk de lengte van de string af. Gebruik de ` input()` functie en niet de `getString()` functie, aangezien de `getString()` functie spaties verwijdert die voor en na de ingegeven tekst staan.
 -->
 <!--Maak een variabele naam aan. Geef die de waarde van de naam van een vriend of vriendin.
@@ -32,15 +29,19 @@
 Druk vervolgens af wat de lengte van zijn/haar naam is:
 
 `Jouw naam heeft .... letters.`-->
-
-<!-- ANTWOORD
-naam = "Jan"
+<!-- <pre class="python">
+naam = input("Geef de naam van je vriend/vriendin: ")
 lengte_naam = len( naam )
 print( "Jouw naam heeft", lengte_naam, "letters." )
--->
+</pre>-->
 Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="BestaandeFuncties_oplossingen.html#afsluitende-opgave-5.1-lengte-van-een-naam">hier</a> voor de uitwerking.
 
+
+
+
 <h3 id="afsluitende-opgave-5.2-hoeveel-seconden"><span style="color:red">Afsluitende opgave 5.2 </span>Hoeveel seconden?</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1211883/f480ef6fced535d4297c89b5d4e4bb3a"></iframe>
+
 <!--Het tijdstip 13 uur, 47 minuten en 28 seconden kun je omrekenen naar 13 * 60 * 60 + 47 * 60 + 28 = 49648 seconden.
 
 Schrijf een programma:
@@ -53,22 +54,29 @@ c) en de omrekening naar het aantal seconden (aan de hand van de variabelen) op 
 
 d) en met commentaar om de code toe te lichten.-->
 <!-- ANTWOORD
-#toont tijdstip als 13:47.28
 uren = 13
 minuten = 47
 seconden = 28
 
+#drukt tijdstip af als 13:47.28
 print( str(uren) + ":" + str(minuten) + "." + str(seconden) )
 
-# berekent totaal aantal seconden
+#bereken totaal aantal seconden
 totaal_aantal_seconden = uren * 60 * 60 + minuten * 60 + seconden
+#druk af:
 print("Totaal aantal seconden:", totaal_aantal_seconden)
+
+
+ANTWOORD: 13:47.28
+Totaal aantal seconden: 49648
 
 -->
 Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="BestaandeFuncties_oplossingen.html#afsluitende-opgave-5.2-hoeveel-seconden">hier</a> voor de uitwerking.
 
 
+
 <h3 id="afsluitende-opgave-5.3-bitcoins-kopen"><span style="color:red">Afsluitende opgave 5.3 </span>Bitcoins kopen</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1211578/98581086d653f031658bb046db095e97"></iframe>
 <!--Op 14 januari 2018 was 1 bitcoin 11342,87 euro waard.
 
 Schrijf een programma dat berekent hoeveel bitcoins je voor een bepaald bedrag kan kopen:
@@ -97,6 +105,7 @@ print( "Met", euros, "euro kun je", bitcoins, "bitcoins kopen.")
 Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="BestaandeFuncties_oplossingen.html#afsluitende-opgave-5.3-bitcoins-kopen">hier</a> voor de uitwerking.
 
 <h3 id="afsluitende-opgave-5.4-omrekenen-celsius-naar-fahrenheit"><span style="color:red">Afsluitende opgave 5.4</span> Omrekenen Celsius naar Fahrenheit</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1211579/000d9d1c3991e5659b21ec2be35b2858"></iframe>
 <!--
 Je hebt een penvriend in Amerika. Hij schrijft dat het bij hem 90 graden is! Stomverbaasd hoe het zo warm kan zijn, vraag je hulp aan het internet. Je komt erachter dat hij praat over temperatuur in Fahrenheit, terwijl jij dacht aan graden Celsius. Om goed met elkaar te kunnen praten over het weer, besluit jij een website te maken, die Fahrenheit in Celsius kan omzetten en andersom. Hier zijn de formules voor het omrekenen.
 
@@ -110,36 +119,26 @@ Druk dit netjes af met een volzin zoals:
 
 -->
 <!-- ANTWOORD
-#FUNCTIE DEFINITIE
-
+invoer = input("Geef een temp in Fahrenheit: ")
+temp_fahrenheit= float(invoer)
 temp_celsius = ((temp_fahrenheit) - 32) * 5/9
 temp_celsius = round( temp_celsius, 1 )
-print("Temperatuur in Celsius is:", temperatuur_in_celcius)
+print("Temperatuur in Celsius is:", temp_celsius)
 
 
 -->
 Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="BestaandeFuncties_oplossingen.html#afsluitende-opgave-5.4-omrekenen-celsius-naar-fahrenheit">hier</a> voor de uitwerking.
 
 
-
-
-
-
-
 <h3 id="afsluitende-opgave-5.5-dobbelen"><span style="color:red">Afsluitende Opgave 5.5 </span>Dobbelen</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1211580/f9753c03086af084662a6370afbff9e6"></iframe>
+
 <!--Schrijf een programma dat twee willekeurige dobbelstenen voor je gooit.-->
-<!-- ANTWOORD
-import random
 
-random.seed()
-random_getal1 = random.randint (1, 6)
-random_getal2 = random.randint (1, 6)
-print( "Ik heb twee dobbelstenen voor je gegooid:", random_getal1, "en", random_getal2)
-
--->
 Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="BestaandeFuncties_oplossingen.html#afsluitende-opgave-5.5-dobbelen">hier</a> voor de uitwerking.
 
-<h3 id="afsluitende-opgave-5.6-min-max-en-gemiddelde"><span style="color:red">Afsluitende opgave 5.6 </span>Min, max en gemiddelde</h3>
+<h3 id="afsluitende-opgave-5.6-min-max-en-gemiddelde"><span style="color:red">Afsluitende opgave 5.6 </span>min, max en gemiddelde</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1211748/d2343edd6105c5a239c53b4e42d29087"></iframe>
 <!--
 Verwerk drie getallen:
 
@@ -151,42 +150,50 @@ Verwerk drie getallen:
 
 - Toon het gemiddelde, afgerond op twee decimalen.
 -->
-<!-- ANTWOORD
-import pcinput
+<!--
+<pre class="python">
+#vraag de gebruiker om drie (komma)getallen in te voeren
+invoer1 = input( "Geef de eerste getal: " )
+getal1 = float( invoer1 )
+invoer2 = input( "Geef de tweede getal: " )
+getal2 = float( invoer2 )
+invoer3 = input( "Geef een derde getal: " )
+getal3 = float( invoer3 )
 
-getal1 = pcinput.getFloat( "Geef de eerste getal: " )
-getal2 = pcinput.getFloat( "Geef de tweede getal: " )
-getal3 = pcinput.getFloat( "Geef een derde getal: " )
+#bereken
+grootste = max( getal1, getal2, getal3 )
+kleinste = min( getal1, getal2, getal3 )
+gemiddelde = (getal1 + getal2 + getal3)/3
+afgeronde_gemiddelde = round( gemiddelde, 2)
 
-print( "De grootste is", max( getal1, getal2, getal3 ) )
-print( "De kleinste is", min( getal1, getal2, getal3 ) )
-print( "Het gemiddelde is", round( (getal1 + getal2 + getal3)/3, 2 ) )
-
-
-```
+#druk af
+print( "De grootste is", grootste )
+print( "De kleinste is", kleinste )
+print( "Het gemiddelde is", afgeronde_gemiddelde )
+</pre>
 -->
 Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="BestaandeFuncties_oplossingen.html#afsluitende-opgave-5.6-min-max-en-gemiddelde">hier</a> voor de uitwerking.
 
 
 <h3 id="afsluitende-opgave-5.8-wortels-berekenen"><span style="color:red">Afsluitende opgave 5.8 </span>Wortels berekenen</h3>
-<!--Bereken de waarde van de wortel uit 0, 2 en 4, en rond af op maximaal 3 decimalen. --><!-- ANTWOORD
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1211879/26e8661371aee5640d1b5f656d9b0930"></iframe>
+<!--Bereken de waarde van de wortel uit 0, 2 en 4, en rond af op maximaal 3 decimalen. -->
+<!-- ANTWOORD
 import math
 wortel0 = round( math.sqrt(0), 3 )
 wortel2 = round( math.sqrt(2), 3 )
 wortel4 = round( math.sqrt(4), 3 )
+
 print( wortel0, wortel2, wortel4 )
-
---></p>
-Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="BestaandeFuncties_oplossingen.html#afsluitende-opgave-5.8-wortels-berekenen">hier</a> voor de uitwerking.
-
-
+</pre><-->
+Klik <a href="BestaandeFuncties_oplossingen.html#afsluitende-opgave-5.8-wortels-berekenen">hier</a> voor de uitwerking.
 
 <h3 id="afsluitende-opgave-5.9-stelling-van-pythagoras"><span style="color:red">Afsluitende opgave 5.9 </span>Stelling van Pythagoras</h3>
-
-<!--
-De stelling van Pythagoras zegt dat bij een rechthoekige driehoek het kwadraat van de schuine zijde gelijk is aan de som van de kwadraten van de twee andere zijden (ofwel $a^2 + b^2 = c^2$).
+De stelling van Pythagoras zegt dat bij een rechthoekige driehoek het kwadraat van de schuine zijde gelijk is aan de som van de kwadraten van de twee andere zijden:
 
 <span class="math"><em>a</em><sup>2</sup> + <em>b</em><sup>2</sup> = <em>c</em><sup>2</sup></span>
+
+<!--
 
 Schrijf een programma dat de gebruiker om de lengte van de twee rechte zijden vraagt, en bereken dan de lengte van de schuine zijde.
 
@@ -195,17 +202,24 @@ De lengtes kunnen kommagetallen zijn. Je hoeft geen rekening te houden met het f
 Uiteraard voeg je commentaar toe aan je programma.
 
 -->
-
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1211880/3f6171e19521213e6107ea00dfafdd49"></iframe>
 <!-- ANTWOORD
 ```python
 # Stelling van Pythagoras.
 #berekent de schuine zijde van een driehoek met behulp van Pythagoras
-import math, pcinput
+import math
 
-zijde1 = pcinput.getFloat("Geef de lengte van de eerste zijde: ")
-zijde2 = pcinput.getFloat("Geef de lengte van de tweede zijde: ")
+#vraag getallen van gebruiker:
+invoer1 = input("Geef de lengte van de eerste zijde: ")
+zijde1 = float( invoer1 )
+invoer2 = input("Geef de lengte van de tweede zijde: ")
+zijde2 = float( invoer2 )
+
+#bereken:
 schuine_zijde_kwadraat = zijde1**2 + zijde2**2
 schuine_zijde = math.sqrt( schuine_zijde_kwadraat )
+
+#druk af:
 print( "De schuine zijde is:", schuine_zijde )
 
 ```
@@ -214,6 +228,7 @@ print( "De schuine zijde is:", schuine_zijde )
 Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="BestaandeFuncties_oplossingen.html#afsluitende-opgave-5.9-stelling-van-pythagoras">hier</a> voor de uitwerking.
 
 <h3 id="optioneel-afsluitende-opgave-5.10-duurt-het-nog-lang"><span style="color:red">(OPTIONEEL) Afsluitende opgave 5.10 </span>Duurt het nog lang?</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1211881/f6c3de519e8989424137f63c043fd047"></iframe>
 <!--Schrijf een programma dat het aantal seconden omrekent naar uren, minuten, seconden. (Dit is dus het omgekeerde als de vorige opgave).
 Gebruik één variabele voor het aantal seconden.
 
@@ -232,8 +247,10 @@ uren = minuten // 60
 minuten = minuten % 60
 
 print( str(uren) + ":" + str(minuten) + "." + str(seconden)  )
+
+ANTWOORD: 13:47.28
 -->
-Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="BestaandeFuncties_oplossingen.html#optioneel-afsluitende-opgave-5.10-duurt-het-nog-lang">hier</a> voor de uitwerking.
+Klik <a href="BestaandeFuncties_oplossingen.html#optioneel-afsluitende-opgave-5.10-duurt-het-nog-lang">hier</a> voor de uitwerking.
 
 
 <hr>

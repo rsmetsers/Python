@@ -80,20 +80,28 @@ dagen_per_jaar = 365
 </pre>
 
 <h3 id="opgave-4.1-variabelen-toekennen"><span style="color:red">Opgave 4.1</span> Variabelen toekennen</h3>
-<p>Geef <code>x</code> een waarde zodat 7 wordt afgedrukt.</p>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1208913/f1b42bc29750611730545085064c95e0"></iframe>
+<!--<p>Geef <code>x</code> een waarde zodat 7 wordt afgedrukt.</p>
 <pre class="python">
 x = 2
 x = x + 3
 print( x )
-</pre>
+</pre>-->
 <!-- antwoord:
 x = 4
 x = x + 3
 print( x )
 -->
+Klik <a href="Variabelen_oplossingen.html#opgave-4.1-variabelen-toekennen">hier</a> voor de uitwerking.
+
 
 <h2 id="waarden-van-variabelen-traceren">Waarden van variabelen traceren</h2>
 <p>Python voert de eerste regel uit, dan de tweede regel, en zo voort totdat de laatste regel is uitgevoerd.</p>
+
+<h3 id="opgave-4.1b-variabelen-toekennen"><span style="color:red">Opgave 4.1b</span> Waarden van variabelen traceren</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1208839/e5d1541f422cb78be4d21e8823b1594d"></iframe>
+<!--
+
 <pre class="python">
 mijnGeluksgetal = 13
 print(mijnGeluksgetal + 1)
@@ -101,11 +109,19 @@ print(mijnGeluksgetal)
 mijnGeluksgetal = 5 + 2
 print(mijnGeluksgetal)
 </pre>
+
+
 <p>Kijk naar de 5 regels van het programma van boven naar beneden, en hoe ze overeenkomen met de uitvoer. Zoals je kunt zien behoudt mijnGeluksgetal zijn waarde 13 in de eerste twee print-opdrachten; dan verandert zijn waarde in 7.</p>
+-->
+Klik <a href="Variabelen_oplossingen.html#waarden-van-variabelen-traceren">hier</a> voor de uitwerking.
+
 <p>We gebruikten hierboven voor het eerst de operator plus (+), waardoor twee getallen worden opgeteld. Evenzo zijn er operatoren voor aftrekken (-), vermenigvuldigen (*), en delen (/). We komen er in een latere les op terug.</p>
 
-<h3 id="opgave-4.1.1-waarden-van-variabelen-nalopen."><span style="color:red">Opgave 4.1.1 </span>Waarden van variabelen nalopen.</h3>
-<p>Druk op Run. Voeg aan elke regel code commentaar toe om uit te leggen wat er gebeurt.</p>
+<h3 id="opgave-4.1.1-waarden-van-variabelen-nalopen"><span style="color:red">Opgave 4.1.1 </span>Waarden van variabelen nalopen.</h3>
+<!--<p>Druk op Run. Voeg aan elke regel code commentaar toe om uit te leggen wat er gebeurt.</p>-->
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1208840/38805d738e9884ddb274c75c20489fa9"></iframe>
+Klik <a href="Variabelen_oplossingen.html#opgave-4.1.1-waarden-van-variabelen-nalopen">hier</a> voor de uitwerking.
+
 
 
 <h2 id="tracing-tabel">Tracing tabel</h2>
@@ -132,7 +148,11 @@ getal3 = getal2 * getal1              12        4      48
 <p>Dus aan het einde van het programma is de waarde van <code>getal1</code> gelijk aan 12, de waarde van <code>getal2</code> gelijk aan 4, en de waarde van <code>getal3</code> gelijk aan 48.</p>
 
 <h3 id="opgave-4.1.2-waarden-van-variabelen-traceren"><span style="color:red">Opgave 4.1.2 </span> Waarden van variabelen traceren</h3>
-<p>Voeg in het code een aantal keer een <code>print</code> toe om de waarde van de variabelen tussendoor af te drukken.</p>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1208841/92d6d658475a3af6484d2ae4b417ac82"></iframe>
+
+Klik <a href="Variabelen_oplossingen.html#opgave-4.1.2-waarden-van-variabelen-traceren">hier</a> voor de uitwerking.
+
+<!--<p>Voeg in het code een aantal keer een <code>print</code> toe om de waarde van de variabelen tussendoor af te drukken.</p>-->
 <!-- ANTWOORD
 
 getal1 = 2
@@ -152,21 +172,25 @@ print( "getal1: ", getal1, " getal2: ", getal2, " getal3: ", getal3)
 <h2 id="debuggen-met-variabelen">Debuggen met variabelen</h2>
 <p>Een veelvoorkomende oorzaak van functionele fouten in programma’s is dat variabelen blijken niet de waardes te bevatten waarvan je dacht dat ze bevatten. Een goede manier om je code te "debuggen" (dat wil zeggen, uit te vinden waar in je code fouten staan en die te verbeteren) is het printen van variabelen op handige plaatsen in je code. Bijvoorbeeld, de volgende code geeft een foutmelding als je hem uitvoert.</p>
 <pre class="python">
-nr1 = 5
-nr2 = 4
-nr3 = 5
-print( nr3 / (nr1 % nr2) )
-nr1 = nr1 + 1
-print( nr3 / (nr1 % nr2) )
-nr1 = nr1 + 1
-print( nr3 / (nr1 % nr2) )
-nr1 = nr1 + 1
-print( nr3 / (nr1 % nr2) )
+getal1 = 5
+getal2 = 4
+getal3 = 5
+print( "getal1: ", getal1, " getal2: ", getal2, " getal3: ", getal3)
+print( getal3 / (getal1 % getal2) )
+getal1 = getal1 + 1
+print( getal3 / (getal1 % getal2) )
+getal1 = getal1 + 1
+print( getal3 / (getal1 % getal2) )
+getal1 = getal1 + 1
+print( getal3 / (getal1 % getal2) )
 </pre>
-<p>Misschien zie je wat het probleem is, maar stel dat je het niet ziet, hoe vind je dan uit wat er mis is? Je ziet dat de fout ontdekt wordt op regel 10, wat wil zeggen dat alles nog steeds werkte op regel 9. Als je een extra regel code zet tussen regel 9 en 10, die de waarde afdrukt van <code>nr1</code>, <code>nr2</code>, <code>nr3</code> en misschien ook <code>nr1%nr2</code>, dan ontdek je waarschijnlijk snel wat er misloopt. <code>print()</code> statements veranderen niks aan de variabelen, dus je kunt ze veilig toevoegen. <!-- Een fatsoenlijke manier om het probleem in deze code op te lossen (dus een andere manier dan gewoon de laatste regel te verwijderen) zal ik in een later
+<p>Misschien zie je wat het probleem is, maar stel dat je het niet ziet, hoe vind je dan uit wat er mis is? Je ziet dat de fout ontdekt wordt op regel 10, wat wil zeggen dat alles nog steeds werkte op regel 9. Als je een extra regel code zet tussen regel 9 en 10, die de waarde afdrukt van <code>getal1</code>, <code>getal2</code>, <code>getal3</code> en misschien ook <code>getal1 % getal2</code>, dan ontdek je waarschijnlijk snel wat er misloopt. <code>print()</code> statements veranderen niks aan de variabelen, dus je kunt ze veilig toevoegen. <!-- Een fatsoenlijke manier om het probleem in deze code op te lossen (dus een andere manier dan gewoon de laatste regel te verwijderen) zal ik in een later
 hoofdstuk introduceren.--></p>
 <h3 id="opgave-4.3-debuggen"><span style="color:red">Opgave 4.3</span> Debuggen</h3>
-<ol style="list-style-type: decimal">
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1208842/54534bf32f2b1cfac9f1d11bbe3064ae"></iframe>
+
+Klik <a href="Variabelen_oplossingen.html#opgave-4.3-debuggen">hier</a> voor de uitwerking.
+<!--<ol style="list-style-type: decimal">
 <li>Voer de code uit.</li>
 <li>Lees de foutmelding en probeer te achterhalen op welk regel het probleem ontstaat.</li>
 <li>Voeg een extra printregel na regel 9 toe om de waardes van nr1, nr2 en nr3 af te drukken:
@@ -175,6 +199,8 @@ print ("nr1: ", nr1, "nr2: ", nr2, "nr3: ", nr3)
 </pre></li>
 <li>Kun je al zien wat het probleem is? Druk anders de waarde van <code>(nr1 % nr2)</code> nog af.</li>
 </ol>
+Toelichting: Je hoeft in deze opgave, behalve wat printregels toe te voegen, geen codeaanpassingen te maken.
+-->
 
 
 
@@ -185,7 +211,7 @@ print ("nr1: ", nr1, "nr2: ", nr2, "nr3: ", nr3)
 <pre class="python">
 a = 3
 print( type( a ) )
-a = <span class="fl">3.0
+a = 3.0
 print( type( a ) )
 a = "3.0"
 print( type( a ) )
@@ -201,19 +227,24 @@ print( c + d )
 </pre>
 <p>Omdat <code>a</code> en <code>b</code> beide getallen zijn, is de <code>+</code> in <code>a + b</code> de numerieke optelling. Omdat <code>c</code> en <code>d</code> beide strings zijn, is de <code>+</code> in <code>c + d</code> de “concatenatie” (“vastplak”) operator.</p>
 
-<h3 id="opgave-4.4-string-afdrukken"><span style="color:red">Opgave 4.4</span> String afdrukken</h3>
-<ol style="list-style-type: lower-alpha">
-<li><p>Wat gebeurt er in de code hierboven als je a + c probeert te printen? Probeer het.</p></li>
-<li><p>Wat toont de code hieronder? Denk erover na, en voer dan de code uit. Zorg dat je snapt wat er gebeurt.</p></li>
-</ol>
+<h3 id="opgave-4.4a-string-afdrukken"><span style="color:red">Opgave 4.4a</span> String afdrukken</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1208855/5980923f17ce791f1105dab4477b796b"></iframe>
+
+Klik <a href="Variabelen_oplossingen.html#opgave-4.4a-string-afdrukken">hier</a> voor de uitwerking.
+<!--Wat gebeurt er in de code hierboven als je a + c probeert te printen? Probeer het.-->
+
+<h3 id="opgave-4.4b-string-afdrukken"><span style="color:red">Opgave 4.4b</span> Beste school afdrukken</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1208856/0e9ccc550740aa4456034f3c82aaf290"></iframe>
+Klik <a href="Variabelen_oplossingen.html#opgave-4.4b-string-afdrukken">hier</a> voor de uitwerking.
+<!--Wat toont de code hieronder? Denk erover na, en voer dan de code uit. Zorg dat je snapt wat er gebeurt.
+
+Wijzig de code hierboven zodat de naam van een leuke school wordt getoond.
 <pre class="python">
 schoolnaam = "Montessori College"
 plaatsnaam = "Nijmegen"
 print( "schoolnaam" + "plaatsnaam" )
 </pre>
-<ol start="3" style="list-style-type: lower-alpha">
-<li>Wijzig de code hierboven zodat de naam van een leuke school wordt getoond.</li>
-</ol>
+-->
 <!-- ANTWOORD
 schoolnaam = "Montessori College"
 plaatsnaam = "Nijmegen"
@@ -225,19 +256,31 @@ print( schoolnaam + " " + plaatsnaam )
 <h2 id="verkorte-operatoren">Verkorte operatoren <!-- Hoofdstuk 4.5 Verkorte operatoren --></h2>
 <p>Middels de operatoren die ik heb uitgelegd, kun je de inhoud van variabelen zo vaak wijzigen in je code als je nodig hebt. Je kunt nieuwe waardes in bestaande variabelen stoppen. Vaak wil je dat inderdaad doen. Bijvoorbeeld, het komt in code vaak voor dat er 1 moet worden opgeteld bij een numerieke variabele (waarom dat zo vaak voorkomt zul je zien in hoofdstuk 7). Omdat dit zo vaak gebeurt, bevat Python een aantal “ verkorte notaties” om de inhoud van variabelen aan te passen.</p>
 <p>De volgende code:</p>
-<pre class="python"><code class="python">aantal_bananen = 100
+<pre class="python">
+aantal_bananen = 100
 aantal_bananen = aantal_bananen + 1 # aantal_bananen ophogen met één
-print( aantal_bananen )</code></pre>
+print( aantal_bananen )
+</pre>
 <p>is hetzelfde als:</p>
-<pre class="python"><code class="python">aantal_bananen = 100
+<pre class="python">
+aantal_bananen = 100
 aantal_bananen += 1 # aantal_bananen ophogen met één
-print( aantal_bananen )</code></pre>
+print( aantal_bananen )
+</pre>
 <p>Het verschil is de tweede regel. Als je iets wilt optellen bij een variabele, kun je <code>+=</code> gebruiken als assignment operator, met de variabele aan de linkerkant en wat je erbij op wilt tellen aan de rechterkant. Dit bespaart de moeite van het twee keer typen van de variabele naam, en maakt je code over het algemeen leesbaarder (omdat programmeurs ervan uitgaan dat je de <code>+=</code> operator gebruikt als je ergens iets bij wilt optellen).</p>
 <p>Op vergelijkbare manier kun je <code>-=</code> gebruiken om iets af te trekken van een variabele, <code>*=</code> voor vermenigvuldiging, <code>/=</code> voor deling, <code>**=</code> voor machtsverheffing, etcetera. De meeste verkorte versies worden weinig gebruikt, behalve <code>+=</code>, die juist heel veel gebruikt wordt, en <code>-=</code>, die zo nu en dan gebruikt wordt.</p>
 
 
 <h3 id="opgave-4.4-verkorte-operatoren"><span style="color:red">Opgave 4.5a</span> Verkorte operatoren</h3>
-Wat toont de code? Controleer of je gelijk hebt.
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1208857/fad9b4f47034b0cc2522633335cfa12f"></iframe>
+
+Klik <a href="Variabelen_oplossingen.html#opgave-4.4-verkorte-operatoren">hier</a> voor de uitwerking.
+<!--
+1) Wat toont de code? Controleer of je gelijk hebt.
+
+2) Verwijder regel 5. Hoeveel bananen heb je nu?
+
+3) De prijs van een banaan is 0.20 euro. Bereken de prijs van je bananen.
 
 <pre class="python">
 aantal_bananen = 100
@@ -246,15 +289,30 @@ aantal_bananen -= 13
 aantal_bananen *= 19
 aantal_bananen /= aantal_bananen
 print( aantal_bananen )
-</pre>
+</pre>-->
+
+<!-- antwoordd
+aantal_bananen = 100
+aantal_bananen += 12
+aantal_bananen -= 13
+aantal_bananen *= 19
+aantal_bananen *= 0.20
+print( aantal_bananen )
+
+376.20000000000005
+
+-->
 
 
 <h3 id="opgave-4.5-waarde-ophogen"><span style="color:red">Opgave 4.5b </span>Waarde ophogen</h3>
-<p>Stel je speelt een spel. Je score is nu 120 punten. Je pakt een muntje op waarmee je score verhoogt wordt met 10 punten. Daarna zet je een stap waarmee je score met 1 punt omlaag gaat.</p>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1208890/526ab8f17c50fa23e4b3b33bccf2542c"></iframe>
+
+Klik <a href="Variabelen_oplossingen.html#opgave-4.5-waarde-ophogen">hier</a> voor de uitwerking.
+<!--<p>Stel je speelt een spel. Je score is nu 120 punten. Je pakt een muntje op waarmee je score verhoogt wordt met 10 punten. Daarna zet je een stap waarmee je score met 1 punt omlaag gaat.</p>
 <pre class="python"><code class="python">score = 120
 print( score )</code></pre>
 <p>Pas de code hierop aan en druk je score af. Gebruik hiervoor de verkorte operatoren. Voeg ook commentaar toe.</p>
-<!-- ANTWOORD
+--><!-- ANTWOORD
 
 score = 120
 score += 10 #muntje gepakt, 10 punten erbij
@@ -278,15 +336,16 @@ print( "en iets anders.." ) #Geef zo commentaar op je code!
 <p>De tweede manier is door een stuk commentaar tekst, dat meerdere regels mag beslaan, vooraf te gaan door drie aanhalingstekens (dubbel of enkel), en dezelfde markering aan het einde van de tekst te zetten. In dit geval moet je de drievoudige aanhalingstekens aan het begin ook aan het begin van een regel zetten, en je kunt deze manier van commentaar geven niet gebruiken in een blok code dat inspringt. De reden is dat je feitelijk een string die uit meerdere regels bestaat in je code plaatst (meer hierover in hoofdstuk 10).</p>
 
 <h3 id="opgave-4.6-commentaar-toevoegen"><span style="color:red">Opgave 4.6</span> Commentaar toevoegen</h3>
-<p>Voeg commentaar aan de code toe zodat duidelijk is wat het doet.</p>
+<!--<p>Voeg commentaar aan de code toe zodat duidelijk is wat het doet.</p>
 <pre class="python">
 temp_gisteren = 12
 temp_vandaag = 15
+waarde = max(temp_gisteren, temp_vandaag)
+print( waarde )
+</pre>-->
 
-print( max(temp_gisteren, temp_vandaag) )
-</pre>
-
-</ul>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1208892/feb08cdef5dd2c537debc3a2af6bb198"></iframe>
+Klik <a href="Variabelen_oplossingen.html#opgave-4.6-commentaar-toevoegen">hier</a> voor de uitwerking.
 
 <div id="leerdoelen"><h2>Wat je geleerd hebt over variabelen</h2></div>
 <p>In dit hoofdstuk is het volgende besproken:</p>
