@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+    <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+
+<h1 id="hoofdstuk-5---BestaandeFuncties">Python Cursus. Hoofdstuk 3 - Expressies</h1>
+<hr />
+<i><a href="Expressies.html">Meteen naar de Afsluitende Opgaven over Expressies</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+<hr>
+
+<h2> Resultaten tonen</h2>
+
+<p>Afdrukken in de console (dat zwarte scherm onderaan), doe je met de `print` commando. Probeer het maar:</p>
+
+<!-- th3.1
+ print( 5 + 7 )
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th-31?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<p>Je kunt verschillende mogelijkheden:
+<ul>
+  <li>Getallen afdrukken: getal tussen de haakjes zetten</li>
+  <li>Decimaalgetal afdrukken: decimaalgetal (oftewel: kommagetal) tussen de haakjes zetten, met een punt in plaats van een komma.</li>
+  <li>Tekst afdrukken: tussen de haakjes, met aanhalingstekens " er omheen.</li>
+  <li>Meerdere dingen afdrukken: zet alles wat je wilt afdrukken tussen de haakjes, steeds met komma’s ertussen. </li>
+</ul>
+</p>
+
+
+<!-- th3.2
+print( 5 ) #druk getal 5 af
+print( 5.2 ) #druk het decimaal getal 5.2 af
+print( 6 + 2 ) #bereken 6+2 en druk het af
+print( "hoi" ) #druk een tekst af
+print( 6, 2 ) #druk eerst 6 dan 2 af, met spatie ertussen
+
+<iframe height="400px" width="100%" src="https://repl.it/@smer/th-32?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+-->
+
+
+<h3 id="31tekstengetallenafdrukken"><span
+style="color:red">Opgave</span> 3.1 Tekst en getallen samen afdrukken</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1214792/d3e1abbb7c5fecf6df8ce25b1169fca7"></iframe>
+<!--
+<p>Neem deze zin over en controleer wat deze afdrukt:</p>
+
+<pre><code class="python language-python">print( "Ik heb", 2, "appels", "en", 1, "banaan." ) </code></pre>
+-->
+
+<!--ANTWOORD:
+print( "Ik heb", 2, "appels", "en", 1, "banaan." )
+-->
+Klik <a href="Expressies_oplossingen.html#31tekstengetallenafdrukken">hier</a> voor de uitwerking.
+
+<h2 id="datatypes">Data types</h2>
+
+<p>Alles heeft een (data)type:
+<ul>
+  <li><b>string</b>: een tekst</li>
+  <li><b>integer</b>: een getal</li>
+  <li><b>float</b>: een decimaal getal (oftewel kommagetal)</li>
+</ul>
+
+
+
+<h3 id="strings">Strings</h3>
+
+<p>Een string is een tekst, die bestaat uit nul of meer tekens, omsloten door
+aanhalingstekens. Je mag dubbele of enkele aanhalingstekens gebruiken. Wat je
+kiest maakt niet uit, bijvoorbeeld: <code>"appel"</code> is hetzelfde als
+<code>'appel'</code>. 
+
+
+<!-- Th 3.3
+print( "f" ) #druk 1 letter af
+print( "fiets" ) #gebruikt dubbele aanhalingstekens om een string af te drukken
+print( 'fiets' ) #gebruikt enkele aanhalingstekens om een string af te drukken
+print( "" )#druk een lege woord af, niks dus
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/th-33?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<p>Let op: als je code ergens vandaan knip-plakt (bijvoorbeeld uit de sheets van de cursus) dan kan het zijn dat er andere aanhalingstekens gebruikt worden (ronde in plaats van rechte). Python herkent
+de ronde aanhalingstekens niet.</p>
+
+
+
+<h3 id="spanstylecolorredopgavespan321tekstenaanhalingstekens"><span
+style="color:red">Opgave 3.2.1</span> Tekst en aanhalingstekens</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1214909/9b1ef607ee5af727b3e452d89591d933"></iframe>
+
+<!--Druk 2 keer Hallo af.
+1) Gebruik de eerste keer dubbele aanhalingstekens om Hallo af te drukken.</p>
+
+2) Gebruik de tweede keer enkele aanhalingstekens om Hallo af te drukken.</p>
+-->
+Klik <a href="Expressies_oplossingen.html#spanstylecolorredopgavespan321tekstenaanhalingstekensr">hier</a> voor de uitwerking.
+
+
+<h3 id="integers">Integers</h3>
+
+<!-- 3.2.2 -->
+
+<p>Integers zijn gehele getallen, die positief of negatief (of nul) kunnen
+zijn.</p>
+
+
+
+<p>Als je integers in Python gebruikt, mag je ze niet schrijven met scheiders
+tussen de veelvouden van 1000 om ze leesbaarder te maken. Je moet het getal 1
+miljard dus schrijven als <code>1000000000</code> en niet als
+<code>1,000,000,000</code> (de Engelse conventie) of
+<code>1.000.000.000</code>.</p>
+
+
+<h3 id="spanstylecolorredopgavespan322integersgehelegetallengebruiken"><span
+style="color:red">Opgave 3.2.2 </span> Integers (gehele getallen)
+gebruiken</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1215108/a797420832183d81190c037a6faa00c1"></iframe>
+<!--
+<p>Pas het programma aan zodat er 1 miljard afgedrukt wordt.</p>
+<pre><code class="python language-python">print( 1,000,000,000 )
+</code></pre>-->
+<!-- ANTWOORD: 
+print( 1000000000 )
+-->
+Klik <a href="spanstylecolorredopgavespan322integersgehelegetallengebruiken">hier</a> voor de uitwerking.
+
+<h3 id="floats">Floats</h3>
+
+<p>Floats, wat kort is voor "floating-point getallen" ("gebroken getallen"),
+zijn kommagetallen ("decimale getallen"). Bijvoorbeeld,
+<code>3.14159265</code> is een float. 
+Let op: gebruik een punt in plaats van een komma.</p>
+
+<!--
+<p>Als je een integer hebt die je wilt gebruiken als float, kun je dat doen
+door er <code>.0</code> achter te zetten. Bijvoorbeeld, <code>13</code> is
+een integer, maar <code>13.0</code> is een float. Ze geven nog steeds
+dezelfde waarde weer, en als je ze in code met elkaar vergelijkt (dat
+bespreek ik in hoofdstuk 6), dan zal Python stellen dat ze hetzelfde
+zijn.</p>-->
+
+<!--
+    Er zijn bepaalde begrenzingen aan de grootte van de floats, en aan de precisie. Het is onwaarschijnlijk dat je ooit de maximale groottes bereikt, aangezien Python wetenschappelijke notatie voor grote getallen gebruikt. Maar als je Python gebruikt voor zeer exacte berekeningen, kun je wel in de problemen komen met precisie. Voor de meeste toepassingen gebeurt dat niet, maar als je een natuurkundige bent wiens berekeningen grote getallen omvatten op quantumniveau, moet je je wel bewust zijn van deze beperkingen.
+    Door de manier waarop Python floats opslaat, kunnen bepaalde getallen niet precies vastgelegd worden. Bijvoorbeeld, het statement
+    ```python
+    print( (431 / 100) * 100 )
+    ```
+    geeft als antwoord 430.99999999999994, en niet 431 zoals je zou verwachten. Als je weet dat de uitkomst van een berekening waarin floats zitten een integer moet zijn, dan doe je er goed aan om de uitkomst af te ronden naar het dichtstbijzijnde gehele getal. Dat kun je doen met behulp van de `round()` functie, die ik bespreek in hoofdstuk 5.
+-->
+
+<h3 id="spanstylecolorredopgavespan323floatskommagetallengebruiken"><span
+style="color:red">Opgave 3.2.3</span> Floats (kommagetallen) gebruiken</h3>
+<!--
+<p>In de code is <code>x</code> een kommagetal. Als je deze code runt krijg
+je een foutmelding. Kun jij de fout vinden en herstellen?</p>
+
+<code class="python language-python">
+x = 0,1
+print ( x + 2 )
+</pre>
+-->
+Klik <a href="spanstylecolorredopgavespan323floatskommagetallengebruiken">hier</a> voor de uitwerking.
+
+
+<h2 id="expressies">Expressies</h2>
+
+<p>Een expressie is een combinatie van een of meerdere waardes (zoals strings, integers, of floats) met behulp van
+operatoren, die dan een nieuwe waarde oplevert. Je kunt je expressies dus
+voorstellen als berekeningen.</p>
+
+<h3 id="eenvoudigeberekeningen">Eenvoudige berekeningen</h3>
+
+<p>Eenvoudige berekeningen worden gemaakt door twee waardes te combineren met
+een operator ertussenin. Een aantal voor de hand liggende operatoren
+zijn:</p>
+
+<pre>
++   optelling 
+-   aftrekking
+*   vermenigvuldiging
+/   deling
+**  machtsverheffing
+//  integer deling
+%   modulo
+</pre>
+
+<p>Hier volgen een paar voorbeelden:</p>
+<iframe height="300px" width="100%" src="https://repl.it/@smer/th-34?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<!--th3.4
+<pre><code class="python language-python">
+print( 15 + 4 )
+print( 15 - 4 )
+print( 15 * 4 )
+print( 15 / 4 )
+print( 15 ** 4 )
+print( 15 // 4 )
+print( 15 % 4 )
+</code></pre>
+-->
+<p>Ik neem aan dat je weet wat deze operatoren voorstellen, behalve misschien
+de laatste twee: de integer deling en de modulo:</p>
+<ul>
+  <li><code>//</code>: De integer deling (ook wel genoemd "floor division") is een
+deling die naar beneden afrondt naar een geheel getal.</li>
+  <li><code>%</code>: De modulo operator  geeft de rest die overblijft na deling. Bijvoorbeeld: als ik 14 deel door 5, is de uitkomst 2.8. Dat betekent dat ik twee keer 5 kan aftrekken van 14, en dan nog steeds een positief getal overhoud, maar als ik het een derde keer aftrek wordt het resultaat negatief. Dus als ik 5 twee keer aftrek van 14, rest er een getal kleiner dan 5. Deze rest is wat de modulo operator oplevert.</li>
+ </ul>
+
+<p>In andere woorden: als ik 14 koekjes heb die ik moet verdelen over 5
+kinderen, kan ik ieder kind 2 koekjes geven. Ik heb dan nog 4 koekjes over,
+omdat ik dan meer kinderen dan koekjes heb. Dus als je 14 deelt door 5 met
+integer deling, geeft dat 2 (koekjes per kind), terwijl 14 modulo 5 als rest
+4 (koekjes in mijn hand) geeft.</p>
+
+<!--
+    Als zijdelingse opmerking: de code hierboven bestaat uit meerdere regels. Iedere regel is een "statement,"bestaande uit een commando dat Python uitvoert (in de code hierboven is dat voor iedere regel een print() commando). De meeste programmeertalen stellen het als een verplichting dat ieder statement eindigt met een speciaal teken, bijvoorbeeld een puntkomma (`;`). Python verlangt dat niet, maar dan moet ieder statement ook op zijn eigen regel staan. In principe mag je meerdere Python statements op een regel zetten, maar dan moeten er puntkomma’s tussen de statements staan. In de praktijk doen Python programmeurs dat niet, omdat het code lelijk, slecht leesbaar, en slecht onderhoudbaar maakt. Dus ik stel voor dat je de Python-gewoonte volgt en ieder statement zijn eigen
+    regel geeft.
+-->
+
+<h3 id="spanstylecolorredopgavespan331eenvoudigeberekeningen"><span
+style="color:red">Opgave</span> 3.3.1 Eenvoudige berekeningen</h3>
+
+<p>Hiernaast staan een paar berekeningen. Vul bij elke regel de juiste
+operator in. Bedenk ook bij de laatste drie wat ze eigenlijk doen.</p>
+
+<b>TODO OPZOEKEN </b>
+
+<h3 id="complexeberekeningen">Complexe berekeningen</h3>
+
+<p>Je mag waardes en operatoren combineren om grotere berekening te maken,
+net zoals je kunt met geavanceerde rekenmachines. Je mag daarbij haakjes
+gebruiken om de evaluatievolgorde te bepalen, en je mag die haakjes zelfs
+nesten. Zonder haakjes zal Python de operatoren evalueren in de volgende volgorde (zoals je op de basisschool geleerd hebt): machtsverheffen, vermenigvuldigen, delen,
+worteltrekken, optellen, aftrekken.</p>
+
+<!-- Overigens, in het Engels wordt de volgorde PEMDAS genoemd, en eigenlijk
+geeft die beter aan wat daadwerkelijk de volgorde is: haakjes (parentheses),
+exponenten, multiplicatie en divisie (deling), additie (optelling) en
+subtractie (aftrekking). Feitelijk is de Nederlandse volgorde incorrect,
+omdat worteltrekken na delen wordt geplaatst, terwijl wiskundig gezien
+worteltrekken een vorm van machtsverheffen is, en dus voor vermenigvuldigen
+komt. -->
+
+<h3 id="spanstylecolorredopgavespan3321haakjesgebruiken"><span
+style="color:red">Opgave 3.3.2.1</span> Haakjes gebruiken</h3>
+<!--
+<p>Pas de berekening hieronder aan zodat deze als uitvoer 5 heeft (dus eerst
+6 en 4 optellen, en dan pas delen door 2)</p>
+
+<pre><code class="python language-python">
+antwoord = 6 + 4 / 2
+print( antwoord ) </code></pre>-->
+
+<!-- antwoord print( (6+4)/2) -->
+Klik <a href="spanstylecolorredopgavespan3321haakjesgebruiken">hier</a> voor de uitwerking.
+
+<!--<pre><code class="python language-python">print( 5*2-3+4/2 )
+</code></pre> Ik moet een paar opmerkingen maken over deze berekening. Op de
+eerste plaats valt het op dat de uitkomst een float is (zelfs al zijn er geen
+decimalen). De reden is dat er een deling in de berekening zit, en dat
+betekent voor Python dat de uitkomst automatisch een float is. Op de tweede
+plaats is het zo dat, zoals ik al eerder opmerkte, spaties door Python
+genegeerd worden. De code hierboven is dus equivalent met:<pre><code
+class="python language-python">print( 5 * 2 - 3 + 4 / 2 ) </code></pre>Het is
+zelfs gelijk aan:<pre><code class="python language-python">print( 5*2 - 3+4
+/ 2 ) </code></pre>Ik heb lange discussies moeten voeren met mensen die
+beweren dat de code hierboven als uitkomst 6.5 of 1.5 geeft, want het is toch
+*overduidelijk* dat je eerst `5∗2` en `3+4` moet berekenen voordat je toekomt
+aan die aftrekking en deling. Dat is kolder. Het maakt niet uit hoeveel
+spaties je rondom de operatoren zet: spaties worden genegeerd. Als je echt
+eerst `3+4` wilt laten berekenen, moet je er haakjes omheen zetten. Spaties
+kunnen leesbaarheid verhogen als je ze goed toepast, maar voor Python zijn ze
+betekenisloos.<pre><code class="python language-python">print( (5*2) -
+(3+4)/2 ) print( ((5*2)-(3+4)) / 2 ) </code></pre>-->
+
+<h2 id="complexeberekeninguitvoeren">Complexe berekening uitvoeren</h2>
+
+<h3 id="spanstylecolorredopgavespan3322aantalsecondenperweek"><span
+style="color:red">Opgave</span> 3.3.2.2 Aantal seconden per week</h3>
+
+<p>Schrijf een programma dat het aantal seconden in een week berekent en
+afdrukt. Het programma is slechts 1 regel lang.</p>
+
+<p>Je moet daarvoor natuurlijk niet je rekenmachine of smartphone grijpen,
+daarop de berekening doen, en dan gewoon de uitkomst afdrukken. Je moet de
+berekening doen in Python code. </p>
+
+<h3 id="stringexpressies">String expressies</h3>
+
+<p>Een aantal van de genoemde rekenkundige operatoren kunnen voor strings
+worden gebruikt,  maar niet allemaal. Specifiek, je kunt de plus
+(<code>+</code>) gebruiken om twee strings aan elkaar te "plakken”, en je
+kunt de ster (<code>*</code>) gebruiken met een string en een integer om een
+string te maken die een herhaling van de originele string bevat. Zie
+hier:</p>
+
+<pre><code class="python language-python">
+print( "tot"+"ziens" )
+print( 3*"hallo" )
+print( "tot ziens"*3 ) </code></pre>
+
+<p>Je kunt geen getal optellen bij een string, of twee strings met elkaar
+vermenigvuldigen. Zulke operatoren zijn niet gedefinieerd, en geven
+foutmeldingen. Geen van de andere operatoren werkt voor strings.</p>
+
+<h3 id="spanstylecolorredopgavespan333stringexpressies"><span
+style="color:red">Opgave</span> 3.3.3 String expressies</h3>
+
+<p>Pas de code hiernaast aan zodat het volgende wordt afgedrukt:</p>
+
+<pre><code class="python language-python">
+Hallo!
+Hallo Wereld!
+hoihoi
+</code></pre>
+
+
+<!--<pre><code class="python language-python">print( "tot"+"ziens" ) print(
+3*"hallo" ) print( "tot ziens"*3 ) </code></pre>-->
+
+<h3 id="typecasting">Type casting</h3>
+
+<p>Soms moet je een data type of waarde veranderen in een ander data type. Je
+kunt dat doen met "type casting"functies.</p>
+
+<p>In latere hoofdstukken (5 en 8) ga ik in detail op functies in, maar voor
+nu is het voldoende als je weet dat een functie een naam heeft, en parameters
+kan hebben tussen de haakjes die achter de naam staan. De functie doet iets
+met die parameters en geeft een resultaat terug. Bijvoorbeeld, de functie
+print() drukt de parameter waardes af op het scherm, en geeft niks terug.</p>
+
+<p>Type casting functies nemen de parameter waarde die tussen de haakjes is
+gegeven, en geven een waarde terug die (bijna) hetzelfde is als de parameter
+waarde, maar van een verschillend type. De drie belangrijkste type casting
+functies zijn:</p>
+
+<ul> <li><p><code>int()</code> geeft de parameter waarde terug als integer
+(indien noodzakelijk afgerond naar beneden)</p></li>
+
+<li><p><code>float()</code> geeft de parameter waarde terug als float
+(waarbij <code>.0</code> indien noodzakelijk wordt toegevoegd)</p></li>
+
+<li><p><code>str()</code> geeft de parameter waarde terug als
+string.</p></li> </ul>
+
+<p>Dus, met <code>float(3)</code> wordt het geheel getal <code>3</code>
+omgezet in een float (decimaal getal) <code>3.0</code>.</p>
+
+<h3
+id="spanstylecolorredopgavespan3341wisselentussengeheleenkommagetallen"><span
+style="color:red">Opgave</span> 3.3.4.1 Wisselen tussen gehele en
+kommagetallen</h3>
+
+<p>Bekijk de code hieronder.</p>
+
+<p>1) Pas de eerste regel code aan zodat het antwoord van 16.0 gedeeld door
+4.0 als een integer waarde wordt afgedrukt (dus als geheel getal)</p>
+
+<p>2) Pas de code aan op regel 4 zodat het antwoord van 16 plus 4 als een
+decimale waarde wordt afgedrukt.</p>
+
+<pre><code class="python language-python">
+antwoord = 16.0 / 4.0
+
+print( antwoord )
+
+antwoord =  16+4 print( antwoord ) </code></pre>
+
+<!-- antwoord = int( 16.0/4.0 ) print( antwoord ) antwoord =  float( 16+4 )
+print ( antwoord ) -->
+
+<!-- Bekijk de verschillen tussen de volgende twee regels code:<pre><code
+class="python language-python">print( 15/4 ) print( int( 15/4 ) )
+</code></pre>Of de volgende twee regels:<pre><code class="python
+language-python">print( 15+4 ) print( float( 15+4 ) ) </code></pre>Ik had al
+aangegeven dat je de plus-operator niet kunt gebruiken om een getal aan een
+string vast te plakken. Als je zoiets toch wilt doen, kun je een oplossing
+maken met behulp van string type casting:<pre><code class="python
+language-python">print(  "Ik heb " + str( 15 ) + " appels." )
+</code></pre>-->
+
+<hr />
+
+<!-- ## Data Types omzetten Wil je data types kunnen combineren in een
+`print`, dan moet je getallen eerst omzetten in een `string`. Bijvoorbeeld,
+om een variabele met een getal (leeftijd) te kunnen combineren met tekst in
+een `print`, moet je de leeftijd omzetten naar tekst (oftewel, casten naar
+een `str`). Dat doe je zo:<pre><code class="python language-python">leeftijd
+= 16 print( "Ik ben "+  str(leeftijd) + " jaar oud.") </code></pre>Je hebt
+eerder geleerd om een `,` te gebruiken in een string. Nadeel hiervan is dat
+het meteen een spatie achter het getal zet. -->
+
+<h2> Tekst en getallen
+combineren </h2>
+
+Als je in een `print` zowel tekst (strings) als getallen (int) wil
+combineren, dan kun je de `,` operator gebruiken. Dat is niet altijd handig,
+want die voegt ook meteen een spatie toe. Als je tekst en getallen wilt
+combineren in een `print`, zonder dat er een spatie tussen komt dan moet je:
+
+1) de getallen eerst omzetten naar tekst met `str(...)`
+
+2) de `+` gebruiken
+in plaats van `,` om tekst aan elkaar te plakken. Bijvoorbeeld: Een getal
+leeftijd om te zetten naar tekst (oftewel, casten naar een string) doe je
+zo:<pre><code class="python language-python">
+eeftijd = 16
+print( "Ik ben "+ str(leeftijd) + " jaar oud.")
+</code></pre> Het resultaat is:<br> `Ik ben 16 jaar oud.`
+
+<h3> <span style="color:red">Opgave 3.3.4.2 Een getal in
+tekst omzetten </span></h3>
+
+Schrijf een programma dat `zakgeld` gebruikt en de volgende
+tekst netjes afdrukt:<br><br> `Ik krijg 20.00 euro zakgeld.`<br><br> Tips: <br>- Hiervoor
+moet je het getal 20 eerst naar een string omzetten. Daarvoor gebruik je
+`str(..)`. <br>- Gebruik `+` om in een `print` de ".00" er achteraan te
+"plakken". <!-- antwoord<pre><code class="python language-python">zakgeld =
+20 print( "Ik krijg " + str(zakgeld) + ".00 euro zakgeld.") </code></pre>
+TIP: Gebruik `str(..)` en `+` om in een `print` regel het volgende af te
+drukken: -->
+
+<!-- ## Stijl Misschien is het je opgevallen dat ik in mijn voorbeelden veel
+spaties gebruik. Bijvoorbeeld, bij de haakjes die achter een functienaam
+staan, zet ik altijd een spatie na het openingshaakje en voor het
+sluithaakje. In berekeningen zet ik vaak spaties rondom operatoren als dat de
+berekening beter leesbaar maakt. Ik zet ook vaak lege regels in mijn code, en
+gebruik consequent vier spaties als tabulatie waar nodig. De meeste van deze
+zaken zijn gewoon "stijl."De spaties bij de haakjes en rond de operatoren
+zijn niet nodig. Python begrijpt de code ook prima als ze er niet staan. De
+volgende vier regels code zijn equivalent:<pre><code class="python
+language-python"># Equivalente regels code print( 2 + 3 ) print(2+3) print(
+2+3) print                 (            2             +           3
+) </code></pre>Het "vastplakken"van het openingshaakje aan de functienaam
+doet vrijwel iedere programmeur, maar de rest verschillen de stijlen van
+spaties plaatsen tussen programmeurs (bijvoorbeeld, mijn stijl waarin ik een
+spatie plaats voor een sluithaakje is hoogst zeldzaam). Je kunt hierin je
+eigen stijlvoorkeur gebruiken, je hoeft niet de mijne te volgen. Maar ik raad
+je wel aan om een consistente stijl te gebruiken, want dat maakt je code
+leesbaarder, zelfs voor programmeurs die er een andere stijl op nahouden.
+Merk op dat de code hierboven een "hash mark"(#; hiervoor bestaat geen
+Nederlandstalig woord) heeft op de eerste regel, waarna een tekst volgt die
+wat details over de code uitlegt. Deze regel is een commentaarregel: als je
+een hash mark gebruikt in je code (behalve als die in een string staat,
+natuurlijk) dan is alles wat rechts van de hash mark staat op de regel
+commentaar, dat door Python genegeerd wordt. Je kunt commentaar gebruiken om
+details over je code te geven, als je denkt dat uitleg nodig is. Meer over
+het geven van commentaar volgt in een later hoofdstuk. -->
+
+<h2 id="debuggen">Debuggen</h2>
+
+<p>Het opsporen van fouten in je code kan veel tijd kosten en frustratie
+opleveren.</p>
+
+<p>Er zijn twee soorten fouten:</p>
+
+<p>1) Syntax fout: je tikt iets in dat de interpreter niks mee kan.
+Bijvoorbeeld, een verkeerd gespelde functienaam. Je krijgt dan een
+foutmelding.</p>
+
+<p>2) Semantiek fout: je maakt een denkfout. Bijvoorbeeld, je deelt door 4 in
+plaats van 5. De uitvoer is dan anders dan je verwacht.</p>
+
+<p>Het herkennen van foutmelding helpt je om sneller syntax fouten op te
+sporen.</p>
+
+<h3 id="spanstylecolorredopgavespan341verbeterdesyntaxfout"><span
+style="color:red">Opgave</span> 3.4.1 Verbeter de syntax fout</h3>
+
+<p>Als er iets fout zit in code, geeft Python meestal een foutmelding. Dit
+zijn vaak "syntax fouten”, die aangeven dat er iets fout zit in de vorm van
+je code. </p>
+
+<p>Kun je de fouten in de volgende regels code vinden? Kopieer de code en
+verbeter de fouten.</p>
+
+<pre><code class="python language-python">
+print( "Een boodschap" ).
+print( "Een boodschap ' )
+print( 'Een boodschapf" ' ) </code></pre>
+
+<hr />
+
+<h3 id="spanstylecolorredopgavespanfoutenmethaakjes"><span
+style="color:red">Opgave</span> Fouten met haakjes</h3>
+
+<p>Hier is een ander illustratief voorbeeld van een syntax fout. Voer het
+programma uit en bestudeer de fout die gemeld wordt. Kun je het probleem
+oplossen?</p>
+
+<pre><code class="python language-python">
+print( ((2*3)/4 + (5-6/7)*8 )
+</code></pre>
+
+<hr />
+
+<h2 id="runtimeerror">Runtime error</h2>
+
+<p>Naast "syntax fouten"zijn er ook "runtime errors", die aangeven dat je
+code op zich syntactisch correct lijkt, maar dat er iets out is gegaan bij
+de uitvoering ervan. </p>
+
+<p>Een goed voorbeeld is de <code>ZeroDivisionError</code>, die aangeeft dat
+je probeerde te delen door nul (wat niet mag, zoals je weet). </p>
+
+<h3 id="spanstylecolorredopgavespan343zerodivisionerror"><span
+style="color:red">Opgave</span> 3.4.3 ZeroDivisionError</h3>
+
+<p>Schrijf een kort programma dat een <code>ZeroDivisionError</code> fout
+genereert als je het uitvoert.</p>
+
+<!--<pre><code class="python language-python"># ZeroDivisionError. print( 2/0
+) </code></pre> --> Tip: deel een getal door 0 en druk dat af.
+
+
+
+<H2>Wat je geleerd hebt</h2>
+ In dit hoofdstuk is het volgende besproken: <br>- Het
+gebruik van de `print()` functie om zaken op het scherm te tonen <br>- Data types
+string, integer, en float<br> - Berekeningen <br>- Basale string expressies <br>- Type
+casting tussen strings, integers, en floats, middels `str()`, `int()`, and
+`float()`
+
+
+<h2> Opgaves </h2>
+
+<h3><span style="color:red">Afsluitende opgave</span> 3.1: Geld
+maakt gelukkig</h3>
+ In deze opdracht gaan we aan de slag met geld. We hebben twee
+variabelen, namelijk hele euro’s en losse centen. Bedenk een leuk bedrag.
+Geef de variabelen `euros` en `centen` een waarde. Print dit bedrag op een
+nette manier (bijvoorbeeld: "Dat kost e10.17"). Gebruik hiervoor de
+variabelen `euros` en `centen`.
+
+<h3> <span style="color:red">Afsluitende opgave</span> 3.2: Rekening
+Boekwinkel</h3> Een boek kost in de winkel euro 24,95, maar boekwinkels krijgen 40
+procent korting bij inkoop. Het verschepen van boeken kost euro 3 per boek.
+Bereken hoeveel de winkel betaalt voor 60 boeken. Tips:
+- 40% korting bereken je door het bedrag met 0,6 te vermenigvuldigen.
+- Het totaalbedrag bereken je door de volgende drie dingen met elkaar te
+vermenigvuldigen: het aantal boeken, de kortingsprijs per boek, de
+verzendkosten. <!-- ANTWOORD<pre><code class="python language-python">#
+Boekwinkel. boek_in_winkel = 24.95 boek_met_korting = boek_in_winkel * 0.6
+verzend_kosten_per_boek = 3 aantal_boeken = 60 totaal = aantal_boeken *
+boek_met_korting * verzend_kosten_per_boek print( totaal ) </code></pre> -->
+
+<h3 id="spanstylecolorredopgavespan33btwberekenen"><span
+style="color:red">Afsluitende opgave</span> 3.3: BTW berekenen</h3>
+
+<p>Maak een programma waarmee je BTW berekent over een bepaald bedrag. (Je
+hoeft je even geen zorgen te maken over hoeveel getallen achter de komma
+staan)</p>
+
+<p>1) Declareer een variabele <code>bedrag_excl_btw</code>. Deze geef je de
+waarde 250.00. Dit is een bedrag exclusief btw. Druk dit als volgt af:</p>
+
+<pre><code class="python language-python">
+bedrag (exclusief btw): 250.00 euro
+</code></pre>
+
+<p>Tip: Om het als een bedrag met twee nullen te krijgen moet je "0" aan het
+bedrag "plakken". Je moet dus casten naar een string (gebruik
+<code>str(..)</code>) en in de <code>print</code> gebruik maken van
+<code>+</code> in plaats van een komma.</p>
+
+<p>2) Declareer een variabele <code>btw</code> wordt. Deze wordt berekend door 21% van <code>bedrag_excl_btw</code>. Druk dit als volgt af:</p>
+
+<pre><code class="python language-python">btw (21%): 52.50 euro
+</code></pre>
+
+<p>3) Declareer een variabele <code>bedrag_incl_btw</code>. Deze wordt
+berekend door de variabele <code>btw</code> op te tellen bij het bedrag
+exclusief btw.</p>
+
+<p>4) Controleer dat de volgende tekst verschijnt:</p>
+
+<pre><code class="python language-python">bedrag (exclusief btw): 250.00 euro
+btw (21%): 52.50 euro
+bedrag (inclusief btw): 302.50 euro </code></pre>
+
+<p>Nota bene: de centen van de euro's worden niet netjes afgedrukt. Hoe dat
+moet leer je in het volgende hoofdstuk.</p>
+
+<!-- Tip1: Let op dat teksten  tussen "   "  of  ‘   ’  moeten staan en
+variabelen niet tussen aanhalingstekens! Tip2: met round(bedrag,2) kun je een
+bedrag afronden op 2 decimalen -->
+
+<!-- ANTWOORD bedrag_excl_btw = 250.00 print( "bedrag (exclusief btw): " +
+str(bedrag_excl_btw) + "0") btw = 0.21 * bedrag_excl_btw
+print( "btw (21%): " +  str(btw) + "0")
+bedrag_incl_btw = bedrag_excl_btw + btw print( "bedrag (inclusief btw):" +
+str(bedrag_incl_btw) + "0") -->
+
+<h3 id="spanstylecolorredafsluitendeopgavespan34klokrekenen"><span
+style="color:red">Afsluitende opgave</span> 3.4: Klokrekenen</h3>
+
+<p>Je kijkt op de klok en je ziet dat het 14:00u is. Je zet een alarm dat 535
+uur later af moet gaan. Hoe laat is het als het alarm afgaat? Schrijf een
+programma dat het antwoord netjes afdrukt.<br></p>
+
+<p>Hint: Gebruik de modulo operator. Met <code>%24</code> haal je steeds 24 van een getal af toe je een waarde tussen de 0 en 24 overhoudt.</p>
+
+<!-- antwoord<pre><code class="python language-python">nieuw_tijdstip = (14+535)%24
+print( str(nieuw_tijdstip) + ":00" ) </code></pre> -->
+
+<h3 id="spanstylecolorredafsluitendeopgavespan35invulverhaal"><span
+style="color:red">Afsluitende opgave</span> 3.5: Invulverhaal</h3>
+
+<p>Je maakt een invulverhaal.</p>
+
+<p>Maak een variabel aan voor elk invulwoord. Vul zelf wat in of laat een
+vriend of vriendin dat doen. Vul letterlijk het eerste in wat er in je opkomt
+zodat het heel raar word en grappig.</p>
+
+<p>Vervolgens gebruik je die variabelen om het verhaal compleet te maken.</p>
+
+<p>Je mag je eigen verhaal verzinnen, of deze gebruiken:</p>
+
+<p>COOL PYJAMA FEEST.</p>
+
+<p>_ _ _ _ (Naam beste vriend) geeft een super pyjamafeestje met als thema _
+_ _ _ (kleuterprogramma) dat word dus de hele avond _ _ _ _  (zelfde
+programma) kijken. Op je _ _ _ _ (vreemd voertuig) rijd je met een snelheid
+van (getal met 3 nullen) km per uur naar haar huis. Het hele huis is versierd
+in de kleuren _ _ _ _ (felle kleuren) en _ _ _ _ (kleur die vloekt bij
+andere) en door het hele huis galmt de beat van _ _ _ _
+(carnavalskraker)</p>
+
+<hr />
+<div id="leerdoelen"><h2>Wat je geleerd hebt over Expressies:</h2></div>
+<p>In dit hoofdstuk is het volgende besproken:</p>
+<ul>
+<li>...</li>
+</ul>
+<hr />
+
+<i><a href="ExpressiesAfsluitendeOpgaven.html">Meteen naar de Afsluitende Opgaven over Expressies</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+<script>
+</script>
+</body>
+</html>
