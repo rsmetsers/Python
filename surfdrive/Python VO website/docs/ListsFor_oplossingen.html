@@ -21,7 +21,45 @@
 <h1>Uitwerkingen Opgaven</h1>
 <hr />
 
-<h3 id="opgave-12.4.10-voorkomens-tellen"><span style="color:red">Opgave</span> 12.4.10 Voorkomens tellen</h3>
+
+<h3 id="opgave-12.5.1-dagen-van-week"><span style="color:red">Opgave 12.5.1</span> Dagen van de week verkort</h3>
+<pre class="python">
+dagenVanDeWeek =  [ 'maandag', 'dinsdag', 'woensdag']
+
+for dag in dagenVanDeWeek:
+	print( dag[0]+dag[1] )
+</pre>
+
+<h3 id="opgave-12.5.2-negatieve-getallen"><span style="color:red">Opgave 12.5.2 </span>Print negatieve getallen uit lijst</h3>
+<pre class="python">
+getallenLijst = [-4, 0, 6, -2, 8, -1]
+
+for getal in getallenLijst:
+	if getal < 0:
+		print(getal)
+</pre>
+
+
+
+<h3 id="opgave-12.5.3-klinkers"><span style="color:red">Opgave 12.5.3 </span>Print klinkers uit woorden in een lijst</h3>
+<pre class="python">
+tekst = "Een Nederlander heeft programmeertaal Python bedacht."
+
+for letter in tekst:
+	if letter in "aeiou":
+		print( letter )
+</pre>
+of
+<pre class="python">		
+tekst = "Een Nederlander heeft programmeertaal Python bedacht."
+	
+for letter in tekst:
+	if letter in ["a", "e", "i", "o", "u"]:
+		print( letter )
+</pre>
+
+
+<h3 id="opgave-12.5.4-voorkomens-tellen"><span style="color:red">Opgave 12.5.4</span> Voorkomens tellen</h3>
 <!-- OPDRACHTE
 Opgave 12.4.10 Aantal voorkomens tellen
 Laat de gebruiker een woord intikken. Tel hoe vaak iedere letter (case-insensitive) voorkomt in het woord. Je mag alle tekens negeren die geen letter zijn. Case-insensitive betekend dat zowel een 'Q' als een 'q' als dezelfde letter meetellen.

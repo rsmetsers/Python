@@ -23,16 +23,31 @@
 <h1 id="hoofdstuk-12---lists">Hoofdstuk 12 - Lists</h1>
 
 
-<h3 id="opgave-12.1-lijst-doorlopen-met-een-while-loop"><span style="color:red">Opgave</span> 12.1 Lijst doorlopen met een <code>while</code> loop</h3>
+<h3 id="opgave-12.1-lijst-doorlopen-met-een-while-loop"><span style="color:red">Opgave</span> 12.1.1 Lijst doorlopen met een <code>while</code> loop</h3>
 
 <pre class="python">
-getallenLijst = [0, 4, 6, 8]
+getallenLijst = [3, 4, 6, 8]
 
-teller = 0
-while teller < len(getallenLijst): #doorloop elk element in lijst
-  print (getallenLijst[teller]) #druk element af
-  teller +=1 #verhoog teller om volgende element te pakken
+positie = 0
+while positie < len(getallenLijst): #doorloop elk element in lijst
+  print (getallenLijst[positie]) #druk element af
+  positie +=1 #verhoog positie om volgende element te pakken
 </pre>
+
+
+<h3 id="opgave-12.1b-lijst-doorlopen-met-een-while-loop"><span style="color:red">Opgave</span> 12.1.2 Lijst doorlopen met een <code>while</code> loop en positieve getallen afdrukken</h3>
+<pre code="python">
+getallenlijst = [0, -4, 6, 2, -8, 1]
+
+positie = 0
+while positie < len(getallenlijst):
+	if getallenlijst[positie] > 0:
+		print( getallenlijst[positie] )
+	
+	positie += 1
+</pre>
+
+
 
 <h3 id="opgave-12.2-lijst-aanpassen-in-een-while-loop"><span style="color:red">Opgave</span> 12.2 Lijst aanpassen in een <code>while</code> loop</h3>
 
@@ -217,7 +232,7 @@ print( naamLijst )
 naamLijst.reverse()#sorteer lijst op aflopende alf. volgorde
 print( naamLijst )
 </pre>
-OF
+of
 
 <pre class="python">
 naamLijst = [] #lijst voor het bijhouden van namen
@@ -259,7 +274,7 @@ print( "De magische bol zegt:", random.choice( antwoord ) )
 </pre>
 
 
-<h3 id="afsluitende-opgave-staafdiagram-while"><span style="color:red">Afsluitende opgave</span> 12.6 Staafdiagram (met while-loop_</h3>
+<h3 id="afsluitende-opgave-staafdiagram-while"><span style="color:red">Afsluitende opgave</span> 12.6 Staafdiagram (met while-loop)</h3>
 
 <pre class="python">
 getallen_lijst = [4,8,5]

@@ -31,7 +31,7 @@ style="color:red">Opgave 3.2.2 </span> Integers (gehele getallen)
 gebruiken</h3>
 
 
-<pre class="python">>
+<pre class="python">
 print( 1000000000 )
 </pre>
 <!-- ANTWOORD:
@@ -51,10 +51,105 @@ antwoord = (6 + 4) / 2
 print( antwoord )
 </pre>
 
+<h3 id="spanstylecolorredopgavespan3322aantalsecondenperweek"><span
+style="color:red">Opgave 3.3.2.2 </span>Aantal seconden per week</h3>
+<pre class="python">
+antwoord = (24*7*60)
+print (antwoord)
+</pre>
+
+In het console moet 10080 afgedrukt worden.
+
+
+<h3 id="spanstylecolorredopgavespan333stringexpressies"><span
+style="color:red">Opgave 3.3.3</span> String expressies</h3>
+
+<pre class="python">
+print("Hallo!")
+print("Hallo" + "Wereld!")
+print( 2* "hoi")
+ </pre>
+
+
+<h3
+id="spanstylecolorredopgavespan3341wisselentussengeheleenkommagetallen"><span
+style="color:red">Opgave 3.3.4.1</span> Wisselen tussen gehele en
+kommagetallen</h3>
+<pre class="python">
+antwoord = int( 16.0/4.0 )
+print( antwoord )
+
+antwoord =  float( 16+4 )
+print ( antwoord )
+</pre>
+
+<h3
+id="spanstylecolorredopgavespan3342getalintekstomzetten"><span
+style="color:red">Opgave 3.3.4.2</span>Een getal in tekst omzetten</h3>
+
+<pre class="python">
+zakgeld = 20
+print( "Ik krijg " + str(zakgeld) + ".00 euro zakgeld.") 
+</pre>
+
+
+
 <hr />
 <div id="afsluitendeOpgaves"><h2>Afsluitende Opgaven</h2></div>
 
-<h3 id="..."><span style="color:red">Afsluitende opgave .. </span>...</h3>
+<h3 id="afsluitende-opgave-3.1GeldMaaktGelukkig"><span style="color:red">Afsluitende opgave</span> 3.1: Geld
+maakt gelukkig</h3>
+<pre class="python">
+euros = 10
+centen = 17
+print("Dat kost e" + str(euros) + "." + str(centen) )
+</pre>
+
+<h3 id="afsluitende-opgave-3.2Boekwinkel"><span style="color:red">Afsluitende opgave</span> 3.2: Rekening
+Boekwinkel</h3>
+<pre><code class="python language-python">
+#Boekwinkel. 
+boek_in_winkel = 24.95 
+boek_met_korting = boek_in_winkel * 0.6
+verzend_kosten_per_boek = 3 
+aantal_boeken = 60 
+
+totaal = aantal_boeken * boek_met_korting * verzend_kosten_per_boek 
+print( totaal ) </code></pre>
+Het antwoord is dan: 2694.6
+
+<h3 id="spanstylecolorredopgavespan33btwberekenen"><span
+style="color:red">Afsluitende opgave 3.3: </span>BTW berekenen</h3>
+<pre class="python">
+bedrag_excl_btw = 250.00 
+print( "bedrag (exclusief btw): " + str(bedrag_excl_btw) + "0") 
+
+btw = 0.21 * bedrag_excl_btw
+print( "btw (21%): " +  str(btw) + "0")
+
+bedrag_incl_btw = bedrag_excl_btw + btw print( "bedrag (inclusief btw): " + str(bedrag_incl_btw) + "0")
+</pre>
+
+
+<h3 id="spanstylecolorredafsluitendeopgavespan34klokrekenen"><span
+style="color:red">Afsluitende opgave 3.4: </span>Klokrekenen</h3>
+
+<pre><code class="python">
+nieuw_tijdstip = (14+535) % 24
+print( str(nieuw_tijdstip) + ":00" ) 
+</code></pre>
+
+
+
+<h3 id="spanstylecolorredafsluitendeopgavespan35invulverhaal"><span
+style="color:red">Afsluitende opgave 3.5: </span>Invulverhaal</h3>
+Hier een voorbeeld:
+<pre class="python">
+naam_beste_vriend = "Piet"
+kleuterprogramma = "Sesamstraat"
+
+print(naam_beste_vriend + " geeft een super pyjamafeestje met als thema " + kleuterprogramma + "kleuterprogramma) dat word dus de hele avond " + kleuterprogramma + " kijken.")
+</pre>
 
 <hr>
 

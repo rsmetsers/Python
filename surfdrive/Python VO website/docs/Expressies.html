@@ -17,28 +17,30 @@
 
 <h1 id="hoofdstuk-5---BestaandeFuncties">Python Cursus. Hoofdstuk 3 - Expressies</h1>
 <hr />
-<i><a href="Expressies.html">Meteen naar de Afsluitende Opgaven over Expressies</a></i><br>
+<i><a href="ExpressiesAfsluitendeOpgaven.html">Meteen naar de Afsluitende Opgaven over Expressies</a></i><br>
 <i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
 <hr>
 
 <h2> Resultaten tonen</h2>
 
-<p>Afdrukken in de console (dat zwarte scherm onderaan), doe je met de `print` commando. Probeer het maar:</p>
+<p>Afdrukken in de console (dat zwarte scherm onderaan), doe je met de 'print' commando. Probeer het maar:</p>
 
 <!-- th3.1
  print( 5 + 7 )
 -->
 <iframe height="250px" width="100%" src="https://repl.it/@smer/Th-31?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-<p>Je kunt verschillende mogelijkheden:
+<p>Je kunt verschillende soorten dingen afdrukken:
 <ul>
-  <li>Getallen afdrukken: getal tussen de haakjes zetten</li>
-  <li>Decimaalgetal afdrukken: decimaalgetal (oftewel: kommagetal) tussen de haakjes zetten, met een punt in plaats van een komma.</li>
-  <li>Tekst afdrukken: tussen de haakjes, met aanhalingstekens " er omheen.</li>
-  <li>Meerdere dingen afdrukken: zet alles wat je wilt afdrukken tussen de haakjes, steeds met komma’s ertussen. </li>
+  <li><b>Getallen afdrukken</b>: getal tussen de haakjes zetten</li>
+  <li><b>Decimaal getal afdrukken</b>: decimaal getal (oftewel: kommagetal) tussen de haakjes zetten, met een punt in plaats van een komma.</li>
+  <li><b>Tekst afdrukken</b>: tussen de haakjes, met aanhalingstekens " er omheen.</li>
+  <li><b>Meerdere dingen afdrukken</b>: zet alles wat je wilt afdrukken tussen de haakjes, steeds met komma’s ertussen. </li>
 </ul>
 </p>
 
+Probeer het maar eens:
+<iframe height="250px" width="100%" src="https://repl.it/@smer/th-32?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <!-- th3.2
 print( 5 ) #druk getal 5 af
@@ -78,10 +80,10 @@ Klik <a href="Expressies_oplossingen.html#31tekstengetallenafdrukken">hier</a> v
 
 <h3 id="strings">Strings</h3>
 
-<p>Een string is een tekst, die bestaat uit nul of meer tekens, omsloten door
+<p>Een string is een <b>tekst</b>, die bestaat uit nul of meer tekens, omsloten door
 aanhalingstekens. Je mag dubbele of enkele aanhalingstekens gebruiken. Wat je
 kiest maakt niet uit, bijvoorbeeld: <code>"appel"</code> is hetzelfde als
-<code>'appel'</code>. 
+<code>'appel'</code>.
 
 
 <!-- Th 3.3
@@ -113,7 +115,7 @@ Klik <a href="Expressies_oplossingen.html#spanstylecolorredopgavespan321tekstena
 
 <!-- 3.2.2 -->
 
-<p>Integers zijn gehele getallen, die positief of negatief (of nul) kunnen
+<p>Integers zijn <b>gehele getallen</b>, die positief of negatief (of nul) kunnen
 zijn.</p>
 
 
@@ -133,7 +135,7 @@ gebruiken</h3>
 <p>Pas het programma aan zodat er 1 miljard afgedrukt wordt.</p>
 <pre><code class="python language-python">print( 1,000,000,000 )
 </code></pre>-->
-<!-- ANTWOORD: 
+<!-- ANTWOORD:
 print( 1000000000 )
 -->
 Klik <a href="spanstylecolorredopgavespan322integersgehelegetallengebruiken">hier</a> voor de uitwerking.
@@ -141,8 +143,8 @@ Klik <a href="spanstylecolorredopgavespan322integersgehelegetallengebruiken">hie
 <h3 id="floats">Floats</h3>
 
 <p>Floats, wat kort is voor "floating-point getallen" ("gebroken getallen"),
-zijn kommagetallen ("decimale getallen"). Bijvoorbeeld,
-<code>3.14159265</code> is een float. 
+zijn<b> kommagetallen</b> ("decimale getallen"). Bijvoorbeeld,
+<code>3.14159265</code> is een float.
 Let op: gebruik een punt in plaats van een komma.</p>
 
 <!--
@@ -164,6 +166,7 @@ zijn.</p>-->
 
 <h3 id="spanstylecolorredopgavespan323floatskommagetallengebruiken"><span
 style="color:red">Opgave 3.2.3</span> Floats (kommagetallen) gebruiken</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1215109/adf4d822c42e66a41d67c946ab34a6d0"></iframe>
 <!--
 <p>In de code is <code>x</code> een kommagetal. Als je deze code runt krijg
 je een foutmelding. Kun jij de fout vinden en herstellen?</p>
@@ -173,7 +176,7 @@ x = 0,1
 print ( x + 2 )
 </pre>
 -->
-Klik <a href="spanstylecolorredopgavespan323floatskommagetallengebruiken">hier</a> voor de uitwerking.
+Klik <a href="Expressies_oplossingen.html#spanstylecolorredopgavespan323floatskommagetallengebruiken">hier</a> voor de uitwerking.
 
 
 <h2 id="expressies">Expressies</h2>
@@ -189,7 +192,7 @@ een operator ertussenin. Een aantal voor de hand liggende operatoren
 zijn:</p>
 
 <pre>
-+   optelling 
++   optelling
 -   aftrekking
 *   vermenigvuldiging
 /   deling
@@ -199,7 +202,7 @@ zijn:</p>
 </pre>
 
 <p>Hier volgen een paar voorbeelden:</p>
-<iframe height="300px" width="100%" src="https://repl.it/@smer/th-34?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://repl.it/@smer/th-34?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <!--th3.4
 <pre><code class="python language-python">
@@ -275,7 +278,10 @@ antwoord = 6 + 4 / 2
 print( antwoord ) </code></pre>-->
 
 <!-- antwoord print( (6+4)/2) -->
-Klik <a href="spanstylecolorredopgavespan3321haakjesgebruiken">hier</a> voor de uitwerking.
+
+<iframe frameborder="0" width="100%" height="400px" src="https://repl.it/student_embed/assignment/1233232/3a6ab7dd8ae4f85cd051667a8819f512"></iframe>
+
+Klik <a href="Expressies_oplossingen.html#spanstylecolorredopgavespan3321haakjesgebruiken">hier</a> voor de uitwerking.
 
 <!--<pre><code class="python language-python">print( 5*2-3+4/2 )
 </code></pre> Ik moet een paar opmerkingen maken over deze berekening. Op de
@@ -299,20 +305,29 @@ betekenisloos.<pre><code class="python language-python">print( (5*2) -
 <h2 id="complexeberekeninguitvoeren">Complexe berekening uitvoeren</h2>
 
 <h3 id="spanstylecolorredopgavespan3322aantalsecondenperweek"><span
-style="color:red">Opgave</span> 3.3.2.2 Aantal seconden per week</h3>
-
+style="color:red">Opgave 3.3.2.2 </span>Aantal seconden per week</h3>
+<!--
 <p>Schrijf een programma dat het aantal seconden in een week berekent en
-afdrukt. Het programma is slechts 1 regel lang.</p>
+afdrukt. Het programma is maar 2 regels lang.</p>
 
+<p>Je moet daarvoor natuurlijk niet je rekenmachine of smartphone grijpen,
+daarop de berekening doen, en dan gewoon de uitkomst afdrukken. Je moet de
+berekening doen in Python code. </p>
+
+-->
 
 <!-- ANTWOORD
 antwoord = (24*7*60)
 print (antwoord)
 
+
+10080
+
 -->
-<p>Je moet daarvoor natuurlijk niet je rekenmachine of smartphone grijpen,
-daarop de berekening doen, en dan gewoon de uitkomst afdrukken. Je moet de
-berekening doen in Python code. </p>
+<iframe frameborder="0" width="100%" height="400px" src="https://repl.it/student_embed/assignment/1233233/8359104f5e72a34620b02a69afe24713"></iframe>
+Klik <a href="Expressies_oplossingen.html#spanstylecolorredopgavespan3322aantalsecondenperweek">hier</a> voor de uitwerking.
+
+
 
 <h3 id="stringexpressies">String expressies</h3>
 
@@ -322,20 +337,22 @@ worden gebruikt,  maar niet allemaal. Specifiek, je kunt de plus
 kunt de ster (<code>*</code>) gebruiken met een string en een integer om een
 string te maken die een herhaling van de originele string bevat. Zie
 hier:</p>
-
+<!-- th 3.5 
 <pre><code class="python language-python">
 print( "tot"+"ziens" )
 print( 3*"hallo" )
 print( "tot ziens"*3 ) </code></pre>
-
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/FrontWarmSequel?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 <p>Je kunt geen getal optellen bij een string, of twee strings met elkaar
 vermenigvuldigen. Zulke operatoren zijn niet gedefinieerd, en geven
 foutmeldingen. Geen van de andere operatoren werkt voor strings.</p>
 
 <h3 id="spanstylecolorredopgavespan333stringexpressies"><span
-style="color:red">Opgave</span> 3.3.3 String expressies</h3>
+style="color:red">Opgave 3.3.3</span> String expressies</h3>
 
-<p>Pas de code hiernaast aan zodat het volgende wordt afgedrukt:</p>
+<!--Pas de code hiernaast aan zodat het volgende wordt afgedrukt:
+</p>
 
 <pre><code class="python language-python">
 Hallo!
@@ -343,15 +360,27 @@ Hallo Wereld!
 hoihoi
 </code></pre>
 
+Pas de code hiernaast aan zodat het volgende wordt afgedrukt:
 
-<!--<pre><code class="python language-python">print( "tot"+"ziens" ) print(
-3*"hallo" ) print( "tot ziens"*3 ) </code></pre>-->
+Tips:
+- Bij regel 2 plaats je een spatie ergens
+- Bij regel 3 heb je een * nodig-->
+<!--antwoord: print("Hallo!")
+print("Hallo" + "Wereld!")
+print( 2* "hoi")
+ </code></pre>-->
+ <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1233238/b249ffe9177681e4fb20e7e8e4afdf8b"></iframe>
+
+Klik <a href="Expressies_oplossingen.html#spanstylecolorredopgavespan333stringexpressies">hier</a> voor de uitwerking.
+
 
 <h3 id="typecasting">Type casting</h3>
 
-<p>Soms moet je een data type of waarde veranderen in een ander data type. Je
-kunt dat doen met "type casting"functies.</p>
+<p>Soms moet je een data type of waarde veranderen in een ander data type. Bijvoorbeeld, als de gebruiker iets intikt wordt dit altijd tekst gezien, ook al wordt er een getal ingetikt.
+Wil je daarmee gaan rekenen, dan moet je de ingevoerde <code>string</code> in een <code>int</code> veranderen. Een andere voorbeeld is juist andersom, als je een <code>int</code> tussen tekst wilt printen, dan moet je er eerst een <code>string</code> van maken.
+Je kunt dat doen met "type casting" functies.</p>
 
+<!--
 <p>In latere hoofdstukken (5 en 8) ga ik in detail op functies in, maar voor
 nu is het voldoende als je weet dat een functie een naam heeft, en parameters
 kan hebben tussen de haakjes die achter de naam staan. De functie doet iets
@@ -360,8 +389,9 @@ print() drukt de parameter waardes af op het scherm, en geeft niks terug.</p>
 
 <p>Type casting functies nemen de parameter waarde die tussen de haakjes is
 gegeven, en geven een waarde terug die (bijna) hetzelfde is als de parameter
-waarde, maar van een verschillend type. De drie belangrijkste type casting
-functies zijn:</p>
+waarde, maar van een verschillend type.-->
+
+<p>De drie belangrijkste type casting functies zijn:</p>
 
 <ul> <li><p><code>int()</code> geeft de parameter waarde terug als integer
 (indien noodzakelijk afgerond naar beneden)</p></li>
@@ -373,30 +403,37 @@ functies zijn:</p>
 string.</p></li> </ul>
 
 <p>Dus, met <code>float(3)</code> wordt het geheel getal <code>3</code>
-omgezet in een float (decimaal getal) <code>3.0</code>.</p>
+omgezet in een float (decimaal getal) <code>3.0</code>. Kijk maar:</p>
+<!-- th 3.6
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/th36?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <h3
 id="spanstylecolorredopgavespan3341wisselentussengeheleenkommagetallen"><span
-style="color:red">Opgave</span> 3.3.4.1 Wisselen tussen gehele en
+style="color:red">Opgave 3.3.4.1</span> Wisselen tussen gehele en
 kommagetallen</h3>
 
-<p>Bekijk de code hieronder.</p>
+<!--Bekijk de code hieronder.
 
-<p>1) Pas de eerste regel code aan zodat het antwoord van 16.0 gedeeld door
-4.0 als een integer waarde wordt afgedrukt (dus als geheel getal)</p>
-
-<p>2) Pas de code aan op regel 4 zodat het antwoord van 16 plus 4 als een
-decimale waarde wordt afgedrukt.</p>
-
-<pre><code class="python language-python">
+1) Pas de eerste regel code aan zodat het antwoord als integer waarde wordt afgedrukt (dus als geheel getal). Het antwoord moet dus 4 zijn.
 antwoord = 16.0 / 4.0
-
 print( antwoord )
 
-antwoord =  16+4 print( antwoord ) </code></pre>
+2) Pas de code aan op regel 4 zodat het antwoord als een decimale waarde wordt afgedrukt. Het antwoord moet dus 20.0 zijn.
 
-<!-- antwoord = int( 16.0/4.0 ) print( antwoord ) antwoord =  float( 16+4 )
+antwoord =  16 + 4
+print( antwoord )
+-->
+<!-- antwoord = int( 16.0/4.0 )
+print( antwoord )
+
+antwoord =  float( 16+4 )
 print ( antwoord ) -->
+
+<iframe frameborder="0" width="100%" height="400px" src="https://repl.it/student_embed/assignment/1233250/c292bf4880142fbb4697de9e92ed9555"></iframe>
+
+Klik <a href="Expressies_oplossingen.html#spanstylecolorredopgavespan3341wisselentussengeheleenkommagetallen">hier</a> voor de uitwerking.
+
 
 <!-- Bekijk de verschillen tussen de volgende twee regels code:<pre><code
 class="python language-python">print( 15/4 ) print( int( 15/4 ) )
@@ -408,7 +445,6 @@ maken met behulp van string type casting:<pre><code class="python
 language-python">print(  "Ik heb " + str( 15 ) + " appels." )
 </code></pre>-->
 
-<hr />
 
 <!-- ## Data Types omzetten Wil je data types kunnen combineren in een
 `print`, dan moet je getallen eerst omzetten in een `string`. Bijvoorbeeld,
@@ -419,35 +455,42 @@ een `str`). Dat doe je zo:<pre><code class="python language-python">leeftijd
 eerder geleerd om een `,` te gebruiken in een string. Nadeel hiervan is dat
 het meteen een spatie achter het getal zet. -->
 
-<h2> Tekst en getallen
-combineren </h2>
+<h2> Tekst en getallen combineren </h2>
 
-Als je in een `print` zowel tekst (strings) als getallen (int) wil
-combineren, dan kun je de `,` operator gebruiken. Dat is niet altijd handig,
-want die voegt ook meteen een spatie toe. Als je tekst en getallen wilt
-combineren in een `print`, zonder dat er een spatie tussen komt dan moet je:
+Als je in een 'print' zowel tekst (strings) als getallen (int) wil combineren, dan kun je de ',' operator gebruiken. Dat is niet altijd handig, want die voegt ook meteen een spatie toe. Als je tekst en getallen wilt combineren in een 'print', zonder dat er een spatie tussen komt dan moet je:
 
-1) de getallen eerst omzetten naar tekst met `str(...)`
+1) de getallen eerst omzetten naar tekst met 'str(...)'
 
-2) de `+` gebruiken
-in plaats van `,` om tekst aan elkaar te plakken. Bijvoorbeeld: Een getal
-leeftijd om te zetten naar tekst (oftewel, casten naar een string) doe je
-zo:<pre><code class="python language-python">
-eeftijd = 16
+2) de '+' gebruiken in plaats van ',' om tekst aan elkaar te plakken. Bijvoorbeeld: Een getal
+leeftijd om te zetten naar tekst (oftewel, casten naar een string) doe je zo:
+
+<!-- th3.7<pre><code class="python language-python">
+leeftijd = 16
 print( "Ik ben "+ str(leeftijd) + " jaar oud.")
-</code></pre> Het resultaat is:<br> `Ik ben 16 jaar oud.`
+</code></pre> 
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th37?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+Het resultaat is:<br> 'Ik ben 16 jaar oud.'
 
-<h3> <span style="color:red">Opgave 3.3.4.2 Een getal in
-tekst omzetten </span></h3>
 
-Schrijf een programma dat `zakgeld` gebruikt en de volgende
-tekst netjes afdrukt:<br><br> `Ik krijg 20.00 euro zakgeld.`<br><br> Tips: <br>- Hiervoor
+<h3
+id="spanstylecolorredopgavespan3342getalintekstomzetten"><span
+style="color:red">Opgave 3.3.4.2</span> Een getal in tekst omzetten</h3>
+
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1233251/8e0b67c8dfa3ba6cf4a7c8dc33fb124a"></iframe>
+<!--
+Schrijf een programma dat 'zakgeld' gebruikt en de volgende
+tekst netjes afdrukt:<br><br> 'Ik krijg 20.00 euro zakgeld.'<br><br> Tips: <br>- Hiervoor
 moet je het getal 20 eerst naar een string omzetten. Daarvoor gebruik je
-`str(..)`. <br>- Gebruik `+` om in een `print` de ".00" er achteraan te
-"plakken". <!-- antwoord<pre><code class="python language-python">zakgeld =
+'str(..)'. <br>- Gebruik '+' om in een 'print' de ".00" er achteraan te
+"plakken". --><!-- antwoord<pre><code class="python language-python">zakgeld =
 20 print( "Ik krijg " + str(zakgeld) + ".00 euro zakgeld.") </code></pre>
 TIP: Gebruik `str(..)` en `+` om in een `print` regel het volgende af te
 drukken: -->
+
+
+Klik <a href="Expressies_oplossingen.html#spanstylecolorredopgavespan3342getalintekstomzetten">hier</a> voor de uitwerking.
+
 
 <!-- ## Stijl Misschien is het je opgevallen dat ik in mijn voorbeelden veel
 spaties gebruik. Bijvoorbeeld, bij de haakjes die achter een functienaam
@@ -494,7 +537,7 @@ plaats van 5. De uitvoer is dan anders dan je verwacht.</p>
 sporen.</p>
 
 <h3 id="spanstylecolorredopgavespan341verbeterdesyntaxfout"><span
-style="color:red">Opgave</span> 3.4.1 Verbeter de syntax fout</h3>
+style="color:red">Opgave 3.4.1</span> Verbeter de syntax fout</h3>
 
 <p>Als er iets fout zit in code, geeft Python meestal een foutmelding. Dit
 zijn vaak "syntax fouten”, die aangeven dat er iets fout zit in de vorm van
@@ -502,165 +545,60 @@ je code. </p>
 
 <p>Kun je de fouten in de volgende regels code vinden? Kopieer de code en
 verbeter de fouten.</p>
-
+<!--th3.8
 <pre><code class="python language-python">
 print( "Een boodschap" ).
 print( "Een boodschap ' )
 print( 'Een boodschapf" ' ) </code></pre>
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/th38?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-<hr />
 
-<h3 id="spanstylecolorredopgavespanfoutenmethaakjes"><span
-style="color:red">Opgave</span> Fouten met haakjes</h3>
-
-<p>Hier is een ander illustratief voorbeeld van een syntax fout. Voer het
+<p>Hier is een ander voorbeeld van een syntax fout. Voer het
 programma uit en bestudeer de fout die gemeld wordt. Kun je het probleem
 oplossen?</p>
-
+<!--th3.9
 <pre><code class="python language-python">
 print( ((2*3)/4 + (5-6/7)*8 )
 </code></pre>
-
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/th39?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 <hr />
 
 <h2 id="runtimeerror">Runtime error</h2>
 
-<p>Naast "syntax fouten"zijn er ook "runtime errors", die aangeven dat je
-code op zich syntactisch correct lijkt, maar dat er iets out is gegaan bij
-de uitvoering ervan. </p>
+<p>Naast "syntax fouten" zijn er ook "runtime errors", die aangeven dat je
+code op zich syntactisch correct lijkt, maar dat er iets fout is gegaan bij de uitvoering ervan. </p>
 
 <p>Een goed voorbeeld is de <code>ZeroDivisionError</code>, die aangeeft dat
-je probeerde te delen door nul (wat niet mag, zoals je weet). </p>
+je probeerde te delen door nul (wat niet mag, zoals je weet). Kijk maar:</p>
 
-<h3 id="spanstylecolorredopgavespan343zerodivisionerror"><span
-style="color:red">Opgave</span> 3.4.3 ZeroDivisionError</h3>
 
-<p>Schrijf een kort programma dat een <code>ZeroDivisionError</code> fout
-genereert als je het uitvoert.</p>
-
+<!--th3.10-->
 <!--<pre><code class="python language-python"># ZeroDivisionError. print( 2/0
-) </code></pre> --> Tip: deel een getal door 0 en druk dat af.
+) </code></pre> --> 
+<iframe height="250px" width="100%" src="https://repl.it/@smer/310?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 
 
-<H2>Wat je geleerd hebt</h2>
- In dit hoofdstuk is het volgende besproken: <br>- Het
-gebruik van de `print()` functie om zaken op het scherm te tonen <br>- Data types
-string, integer, en float<br> - Berekeningen <br>- Basale string expressies <br>- Type
-casting tussen strings, integers, en floats, middels `str()`, `int()`, and
-`float()`
-
-
-<h2> Opgaves </h2>
-
-<h3><span style="color:red">Afsluitende opgave</span> 3.1: Geld
-maakt gelukkig</h3>
- In deze opdracht gaan we aan de slag met geld. We hebben twee
-variabelen, namelijk hele euro’s en losse centen. Bedenk een leuk bedrag.
-Geef de variabelen `euros` en `centen` een waarde. Print dit bedrag op een
-nette manier (bijvoorbeeld: "Dat kost e10.17"). Gebruik hiervoor de
-variabelen `euros` en `centen`.
-
-<h3> <span style="color:red">Afsluitende opgave</span> 3.2: Rekening
-Boekwinkel</h3> Een boek kost in de winkel euro 24,95, maar boekwinkels krijgen 40
-procent korting bij inkoop. Het verschepen van boeken kost euro 3 per boek.
-Bereken hoeveel de winkel betaalt voor 60 boeken. Tips:
-- 40% korting bereken je door het bedrag met 0,6 te vermenigvuldigen.
-- Het totaalbedrag bereken je door de volgende drie dingen met elkaar te
-vermenigvuldigen: het aantal boeken, de kortingsprijs per boek, de
-verzendkosten. <!-- ANTWOORD<pre><code class="python language-python">#
-Boekwinkel. boek_in_winkel = 24.95 boek_met_korting = boek_in_winkel * 0.6
-verzend_kosten_per_boek = 3 aantal_boeken = 60 totaal = aantal_boeken *
-boek_met_korting * verzend_kosten_per_boek print( totaal ) </code></pre> -->
-
-<h3 id="spanstylecolorredopgavespan33btwberekenen"><span
-style="color:red">Afsluitende opgave</span> 3.3: BTW berekenen</h3>
-
-<p>Maak een programma waarmee je BTW berekent over een bepaald bedrag. (Je
-hoeft je even geen zorgen te maken over hoeveel getallen achter de komma
-staan)</p>
-
-<p>1) Declareer een variabele <code>bedrag_excl_btw</code>. Deze geef je de
-waarde 250.00. Dit is een bedrag exclusief btw. Druk dit als volgt af:</p>
-
-<pre><code class="python language-python">
-bedrag (exclusief btw): 250.00 euro
-</code></pre>
-
-<p>Tip: Om het als een bedrag met twee nullen te krijgen moet je "0" aan het
-bedrag "plakken". Je moet dus casten naar een string (gebruik
-<code>str(..)</code>) en in de <code>print</code> gebruik maken van
-<code>+</code> in plaats van een komma.</p>
-
-<p>2) Declareer een variabele <code>btw</code> wordt. Deze wordt berekend door 21% van <code>bedrag_excl_btw</code>. Druk dit als volgt af:</p>
-
-<pre><code class="python language-python">btw (21%): 52.50 euro
-</code></pre>
-
-<p>3) Declareer een variabele <code>bedrag_incl_btw</code>. Deze wordt
-berekend door de variabele <code>btw</code> op te tellen bij het bedrag
-exclusief btw.</p>
-
-<p>4) Controleer dat de volgende tekst verschijnt:</p>
-
-<pre><code class="python language-python">bedrag (exclusief btw): 250.00 euro
-btw (21%): 52.50 euro
-bedrag (inclusief btw): 302.50 euro </code></pre>
-
-<p>Nota bene: de centen van de euro's worden niet netjes afgedrukt. Hoe dat
-moet leer je in het volgende hoofdstuk.</p>
-
-<!-- Tip1: Let op dat teksten  tussen "   "  of  ‘   ’  moeten staan en
-variabelen niet tussen aanhalingstekens! Tip2: met round(bedrag,2) kun je een
-bedrag afronden op 2 decimalen -->
-
-<!-- ANTWOORD bedrag_excl_btw = 250.00 print( "bedrag (exclusief btw): " +
-str(bedrag_excl_btw) + "0") btw = 0.21 * bedrag_excl_btw
-print( "btw (21%): " +  str(btw) + "0")
-bedrag_incl_btw = bedrag_excl_btw + btw print( "bedrag (inclusief btw):" +
-str(bedrag_incl_btw) + "0") -->
-
-<h3 id="spanstylecolorredafsluitendeopgavespan34klokrekenen"><span
-style="color:red">Afsluitende opgave</span> 3.4: Klokrekenen</h3>
-
-<p>Je kijkt op de klok en je ziet dat het 14:00u is. Je zet een alarm dat 535
-uur later af moet gaan. Hoe laat is het als het alarm afgaat? Schrijf een
-programma dat het antwoord netjes afdrukt.<br></p>
-
-<p>Hint: Gebruik de modulo operator. Met <code>%24</code> haal je steeds 24 van een getal af toe je een waarde tussen de 0 en 24 overhoudt.</p>
-
-<!-- antwoord<pre><code class="python language-python">nieuw_tijdstip = (14+535)%24
-print( str(nieuw_tijdstip) + ":00" ) </code></pre> -->
-
-<h3 id="spanstylecolorredafsluitendeopgavespan35invulverhaal"><span
-style="color:red">Afsluitende opgave</span> 3.5: Invulverhaal</h3>
-
-<p>Je maakt een invulverhaal.</p>
-
-<p>Maak een variabel aan voor elk invulwoord. Vul zelf wat in of laat een
-vriend of vriendin dat doen. Vul letterlijk het eerste in wat er in je opkomt
-zodat het heel raar word en grappig.</p>
-
-<p>Vervolgens gebruik je die variabelen om het verhaal compleet te maken.</p>
-
-<p>Je mag je eigen verhaal verzinnen, of deze gebruiken:</p>
-
-<p>COOL PYJAMA FEEST.</p>
-
-<p>_ _ _ _ (Naam beste vriend) geeft een super pyjamafeestje met als thema _
-_ _ _ (kleuterprogramma) dat word dus de hele avond _ _ _ _  (zelfde
-programma) kijken. Op je _ _ _ _ (vreemd voertuig) rijd je met een snelheid
-van (getal met 3 nullen) km per uur naar haar huis. Het hele huis is versierd
-in de kleuren _ _ _ _ (felle kleuren) en _ _ _ _ (kleur die vloekt bij
-andere) en door het hele huis galmt de beat van _ _ _ _
-(carnavalskraker)</p>
 
 <hr />
 <div id="leerdoelen"><h2>Wat je geleerd hebt over Expressies:</h2></div>
 <p>In dit hoofdstuk is het volgende besproken:</p>
 <ul>
-<li>...</li>
+<li>Het gebruik van de <code>print()</code> functie om zaken op het scherm te tonen</li>
+
+<li>Data types string, integer, en float</li>
+
+<li>Berekeningen</li>
+
+<li>Basale string expressies</li>
+
+<li>Type casting tussen strings, integers, en floats, middels <code>str()</code>, <code>int()</code>, and <code>float()</code></li>
 </ul>
+
+
+
 <hr />
 
 <i><a href="ExpressiesAfsluitendeOpgaven.html">Meteen naar de Afsluitende Opgaven over Expressies</a></i><br>

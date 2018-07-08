@@ -24,12 +24,12 @@ TODO SEARCH REPLACE: "collectie”
 <i><a href="ListsAfsluitendeOpgaven.html">Meteen naar de Afsluitende Opgaven over Lists</a></i><br>
 <i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
 <hr>
-<h1 id="hoofdstuk-12---lists">Hoofdstuk 12a - Lists</h1>
+<h1 id="hoofdstuk-12---lists">Hoofdstuk 12 - Lists</h1>
 <p>Een &quot;list&quot; (Engelse woord voor &quot;lijst&quot;) is een geordende verzameling van data items, net zoals een tuple. Het verschil tussen lists en tuples is dat lists veranderbaar zijn. Dit maakt ze tot een zeer flexibele data structuur, waar je op veel manieren gebruik van kunt maken.</p>
 <h2 id="basis-van-lists">12.1 Basis van lists</h2>
 <p>Een list is een verzameling (of &quot;collectie&quot;) elementen. De elementen van een list zijn geordend. Omdat ze geordend zijn, kun je ieder element van een list benaderen via een index, net zoals je de tekens in een string kunt benaderen. De indices beginnen bij nul, net als bij strings. In Python kun je lists herkennen aan het feit dat de elementen van een list tussen vierkante haken ([]) staan. Je kunt het aantal elementen in een list achterhalen door middel van de len() functie. Via een for loop kun je de elementen van de list doorlopen. Je mag data types in een list mixen. Je kunt de functies <code>max()</code>, <code>min()</code> en <code>sum()</code> gebruiken op een list. Je kunt testen of een element voorkomt in een list via de <code>in</code> operator (of het niet voorkomen van een element via de <code>not in</code> operator).</p>
 
-
+<!-- th12.1
 <pre class="python">
 #maak een lijst met fruiten en getallen
 fruitlist = ["appel", "banaan", "kers", 27, 3.14]
@@ -53,13 +53,81 @@ print( 999 in numlist ) #controleer of getal 999 in de lijst zit
 print( 100 in numlist ) #controleer of getal 100 in de lijst zit
 print( 100 not in numlist ) #controleer of getal 100 NIET in de lijst zit
 </pre>
+-->
+<iframe height="820px" width="100%" src="https://repl.it/@smer/Th121?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-<h3 id="opgave-12.1-lijst-doorlopen-met-een-while-loop"><span style="color:red">Opgave</span> 12.1 Lijst doorlopen met een <code>while</code> loop</h3>
+
+<h2 id="lijst-doorlopen-met-een-while-loop">Lijst doorlopen met een while loop</h2>
+Soms wil je dat iets in de code herhaald wordt, bijvoorbeeld als je voor elk element uit een lijst iets wilt doen.
+Je bekijkt dan het eerste element uit de lijst, doet iets, vervolgens de tweede, doet weer het zelfde, enzovoort totdat je de laatste element hebt gehad.
+
+Dit heet een conditiegestuurde herhaling (of een sentinel-controlled loop). De situatie en de voorwaarde bepalen dan hoe vaak de code uitgevoerd moet worden. In het voorbeeld van een lijst doorlopen stop je met herhalen als je alle elementen gehad hebt.
+
+Hiervoor kun je een <code>while</code>-loop gebruiken. Voor het doorlopen van alle elementen uit een lijst is er een standaard aanpak:
+<ul>
+  <li><i>Bijhouden waar je bent:</i> maak een variabele <code>positie</code> om bij te houden waar je in de lijst bent.</li>
+  <li><i>Beginpositie:</i> geeft de variabele <code>positie</code> een beginwaarde, in dit geval 0 (het begin van een lijst is altijd 0)</li>
+  <li><i>Bepaal de voorwaarde voor herhaling:</i> Dus “Zolang voorwaarde herhaal … “. Dat hangt af van hoe lang de lijst is. Als de lijst 5 elementen heeft, dan moet je het 5 keer doen. Dit kun je berekenen door de lengte van de lijst te bepalen, met <code>len(lijst)</code> De voorwaarde is dus zolang <code>positie</code> nog kleiner is dan <code>len(lijst)</code>, met <code>positie < len(lijst)</code>. </li>
+  <li><i>Bepaal wat je steeds wilt herhalen:</i> de acties of berekeningen die steeds per element uitgevoerd moeten worden.</li>
+  <li><i>Verhoog de variabele:</i> als de actie is uitgevoerd moet de volgende element gepakt worden. Dit doe je door <code>positie</code> met 1 op te hogen.
+</ul>
+
+<!--th12.1b
+lijst = ["a", "b", "c"]
+
+positie = 0
+while positie < len(lijst): #voorwaarde: zolang nog niet alle elementen bekeken zijn
+	print( lijst[positie] ) #actie: druk het element op dat positie af
+
+	positie += 1 #verhoog positie om het volgende element te pakken
+-->
+
+<iframe height="400px" width="100%" src="https://repl.it/@smer/th121b?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<!--Schrijf een while-loop die ieder element van de volgende lijst afdrukt:
+getallenLijst = [0, 4, 6, 8]
+
+Tips:
+Maak gebruik van een variabele teller die bij 0 begint en steeds na elke element opgehoogd wordt.
+Gebruik len(getallenLijst) om de lengte van de lijst te bepalen.-->
+
+
+<h3 id="opgave-12.1-lijst-doorlopen-met-een-while-loop"><span style="color:red">Opgave</span> 12.1.1 Lijst doorlopen met een <code>while</code> loop en elementen afdrukken</h3>
 <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/886100/7f4490e97c6925dabf5a417d5568f302"></iframe>
 Klik <a href="Lists_oplossingen.html#opgave-12.1-lijst-doorlopen-met-een-while-loop">hier</a> voor de uitwerking.
 
+
+<h3 id="opgave-12.1b-lijst-doorlopen-met-een-while-loop"><span style="color:red">Opgave</span> 12.1.2 Lijst doorlopen met een <code>while</code> loop en positieve getallen afdrukken</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1255038/227362f7ba963961125eeae1e59cd722"></iframe>
+<!--
+Je hebt de volgende lijst:
+getallenlijst = [0, -4, 6, 2, -8, 1]
+
+Schrijf een programma dat met een while-loop de elementen van de lijst doorloopt en ieder bekijkt. Als de waarde van het element groter of gelijk aan 0 is, dan moet die afgedrukt worden. Anders doe je er niks mee.
+
+ANTWOORD:
+getallenlijst = [0, -4, 6, 2, -8, 1]
+
+positie = 0
+while positie < len(getallenlijst):
+	if getallenlijst[positie] > 0:
+		print( getallenlijst[positie] )
+	
+	positie += 1
+	
+
+UITVOER:
+6
+2
+1
+-->
+
+Klik <a href="Lists_oplossingen.html#opgave-12.1b-lijst-doorlopen-met-een-while-loop">hier</a> voor de uitwerking.
+
+
 <h2 id="lists-zijn-veranderbaar">12.2 Lists zijn veranderbaar</h2>
 <p>Omdat lists veranderbaar (Engels: &quot;mutable&quot;) zijn, mag je de inhoud van een list wijzigen. Om een element van de list te overschrijven, kun je er een nieuwe waarde aan toekennen middels een assignment.</p>
+<!-- th12.2
 <pre class="python">
 fruitlist = ["appel", "banaan", "kers", "doerian", "mango"]
 print( fruitlist )
@@ -67,8 +135,10 @@ print( fruitlist )
 fruitlist [2] = "aardbei" #verander de waarde van de derde element
 print( fruitlist )
 </pre>
-
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th122?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 <p>Je kunt ook een sub-list overschrijven door een nieuw list toe te kennen aan de sub-list. De sub-list en de nieuwe list hoeven niet dezelfde lengte te hebben.</p>
+<!-- th12.3
 <pre class="python">
 fruitlist = ["appel", "banaan", "kers", "doerian", "mango"]
 print( fruitlist )
@@ -77,7 +147,11 @@ print( fruitlist )
 fruitlist [1:3] = ["framboos", "aardbei", "aalbes"]
 print( fruitlist )
 </pre>
+-->
+<iframe height="300px" width="100%" src="https://repl.it/@smer/Th123?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 <p>Je kunt elementen van een list verwijderen door een lege list aan de te verwijderen sub-list toe te kennen. In Python lees je <code>[1:3]</code> als &quot;op elementen op index 1 <em>tot</em> index 3&quot;. In dit geval gaat het over elementen op index 1 (dus de tweede element in de lijst) en index 2 (de derde element in de lijst).</p>
+<!-- th12.4
 <pre class="python">
 fruitlist = ["appel", "banaan", "kers", "doerian", "mango"]
 print( fruitlist )
@@ -85,6 +159,10 @@ print( fruitlist )
 fruitlist [1:3] = []
 print( fruitlist )
 </pre>
+-->
+<iframe height="300px" width="100%" src="https://repl.it/@smer/Th124?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+
 <p>Door sub-lists en assignments te gebruiken, kun je lists aanpassen op iedere manier die je wilt. Het is echter eenvoudiger om lists aan te passen via methodes. Er zijn allerlei handige methodes beschikbaar, die ik hieronder bespreek.</p>
 
 <h3 id="opgave-12.2-lijst-aanpassen-in-een-while-loop"><span style="color:red">Opgave</span> 12.2 Lijst aanpassen in een <code>while</code> loop</h3>
@@ -97,6 +175,7 @@ Klik <a href="Lists_oplossingen.html#opgave-12.2-lijst-aanpassen-in-een-while-lo
 <p>Lists ondersteunen het gebruik van de operatoren <code>+</code> en <code>*</code>. Deze operatoren werken op eenzelfde manier als ze werken bij strings.</p>
 <p>Met de <code>+</code> kun je twee lijsten achter elkaar 'plakken'. Het resultaat is een lijst die de elementen bevat van beide lijsten. Je moet het resultaat aan een variabele toekennen om het op te slaan.</p>
 <p>Je kunt een list vermenigvuldigen met een integer om een list te creëren die de elementen van de originele list bevat, net zo vaak herhaald als de integer aangeeft. Dit kan een snelle manier zijn om een list te creëren waarvan alle elementen hetzelfde zijn.</p>
+<!-- th 12.5
 <pre class="python">
 #Lijsten achter elkaar aan plakken
 fruitlist = ["appel", "banaan"] + ["kers", "doerian"]
@@ -112,8 +191,12 @@ print( "Klassenlijst:" + str(klassen_lijst) )
 numlist = 10 * [0]
 print( numlist )
 </pre>
+-->
+<iframe height="400px" width="100%" src="https://repl.it/@smer/Th125?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 
 <p>Om een element achteraan een lijst toe te voegen gebruik je de <code>+</code> en zet je het element tussen vierkante haken.</p>
+<!-- th12.6
 <pre class="python">
 #Element toevoegen aan een lijst
 fruitlist = ["appel", "banaan"]
@@ -121,17 +204,20 @@ fruitlist += ["kers"]  #voegt element "kers" toe achteraan lijst
 
 print( fruitlist )
 </pre>
+-->
+<iframe height="300px" width="100%" src="https://repl.it/@smer/Th126?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 Met <code>append()</code> kun je ook een nieuw element aan het einde van een list plakken. Je roept de methode aan met
 het nieuwe element als argument.
+<!-- th12.7
 <pre class="python">
 fruitlist = ["appel", "banaan", "kers", "doerian"]
 print( fruitlist )
 fruitlist.append( "mango" )
 print( fruitlist )
 </pre>
-
-
+-->
+<iframe height="300px" width="100%" src="https://repl.it/@smer/Th127?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <h3 id="opgave-12.3-lists-en-operatoren"><span style="color:red">Opgave</span> 12.3 Operatoren op lijsten</h3>
 <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/886934/036a2db545565139ad0dbbb3f872a73a"></iframe>
@@ -140,12 +226,15 @@ print( fruitlist )
 Met <code>insert()</code> kun je aangeven dat je iets op een bepaalde positie in de lijst wilt zetten. Je geeft dan twee dingen mee, de positie (je begint natuurlijk te tellen bij 0, en wat je wilt invoegen. De lijst wordt hierdoor een element groter.
 
 Bijvoorbeeld, 'perzik' op de middelste plek in de lijst <code>fruit_lijst = ["appel", "banaan"]</code> toe voegen doe je als volgt:
+<!-- th 12.8
 <pre class="python">
 fruit_lijst = ["appel", "banaan"]
 fruit_lijst.insert(2, "perzik") #voegt element "perzik" toe op positie 2
 
 print( fruit_lijst ) #druk daarna de lijst af
 </pre>
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th128?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <h3 id="opgave-12.4.1-insert"><span style="color:red">Opgave</span> 12.4.1 Voeg toe op een bepaald plek in een lijst met <code>insert</code></h3>
 <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/886935/79cea0babecae1e169ce79dcf50790d5"></iframe>
@@ -158,6 +247,8 @@ print( alfabet )
 
 <h3 id="remove">12.4.2 Verwijder uit een lijst met <code>remove()</code></h3>
 <p><code>remove()</code> laat je een element van de list verwijderen. Het element dat je wilt verwijderen geef je mee als argument. Als dit element meerdere keren voorkomt in de list, wordt de eerste instantie (die met de laagste index) verwijderd. Als je een element probeert te verwijderen dat niet voorkomt op de list, geeft dat een runtime error.</p>
+
+<!-- th12.9
 <pre class="python">
 fruit_lijst = ["appel", "banaan", "kers", "doerian"]
 print( fruit_lijst )
@@ -165,6 +256,8 @@ print( fruit_lijst )
 fruit_lijst.remove( "banaan" )
 print( fruit_lijst )
 </pre>
+-->
+<iframe height="300px" width="100%" src="https://repl.it/@smer/Th129?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <h3 id="opgave-12.4.2-remove"><span style="color:red">Opgave</span> 12.4.2 Oefenen met <code>remove</code></h3>
 <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/887705/0b4d6b9c2f0685e6b85938b00d39751f"></iframe>
@@ -174,10 +267,14 @@ Klik <a href="Lists_oplossingen.html#opgave-12.4.2-remove">hier</a> voor de uitw
 
 <h3 id="index">12.4.5 Bepaal positie in een lijst met <code>index()</code></h3>
 <p><code>index()</code> retourneert de index van de eerste instantie in een list van het element dat als argument aan de methode is meegegeven. Een runtime error volgt als het element niet voorkomt op de list.</p>
+
+<!-- th12.10
 <pre class="python">
 fruitlist = ["appel", "banaan", "kers", "banaan", "doerian"]
 print( fruitlist.index( "banaan" ) )
 </pre>
+-->
+<iframe height="300px" width="100%" src="https://repl.it/@smer/Th1210?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <h3 id="opgave-12.4.5-index"><span style="color:red">Opgave</span> 12.4.5 Oefenen zoeken van positie met <code>index</code></h3>
 <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/887706/996a6755136ea7780eac78039b635a43"></iframe>
@@ -187,10 +284,13 @@ Klik <a href="Lists_oplossingen.html#opgave-12.4.5-index">hier</a> voor de uitwe
 <h3 id="count">12.4.6 Aantallen in een lijst tellen met <code>count()</code></h3>
 <p><code>count()</code> retourneert een integer die aangeeft hoe vaak het element dat als argument is
 meegegeven voorkomt in de list. De volgende code drukt 2 af.</p>
+<!-- th12.11
 <pre class="python">
 fruitlijst = ["appel", "banaan", "kers", "banaan", "doerian"]
 print( fruitlijst.count( "banaan" ) )
 </pre>
+-->
+<iframe height="300px" width="100%" src="https://repl.it/@smer/Th1211?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <h3 id="opgave-12.4.6-count"><span style="color:red">Opgave</span> 12.4.6 Aantallen tellen met <code>count()</code></h3>
 <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/887708/2f712ffbe7c17e2b2f8830115837deaa"></iframe>
@@ -199,7 +299,8 @@ Klik <a href="Lists_oplossingen.html#opgave-12.4.6-count">hier</a> voor de uitwe
 
 <h2 id="sort">12.4.7 Een lijst sorteren met <code>sort()</code></h2>
 <p><code>sort()</code> sorteert de elementen van de lijst, van laag naar hoog. Als de elementen strings zijn, wordt het een alfabetische volgorde gesorteerd.
-Als het om getallen gaat, worden ze van kleinst naar grootst gesorteerd. Als de lijst een mix van elementen heeft, dus bijvoorbeeld getallen en letters door elkaar, dan volgt runtime error.</p>
+<!--Als het om getallen gaat, worden ze van kleinst naar grootst gesorteerd. Als de lijst een mix van elementen heeft, dus bijvoorbeeld getallen en letters door elkaar, dan volgt runtime error.--></p>
+<!-- Th12.12
 <pre class="python">
 
 fruitlist = ["appel", "aardbei", "banaan", "framboos", "kers", "banaan", "doerian", "mango"]
@@ -215,8 +316,10 @@ print( fruitlist )
 
 numlist = [314, 315, 642, 246, 129, 999]
 numlist.sort()
-
 </pre>
+-->
+<iframe height="400px" width="100%" src="https://repl.it/@smer/Th1212?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 <h3 id="opgave-12.4.7-sort"><span style="color:red">Opgave</span> 12.4.7 Lijst sorteren met <code>sort()</code></h3>
 <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/887709/ac98d1f667dff671aa5879be5f579826"></iframe>
 Klik <a href="Lists_oplossingen.html#opgave-12.4.7-sort">hier</a> voor de uitwerking.
@@ -225,12 +328,14 @@ Klik <a href="Lists_oplossingen.html#opgave-12.4.7-sort">hier</a> voor de uitwer
 
 <h2 id="reverse">12.4.8 Lijst in omgekeerde volgorde zetten met <code>reverse()</code></h2>
 <p><code>reverse()</code> zet de elementen van de list in omgekeerde volgorde.</p>
+<!-- th12.13
 <pre class="python">
 fruitlist = ["appel", "aardbei", "banaan", "framboos", "kers", "banaan", "doerian", "aalbes"]
 fruitlist.reverse()
 print( fruitlist )
 </pre>
-
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th1213?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <h3 id="opgave-12.4.8-reverse"><span style="color:red">Opgave</span> 12.4.8 Omgekeerde volgorde zetten met <code>reverse</code></h3>
 <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/887710/84f872830a800bf400c30129975a229f"></iframe>
@@ -242,15 +347,29 @@ Klik <a href="Lists_oplossingen.html#opgave-12.4.8-reverse">hier</a> voor de uit
 Klik <a href="Lists_oplossingen.html#12.4.9-op-alfabetische-volgorde">hier</a> voor de uitwerking.
 
 
+<h2 id="choice">12.4.10 Willekeurig element uit een lijst pakken met <code>choice</code></h2>
+<p>Met de functie <code>choice()</code> uit de module <code>random</code> haal je een willekeurig element uit een lijst. Run de volgende code een paar keer:</p>
+<!-- th12.14a
+<pre class="python">
+import random
+
+kleurenLijst = ["rood", "blauw", "groen", "geel"]
+willekeurig_kleur = random.choice( kleurenLijst )
+
+print( "Gekozen kleur is:", willekeurig_kleur )
+</pre>
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/th1214a?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 <hr>
 <div id="leerdoelen"><h2>Wat je geleerd hebt over Lists</h2></div>
 In dit hoofdstuk is het volgende besproken:
 <ul>
 <li>Lijsten zijn aanpasbaar
 <li>Lijsten doorlopen met een while-loop
-<li>Gebruik van + en * met lists
-<li>List functies max, min, sum, in,
-<li>List methodes insert(), remove(), index(), count(), sort(), en reverse()
+<li>Gebruik van <code>+</code> en <code>*</code> met lists
+<li>List functies <code>max</code>, <code>min</code>, <code>sum</code>, en <code>in</code>
+<li>List methodes <code>insert()</code>, <code>remove()</code>, <code>index()</code>, <code>count()</code>, <code>sort()</code>, en <code>reverse()</code>
+<li><code>choice()</code> uit de module <code>random</code>
 </ul>
 
 

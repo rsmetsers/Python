@@ -27,12 +27,17 @@
 <h2 id="variabelen-en-waarden">Variabelen en waarden</h2>
 <p>Een variabele is een plaats in het geheugen van de computer die een naam heeft gekregen, en waarin je een waarde kunt opslaan. De naam mag je zelf kiezen, en wordt over het algemeen de “variabele naam” genoemd.</p>
 <p>Om een variabele te creëren in Python (dus om een variabele naam te kiezen) moet je een waarde “toekennen” aan gekozen naam middels het is-gelijk (=) symbool. Aan de linkerkant van het is-gelijk symbool zet je de variabele naam, en aan de rechterkant de waarde die je wilt opslaan in de variabele. Dit kan ik het beste uitleggen aan de hand van een voorbeeld:</p>
+<!-- Th 4.1
 <pre class="python">
 mijn_geluks_getal = 5
 print</span>( mijn_geluks_getal )
 </pre>
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/th41?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 
 <p>De eerste keer in je programma dat je een waarde toekent aan een specifieke variabele naam, wordt de bijbehorende variabele gecreëerd. Als je later een andere waarde aan dezelfde variabele toekent, wordt de eerste waarde “overschreven.” In de metafoor van de doos: je maakt de doos leeg en stopt er iets nieuws in. Een variabele bevat altijd de laatst-verkregen waarde.</p>
+<!--th 4.2
 <pre class="python">
 x = 5
 print( x )
@@ -43,10 +48,11 @@ print( x )
 x = int( 15 / 4 ) - 27
 print( x )
 </pre>
-
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th42?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <p>Als een variabele is aangemaakt (en dus een waarde heeft) kun je hem overal in je code gebruiken waar je waardes gebruikt. Je kunt bijvoorbeeld de variabele gebruiken in een berekening.</p>
-<pre class="python">
+<!-- th4.3<pre class="python">
 x = 2
 y = 3
 print( "x =", x )
@@ -54,8 +60,10 @@ print( "y =", y )
 print( "x * y =", x * y )
 print( "x + y =", x + y )
 </pre>
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th43?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 <p>Je kunt de inhoud van een variabele kopiëren in een andere variabele, via de assignment operator.</p>
-<pre class="python">
+<!-- th 4.4<pre class="python">
 x = 2
 y = 3
 print( "x =", x, "en y =", y )
@@ -66,18 +74,29 @@ x = y
 y = z
 print( "x =", x, "en y =", y )
 </pre>
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th44?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+
 <p>Als je een waarde toekent aan een variabele, mag je zelfs de variabele zelf gebruiken aan de rechterkant van de toekenning, zolang de variabele maar bestaat op het moment dat je dat doet. De rechterkant van een assignment wordt altijd geheel geëvalueerd voordat de toekenning plaatsvindt.</p>
-<pre class="python">
+<!--th4.5<pre class="python">
 x = 2
 print( x )
 x = x + 3
 print( x )
 </pre>
-<p>Merk op dat de variabele gecreëerd moet zijn voordat je hem kunt gebruiken. De volgende code geeft een fout, omdat <code>dagen_per_jaar</code> nog niet gecreëerd is voordat hij gebruikt wordt in de eerste regel:</p>
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th45?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<p>Merk op dat de variabele eerst moet declareren (aanmaken) voordat je hem kunt gebruiken. De volgende code geeft een fout, omdat <code>dagen_per_jaar</code> nog niet gedeclareerd is voordat hij gebruikt wordt in de eerste regel:</p>
+<!--th4.6
 <pre class="python">
 print( dagen_per_jaar )
 dagen_per_jaar = 365
 </pre>
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th46?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 
 <h3 id="opgave-4.1-variabelen-toekennen"><span style="color:red">Opgave 4.1</span> Variabelen toekennen</h3>
 <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1208913/f1b42bc29750611730545085064c95e0"></iframe>
@@ -170,7 +189,11 @@ print( "getal1: ", getal1, " getal2: ", getal2, " getal3: ", getal3)
 -->
 
 <h2 id="debuggen-met-variabelen">Debuggen met variabelen</h2>
-<p>Een veelvoorkomende oorzaak van functionele fouten in programma’s is dat variabelen blijken niet de waardes te bevatten waarvan je dacht dat ze bevatten. Een goede manier om je code te "debuggen" (dat wil zeggen, uit te vinden waar in je code fouten staan en die te verbeteren) is het printen van variabelen op handige plaatsen in je code. Bijvoorbeeld, de volgende code geeft een foutmelding als je hem uitvoert.</p>
+<p>Een veelvoorkomende oorzaak van functionele fouten in programma’s is dat variabelen blijken niet de waardes te bevatten waarvan je dacht dat ze bevatten. Een goede manier om je code te "debuggen" (dat wil zeggen, uit te vinden waar in je code fouten staan en die te verbeteren) is het printen van variabelen op handige plaatsen in je code. Bijvoorbeeld, de volgende code geeft een foutmelding op regel 11 als je hem uitvoert.</p>
+
+<iframe height="300px" width="100%" src="https://repl.it/@smer/Th48?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<!-- th4.8
+
 <pre class="python">
 getal1 = 5
 getal2 = 4
@@ -183,7 +206,7 @@ getal1 = getal1 + 1
 print( getal3 / (getal1 % getal2) )
 getal1 = getal1 + 1
 print( getal3 / (getal1 % getal2) )
-</pre>
+</pre>-->
 <p>Misschien zie je wat het probleem is, maar stel dat je het niet ziet, hoe vind je dan uit wat er mis is? Je ziet dat de fout ontdekt wordt op regel 10, wat wil zeggen dat alles nog steeds werkte op regel 9. Als je een extra regel code zet tussen regel 9 en 10, die de waarde afdrukt van <code>getal1</code>, <code>getal2</code>, <code>getal3</code> en misschien ook <code>getal1 % getal2</code>, dan ontdek je waarschijnlijk snel wat er misloopt. <code>print()</code> statements veranderen niks aan de variabelen, dus je kunt ze veilig toevoegen. <!-- Een fatsoenlijke manier om het probleem in deze code op te lossen (dus een andere manier dan gewoon de laatste regel te verwijderen) zal ik in een later
 hoofdstuk introduceren.--></p>
 <h3 id="opgave-4.3-debuggen"><span style="color:red">Opgave 4.3</span> Debuggen</h3>
@@ -208,6 +231,7 @@ Toelichting: Je hoeft in deze opgave, behalve wat printregels toe te voegen, gee
 <h2 id="soft-typing">Soft typing <!-- 4.4 --></h2>
 <p>Alle variabelen hebben een data type. In Python geef je niet een vast type aan een variabele, maar de variabele heeft wel een type, namelijk het type van de waarde die erin is opgeslagen. Dit betekent dat als een variabele een nieuwe waarde krijgt, het type ook kan veranderen. Dit wordt “soft typing” genoemd. <!-- (Nota bene: Ik ben persoonlijk van mening dat Python nog geschikter zou zijn om beginnelingen programmeren te leren als het hard typing in plaats van soft typing zou hebben, maar Guido van Rossum, de ontwerper van Python, is het daar niet mee eens.)--></p>
 <p>De data types die je tot nu toe gezien hebt zijn integer, float, en string. Je kunt het data type van een waarde of variabele zien met behulp van de functie <code>type()</code>.</p>
+<!-- th 4.9
 <pre class="python">
 a = 3
 print( type( a ) )
@@ -216,7 +240,11 @@ print( type( a ) )
 a = "3.0"
 print( type( a ) )
 </pre>
+-->
+<iframe height="300px" width="100%" src="https://repl.it/@smer/Th49?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 <p>Omdat variabelen een type hebben, past het effect van operatoren die tussen variabelen staan zich aan aan de types van de variabelen. Bijvoorbeeld, in de code hieronder wordt de optelling (<code>+</code>) twee keer gebruikt, en het effect verandert naar gelang de variabele types.</p>
+<!-- th4.10
 <pre class="python">
 a = 1
 b = 4
@@ -225,6 +253,9 @@ d = "4"
 print( a + b )
 print( c + d )
 </pre>
+-->
+<iframe height="300px" width="100%" src="https://repl.it/@smer/410?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 <p>Omdat <code>a</code> en <code>b</code> beide getallen zijn, is de <code>+</code> in <code>a + b</code> de numerieke optelling. Omdat <code>c</code> en <code>d</code> beide strings zijn, is de <code>+</code> in <code>c + d</code> de “concatenatie” (“vastplak”) operator.</p>
 
 <h3 id="opgave-4.4a-string-afdrukken"><span style="color:red">Opgave 4.4a</span> String afdrukken</h3>
@@ -256,6 +287,7 @@ print( schoolnaam + " " + plaatsnaam )
 <h2 id="verkorte-operatoren">Verkorte operatoren <!-- Hoofdstuk 4.5 Verkorte operatoren --></h2>
 <p>Middels de operatoren die ik heb uitgelegd, kun je de inhoud van variabelen zo vaak wijzigen in je code als je nodig hebt. Je kunt nieuwe waardes in bestaande variabelen stoppen. Vaak wil je dat inderdaad doen. Bijvoorbeeld, het komt in code vaak voor dat er 1 moet worden opgeteld bij een numerieke variabele (waarom dat zo vaak voorkomt zul je zien in hoofdstuk 7). Omdat dit zo vaak gebeurt, bevat Python een aantal “ verkorte notaties” om de inhoud van variabelen aan te passen.</p>
 <p>De volgende code:</p>
+
 <pre class="python">
 aantal_bananen = 100
 aantal_bananen = aantal_bananen + 1 # aantal_bananen ophogen met één

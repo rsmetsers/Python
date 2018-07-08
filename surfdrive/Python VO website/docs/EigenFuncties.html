@@ -28,34 +28,39 @@
 <p>In hoofdstuk 5 beschreef ik hoe je eenvoudige functies kunt gebruiken, en hoe je functies kunt importeren uit modules. Dit hoofdstuk beschrijft hoe je je eigen functies en modules kunt creëren. Als je niet meer weet wat hoofdstuk 5 over functies zei, doe je er goed aan om dat hoofdstuk nogmaals door te nemen.</p>
 <hr />
 <h2 id="het-nut-van-functies">Het nut van functies</h2>
-<p>Waarom zou je functies willen creëren? Er zijn een hoop goede redenen:</p>
+<p>Waarom zou je functies willen maken?</p>
 <ul>
-<li>Je hebt een bepaalde functionaliteit voor je code nodig die je onafhankelijk van de rest van je programma wilt ontwikkelen. Als je een dergelijke functionaliteit in een functie stopt, betekent dat je nadat de functie gebouwd en getest is, je de functionaliteit kunt gebruiken zonder er verder over na te denken.</li>
-<li>Er is een bepaalde functionaliteit die je op meerdere plekken in je programma nodig hebt, en je kunt beter die functionaliteit in een functie stoppen die op meerdere plekken aangeroepen wordt, dan dat je de code naar al die plekken kopieert.</li>
-<li>Je hebt een functionaliteit in je code nodig die je kunt aansturen middels parameters. Als je dergelijke functionaliteit in een functie stopt, worden de parameters duidelijker en wordt de code gemakkelijker te lezen en te onderhouden.</li>
-<li>Je programma is te lang om de inhoud goed te blijven overzien. Door de code op te splitsen in functies blijf je veel langer grip houden op de inhoud en werking.</li>
-<li>Je hebt een probleem dat je te lastig vindt om in één keer op te lossen. Je besluit het probleem op te splitsen in meerdere sub-problemen die je wel aankunt. Functies zijn een natuurlijke manier om een dergelijke aanpak vorm te geven.</li>
-<li>Een programma dat diep geneste condities of loops bevat, wordt veel leesbaarder als dieper geneste gedeeltes in een functie geplaatst worden. • Het hergebruik van code wordt goed gefaciliteerd door delen van code in functies te plaatsen.</li>
-<li>Code die beschikbaar gesteld moet worden aan andere programmeurs, kan verspreid worden door gedocumenteerde functies in modules te plaatsen.</li>
+<li><em>Decompositie</em>: Een (complexe) probleem opdelen in kleinere stukken om het makkelijker op te lossen. Ieder stuk ontwikkel en test je los van de rest op. De code kun je dan later gebruiken zonder er verder over na te denken. </li>
+
+<li><em>Hergebruik</em>: Met functies kun je een bepaalde stuk code op meerdere plekken in je programma gebruiken. Je kunt dan beter verwijzen naar waar de code staat (de functie) dan het te kopiëren. Ook kun je dan code aan andere programmeurs beschikbaar stellen (via modules).</li>
+
+<li><em>Abstractie</em>: Met parameters kun je de code voor meerdere toepassingen gebruiken, en wordt het ook makkelijker te lezen en te onderhouden.</li>
+
+<li><em>Overzichtelijkheid</em>: Met functies kun je lange code opsplitsen en daardoor overzichtelijker maken.</li>
 </ul>
+<!--
 <p>Over het algemeen gesproken, kunnen de voordelen van functies worden samengevat als een middel om de volgende zaken te bewerkstelligen:</p>
 <ul>
-<li><em>Encapsulatie</em>: Het &quot;inpakken&quot; van een nuttig stuk code op zo’n manier dat het gebruikt kan worden zonder kennis van de specifieke werking van de code</li>
-<li><em>Generalisatie</em>: Het geschikt maken van een stuk code voor diverse situaties door gebruik te maken van parameters</li>
-<li><em>Beheersbaarheid</em>: Het verdelen van een complex programma in gemakkelijk-te-bevatten delen</li>
-<li><em>Onderhoudbaarheid</em>: Het gebruik maken van betekenisvolle functienamen en logische opdelingen om een programma beter leesbaar en begrijpbaar te maken</li>
-<li><em>Herbruikbaarheid</em>: Het faciliteren van de overdraagbaarheid van code tussen programma’s</li>
-<li><em>Recursie</em>: Het beschikbaar maken van een techniek die &quot;recursie&quot; heet, wat het onderwerp is van hoofdstuk 9.</li>
+<li><em>Encapsulatie</em>: Het &quot;inpakken&quot; van een nuttig stuk code op zo’n manier dat het gebruikt kan worden zonder kennis van de specifieke werking van de code.</li>
+<li><em>Generalisatie</em>: Het geschikt maken van een stuk code voor meerdere problemen situaties door gebruik te maken van parameters.</li>
+<li><em>Beheersbaarheid</em>: Het verdelen van een complex programma in gemakkelijk-te-bevatten delen.</li>
+<li><em>Onderhoudbaarheid</em>: Het gebruik maken van betekenisvolle functienamen en logische opdelingen om een programma beter leesbaar en begrijpbaar te maken.</li>
+<li><em>Herbruikbaarheid</em>: Het faciliteren van de overdraagbaarheid van code tussen programma’s.</li>
+<li><em>Recursie</em>: Het beschikbaar maken van een techniek die &quot;recursie&quot; heet (alleen voor VWO).</li>
 </ul>
+-->
 <h3 id="opgave-8.1-voordelen-van-functies"><span style="color:red">Opgave</span> 8.1 Voordelen van functies</h3>
 <p>Welke van de bovenstaande dingen herken je uit de turtle graphics opdrachten?</p>
 
 
-<h2 id="het-creëren-van-functies">Het creëren van functies</h2>
-<p>Hoofdstuk 5 beschrijft hoe iedere functie een naam heeft, nul of meer parameters, en mogelijk een retourwaarde. Als je je eigen functies maakt, moet je al deze elementen definiëren. Je gebruikt de volgende syntax:</p>
-<pre><code>def &lt; functie_naam &gt; ( &lt; parameter_lijst &gt; ):
-    &lt; acties &gt;</code></pre>
-<p>Functienamen moeten voldoen aan dezelfde eisen als variabele namen, dat wil zeggen, alleen letters, cijfers, en underscores, en ze mogen niet beginnen met een cijfer. De parameter lijst bestaat uit nul of meer variabele namen, met komma’s ertussen. Het blok code onder de functie definitie moet inspringen.</p>
+<h2 id="het-creëren-van-functies">Functies maken</h2>
+<p>Iedere functie heeft een naam, nul of meer parameters, en mogelijk een retourwaarde. Als je je eigen functies maakt, moet je al deze elementen declareren. Dat ziet er zo uit:</p>
+<pre class="python">
+def functie_naam ( parameter_naam ):
+    actie()
+</pre>
+<p>Functienamen moeten voldoen aan dezelfde eisen als variabele namen, dat wil zeggen, alleen letters, cijfers, en underscores, en ze mogen niet beginnen met een cijfer.
+De parameters bestaan uit nul of meer variabele namen, met komma’s ertussen. Het blok code onder de functie definitie moet inspringen ( in dit voorbeeld: <code>actie()</code>) .</p>
 <p>Let erop dat Python je functie definitie moet hebben &quot;gezien&quot; voordat je de functie kunt aanroepen. Het is daarom de gewoonte dat functie definities bovenin een programma staan, meteen onder de import statements.</p>
 <h3 id="hoe-python-omgaat-met-functies">Hoe Python omgaat met functies</h3>
 <p>Om functies te kunnen creëren, moet je begrijpen hoe Python met functies omgaat. Bekijk het kleine Python programma hieronder. Dit programma definieert één functie, die <code>totZiens()</code> heet. Deze functie heeft geen parameters. Het blok code behorende bij de functie heeft alleen een regel die de tekst &quot;Tot ziens!&quot; print.</p>
@@ -71,6 +76,10 @@ print( "Hallo!" )
 totZiens()
 </pre>
 <p>Als je dit programma uitvoert, zie je dat het eerst de regel &quot;Hallo!&quot; afdrukt, en daarna &quot;Tot ziens!&quot; Dit gebeurt zo ondanks het feit dat Python de code van boven naar beneden uitvoert; Python komt <code>print( &quot;Tot ziens!&quot; )</code> tegen voordat <code>print( &quot;Hallo!&quot; )</code> wordt aangetroffen. De reden dat Python toch eerst de tekst &quot;Hallo!&quot; afdrukt is dat Python de code van een functie alleen uitvoert als de functie wordt aangeroepen. Een functie die Python tegenkomt voordat de functie wordt aangeroepen wordt alleen geregistreerd – Python onthoudt dat die functie bestaat, zodat hij kan worden uitgevoerd als het hoofdprogramma (of een andere functie) de functie aanroept.</p>
+
+
+Zie het volgende filmpje voor <b>extra</b> uitleg over functies:
+<iframe width="185" height="105" src="https://www.youtube.com/embed/owglNL1KQf0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
 <h3 id="opgave-8.2.1-bereken-cijfer"><span style="color:red">Opgave</span> 8.2.1 Bereken cijfer</h3>
@@ -103,6 +112,12 @@ totZiens()
 </pre>
 
 <p>Parameters van een functie zijn niet meer en niet minder dan variabelen die je kunt gebruiken in de functie, en die hun (initiële) waarde krijgen van buiten de functie (namelijk via de functie aanroep). De parameters zijn &quot;lokaal&quot; voor de functie, dat wil zeggen, ze kunnen niet benaderd worden door code die niet in het blok code van de functie staat, noch kunnen ze waardes van variabelen buiten de functie beïnvloeden. Meer hierover volgt later in dit hoofdstuk.</p>
+
+
+Zie het volgende filmpje voor <b>extra</b> uitleg over functies en parameters:
+<iframe width="185" height="1055" src="https://www.youtube.com/embed/CGRKqnoQGgM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
 <h3 id="opgave-8.2.2.1-bereken-cijfer-met-parameters"><span style="color:red">Opgave</span> 8.2.2.1 Bereken cijfer met parameters</h3>
 <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/890399/74f882ca1c8a1c55310c063fd2d30492"></iframe>
 
@@ -665,6 +680,23 @@ de rest van de functie. De originele variabele 'kwartje' bestaat nog steeds,
 maar is onzichtbaar geworden voor de functie omdat de functie een eigen
 variabele 'kwartje' heeft gemaakt.</p>
 
+<!--
+<h3 id="globale-variabelen">Globale variabelen</h3>
+<p>Een variabele die je dus in een functie <code>def</code> definieert, bestaat alleen binnen die functie. Wil je een bepaalde variabele door je hele programma heen gebruiken, dan moet je die <code>global</code> maken.
+Dat werkt zo:
+<iframe height="300px" width="100%" src="https://repl.it/@smer/Th81?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<!--Th8.1
+a = 3
+
+def verdubbel():
+	global a
+	antwoord = a*2
+	return antwoord
+
+print( verdubbel() )
+-->
+
 
 <h3 id="scope-van-variabelen">Levensduur van variabelen</h3>
 
@@ -845,6 +877,12 @@ In de statistiek wordt de binomiaalco&euml;ffici&euml;nt "n boven k," waarbij `n
 dan of gelijk aan `k` moet zijn, berekend als `n!/(k!*(n-k)!)`, waarbij `n!` de faculteit van `n` is. Zoals ik in hoofdstuk 7 heb uitgelegd: de faculteit van een positief geheel getal is dat getal, vermenigvuldigd met alle positieve gehele getallen die kleiner zijn (exclusief nul). Je schrijft de faculteit als het getal met een uitroepteken erachter. Bijvoorbeeld, 5 faculteit
 is `5! = 5 ∗ 4 ∗ 3 ∗ 2 ∗ 1 = 120`. Als je alle opgaves tot nu toe gemaakt hebt, heb je hier code voor geschreven. Schrijf een functie die de bbinomiaalcoëfficiënt voor de twee parameters die de functie krijgt, en die de waarde retourneert. Schrijf de code op zo’n manier dat hij als module in een ander programma kan worden opgenomen (dus test de functie via een `main()` functie zoals hierboven is uitgelegd).
 
+-->
+
+
+
+<!-- FILMPJE
+<iframe width="560" height="315" src="https://www.youtube.com/embed/r9LtArXOYjk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 -->
 <hr />
 

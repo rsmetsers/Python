@@ -19,7 +19,7 @@ TODO SEARCH REPLACE: "collectie”
   <img id='languagelogo' src='../img/pythonLogo.jpg'/>
   <div id='content'>
 
-    <h1>Python Cursus - Lists</h1>
+    <h1>Python Cursus - Lists met For-loop</h1>
 
 <i><a href="ListsForAfsluitendeOpgaven.html">Meteen naar de Afsluitende Opgaven over Lists met For-loop</a></i><br>
 <i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
@@ -27,17 +27,110 @@ TODO SEARCH REPLACE: "collectie”
 <h1 id="hoofdstuk-12---lists">Hoofdstuk 12b - Lists met For-loop</h1>
 <hr>
 
-<h3 id="opgave-12.4.10-voorkomens-tellen"><span style="color:red">Opgave</span> 12.4.10 Aantal voorkomens tellen</h3>
-<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/887713/5a1f41a1dcfa91d63be0c1d860cc0088"></iframe>
-Klik <a href="ListsFor_oplossingen.html#12.4.10-voorkomens-tellen">hier</a> voor de uitwerking.
+Met een <code>for</code> loop kun je de elementen van de list doorlopen. Hier een voorbeeld waarbij we alle elementen doorlopen een <i>voor elk element</i> uit de lijst fruitlijst het <i>element</i> afdrukken:
+<!-- th12.14b
+fruitlist = ["appel", "banaan", "kers", 27, 3.14]
+for element in fruitlist:
+        print( element )
+-->
+<iframe height="300px" width="100%" src="https://repl.it/@smer/Th1214b?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
+Zie het volgende filmpje voor <b>extra</b> uitleg over de for-loop:
+<iframe width="185" height="105" src="https://www.youtube.com/embed/xtXexPSfcZg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<h3 id="opgave-12.5.1-dagen-van-week"><span style="color:red">Opgave 12.5.1</span> Dagen van de week verkort</h3>
+<iframe frameborder="0" width="100%" height="400px" src="https://repl.it/student_embed/assignment/1256899/478293cdc87c909cdff02e29c0349380"></iframe>
+<!--
+Practice Exercise 3_4 (for + if)
+Schrijf een for-loop die over een lijst met strings itereert, en van elk woord de eerste twee karakters print. De lijst [ ‘maandag’, ‘dinsdag’, ‘woensdag’ ] zou dus moeten resulteren in:
+ma di wo
+ANTWOORD:
+dagenVanDeWeek =  [ 'maandag', 'dinsdag', 'woensdag']
+
+for dag in dagenVanDeWeek:
+	print( dag[0]+dag[1] )
+
+UITVOER:
+ma
+di
+wo
+-->
+Klik <a href="ListsFor_oplossingen.html#opgave-12.5.1-dagen-van-week">hier</a> voor de uitwerking.
+
+<h3 id="opgave-12.5.2-negatieve-getallen"><span style="color:red">Opgave 12.5.2 </span>Print negatieve getallen uit lijst</h3>
+<iframe frameborder="0" width="100%" height="400px" src="https://repl.it/student_embed/assignment/1256900/1df1f3cbfde8417fba4677ade261151d"></iframe>
+<!--
+Practice Exercise 3_5 (for + if)
+Schrijf een for-loop die een lijst met getallen doorloopt, en alle negatieve getallen print.
+
+ANTWOORD:
+getallenLijst = [-4, 0, 6, -2, 8, -1]
+
+for getal in getallenLijst:
+	if getal < 0:
+		print(getal)
+
+UITVOER
+-4
+-2
+-1
+
+-->
+Klik <a href="ListsFor_oplossingen.html#opgave-12.5.2-negatieve-getallen">hier</a> voor de uitwerking.
+
+
+<h3 id="opgave-12.5.3-klinkers"><span style="color:red">Opgave 12.5.3 </span>Print klinkers uit woorden in een lijst</h3>
+<iframe frameborder="0" width="100%" height="400px" src="https://repl.it/student_embed/assignment/1257131/0cf0eb9744626f4822d3dceae2ac7b3f"></iframe>
+<!--
+Practice Exercise 3_6 (for + if)
+Schrijf een for-loop die langs alle letters van een string loopt en de letter uitprint, maar alleen als het een klinker is ('aeiou'). Gebruik string s = "Een Nederlander heeft programmeertaal Python bedacht."
+
+ANTWOORD:
+tekst = "Een Nederlander heeft programmeertaal Python bedacht."
+
+for letter in tekst:
+	if letter in "aeiou":
+		print( letter )
+
+OF
+		
+tekst = "Een Nederlander heeft programmeertaal Python bedacht."
+	
+for letter in tekst:
+	if letter in ["a", "e", "i", "o", "u"]:
+		print( letter )
+
+
+UTIVOER:
+e
+e
+e
+a
+e
+e
+e
+o
+a
+e
+e
+a
+a
+o
+e
+a
+-->
+Klik <a href="ListsFor_oplossingen.html#opgave-12.5.3-klinkers">hier</a> voor de uitwerking.
+
+
+<h3 id="opgave-12.5.4-voorkomens-tellen"><span style="color:red">Opgave 12.5.4</span> Aantal voorkomens tellen</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/887713/5a1f41a1dcfa91d63be0c1d860cc0088"></iframe>
+Klik <a href="ListsFor_oplossingen.html#opgave-12.5.4-voorkomens-tellen">hier</a> voor de uitwerking.
 
 
 <div id="leerdoelen"><h2>Wat je geleerd hebt over Lists met een for-loop</h2></div>
 In dit hoofdstuk is het volgende besproken:
 <ul>
-<li>Lijsten met een for-loop doorlopen
-<li>Nesten van lists
+<li>Lijsten met een for-loop doorlopen</li>
 </ul>
 
 
