@@ -1,0 +1,240 @@
+
+\section{Discussion}\label{sec:discussion}
+
+Flowcharts are used to structure and guide the problem solving process of
+programming. We summarize our findings according to the problem solving steps
+presented in Section~\ref{sec:educationalMaterial}:
+
+\subsubsection*{1. Abstract the problem from its description.}
+    Unplugged activities help to understand the problem. Flowcharts are used to identify the relevant aspects in the problem description and model these in an abstract
+    framework. This process supports communication in an early stage,
+    facilitating brainstorming and tinkering. We see that having a
+    plan increases self-efficacy, and gives students the confidence necessary to get started
+    on a complex problem. A sketched flowchart
+     provides means for peer-reviews and teacher feedback on the proposed
+    solution. In addition, the high-level description helps abstract from
+    details and focus on dealing with the problem instead of implementation details.
+
+    Using the combination of unplugged and flowcharts, students seem more able to
+    deal with more complex problems, come up with more creative solutions
+    and run into less troubles in the process. It seems helps structure, develop
+    and communicate thoughts and problem solving strategies prior to implementation.
+
+    When dealing with more complex problems, students generally prefer
+    creating high-level flowcharts to code. Our results suggest that students with
+    prior programming experience are generally skeptical of using
+    flowcharts. However, when flowcharts are introduced at an early stage
+    and students are nurtured to use them habitually, we observe that
+    students tend to have relatively less cognitive-load issues when
+    dealing with more complex problems, despite their shorter programming
+    experience. In our results, more summarization errors were made when directly
+    implementing code than when using flowcharts. Omitting the last specified
+    step in a goal (such as returning or printing a specific value)
+    indicates that the students fail to maintain a bird's-eye view and
+    loose sight of their goals.
+
+\subsubsection*{2. Generate sub-problems.}
+    As high-level flowcharts summarize the problem at hand, they seem to naturally
+    facilitate design decomposition. Drawing a flowchart helps identify and recognize subproblems and divide the solution into more manageable chunks. For each subcomponent, the solution strategy and selection of plans is made and evaluated prior to implementation. Patterns and (obsolete) repetitions are recognized at an early stage. We suggest that sketching an idea in a flowchart and removing the burden of dealing with specific language constructs (syntax) lowers the cognitive load. It helps the student focus on finding an adequate approach to a problem.
+     
+
+    Our results suggest that going through the trouble of defining sub-methods
+    in flowcharts leads to exactly those cognitive load-problems that
+    flowcharts should help alleviate. Students experience making detailed
+    low-level flowcharts as cumbersome and boring. A flowchart should be used as a method of abstracting from
+    the details, not to further refine decomposed units. Creating a flowchart must remain practical, worth the effort and goal-oriented: high-level.
+
+
+\subsubsection*{3. Transform sub-problems into sub-solutions.}
+    With the design already
+    thought-out, the student can focus specifically on
+    coding details. Each flowchart component maps to a corresponding
+    sub-method and is tackled individually. Students accurately and easily translate flowchart design into code.
+    According to our observations, any mistakes in the design are adopted
+    into code. This process, in which the student deals with the problem for
+    a second time, does not lead to a reconsideration of the solution. Once
+    students get into a doing mode, the thinking seems to stagnate. This
+    emphasizes the need to think clearly before starting.
+
+    Using Greenfoot's visually compelling environment each sub-solution
+    is evaluated individually. The immediate visual feedback reinforces testing. If
+    necessary, design or implementation adjustments are made. Learning
+    problem solving skills and Java language constructs is thus
+    interleaved with its application in an iterative think-act process.
+
+
+\subsubsection*{4. Re-compose the sub-solutions into a working program.}
+
+    The flowchart can be used as a road-map, guiding students through the
+    composition of the sub-solutions into a complete solution.
+ The algorithm that controls the sequence of
+    events is implemented as specified by the flowchart. As the testing of the sub-solutions has been done
+    thoroughly, this step is confined to reconsidering the manner in which sub-methods are interleaved. The
+    result is tested and evaluated to ensure that the solution adheres to the requirements, reducing summarization errors.
+      complete solution. If necessary (flowchart) design and coding steps are iterated.
+
+
+    The implementation phase has thus been simplified to a direct translation from
+    flowchart to code. The designed aspects, such as modularization and
+    selection and application of plans (including abutment, nesting and merging) are
+    automatically incorporated, yielding more structured, understandable and reusable code.
+
+    Describing the initial and final states facilitates reasoning about
+    sub-solution abutment (in addition to debugging). Moreover, it allows facilitates
+    (JavaDoc) description of assumptions, requirements and pre and post conditions.
+    The use of high-level flowcharts helps maintain a bird's eye view of the
+    problem at hand, enabling students with solution evaluation: has the problem been solved?
+
+
+\subsubsection*{5. Evaluate and iterate.}
+
+    After having tested each individual sub-solution, the program as a whole is
+    validated for correctness and completeness. Contrary to our experience with pure textual
+    results, students generally don't give up until the result is exactly as proposed. The Greenfoot environment compels students to take appropriate action to fix any errors.
+
+    Explicit attention should be given to reflection and evaluation in order to
+    ensure that students learn from their mistakes through an iterative
+    think-act process. This will help them learn from both construct-based and plan-composition
+    errors.
+
+
+\subsection*{Plans}
+    Plans
+    were taught explicitly, implicitly or not at all (see Section \ref{sec:courseObjectives}).
+    \begin{itemize}[leftmargin=1em]
+    \item Students had no problems understanding plans that were
+        \emph{explicitly taught} in class.
+
+
+    \item Students had no problems selecting the appropriate plan which was
+        \emph{implicitly taught} through scaffolded assignments. However,
+        CB errors were introduced during implementation and
+        students tend to make errors when fine-tuning plans.
+
+
+    \item Students could not apply a plan \emph{without prior instruction}
+        or (scaffolded) practice.
+
+    \end{itemize}
+
+
+     Our results confirm de Raadt's call for
+    teachers to teach plan-strategies explicitely\cite{deRaadt2008}. Based on the results mentioned above, we believe that students will perform
+    better if they are appropriately introduced to different types of plans
+    and practice applying them in different situations (i.e. selecting
+    appropriate boundary values).
+
+
+%\item \textbf{Choosing a plan}: At the end of the course students are
+%    generally capable of choosing an appropriate plan and creating 'Correct
+%    Idea' solutions using code and flowcharts for relational level
+%    problems.
+
+
+
+\subsection*{The role of coding}
+    Coding gives students immediate feedback
+    on their algorithms (in the role of a guide-by-an-expert). Students should be encouraged to actually code and run their algorithms.
+    Lagging on homework leads to deficient fundamental construct-based
+    knowledge, crucial to programming, such as assigning values to
+    variables and understanding booleans. Working
+    together with a picky compiler makes students aware of the need for
+    precision. It helps
+    them find, fix and learn from their own (logical) mistakes.
+
+
+    Students rely on the computer to translate plans into correct and specific solutions. Whether syntax or logical errors, students solve these problems on their own during computer-assisted programming.
+
+     \begin{description}[leftmargin=1em]
+
+    \item[Syntax error detection:] Most of the CB errors made in
+        the pen-and-paper assessments are syntax-related (such as
+       '\jav{$=>$}'). The compiler helps detect and remove
+        these. However, the pen-and-paper errors don't disappear over time.
+        Students seem to be strongly reliant on compiler-assistance, and
+        apparently, students don't internalize what the compiler is
+        complaining about.
+
+
+     \item[Evaluation:] Immediate (visual) feedback from the
+         programming environment allows the students to test for plan
+         composition problems, and adjust these where necessary. The result is a high success-rate.
+         Our in-class observations indicate that students are highly motivated
+         to keep going until the result is exactly as expected (or of even
+         higher quality).
+
+
+
+    In contrast to the paper-assessments, students never omit the testing
+    phase during computer-assisted assignments. Whilst testing, students
+    can recognize whether adequate boundaries have been chosen, and adjust
+    these appropriately (possibly by trial-and-error). Even though
+    paper-tests indicate an improvement over time, students continue to
+    make logical errors. It seems as though the correction they make
+     is not internalized. A more explicit reflection and evaluation phase
+    may improve learning from mistakes. This is important, as logical errors are harder to detect in a less visual environment.
+
+
+
+    \end{description}
+
+\subsection*{Block-based systems}
+
+Block-based systems, such as Scratch, Blockly, Alice, Greenfoot or
+AppInventor are particularly successful among young novices. They help
+abstract from concrete syntax, just like flowcharts. An advantage over
+flowcharts is that they do not require an explicit coding step to convert to
+an executable program. A disadvantage is that the instructions used are
+low-level (just like Java statements themselves). For complex problems this
+reduces to the same types of problems as code: students have no overview of
+the complete program and poor design (such as lack of modularization).
+Moreover, mastering text-based programming languages like Java or Python is
+an enduring educational goal for students who wish to gain more in-depth
+experience in coding.
+
+Bridging the gap between the two editing styles (block-based and test-based)
+appears to be difficult. In \cite{Kolling:2015} an intermediate style is
+proposed: \emph{frame-based editing}. Frame-based editing, combines aspects
+of blocks and text: on one hand it maintains the advantage of being less
+syntax dependent, and on the other hand, it allows keyboard input.
+
+The main problem with both frame-based and block-based systems is that
+students are expected to use the computer right from the start. We observed
+not only throughout the course of this study, but also in many other
+programming courses, that the computer seems to cause students to switch from
+a think-first-mode to an act-first-mode. The essence of our approach is to
+keep students away from the computer so that they can focus on
+problem-solving and design-aspects such as decomposition, instead of diving
+into details (steps 1 and 2).
+
+
+\subsection*{Improvements for the educational material}\label{sec:improvements}
+
+\begin{description}[leftmargin=1em]
+
+\item[Reflection:] Focus on \emph{iterating} between think-act and
+    specifically incorporate \emph{evaluation}. To optimize the learning
+    potential, teach students to reflect on what went wrong. This will help
+    students understand logical boundary errors, syntax errors (such as
+    those related to types and assignments) and increases their ability to
+    re-use existing code. It should be emphasized that ad-hoc solutions may
+    introduce new errors. If necessary, the flowchart should be adjusted
+    accordingly.
+
+\item[Flowcharts:] Establish concrete expectations about flowcharts, indicating:
+    \begin{itemize}
+    \item which details should be left out in a high-level flowchart;
+
+    \item the role of initial and final state descriptions and how to use
+        these in algorithmic thinking (sequencing of sub-methods);
+
+    \item design rules in order to avoid arrow-spaghetti.
+    \end{itemize}
+
+
+\item[Tracing tables:] Introduce a structured approach for tracing
+    variables in cognitively demanding situations such as loops and
+    sub-methods.
+
+
+\end{description}
