@@ -1,0 +1,72 @@
+<!--
+
+
+TODO SEARCH REPLACE: "collectie”
+
+-->
+
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+        <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+    <h1>Python Cursus - Geneste Lijsten</h1>
+
+<i><a href="ListsForGenestAfsluitendeOpgaven.html">Meteen naar de Afsluitende Opgaven over Geneste Lijsten</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+<hr>
+<h1 id="hoofdstuk-12---lists">Hoofdstuk 12c - Geneste lijsten</h1>
+<hr>
+
+
+Zie het volgende filmpje voor <b>extra</b> uitleg over geneste lijsten:
+<iframe width="185" height="105" src="https://www.youtube.com/embed/Go-FfGhxbSM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+
+<h2 id="hoofdstuk-12.6-Genestelists">12.6 Geneste lists</h2>
+Elementen van een list kunnen zelf ook lists zijn (die ook weer lists kunnen bevatten,
+etcetera). Op deze manier kun je een matrix in je programma creëren. Bijvoorbeeld, je
+kunt een boter-kaas-eieren bord als volgt bouwen (een liggend streepje is een lege cel):
+<code>bord = [ ["-", "-", "-"], ["-", "-", "-"], ["-", "-", "-"] ]</code>
+De eerste rij van het bord is <code>bord[0]</code>, de tweede rij is <code>bord[1]</code>, en de derde rij is <code>bord[2]</code>.
+Als je de eerste cel van de eerste rij wilt benaderen, is dat <code>bord[0][0]</code>, de tweede cel is
+<code>bord[0][1]</code> en de derde cel is <code>bord[0][2]</code>. Bijvoorbeeld, om een “X” in het midden van
+het bord te plaatsen, en een “O” in de linkerbovenhoek, gebruik je de code hieronder. Deze
+code toont ook het bord op een nette manier (met labels op de rijen en kolommen).
+
+
+<!--Th12.16
+def toon_bord( b ):
+print( " 1 2 3" )
+for rij in range( 3 ):
+print( rij+1, end=" ")
+for kol in range( 3 ):
+print( b[rij][kol], end=" " )
+print()
+bord = [ ["-", "-", "-"], ["-", "-", "-"], ["-", "-", "-"] ]
+bord [1][1] = "X"
+bord [0][2] = "O"
+toon_bord( bord )
+-->
+<iframe height="450px" width="100%" src="https://repl.it/@smer/Th1216?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<div id="leerdoelen"><h2>Wat je geleerd hebt over Geneste Lijsten</h2></div>
+In dit hoofdstuk is het volgende besproken:
+<ul>
+<li>Nesten van lists
+</ul>
+
+
+<hr>
+<i><a href="ListsForGenestAfsluitendeOpgaven.html">Meteen naar de Afsluitende Opgaven over Geneste Lijsten</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i> 

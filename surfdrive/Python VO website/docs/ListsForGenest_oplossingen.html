@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+    <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+<hr>
+<i><a href="ListsForGenest.html">Terug naar de theorie en opgaven over Geneste Lijsten</a></i><br>
+<i><a href="ListsForGenestAfsluitendeOpgaven.html">Terug naar de Afsluitende Opgaven over Geneste Lijsten</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+<hr>
+
+<h1>Python Cursus.  Hoofdstuk 12c - Geneste Lijsten</h1>
+<h1>Uitwerkingen Opgaven</h1>
+<hr />
+
+
+<h3 id="opgave-12.5.1-een-list-in-een-list"><span style="color:red">Opgave</span> 12.5.1 Een lijst in een lijst</h3>
+<pre class="python">
+bord=["rij1", "rij2", "rij3"]
+
+bord[0] = ['X', 'O', 'X']  #dit kan ook: rij1 = ['X', 'O', 'X']
+bord[1] = ['O', 'X', '-']  #dit kan ook: rij2 = ['O', 'X', '-']
+bord[2] = ['O', 'O', 'X'] #dit kan ook: rij3 = ['O', 'O', 'X']
+
+
+print(bord)
+</pre>
+
+<h3 id="opgave-12.5.2-geneste-list---coördinaten"><span style="color:red">Opgave</span> 12.5.2 Geneste list - Coördinaten</h3>
+<pre class="python">
+def toon_bord( bord ):
+    for rij in range( 3 ): #voor elk rij
+        for kolom in range( 3 ): #en voor elk kolom
+            print( bord[rij][kolom], end=" " ) #druk af wat op dat plek staat
+        print() #print een lege regel
+
+
+bord = [ ["-", "-", "-"], ["-", "-", "-"], ["-", "-", "-"] ] #begin met een leeg bord
+bord [0][0] = "O" #zet linksboven een O
+bord [1][1] = "X"
+bord [0][1] = "O"
+bord [0][2] = "X" #speler 0 dwarsbomen door rechtsboven iets te plaatsen
+
+toon_bord( bord ) #print het bord
+</pre>
+
+
+
+<h3 id="afsluitende-opgave-staafdiagram"><span style="color:red">Afsluitende opgave</span> 12.2 Staafdiagram</h3>
+<pre class="python">
+#FUNCTIE DEFINITIE
+#functie om de staafdiagrammen af te drukken
+def staafdiagramAfdrukken(waardes):
+    for waarde in waardes:  #doorloop alle waardes uit de lijst
+        print ("*" * waarde) #en print voor elke waarde het bijbehordende aantal *
+
+#HOOFD PROGRAMMA
+getallen_lijst = [4,8,5]
+staafdiagramAfdrukken( getallen_lijst ) #getallen_lijst = [4,8,5]
+</pre>
+
+<h3 id="afsluitende-opgave-12.2-kaarten-schudden"><span style="color:red">Afsluitende opgave</span> 12.3 Kaarten schudden</h3>
+<pre class="python">
+import random
+
+stok = []
+for value in ("Aas", "2", "3", "4", "5", "6", "7", "8",
+    "10", "Boer", "Vrouw", "Heer"):
+    for kleur in ("Harten", "Schoppen", "Klaveren", "Ruiten"):
+        stok += [kleur + ' ' + value ]
+
+for i in range( len( stok ) ): #wissel elk kaart met een willekeurige andere
+    j = random.randint( i, len( stok )-1 ) #kies een willekeurig getal
+    stok[i], stok[j] = stok[j], stok[i]
+
+for kaart in stok:
+    print( kaart )
+</pre>
+
+<h3 id="afsluitende-opgave-12.3-boter-kaas-eieren"><span style="color:red">Afsluitende opgave</span> 12.4 Boter-Kaas-Eieren</h3>
+-- geen uitwerking beschikbaar --
+<!--
+Het hoofdprogramma zal er ongeveer als volgt uitzien (in pseudo-code):
+toon bord
+while True:
+vraag om de rij
+vraag om de kolom
+if de rij/kolom combinatie al bezet is:
+geef een fout-boodschap
+continue
+plaats een markering voor de speler op de rij/kolom
+toon bord
+if er is een winnaar:
+feliciteer winnaar
+break
+if bord is vol:
+zeg dat het gelijkspel is
+break
+wissel spelers
+-->
+
+<!-- ANTWOORD
+from pcinput import getInteger
+
+LEEG = "-"
+SPELERX = "X"
+SPELERO = "O"
+MAXZET = 9
+
+def toon_bord( b ):
+    print( "  1 2 3" )
+    for rij in range( 3 ):
+        print( rij+1, end=" ")
+        for kol in range( 3 ):
+            print( b[rij][kol], end=" " )
+        print()
+
+def opponent( p ):
+    if p == SPELERX:
+        return SPELERO
+    return SPELERX
+
+def neemRowKolom( speler, wat ):
+    while True:
+        num = getInteger( "Speler "+speler+", welke "+wat+
+            " kies je? " )
+        if num < 1 or num > 3:
+            print( "Geef 1, 2, of 3" )
+            continue
+        return num
+
+def winnaar( b ):
+    for rij in range( 3 ):
+        if b[rij][0] != LEEG and b[rij][0] == b[rij][1] \
+            and b[rij][0] == b[rij][2]:
+            return True
+    for kol in range( 3 ):
+        if b[0][kol] != LEEG and b[0][kol] == b[1][kol] \
+            and b[0][kol] == b[2][kol]:
+            return True
+    if b[1][1] != LEEG:
+        if b[1][1] == b[0][0] and b[1][1] == b[2][2]:
+            return True
+        if b[1][1] == b[0][2] and b[1][1] == b[2][0]:
+            return True
+    return False
+
+bord = [[LEEG,LEEG,LEEG],[LEEG,LEEG,LEEG],[LEEG,LEEG,LEEG]]
+speler = SPELERX
+
+toon_bord( bord )
+zet = 0
+while True:
+    rij = neemRowKolom( speler, "rij" )
+    kol = neemRowKolom( speler, "kolom" )
+    if bord[rij-1][kol-1] != LEEG:
+        print( "Rij", rij, "en kolom", kol, "is niet leeg" )
+        continue
+    bord[rij-1][kol-1] = speler
+    toon_bord( bord )
+    if winnaar( bord ):
+        print( "Speler", speler, "wint!" )
+        break
+    zet += 1
+    if zet == MAXZET:
+        print( "Het is gelijkspel." )
+        break
+    speler = opponent( speler )
+
+
+-->
+
+
+<h3 id="afsluitende-opgave-12.4-zeeslag"><span style="color:red">Afsluitende opgave</span> 12.5 Zeeslag</h3>
+-- geen uitwerking beschikbaar --
+<!-- ANTWOORD
+from pcinput import getString
+from random import randint
+
+LEEG = "."
+SCHIP = "X"
+SCHEPEN = 3
+BREEDTE = 4
+HOOGTE = 3
+
+def toonBord( b ):
+    print( "  ", end="" )
+    for kol in range( BREEDTE ):
+        print( chr( ord("A")+kol ), end=" " )
+    print()
+    for rij in range( HOOGTE ):
+        print( rij+1, end=" ")
+        for kol in range( BREEDTE ):
+            print( b[rij][kol], end=" " )
+        print()
+
+def plaatsSchepen( b ):
+    for i in range( SCHEPEN ):
+        while True:
+            x = randint( 0, BREEDTE-1 )
+            y = randint( 0, HOOGTE-1 )
+            if b[y][x] == SCHIP:
+                continue
+            if x > 0 and b[y][x-1] == SCHIP:
+                continue
+            if x < BREEDTE-1 and b[y][x+1] == SCHIP:
+                continue
+            if y > 0 and b[y-1][x] == SCHIP:
+                continue
+            if y < HOOGTE-1 and b[y+1][x] == SCHIP:
+                continue
+            break
+        b[y][x] = SCHIP
+
+def neemDoel():
+    while True:
+        cel = getString( "Welke cel kies je? " ).upper()
+        if len( cel ) != 2:
+            print( "Geef een cel in als XY,",
+                "met X een letter en Y een cijfer" )
+            continue
+        if cel[0] not in "ABCD":
+            print( "De letter moet tussen A en",
+                chr( ord("A")+BREEDTE-1 ), "liggen" )
+            continue
+        if cel[1] not in "123":
+            print( "Cijfer moet tussen 1 en", HOOGTE, "liggen" )
+            continue
+        return ord(cel[0])-ord("A"), ord(cel[1])-ord("1")
+
+bord = []
+for i in range( HOOGTE ):
+    rij = BREEDTE * [LEEG]
+    bord.append( rij )
+plaatsSchepen( bord )
+toonBord( bord )
+
+raak = 0
+zetten = 0
+while raak < SCHEPEN:
+    x, y = neemDoel()
+    if bord[y][x] == SCHIP:
+        print( "Raak!" )
+        bord[y][x] = LEEG
+        raak += 1
+    else:
+        print( "Mis!" )
+    zetten += 1
+
+print( "Je had", zetten, "zetten nodig om mij te verslaan." )
+
+-->
+<hr>
+<i><a href="ListsForGenest.html">Terug naar de theorie en opgaven over Geneste Lijsten</a></i><br>
+<i><a href="ListsForGenestAfsluitendeOpgaven.html">Terug naar de Afsluitende Opgaven over Geneste Lijsten</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
