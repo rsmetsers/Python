@@ -28,21 +28,147 @@ TODO SEARCH REPLACE: "collectie”
 <hr>
 
 
-Zie het volgende filmpje voor <b>extra</b> uitleg over geneste lijsten:
+<h2 id="geneste-loops---alle-combinaties">Geneste loops - alle combinaties <!-- H 7.3 --></h2>
+<p>Je kunt een loop in een andere loop stoppen. Dit gebruik je om bijvoorbeeld alle combinaties van twee dingen af te drukken, coördinaten bijvoorbeeld.</p>
+
+<!-- Th12.18
+for x in range (4):
+	for y in range (4):
+		print(x,y)
+-->
+<iframe height="400px" width="100%" src="https://repl.it/@smer/Th1218?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+Wat gebeurt hier?
+<ul>
+  <li>Voor elke waarde van <code>x</code>, worden alle waarden van <code>y</code> afgedrukt.</li>
+  <li>In de "buitenste loop" veranderd <code>x</code> steeds</li>
+  <li>In de "binnenste loop" veranderd <code>y</code> steeds</li>
+</ul>
+Dat zie je ook aan de uitvoer: <code>x</code> blijft eerst een poosje op 0 blijft staan, terwijl <code>y</code> steeds veranderd. Als <code>y</code> zijn maximale waarde heeft bereikt (hier 3), dan gaat <code>x</code> pas omhoog.
+
+<!--
+<p>Ik zal eerst een voorbeeld geven van een dubbel-geneste loop, dus een loop die een andere loop bevat. In dat geval spreken programmeurs vaak over een “buitenste loop” en “binnenste loop.” De binnenste loop is een deel van het blok code van de buitenste loop.</p>
+<pre class="python">
+for teller1 in range( 3 ):
+    print( "De buitenste loop begint met teller =", teller1 )
+    for teller2 in range( 3 ):
+        print( " De binnenste loop begint met teller2 =", teller2 )
+        print( " (teller1,j) = (",teller1,",", teller2, ")" )
+        print( " De binnenste loop eindigt met teller2 =", teller2 )
+    print( "De buitenste loop eindigt met teller1 =", teller1 )
+</pre>
+
+<p>Bestudeer deze code en output totdat je hem volledig begrijpt!</p>
+<p>De code geeft eerst aan variabele <code>i</code> de waarde 0, en geeft dan aan variabele <code>j</code> de waardes 0, 1, en 2. Dan geeft het aan <code>i</code> de waarde 1, en laat <code>j</code> weer de waardes 0, 1, en 2 aannemen. Tenslotte geeft het <code>i</code> de waarde 2, en laat <code>j</code> weer 0, 1, en 2 aannemen. Dus deze code verwerkt alle paren <code>(i,j)</code> waarbij <code>i</code> en <code>j</code> 0, 1, of 2 zijn.</p>
+<p>Merk op dat de waardes voor variabelen in de buitenste loop ook beschikbaar zijn voor de binnenste loop. <code>i</code> bestaat zowel in de buitenste als in de binnenste loop.</p>
+<p>Hierdoor worden alle paren afgedrukt: (0,0) (0,1) (0,2) (1,0) (1,1) (1,2) (2,0) (2,1) (2,2).
+-->
+
+
+
+Bekijk eventueel het volgende filmpje voor <b>extra</b> uitleg over geneste lijsten:<br>
 <iframe width="185" height="105" src="https://www.youtube.com/embed/Go-FfGhxbSM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
+<h3 id="opgave-12c.1-kaarten-afdrukken"><span style="color:red">Opgave 12c.1</span> Stok kaarten afdrukken</h3>
 
-<h2 id="hoofdstuk-12.6-Genestelists">12.6 Geneste lists</h2>
-Elementen van een list kunnen zelf ook lists zijn (die ook weer lists kunnen bevatten,
-etcetera). Op deze manier kun je een matrix in je programma creëren. Bijvoorbeeld, je
-kunt een boter-kaas-eieren bord als volgt bouwen (een liggend streepje is een lege cel):
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/889292/2ddd22826ead6a6a395a6c4696a0a7d1"></iframe>
+Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="ListsForGenest_oplossingen.html#12c.1-kaarten-afdrukken">hier</a> voor de uitwerking.
+
+<h3 id="opgave-12c.2-alle-tafels-van-vermenigvuldiging-met-een-for"><span style="color:red">Opgave 12c.2</span> Alle tafels van vermenigvuldiging (met een <code>for</code>)</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/848989/ce283591fa330b69d77b07a89530ce88"></iframe>
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="IteratiesForGenest_oplossingen.html#opgave-12c.2-alle-tafels-van-vermenigvuldiging-met-een-fo">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+
+
+
+
+
+
+
+<h2 id="geneste-loops---uitgebreidere-voorwaarden">Geneste loops - uitgebreidere voorwaarden</h2>
+Je kunt ook geneste loops combineren met het stellen van voorwaarden. Bijvoorbeeld, dat alleen dubbele waarden worden afgedrukt.
+<iframe height="400px" width="100%" src="https://repl.it/@smer/Th1219?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<!--Th 12.19
+
+#Drukt paren af van 0 tot en met 4, als beide getallen gelijk zijn
+#Bijvoorbeeld, de volgende paren worden wel afgedrukt: (0,0) (1,1)
+#Maar, de volgende paren worden niet afgedrukt: (0,1) (0,2) (0,3) (0,4)
+
+for i in range( 5 ):
+	for j in range( i, 5 ):
+		if i==j:
+			print( "(", i, ",", j, ")" )
+
+-->
+
+
+
+
+
+<p>Je kunt natuurlijk ook <code>while</code> loops nesten, of <code>for</code> loops en <code>while</code> loops door elkaar heen gebruiken.</p>
+
+
+
+<h3 id="opgave-12c.3-cadeaus-uitdelen"><span style="color:red">Opgave 12c.3</span> Cadeaus uitdelen</p></h3>
+<iframe frameborder="0" width="100%" height="400px" src="https://repl.it/student_embed/assignment/847635/81eb257cc4b7ccb1173e735969b57c6b"></iframe>
+
+Deze opdracht wordt nog niet automatisch gecontroleerd.
+<a href="ListsForGenest_oplossingen.html#opgave-12c.3-cadeaus-uitdelen">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+<h3 id="opgave-12c.4-maanden-met-rrr"><span style="color:red">Opgave 12c.4</span> Maanden met een rrrrr (met een <code>for</code>)</h3>
+<iframe frameborder="0" width="100%" height="400px" src="https://repl.it/student_embed/assignment/848990/77ed3f67d5deefe4102d86758585ae1b"></iframe>
+
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="ListsForGenest_oplossingen.html#opgave-12c.4-maanden-met-rrr">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+
+<h2 id="hoofdstuk-12.6-Genestelists">Geneste lijsten</h2>
+
+Je kunt ook lijsten van lijsten maken. Eigenlijk is dit een tabel (of matrix).
+
+Tabellen kom je natuurlijk overal tegen. Daarnaast worden deze twee-dimensionale lijsten ook gebruikt om plaatjes in de computer te representeren (weet je nog, bitmap?):
+
+
+<div class="figure">
+<img src="http://course.cs.ru.nl/greenfoot/python/img/bitmapImage.png" alt="Bitmap representatie" /><p class="caption">Bitmap representatie</p>
+</div>
+
+Of spellen:
+<div class="figure">
+<img src="http://course.cs.ru.nl/greenfoot/python/img/schaakbord.png" alt="Bitmap representatie" /><p class="caption">Schaakbord</p>
+</div>
+
+<div class="figure">
+<img src="http://course.cs.ru.nl/greenfoot/python/img/schaakbord.png" alt="Bitmap representatie" /><p class="caption">Mijnenveger</p>
+</div>
+
+Zo kun je bijvoorbeeld een boter-kaas-eieren bord bouwen  (een liggend streepje is een lege cel).
+"X" is aan zet. Kun je op de juiste plek de "-" veranderen in een "X" zodat je wint?
+
+<iframe height="400px" width="100%" src="https://repl.it/@smer/Th1220?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<!--Th 12.20
+bord = [ ["X", "O", "-"], ["X", "O", "O"], ["-", "X", "-"] ]
+
+print( bord[0][0], bord[0][1], bord[0][2] )
+print( bord[1][0], bord[1][1], bord[1][2] )
+print( bord[2][0], bord[2][1], bord[2][2] )
+-->
+
+
+<!--
 <code>bord = [ ["-", "-", "-"], ["-", "-", "-"], ["-", "-", "-"] ]</code>
 De eerste rij van het bord is <code>bord[0]</code>, de tweede rij is <code>bord[1]</code>, en de derde rij is <code>bord[2]</code>.
 Als je de eerste cel van de eerste rij wilt benaderen, is dat <code>bord[0][0]</code>, de tweede cel is
 <code>bord[0][1]</code> en de derde cel is <code>bord[0][2]</code>. Bijvoorbeeld, om een “X” in het midden van
 het bord te plaatsen, en een “O” in de linkerbovenhoek, gebruik je de code hieronder. Deze
-code toont ook het bord op een nette manier (met labels op de rijen en kolommen).
+code toont ook het bord op een nette manier (met labels op de rijen en kolommen).-->
+
+Als je naar de code kijkt zie je vast dat dit beter kan. Als ik namelijk een spel wil maken met 10 rijen en 10 kolommen moet ik heel veel typen. Beter is om loops te gebruiken, zoals je net geleerd hebt.
+<iframe height="400px" width="100%" src="https://repl.it/@smer/TH1221?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 
 <!--Th12.16
@@ -58,12 +184,25 @@ bord [1][1] = "X"
 bord [0][2] = "O"
 toon_bord( bord )
 -->
+
+
+
+<!--
 <iframe height="450px" width="100%" src="https://repl.it/@smer/Th1216?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+-->
+
+
+<h3 id="opgave-12c.5-mijnenveger"><span style="color:red">Opgave 12c.5</span> Mijnenveger</h3>
+
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="ListsForGenest_oplossingen.html#opgave-12c.5-mijnenveger">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
 
 <div id="leerdoelen"><h2>Wat je geleerd hebt over Geneste Lijsten</h2></div>
 In dit hoofdstuk is het volgende besproken:
 <ul>
-<li>Nesten van lists
+<li>Nesten van for-loops</li>
+<li>Nesten van lijsten</li>
+<li>Combineren van nesten met voorwaarden</li>
 </ul>
 
 

@@ -163,105 +163,6 @@ for x in ( 10, 100, 1000, 10000 ):
 Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="IteratiesFor_oplossingen.html#opgave-for-loop-met-een-handmatige-collectie">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
 
 
-<h2 id="geneste-loops---alle-combinaties">Geneste loops - alle combinaties <!-- H 7.3 --></h2>
-<p>Je kunt een loop in een andere loop stoppen. Dit gebruik je om bijvoorbeeld alle combinaties van twee dingen af te drukken.</p>
-<p>Dat is een simpele uitspraak, maar ook een van de lastigste concepten voor veel studenten om te bevatten.</p>
-<p>Ik zal eerst een voorbeeld geven van een dubbel-geneste loop, dus een loop die een andere loop bevat. In dat geval spreken programmeurs vaak over een “buitenste loop” en “binnenste loop.” De binnenste loop is een deel van het blok code van de buitenste loop.</p>
-<pre class="python">
-for teller1 in range( 3 ):
-    print( "De buitenste loop begint met teller =", teller1 )
-    for teller2 in range( 3 ):
-        print( " De binnenste loop begint met teller2 =", teller2 )
-        print( " (teller1,j) = (",teller1,",", teller2, ")" )
-        print( " De binnenste loop eindigt met teller2 =", teller2 )
-    print( "De buitenste loop eindigt met teller1 =", teller1 )
-</pre>
-
-<p>Bestudeer deze code en output totdat je hem volledig begrijpt!</p>
-<p>De code geeft eerst aan variabele <code>i</code> de waarde 0, en geeft dan aan variabele <code>j</code> de waardes 0, 1, en 2. Dan geeft het aan <code>i</code> de waarde 1, en laat <code>j</code> weer de waardes 0, 1, en 2 aannemen. Tenslotte geeft het <code>i</code> de waarde 2, en laat <code>j</code> weer 0, 1, en 2 aannemen. Dus deze code verwerkt alle paren <code>(i,j)</code> waarbij <code>i</code> en <code>j</code> 0, 1, of 2 zijn.</p>
-<p>Merk op dat de waardes voor variabelen in de buitenste loop ook beschikbaar zijn voor de binnenste loop. <code>i</code> bestaat zowel in de buitenste als in de binnenste loop.</p>
-<p>Hierdoor worden alle paren afgedrukt: (0,0) (0,1) (0,2) (1,0) (1,1) (1,2) (2,0) (2,1) (2,2).
-
-
-
-<h3 id="opgave-7.3.1-unieke-en-ongelijke-paren-afdrukken"><span style="color:red">Opgave</span> 7.3.1 Unieke en ongelijke paren afdrukken</p></h3>
-<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/847635/81eb257cc4b7ccb1173e735969b57c6b"></iframe>
-Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="IteratiesFor_oplossingen.html#opgave-7.3.1-unieke-en-ongelijke-paren-afdrukken">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
-
-<!-- ANTWOORD
-```python
-#Drukt paren af van 0 tot en met 4, zonder gelijke paren
-#Bijvoorbeeld, de volgende paren worden wel afgedrukt: (0,1) (0,2) (0,3) (0,4)
-#Maar, de volgende paren worden niet afgedrukt: (0,0) (1,1)
-for i in range( 5 ):
-    for j in range( i, 5 ):
-        if not i==j:
-            print( "(", i, ",", j, ")" )
-
-
-```
--->
-
-
-<h2 id="geneste-loops---uitgebreidere-voorwaarden">Geneste loops - uitgebreidere voorwaarden</h2>
-<p>Stel je voor dat je alle paren <code>(i,j)</code> wilt afdrukken waarbij <code>i</code> en <code>j</code> de waardes 0 tot en met 3 kunnen aannemen, maar <code>j</code> altijd groter moet zijn dan <code>i</code>. Dit gaat als volgt:</p>
-<pre class="python"><code class="python"><span class="kw">for</span> i in <span class="dt">range</span>( <span class="dv">4</span> ):
-    <span class="kw">for</span> j in <span class="dt">range</span>( i<span class="dv">+1</span>, <span class="dv">4</span> ):
-        <span class="dt">print</span>( <span class="st">&quot;(&quot;</span>,i,<span class="st">&quot;,&quot;</span>, j, <span class="st">&quot;)&quot;</span> )</code></pre>
-<p>Zie je hoe ik slim de waarde van i gebruik om het bereik van j te bepalen?</p>
-<p>Je kunt natuurlijk ook <code>while</code> loops nesten, of <code>for</code> loops en <code>while</code> loops door elkaar heen gebruiken.</p>
-
-
-<h3 id="opgave-7.3.2-stok-kaarten-afdrukken"><span style="color:red">Opgave</span> 7.3.2 Stok kaarten afdrukken</h3>
-
-<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/848982/910b47d80d8344376053f88661a6ba96"></iframe>
-Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="IteratiesFor_oplossingen.html#opgave-7.3.2-stok-kaarten-afdrukken">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
-
-<!-- ANTWOORD
-for kleur in range( 4 ):
-    #verander kleurgetal naar een kleur
-    if kleur == 0:
-        kleur = "Harten"
-    elif kleur == 1:
-        kleur = "Schoppen"
-    elif kleur == 2:
-        kleur = "Ruiten"
-    else:
-        kleur = "Klaveren"
-
-    for waarde in range( 0, 13 ):
-        #pas de waarde aan voor Aas, Boer, Vrouw, Koning
-        if waarde == 0:
-            waarde = "A"
-        elif waarde == 10:
-            waarde = "B"
-        elif waarde == 11:
-            waarde = "V"
-        elif waarde == 12:
-            waarde = "K"
-        #druk af
-        print( "(",kleur,",", waarde, ")" )
--->
-
-
-
-
-<!-- Merk op dat als je een `break` of `continue` gebruikt in een binnenste loop, dat alleen effect heeft op de binnenste loop. Er is bijvoorbeeld geen commando dat je in de binnenste loop kunt gebruiken dat dan zowel de binnenste als de buitenste loop meteen afbreekt.
-
-Als je dubbel-geneste loops begrijpt, zal het waarschijnlijk geen verrassing zijn te horen dat je ook drievoudig-geneste loops kunt gebruiken, of viervoudig-geneste loops, of zelfs dieper. In de praktijk zie je echter zelden een loop die dieper genest is dan drievoudig.
-
-
-```python
-for i in range( 3 ):
-    for j in range( 3 ):
-        for k in range( 3 ):
-            print( "({},{},{})".format( i, j, k ) )
-```
--->
-
-
-
-
 
 <!--### `for` loop oefeningen
 
@@ -273,7 +174,6 @@ Om grip te krijgen op het gebruik van for loops, zijn hier een paar oefeningen:
 <ul>
 <li>Wat loops zijn</li>
 <li><code>for</code> loops</li>
-<li>Geneste loops</li>
 </ul>
 <hr />
 

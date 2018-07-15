@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Python VO cursus</title>
+        <link rel="stylesheet" type="text/css" href="../style/stylesheet.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+  <img id='languagelogo' src='../img/pythonLogo.jpg'/>
+  <div id='content'>
+
+
+<h1 id="hoofdstuk-6---condities">Python Cursus. Hoofdstuk 3 - Expressies</h1>
+<h1>Afsluitende Opgaven</h1>
+
+<i><a href="Expressies.html">Terug naar de uitleg en gewone opgaven over Expressies</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+<hr />
+
+
+<h3 id="afsluitende-opgave-3.1GeldMaaktGelukkig"><span style="color:red">Afsluitende opgave</span> 3.1: Geld
+maakt gelukkig</h3>
+
+<iframe frameborder="0" width="100%" height="400px" src="https://repl.it/student_embed/assignment/1234259/d9e835eff8190765799b6b4abb61ced2"></iframe>
+<!--
+ In deze opdracht gaan we aan de slag met geld. We hebben twee
+variabelen, namelijk hele euro’s en losse centen. Bedenk een leuk bedrag.
+Geef de variabelen `euros` en `centen` een waarde. Print dit bedrag op een
+nette manier (bijvoorbeeld: "Dat kost e10.17"). Gebruik hiervoor de
+variabelen `euros` en `centen`.-->
+Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="Expressies_oplossingen.html#afsluitende-opgave-3.1GeldMaaktGelukkig">hier</a> voor een uitwerking.
+
+
+<h3 id="afsluitende-opgave-3.2Boekwinkel"><span style="color:red">Afsluitende opgave</span> 3.2: Rekening
+Boekwinkel</h3> 
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1234325/e72f8ee629831aeb9c3a9d62fd6f2e00"></iframe>
+<!--
+Een boek kost in de winkel euro 24,95, maar boekwinkels krijgen 40
+procent korting bij inkoop. Het verschepen van boeken kost euro 3 per boek.
+Bereken hoeveel de winkel betaalt voor 60 boeken. Tips:
+- 40% korting bereken je door het bedrag met 0,6 te vermenigvuldigen.
+- Het totaalbedrag bereken je door de volgende drie dingen met elkaar te
+vermenigvuldigen: het aantal boeken, de kortingsprijs per boek, de
+verzendkosten.--> <!-- ANTWOORD<pre><code class="python language-python">#
+Boekwinkel. boek_in_winkel = 24.95 boek_met_korting = boek_in_winkel * 0.6
+verzend_kosten_per_boek = 3 aantal_boeken = 60 totaal = aantal_boeken *
+boek_met_korting * verzend_kosten_per_boek print( totaal ) </code></pre> 
+
+AANTWOORD: 2694.6-->
+Deze opgave wordt niet automatisch gecontroleerd. Klik <a href="Expressies_oplossingen.html#afsluitende-opgave-3.2Boekwinkel">hier</a> voor een uitwerking.
+
+<h3 id="spanstylecolorredopgavespan33btwberekenen"><span
+style="color:red">Afsluitende opgave 3.3: </span>BTW berekenen</h3>
+
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1234326/9b9baa104fff9907ef148dd63eb09b0f"></iframe>
+
+<!--
+<p>Maak een programma waarmee je BTW berekent over een bepaald bedrag. (Je
+hoeft je even geen zorgen te maken over hoeveel getallen achter de komma
+staan)</p>
+
+<p>1) Declareer een variabele <code>bedrag_excl_btw</code>. Deze geef je de
+waarde 250.00. Dit is een bedrag exclusief btw. Druk dit als volgt af:</p>
+
+<pre><code class="python language-python">
+bedrag (exclusief btw): 250.00 euro
+</code></pre>
+
+<p>Tip: Om het als een bedrag met twee nullen te krijgen moet je "0" aan het
+bedrag "plakken". Je moet dus casten naar een string (gebruik
+<code>str(..)</code>) en in de <code>print</code> gebruik maken van
+<code>+</code> in plaats van een komma.</p>
+
+<p>2) Declareer een variabele <code>btw</code> wordt. Deze wordt berekend door 21% van <code>bedrag_excl_btw</code>. Druk dit als volgt af:</p>
+
+<pre><code class="python language-python">btw (21%): 52.50 euro
+</code></pre>
+
+<p>3) Declareer een variabele <code>bedrag_incl_btw</code>. Deze wordt
+berekend door de variabele <code>btw</code> op te tellen bij het bedrag
+exclusief btw.</p>
+
+<p>4) Controleer dat de volgende tekst verschijnt:</p>
+
+<pre><code class="python language-python">bedrag (exclusief btw): 250.00 euro
+btw (21%): 52.50 euro
+bedrag (inclusief btw): 302.50 euro </code></pre>
+
+
+-->
+<!-- Tip1: Let op dat teksten  tussen "   "  of  ‘   ’  moeten staan en
+variabelen niet tussen aanhalingstekens! Tip2: met round(bedrag,2) kun je een
+bedrag afronden op 2 decimalen -->
+
+<!-- ANTWOORD bedrag_excl_btw = 250.00 print( "bedrag (exclusief btw): " +
+str(bedrag_excl_btw) + "0") btw = 0.21 * bedrag_excl_btw
+print( "btw (21%): " +  str(btw) + "0")
+bedrag_incl_btw = bedrag_excl_btw + btw print( "bedrag (inclusief btw):" +
+str(bedrag_incl_btw) + "0") -->
+Klik <a href="Expressies_oplossingen.html#spanstylecolorredopgavespan33btwberekenen">hier</a> voor een uitwerking.
+
+
+<h3 id="spanstylecolorredafsluitendeopgavespan34klokrekenen"><span
+style="color:red">Afsluitende opgave 3.4: </span>Klokrekenen</h3>
+
+<iframe frameborder="0" width="100%" height="400px" src="https://repl.it/student_embed/assignment/1234461/86dd0930802141a7fa31af1196eeb35e"></iframe>
+
+<!--
+<p>Je kijkt op de klok en je ziet dat het 14:00u is. Je zet een alarm dat 535
+uur later af moet gaan. Hoe laat is het als het alarm afgaat? Schrijf een
+programma dat het antwoord netjes afdrukt.<br></p>
+
+<p>Hint: Gebruik de modulo operator. Met <code>%24</code> haal je steeds 24 van een getal af toe je een waarde tussen de 0 en 24 overhoudt.</p>
+-->
+<!-- antwoord<pre><code class="python language-python">nieuw_tijdstip = (14+535)%24
+print( str(nieuw_tijdstip) + ":00" ) </code></pre> -->
+Klik <a href="Expressies_oplossingen.html#spanstylecolorredafsluitendeopgavespan34klokrekenen">hier</a> voor een uitwerking.
+
+
+<h3 id="spanstylecolorredafsluitendeopgavespan35invulverhaal"><span
+style="color:red">Afsluitende opgave 3.5: </span>Invulverhaal</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1234462/b95c53804e33ea38731b2739c0214370"></iframe>
+
+<!--
+<p>Je maakt een invulverhaal.</p>
+
+<p>Maak een variabel aan voor elk invulwoord. Vul zelf wat in of laat een
+vriend of vriendin dat doen. Vul letterlijk het eerste in wat er in je opkomt
+zodat het heel raar word en grappig.</p>
+
+<p>Vervolgens gebruik je die variabelen om het verhaal compleet te maken.</p>
+
+<p>Je mag je eigen verhaal verzinnen, of deze gebruiken:</p>
+
+<p>COOL PYJAMA FEEST.</p>
+
+<p>_ _ _ _ (Naam beste vriend) geeft een super pyjamafeestje met als thema _
+_ _ _ (kleuterprogramma) dat word dus de hele avond _ _ _ _  (zelfde
+programma) kijken. Op je _ _ _ _ (vreemd voertuig) rijd je met een snelheid
+van (getal met 3 nullen) km per uur naar haar huis. Het hele huis is versierd
+in de kleuren _ _ _ _ (felle kleuren) en _ _ _ _ (kleur die vloekt bij
+andere) en door het hele huis galmt de beat van _ _ _ _
+(carnavalskraker)</p>
+
+<!--ATNWOORD
+naam_beste_vriend = "Piet"
+kleuterprogramma = "Sesamstraat"
+
+print(naam_beste_vriend + " geeft een super pyjamafeestje met als thema " + kleuterprogramma + "kleuterprogramma) dat word dus de hele avond " + kleuterprogramma + " kijken.")
+-->
+Klik <a href="Expressies_oplossingen.html#spanstylecolorredafsluitendeopgavespan34klokrekenen">hier</a> voor een uitwerking.
+
+<hr>
+
+
+<i><a href="Expressies.html">Terug naar de uitleg en gewone opgaven over Expressies</a></i><br>
+<i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
+
+

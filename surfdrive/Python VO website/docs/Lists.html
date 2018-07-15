@@ -125,6 +125,34 @@ UITVOER:
 Klik <a href="Lists_oplossingen.html#opgave-12.1b-lijst-doorlopen-met-een-while-loop">hier</a> voor de uitwerking.
 
 
+<h2 id="lijst-doorlopen-en-onthouden">Lijst doorlopen en iets onthouden</h2>
+Soms wil je dat door een lijst lopen en iets onthouden waar je na afloop iets mee doet.
+
+Stel je hebt een lijst: <code>fruitLijst  = ["banaan", "appel", "wortel", "druif", "peer"]</code> en je wilt op het scherm afdrukken of het inderdaad een lijst met alleen fruit is, of dat er toch een wortel tussen staat.
+Dat kun je doen door een <code>Boolean</code> flag te gebruiken. We doorlopen de lijst. Als je gaat beginnen ben je natuurlijk nog geen wortel tegengekomen, dus is <code>wortelGevonden</code> gelijk aan <code>False</code>. Kom je ergens een wortel tegen, dan maak je <code>wortelGevonden</code> gelijk aan <code>True</code>. Na afloop kun je de waarde van <code>wortelGevonden</code> controleren. Is die na afloop nog steeds gelijk aan <code>False</code>, dan weet je dat er geen wortel in de lijst stond. 
+
+Bekijk hier een voorbeeld:
+
+<!--th 12.15
+fruitLijst  = ["banaan", "appel", "druif", "peer"]
+
+wortelGevonden = False
+
+for fruit in fruitLijst:
+	if fruit == "wortel":
+		wortelGevonden = True
+
+
+if wortelGevonden == True:
+	print("Een wortel is toch geen fruit!")
+else:
+	print("Er staat alleen fruit in je lijst.")
+-->
+<iframe height="300px" width="100%" src="https://repl.it/@smer/th1215forFlag?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+
+
+
 <h2 id="lists-zijn-veranderbaar">12.2 Lists zijn veranderbaar</h2>
 <p>Omdat lists veranderbaar (Engels: &quot;mutable&quot;) zijn, mag je de inhoud van een list wijzigen. Om een element van de list te overschrijven, kun je er een nieuwe waarde aan toekennen middels een assignment.</p>
 <!-- th12.2

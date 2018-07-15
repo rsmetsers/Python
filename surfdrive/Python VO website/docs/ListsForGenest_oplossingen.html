@@ -22,6 +22,49 @@
 <hr />
 
 
+<h3 id="opgave-12c.1-kaarten-afdrukken"><span style="color:red">Opgave 12c.1</span> Stok kaarten afdrukken</h3>
+<pre class="python">
+kleurLijst = ["Harten", "Schoppen", "Klaveren", "Ruiten"]
+waardeLijst = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Boer", "Vrouw", "Heer", "Aas"]
+
+for kleur in kleurLijst:
+	for waarde in waardeLijst:
+		print(kleur,waarde)
+</pre>
+
+<h3 id="opgave-12c.2-alle-tafels-van-vermenigvuldiging-met-een-for"><span style="color:red">Opgave 12c.2</span> Alle tafels van vermenigvuldiging (met een <code>for</code>)</h3>
+<pre class="python">
+#drukt alle tafels van 0 t/m 10 af
+for tafel in range(11):
+    for teller in range (11):
+        print (str(tafel) +" * " + str(teller) + " = " + str(tafel*teller), end=", ")
+    print()
+</pre>
+
+
+<h3 id="opgave-12c.3-cadeaus-uitdelen"><span style="color:red">Opgave 12c.3</span> Cadeaus uitdelen</p></h3>
+<pre class="python">
+#Drukt paren af van 0 tot en met 4, als beide getallen gelijk zijn
+#Bijvoorbeeld, de volgende paren worden wel afgedrukt: (0,0) (1,1)
+#Maar, de volgende paren worden niet afgedrukt: (0,1) (0,2) (0,3) (0,4)
+
+for persoon1 in range( 5 ):
+	for persoon2 in range( 5 ):
+		if not persoon1 == persoon2:
+			print( "( persoon ", persoon1, ", persoon ", persoon2, ")" )
+</pre>
+
+
+<h3 id="afsluitende-opgave-7.12-maanden-met-rrr><span style="color:red">Afsluitende opgave</span> 7.12 Maanden met een rrrrr (met een <code>for</code>)</h3>
+<pre class="python">
+maandenLijst = ["Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November", "December"]
+for maand in maandenLijst:
+    for letter in maand:
+      if letter == "r":
+        print( maand )
+
+</pre>
+
 <h3 id="opgave-12.5.1-een-list-in-een-list"><span style="color:red">Opgave</span> 12.5.1 Een lijst in een lijst</h3>
 <pre class="python">
 bord=["rij1", "rij2", "rij3"]
@@ -52,7 +95,21 @@ bord [0][2] = "X" #speler 0 dwarsbomen door rechtsboven iets te plaatsen
 toon_bord( bord ) #print het bord
 </pre>
 
+<h2>Uitwerkingen Afsluitende Opgaven</h2>
 
+<h3 id="afsluitende-opgave-12.c1-competitie"><span style="color:red">Afsluitende opgave</span> 12.c1 Hockey competitie</h3>
+<pre class="python">
+teams = ["Amsterdam", "Den Bosch", "Bloemendaal", "Kampong", "Laren", "Nijmegen"]
+wedstrijd_teller = 0
+
+for team1 in teams:
+	for team2 in teams:
+		if not (team1 == team2):
+			print( team1, "-", team2)
+			wedstrijd_teller += 1
+			
+print("Aantal wedstrijden:", wedstrijd_teller)
+</pre>
 
 <h3 id="afsluitende-opgave-staafdiagram"><span style="color:red">Afsluitende opgave</span> 12.2 Staafdiagram</h3>
 <pre class="python">
