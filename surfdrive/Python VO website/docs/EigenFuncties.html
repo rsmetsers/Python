@@ -55,10 +55,14 @@
 
 <h2 id="het-creëren-van-functies">Functies maken</h2>
 <p>Iedere functie heeft een naam, nul of meer parameters, en mogelijk een retourwaarde. Als je je eigen functies maakt, moet je al deze elementen declareren. Dat ziet er zo uit:</p>
+<!--Th8.1
 <pre class="python">
 def functie_naam ( parameter_naam ):
     actie()
 </pre>
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/TH81?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 <p>Functienamen moeten voldoen aan dezelfde eisen als variabele namen, dat wil zeggen, alleen letters, cijfers, en underscores, en ze mogen niet beginnen met een cijfer.
 De parameters bestaan uit nul of meer variabele namen, met komma’s ertussen. Het blok code onder de functie definitie moet inspringen ( in dit voorbeeld: <code>actie()</code>) .</p>
 <p>Let erop dat Python je functie definitie moet hebben &quot;gezien&quot; voordat je de functie kunt aanroepen. Het is daarom de gewoonte dat functie definities bovenin een programma staan, meteen onder de import statements.</p>
@@ -66,14 +70,19 @@ De parameters bestaan uit nul of meer variabele namen, met komma’s ertussen. H
 <p>Om functies te kunnen creëren, moet je begrijpen hoe Python met functies omgaat. Bekijk het kleine Python programma hieronder. Dit programma definieert één functie, die <code>totZiens()</code> heet. Deze functie heeft geen parameters. Het blok code behorende bij de functie heeft alleen een regel die de tekst &quot;Tot ziens!&quot; print.</p>
 <p>De rest van het programma is geen deel van de functie. Het deel van de code van een programma dat niet bij een functie hoort, noemt men meestal het &quot;hoofdprogramma&quot; (Engels: &quot;main program&quot;).
 Het hoofdprogramma print de regel &quot;Hallo!,&quot; en roept daarna de functie <code>totZiens()</code> aan.</p>
+<!--Th8.2
 <pre class="python">
 #FUNCTIE DEFINITIE
 def totZiens():
     print( "Tot ziens!" )
-
+    
 #HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
 print( "Hallo!" )
 totZiens()
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th82?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+
 </pre>
 <p>Als je dit programma uitvoert, zie je dat het eerst de regel &quot;Hallo!&quot; afdrukt, en daarna &quot;Tot ziens!&quot; Dit gebeurt zo ondanks het feit dat Python de code van boven naar beneden uitvoert; Python komt <code>print( &quot;Tot ziens!&quot; )</code> tegen voordat <code>print( &quot;Hallo!&quot; )</code> wordt aangetroffen. De reden dat Python toch eerst de tekst &quot;Hallo!&quot; afdrukt is dat Python de code van een functie alleen uitvoert als de functie wordt aangeroepen. Een functie die Python tegenkomt voordat de functie wordt aangeroepen wordt alleen geregistreerd – Python onthoudt dat die functie bestaat, zodat hij kan worden uitgevoerd als het hoofdprogramma (of een andere functie) de functie aanroept.</p>
 
@@ -101,6 +110,7 @@ berekenCijfer()
 <h3 id="parameters-en-argumenten">Parameters en argumenten</h3>
 <p>Bekijk de code hieronder. De code definieert een functie <code>hallo()</code> met één parameter, <code>naam</code> geheten. De functie gebruikt <code>naam</code> in het blok code. Er is geen expliciete assignment die <code>naam</code> een waarde geeft. <code>naam</code> bestaat als variabele naam omdat het een parameter is van de functie.</p>
 <p>Als een functie wordt aangeroepen, moet je een waarde geven aan iedere (verplichte) parameter die voor de functie gedefinieerd is. Zo’n waarde wordt een &quot;argument&quot; genoemd. Dus, om de functie <code>hallo()</code> aan te roepen, moet een argument waarde voor de parameter naam gespecificeerd worden. Je plaatst een argument tussen de haakjes van de functie aanroep. Merk op dat het niet nodig is dat je in het hoofdprogramma weet dat de parameter <code>naam</code> wordt genoemd in de functie. Hoe hij heet is niet belangrijk. Het enige wat je moet weten is dat er een parameter is die een waarde nodig heeft, en liefst ook de beperkingen die de functie oplegt aan de waarde (bijvoorbeeld het type parameter dat de schrijver van de functie wilt dat je meegeeft).</p>
+<!--Th8.3
 <pre class="python">
 #FUNCTIE DEFINITIE
 def totZiens():
@@ -110,6 +120,8 @@ def totZiens():
 print( "Hallo!" )
 totZiens()
 </pre>
+-->
+<iframe height="350px" width="100%" src="https://repl.it/@smer/Th83?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <p>Parameters van een functie zijn niet meer en niet minder dan variabelen die je kunt gebruiken in de functie, en die hun (initiële) waarde krijgen van buiten de functie (namelijk via de functie aanroep). De parameters zijn &quot;lokaal&quot; voor de functie, dat wil zeggen, ze kunnen niet benaderd worden door code die niet in het blok code van de functie staat, noch kunnen ze waardes van variabelen buiten de functie beïnvloeden. Meer hierover volgt later in dit hoofdstuk.</p>
 
@@ -170,6 +182,7 @@ bepaalSoortGetal(1)
 <h3 id="functies-met-meerdere-parameters">Functies met meerdere parameters</h3>
 <p>Functies kunnen meerdere parameters hebben.</p>
 <p>Bijvoorbeeld, de volgende functie krijgt twee parameters en drukt een groet af:</p>
+<!--Th8.4
 <pre class="python">
 #FUNCTIE DEFINITIE
 def groet( naam, land):
@@ -180,8 +193,11 @@ def groet( naam, land):
 groet( "Chico", "Spanje" )
 groet( "John", "Engeland" )
 </pre>
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th84?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <p>Nog een voorbeeld. De volgende functie krijgt twee parameters en vermenigvuldigt hun waardes, waarna het resultaat wordt afgedrukt:</p>
+<!--Th8.5
 <pre class="python">
 #FUNCTIE DEFINITIE
 def vermenigvuldig( getal1, getal2 ):
@@ -192,6 +208,8 @@ def vermenigvuldig( getal1, getal2 ):
 vermenigvuldig( 2020, 5278238 )
 vermenigvuldig( 2, 3 )
 </pre>
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th85?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <h3 id="opgave-8.2.3-de-wielen-van-de-bus"><span style="color:red">Opgave</span> 8.2.3 De wielen van de bus</h3>
 <iframe frameborder="0" width="100%" height="800px" src="https://repl.it/student_embed/assignment/890401/e5a73fb76bfc04d46e48b80531f31bd6"></iframe>
@@ -299,6 +317,7 @@ grootste(2,1)
 <p>Als Python <code>return</code> tegenkomt in een functie, beëindigt dat de functie. Python gaat dan verder met de code vlak na de plek waar de functie werd aangeroepen. Je mag achter het woord <code>return</code> nul, één, of meerdere waardes of variabelen opnemen. Deze waardes worden dan gecommuniceerd naar het programma buiten de functie. Als je de waardes wilt gebruiken, moet je zorgen dat ze in een variabele terecht komen. Dat krijg je voor elkaar door de functie-aanroep te doen als een assignment naar een variable.</p>
 <p>Bijvoorbeeld, stel dat een functie wordt aangeroepen als:<br> <code>&lt; variabele &gt; = &lt; functie &gt; ()</code>.<br> De functie maakt een berekening, die wordt opgeslagen in een <code>&lt; resultaat_variabele &gt;</code>. Het commando <code>return &lt; resultaat_variabele &gt;</code> beëindigt de functie, waarna de waarde die in <code>&lt; resultaat_variabele &gt;</code> staat &quot;uit de functie komt.&quot; Omdat <code>&lt; functie &gt; ()</code> was aangeroepen via een assignment, komt de waarde van <code>&lt; resultaat_variabele &gt;</code> uiteindelijk terecht in <code>&lt; variabele &gt;</code>.</p>
 <p>Bekijk het volgende voorbeeld:</p>
+<!--Th8.6
 <pre class="python">
 import math
 
@@ -313,6 +332,8 @@ def pythagoras( a, b ):
 lengte_schuine_zijde = pythagoras( 3, 4 )
 print( lengte_schuine_zijde )
 </pre>
+-->
+<iframe height="300px" width="100%" src="https://repl.it/@smer/Th86?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <p>De functie <code>pythagoras()</code> berekent de wortel van de som van de kwadraten van de parameters. De uitkomst wordt via een <code>return</code> statement geretourneerd.</p>
 <p>Het hoofdprogramma &quot;vangt&quot; de waarde door het toekennen van de waarde aan de variabele <code>lengte_schuine_zijde</code>. Daarna wordt de inhoud van <code>lengte_schuine_zijde</code> geprint.</p>
@@ -342,6 +363,7 @@ bepaalMaximum(2,1)
 
 <h3 id="het-verschil-tussen-return-en-print">Het verschil tussen <code>return</code> en <code>print</code></h3>
 <p>Er is een verschil tussen een functie die een waarde retourneert, en een functie die een waarde print. Vergelijk de volgende twee stukken code:</p>
+<!--Th8.7
 <pre class="python">
 #FUNCTIE DEFINITIE
 #rekent kilometers om naar meters en drukt het resultaat af
@@ -365,8 +387,12 @@ def returnKmNaarMeters(afstand_in_km):
 afstand = returnKmNaarMeters( 4 )
 print( afstand )
 </pre>
+-->
+<iframe height="400px" width="100%" src="https://repl.it/@smer/Th87?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 <p>De functie <code>printKmNaarMeters()</code> kan voor slechts één doel gebruikt worden, namelijk het tonen van het antwoord. De functie <code>returnKmNaarMeters()</code> kan echter gebruikt worden waar je ook nog iets met het antwoord wilt doen: om het te tonen, om het te gebruiken in een berekening, of om het aan een variabele toe te kennen.</p>
 <p>Bijvoorbeeld, bij de volgende code wordt het antwoordt van <code>returnKmNaarMeters()</code> gebruikt voor de berekening van de snelheid:</p>
+<!--Th8.8
 <pre class="python">
 #FUNCTIE DEFINITIE
 #rekent kilometers om naar meters en levert het resultaat op
@@ -381,6 +407,9 @@ tijd = 100 #tijd in seconden
 snelheid = afstand / tijd #berekent snelheid in m/s
 print( snelheid )
 </pre>
+-->
+<iframe height="400px" width="100%" src="https://repl.it/@smer/Th88?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 
 <p>Met de functie <code>printKmNaarMeters()</code> had dit niet gekund omdat die geen resultaat (of antwoord) teruggeeft.</p>
 <p>Dus als je een functie wilt maken die een waarde oplevert die elders in je code gebruikt moet worden, dan moet die functie de waarde middels een <code>return</code> retourneren.</p>
@@ -486,6 +515,7 @@ Uiteindelijk moet er iets afgedrukt worden wat lijkt op:
 
 <h3 id="functies-aanroepen-vanuit-functies">Functies aanroepen vanuit functies</h3>
 <p>Functies mogen andere functies aanroepen, zolang die andere functies maar bekend zijn bij de aanroepende functie. Bijvoorbeeld, hieronder zie je hoe de functie <code>afstand()</code> de functie <code>pythagoras()</code> gebruikt om de afstand te berekenen tussen twee punten in een 2-dimensionale ruimte.</p>
+<!--Th8.9
 <pre class="python">
 import math
 
@@ -506,6 +536,9 @@ def afstand( x1, y1, x2, y2 ):
 #HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
 print( afstand( 1, 1, 4, 5 ) )
 </pre>
+-->
+<iframe height="400px" width="100%" src="https://repl.it/@smer/Th89?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 <p><code>afstand()</code> kent <code>pythagoras()</code>, omdat <code>pythagoras()</code> gedefinieerd is vóór <code>afstand()</code> is aangeroepen.</p>
 
 <h3 id="opgave-8.2.9-functies-aanroepen-vanuit-andere-functies"><span style="color:red">Opgave</span> 8.2.9 Functies aanroepen vanuit andere functies</h3>
@@ -599,6 +632,7 @@ dan moet dat ook heel duidelijk in het functiecommentaar staan.
 
 <h3 id="scope-van-variabelen">Scope van variabelen</h3>
 <p>De scope van een variabele is het blok code waarin de variabele is gecreëerd, en alle blokken code die genest zijn binnen dat blok code op een dieper niveau van inspringing. Bijvoorbeeld:</p>
+<!--Th8.10
 <pre class="python">
 hallo = "Hallo!"
 totziens = "Tot ziens!"
@@ -616,8 +650,12 @@ print( teller2 )
 print( middag )
 
 </pre>
+-->
+<iframe height="400px" width="100%" src="https://repl.it/@smer/Th810?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 <p>De variabelen <code>hallo</code> en <code>totziens</code> zijn gedefinieerd op het hoogste niveau van inspringing van het programma, wat betekent dat hun scope het hele programma is. De variabelen <code>teller1</code>, <code>teller2</code>, en <code>middag</code> zijn gedefinieerd in blokken code op een dieper niveau van inspringing. In de meeste programmeertalen zou dit betekenen dat hun scope beperkt is tot die diepere niveaus, maar Python is vriendelijk op dit gebied en laat hun scope verder reiken dan het blok code waarin de variabelen gecreëerd zijn. Daarom zijn in dit programma de variabelen zichtbaar in het hele programma, na hun creatie.</p>
 <p>Hoe werkt dit met functies?</p>
+<!--Th8.11
 <pre class="python">
 dubbeltje = 10
 def geboren():
@@ -628,7 +666,11 @@ kwartje = 25
 geboren()
 print( "dubbeltje =", dubbeltje, "en kwartje =", kwartje )
 </pre>
+-->
+<iframe height="350px" width="100%" src="https://repl.it/@smer/Th811?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 <p>Zowel <code>dubbeltje</code> als <code>kwartje</code> zijn zichtbaar in de functie <code>geboren()</code>, omdat ze gedefinieerd zijn voordat de functie is aangeroepen, en omdat het blok code van de functie op een dieper niveau van inspringing zit. Maar kijk nu naar het volgende programma, dat een kleine wijziging bevat ten opzichte van het vorige:</p>
+<!--Th8.12
 <pre class="python">
 dubbeltje = 10
 def geboren():
@@ -640,6 +682,8 @@ kwartje = 25
 geboren()
 print( "dubbeltje =", dubbeltje, "en kwartje =", kwartje )
 </pre>
+-->
+<iframe height="300px" width="100%" src="https://repl.it/@smer/Th812?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <h3 id="opgave-8.3.1.1-scope-van-variabelen"><span style="color:red">Opgave</span> 8.3.1.1 Scope van variabelen</h3>
 <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/890422/fdc7e745e99ce3d61a9e3e87c7812c5f"></iframe>
@@ -686,7 +730,7 @@ variabele 'kwartje' heeft gemaakt.</p>
 Dat werkt zo:
 <iframe height="300px" width="100%" src="https://repl.it/@smer/Th81?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-<!--Th8.1
+<!--Th8.13
 a = 3
 
 def verdubbel():
@@ -696,7 +740,7 @@ def verdubbel():
 
 print( verdubbel() )
 -->
-
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th813?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <h3 id="scope-van-variabelen">Levensduur van variabelen</h3>
 
@@ -756,6 +800,7 @@ Klik <a href="EigenFuncties_oplossingen.html#opgave-8.3.1.1-scope-van-variabelen
 <p>Het is een goede gewoonte om functies onafhankelijk te maken van het hoofdprogramma, dat wil zeggen, ze geen gebruik te laten maken van globale variabelen. Als je waardes van buiten een functie beschikbaar wilt maken voor de functie, kun je dat doen met parameters.</p>
 <p>Een uitzondering kan gemaakt worden voor globale variabelen die als constanten voor een programma gebruikt worden (zie hoofdstuk 4).</p>
 <p>Constantes zijn waarden die gedurende het programma niet veranderen. Voor de naam van een constante gebruik je hoofdletters.</p>
+<!--Th8.14
 <pre class="python">
 #VARIABELEN EN CONSTANTEN
 PI = 3.14
@@ -768,7 +813,8 @@ def berekenOmtrekCirkel( straal ):
 #HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
 print( berekenOmtrekCirkel(4))
 </pre>
-
+-->
+<iframe height="300px" width="100%" src="https://repl.it/@smer/Th814?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <h3 id="opgave-8.3.2-constanten"><span style="color:red">Opgave</span> 8.3.2 Constanten</h3>
 <p>Speel met een vriend of vriendin een paar keer steen-papier-schaar. Houd op een blaadje bij hoe vaak ieder gewonnen heeft en hoe vaak er gelijk is gespeeld.</p>
@@ -783,7 +829,9 @@ Klik <a href="EigenFuncties_oplossingen.html#opgave-8.3.2-constanten">hier</a> v
 <p>Het hoofdprogramma verwacht dat de functie <code>pythagoras()</code> een getal teruggeeft dat afgedrukt kan worden. Dus ook als de invoer niet goed is, zal <code>pythagoras()</code> <em>iets</em> moeten opleveren. Je moet er altijd heel duidelijk over zijn wat je functie retourneert, en ervoor zorgen dat een retourwaarde ook altijd opgeleverd wordt, ongeacht de omstandigheden.</p>
 <p>Vaak is het handig om -1 te retourneren bij ongeldige invoer. Je moet er natuurlijk wel voor dat je dan een foutmelding geeft. Ook is het belangrijk om dit soort informatie in commentaar bij je functie te zetten. Als je (of iemand anders) die functie ooit ergens anders voor gebruikt dan weet je dat je daar een foutmelding voor moet schrijven.</p>
 <p>Het volgende voorbeeld vangt ongeldige invoer af:</p>
-<pre class="python">import math
+<!--Th8.15
+<pre class="python">
+import math
 
 #VARIABELEN EN CONSTANTEN
 lengte_eerste_zijde = 4
@@ -810,6 +858,8 @@ if lengte_schuine_zijde == -1: #er is ongeldige invoer gegeven
 else:
     print( "De lengte van de schuine zijde is", lengte_schuine_zijde )
 </pre>
+-->
+<iframe height="400px" width="100%" src="https://repl.it/@smer/Th815?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <h3 id="opgave-volume-van-een-balk-foutafhandeling"><span style="color:red">(Optioneel) Opgave</span> 8.4 Volume van een balk met foutafhandeling</h3>
 <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/890438/77fa6106b42963483f841eb5853d0e77"></iframe>
@@ -819,6 +869,7 @@ Deze opdracht wordt nog niet automatisch gecontroleerd. Klik <a href="EigenFunct
 
 <h3 id="optioneel-meerdere-retourwaardes">(Optioneel) Meerdere retourwaardes</h3>
 <p>Je bent niet beperkt in je functies tot slechts één retourwaarde. Je kunt meerdere waardes in één keer retourneren door er komma’s tussen te zetten. Als je deze waardes wilt gebruiken in je programma na aanroep van de functies, moet je ze toekennen aan meerdere variabelen. Die zet je allemaal aan de linkerkant van de assignment operator, ook met komma’s ertussen. Dit kan ik het beste illustreren aan de hand van een voorbeeld:</p>
+<!--Th8.16
 <pre class="python">
 import datetime
 
@@ -830,6 +881,8 @@ def plusDagen( jaar, maand, dag, ophogen ):
 y, m, d = plusDagen( 2015, 11, 13, 55 )
 print( "Nieuw datum is:", y, "/", m, "/", d  )
 </pre>
+-->
+<iframe height="300px" width="100%" src="https://repl.it/@smer/Th816?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <p>De functie <code>plusDagen()</code> krijgt vier argumenten, namelijk integers die een jaar, een maand, een dag, en een aantal dagen die je wilt optellen bij de datum die wordt weergegeven door de eerste drie argumenten. Er worden drie waardes geretourneerd, namelijk een nieuw jaar, een nieuwe maand, en een nieuwe dag. De code stopt die in de variabelen <code>y</code>, <code>m</code>, en <code>d</code>.</p>
 <p>Als je de code hierboven bestudeert, vraag je je misschien af hoe <code>plusDagen()</code> precies werkt. Zoals ik al zei, het is een voordeel van functies dat zolang ze hun werk doen en je weet wat de argumenten zijn en wat er geretourneerd wordt, dat je niet hoeft te weten hoe de functie in elkaar zit. Je kunt de functie gebruiken zonder kennis van het interne proces. Dus je mag gewoon negeren wat je in <code>plusDagen()</code> ziet staan (overigens gebruikt de code van <code>plusDagen()</code> de <code>datetime</code> module, die aan de orde komt in hoofdstuk 27).</p>
@@ -863,6 +916,7 @@ if __name__ == '__main__':
     main()
 
 </pre>
+
 <p>De functie <code>main()</code> bevat feitelijk het hoofdprogramma, dat andere functies kan aanroepen.</p>
 <p>Je hoeft dit niet precies te begrijpen, maar wat hier aan de hand is, is het volgende: het Python bestand bevat code die als programma kan draaien, of de functies die het bevat kunnen geïmporteerd worden in andere programma’s. De bovenstaande constructie zorgt er voor dat de code in <code>main()</code>(dus het hoofdprogramma) alleen wordt uitgevoerd als het programma als een separaat programma is gestart, en niet als een module in een ander programma geladen is. Als in plaats daarvan het programma als module is geladen, kunnen alleen de functies in het programma worden geïmporteerd, en wordt de code voor <code>main()</code> genegeerd.</p>
 <p>Een Python bestand dat een dergelijke constructie bevat en dat voornamelijk als module wordt gebruikt, heeft vaak code in <code>main()</code> die de functies test. Dat kan nuttig zijn tijdens de ontwikkeling van de module.</p>

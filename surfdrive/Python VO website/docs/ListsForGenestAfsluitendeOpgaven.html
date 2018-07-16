@@ -50,6 +50,82 @@ Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="ListsForGenest_
 
 
 
+<h3 id="afsluitende-opgave-staafdiagram"><span style="color:red">Afsluitende opgave</span> 12c.2 Staafdiagram (met for)</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/889275/81c7cbefc82bd6bcec6f0f3968a494f8"></iframe>
+
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="ListsForGenest_oplossingen.html#afsluitende-opgave-staafdiagram">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+<h3 id="afsluitende-opgave-alle-mogelijkheden"><span style="color:red">Afsluitende opgave</span> 12c.3 Alle mogelijkheden (met for)</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1290204/13468c23adde08c36ea4d1b46f3f7f04"></iframe>
+
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="ListsForGenest_oplossingen.html#afsluitende-opgave-alle-mogelijkheden">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+<!--
+Alle mogelijkheden
+Je wilt je kast verven. In de garage staan nog 4 potten verf: rood, blauw, groen en paars.
+
+Schrijf een programma dat alle verschillende combinaties afdrukt, en ook hoeveel combinaties het er zijn.
+
+Tip:
+- Voor 4 kleuren heb je vast meer dan 2 for-loops nodig.
+- Er zijn 256 combinaties 
+ANTWOORD:
+kleurenLijst = ["Rood", "Blauw", "Groen", "Paars"]
+combinatieTeller = 0
+
+
+for kleur1 in kleurenLijst:
+	for kleur2 in kleurenLijst:
+		for kleur3 in kleurenLijst:
+			for kleur4 in kleurenLijst:
+				print( kleur1, kleur2, kleur3, kleur4)
+				combinatieTeller += 1
+					
+print("Aantal mogelijkheden:", combinatieTeller)
+
+
+
+-->
+
+
+
+<!-- ROUTEBEPALEN (VEEL TE MOEILIJK)
+Kortste route
+Jij en je vrienden willen een dagje naar Walibi. Jullie gaan natuurlijk samen met een auto. Hoe bepaal je de kortste route om je vier vrienden op te halen? Een manier om dat te doen heet brute force: je schrijft alle mogelijkheden uit.
+
+Schrijf een programma die alle volgorden opsomt waarin je vier vrienden kan oppikken. Druk ook af hoeveel mogelijkheden het zijn. Je kunt hiervoor mijn vriendenlijst gebruiken, of je eigen maken: vriendenLijst = ["Janneke", "Tom", "Els", "Piet"]
+
+
+Tips:
+- Begin eerst met alle combinaties van 2 vrienden en controleer de antwoorden.
+- Je zult meer dan 2 loops nodig hebben.
+
+NIET VOLLEDIGE ANTWOORD:
+vriendenLijst = ["Janneke", "Tom", "Els", "Piet"]
+combinatieTeller = 0
+
+
+for vriend1 in vriendenLijst:
+	for vriend2 in vriendenLijst:
+		for vriend3 in vriendenLijst:
+			for vriend4 in vriendenLijst:
+				if not (vriend1==vriend2) and not(vriend2==vriend3) and not (vriend3==vriend4):
+					print( vriend1, vriend2, vriend3, vriend4)
+					combinatieTeller += 1
+					
+print("Aantal mogelijkheden:", combinatieTeller)
+
+
+-->
+
+
+<!--
+TODO: code is al uitgewerkt maar tekst in opgave nog uitbreiden.
+
+
+<h3 id="afsluitende-opgave-12.2-kaarten-schudden"><span style="color:red">Afsluitende opgave</span> 12c.3 Kaarten schudden</h3>
+Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="ListsForGenest_oplossingen.html#afsluitende-opgave-12.2-kaarten-schudden">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+-->
 <!--
 Afsluitende opgave 12.3 Kaarten schudden
 Een speelkaart heeft
@@ -69,8 +145,8 @@ In plaats van positie 1 te kiezen, kies je een willekeurige positie om mee te ve
 Voor elk kaart in de stok (denk aan een for-loop), kies een willekeurige andere positie (denk aan random) in de stok en verwissel die twee kaarten.
 -->
 
-
-<h3 id="afsluitende-opgave-12.3-boter-kaas-eieren"><span style="color:red">Afsluitende opgave</span> 12.4 Boter-Kaas-Eieren</h3>
+<!--
+<h3 id="afsluitende-opgave-12.3-boter-kaas-eieren"><span style="color:red">Afsluitende opgave</span> 12c.4 Boter-Kaas-Eieren</h3>
 
 
 Schrijf een boter-kaas-eieren programma dat twee mensen het spel samen laat spelen. Om de beurt vraagt het programma iedere speler om de rij en de kolom waar ze een teken willen plaatsen.</p>
@@ -84,7 +160,7 @@ Schrijf een boter-kaas-eieren programma dat twee mensen het spel samen laat spel
 -Maak ook een functie winnaar() die controleert of het bord een winnaar heeft.
 -Houd bij wie aan de beurt is middels een variabele speler in het hoofdprogramma, die je kunt meegeven aan een functie als argument als de functie dit moet weten.
 -Een tip kan zijn om een functie opponent() te maken die de speler als argument krijgt en de andere speler teruggeeft; een dergelijke functie kan gemakkelijk gebruikt worden om van speler te wisselen na een zet.
-
+-->
 <!--
 Het hoofdprogramma zal er ongeveer als volgt uitzien (in pseudo-code):
 toon bord
@@ -176,12 +252,13 @@ while True:
 
 -->
 
-
+<!--
 <h3 id="afsluitende-opgave-12.4-zeeslag"><span style="color:red">Afsluitende opgave</span> 12.5 Zeeslag</h3>
 <p>Maak een programma dat een vereenvoudigde versie van het spel “Zeeslag” speelt. De computer creëert (in het geheugen) een matrix van 3 rijen hoog en 4 kolommen breed. De rijen zijn genummerd 1, 2, en 3, en de kolommen hebben de letters A, B, C, en D. De computer verstopt in drie van de cellen een “oorlogsschip.” Ieder schip is precies één cel groot. De schepen mogen elkaar noch horizontaal, noch verticaal raken. Laat het programma de schepen per toeval plaatsen, dus niet volgens een vastgestelde configuratie.</p>
 <p>De computer vraagt de speler te “schieten” op cellen in de matrix. De speler doet dat door een kolom letter en rij cijfer in te geven (bijvoorbeeld, &quot;D3&quot;). Als de cel waarop de speler schiet niks bevat, zegt de computer “Mis!” Als de cel een schip bevat, zegt de computer “Raak!’ en verwijdert het schip (dus als de speler nog eens zou schieten op dezelfde cel dan is het automatisch een mis). Als de speler erin geslaagd is alle drie de schepen tot zinken te brengen, laat de computer zien hoeveel schoten er nodig waren, en het programma eindigt.</p>
 <p>Om te helpen bij het debuggen van het spel, laat je de computer bij de start de matrix tonen waarbij je kunt zien welke cellen een schip bevatten.</p>
 <p>Hint: Als je dit een lastige oefening vindt, start dan met een bord waarbij je de schepen al vooraf geplaatst hebt. Als de rest van de code werkt (en dit is niet erg moeilijk na de vorige opgave), voeg dan een functie toe waarbij de schepen per toeval geplaatst worden, zonder dat je controleert of ze elkaar raken. Als dat eenmaal werkt, voeg je code toe die ervoor zorgt dat de schepen elkaar niet kunnen raken.</p>
+-->
 <!-- ANTWOORD
 from pcinput import getString
 from random import randint

@@ -40,13 +40,15 @@ for < variabele > in < collectie > :
 <h3 id="for-loop-met-strings"><code>for</code> loop met strings</h3>
 <!--De enige collectie die in de voorgaande hoofdstukken besproken is, is de string. -->
 <p>Een string is een collectie van tekens, bijvoorbeeld, de string &quot;banaan&quot; is een collectie van de tekens &quot;b&quot;, &quot;a&quot;, &quot;n&quot;, &quot;a&quot;, &quot;a&quot;, en &quot;n&quot;, in die specifieke volgorde. De volgende code verwerkt ieder van de tekens van deze collectie:</p>
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th7b1?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<!-- TH7b.1
 <pre class="python">
 for letter in "banaan":
     print( letter )
 
 print( "Klaar" )
 </pre>
-
+-->
 
 <!--Hoewel deze code vrij triviaal is, zal ik hem voor de duidelijkheid stap voor stap bespreken (ik heb geen stroomdiagram gemaakt, want dat is lastig voor `for` loops).-->
 
@@ -68,12 +70,14 @@ Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="IteratiesFor_op
 <h3 id="for-loop-met-een-variabele-collectie"><code>for</code> loop met een variabele collectie <!-- H 7.2.2--></h3>
 <p>In de code hiervoor werd de string &quot;banaan&quot; gebruikt als collectie, maar er had ook een variabele gebruikt kunnen worden die een string bevat. Bijvoorbeeld, de volgende code is gelijk aan de vorige:</p>
 
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th7b2?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<!-- Th7b.2
 <pre class="python">
 fruit = "banaan"
 for letter in fruit:
     print( letter )
 print( "Klaar" )</pre>
-
+-->
 
 <!--
 Je kunt je afvragen of dat niet gevaarlijk is. Wat gebeurt er als de programmeur iets in het blok code van de loop schrijft dat de inhoud van de variabele `fruit` wijzigt? Je kunt het effect hiervan testen met de volgende code:
@@ -95,12 +99,14 @@ Wat bovenstaande code ook illustreert is dat het mogelijk is om een conditie in 
 
 <p>Het is ook mogelijk om een conditie in de code van een loop te stoppen.</p>
 <p>Met deze code controleer je of er een '@' in een emailadres voorkomt:</p>
+<!--Th7b.3
 <pre class="python">
 emailadres = "voornaam.achternaam@gmail.com"
 for letter in emailadres:
     if letter == "@":
         print("Ja, een @ zit in het emailadres.")</pre>
-
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th7b3?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <h3 id="opgave-7.2.2-controle-op-emailadres"><span style="color:red">Opgave</span> 7.2.2 Controle op emailadres</h3>
 <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/847617/7a2bd3aa6c16d5fa1b4e855fff413488"></iframe>
@@ -112,10 +118,13 @@ Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="IteratiesFor_op
 <h3 id="for-loop-met-een-getallenreeks"><code>for</code> loop met een getallenreeks <!-- H 7.2.3.1 --></h3>
 <p>Python heeft een functie <code>range()</code> die het mogelijk maakt een serie opeenvolgende getallen te genereren. <code>range()</code> wordt vaak gebruikt in combinatie met een <code>for</code> loop, bijvoorbeeld om een loop te maken die een specifiek aantal malen wordt uitgevoerd. De eenvoudigste manier om <code>range()</code> aan te roepen is met één parameter, namelijk een integer. De functie genereert dan een opeenvolgende lijst van integers, beginnend bij nul, tot aan maar niet inclusief de parameter.</p>
 <p>De volgende code drukt 10 waarden af, beginnend bij 0. Dus: 0,1,2,3, ..., 9</p>
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th7b4?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<!--Th7b.4
 <pre class="python">
 for x in range( 10 ):
     print( x )
 </pre>
+-->
 
 <h3 id="opgave-7.2.3.1-strafregels"><span style="color:red">Opgave</span> 7.2.3.1 Strafregels</h3>
 <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/847618/61055fed97a8c802861f432fc67cc59b"></iframe>
@@ -124,10 +133,14 @@ Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="IteratiesFor_op
 
 <h3 id="for-loop-met-meerdere-parameters"><code>for</code> loop met meerdere parameters <!-- H7.2.3.2 --></h3>
 <p><code>range()</code> kan meer dan één parameter meekrijgen. Als je er twee meegeeft, dan is de eerste het startgetal (de default is nul), en de tweede het eindgetal. Het eerste getal zit in de gegenereerde serie, het tweede niet. Als je drie getallen meegeeft, zijn de eerste twee als direct hiervoor aangegeven, en is de derde een stapgrootte, dat wil zeggen, de afstand tussen de gegenereerde getallen. Default stapgrootte is 1. Als je wilt aftellen dan is dat mogelijk: je geeft dan een negatieve stapgrootte. Je moet dan wel ervoor zorgen dat het startgetal groter is dan het eindgetal.</p>
+<!--Th7b.5
 <pre class="python">
 for x in range( 1, 11, 2 ):
     print( x )
 </pre>
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th7b5?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 <p>In de bovenstaande code is:</p>
 <ul>
 <li>het startgetal is 1</li>
@@ -150,11 +163,13 @@ Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="IteratiesFor_op
 
 <h3 id="for-loop-met-een-handmatige-collectie"><code>for</code> loop met een handmatige collectie</h3>
 <p>Als je een serie items hebt in een collectie die je “handmatig” hebt samengesteld, kun je die middels een <code>for</code> loop verwerken als je de items tussen haakjes zet. Een serie items tussen haakjes is een “tuple.” Tuples worden in hoofdstuk 11 uitgebreid besproken.</p>
+<!--Th7b.6
 <pre class="python">
 for x in ( 10, 100, 1000, 10000 ):
     print( x )
 </pre>
-
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th7b6?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <h3 id="opgave-for-loop-met-een-handmatige-collectie"><span style="color:red">Opgave</span> 7.2.3.3 Collectie doorlopen met een 'for' loop</h3>
 

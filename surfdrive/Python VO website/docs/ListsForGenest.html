@@ -130,21 +130,16 @@ Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="ListsForGenest_
 
 Je kunt ook lijsten van lijsten maken. Eigenlijk is dit een tabel (of matrix).
 
-Tabellen kom je natuurlijk overal tegen. Daarnaast worden deze twee-dimensionale lijsten ook gebruikt om plaatjes in de computer te representeren (weet je nog, bitmap?):
+Tabellen kom je natuurlijk overal tegen, je resultaten van een natuurkunde experiment, of om bij te houden welke stoelen in een bioscoop zijn gereserveerd. Daarnaast worden deze twee-dimensionale lijsten ook gebruikt om plaatjes in de computer te representeren (weet je nog, bitmap?) of spellen:
 
 
 <div class="figure">
-<img src="http://course.cs.ru.nl/greenfoot/python/img/bitmapImage.png" alt="Bitmap representatie" /><p class="caption">Bitmap representatie</p>
+<img src="../img/bitmapImage.PNG" width="100" alt="Bitmap representatie" />
+<img src="../img/schaakbord.PNG" width="100" alt="Schaakbord" />
+<img src="../img/minesweeper_small.png" width="100" alt="Mijnenveger" />
 </div>
 
-Of spellen:
-<div class="figure">
-<img src="http://course.cs.ru.nl/greenfoot/python/img/schaakbord.png" alt="Bitmap representatie" /><p class="caption">Schaakbord</p>
-</div>
 
-<div class="figure">
-<img src="http://course.cs.ru.nl/greenfoot/python/img/schaakbord.png" alt="Bitmap representatie" /><p class="caption">Mijnenveger</p>
-</div>
 
 Zo kun je bijvoorbeeld een boter-kaas-eieren bord bouwen  (een liggend streepje is een lege cel).
 "X" is aan zet. Kun je op de juiste plek de "-" veranderen in een "X" zodat je wint?
@@ -167,7 +162,7 @@ Als je de eerste cel van de eerste rij wilt benaderen, is dat <code>bord[0][0]</
 het bord te plaatsen, en een “O” in de linkerbovenhoek, gebruik je de code hieronder. Deze
 code toont ook het bord op een nette manier (met labels op de rijen en kolommen).-->
 
-Als je naar de code kijkt zie je vast dat dit beter kan. Als ik namelijk een spel wil maken met 10 rijen en 10 kolommen moet ik heel veel typen. Beter is om loops te gebruiken, zoals je net geleerd hebt.
+Als je naar de code kijkt zie je vast dat dit beter kan. Als ik namelijk een spel wil maken met veel meer rijen en kolommen, dan moet ik heel veel typen. Beter is om loops te gebruiken, zoals je net geleerd hebt.
 <iframe height="400px" width="100%" src="https://repl.it/@smer/TH1221?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 
@@ -192,11 +187,114 @@ toon_bord( bord )
 -->
 
 
+<h3 id="opgave-12c.4.2-smiley"><span style="color:red">Opgave 12c.4.2</span> Smiley</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1288128/24674baed377115edffe168faa3e7320"></iframe>
+
+<a href="ListsForGenest_oplossingen.html#opgave-12c.4.2-smiley">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+
+
+<h3 id="opgave-12c.4.1-bord-opbouw-boter-kaas-eieren"><span style="color:red">Opgave 12c.4.1</span> Bordopbouw: Boter-Kaas-Eieren</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/887715/9e7233aeb2ed8bae6a186df4dbcc0bf6"></iframe>
+<!--
+Een lijst in een lijst
+Voor het spel boter-kaas-eieren gebruik je vaak een lijst in een lijst om de stand van het bord bij te houden.
+XOX
+OX-
+OOX
+
+1. We maken eerst een leeg bord aan: bord = []
+
+2. Een bord is een lijst van die 3 rijen.  De eerste rij van het bord is rij1, de tweede rij is rij2, en de derde rij is rij3. Ieder rij bestaat weer uit een lijst, met daarin X-jes, O-tjes en streepjes. Bijvoorbeeld: rij1 = ['X', 'O', 'X']
+
+3. Deze rij voeg je dan toe aan je bord:  bord.append(rij1)
+
+4. Vul het bord verder met de bovenstaande spelstand.
+
+5. Druk het bord netjes af, zoals hierboven weergegeven. Gebruik daarvoor een geneste for-loop. Je doorloopt elke zet in elke rij en drukt het af.
+
+Tip: Wil je met printen niet dat hij meteen naar de volgende regel springt, gebruik dan end="" in de print. Bijvoorbeeld: print(zet, end="")
+
+
+ANTWOORD:
+bord=[] # een leeg bord aanmaken
+
+#Rijen in het bord vullen
+rij1 = ['X', 'O', 'X']
+bord.append(rij1)
+
+rij2 = ['O', 'X', '-']
+bord.append(rij2)
+
+rij3 = ['O', 'O', 'X']
+bord.append(rij3)
+
+#Het bord afdrukken
+for rij in bord:
+	for zet in rij:
+		print(zet, end="")
+	print()
+
+
+PRINT:
+XOX
+OX-
+OOX
+-->
+<a href="ListsForGenest_oplossingen.html#opgave-12c.4.1-bord-opbouw-boter-kaas-eieren">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
+
+
+
 <h3 id="opgave-12c.5-mijnenveger"><span style="color:red">Opgave 12c.5</span> Mijnenveger</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/1288116/031cb6ca670f9e99ecb6f38e88a36f13"></iframe>
+
+<!--
+Mijnenveger
+
+Voor het spel mijnenveger heb je een spelbord nodig waarbij er willekeurig een aantal bommen liggen.
+
+Dit pakken we stapsgewijs aan.
+1. Maak een leeg bord met 10 kolommen en 5 rijen. Op elk vakje zetten we een "-" neer.  Je kunt de code hieronder gebruiken:
+bord = [['-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-']]
+2. Druk je bord af. Ook dit doe je met een geneste for loop.
+3. Voeg dan op willekeurige plekken 5 bommen toe.
+
+ANTWOORD:
+import random
+bord = [['-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-']]
+
+
+#WILLEKEURIG 20 BOMMEN TOEVOEGEN
+for i in range (5):
+	willekeurig_rij = random.randint(0,4)
+	willekeurig_kolom = random.randint(0,9)
+	#print (willekeurig_rij, willekeurig_kolom)
+	bord[willekeurig_rij][willekeurig_kolom] = "X"
+	
+#BORD AFDRUKKEN	
+for rij in range (5):
+	for kolom in range (10):
+		print( bord[rij][kolom], end="")
+	print()
+
+-->
+
+
 
 Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="ListsForGenest_oplossingen.html#opgave-12c.5-mijnenveger">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
 
+<!--
+#BORD VULLEN
+for rij in range (5):
+	kolom=[]
+	for i in range (10):
+		kolom.append("-")
+		
+	bord.append(kolom)
 
+	
+-->
 <div id="leerdoelen"><h2>Wat je geleerd hebt over Geneste Lijsten</h2></div>
 In dit hoofdstuk is het volgende besproken:
 <ul>

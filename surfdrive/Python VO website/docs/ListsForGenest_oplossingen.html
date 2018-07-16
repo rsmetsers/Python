@@ -55,7 +55,8 @@ for persoon1 in range( 5 ):
 </pre>
 
 
-<h3 id="afsluitende-opgave-7.12-maanden-met-rrr><span style="color:red">Afsluitende opgave</span> 7.12 Maanden met een rrrrr (met een <code>for</code>)</h3>
+<h3 id="opgave-12c.4-maanden-met-rrr"><span style="color:red">Opgave 12c.4</span> Maanden met een rrrrr (met een <code>for</code>)</h3>
+
 <pre class="python">
 maandenLijst = ["Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November", "December"]
 for maand in maandenLijst:
@@ -65,17 +66,71 @@ for maand in maandenLijst:
 
 </pre>
 
-<h3 id="opgave-12.5.1-een-list-in-een-list"><span style="color:red">Opgave</span> 12.5.1 Een lijst in een lijst</h3>
+<h3 id="opgave-12c.4.2-smiley"><span style="color:red">Opgave 12c.4.2</span> Smiley</h3>
 <pre class="python">
-bord=["rij1", "rij2", "rij3"]
+plaatje = [ [" ","X", " ", "X", " "],
+		   [" ","X", " ", "X", " "],
+		   [" "," ", " ", " ", " "],
+		   [" ","X", "X", "X", " "],
+	           ["X"," ", " ", " ", "X"] ]
+				
+#VOEG HIER CODE TOE OM Xjes OP COORDINATEN AAN TE PASSEN
 
-bord[0] = ['X', 'O', 'X']  #dit kan ook: rij1 = ['X', 'O', 'X']
-bord[1] = ['O', 'X', '-']  #dit kan ook: rij2 = ['O', 'X', '-']
-bord[2] = ['O', 'O', 'X'] #dit kan ook: rij3 = ['O', 'O', 'X']
+plaatje[3][0] = "X"
+plaatje[4][0] = " "
+#... enz.
 
-
-print(bord)
+#DRUK PLAATJE AF
+for rij in range(5):
+	for teken in range(5):
+		print( plaatje[rij][teken], end="")
+	print()
 </pre>
+
+
+<h3 id="opgave-12c.4.1-bord-opbouw-boter-kaas-eieren"><span style="color:red">Opgave 12c.4.1</span> Bordopbouw: Boter-Kaas-Eieren</h3>
+<pre class="python">
+bord=[] # een leeg bord aanmaken
+
+#Rijen in het bord vullen
+rij1 = ['X', 'O', 'X']
+bord.append(rij1)
+
+rij2 = ['O', 'X', '-']
+bord.append(rij2)
+
+rij3 = ['O', 'O', 'X']
+bord.append(rij3)
+
+#Het bord afdrukken
+for rij in bord:
+	for zet in rij:
+		print(zet, end="")
+	print()
+</pre>
+
+
+<h3 id="opgave-12c.5-mijnenveger"><span style="color:red">Opgave 12c.5</span> Mijnenveger</h3>
+<pre class="python">
+import random
+bord = [['-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-']]
+
+
+#WILLEKEURIG 20 BOMMEN TOEVOEGEN
+for i in range (5):
+	willekeurig_rij = random.randint(0,4)
+	willekeurig_kolom = random.randint(0,9)
+	#print (willekeurig_rij, willekeurig_kolom)
+	bord[willekeurig_rij][willekeurig_kolom] = "X"
+	
+#BORD AFDRUKKEN	
+for rij in range (5):
+	for kolom in range (10):
+		print( bord[rij][kolom], end="")
+	print()
+</pre>
+
+
 
 <h3 id="opgave-12.5.2-geneste-list---coördinaten"><span style="color:red">Opgave</span> 12.5.2 Geneste list - Coördinaten</h3>
 <pre class="python">
@@ -111,7 +166,25 @@ for team1 in teams:
 print("Aantal wedstrijden:", wedstrijd_teller)
 </pre>
 
-<h3 id="afsluitende-opgave-staafdiagram"><span style="color:red">Afsluitende opgave</span> 12.2 Staafdiagram</h3>
+<h3 id="afsluitende-opgave-alle-mogelijkheden"><span style="color:red">Afsluitende opgave</span> 12c.3 Alle mogelijkheden (met for)</h3>
+<pre class="python">
+kleurenLijst = ["Rood", "Blauw", "Groen", "Paars"]
+combinatieTeller = 0
+
+
+for kleur1 in kleurenLijst:
+	for kleur2 in kleurenLijst:
+		for kleur3 in kleurenLijst:
+			for kleur4 in kleurenLijst:
+				print( kleur1, kleur2, kleur3, kleur4)
+				combinatieTeller += 1
+					
+print("Aantal mogelijkheden:", combinatieTeller)
+</pre>
+
+
+
+<h3 id="afsluitende-opgave-staafdiagram"><span style="color:red">Afsluitende opgave</span> 12c.2 Staafdiagram</h3>
 <pre class="python">
 #FUNCTIE DEFINITIE
 #functie om de staafdiagrammen af te drukken
@@ -124,8 +197,29 @@ getallen_lijst = [4,8,5]
 staafdiagramAfdrukken( getallen_lijst ) #getallen_lijst = [4,8,5]
 </pre>
 
-<h3 id="afsluitende-opgave-12.2-kaarten-schudden"><span style="color:red">Afsluitende opgave</span> 12.3 Kaarten schudden</h3>
+<!--
+<h3 id="afsluitende-opgave-12.2-kaarten-schudden"><span style="color:red">Afsluitende opgave</span> 12c.3 Kaarten schudden</h3>
 <pre class="python">
+import random
+kleurLijst = ["Harten", "Schoppen", "Klaveren", "Ruiten"]
+waardeLijst = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Boer", "Vrouw", "Heer", "Aas"]
+
+
+for waarde in range( len( waardeLijst ) ):
+	willekeurig_getal = random.randint(0, len(waardeLijst)-1)
+	tmp = waardeLijst[waarde]
+	waardeLijst[waarde] = waardeLijst[willekeurig_getal]
+	waardeLijst[willekeurig_getal] = tmp
+	print("wissel", waarde, "met", willekeurig_getal)
+	
+
+
+for kleur in kleurLijst:
+	for waarde in waardeLijst:
+		print(kleur, waarde)
+</pre>
+-->
+<!--<pre class="python">
 import random
 
 stok = []
@@ -140,10 +234,12 @@ for i in range( len( stok ) ): #wissel elk kaart met een willekeurige andere
 
 for kaart in stok:
     print( kaart )
-</pre>
+</pre>-->
 
-<h3 id="afsluitende-opgave-12.3-boter-kaas-eieren"><span style="color:red">Afsluitende opgave</span> 12.4 Boter-Kaas-Eieren</h3>
+<!--
+<h3 id="afsluitende-opgave-12.3-boter-kaas-eieren"><span style="color:red">Afsluitende opgave</span> 12c.4 Boter-Kaas-Eieren</h3>
 -- geen uitwerking beschikbaar --
+-->
 <!--
 Het hoofdprogramma zal er ongeveer als volgt uitzien (in pseudo-code):
 toon bord
@@ -235,9 +331,10 @@ while True:
 
 -->
 
-
+<!--
 <h3 id="afsluitende-opgave-12.4-zeeslag"><span style="color:red">Afsluitende opgave</span> 12.5 Zeeslag</h3>
 -- geen uitwerking beschikbaar --
+-->
 <!-- ANTWOORD
 from pcinput import getString
 from random import randint
