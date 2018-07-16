@@ -5,7 +5,7 @@ aantal_pogingen = 0
 #bord_leeg = [["-","-","-","-"],["-","-","-","-"],["-","-","-","-"]]
 
 bord_met_schepen = [["-","-","-","-"],#A1 [0,0], B1[0,1], C1[0,2], D1[0,3]
-                    ["-","S","-","-"], #A2 [1,0], B2[1,1], C2[1,2], D2[1,3]
+                    ["-","-","-","-"], #A2 [1,0], B2[1,1], C2[1,2], D2[1,3]
                     ["-","-","-","-"]] #A3 [2,0], B3[2,1], C3[2,2], D3[2,3]
 
 def vulBordRandom():
@@ -13,14 +13,6 @@ def vulBordRandom():
     randRij = random.randint(0, len(bord_met_schepen)-1 ) #rijen
     print(randKolom, randRij)
     bord_met_schepen[randKolom][randRij] = "S"
-
-    if bord_met_schepen[randKolom][randRij] == "-" :
-        print("daar staat al een schip")
-    elif bord_met_schepen[randKolom-1][randRij-1] == "-" or bord_met_schepen[randKolom][randRij-1] == "-" or bord_met_schepen[randKolom+1][randRij-1] == "-" or bord_met_schepen[randKolom-1][randRij] == "-" or bord_met_schepen[randKolom+1][randRij] == "-" or bord_met_schepen[randKolom-1][randRij+1] == "-" or bord_met_schepen[randKolom][randRij+1] == "-" or bord_met_schepen[randKolom+1][randRij+1] == "-":
-        print("Daar in de buurt staat al een schip")
-    else:
-        bord_met_schepen[randKolom][randRij] == "S"
-
 
 
 
