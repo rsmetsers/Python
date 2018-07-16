@@ -31,7 +31,7 @@ def vulBordRandom(bord_met_schepen):
     randRij = random.randint(0, len(bord_met_schepen)-1 ) #rijen
     print(randKolom, randRij)
     bord_met_schepen[randRij][randKolom] = "S"
-    print("Vullen van bord gaat verkeerd.")
+    print("Vullen van bord gaat verkeerd, doet meteen in een keer een hele kolom.")
     return bord_met_schepen
 
 # #VUL BORD MET 2 SCHEPEN
