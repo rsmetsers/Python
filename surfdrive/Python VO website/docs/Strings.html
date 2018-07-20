@@ -23,9 +23,9 @@
 <hr />
 <p>In programmeeromgevingen worden teksten weergegeven door strings. Dit hoofdstuk geeft details over strings, en over functies die beschikbaar zijn om strings aan te pakken.</p>
 <hr />
-<h2 id="herhaling-omgaan-met-strings">10.1 Herhaling omgaan met strings <!-- HFSTK 10.1 --></h2>
-<p>In hoofdstuk 3 heb ik strings kort geïntroduceerd. Ik heb uitgelegd dat een string een tekst is, die omsloten is door enkele of dubbele aanhalingstekens, en dat een string iedere lengte mag hebben, inclusief nul tekens lang. Het hoofdstuk legde ook uit dat je twee strings aan elkaar kunt plakken met behulp van de +, en dat je een string zichzelf kunt laten herhalen door middel van de *. Bijvoorbeeld:</p>
-<!-- th 10.1 
+<h2 id="herhaling-omgaan-met-strings">10.1 Herhaling: omgaan met strings <!-- HFSTK 10.1 --></h2>
+<p>In een vorige hoofdstuk hebben we al iets over strings geleerd. Een string is een tekst, die omsloten is door enkele of dubbele aanhalingstekens. Een string kan nul of meer tekens lang zijn. Je kunt twee strings aan elkaar plakken met behulp van de +, en zichzelf herhalen door middel van de *. Bijvoorbeeld:</p>
+<!-- th 10.1
 <pre class="python">
 woord1 = "appel"
 woord2 = ' banaan '
@@ -39,7 +39,7 @@ print( 2 * woord1 + 2 * woord2 )
 -->
 <iframe height="400px" width="100%" src="https://repl.it/@smer/Th101?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-<p>Ik gaf ook aan dat je de lengte van een string kunt bepalen met de len() functie. String vergelijkingen heb ik uitgelegd in hoofdstuk 6. In hoofdstuk 6 gaf ik ook aan dat de in operator gebruikt kan worden om te testen of tekens of substrings voorkomen in een string. Hoofdstuk 7 legde uit hoe je met een for loop alle tekens in een string kunt doorlopen.</p>
+<p>De lengte van een string kun je bepalen met de <code>len()</code> functie. Met <code>in</code> kun je testen of een of meerdere letters in een string voorkomt. Met een for loop kun je alle tekens in een string doorlopen. Bekijk het volgende voorbeeld:</p>
 <!-- th10.2
 <pre class="python">
 woord1 = "mango"
@@ -50,17 +50,18 @@ for letter in woord1:
         print( woord1, "en", woord2, "bevatten beide de letter", letter )
 </pre>
 -->
-<iframe height="200px" width="100%" src="https://repl.it/@smer/Th102?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://repl.it/@smer/Th102?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-<h3 id="opgave-10.1-herhaling"><span style="color:red">Opgave</span> 10.1 herhaling</h3>
-<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/849988/1ef5c05b2080f052c7e47b0ba8bfaf25"></iframe>
-
+<!--
+<h3 id="opgave-10.1-herhaling"><span style="color:red">Opgave</span> 10.1 Korte herhaling van strings</h3>
+<iframe frameborder="0" width="100%" height="400px" src="https://repl.it/student_embed/assignment/849988/1ef5c05b2080f052c7e47b0ba8bfaf25"></iframe>
+-->
 
 
 <h2 id="strings-over-meerdere-regels">10.2.1 Strings over meerdere regels</h2>
 <p>In Python kunnen strings meerdere regels beslaan. Dat kan nuttig zijn wanneer je een erg lange string in je programma hebt, of als je de output van de string op een specifieke manier wilt formatteren.</p>
 <p>De aanbevolen manier om strings over meerdere regels te spreiden in Python is het gebruik van drievoudige aanhalingstekens:</p>
-<iframe height="250px" width="100%" src="https://repl.it/@smer/Th103?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="350px" width="100%" src="https://repl.it/@smer/Th103?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 <!--Th10.3
 <pre class="python">
 lange_string = """Ik heb mijn buik vol van te worden behandeld
@@ -70,25 +71,26 @@ gewoon maar een toerist bent die wordt rondgereden in een bus ..."""
 print( lange_string )
 </pre>
 -->
-
+<!--
 <h3id="opgave-10.2.1-stings-over-meerdere-regels"><span style="color:red">Opgave</span> 10.2.1 Strings over meerdere regels</h3>
 <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/850034/3e82aa33e7159bc44d3970a53af7ee8f"></iframe>
 <a href="Strings_oplossingen.html#opgave-10.2.1-stings-over-meerdere-regels">Klik hier</a> voor een uitwerking.
+-->
 
 <h2 id="newline-in-een-string">10.2.2 Newline in een string</h2>
-<p>Een &quot;newline&quot; teken geeft aan dat er pas op een nieuw regel verder gegaan moet worden met printen. Dit geef je in de code aan met &quot;&quot;.</p>
+<p>Een &quot;newline&quot; teken geeft aan dat er pas op een nieuw regel verder gegaan moet worden met printen. Dit geef je in de code aan met \n.</p>
 
 <h3 id="opgave-10.2.2-newline"><span style="color:red">Opgave</span> 10.2.2 Newline</h3>
-<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/850035/e28171aeaa6a66f85bc4f5cae55e2b2f"></iframe>
+<iframe frameborder="0" width="100%" height="400px" src="https://repl.it/student_embed/assignment/850035/e28171aeaa6a66f85bc4f5cae55e2b2f"></iframe>
 <a href="Strings_oplossingen.html#opgave-10.2.2-newline">Klik hier</a> voor een uitwerking.
 
 
 
 <h2 id="string-indices">10.3.1 String indices</h2>
-<p>Ieder teken in een string heeft een positie, en die positie kun je weergeven door het index nummer van de positie. De indices beginnen bij 0 en lopen op tot aan de lengte van de string.</p>
-<p>Bij het woord &quot;python&quot; zit 'p' op positie 0, 'y' op positie 1 en 'n' op positie.</p>
-<p>De lengte van een string s kun je berekenen met len(s); de laatste letter van de string heeft dus index len(s)-1. De lengte van het woord &quot;python&quot; is 6, dus de laatste letter, 'n' zit op positie 5.</p>
-<p>Als een string is opgeslagen in een variabele, dan kun je de individuele letters van de string krijgen via de variabele naam en de index van de gevraagde letter tussen vierkante haken ([]) rechts ernaast. Bijvoorbeeld:</p>
+<p>Ieder teken in een string heeft een positie (soms index genoemd). De positie begint bij 0 en loopt op tot en met de lengte van de string 1.</p>
+<p>Bij het zes letter woord &quot;python&quot; zit 'p' op positie 0, 'y' op positie 1 en 'n' op positie 5.</p>
+<p>De lengte van een string 'woord' kun je berekenen met <code>len(woord)</code>; de laatste letter van de string heeft dus index len(s)-1. De lengte van het woord &quot;python&quot; is 6, dus de laatste letter, 'n' zit op positie 5.</p>
+<p>Als een string is opgeslagen in een variabele, dan kun je de individuele letters van de string krijgen via de variabele naam en de index van de gevraagde letter tussen vierkante haken [ ] rechts ernaast. Bijvoorbeeld:</p>
 
 <iframe height="250px" width="100%" src="https://repl.it/@smer/Th104?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 <!-- th 10.4
@@ -100,18 +102,18 @@ print( woord[0] )
 </pre>
 -->
 
-<p>Dit drukt af: <br> b<br> r<br> a<br></p>
+<!--<p>Dit drukt af: <br> b<br> r<br> a<br></p>-->
 
 <h3 id="opgave-10.3.1-letters-uit-een-woord"><span style="color:red">Opgave</span> 10.3.1 Letters uit een woord</h3>
-<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/850036/ea09f44d0e3e19c1cf431215eec3e2cf"></iframe>
+<iframe frameborder="0" width="100%" height="400px" src="https://repl.it/student_embed/assignment/850036/ea09f44d0e3e19c1cf431215eec3e2cf"></iframe>
 <a href="Strings_oplossingen.html#opgave-10.3.1-letters-uit-een-woord">Klik hier</a> voor de uitwerking.
 
 
 
 <h2 id="strings-doorlopen">10.3.2 Strings doorlopen</h2>
-<p>Ik heb eerder uitgelegd hoe je de tekens van een string kunt doorlopen middels een for loop:</p>
+<p>Je kunt de tekens van een string doorlopen met een for loop:</p>
 
-<iframe height="250px" width="100%" src="https://repl.it/@smer/Th105?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="300px" width="100%" src="https://repl.it/@smer/Th105?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 <!--Th10.5
 <pre class="python">
 woord = "appel"
@@ -119,8 +121,7 @@ for letter in woord:
     print( letter )
 </pre>
 -->
-<p>Nu je indices begrijpt, realiseer je je waarschijnlijk wel dat je die ook kunt gebruiken om een string te doorlopen.</p>
-<p>Zo doe je het met een <code>for</code> loop:</p>
+<p>Je kunt met indices ook een string doorlopen. Zo doe je het met een <code>for</code> loop:</p>
 <iframe height="250px" width="100%" src="https://repl.it/@smer/Th106?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <!--TH10.6
@@ -153,7 +154,7 @@ Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="Strings_oplossi
 <p>Er is een aantal methodes beschikbaar die ontworpen zijn om strings te bewerken. Al deze methodes worden toegepast op een string om een operatie uit te voeren. Omdat strings onveranderbaar zijn, zullen deze methodes nooit de string waarop ze werken wijzigen, maar ze retourneren in plaats daarvan een gewijzigde versie van de string.</p>
 <h3 id="strip">10.4.1 <code>strip()</code></h3>
 <p><code>strip()</code> verwijdert spaties aan het begin en einde van een string, inclusief eventuele &quot;newline&quot; tekens en andere tekens die als spaties gezien kunnen worden. Als je iets anders dan spaties wilt verwijderen, kun je als parameter een string meegeven die bestaat uit alle te verwijderen tekens.</p>
-<iframe height="400px" width="100%" src="https://repl.it/@smer/TH108?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="300px" width="100%" src="https://repl.it/@smer/TH108?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 <!--TH10.8
 <pre class="python">
 tekst = "   En nu iets heel anders \n    "
@@ -167,13 +168,13 @@ print( "[" + tekst + "]" )
 
 
 <h3 id="opgave-10.4.1-strip"><span style="color:red">Opgave</span> 10.4.1 <code>strip()</code></h3>
-<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/850040/dd25ba178487ac1890f4644deb981cbf"></iframe>
+<iframe frameborder="0" width="100%" height="400px" src="https://repl.it/student_embed/assignment/850040/dd25ba178487ac1890f4644deb981cbf"></iframe>
 
 Voor deze opdracht is geen model oplossing beschikbaar.
 
 
 <h3 id="upper-en-lower">10.4.2 <code>upper()</code> en <code>lower()</code></h3>
-<p><code>upper()</code> creëert een versie van een string met alle letters als hoofdletters. <br> <code>lower()</code> werkt op dezelfde manier, maar maakt van alle letters kleine letters. <br> Geen van beide methodes heeft parameters.</p>
+<p><code>upper()</code> creëert een versie van een string met alle letters als hoofdletters. <code>lower()</code> werkt op dezelfde manier, maar maakt van alle letters kleine letters. Geen van beide methodes heeft parameters.</p>
 <iframe height="250px" width="100%" src="https://repl.it/@smer/Th109?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 <!-- TH 10.9
 <pre class="python">
@@ -185,15 +186,14 @@ print( tekst.lower() )
 -->
 
 <h3 id="opgave-10.4.2-upper-en-lower"><span style="color:red">Opgave</span> 10.4.2 <code>upper()</code> en <code>lower()</code></h3>
-<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/850167/fd6393f5d1467eb95f857f4bfea84216"></iframe>
+<iframe frameborder="0" width="100%" height="400px" src="https://repl.it/student_embed/assignment/850167/fd6393f5d1467eb95f857f4bfea84216"></iframe>
 <a href="Strings_oplossingen.html#opgave-10.4.2-upper-en-lower">Klik hier</a> voor de uitwerking.
 
 
 
 
 <h3 id="find">10.4.3 <code>find()</code></h3>
-<p><code>find()</code> kun je gebruiken om in een string te zoeken naar de start-index van een bepaalde substring. Als parameter krijgt de methode de gezochte substring.</p>
-<p>Als de substring niet voorkomt, wordt -1 opgeleverd.</p>
+<p><code>find()</code> kun je gebruiken om in een string te zoeken naar de start-index van een bepaalde substring. Als parameter krijgt de methode de gezochte substring. Als de substring niet voorkomt, wordt -1 opgeleverd.</p>
 <!-- TH10.10
 <pre class="python">
 tekst = "Humpty Dumpty zat op de muur"
@@ -206,7 +206,7 @@ print( tekst.find( "q" ) )
 <iframe height="250px" width="100%" src="https://repl.it/@smer/Th1010?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <h3 id="opgave-10.4.3-find"><span style="color:red">Opgave</span> 10.4.3 <code>find()</code></h3>
-<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/850169/7d2141f19761721daaa785afe435790c"></iframe>
+<iframe frameborder="0" width="100%" height="400px" src="https://repl.it/student_embed/assignment/850169/7d2141f19761721daaa785afe435790c"></iframe>
 
 <a href="Strings_oplossingen.html#opgave-10.4.3-find">Klik hier</a> voor de uitwerking.
 
@@ -225,7 +225,7 @@ print( tekst.replace( "zat op" , "viel van" ) )
 
 
 <h3 id="opgave-10.4.4-replace"><span style="color:red">Opgave</span> 10.4.4 <code>replace()</code></h3>
-<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/852620/27087ce98ac909f7f6d1a570fe0ef6c3"></iframe>
+<iframe frameborder="0" width="100%" height="400px" src="https://repl.it/student_embed/assignment/852620/27087ce98ac909f7f6d1a570fe0ef6c3"></iframe>
 <a href="Strings_oplossingen.html#opgave-10.4.4-replace">Klik hier</a> voor de uitwerking.
 
 
