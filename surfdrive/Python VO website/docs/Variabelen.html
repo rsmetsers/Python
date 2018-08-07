@@ -61,7 +61,7 @@ print( "x * y =", x * y )
 print( "x + y =", x + y )
 </pre>
 -->
-<iframe height="250px" width="100%" src="https://repl.it/@smer/Th43?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="350px" width="100%" src="https://repl.it/@smer/Th43?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 <p>Je kunt de inhoud van een variabele kopiëren in een andere variabele, via de assignment operator.</p>
 <!-- th 4.4<pre class="python">
 x = 2
@@ -134,7 +134,7 @@ print(mijnGeluksgetal)
 -->
 Klik <a href="Variabelen_oplossingen.html#waarden-van-variabelen-traceren">hier</a> voor de uitwerking.
 
-<p>We gebruikten hierboven voor het eerst de operator plus (+), waardoor twee getallen worden opgeteld. Evenzo zijn er operatoren voor aftrekken (-), vermenigvuldigen (*), en delen (/). We komen er in een latere les op terug.</p>
+<p>We gebruikten hierboven voor het eerst de operator plus (+), waardoor twee getallen worden opgeteld. Er zijn ook operatoren voor aftrekken (-), vermenigvuldigen (*), en delen (/). Daar komen we later op terug.</p>
 
 <h3 id="opgave-4.1.1-waarden-van-variabelen-nalopen"><span style="color:red">Opgave 4.1.1 </span>Waarden van variabelen nalopen.</h3>
 <!--<p>Druk op Run. Voeg aan elke regel code commentaar toe om uit te leggen wat er gebeurt.</p>-->
@@ -145,6 +145,9 @@ Klik <a href="Variabelen_oplossingen.html#opgave-4.1.1-waarden-van-variabelen-na
 
 <h2 id="tracing-tabel">Tracing tabel</h2>
 <p>Je kunt het geheugen van een computer nabootsen met potlood en papier, door de opgeslagen waarden bij te houden in een tabel. Hier volgt een voorbeeld; denk eraan dat * in Python vermenigvuldigen betekent.</p>
+
+
+
 <pre class="python">
 getal1 = 2
 getal2 = 3
@@ -154,8 +157,35 @@ getal1 = getal1 + getal2 + getal3
 getal3 = getal2 * getal1
 </pre>
 <p>Antwoord:</p>
+<table>
+        <tr>
+                <th></th>
+                <th colspan="3">Waarde nadat de opdracht is uitgevoerd</th>
+        </tr>
+        <tr id="tracingVariableTable">
+                <th></th>
+                <th><code>getal1</code></th>
+                <th><code>getal2</code></th>
+                <th><code>getal3</code></th>
+        </tr>
+        <tr>
+                <td><code>getal1 = 2</code></td>
+                <td><code>2</code></td>
+                <td></td>
+                <td></td>
+        </tr>
+        <tr>
+                <td>getal1 = 3</td>
+                <td>2</td>
+                <td>3</td>
+                <td></td>
+        </tr>
+
+</table>
+
+
 <pre class="python">
-Opdracht                Waarde nadat de opdracht is uitgevoerd
+Opdracht                
                                     getal1  getal2  getal3
 getal1 = 2                             2
 getal2 = 3                             2        3
@@ -254,7 +284,7 @@ print( a + b )
 print( c + d )
 </pre>
 -->
-<iframe height="300px" width="100%" src="https://repl.it/@smer/410?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="300px" width="100%" src="https://repl.it/@smer/Th410?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <p>Omdat <code>a</code> en <code>b</code> beide getallen zijn, is de <code>+</code> in <code>a + b</code> de numerieke optelling. Omdat <code>c</code> en <code>d</code> beide strings zijn, is de <code>+</code> in <code>c + d</code> de “concatenatie” (“vastplak”) operator.</p>
 

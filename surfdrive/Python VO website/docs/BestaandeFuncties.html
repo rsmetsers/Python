@@ -78,7 +78,7 @@ print( int( y ) )
 <!-- Th5.4 <pre class="python">
 print( print( "Hello, world!" ) )
 </pre>-->
-<iframe height="250px" width="100%" src="https://repl.it/@smer/54?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th54?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <p>Je ziet dat deze code twee regels print. De eerste bevat de tekst "Hello, world!" en de tweede het woord "None." Wat betekent dat woord ''None''? Om dat te begrijpen, moet je uitpluizen hoe Python deze regel code verwerkt.</p>
 <p>Wanneer Python deze regel code bekijkt, ziet het eerst <code>print( &lt;iets&gt; )</code>. Omdat <code>&lt;iets&gt;</code> een argument is, moet dat eerst geëvalueerd worden. <code>&lt;iets&gt;</code> is <code>print( &lt;nog_iets&gt; )</code>. Omdat <code>&lt;nog_iets&gt;</code> een argument is, moet Python dat eerst evalueren. <code>&lt;nog_iets&gt;</code> is de string <code>''Hello, world!''</code>. Die hoeft niet verder geëvalueerd te worden, dus <code>print()</code> wordt uitgevoerd met als argument <code>''Hello, world!''</code>, en Python “vangt” de retour waarde van deze uitvoering omdat die nodig is als <code>&lt;iets&gt;</code>.</p>

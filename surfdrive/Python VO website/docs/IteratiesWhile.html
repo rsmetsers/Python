@@ -28,16 +28,19 @@
 <hr />
 <h2 id="while-loop-intro"><code>while</code> loop intro <!-- HFSTK 7.1.1.0 --></h2>
 <p>Stel dat je vijf keer een strafregel moet schrijven, wellicht zou je dat als volgt coderen:</p>
+<iframe height="300px" width="100%" src="https://repl.it/@smer/th71?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<!--th7.1
 <pre class="python">
 print("Ik zal nooit meer vergeten om mijn informatica huiswerk te maken." )
 print("Ik zal nooit meer vergeten om mijn informatica huiswerk te maken." )
 print("Ik zal nooit meer vergeten om mijn informatica huiswerk te maken." )
 print("Ik zal nooit meer vergeten om mijn informatica huiswerk te maken." )
 print("Ik zal nooit meer vergeten om mijn informatica huiswerk te maken." )</pre>
+-->
 <p>Maar wat als je 500 strafregels moet schrijven? Hiervoor kun je een loop gebruiken.</p>
 <p>De eerste loop die ik bespreek is de <code>while</code> loop. Een <code>while</code> statement lijkt heel veel op een <code>if</code> statement. De syntax is:</p>
 <pre class="python">
-    while < boolean voorwaarde >:
+while < boolean voorwaarde >:
         < acties >
 </pre>
 <p>Net als bij een <code>if</code> statement, test een <code>while</code> statement een boolean expression, en als de voorwaarde <code>True</code> oplevert, wordt het blok code onder de <code>while</code> uitgevoerd. Echter, in tegenstelling tot een <code>if</code> statement, gaat Python, wanneer het blok code uitgevoerd is, terug naar de boolean voorwaarde na de <code>while</code>, en test die opnieuw. Als de voorwaarde nog steeds <code>True</code> oplevert, dan wordt het blok code nogmaals uitgevoerd. En als het is uitgevoerd, keert Python wederom terug naar de boolean voorwaarde. Dit wordt steeds herhaald, totdat de boolean voorwaarde <code>False</code> oplevert. Pas op dat moment slaat Python het blok code onder de <code>while</code> over en gaat eronder verder.</p>
@@ -52,12 +55,13 @@ print("Ik zal nooit meer vergeten om mijn informatica huiswerk te maken." )</pre
 2b) Bepaal wat je steeds wilt herhalen, de acties.<br>
 2c) Verander de variabele (meestal verhogen met 1).</p>
 <pre class="python">
-<variabele initialiseren>
+< variabele initialiseren >
 while < boolean voorwaarde >:
         < acties >
         < variabele aanpassen >
 </pre>
 <p>Het bovenstaande voorbeeld wordt met een <code>while</code> loop dan:</p>
+<!-- Th7.2
 <pre class="python">
 aantal_strafregels_geschreven = 0 #teller
 
@@ -65,7 +69,8 @@ while aantal_strafregels_geschreven < 5: #zolang nog geen 5 zijn afgedrukt, herh
     print("Ik zal nooit meer vergeten mijn informatica huiswerk te maken." )
     aantal_strafregels_geschreven += 1 #verhooog de teller
 </pre>
-
+-->
+<iframe height="300px" width="100%" src="https://repl.it/@smer/Th72?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 Zie het volgende filmpje voor <b>extra</b> uitleg over de while-loop (kijk alleen tot 2:40):
 <iframe width="185" height="105" src="https://www.youtube.com/embed/jSs58VZVLw8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -90,12 +95,17 @@ Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="IteratiesWhile_
 
 <h3 id="stroomdiagram-voor-de-while-loop">Stroomdiagram voor de <code>while</code> loop <!-- 7.1.1.2 --></h3>
 <p>Het printen van de nummers 0 tot en met 4 kun je met een <code>while</code> loop als volgt doen:</p>
+<!--Th7.9
 <pre class="python">
 nummer = 0
 while nummer < 5:
     print( nummer )
     nummer += 1
-print( "Klaar" )</pre>
+print( "Klaar" )
+</pre>
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th79?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 <p>Deze code wordt ook weergegeven in het onderstaande stroomdiagram.</p>
 
 <img src="../img/PythonAfb7.1.jpg" alt="Stroomdiagram dat een while loop weergeeft" style="width:250px;"> <br>
@@ -135,6 +145,7 @@ Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="IteratiesWhile_
 
 <h3 id="meer-doen-in-een-while-loop">Meer doen in een <code>while</code> loop <!-- Hoofdstuk 7.1.2.1  --></h3>
 <p>Stel dat je de gebruiker moet vragen om drie getallen, ze moet optellen, en dan het totaal moet laten zien. Zonder while loop zou dat er zo uit zien:</p>
+<!-- th7.3
 <pre class="python">
 totaal = 0 #houd een variabele voor het totaal bij
 
@@ -152,6 +163,8 @@ totaal += num3 #tel num3 bij het totaal op
 
 print( "Totaal is", totaal )
 </pre>
+-->
+<iframe height="600px" width="100%" src="https://repl.it/@smer/Th73?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <h3 id="opgave-7.1.2.1-som-berekenen-met-een-while-loop"><span style="color:red">Opgave</span> 7.1.2.1 Som berekenen met een <code>while</code> loop</h3>
 <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/848999/60d4edfb7eeb64de9125066205fb45bf"></iframe>
@@ -162,17 +175,21 @@ Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="IteratiesWhile_
 
 <h3 id="nog-meer-doen-in-een-while-loop">Nog meer doen in een <code>while</code> loop <!-- Hoofdstuk 7.1.2.2  --></h3>
 <p>Als je de vorige voorbeeld begrijpt, begrijp je waarschijnlijk ook hoe je de gebruiker kunt vragen om vijf getallen, en dan de som van de vijf te berekenen:</p>
+
+<!-- th7.8
 <pre class="python">
 aantal_getallen = 0
 totaal = 0
 while aantal_getallen < 5:
     invoer = input( "Geef een nummer: " ) #vraag de gebruiker om invoer
-    ingevoerde_getal = int( ingevoerde_getal ) #zet de invoer om in een getal
+    ingevoerde_getal = int( invoer ) #zet de invoer om in een getal
     totaal += ingevoerde_getal #tel de ingevoerde waarde op bij het totaal
     aantal_getallen += 1
 
 print( "Totaal is", totaal )
 </pre>
+-->
+<iframe height="500px" width="100%" src="https://repl.it/@smer/Th78?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <p>Bestudeer bovenstaande code. Er worden twee variabelen gebruikt. <code>totaal</code> wordt gebruikt om de vijf getallen in op te tellen. <code>totaal</code> begint op nul, omdat bij de start van het programma nog geen getallen ingegeven zijn, dus het totaal is nul. <code>aantal_getallen</code> wordt gebruikt om te tellen hoe vaak de loop doorlopen is. Omdat de loop vijf keer uitgevoerd moet worden, start <code>teller</code> op nul en de boolean voorwaarde voor de loop test of <code>teller</code> kleiner is dan 5. Dus <code>aantal_getallen</code> moet iedere keer dat de loop doorlopen wordt met 1 verhoogd worden, zodat na vijf keer doorlopen de boolean voorwaarde <code>False</code> is.</p>
 <p>Je vraagt je misschien af waar ik <code>aantal_getallen</code> liet starten bij 0 en de boolean voorwaarde liet testen of <code>aantal_getallen &lt; 5</code>. Waarom begon ik niet bij <code>aantal_getallen = 1</code> en heb ik niet <code>aantal_getallen &lt;= 5</code> getest? De reden is gewoonte: programmeurs zijn gewend om indices bij 0 te laten beginnen en als ze tellen, te tellen “tot maar niet inclusief.” Als je verder gaat met programmeren zul je ontdekken dat de meeste code deze gewoonte naleeft. De meeste standaard programmeerconstructies die indices gebruiken, doen het ook zo. Mijn advies is daarom dat je hieraan gewend raakt, want dat zal code gemakkelijker leesbaar maken.</p>
@@ -228,6 +245,7 @@ print( "Totaal is", totaal )
 <p>Stel je wilt een gebruiker een aantal getallen laten invoeren en die getallen optellen. Je wil de gebruiker zoveel getallen laten ingeven als hij wil, zelfs geen getallen. Dan weet je niet weet hoe vaak de loop doorlopen moet worden. In plaats daarvan bepaalt de gebruiker hoe vaak de loop doorlopen wordt. Je kan met de gebruiker afspreken dat je steeds getallen blijft vragen totdat hij een <code>-1</code> invoert.</p>
 <p>Het algoritme is dan: zolang de gebruiker geen <code>-1</code> invoert blijven we het volgende herhalen: vraag een getal en tel deze bij mijn totaal op.</p>
 <p>De code hieronder laat zien hoe je een <code>while</code> loop kunt opzetten die de gebruiker zoveel getallen laat ingeven als gewenst. De gebruiker stopt met het ingeven van getallen door een -1 in te geven. Het totaal wordt afgedrukt wanneer de loop beëindigd is.</p>
+<!-- th7.5
 <pre class="python">
 invoer_nummer = 0
 totaal = 0
@@ -242,6 +260,9 @@ while invoer_nummer != -1: #zolang geen -1 is ingevoerd, herhaal dan:
 
 print( "Totaal is", totaal ) #druk aan einde het totaal af
 </pre>
+-->
+<iframe height="300px" width="100%" src="https://repl.it/@smer/Th75?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 <h3 id="opgave-7.1.3-bereken-gemiddelde-de-gebruiker-bepaalt-hoeveel-getallen"><span style="color:red">Opgave</span> 7.1.3 Bereken gemiddelde, de gebruiker bepaalt hoeveel getallen</h3>
 <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/849001/076562eb08f2aa9489d24dc42233391e"></iframe>
 
@@ -264,11 +285,15 @@ print( "Totaal is", totaal )
 ```
 -->
 
+<!-- th7.6
 <pre class="python">
 teller = 0
 while ( teller < 5 ):
     print( teller )
 </pre>
+-->
+<iframe height="250px" width="100%" src="https://repl.it/@smer/Th76?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 <p>De titel boven deze paragraaf gaf het antwoord natuurlijk al weg: deze code bevat een loop die nooit eindigt. Als je hem uitvoert, lijkt het alsof het programma “hangt,” dus wel draait maar niks doet. Maar het doet niet niks, het is zelfs hoogst actief, maar het is bezig een nooit-eindigende optelling uit te voeren. <code>nummer</code> begint bij 1, maar wordt in de loop niet gewijzigd. Daarom wordt de boolean voorwaarde nooit <code>False</code>. Dit is een “eindeloze loop.” Dit soort loops zijn het grootste gevaar als je <code>while</code> loops bouwt.</p>
 <!--Als je deze code uitvoert in IDLE, kun je de uitvoering afbreken door `Ctrl-C` te drukken. Andere editors hebben menu opties waarmee je de uitvoering van code kunt onderbreken. In gebruikersonvriendelijke omgevingen moet je soms het proces waarin Python draait via een systeem commando of systeem programma afbreken.-->
 
@@ -284,6 +309,7 @@ Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="IteratiesWhile_
 <h2 id="loop-controle-met-een-logische-vlag">Loop controle met een logische vlag <!-- H 7.1.5 --></h2>
 <p>Soms wil je het aantal keren dat iets herhaald wordt afhankelijk is van wat er tijdens de uitvoer gebeurt. Bijvoorbeeld, iemand moet steeds een getal raden totdat ze het goed hebben. Raden ze het getal goed, dan spring je uit de lus.</p>
 <p>Dit kun je voor elkaar krijgen door een logische vlag (in het Engels: Boolean Flag) die halverwege de lus een nieuwe waarde krijgt. In het voorbeeld heet de vlag 'goed_geraden'. Deze begint op 'False' (niet waar). In de conditie van de herhaling wordt gekeken of deze nog op 'False' staat, in dat geval wordt de herhaling uitgevoerd. Zodra er goed geraden is krijgt deze een nieuwe waarde, 'True'. Hierdoor zal de herhaling niet meer uitgevoerd worden.</p>
+<!--Th7.7
 <pre class="python">
 TE_RADEN_GETAL = 5
 goed_geraden = False #om te beginnen staat de vlag op False
@@ -299,6 +325,8 @@ while not goed_geraden: #herhaal zolang vlag nog op False staat
 
 print("Klaar")
 </pre>
+-->
+<iframe height="300px" width="100%" src="https://repl.it/@smer/Th77?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 <p>Trouwens: in sommige online cursussen zul je misschien iets lezen over een 'break'opdracht om uit een lus uit te springen. Dit is een zeer slechte gewoonte en is fout.
 
 <h3 id="opgave-7.1.4-fout-herstellen-in-de-loop"><span style="color:red">Opgave</span> 7.1.5.1 Logische Vlag</h3>

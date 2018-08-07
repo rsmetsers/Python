@@ -29,7 +29,7 @@ getal = 0 #eerste getal is 0
 while ( getal < 10 ):
     print( getal )
     getal += 1  #verhoog getal met 1
-    
+
 print("Klaar!")
 </pre>
 <p>Antwoord: De <code>while</code> loop is 10 keer uitgevoerd. Dit zie je omdat er 10 regels zijn afgedrukt, en dus 10 keer de <code>print()</code> is aangeroepen.</p>
@@ -255,6 +255,22 @@ while aantal_vragen < 5: #herhaal zolang vlag nog op False staat
 
 print("Je score is:", score)
 </pre>
+
+<h3 id="afsluitende-opgave-while-loop-7.6-decBin"><span style="color:red">Afsluitende opgave while-loop</span> 7.6 Decimaal naar Binair</h3>
+<pre class="python">
+#Zet decimaal om in binair
+getal = int (input("Voer een (decimaal) getal in:"))
+
+while getal > 0:
+ 	if getal%2 == 0:
+ 		print("0", end="")
+ 	else:
+ 		print("1", end="")
+ 		getal = getal - 1
+
+ 	getal = getal/2
+</pre>
+
 <hr />
 <i><a href="IteratiesWhile.html">Terug naar de uitleg en gewone opgaven over While-Loop</a></i><br>
 <i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
