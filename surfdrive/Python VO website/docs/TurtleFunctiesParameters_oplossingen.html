@@ -175,7 +175,7 @@ turtle.done()
 Van de code voor het tekenen van een balk maak je een definitie:
 
 <pre class="python">
-def balk():
+def tekenBalk():
     turtle.forward(150)
     turtle.right(90)
     turtle.forward(40)
@@ -186,14 +186,14 @@ def balk():
     turtle.right(90)
 </pre>
 
-Die kun je dan zo aanroepen: `balk()`.<br>
+Die kun je dan zo aanroepen: `tekenBalk()`.<br>
 
 De uiteindelijke code komt er dan zo uit te zien:
 
 <pre class="python">
 import turtle
 
-def balk():
+def tekenBalk():
     turtle.begin_fill()
     turtle.forward(300)
     turtle.right(90)
@@ -213,13 +213,13 @@ turtle.pendown()
 #kleur: rood
 turtle.color("red")
 #teken eerste balk
-balk()
+tekenBalk()
 turtle.goto(0, -40)
 turtle.color("white")
-balk()
+tekenBalk()
 turtle.goto(0, -80)
 turtle.color("blue")
-balk()
+tekenBalk()
 
 # Ga weer naar de beginpositie voor het tekenen van de omlijning
 turtle.penup()
@@ -251,7 +251,7 @@ import turtle
 
 #FUNCTIE DEFINITIE
 #Definitie: Instructies voor het tekenen van een vierkant met een gegeven `grootte`
-def vierkant( grootte ):
+def tekenVierkant( grootte ):
     turtle.forward( grootte )
     turtle.right(90)
     turtle.forward( grootte )
@@ -264,10 +264,10 @@ def vierkant( grootte ):
 #HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
 turtle.pendown()
 
-vierkant(100) #Aanroep: teken een vierkant van 100px.
-vierkant(30)
-vierkant(90)
-vierkant(250)
+tekenVierkant(100) #Aanroep: teken een vierkant van 100px.
+tekenVierkant(30)
+tekenVierkant(90)
+tekenVierkant(250)
 
 turtle.done()
 </pre>
@@ -329,7 +329,7 @@ def tekenDak( lengte, kleur ):
 #HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
 turtle.pendown()
 tekenVierkant(150) #Aanroep: tekenVierkant met lengte 150
-tekenDak ( 150, "blue") #Aanroep: teken een blauw gevulde driehoek van lengte 150
+tekenDak( 150, "blue") #Aanroep: teken een blauw gevulde driehoek van lengte 150
 
 turtle.done()
 </pre>
@@ -338,7 +338,7 @@ turtle.done()
 <h3 id="opgave-eigen-creatie-met-functies-en-parameters"><span style="color:red">Opgave</span> Eigen creatie met functies en parameters</h3>
 -- geen uitwerkingen beschikbaar --
 
-<hr> 
+<hr>
 
 <i><a href="TurtleFunctiesParameters.html">Terug naar de opgaven van Turtle Graphics-Functies en Parameters</a></i><br>
 <i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>

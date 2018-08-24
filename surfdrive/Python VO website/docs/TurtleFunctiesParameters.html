@@ -27,14 +27,14 @@
 <h2 id="eigen-functies-schrijven">Eigen functies schrijven</h2>
 <p>Voor code dat bij elkaar hoort kun je in een functie schrijven. Een functie heeft een naam, en een definitie: de instructies die aangeven wat er moet gebeuren. Een functie definitie begint met <code>def</code> gevolgd door een naam en <code>:</code>. Daarna spring je in voor alle code dat bij de functie hoort.</p>
 <p>Om je eigen functie aan te roepen geef je de naam gevolgd door <code>()</code>. Je hoeft er nu geen <code>turtle.</code> voor te zetten omdat de definitie in dit bestand staat (en niet in een aparte turtle module).</p>
-<p>Hier is een voorbeeld van een functie <code>vierkant()</code> voor het tekenen van een vierkant met zijdes van 50 pixels.</p>
+<p>Hier is een voorbeeld van een functie <code>tekenVierkant()</code> voor het tekenen van een vierkant met zijdes van 50 pixels.</p>
 <pre class="python">
 import turtle
 
 #FUNCTIE DEFINITIE
 #Definitie: instructies voor het tekenen van een vierkant
 #Na afloop kijkt turtle dezelfde richting uit als in het begin.
-def vierkant():
+def tekenVierkant():
     turtle.forward(50)
     turtle.right(90)
     turtle.forward(50)
@@ -46,7 +46,7 @@ def vierkant():
 
 #HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
 turtle.pendown()
-vierkant() #Aanroep: teken de vierkant!
+tekenVierkant() #Aanroep: teken de vierkant!
 turtle.done()</pre>
 
 <h3 id="opgave-vierkant-kunst"><span style="color:red">Opgave</span> Vierkant-kunst</h3>
@@ -71,7 +71,7 @@ Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="TurtleFunctiesP
 
 <h2 id="eigen-functies-schrijven-1">Eigen functies schrijven</h2>
 <p>Bij het tekenen van de Nederlandse vlag heb je veel code geschreven dat zich herhaalt. Op de kleur na, is de code voor het tekenen van de blauwe balk hetzelfde als de witte balk en de rode balk.</p>
-<p>Doordat dezelfde code er nu drie keer in staat, maakt dit je code slecht te lezen, en als je wat wilt aanpassen (bijvoorbeeld de breedte) is dat ook nog eens veel werk want dat moet je dan op verschillende plaatsen in je code aanpassen. <!--(zie ook Hoofdstuk 8)-->.</p>
+<p>Doordat dezelfde code er nu drie keer in staat, maakt dit je code slecht te lezen, en als je wat wilt aanpassen (bijvoorbeeld de breedte) is dat ook nog eens veel werk want dat moet je dan op verschillende plaatsen in je code aanpassen. <!--(zie ook Hoofdstuk 8)--></p>
 <p>Van code dat bij elkaar hoort kun je een functie schrijven. Dit begint met <code>def</code> gevolgd door een naam en <code>:</code>. Daarna spring je in voor alle code dat bij de functie hoort.</p>
 
 
@@ -83,7 +83,7 @@ Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="TurtleFunctiesP
 
 
 <h2 id="parameters">Parameters</h2>
-<p>Je hebt in een vorige opdracht een functie geschreven om een vierkant te tekenen:</p>
+<p>Je hebt in een vorige opdracht een functie <code>tekenVierkant</code> geschreven om een vierkant te tekenen:</p>
 <pre class="python">
 
 import turtle
@@ -91,7 +91,7 @@ import turtle
 #FUNCTIE DEFINITIE
 #Definitie: instructies voor het tekenen van een vierkant
 #Na afloop kijkt turtle dezelfde richting uit als in het begin.
-def vierkant():
+def tekenVierkant():
     turtle.forward(50)
     turtle.right(90)
     turtle.forward(50)
@@ -103,7 +103,7 @@ def vierkant():
 
 #HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
 turtle.pendown()
-vierkant() #Aanroep: teken de vierkant!
+tekenVierkant() #Aanroep: teken de vierkant!
 
 turtle.done()
 </pre>
@@ -113,7 +113,7 @@ import turtle
 
 #FUNCTIE DEFINITIE
 #Definitie: Instructies voor het tekenen van een vierkant met een gegeven `grootte`
-def vierkant( grootte ):
+def tekenVierkant( grootte ):
     turtle.forward( grootte )
     turtle.right(90)
     turtle.forward( grootte )
@@ -125,14 +125,14 @@ def vierkant( grootte ):
 
 #HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
 turtle.pendown()
-vierkant(100) #Aanroep: teken een vierkant van 100px.
+tekenVierkant(100) #Aanroep: teken een vierkant van 100px.
 
 turtle.done()
 </pre>
 <ol style="list-style-type: decimal">
-<li><p>Je geeft in de definitie tussen haakjes aan welk gegeven je meegeeft dat steeds mag veranderen. In dit voorbeeld <code>def vierkant( grootte ):</code></p></li>
+<li><p>Je geeft in de definitie tussen haakjes aan welk gegeven je meegeeft dat steeds mag veranderen. In dit voorbeeld <code>def tekenVierkant( grootte ):</code></p></li>
 <li><p>In de definitie gebruik je datzelfde variabele in de instructie. Bijvoorbeeld: <code>turtle.forward( grootte )</code></p></li>
-<li><p>Je roept de functie aan met de juiste waarde. In dit voorbeeld: <code>vierkant( 100 )</code>.</p></li>
+<li><p>Je roept de functie aan met de juiste waarde. In dit voorbeeld: <code>tekenVierkant( 100 )</code>.</p></li>
 </ol>
 
 

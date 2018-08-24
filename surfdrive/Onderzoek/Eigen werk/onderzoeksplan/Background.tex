@@ -212,7 +212,7 @@ Assessments are used for several purposes. \citeA{mcmillan2007formative} disting
 
 
 
-A substantial amount of research has been done into the role of assessment in education. In his study Frederiksen (\cite{frederiksen1984}) describe assessment as a motivator for learning. Alderson and Wall (1993) and Prodromou (1996) elaborate by stating that what is assessed strongly influences what is learned. Biggs (\cite{biggs1996}) prescribes that instruction, learning, and assessment must be well-aligned. This alignment exists in most traditional knowledge-based tests, yet constructive alignment for competency-based instruction is not self-evident (\cite{baartman2006wheel}). With the emphasis of Computational Thinking and problem solving in reformed CS curricula, learning and instruction is increasingly competency-based. Assessment of competencies is complex, mainly because it comprises a multi-facetted blend of knowledge, skills and attitudes (\cite{merrienboer2002competenties}).
+A substantial amount of research has been done into the role of assessment in education. In his study Frederiksen (\cite{frederiksen1984}) describe assessment as a motivator for learning. Alderson and Wall (1993) and Prodromou (1996) elaborate by stating that what is assessed strongly influences what is learned. \citeA{biggs1996} prescribes that instruction, learning, and assessment must be well-aligned. This alignment exists in most traditional knowledge-based tests, yet constructive alignment for competency-based instruction is not self-evident\cite{baartman2006wheel}. With the emphasis of Computational Thinking and problem solving in reformed CS curricula, learning and instruction is increasingly competency-based. Assessment of competencies is complex, mainly because it comprises a multi-facetted blend of knowledge, skills and attitudes\cite{merrienboer2002competenties}.
 
 
 As discussed in section \ref{ProgrammingKnowledgeAndSkills}, though they complement each other, CT and programming are fundamentally different. CT is a skill and this tacit knowledge should be assessed directly\cite{denning2017remaining}. Assessment should thus elicit behaviors which indicate that a student can master the competency. As Denning formulates it: "\emph{given that so much education is formulated around students acquiring knowledge, looking carefully at skill development in computational thinking is a new and challenging idea}."\cite{denning2017remaining}\todo{Erik: alignment = validity +?}
@@ -276,6 +276,9 @@ in addition the following other success criteria have been mentioned in CS asses
 \item availability and ease of access \cite{Yadav2015}
 \item fun and engaging \todo{cite}
 \item \ldots \todo{toevoegen, incl cite}
+\item do-able task: lessen the cognitive load and remove troublesome knowledge to adequately assess students' capabilities. \citeA{mccartney2013assessmentsProgramming} modified the \citeauthor{McCracken2001} Working group assessment and found that students performed significantly better whilst stil eliciting information about what students could and couldn't do.
+
+
 \end{itemize}
 \note{2017Catete geeft een mooi overzicht van de aspecten van de wheel, pg 100}
 
@@ -288,7 +291,11 @@ in addition the following other success criteria have been mentioned in CS asses
 %\end{itemize}
 
 
+
+
 \subsubsection*{Evaluation models}\label{sec:evaluationModels}
+A test specification is a detailed description of the instrument that specifies the percentage of questions dedicated to each construct, the question format, and the scoring procedures.
+
 \noindent \textbf{Rubrics}\todo{ook iets vertellen over andere evaluation models.. toets matrijs, voorbeeld uitwerking?, etc?}
 
 
@@ -314,8 +321,22 @@ Rubrics can be either holistic or analytical. Table \ref{table:RubricsHolisticAn
 
 \citeA{catete2017framework} distinguishes between two types of descriptive measures in rubrics, the learning-based rubric which is learning-goal oriented, and performance-based rubrics which evaluate the end product.
 
-While revisiting the \citeauthor{McCracken2001} working group research, \citeA{mccartney2013assessmentsProgramming} assessed programs using the same two sets of criteria: General Evaluation (largely objective and
-based on black-box testing) and Degree-of-closeness (a subjective measure based on the code structure, function and how close to working the program was).
+
+
+\citeA{smith2005rubricsCriteria} provide a detailed rubric for grading programs and describe rationale for their criteria. Their criteria includes
+program correctness (correct output, output quality, adhering to specifications, testing, and efficiency) and style criteria (coding
+style, program design/decomposition/modularity, and parameter usage).
+
+
+While revisiting the \citeauthor{McCracken2001} working group research, \citeA{mccartney2013assessmentsProgramming} assessed programs using the same two sets of criteria: General Evaluation (largely objective and based on black-box testing) and Degree-of-closeness (a subjective measure based on the code structure, function and how close to working the program was). Evaluation was based on similar criteria as those discussed in \cite{smith2005rubricsCriteria}:
+\begin{itemize}
+\item Execution: compiles, no syntax errors.
+\item Verification: correct output on desired input, error handling.
+\item Validation: adheres to the specifications.
+\item Style: correct naming of variables and methods, correct use of access level modifiers public/private, use of parameter passing.
+\end{itemize}
+
+
 
 
 \subsubsection{Taxonomies for the assessment of programming}\label{sec:taxProgramming}
@@ -533,22 +554,61 @@ This section will discuss how assessments are currently practiced in other count
 
 
 
-AP CS Principles: summative written exam (2 hours, counts for 60\% of total score \& Create Performance Task (12 hours, counts for 24\% of score \& Explore Performance Task (8 hours, counts for 16\% of score).
-
-Notes:
 \begin{itemize}
-\item The written exam consists of (single and multiple-select) MC questions and evaluates CS conceptual knowledge and Computational Thinking practices.
-\item The Create Performance Task requires students to iteratively develop a program (using concepts such as expressions, operators, selection, iteration and/or collections) on a topic of choice. Deliverables include source code, a written report, and a 1-minute video demonstrating the program running. In the written response, the student must describe:
-     \begin{itemize}
-     \item The purpose of the program.
-     \item The incremental and iterative development process, including difficulties and/or opportunities encountered and how they were resolved or incorporated.
-     \item An independently developed \emph{algorithm} (which integrates two or more algorithms and mathematical and/or logical concepts) and how the program code segments help the program run and achieve the intended purpose of the program.
-     \item An individually developed \emph{abstraction} (which integrates mathematical and logical concepts) (i.e. procedures, parameters, lists, abstract data types, APIs, libraries) and how this helps manages the complexity of the program.
-     \end{itemize}
-     Note that the written response includes CT aspects of algorithmic thinking, abstraction and evaluation.
-\item The Explore Performance Task is not relevant for this research.
+\item \emph{AP CS Principles}:
+
+    \begin{itemize}
+    \item The 2-hour summative written exam consists of multiple choice questions and evaluates CS conceptual knowledge and Computational Thinking practices. It counts for 60\% of the total score.
+    \item The 12-hour Create Performance Task requires students to iteratively develop a program (using concepts such as expressions, operators, selection, iteration and/or collections) on a topic of choice. Deliverables include source code, a written report, and a 1-minute video demonstrating the program running. In the written response, the student must describe:
+         \begin{itemize}
+         \item The purpose of the program.
+         \item The incremental and iterative development process, including difficulties and/or opportunities encountered and how they were resolved or incorporated.
+         \item An independently developed \emph{algorithm} (which integrates two or more algorithms and mathematical and/or logical concepts) and how the program code segments help the program run and achieve the intended purpose of the program.
+         \item An individually developed \emph{abstraction} (which integrates mathematical and logical concepts) (i.e. procedures, parameters, lists, abstract data types, APIs, libraries) and how this helps manages the complexity of the program.
+         \end{itemize}
+         Note that the written response includes CT aspects of algorithmic thinking, abstraction and evaluation. It counts for 24\% of the total score.
+    \item The 8-hour Explore Performance Task (counts for 16\% of the score) is not relevant for this research.
+    \end{itemize}
+    The College Board has published rubrics and annotated and marked exemplar work on their website.
+    
+\item \emph{Exploring Computer Science (ECS)}:
+    \begin{itemize}
+    \item 
+    \end{itemize}
+    
+    
+\item \emph{Israel's national CS curriculum}:
+    \begin{itemize}
+    \item
+    \end{itemize}
+    
+\item \emph{International Baccalaureate (IB)}:
+    \begin{itemize}
+    \item Summative exam consisting of 3 papers. Paper 1 and 2: short answer questions to assess knowledge and understanding. 
+	Paper 3: pre-seen case study to assess knowledge on application and use levels. Assessments do not require coding, pseudo-code and flowcharts only.
+
+    \item Create a product (30 teaching hours). Assessment focus is on algorithmic thinking, problem solving, and programming skills.
+
+    \item Interdisciplinary science project (10 hours).
+    \end{itemize}
+
+       
+    
+\item \emph{AQA A/AS-level}:
+    \begin{itemize}
+    \item Written exam. Paper 1: short programming questions (write/adapt/extend) behind the computer. Assesses the ability to program, theoretical knowledge of programming, data structures, problem solving, theory of computation. Paper 2: combination of multiple choice, short-answer questions and an extended answer question (explain/describe) on paper. Assesses knowledge about data representation, computer systems, architecture, ethics, communication and networking.
+    \item AQA A project. Assesses the ability to use the knowledge and skills gained through the course to solve or investigate a practical problem. Students will be expected to follow a systematic approach to problem solving.
+
+    \end{itemize}
+% \item \emph{UK curriculum}:
+%    \begin{itemize}
+%    \item formative assessments
+%    \item Scratch programming assignments
+%    \item final project of student's choosing
+%    \end{itemize}
+    
 \end{itemize}
-The College Board has published rubrics and annotated and marked exemplar work on their website.
+
 
 \subsubsection{Programming assessment practices}\label{sec:progAssessPractices}
 
