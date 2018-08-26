@@ -163,10 +163,10 @@ Computer science learners often experience difficulties during problem analysis,
 
 \begin{table*}
   \centering
-\begin{tabular}{|l|l|l|}
+\begin{tabular}{|p{50mm}|p{45mm}|p{50mm}|}
   \hline
   % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
-  \textbf{\citeauthor{McCracken2001}'s PS} & \textbf{\citeauthor{polya2004solve}'s PS} & \textbf{\cite{selby2013computational}'s CT} \\
+  \textbf{\citeauthor{McCracken2001}'s Problem Solving} & \textbf{\citeauthor{polya2004solve}'s Problem Solving} & \textbf{\cite{selby2013computational}'s CT} \\
   \hline
 
 
@@ -182,7 +182,7 @@ Computer science learners often experience difficulties during problem analysis,
 
   \hline
 \end{tabular}
-\caption{Problem solving and CT}\label{table:problemSolvingCT}
+\caption{Descriptions of Problem Solving and CT}\label{table:problemSolvingCT}
 \end{table*}
 
 
@@ -235,7 +235,7 @@ Instruction and learning based on competencies, such as CT, call for assessment 
 %\end{figure*}
 
 \begin{center}
-\includegraphics[scale=0.6]{figures/AdaptedQualityCriteriaCatete.png}
+\includegraphics[scale=0.6]{figures/AdaptedQualityCriteriaCatete.png}\newline
 The Wheel of Competency Assessment \cite{baartman2006wheel}\label{fig:AssQualityCriteria}
 \end{center}
 
@@ -307,12 +307,12 @@ Rubrics can be either holistic or analytical. Table \ref{table:RubricsHolisticAn
 
 \begin{table*}
   \centering
-\begin{tabular}{|l|l|l|l|}
+\begin{tabular}{|l||p{20mm}|p{55mm}|p{65mm}|}
   \hline
   % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
   \textbf{Type} & \textbf{Evaluation description} & \textbf{Pros} & \textbf{Cons} \\
   \hline
-  Holistic & Project rated as a whole & Quick and efficient & Lack specific descriptive measures, no specific feedback on how student can improve, irreproducibility: teachers may disagree about the score \cite{catete2017framework} \\
+  Holistic & Project rated as a whole & Quick and efficient & Lack specific descriptive measures, no specific feedback on how student can improve, irreproducibility: teachers may disagree about the score \cite{catete2017framework} \\ \hline
   Analytical & Each descriptive measure is rated individually & Give specific feedback on how student can improve, can be used for self-assessment & Take longer to design \\
   \hline
 \end{tabular}
@@ -427,10 +427,8 @@ In their findings, \citeA{Oliver2004} indicate that introductory and intermediat
 As discussed in section \ref{sec:taxProgramming}, several attempts have been made to apply existing and new taxonomies for CS education. However, whatever taxonomy chosen, scientists agree that classifying tasks is far from straightforward. As a result, researchers exclaim that "the pattern of achievement is not clear" (\cite{ZurBargury2013}), making analysis difficult and inconclusive. Possibly the issue is not the taxonomy, but rather the task being classified. More recently, in their research, \citeA{LuxtonReilly2018} found that assessment tasks were more complex than academics expected. The main cause was due to tasks which combine multiple heterogeneous concepts, an in effect, making it difficult for teachers to diagnose difficulties faced by students. For example, tasks typically require both algorithmic thinking (initialize before changing), as well as a more advanced understanding of data representation (assigning a value to a property)\cite{Seiter2013}. In their research on Israel's 2012 CS nationwide exam, \citeA{ZurBargury2013} conclude that tracing a loop is not a simple task for novice students, and becomes more difficult when counters and accumulators are integrated.
 
 In a combined effort, \citeA{LuxtonReilly2018} use a concept inventory to decompose tasks and determine their individually assessable syntactical and semantical elements. Their approach focusses on programming specific concepts, such as recognizing and identifying initialization, use of conditionals and nesting. They use a top-down approach in which they decompose a complex task into its constituent concepts.  However, such a top-down approach based on existing assessment tasks for tertiary education does not consider all concept combinations, and therefore may omit sources of difficulties and alternative conceptions, especially those that are problematic for students secondary education. Algorithmic concepts, such as plans (described by \citeA{deRaadt2009teachingPlans}), which can also be used to decompose a solution, are not considered. For example, in their nesting-task, a student may not understand the difference between a loop nested in a conditional and a conditional nested in a loop. This is typically a plan-related problem. Apparently, creating tasks which assess only those concepts we wish to assess, or those that focus on algorithmic concepts, is not straightforward.
-
 \todo{evt lezen: However,it
 hasrecentlybeenarguedthatthedifficultyisduetotheassessment tasksthatweuse,ratherthanthesubjectitself[luxton-reiley2006; Robert McCartney, Jonas Boustedt, Anna Eckerdal, Kate Sanders, and Carol Zander. 2013. Can First-year Students Program Yet?: A Study Revisited. In Proceedings of the Ninth International Computing Education Research Conference (ICER ’13).91–98. https://doi.org/10.1145/2493394.2493412]}
-
 
 %NEED FOR TEMPATES:
 To tackle the difficulties of establishing qualitative assessments, some initiatives aim to increase collaboration between institutes. \citeA{snow2017CTECD} describes that the higher CS education community has made an effort to create programming language-independent assessments, which are in various stages of being evaluated. The primary goal of these efforts is to establish qualitative benchmark tasks that can be used across multiple institutions. In their research, \citeA{Whalley2006} noted, while translating questions from one language to another, that unique idiomatic and syntactical features may have effect on the appropriate choice of distracters (i.e. subtle differences in initialization values for indexes and in relational operators). So, establishing standardized program-language independent benchmark assessments is not straightforward. The idea of using template tasks that can be modified according to specific classroom needs may have potential of being successful.
@@ -456,7 +454,7 @@ Other forms of assessment, in addition to programming can be used to assess algo
 
 \subsubsection{Research about assessing CT}
 
-Grover et al., (2014)\todo{cite} state that without rigorous assessment, computational thinking cannot be successfully embedded in education. Educators need a manner to assess and validate what CT a student has learned (\cite{GroverPea2013}). As described in section \ref{sec:CTdef} there is no general consensus on the definition of Computational Thinking. With the lack of a precise definition as one of its contributing factors \cite{crick2017}, Computational Thinking is perceived to be one of the more challenging concepts to teach and evaluate \cite{BrennanResnick2012}.
+\citeA{GroverPea2013} state that without rigorous assessment, computational thinking cannot be successfully embedded in education. Educators need a manner to assess and validate what CT a student has learned. As described in section \ref{sec:CTdef} there is no general consensus on the definition of Computational Thinking. With the lack of a precise definition as one of its contributing factors \cite{crick2017}, Computational Thinking is perceived to be one of the more challenging concepts to teach and evaluate \cite{BrennanResnick2012}.
 
 \citeA{grover2017measuring} call for measures that enable educators to assess student learning of CT. Specifically they signal the necessity to test and validate materials in various settings with diverse learners. Diverse learners here refers to two aspects, namely the type of learners (some students prefer and perform better in oral presentations, others in written exams) and including diversity (backgrounds and sexes). Including diversity alone is an important issue. Worldwide hundreds of initiatives have taken place to promote CS under girls (code clubs, .... google groups... \todo{deze lijst uitwerken}) and other minorities (the entire ECS curriculum was initiated to battle this issue). As one of the quality aspects of assessments is "fun and engaging" (see section \ref{sec:qualityCriteria}) creating assessments which can be tailored to specific classroom and student needs seems promising.
 
@@ -470,33 +468,35 @@ Table \ref{table:CTassessmentResearch} summarizes some recent well cited researc
 
 
 \todo{Lye en Koh toetsen alleen concepten, Zhong zegt dat je alle drie aspecten moet pakken. Hoe krijg je dat nou voor elkaar?}
-\begin{table*}
+
+\begin{sidewaystable*}
+%\begin{table*}
   \centering
 
-\begin{tabular}{|l|l|l|}
+\begin{tabular}{|p{60mm}|p{90mm}|p{90mm}|}
   \hline
    \textbf{Research} & \textbf{Evidence elicitation method} & \textbf{Aim/focus/objective} \\
   \hline
   % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
-  \cite{BrennanResnick2012} &  & 3d  \\
-  \cite{Zhong2016} &  (summative) project-evaluation \& reflection report and creative design report (to evaluate the process)  &  3D \& computational concepts, computational practices and computational perspectives \\
+  \cite{BrennanResnick2012} &  & 3d  \\ \hline
+  \cite{Zhong2016} &  (summative) project-evaluation \& reflection report and creative design report (to evaluate the process)  &  3D \& computational concepts, computational practices and computational perspectives \\ \hline
   \cite{LyeKoh2014} &   &   \\
-  Atmazidou (2016) & self-reflection and \ldots  & ??  \\
-  Grover2017assessingt & 1. open-ended Scratch programming assignments (incl. Parsons problems), 2. Formative MC tasks (open-ended???), 3. Summative assessment MC (based on Isael 2002 exam) \& open-ended, 4. Summative programming project (incl. presentation \& written reflections (based on Scott, 2013) \& artifact-based interviews (based on Barron et al., 2002) & 1. Computational problem solving, algorithmic \& CT concepts, programming constructs, 2. knowledge of concepts and constructs in isolation (through code-tracing), 3. algorithmic constructs, CT-practices through code-tracing and/or debugging, 4. problem-solving, coding, debugging, collaborating, planning, communicating, presenting, reflecting.\\
-  \cite{bienkowski2015assessment} &   &   \\
-  \cite{snow2017CTECD} &   &   \\
+  Atmazidou (2016) & self-reflection and \ldots  & ??  \\ \hline
+  Grover2017assessingt & \begin{enumerate} \item open-ended Scratch programming assignments (incl. Parsons problems),\item Formative MC tasks (open-ended???), \item Summative assessment MC (based on Isael 2002 exam) \& open-ended, \item Summative programming project (incl. presentation \& written reflections (based on Scott, 2013) \& artifact-based interviews (based on Barron et al., 2002)\end{enumerate} & \begin{enumerate} \item Computational problem solving, algorithmic \& CT concepts, programming constructs, \item knowledge of concepts and constructs in isolation (through code-tracing), \item algorithmic constructs, CT-practices through code-tracing and/or debugging, \item problem-solving, coding, debugging, collaborating, planning, communicating, presenting, reflecting.\end{enumerate}\\ \hline
+  \cite{bienkowski2015assessment} &   &   \\ \hline
+  \cite{snow2017CTECD} &   &   \\ \hline
 
-  \cite{Lonati2017Bebras} &   &   \\
-  \cite{Seiter2013} &   &   \\
-  \cite{Lee2011} &   &   \\
+  \cite{Lonati2017Bebras} &   &   \\ \hline
+  \cite{Seiter2013} &   &   \\ \hline
+  \cite{Lee2011} &   &   \\ \hline
   2013Zur-Burgury & Written exam (9 MC and open-ended questions) & Algorithmic thinking\\
   \hline
 \end{tabular}
 
 
 \caption{Research on CT assessment}\label{table:CTassessmentResearch}
-\end{table*}
-
+%\end{table*}
+\end{sidewaystable*}
 
 
 The 2012 Israeli nationwide exam's (with a focus on algorithmic thinking) results show that the students were able to deal with questions that require abstraction, algorithmic thinking, and comparing two different programs. However, students found loops problematic[2013Zur-Burgury et al.\todo{cite}].
@@ -526,8 +526,10 @@ In their work, \citeA{lister2004multi} describe that the transition between diff
 
 \begin{figure*}
 \includegraphics[scale=0.8]{figures/ListerFases.png}
-\caption{General model of concept formation (2010Lister), after Sfard (1991)}\label{fig:ListerFases}
+General model of concept formation (2010Lister), after Sfard (1991)\label{fig:ListerFases}
 \end{figure*}
+
+
 
 
 Similar to \citeA{lister2004multi}'s viewpoint on describing attainment levels per programming concept, we believe that CT skills follow a similar model. A student who is well able of decomposing a problem may have not yet evolved skills in applying generalization. Assessments should enable the identification of a student's level of competency for each particular CT skill individually.
@@ -550,7 +552,7 @@ CAS has made a start (work in progress) on establishing Computing Progression Pa
 
 
 \subsection{Assessment practices}
-This section will discuss how assessments are currently practiced in other countries and some best practices for determining levels of mastery. Curricula similar to the new Dutch curriculum are considered only.
+This section will discuss how assessments are currently practiced in other countries and some best practices for determining levels of mastery. Only reformed curricula similar to the new Dutch curriculum are considered.
 
 
 
@@ -570,21 +572,41 @@ This section will discuss how assessments are currently practiced in other count
     \item The 8-hour Explore Performance Task (counts for 16\% of the score) is not relevant for this research.
     \end{itemize}
     The College Board has published rubrics and annotated and marked exemplar work on their website.
-    
+
 \item \emph{Exploring Computer Science (ECS)}:
-    \begin{itemize}
-    \item 
-    \end{itemize}
-    
-    
-\item \emph{Israel's national CS curriculum}:
     \begin{itemize}
     \item
     \end{itemize}
+
+
+\item \emph{Israel's national CS curriculum}:
+    All topics in their 3-unit program are assessed via both a centralized written exam and a programming lab exam, with an emphasis on the written exam.\cite{ezer1999curriculum} See table \ref{table:IsraelAssessment}.
+
+\begin{table*}
+  \centering
+\begin{tabular}{|l|p{70mm}|p{20mm}|p{20mm}|}
+  \hline
+
+  \textbf{Topic} & \textbf{Description} & \textbf{Written exam weight} &  \textbf{Lab exam weight} \\
+  \hline
+Fundamentals 1 & Algorithms and implementation (procedural language)& 75\% & 25\% \\ \hline
+Fundamentals 2 & Algorithms in more depth and data structures & 50\% & - \\ \hline
+Second paradigm & OO-programming or applications & 25\% & 25\% \\ \hline
+  \hline
+\end{tabular}
+\caption{Assessment in Israel's national CS curriculum}\label{table:IsraelAssessment}
+\end{table*}
+
+
     
+    \begin{itemize}
+    \item Written Exam. Fundamentals 1\&2 (Algorithms and implementation in a procedural programming language), Software Design (includes data structures)
+    \item Programming lab exam
+    \end{itemize}
+
 \item \emph{International Baccalaureate (IB)}:
     \begin{itemize}
-    \item Summative exam consisting of 3 papers. Paper 1 and 2: short answer questions to assess knowledge and understanding. 
+    \item Summative exam consisting of 3 papers. Paper 1 and 2: short answer questions to assess knowledge and understanding.
 	Paper 3: pre-seen case study to assess knowledge on application and use levels. Assessments do not require coding, pseudo-code and flowcharts only.
 
     \item Create a product (30 teaching hours). Assessment focus is on algorithmic thinking, problem solving, and programming skills.
@@ -592,8 +614,8 @@ This section will discuss how assessments are currently practiced in other count
     \item Interdisciplinary science project (10 hours).
     \end{itemize}
 
-       
-    
+
+
 \item \emph{AQA A/AS-level}:
     \begin{itemize}
     \item Written exam. Paper 1: short programming questions (write/adapt/extend) behind the computer. Assesses the ability to program, theoretical knowledge of programming, data structures, problem solving, theory of computation. Paper 2: combination of multiple choice, short-answer questions and an extended answer question (explain/describe) on paper. Assesses knowledge about data representation, computer systems, architecture, ethics, communication and networking.
@@ -606,7 +628,7 @@ This section will discuss how assessments are currently practiced in other count
 %    \item Scratch programming assignments
 %    \item final project of student's choosing
 %    \end{itemize}
-    
+
 \end{itemize}
 
 
@@ -647,11 +669,11 @@ In this section we discuss the ways in which, currently, some curricula assess C
 
 To identify learning goals and provide student feedback on programming lab assignments, \citeA{catete2017framework} established and tested learning-based rubrics for computational thinking for AP CS Principles programming lab assignments. She concludes that teachers are able to the rubrics to achieve consistent ratings of evidence of computational thinking in student code.
 
-\noindent\textbf{Israel national curriculum}
-2013Zur-Burgury et al.\todo{cite}, describe and evaluate Israel's 2012 CS nationwide middle-school exam. The curriculum is based on the idea that CT is the key for understanding CS, and its exam specifically evaluates students' ability to deal with algorithmic thinking. The exam comprised of 9 multiple choice and open-ended questions. The questions focus on simple conditional and loop structures. Students were asked to trace, debug, complete, analyze, reason about, and compare two different programs.
+\noindent\textbf{Israel's national curriculum}
+\citeA{ZurBargury2013} describe and evaluate Israel's 2012 CS nationwide middle-school exam. The curriculum is based on the idea that CT is the key for understanding CS, and its exam specifically evaluates students' ability to deal with algorithmic thinking. The exam comprised of 9 multiple choice and open-ended questions. The questions focus on simple conditional and loop structures. Students were asked to trace, debug, complete, analyze, reason about, and compare two different programs.
 
 \noindent\textbf{AP CS Principles}
-AP CS Principles\todo{cite naar AP CS PRINCPLES GUIDE BOOK} defines 6 Computational Thinking practices: P1. Connecting computing, P2. Creating computational artifacts, P3. Abstracting, P4. Analyzing problems and artifacts, P5. Communicating, and P6. Collaborating. These practices are assessed in multiple manners. All aspects are assessed\todo{komen aan bod} in the MC written exam. In addition, all 6 return in the through-course performance tasks.
+AP CS Principles\todo{cite naar AP CS PRINCPLES GUIDE BOOK} defines 6 Computational Thinking practices: P1. Connecting computing, P2. Creating computational artifacts, P3. Abstracting, P4. Analyzing problems and artifacts, P5. Communicating, and P6. Collaborating. These practices are assessed in multiple manners. All aspects are treated in the multiple choice written exam. In addition, all 6 return in the through-course performance tasks.
 
 \noindent\textbf{ECS}
 The ECS \todo{cite naar ECS TEACHERS BOOK} curriculum comprises of six units. Problem-solving skills and computational practices are emphasized throughout the course. Each unit has kinesthetic activities and daily collaborative and context-rich assignments to help scaffold their knowledge. Each unit has a final unit project which provides the student with an opportunity to expand and show their understandings to a particular problem. SRI has developed validated unit assessments for each of the first four units (1. Human computer interaction, 2. Problem solving, 3. Web design, and 4. Introduction to programming) as well as a cumulative assessment. Teachers are encouraged to determine which activities might make useful assessments.
@@ -710,12 +732,12 @@ Evidence is obtained by deliberately putting students in those situations, with 
 
 
 
-
-\begin*{table}
+%\begin{sidewaystable*}\label{fig:ECD}
+\begin{table*}
 \includegraphics[scale=0.8]{figures/ECDoverview.png}
-Roles and Key Entities in the Five Layers of Evidence-Centered Design (\todo{cite}2014SnowBienkowski)\label{fig:ECD}
-\end*{table}
-
+Roles and Key Entities in the Five Layers of Evidence-Centered Design (\cite{2014SnowBienkowski})
+\end{table*}
+%\begin{sidewaystable*}
 
 
 
