@@ -469,36 +469,6 @@ tafel( ingevoerde_getal )
 </pre>
 
 
-<h3 id="afsluitende-opgave-8.2-letters-gemeen"><span style="color:red">Afsluitende opgave</span> 8.2 Aantal letters gemeen</h3>
-<pre class="python">
-#FUNCTIE DEFINTIE
-# de functie gemeen krijgt twee strings als parameters.
-# Het retourneert het aantal tekens dat de strings gemeen hebben.
-def bepaalLettersGemeen( woord1, woord2 ):
-    tekens_overeenkomstig = ""
-    for letter in woord1:
-        if (letter in woord2) and (letter not in tekens_overeenkomstig):
-            tekens_overeenkomstig += letter
-    aantal_tekens_overeenkomstig =  len( tekens_overeenkomstig )
-    return aantal_tekens_overeenkomstig
-
-
-#HOOFDPROGRAMMA
-#gebruiker om invoer vragen
-ingevoerdeWoord1 = input( "Geef woord 1: " )
-ingevoerdeWoord2 = input( "Geef woord 2: " )
-
-aantal_letters_gemeen = bepaalLettersGemeen( ingevoerdeWoord1, ingevoerdeWoord2 )
-
-#geef feedback aan gebruiker
-if aantal_letters_gemeen <= 0:
-    print( "De woorden delen geen tekens." )
-elif aantal_letters_gemeen == 1:
-    print( "De woorden hebben 1 teken gemeen." )
-else:
-    print( "De woorden hebben", aantal_letters_gemeen, "tekens gemeen." )
-</pre>
-
 
 <h3 id="afsluitende-opgave-8.3-vind-de-fout"><span style="color:red">Afsluitende opgave</span> 8.3 Vind de fout</h3>
 De functie moet wat retourneren, niet alleen afdrukken. Omdat het niets retourneert, wordt 'None' afgedrukt.

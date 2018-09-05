@@ -15,7 +15,7 @@
 
     <h1>Python Cursus - Strings</h1>
 
-<i><a href="Strings.html#afsluitendeOpgaves">Meteen naar de Afsluitende Opgaven over Strings</a></i><br>
+<i><a href="StringsAfsluitendeOpgaven.html">Meteen naar de Afsluitende Opgaven over Strings</a></i><br>
 <i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
 <hr>
 <h1 id="hoofdstuk-10---strings">Hoofdstuk 10 - Strings</h1>
@@ -23,8 +23,8 @@
 <hr />
 <p>In programmeeromgevingen worden teksten weergegeven door strings. Dit hoofdstuk geeft details over strings, en over functies die beschikbaar zijn om strings aan te pakken.</p>
 <hr />
-<h2 id="herhaling-omgaan-met-strings">10.1 Herhaling: omgaan met strings <!-- HFSTK 10.1 --></h2>
-<p>In een vorige hoofdstuk hebben we al iets over strings geleerd. Een string is een tekst, die omsloten is door enkele of dubbele aanhalingstekens. Een string kan nul of meer tekens lang zijn. Je kunt twee strings aan elkaar plakken met behulp van de +, en zichzelf herhalen door middel van de *. Bijvoorbeeld:</p>
+<h2 id="herhaling-omgaan-met-strings">10.1 Omgaan met strings <!-- HFSTK 10.1 --></h2>
+<p>We hebben al iets over strings geleerd. Een string is een tekst, die omsloten is door enkele of dubbele aanhalingstekens. Een string kan nul of meer tekens lang zijn. Je kunt twee strings aan elkaar plakken met behulp van de +, en zichzelf herhalen door middel van de *. Bijvoorbeeld:</p>
 <!-- th 10.1
 <pre class="python">
 woord1 = "appel"
@@ -37,9 +37,18 @@ print( woord2 * 3 )
 print( 2 * woord1 + 2 * woord2 )
 </pre>
 -->
-<iframe height="400px" width="100%" src="https://repl.it/@smer/Th101?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="500px" width="100%" src="https://repl.it/@smer/Th101?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-<p>De lengte van een string kun je bepalen met de <code>len()</code> functie. Met <code>in</code> kun je testen of een of meerdere letters in een string voorkomt. Met een for loop kun je alle tekens in een string doorlopen. Bekijk het volgende voorbeeld:</p>
+<p>De lengte van een string kun je bepalen met de <code>len()</code> functie. 
+<iframe height="400px" width="100%" src="https://repl.it/@smer/Th101b?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<!-- th10.1b
+tekst = "mango"
+lengte = len(tekst) #bepaal lengte van woord
+
+print(lengte)
+-->
+
+Met <code>in</code> kun je testen of een of meerdere letters in een string voorkomt. Met een for loop kun je alle tekens in een string doorlopen. Bekijk het volgende voorbeeld:</p>
 <!-- th10.2
 <pre class="python">
 woord1 = "mango"
@@ -87,12 +96,21 @@ print( lange_string )
 
 
 <h2 id="string-indices">10.3.1 String indices</h2>
-<p>Ieder teken in een string heeft een positie (soms index genoemd). De positie begint bij 0 en loopt op tot en met de lengte van de string 1.</p>
-<p>Bij het zes letter woord &quot;python&quot; zit 'p' op positie 0, 'y' op positie 1 en 'n' op positie 5.</p>
-<p>De lengte van een string 'woord' kun je berekenen met <code>len(woord)</code>; de laatste letter van de string heeft dus index len(s)-1. De lengte van het woord &quot;python&quot; is 6, dus de laatste letter, 'n' zit op positie 5.</p>
+<p>Ieder teken in een string heeft een positie (dit heet een index). De positie begint bij 0 en loopt op tot en met de lengte van de string <b>min 1</b>.</p>
+
+
+<p><ul>
+<li>De lengte van een string <code>woord</code> kun je berekenen met <code>len(woord)</code>.</li>
+<li>De eerste letter van een string staat op positie 0.</li>
+<li>De laatste letter van de string heeft dus index <code>len(woord)-1</code>.</li>
+</ul>
+</p>
+
+<p>Het woord &quot;python&quot; heeft lengte 5. De 'p' zit op positie 0, 'y' op positie 1 en 'n' op positie 5.</p>
+
 <p>Als een string is opgeslagen in een variabele, dan kun je de individuele letters van de string krijgen via de variabele naam en de index van de gevraagde letter tussen vierkante haken [ ] rechts ernaast. Bijvoorbeeld:</p>
 
-<iframe height="250px" width="100%" src="https://repl.it/@smer/Th104?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="350px" width="100%" src="https://repl.it/@smer/Th104?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 <!-- th 10.4
 <pre class="python">
 woord = "aardbei"
@@ -132,7 +150,7 @@ for i in range( len( woord ) ):
 </pre>
 -->
 <p>En zo met een <code>while</code> loop:</p>
-<iframe height="250px" width="100%" src="https://repl.it/@smer/TH107?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="300px" width="100%" src="https://repl.it/@smer/TH107?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 <!--TH10.7
 <pre class="python">
 woord = "appel"
@@ -154,7 +172,7 @@ Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="Strings_oplossi
 <p>Er is een aantal methodes beschikbaar die ontworpen zijn om strings te bewerken. Al deze methodes worden toegepast op een string om een operatie uit te voeren. Omdat strings onveranderbaar zijn, zullen deze methodes nooit de string waarop ze werken wijzigen, maar ze retourneren in plaats daarvan een gewijzigde versie van de string.</p>
 <h3 id="strip">10.4.1 <code>strip()</code></h3>
 <p><code>strip()</code> verwijdert spaties aan het begin en einde van een string, inclusief eventuele &quot;newline&quot; tekens en andere tekens die als spaties gezien kunnen worden. Als je iets anders dan spaties wilt verwijderen, kun je als parameter een string meegeven die bestaat uit alle te verwijderen tekens.</p>
-<iframe height="300px" width="100%" src="https://repl.it/@smer/TH108?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="350px" width="100%" src="https://repl.it/@smer/TH108?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 <!--TH10.8
 <pre class="python">
 tekst = "   En nu iets heel anders \n    "
@@ -175,7 +193,7 @@ Voor deze opdracht is geen model oplossing beschikbaar.
 
 <h3 id="upper-en-lower">10.4.2 <code>upper()</code> en <code>lower()</code></h3>
 <p><code>upper()</code> creëert een versie van een string met alle letters als hoofdletters. <code>lower()</code> werkt op dezelfde manier, maar maakt van alle letters kleine letters. Geen van beide methodes heeft parameters.</p>
-<iframe height="250px" width="100%" src="https://repl.it/@smer/Th109?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="350px" width="100%" src="https://repl.it/@smer/Th109?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 <!-- TH 10.9
 <pre class="python">
 tekst = "The Meaning of Life"
@@ -203,7 +221,7 @@ print( tekst.find( "q" ) )
 </pre>
 -->
 
-<iframe height="250px" width="100%" src="https://repl.it/@smer/Th1010?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="350px" width="100%" src="https://repl.it/@smer/Th1010?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <h3 id="opgave-10.4.3-find"><span style="color:red">Opgave</span> 10.4.3 <code>find()</code></h3>
 <iframe frameborder="0" width="100%" height="400px" src="https://repl.it/student_embed/assignment/850169/7d2141f19761721daaa785afe435790c"></iframe>
@@ -234,123 +252,7 @@ Humpty Dumpty viel van de muur
  Humpty Dumpty zat op de muur
  -->
 
-<div id="afsluitendeOpgaves"><h2>Afsluitende Opgaven</h2></div>
 
-
-<h3 id="afsluitende-opgave-scrabble"><span style="color:red">Afsluitende Opgave</span> 10.1 Scrabble</h3>
-<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/852621/42029887406a2f6f181840823ddd37cd"></iframe>
-Deze opdracht wordt nog niet automatisch gecontroleerd. <a href="Strings_oplossingen.html#afsluitende-opgave-scrabble">Klik hier</a> om je eigen oplossing te vergelijken met een model oplossing.
-
-<h3 id="afsluitende-opgave-klinkerloos"><span style="color:red">Afsluitende Opgave</span> 10.2 Klinkerloos</h3>
-<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/857106/121fecc6fd85c09c0ade8a67198ad662"></iframe>
-<a href="Strings_oplossingen.html#afsluitende-opgave-klinkerloos">Klik hier</a> voor een voorbeeld oplossing.
-<!-- OPGAVE
-9b Ik houd niet van klinkers!
-Schijf een functie klinkerloos() de een string als argument neemt en deze string afdrukt zonder
-klinkers erin.
-Pas vervolgens deze functie aan zodat hij alle niet-klinkers ook nog in hoofdletters verandert.
-Bijvoorbeeld:
-klinkerloos("Appeltaart") zou als uitvoer moeten geven:
-PPLTRT
-
-
-
-ANTWOORD:
-
-#de klinkerloos functie:
-#We doorlopen alle letters uit de invoerstring en kopieren een letter alleen naar een nieuwe string als het geen klinker is
-#dan hoeven we daarna alleen de gekopieerde string return te geven:
-def klinkerloos( tekst ):
-
-
-    #om het onszelf makkelijker te maken, converteren we eerst de hele invoer naar kleine letters
-    #zo hoeven we niet ook op alle hoofdletters van de klinkers te checken
-    tekst = tekst.lower()
-
-    #maak een lege string voor de uitvoer:
-    uitvoer = ""
-
-    #doorloop de letters:
-    for letter in tekst:
-        if not(letter == "a" or letter == "o" or letter == "i" or letter == "y" or letter == "e" or letter == "u"):
-            #het is geen klinker, dus verander de letter in een hoofdletter en kopieer hem naar de uitvoer:
-            uitvoer = uitvoer + letter.upper()
-
-    #de uitvoer string bevat nu de tekst zonder klinkers, dus die geven we terug:
-    return uitvoer
-
-
-
-#testen van de functie:
-invoer = input("Geef een stuk tekst als invoer: ")
-print ( klinkerloos(invoer) )
-
--->
-
-<h3 id="afsluitende-opgave-palindroom"><span style="color:red">Afsluitende Opgave</span> 10.3 Palindroom</h3>
-<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/857105/c531530f1c91106f10d6d5004f7e45f9"></iframe>
-<a href="Strings_oplossingen.html#afsluitende-opgave-palindroom">Klik hier</a> voor een voorbeeld uitwerking.
-
-<!-- OPGAVE
-Een palindroom is een woord dat als je het omdraait nog steeds hetzelfde woord is. Zoals “lepel” of “meetsysteem”.
-
-Schrijf een functie isPalindroom() die een gebruiker voor een string vraagt als invoer, en een boolean (True of False) teruggeeft om aan te geven of de gegeven string een palindroom was of niet.
-
-
-Hints:
-De truc is om het gegeven woord letter voor letter te doorlopen.
-Kopieer elke letter die je tegenkomt naar een nieuwe string, maar zet ze dan in omgekeerde volgorde.
-Als je dat gedaan hebt, hoef je alleen de nieuwe string en de originele met elkaar te vergelijken.
-Als ze hetzelfde zijn, is het een palindroom en return je True op, anders is het geen palindroom en return je False.
-
-
-GEGEVEN CODE
-def #typ hier je isPalindroom functie
-
-
-invoer = input("Welk woord wil je checken op palindroom-heid): ")
-if #typ hier iets
-    print ("Het is een palindroom!")
-else #typ hier iets
-    print ("Het is geen palindroom...")
-
-
-ANTWOORD:
-#de palindroom functie:
-#We doorlopen alle letters uit de invoerstring en kopieren alle letters naar een nieuwe string
-# maar dan wel in omgekeerde volgorde:
-
-def isPalindroom(tekst):
-    #maak een lege string om de omgedraaide versie in op te bouwen:
-    omgedraaid = ""
-
-    #doorloop de letters:
-    for letter in tekst:
-        #door de letter er voor te plakken ipv er achter komt de string in omgekeerde volgorde:
-        omgedraaid =  letter + omgedraaid
-
-    #check of de omgedraaide string hetzelfde is als de originele:
-    if omgedraaid == tekst:
-        return True
-    else:
-        return False
-
-invoer = input("Welk woord wil je checken op palindroom-heid): ")
-if isPalindroom(invoer) == True:
-    print ("Het is een palindroom!")
-else:
-    print ("Het is geen palindroom...")
-
-
-
-OUTPUT GEEN:
-Welk woord wil je checken op palindroom-heid):  fiets
-Het is geen palindroom...
-
-OUTPUT WEL:
-Welk woord wil je checken op palindroom-heid):  omo
-Het is een palindroom!
--->
 
 <hr>
 <div id="leerdoelen"><h2>Wat je geleerd hebt</h2></div>
@@ -366,6 +268,6 @@ In dit hoofdstuk is het volgende besproken:
 </ul>
 
 <hr>
-<i><a href="Strings.html#afsluitendeOpgaves">Meteen naar de Afsluitende Opgaven over Strings</a></i><br>
+<i><a href="StringsAfsluitendeOpgaven.html">Meteen naar de Afsluitende Opgaven over Strings</a></i><br>
 <i><a href="http://course.cs.ru.nl/pythonVO/">Terug naar de cursus pagina</a></i>
 

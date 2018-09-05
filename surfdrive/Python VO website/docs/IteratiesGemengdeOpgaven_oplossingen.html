@@ -25,21 +25,53 @@
 
 <hr />
 
-
-<h3 id="gemengde-opgave-letters-gemeen"><span style="color:red">Gemengde opgave</span> 7.1 Letters gemeen</h3> # Letters gemeen.
+<h3 id="afsluitende-opgave-8.2-letters-gemeen"><span style="color:red">Afsluitende opgave</span> 7.1 Aantal letters gemeen</h3>
+Zonder functies:
 <pre class="python">
 woord1 = input( "Geef woord 1: " )
 woord2 = input( "Geef woord 2: " )
-gemeen = ""
+letters_gemeen = ""
 
 for letter in woord1:
-    if (letter in woord2) and (letter not in gemeen):
-        gemeen += letter
+    if (letter in woord2) and (letter not in letters_gemeen):
+        letters_gemeen += letter
 
-if gemeen == "":
+if letters_gemeen == "":
     print( "De woorden hebben geen tekens gemeen." )
 else:
-    print( "De woorden delen de volgende tekens:", gemeen )
+    print( "De woorden delen de volgende tekens:", letters_gemeen )
+</pre>
+
+
+of met gebruik van functies:
+
+<pre class="python">
+#FUNCTIE DEFINTIE
+# de functie gemeen krijgt twee strings als parameters.
+# Het retourneert het aantal tekens dat de strings gemeen hebben.
+def bepaalLettersGemeen( woord1, woord2 ):
+    tekens_overeenkomstig = ""
+    for letter in woord1:
+        if (letter in woord2) and (letter not in tekens_overeenkomstig):
+            tekens_overeenkomstig += letter
+    aantal_tekens_overeenkomstig =  len( tekens_overeenkomstig )
+    return aantal_tekens_overeenkomstig
+
+
+#HOOFDPROGRAMMA
+#gebruiker om invoer vragen
+ingevoerdeWoord1 = input( "Geef woord 1: " )
+ingevoerdeWoord2 = input( "Geef woord 2: " )
+
+aantal_letters_gemeen = bepaalLettersGemeen( ingevoerdeWoord1, ingevoerdeWoord2 )
+
+#geef feedback aan gebruiker
+if aantal_letters_gemeen <= 0:
+    print( "De woorden delen geen tekens." )
+elif aantal_letters_gemeen == 1:
+    print( "De woorden hebben 1 teken gemeen." )
+else:
+    print( "De woorden hebben", aantal_letters_gemeen, "tekens gemeen." )
 </pre>
 
 
@@ -55,7 +87,7 @@ invoer = input("Hoeveel dobbelstenen? ")
 aantal = int( invoer )
 
 #teller voor aantal zessen aanmaken:
-zessenteller = 0
+zessen_teller = 0
 
 #loop om alle dobbelstenen gooien:
 for i in range (0, aantal):
@@ -65,10 +97,10 @@ for i in range (0, aantal):
 
     #checken of het een 6 is
     if dobbel == 6:
-        zessenteller = zessenteller + 1
+        zessen_teller = zessen_teller + 1
 
 # de loop is klaar, dus we kunnen ons antwoord afdrukken:
-print ( "Het aantal zessen in", aantal, "worpen was:", zessenteller  )
+print ( "Het aantal zessen in", aantal, "worpen was:", zessen_teller  )
 </pre>
 
 
@@ -196,7 +228,7 @@ else:
 
 </pre>
 
-<h3 id="gemengde-opgave-fibonacci"><span style="color:red">Gemengde opgave</span> 7.7 Fibonacci</h3>
+<h3 id="gemengde-opgave-fibonacci"><span style="color:red">Gemengde opgave (OPTIONEEL)</span> 7.7 Fibonacci</h3>
 <pre class="python">
 # Fibonacci.
 
