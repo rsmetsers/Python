@@ -68,7 +68,7 @@ Schrijf een programma dat alle verschillende combinaties afdrukt, en ook hoeveel
 
 Tip:
 - Voor 4 kleuren heb je vast meer dan 2 for-loops nodig.
-- Er zijn 256 combinaties 
+- Er zijn 256 combinaties
 ANTWOORD:
 kleurenLijst = ["Rood", "Blauw", "Groen", "Paars"]
 combinatieTeller = 0
@@ -87,6 +87,36 @@ print("Aantal mogelijkheden:", combinatieTeller)
 
 -->
 
+<h3 id="afsluitende-opgave-12.3-boter-kaas-eieren"><span style="color:red">Afsluitende opgave</span> 12.3 Spelbord Boter-Kaas-Eieren</h3>
+<iframe frameborder="0" width="100%" height="600px" src="https://repl.it/student_embed/assignment/890446/11afa3b2d81ef1dac2871454d6b5e28d"></iframe>
+<!--
+Afsluitende opgave 12.3 Spelbord Boter-Kaas-Eieren
+DEEL A: Druk het bord netjes af.
+
+Gebruik hiervoor een for-loop in een for-loop:
+Voor elke rij en voor elke kolom druk je de waarde af.
+
+Tip: print(…) drukt steeds af op een nieuwe regel. Met end = “ “ druk je op zelfde regel verder af
+
+DEEL B:
+Gebruik de coordinaten om links onder een 'X te plaatsen.
+
+ANTWOORD
+bord = [	["X","-","-"],
+					["-","O","-"],
+					["-","-","-"] ]
+
+#een X linksonderin plaatsen (rijnummer 2, kolomnummer 0)
+bord[2][0]= "X"
+
+
+#bord netjes afdrukken
+for rijnummer in range ( 3 ):
+	for kolomnummer in range ( 3 ):
+		print( bord[rijnummer][kolomnummer], end="" )
+	print()
+-->
+	
 
 
 <!-- ROUTEBEPALEN (VEEL TE MOEILIJK)

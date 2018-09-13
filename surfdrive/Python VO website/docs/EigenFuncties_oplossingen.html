@@ -473,6 +473,19 @@ tafel( ingevoerde_getal )
 <h3 id="afsluitende-opgave-8.3-vind-de-fout"><span style="color:red">Afsluitende opgave</span> 8.3 Vind de fout</h3>
 De functie moet wat retourneren, niet alleen afdrukken. Omdat het niets retourneert, wordt 'None' afgedrukt.
 
+<pre class ="python">
+#FUNCTIE DEFINITIE
+def oppervlakte_van_driehoek( basis, hoogte ):
+    opp = 0.5 * basis * hoogte
+    print( "Een driehoek met", basis, "en hoogte",
+        hoogte, "heeft oppervlakte", opp )
+    return opp
+
+#HOOFDPROGRAMMA MET AANROEP VAN FUNCTIE
+berekende_oppervlakte = oppervlakte_van_driehoek( 4.5, 1.0 )
+print( berekende_oppervlakte )
+</pre>
+
 
 
 <h3 id="afsluitende-opgave-8.4-munt-opgooien"><span style="color:red">Afsluitende opgave</span> 8.4 Munt opgooien</h3>

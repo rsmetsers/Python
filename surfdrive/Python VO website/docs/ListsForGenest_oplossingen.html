@@ -197,6 +197,24 @@ getallen_lijst = [4,8,5]
 staafdiagramAfdrukken( getallen_lijst ) #getallen_lijst = [4,8,5]
 </pre>
 
+
+<h3 id="afsluitende-opgave-12.3-boter-kaas-eieren"><span style="color:red">Afsluitende opgave</span> 12.3 Spelbord Boter-Kaas-Eieren</h3>
+<pre class="python">
+bord = [  ["X","-","-"],
+		["-","O","-"],
+		["-","-","-"] ]
+
+#een X linksonderin plaatsen (rijnummer 2, kolomnummer 0)
+bord[2][0]= "X"
+
+
+#bord netjes afdrukken
+for rijnummer in range ( 3 ): # doorloop elke rij
+	for kolomnummer in range ( 3 ): #doorloop elke kolom in elk rij
+		print( bord[rijnummer][kolomnummer], end="" ) #met end="" niet naar volgende regel
+	print() #naar een nieuwe regel
+</pre>
+
 <!--
 <h3 id="afsluitende-opgave-12.2-kaarten-schudden"><span style="color:red">Afsluitende opgave</span> 12c.3 Kaarten schudden</h3>
 <pre class="python">
