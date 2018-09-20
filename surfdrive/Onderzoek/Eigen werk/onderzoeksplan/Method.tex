@@ -29,7 +29,8 @@ Algorithmic Thinking is one of CT's fundamental aspects (see section \ref{CTdefW
 
 \subsection{Subquestion II. How to elicit and judge evidence of relevant knowledge and skills?}%Eliciting and judging evidence of relevant knowledge and skills.
 
-In order for a teacher to judge a student's knowledge and skills, a student must be placed in a situation or given a task that will elicit the desired evidence. Which evidence is relevant can be inferred from the high-level curricular goals. The design of high-quality assessment materials ensures a correct mapping from those curricular goals to a design pattern consisting of three aligned models (student model, evidence model, and task model) which together form the assessment specifications: the foundation for the new assessment.
+%OOK PLANS==PRACTICES
+In order for a teacher to judge a student's knowledge and skills (practices), a student must be placed in a situation or given a task that will elicit the desired evidence. Which evidence is relevant can be inferred from the high-level curricular goals. The design of high-quality assessment materials ensures a correct mapping from those curricular goals to a design pattern consisting of three aligned models (student model, evidence model, and task model) which together form the assessment specifications: the foundation for the new assessment.
 
 This research borrows aspects from two structured approaches which have both been implemented in secondary CS education and its implication researched and reported on. In order to systematically design assessment tasks, we apply the Evidence Centered Assessment Design (ECD, see section \ref{sec:ECD}) framework combined with validation through an expert panel (see \cite{catete2017framework}). Data about the resulting assessment (last bullet below) is elicited through semi-structured teacher and (a selection of strong, medium and weak) student interviews, think-aloud sessions of student self-evaluation, and a second-opinion re-evaluation of scoring of (a selection) of students' work.
 
@@ -45,6 +46,7 @@ While traversing ECD's five levels, the following questions will be answered:
 \item Which quality criteria do assessments created by teachers, based on a design template, adhere to?
 
 \end{enumerate}
+
 
 
 
@@ -118,7 +120,7 @@ To evaluate the quality of the design template, it (or its resulting teachers' a
 In some cases, conjecture about the quality will be made based on the design template, in others on the fine-tuned assessment implemented by the teacher (for example with data from student interviews or think-aloud sessions). The origin of the data will be considered during evaluation of the results.
 
 
-\subsection{Subquestion IV. How can the variable features of task difficulty be identified and accounted for and integrated in an assessment?}%Variable features: untangling programming tasks}
+\subsection{Subquestion IV. How can the variable features of task difficulty be identified, accounted for and integrated into an assessment?}%Variable features: untangling programming tasks}
 
 
 Our research builds on the work of \citeA{LuxtonReilly2018} in which they analyze assessments for introductory programming courses (CS1), identify relationships and progression between concepts and decompose assessments into elements that can be assessed independently. We extend their work with two aspects:
@@ -130,21 +132,26 @@ Our research builds on the work of \citeA{LuxtonReilly2018} in which they analyz
 
 \end{enumerate}
 
+\todo{hier mag nog wel wat aan gedaan worden! Dat Transfer moeilijk is moet ook in de background}
+In addition, this question includes analyzing variable features as the 'recontextualization' of a given algorithmic problem and the transfer of knowledge which accompanies it. The question is thus how to best assess specific knowledge and practices pertaining to a new context? The challenge here is to assess the algorithmic concepts and practices, rather than the capability to transfer knowledge.
 
-\subsection{Method: untangling assessment tasks}
+
+\subsection{Strand I. Method: untangling assessment tasks}
 
 This study can be split into several phases:
 \begin{enumerate}
-\item Identifying the relevant concepts and plans, and their relationships.
-\item Analyzing current research and exams on the complexity of their assessment tasks.
-\item Implement and deliver a pilot assessment.
+\item Identifying the relevant concepts and plans that are specific to secondary education.
+\item Identifying the relationships between concepts and plans, and incorporate plans into a coherent progression pathway.
+\item Analyzing current research and exams on the complexity of their assessment tasks and inclusion of assessment of plans.
+\item Creating assessment tasks that pinpoint achievement levels which differentiate between strategy and knowledge.
+\item Implementing and delivering a pilot assessment in a real secondary education setting.
+\item Analysing the impact of implementing the assessment tasks on both students and teachers as well determining the conditions and teachers' PCK needed to do so successfully.
 \end{enumerate}
 
-\subsubsection*{Identifying relevant concepts and plans, and their relationships}
-The goal of this study is to come to a set of template tasks which assess concepts and/or plans individually, in addition to meaningful algorithmic (plan-composition) combinations. A hierarchy is to indicate the relationship between these.
 
 
-
+\noindent \textbf{Identifying relevant concepts and plans, and their relationships}\newline
+The goal is to identify which conceptual knowledge and which conceptual practices (including strategies) are relevant in a secondary education setting. This will result in a hierarchy, or progression pathway, which indicates the relationship between concepts and plans.
 
 We entail a combination of a top-down and a bottom-up approach.
 
@@ -160,7 +167,14 @@ The content analysis took place in three phases:
 \end{enumerate}
 
 
-Only comprehension tasks are considered (Solution creation tasks (writing code) is beyond the scope of this research).
+\noindent \textbf{Creating assessment tasks in line with progression pathway}\newline
+%that pinpoint achievement levels which differentiate between strategy and knowledge
+The goal of this study is to come to a set of template tasks which assess concepts and/or plans individually, in addition to meaningful algorithmic (plan-composition) combinations.
+\todo{is dit zo. kun je niet met parsons en flowcharts composition testen}
+In a first stage, only comprehension tasks are considered.% at this point in time. % (solution creation tasks (writing code) is beyond the scope of this research).
+In a second stage, we determine feasible manners to assess plan strategies, with or without having to compose code. %OF HET KAN MET EEN PO, TOCH?
+
+
 
 An expert panel will review whether the template tasks are correctly categorized and indeed assess the specific KSAs as intended, and thus to ensure that the tasks are applicable to secondary education. For each KSA, a minimal of one template task is to be established. As it is of importance to identify student misconceptions as soon as possible and help students overcome corresponding challenges, for each topic (concept or plan), particular attention is paid to include these (such as documented on \url{PD4CS.org}, \cite{grover2017measuring}, \todo{cite}Sorva (2012)).
 
@@ -178,12 +192,17 @@ requires knowledge about how a (one-branch) selection statement works, arithmeti
 Thus, in our analysis, we take \citeauthor{LuxtonReilly2018}'s plan-integration concept a step further. We also consider the bottom-up integration of individual concepts, based on the knowledge concepts identified during Domain Modelling stage. A top-down approach will be used to ensure that the resulting tasks are meaningful, i.e. can be considered a (partial) solution to some problem. Some integrated concepts are undesired and should thus be omitted as a task (for example, printing a variable and then declaring it does not result in valid code.)
 
 
+The result is a progression pathway with accompanying assessment tasks for each level. The progression pathway will be established iteratively, as results from the pilot phase will be used as input to adjust where necessary.
+
 
 \noindent \textbf{Analyzing current research and exams on the complexity of their assessment tasks}\newline
 Well-cited related work will be analyzed to determine if indeed, as suggested in \citeA{Whalley2006}, multiple concepts are generally simultaneously assessed. This articles include Fisler's (2014) Rainfall Problem, Whalley (2006), Meerbaum-Salant et al. (2010, 2013), Luxton-Reilly (2018), Lister (2016), Simon (2016), Teague (2014), Zur-Bargury (2013).
 
+As most research is focussed on CS1, the analysis includes mapping to secondary education curricula and pathway and identifying deficiencies. The results could be used as a benchmark to compare the new assessment tasks to traditional tasks.
+
 %Relevancy is determined by cross-checking whether there is a link to one or more of the formulated KSAs.\todo{MISSCHIEN TOEVOEGEN?? accommodated for more tasks. Examples included  Atmatzidou en Demetriadis (2016), Liu et al. (2013), , Thompson (2016), Lopez (2008),  Zur-Bargury (2013).}
 %
+
 
 \noindent \textbf{Implement and deliver a pilot assessment}\newline
 
@@ -199,8 +218,10 @@ Think-aloud sessions will be held with the students (and audio-recorded) to reve
 %
 %Candidate assessment tasks were selected and coded (in Atlas) according to the established list of concepts and plans. Topics not relevant to the KSAs were omitted (for example Object-Oriented Concepts). In addition, only comprehension tasks (code reading) were considered (as opposed to solution creation tasks).
 
+The impact of implementing the assessment tasks on both students and teachers will be analyzed. The goal is to determine relevant conditions and teachers' PCK needed for successful implementation and delivery.
 
-\subsection{Method: assessment design template}
+
+\subsection{Strand II. Method: assessment design template}
 Two related studies report positive results from a (semi-)structured approach to establishing assessments, \citeA{mislevy2006implications} and \citeA{snow2017CTECD} for the ECS framework and \citeA{catete2017framework} for Advanced Placement CS Principles. Both the AP CS Principles and the ECS exams have been validated \cite{2010TewGuzdial}. This research borrows aspects from both approaches. In order to systematically design assessment tasks, we apply the Evidence Centered Assessment Design (ECD, see section \ref{sec:ECD}) framework combined with validation steps by an expert panel. ECD involves an iterative process of developing, piloting, testing and evaluating an assessment design pattern. The process ensures coherence between learning objectives and tasks which elicit evidence in order to adequately assess these.  In this study, an assessment pattern (consisting of templates and example assessments) is created, implemented and deployed, and its significance and implications investigated.
 
 
@@ -225,7 +246,7 @@ Different methods can be used to come to a consensus. The Delphi method is rathe
 
 The panel will contribute in the following stages:
 \begin{itemize}
-\item \emph{ Fitness for purpose}: To ensure that the resulting KSAs do indeed match the curricular learning objectives and are complete.
+\item \emph{Fitness for purpose}: To ensure that the resulting KSAs do indeed match the curricular learning objectives and are complete.
 \item \emph{Acceptability}: To determine if the assessment corresponds to the attitudes and views of the professional community.
 \item \emph{Authenticity}: To determine if the assessment evaluates competencies needed in the future workplace.\item To validate the model assessment that created using the design pattern.\todo{how?}\todo{alignment? model corresponding ti KSAs and proper situation to elicit evidence???}
 \item \emph{Fairness}: To determine if the assessment tests only relevant knowledge, skills and attitudes.
