@@ -166,6 +166,9 @@ vulBordRandom()
 toonBord()
 tekenSpelBord()
 
+if spelIsAfgelopen():
+    Window.quit()
+
 Window.mainloop()
 
 

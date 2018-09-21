@@ -72,11 +72,18 @@ def printPizzaTabel():
     return rows
 #    c.close()
 
-def getPizzaLink(gerechtID):
-    cursor.execute("SELECT gerechtFoto FROM tbl_pizzas WHERE gerechtID = ? ",(gerechtID,))
-    gerechtFoto = cursor.fetchall()
-    print("Foto lik:", gerechtFoto)
-    return gerechtFoto
+# def getPizzaLink(gerechtID):
+#     cursor.execute("SELECT gerechtFoto FROM tbl_pizzas WHERE gerechtID = ? ",(gerechtID,))
+#     gerechtFoto = cursor.fetchall()
+#     print("Foto link:", gerechtFoto)
+#     return gerechtFoto
+# def getSelectedPizzaLink():
+#     #where gelijk aan geselecteerde pizza
+#     cursor.execute("SELECT gerechtFoto FROM tbl_pizzas WHERE gerechtID = ? ",(gerechtID,))
+#     gerechtFoto = cursor.fetchall()
+#     print("Foto link:", gerechtFoto)
+#     return gerechtFoto
+
 
 def printWinkelWagenTabel():
     cursor.execute("SELECT tbl_pizzas.gerechtNaam, aantal FROM tbl_winkelWagen, tbl_pizzas WHERE tbl_winkelWagen.gerechtID = tbl_pizzas.gerechtID")
@@ -101,9 +108,9 @@ def voegToeAanWinkelWagen(pizzaRij, pizzaAantal):
     rows = cursor.fetchone()
     if not rows == None:
         aantalVanGerechtAlInWinkelWagen = rows[0]
-        print("algevonden:", rows[0])
-        #print("aantal al gevondenm, pizza soort", pizzaAlGevondenInRij[1])
-       # print("aantal al gevondenm, pizza aantal", pizzaAlGevondenInRij[2])
+        print("al gevonden:", rows[0])
+        #print("aantal al gevonden, pizza soort", pizzaAlGevondenInRij[1])
+       # print("aantal al gevonden, pizza aantal", pizzaAlGevondenInRij[2])
         nieuw_aantal = aantalVanGerechtAlInWinkelWagen + pizzaAantal
         #update winkelwagen tabel met nieuwe aantal
         cursor.execute("UPDATE tbl_winkelWagen SET aantal = ? WHERE gerechtID = ?", (pizzaAantal, toeTeVoegenGerechtID,))
@@ -119,19 +126,19 @@ def verwijderPizza(gerechtID):
 
 def voegPizzasToe():
     printTabel("tbl_pizzas")
-    voegNieuwPizzaToe("Hawaii", 12.25, "R_icon.png")
-    voegNieuwPizzaToe("Salami", 10.00, "R_icon.png")
-    voegNieuwPizzaToe("Margarita", 8.75, "R_icon.png")
-    voegNieuwPizzaToe("Doner", 9.50, "R_icon.png")
-    voegNieuwPizzaToe("TuttiFrutti", 10.00, "R_icon.png")
-    voegNieuwPizzaToe("AlFormaggio", 10.25, "R_icon.png")
-    voegNieuwPizzaToe("Verkeer", 10.75, "R_icon.png")
-    voegNieuwPizzaToe("NEC", 12.00, "R_icon.png")
+    voegNieuwPizzaToe("Hawaii", 12.25, "Hawaii.png")
+    voegNieuwPizzaToe("Salami", 10.00, "Salami.png")
+    voegNieuwPizzaToe("Margarita", 8.75, "Margarita.png")
+    voegNieuwPizzaToe("Doner", 9.50, "Doner.png")
+    voegNieuwPizzaToe("TuttiFrutti", 10.00, "Mozarella.png")
+    voegNieuwPizzaToe("AlFormaggio", 10.25, "4Cheese.png")
+    voegNieuwPizzaToe("Verkeer", 10.75, "Mozarella.png")
+    voegNieuwPizzaToe("NEC", 12.00, "Rucula.png")
     voegNieuwPizzaToe("Pepperoni", 11.00, "fotoPepperoni.png")
-    voegNieuwPizzaToe("Vegetarisch", 9.55, "R_icon.png")
-    voegNieuwPizzaToe("Tonno", 9.25, "R_icon.png")
-    voegNieuwPizzaToe("Pollo", 9.75, "R_icon.png")
-    voegNieuwPizzaToe("QuattroStagioni", 8.75, "R_icon.png")
+    voegNieuwPizzaToe("Vegetarisch", 9.55, "Veggie.png")
+    voegNieuwPizzaToe("Tonno", 9.25, "Mozarella.png")
+    voegNieuwPizzaToe("Diablo", 9.75, "Diablo.png")
+    voegNieuwPizzaToe("QuattroStagioni", 8.75, "Mozarella.png")
     printTabel("tbl_pizzas")
 
 #Zoek een pizza dat begint met de ingevoerde waarde

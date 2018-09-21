@@ -10,53 +10,82 @@ AANTAL_KOLOMMEN = 8
 #                     ["-","-","-","-"], #A2 [1,0], B2[1,1], C2[1,2], D2[1,3]
 #                     ["-","-","-","-"]] #A3 [2,0], B3[2,1], C3[2,2], D3[2,3]
 
-bord_met_schepen = []
+#bord_met_schepen
 
 
-def maakLeegBord(bord_met_schepen):
+#def maakLeegBord(bord_met_schepen):
+def maakLeegBord():
     #maak eerst een rij
-    rij =[]
-    for i in range(AANTAL_KOLOMMEN):
-        rij.append("-")
-
-    for j in range(AANTAL_RIJEN):
-        bord_met_schepen.append(rij)
+    bord_met_schepen = ["-"] * AANTAL_RIJEN
+    for i in range(AANTAL_RIJEN):
+        bord_met_schepen[i] = ["-"] * AANTAL_KOLOMMEN
 
     print("leeg bord gemaakt")
     return bord_met_schepen
 
 # VUL BORD MET MAAR 1 SCHIP
 def vulBordRandom(bord_met_schepen):
+    # print("len(bord_met_schepen[0])-1", len(bord_met_schepen[0])-1)
+    # print("len(bord_met_schepen)-1", len(bord_met_schepen)-1)
+
     randKolom = random.randint(0, len(bord_met_schepen[0])-1 ) #kolommen
     randRij = random.randint(0, len(bord_met_schepen)-1 ) #rijen
-    print(randKolom, randRij)
-    bord_met_schepen[randRij][randKolom] = "S"
-    print("Vullen van bord gaat verkeerd, doet meteen in een keer een hele kolom.")
+    print("randkolom:",randKolom, "randrij:",randRij)
+    bord_met_schepen[randRij][randKolom]="S"
+
+
+    # for i in range( len(bord_met_schepen[0])-1):
+    #     for j in range( len(bord_met_schepen)-1):
+    #         if randRij == j and randKolom == i:
+    #             bord_met_schepen[randKolom][randRij] = "S"
+
+
+    return bord_met_schepen
+
+# Bewaak de vakjes om een ship met een L (leeg) vakje
+def vulBordGereserveerdVakjesNaastSchepen (bord_met_schepen, randRij, randKolom):
+        #vul vakjes om schepen met een L
+    if randRij-1 >=0 and randKolom-1 >= 0 and not bord_met_schepen[randRij-1][randKolom-1] == "S":
+        bord_met_schepen[randRij-1][randKolom-1] = "L"
+    if randKolom-1 >= 0 and not bord_met_schepen[randRij][randKolom-1] == "S":
+        bord_met_schepen[randRij][randKolom-1] = "L"
+    if randRij+1 < AANTAL_RIJEN and randKolom-1 >= 0 and not bord_met_schepen[randRij+1][randKolom-1] == "S":
+        bord_met_schepen[randRij+1][randKolom-1] = "L"
+    if randRij-1 >= 0 and not bord_met_schepen[randRij-1][randKolom] == "S":
+        bord_met_schepen[randRij-1][randKolom] = "L"
+    if randRij+1 < AANTAL_RIJEN and not bord_met_schepen[randRij+1][randKolom] == "S":
+        bord_met_schepen[randRij+1][randKolom] = "L"
+    if randKolom+1 < AANTAL_KOLOMMEN and randRij-1 >= 0 and not bord_met_schepen[randRij-1][randKolom+1] == "S":
+        bord_met_schepen[randRij-1][randKolom+1] = "L"
+    if randKolom+1 < AANTAL_KOLOMMEN and not bord_met_schepen[randRij][randKolom+1] == "S":
+        bord_met_schepen[randRij][randKolom+1] = "L"
+    if randRij+1 < AANTAL_RIJEN and randKolom+1 < AANTAL_KOLOMMEN and not bord_met_schepen[randRij+1][randKolom+1] == "S":
+        bord_met_schepen[randRij+1][randKolom+1] = "L"
     return bord_met_schepen
 
 # #VUL BORD MET 2 SCHEPEN
-# def vulBordRandom(bord_met_schepen):
-#     randKolom = random.randint(0, len(bord_met_schepen[0])-1 ) #kolommen
-#     randRij = random.randint(0, len(bord_met_schepen)-1 ) #rijen
-#     print(randRij, randKolom)
-#     bord_met_schepen[0][0] = "S"
-#
-#     #bord_met_schepen[randRij][randKolom] = "S"
-#
-#
-#     # randKolom = random.randint(0, len(bord_met_schepen[0])-1 ) #kolommen
-#     # randRij = random.randint(0, len(bord_met_schepen)-1 ) #rijen
-#     # print(randRij, randKolom)
-#     # print("Daar staat:", bord_met_schepen[randRij][randKolom])
-#     #
-#     # if bord_met_schepen[randRij][randKolom] == "S" :
-#     #     print("daar staat al een schip")
-#     # elif bord_met_schepen[randRij-1][randKolom-1] == "-" or bord_met_schepen[randRij][randKolom-1] == "-" or bord_met_schepen[randRij+1][randKolom-1] == "-" or bord_met_schepen[randRij-1][randKolom] == "-" or bord_met_schepen[randRij+1][randKolom] == "-" or bord_met_schepen[randRij-1][randKolom+1] == "-" or bord_met_schepen[randRij][randKolom+1] == "-" or bord_met_schepen[randRij+1][randKolom+1] == "-":
-#     #     print("Daar in de buurt staat al een schip")
-#     # else:
-#     #     bord_met_schepen[randRij][randKolom] = "S"
-#
-#     return bord_met_schepen
+def vulBordRandomMeerdereSchepen(bord_met_schepen):
+    tellerSchepenGeplaatst = 0
+
+
+    while tellerSchepenGeplaatst <= AANTAL_SCHEPEN:
+
+        randKolom = random.randint(0, len(bord_met_schepen[0])-1 ) #kolommen
+        randRij = random.randint(0, len(bord_met_schepen)-1 ) #rijen
+        #print("attempting", randRij,randKolom)
+        # if bord_met_schepen[randRij][randKolom] == "S":
+        #     print("daar staat al een schip")
+        # elif bord_met_schepen[randRij][randKolom] == "L":
+        #     print("Daar in de buurt staat al een schip")
+        # else:
+        if (not bord_met_schepen[randRij][randKolom] == "S") and (not bord_met_schepen[randRij][randKolom] == "L"):
+            bord_met_schepen[randRij][randKolom] = "S"
+            bord_met_schepen = vulBordGereserveerdVakjesNaastSchepen( bord_met_schepen, randRij, randKolom )
+            #toonBordMetL( bord_met_schepen )
+            tellerSchepenGeplaatst += 1
+
+    print("Er staan", tellerSchepenGeplaatst, "schepen van grote 1.")
+    return bord_met_schepen
 
 
 #FUNCTIE DEFINITIES
@@ -65,8 +94,10 @@ def vraagSpelerOmInvoer():
     while not invoerGoed:
         doelLetter = input("Welke kolom (letter) gok je?")
         doelLetter = doelLetter.upper()
+        if(not len(doelLetter)==1):
+            print("Voer maar een letter of een cijfer in!")
 
-        if ( ord(doelLetter)-65 < 0 ) or ( ord(doelLetter)-65 >= AANTAL_KOLOMMEN):
+        elif ( ord(doelLetter)-65 < 0 ) or ( ord(doelLetter)-65 >= AANTAL_KOLOMMEN):
         #if doelLetter not in ["A", "B","C", "D"]:
             print("Incorrecte invoer voor kolom")
 
@@ -76,8 +107,8 @@ def vraagSpelerOmInvoer():
             if doelCijfer <=0 or doelCijfer > len(bord_met_schepen):
                 print("Incorrecte invoer voor rij")
             else: #zowel kolom als rij zijn OK
-                invoerGoed = True
                 print("Jouw gok is:", doelLetter, doelCijfer)
+                invoerGoed = True
 
     #doelLetter="A"
     #doelCijfer=1
@@ -99,6 +130,19 @@ def vraagSpelerOmInvoer():
     print("doelCoordinaat:", doelCoordinaat)
     return doelCoordinaat
 
+def toonBordMetL( bord ):
+    #drukt af:( "  A B C D" )
+    print( "-", end="" )
+    for kolom in range (AANTAL_KOLOMMEN):
+        print( str(chr(kolom+65)), end=" " )
+    print()
+    for rij in range( AANTAL_RIJEN ):
+        print( rij+1, end=" ")
+        for kolom in range( AANTAL_KOLOMMEN ):
+            print( bord[rij][kolom], end=" " )
+            #print( bord[rij][kolom]+ "rij:"+str(rij) + "kolom:"+ str(kolom) , end=" " )
+        print()
+
 def toonBord( bord ):
     #drukt af:( "  A B C D" )
     print( "  ", end="" )
@@ -108,7 +152,10 @@ def toonBord( bord ):
     for rij in range( AANTAL_RIJEN ):
         print( rij+1, end=" ")
         for kolom in range( AANTAL_KOLOMMEN ):
-            print( bord[rij][kolom], end=" " )
+            if( bord[rij][kolom] == "L"):
+                print( "-", end=" " )
+            else:
+                print( bord[rij][kolom], end=" " )
             #print( bord[rij][kolom]+ "rij:"+str(rij) + "kolom:"+ str(kolom) , end=" " )
         print()
 
@@ -149,12 +196,14 @@ def verwerkSchot( bord, doelcoordinaat ):
 
 
 #HOOFDPROGRAMMA
-bord_met_schepen = maakLeegBord(bord_met_schepen)#maak een leeg bord
-bord_met_schepen = vulBordRandom(bord_met_schepen)#vul bord met schepen
+#bord_met_schepen = maakLeegBord(bord_met_schepen)#maak een leeg bord
+bord_met_schepen = maakLeegBord()#maak een leeg bord
+#bord_met_schepen = vulBordRandom(bord_met_schepen)#vul bord met schepen
+bord_met_schepen = vulBordRandomMeerdereSchepen(bord_met_schepen)#vul bord met willekeurige schepen
 toonBord( bord_met_schepen ) #toon op het scherm
 
 while not spelIsAfgelopen( bord_met_schepen ): #zolang spel niet is afgelopen
-    print("Spel is nog niet afgelopen.")
+    print("Het spel is nog niet afgelopen.")
     doelCoordinaat = vraagSpelerOmInvoer()  #vraag speler om invoer
     aantal_pogingen += 1  #tel poging
     verwerkSchot( bord_met_schepen, doelCoordinaat ) #controleer of hit/mis, pas bord aan en geef feedback aan gebruiker
