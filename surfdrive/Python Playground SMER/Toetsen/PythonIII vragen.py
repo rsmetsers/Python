@@ -194,6 +194,23 @@
 #     invoer = int( input ("Voer een getal in: ") )
 #     print(totaal)
 
+
+
+# totaal = 0
+# invoer = int( input ("Voer een getal in: ") )
+# totaal = totaal + invoer
+# while not invoer==0:
+#     print(totaal)
+
+#     # print(totaal)
+#
+#     # invoer = int( input ("Voer een getal in: ") )
+#     # totaal = totaal + invoer
+#
+#     totaal = totaal + invoer
+#     invoer = int( input ("Voer een getal in: ") )
+#     print(totaal)
+
 # #Hoe vaak worden deze loops uitgevoerd?
 # teller = 0
 # for x in range(3,7):
@@ -249,7 +266,7 @@
 #
 # print(x)
 
-# FOR LOOP ALWAYS TERMINATES!
+# FOR LOOP ALWAYS TERMINATES! Not true range(1,7,-1) should not terminate
 # for i in range(5):
 #     print(i)
 #     i+=4

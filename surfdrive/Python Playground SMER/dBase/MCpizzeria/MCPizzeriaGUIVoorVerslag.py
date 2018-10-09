@@ -7,27 +7,28 @@ import backendMCPizzaVoorVerslag
 fotoPad = ""
 #fotoPath = "R_icon.png"
 
+
+### ---------  FUNCTIES -----------------
 def search_pizza():
-    listboxMenu.delete(0, END)  # make sure we've cleared all entries in the listbox every time we press the View all button
+    listboxMenu.delete(0, END)  # maak de listbox voor de zekerheid leeg
     listboxMenu.insert(0, "ID \t Gerecht \t \t Prijs")
-    gezochte_pizzas = backendMCPizzaVoorVerslag.zoekPizza( pizzaNaam_text.get() )
+    gezochte_pizzas = backendMCPizzaVoorVerslag.zoekPizza( ingevoerde_pizzanaam.get() )
     for row in gezochte_pizzas:
         listboxMenu.insert(END, row)
 
 
 ### functie voor het selecteren van een rij uit de listbox en in een andere veld plaatsen
 def getGeselecteerdeRij(event):
-    geselecteerdeRegelInLijst = listboxMenu.curselection()[0] #haal regelnummer waar op geklikt is
-    geselecteerdeTekst = listboxMenu.get(geselecteerdeRegelInLijst)  #haal tekst uit regel
-    invoerveldGeselecteerdePizza.delete(0, 50) #verwijder tekst uit veld (max 35 tekens), voor het geval er al iets staat
-    invoerveldGeselecteerdePizza.insert(0, geselecteerdeTekst) #zet tekst in veld
+    geselecteerdeRegelInLijst = listboxMenu.curselection() #bepaal op welke regel geklikt is
+    geselecteerdeTekst = listboxMenu.get(geselecteerdeRegelInLijst)  #sla de tekstregel op
+    invoerveldGeselecteerdePizza.delete(0, END) #verwijder tekst uit de invoerveld, voor het geval er al iets staat
+    invoerveldGeselecteerdePizza.insert(0, geselecteerdeTekst) #zet geselecteerde tekst uit listbox in de invoerveld
+    #invoerveldGeselecteerdePizza.insert(0, geselecteerdeTekst[1]) #zet tweede kolom van tekst in veld
 
-    #pizzaLink = MCPizzeria.getPizzaLink(gerechtID)
-    # for row in MCPizzeria.printWinkelWagenTabel():
-    #     listboxWinkelwagen.insert(END, str(row[1])+"\t \t \t"+ row[0])
-    regel = listboxMenu.get(geselecteerdeTekst[0])
+
+    regel = listboxMenu.get(geselecteerdeTekst[0]) #pakt de bovenste rij
     global fotoPad
-    fotoPad = regel[3] #positie 3 in tabel is link naar plaatje
+    fotoPad = regel[3] #kolom op positie 3 in tabel is link naar plaatje
     #update foto
     nieuwPhotoPad = PhotoImage(file=fotoPad)
     #nieuwPhotoPad = nieuwPhotoPad.subsample(5)
@@ -39,13 +40,13 @@ def getGeselecteerdeRij(event):
 
 def toonMenuInListboxMenu():
     listboxMenu.delete(0, END)  # make sure we've cleared all entries in the listbox every time we press the View all button
-    listboxMenu.insert(0, "ID \t Gerecht \t \t Prijs \t FotoLink")
-    for row in MCPizzeria.printPizzaTabel():
+    listboxMenu.insert(0, "ID \t Gerecht \t \t Prijs")
+    for row in backendMCPizzaVoorVerslag.printPizzaTabel():
         listboxMenu.config(yscrollcommand=scrollbarlistboxMenu.set)#, takefocus=1)#, columns=('A', 'B', 'C'))
         listboxMenu.insert(END, row)# *map(unicode,row))
 
 def berekenEnToonPrijs():
-    berekendeTotaalPrijs = MCPizzeria.berekenTotaalPrijs()
+    berekendeTotaalPrijs = backendMCPizzaVoorVerslag.berekenTotaalPrijs()
     print(berekendeTotaalPrijs)
     totaalPrijs.delete(0, 50) #verwijder tekst uit veld (max 35 tekens), voor het geval er al iets staat
     totaalPrijs.insert(0, berekendeTotaalPrijs) #zet tekst in veld
@@ -64,7 +65,7 @@ def voegToeAanWinkelWagen_command():
 #code for the GUI (front end)
 venster = Tk()
 venster.iconbitmap("MC_icon.ico")
-venster.wm_title("MC Pizzeria")
+venster.wm_title("MC Pizzeria VERSLAG")
 
 labelIntro = Label(venster, text="Zoek een pizza op naam of kies uit de lijst")
 labelIntro.grid(row=0, column=0, columnspan=3, sticky="W")# sticky="W" zorgt dat tekst links uitgelijnd wordt)
@@ -72,8 +73,8 @@ labelIntro.grid(row=0, column=0, columnspan=3, sticky="W")# sticky="W" zorgt dat
 labelPizza = Label(venster, text="Pizzanaam:")
 labelPizza.grid(row=1, column=0, sticky="W")# sticky="W" zorgt dat tekst links uitgelijnd wordt
 
-pizzaNaam_text = StringVar()
-invoerveldPizzanaam = Entry(venster, textvariable=pizzaNaam_text)
+ingevoerde_pizzanaam = StringVar()
+invoerveldPizzanaam = Entry(venster, textvariable=ingevoerde_pizzanaam, width=35)
 invoerveldPizzanaam.grid(row=1, column=1, columnspan=2, sticky="W")
 
 labellistboxMenu = Label(venster, text="Mogelijkheden:")
@@ -82,9 +83,8 @@ labellistboxMenu.grid(row=2, column=0, sticky="W")# sticky="W" zorgt dat tekst l
 knopZoekOpPizzaNaam = Button(venster, text="Zoek pizza", width=12, command=search_pizza)
 knopZoekOpPizzaNaam.grid(row=1, column=4)
 
-listboxMenu = Listbox(venster, height=6, width=50)
+listboxMenu = Listbox(venster, height=6, width=35)
 listboxMenu.grid(row=2, column=1, rowspan=6, columnspan=2, sticky="W")
-
 listboxMenu.bind('<<ListboxSelect>>', getGeselecteerdeRij)
 
 # now we need to attach a scrollbar to the listbox, and the other direction,too
@@ -101,7 +101,7 @@ labelinvoerveldSelecteerdePizza = Label(venster, text="Gekozen pizza:")
 labelinvoerveldSelecteerdePizza.grid(row=9, column=0, sticky="W")
 
 geselecteerdePizza= StringVar()
-invoerveldGeselecteerdePizza = Entry(venster, textvariable=geselecteerdePizza)
+invoerveldGeselecteerdePizza = Entry(venster, width=35, textvariable=geselecteerdePizza)
 invoerveldGeselecteerdePizza.grid(row=9, column=1, columnspan=2, sticky="W")
 
 
@@ -117,7 +117,7 @@ labelAantalGeselecteerd.grid(row=10, column=0, sticky="W")
 
 aantalGeslecteerdePizza = IntVar()
 aantalGeslecteerdePizza.set(1) #initiele waarde
-optionMenuPizzaAantal = OptionMenu(venster, aantalGeslecteerdePizza, 0, 1,2,3,4,5,6,7,8)
+optionMenuPizzaAantal = OptionMenu(venster, aantalGeslecteerdePizza, 0,1,2,3,4,5,6,7,8)
 optionMenuPizzaAantal.grid(row=10, column=1, sticky="W")
 
 
@@ -135,7 +135,6 @@ labellistboxWinkelwagen.grid(row=11, column=0, sticky="W")# zorgt dat tekst link
 
 listboxWinkelwagen = Listbox(venster, height=6, width=35)
 listboxWinkelwagen.grid(row=11, column=1, rowspan=4, columnspan=2, sticky="W")
-
 listboxWinkelwagen.bind('<<ListboxSelect>>')#, get_selected_row)
 
 # now we need to attach a scrollbar to the listbox, and the other direction,too

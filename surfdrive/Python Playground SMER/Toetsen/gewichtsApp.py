@@ -9,3 +9,10 @@ if nieuwGewicht > gewichtenLijst[ len(gewichtenLijst)-1 ]:
 
 else:
     print("Je bent afgevallen")
+
+gewichtenLijst += [nieuwGewicht]
+# OF
+#gewichtenLijst.append(nieuwGewicht)
+
+#om te testen:
+#print(gewichtenLijst)

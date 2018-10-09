@@ -37,14 +37,22 @@ def maakNieuweTabellen():
 
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS tbl_pizzaBestelling(
-        bestelNr INTEGER PRIMARY KEY,
-        pizzaNaam VARCHAR(20),
-        aantal INTEGER NOT NULL,
-        FOREIGN KEY (bestelNr) REFERENCES tbl_bestelling(bestelNr),
-        FOREIGN KEY (pizzaNaam) REFERENCES tbl_pizzas(pizzaNaam)
+            bestelNr INTEGER PRIMARY KEY,
+            pizzaNaam VARCHAR(20),
+            aantal INTEGER NOT NULL,
+            FOREIGN KEY (pizzaNaam) REFERENCES tbl_pizzas(pizzaNaam)
         );""")
     print("Tabel 'tbl_pizzaBestelling' aangemaakt.")
 
+    # cursor.execute("""
+    #     CREATE TABLE IF NOT EXISTS tbl_pizzaBestelling(
+    #         bestelNr INTEGER PRIMARY KEY,
+    #         pizzaNaam VARCHAR(20),
+    #         aantal INTEGER NOT NULL,
+    #         #FOREIGN KEY (bestelNr) REFERENCES tbl_bestelling(bestelNr),
+    #         FOREIGN KEY (pizzaNaam) REFERENCES tbl_pizzas(pizzaNaam)
+    #     );""")
+    # print("Tabel 'tbl_pizzaBestelling' aangemaakt.")
 
 def printTabel(tabel_naam):
     cursor.execute("SELECT * FROM " + tabel_naam)
@@ -105,6 +113,63 @@ def verwijderPizza(gerechtID):
     print("Gerecht verwijderd uit 'tbl_pizzas':" + str(gerechtID) )
 
 
+
+# #Zoek een pizza dat begint met de ingevoerde waarde
+# def zoekPizza(deelVanPizzaNaam):
+#     print("looking for pizza")
+#     cursor.execute("SELECT * "
+#                    "FROM tbl_pizzas "
+#                    "WHERE pizzaNaam LIKE ?", ( '%'+deelVanPizzaNaam+'%', ) )
+#     rows = cursor.fetchall()
+#     if rows == []:
+#         print("Helaas, geen match gevonden met "+ deelVanPizzaNaam)
+#     else:
+#         print("De volgende pizza's zoals "+deelVanPizzaNaam+" gevonden:", rows)
+#     return rows
+
+#Zoek een pizza dat begint met de ingevoerde waarde
+def zoekPizza(gezochte_pizzanaam):
+    print("looking for pizza...")
+    cursor.execute("SELECT * "
+                   "FROM tbl_pizzas "
+                   "WHERE pizzaNaam = ?", ( gezochte_pizzanaam, ) )
+    query_resultaat  = cursor.fetchall()
+    if query_resultaat  == []:
+        print("Helaas, geen match gevonden met "+ gezochte_pizzanaam)
+    else:
+        print("De volgende pizza's zoals "+gezochte_pizzanaam+" gevonden:", query_resultaat )
+    return query_resultaat
+
+def printPizzaTabel():
+#    c = sqlite3.connect(DBASE_FILE).cursor()
+    cursor.execute("SELECT * FROM tbl_pizzas")
+    rows = cursor.fetchall()
+    print("Tabel tbl_pizzas:", rows)
+    return rows
+#    c.close()
+
+
+def voegToeAanWinkelWagen(pizzaRij, pizzaAantal):
+    #Pizzarij is een tuple van drie waarden, pizza_id is daarvan de eerste
+    eerste_rij = pizzaRij[0]#eerste pizza selecteren uit de lijst van pizzas
+    toeTeVoegenGerechtID = eerste_rij[0]#eerste element in de tuple is gerechtID
+
+    cursor.execute("SELECT aantal FROM tbl_winkelWagen WHERE gerechtID = ?", (toeTeVoegenGerechtID,))
+    rows = cursor.fetchone()
+    if not rows == None:
+        aantalVanGerechtAlInWinkelWagen = rows[0]
+        print("al gevonden:", rows[0])
+        #print("aantal al gevonden, pizza soort", pizzaAlGevondenInRij[1])
+       # print("aantal al gevonden, pizza aantal", pizzaAlGevondenInRij[2])
+        nieuw_aantal = aantalVanGerechtAlInWinkelWagen + pizzaAantal
+        #update winkelwagen tabel met nieuwe aantal
+        cursor.execute("UPDATE tbl_winkelWagen SET aantal = ? WHERE gerechtID = ?", (pizzaAantal, toeTeVoegenGerechtID,))
+    else:#pizza soort zit nog niet in wandelwagen
+        toeTeVoegenaantal = pizzaAantal
+
+        cursor.execute("INSERT INTO tbl_winkelWagen VALUES(NULL, ?, ?)", (toeTeVoegenGerechtID, toeTeVoegenaantal,))
+    printTabel("tbl_winkelWagen")
+
 ##OPSTARTEN
 
 
@@ -144,7 +209,7 @@ printPracticeTabel()
 
 
 #verbreek verbinding met het database bestand
-cursor.close()
+#cursor.close()
 
 
 #####EXTRA CODE IDEAS#######

@@ -1,10 +1,16 @@
-### WORKS!
-# NO OO needed, ugly def in a method though
+# Vul hier jullie namen in:
+#
+#
+# Vul hier de naam van je programma in:
+# Programmanaam
+#
 
-#from tkinter import *
+### --------- Importeren bibliotheken -----------------
 import sqlite3
-with sqlite3.connect("MCPizzeria.db") as db:
-    cursor = db.cursor()#cursor is object waarmee je data uit de database kan halen
+#maak een database en geef deze een verkorte naam 'db'
+with sqlite3.connect("MCPizzeriaTest.db") as db:
+    #maak een cursor waarmee je data uit de database kan halen
+    cursor = db.cursor()
 
 
 def maakNieuweTabellen():

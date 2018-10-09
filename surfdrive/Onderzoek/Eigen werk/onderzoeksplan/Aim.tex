@@ -1,47 +1,60 @@
 \section{Aim of the thesis}\label{sec:aim}
+All-in-all, little research has been done on the effectiveness of the assessment materials available \cite{Yadav2016}. Recent published work based on CT focusses on primary education or middle school \cite{LyeKoh2014}. Research based on (the assessment of) CS concepts has a focus on tertiary education (such as \cite{McCracken2001},\cite{2010TewGuzdial}). More specifically, we know little about how teachers are to assess specific CS concepts or computational practices pertaining to Algorithms and Physical Computing in secondary education.
 
-%%%%% VANAF HIER INPERKEN EN NAAR BACKGROUND
-\todo{Erik: Tekortkomingen omzetten in een wetenschappelijk vraag: op welke manier kan hierarchie…}
+The aim of this thesis is to contribute to the knowledge about assessment pertaining to the domains of algorithms, physical computing and their related computational practices and typifying which PCK it demands from teachers to assess these domains.
+%and what PCK is requires/demands/involves from teachers
+%knowledge domains of algorithms, physical computing and the related computational practices.
+%en vertalen we naar...
 
-There is a gap between the (lean) research and classroom practice \cite{Yadav2015}. All-in-all, little research has been done on the effectiveness of the assessment materials available \cite{Yadav2016}, nor to assessment as an aspect of teachers' PCK. Computing education and research suffer from the lack of assessment instruments \cite{voogt2017effecten}. In their research  \citeA{2010TewGuzdial}, argument the importance of validated assessment that could be widely applicable across tertiary curricular approaches. This is even more so for secondary education, where far less relevant research has been done in the first place. In addition, research developments are not accessible to teachers. They need a paid subscription, and academic literature may be written in an incomprehensible manner, or not practical as it can't be implemented in the classroom in a cost-effective manner (such as think-aloud sessions). Recent published work based on CT focusses on primary education or middle school \cite{LyeKoh2014}. Research based on (the assessment of) CS concepts has a focus on tertiary education (such as \cite{McCracken2001},\cite{2010TewGuzdial}). Neither CS concepts nor CT in secondary education has been researched extensively.
+\noindent \textbf{Task difficulty}\newline
+Section \ref{sec:researchAssProgramming} describes that despite efforts from the research community, creating programming assessment tasks that measure what we wish to measure, especially with respect to difficulty, remains a challenge. It was outlined that several researches attempt to classify tasks according to task-oriented features, however do so without isolating the elementary concepts from the strategies, and as a result try to assess (nested) concepts and (problem-solving) strategies simultaneously. Determining task difficulty could be facilitated by clearly separating conceptual knowledge from computational practices (as proposed by \citeauthor{BrennanResnick2012}). As proposed by \citeauthor{deRaadt2009teachingPlans}, plans could be integrated into tasks order to assess strategies. To our knowledge, there has not yet been an attempt to systematically untangle assessment tasks by focussing on computational practices and in doing so, isolating and identifying not only elementary programming concepts but also algorithmic components \cite{deRaadt2008}. The focus lies specifically on the fundamental CS concept of algorithms and the closely coupled algorithmic thinking (as a part of CT) and problem solving skills. The choice for a focus on algorithms is not an arbitrary one. With the curriculum reform, this fundamental concept has become much more theoretical. In addition, algorithmic development and Computational Thinking skills go hand-in-hand and few teachers of aware of the recent research in this area, let alone have any idea on how to assess this.
+
+This leads us to our first question about how variable features of \emph{task difficulty}, specifically related to computational practices, can be identified, accounted for and integrated into an assessment.
 
 
+\noindent \textbf{Task contexts}\newline
+%    \item 1b. Algorithms: How can the variable features of task contexts be identified, accounted for and integrated into an assessment?
+Problem solving involves a continuous process of abstracting and choosing new contextualizations within new situations \cite{oers2004recontextualization}. That transfer and the process of abstraction (as an aspect of CT) is perceived as an important higher-order skill has been discussed in section \ref{sec:AlgProblemSolving}. In addition to dealing with diversity and enhancing inclusion, providing students with meaningful tasks tailored to their specific needs constitutes one of the quality criteria for assessments \ref{fig:AssQualityCriteria}. Despite attempts by researchers in different domains, they have not yet been able to pinpoint the mechanisms behind transfer \cite{oers2004recontextualization}. Though the mechanisms may not yet be crystal clear, understanding which types of contexts can be related and how abstraction can be used to enhance transfer could lead to more attractive and relevant tasks for the students, in addition to a larger and more flexible pool of assessment questions for the teachers to draw upon.
 
-Summarizing, the introduction of the new computing curriculum could benefit from tooling which supports the creation of qualitative knowledge and competency based assessments. Teachers will and should create assessments tailored specifically to their classroom needs, but lack specific PCK to do so. As the more conceptual topics and their corresponding student skills are new, teachers may be concerned about not matching the expectations of the curriculum's standards. Not only is creating a qualitative assessment acknowledged as a difficult task, in the current situation, teachers must first acquire and internalize knowledge about the new concepts.
-
-The aim is to support teachers in the development and implementation of their own classroom specific assessments.
-
-\todo{Hier vraag 1 inleiden}
-
-\todo{Hier vraag 2 inleiden}
-
-We review existing assessment strategies and investigate methods to efficiently and effectively bridge the assessment gap (as a part of PCK). We investigate the design and implementation of assessment templates which support the design of families of assessment tasks. Particularly, how teachers can adapt these to create assessments specific to their classroom needs. The resulting design pattern can aid teachers who have neither the time nor the expertise to indulge in the specific factors needed to measure the wide variety of aspects pertaining to both algorithms and CT. As the fundamental concepts of algorithms are new to the curriculum, a teacher’s knowledge may still have to be further developed before a teacher can create their own assessments to objectively measure the related cognitive skills. Although generally teachers want to, and should, create assessments that are relevant for their students themselves, at least initially, it would be helpful to be given a template, guidelines and concrete examples on how to do that. In addition to supporting assessment generation by means of a design pattern, example assessments can help teachers determine if they are teaching the right concepts, at an adequate level and are endorsing the use of correct skills.
-
-\todo{HIER INPERKEN en verhuizen naar BACKGROUND}
-While deploying a design pattern, we were interested in researching whether, and to which extent, such a tool supports a teacher in creating an assessment tasks that is tailored to individual classroom needs. Particularly the teacher’s perception of the tool was of interest, such as its ease-of-use, use-for-purpose. In addition, we were interested in resulting assessment itself, which has been created by the teacher. Aspects of interest are quality (such as validity, objectiveness, fairness).
-
-The focus lies on the summative school exam, as prescribed by the Dutch national curriculum. It includes both cognitive factors (algorithmic concepts) and noncognitive factors (CT).  Particularly, the non-cognitive skills are often not easily measurable, and as a result, educators can have a difficult time assessing these. The domain of interest is programming (domain D), relevant algorithms (domain B) and related skills (domain A), as specified in the Dutch curriculum specification. Together these entail program-relevant concepts and (Computational Thinking) skills.
+This leads us to the second question about how variable features of \emph{task contexts} be identified, accounted for and integrated into an assessment.
 
 
 
-\todo{dit heeft betrekking op vraag 3}
-The focus lies specifically on the fundamental CS concept of algorithms and the closely coupled algorithmic thinking (as a part of CT) and problem solving skills. The choice for a focus on algorithms is not an arbitrary one. With the curriculum reform, this fundamental concept has become much more theoretical. In addition, algorithmic development and Computational Thinking skills go hand-in-hand and few teachers of aware of the recent research in this area, let alone have any idea on how to assess this.
+\noindent \textbf{Design skills}\newline
+%    \item 1c. Algorithms: How can attainment levels of design skills be identified, elicited, and measured?
+%    \item 2a. Physical Computing: How can attainment levels of design skills be identified and measured?
+Globally, reformed computer science curricula have made an educational shift in focus from 'user' to 'creator'. With it, this movement has placed emphasis on the higher-order Computational Thinking skills involved with solving complex problems \cite{Wing2006}. Thus, skills used during the design and development of a digital artifacts have become predominant. These skills include evaluation of quality, such as correctness and efficiency, and weighing options by means of research and experimentation. Current research is focussed merely on concepts. \citeA{LyeKoh2014} express that only assessing concepts is not enough and additionally embrace computational practices as distinguished by \citeauthor{BrennanResnick2012}. Understanding how to deliberately put students into situations (with challenges or tasks) which elicit these skills is imperative to adequately measure attainment levels. In their review study \citeA{voogt2017effecten} discuss how computing education research in primary and secondary education struggles with a lack of reliable, validated, and theoretically grounded CT assessment instruments. We focus specifically on the design of software and Physical Computing.
+
+This leads us to the third question about how attainment levels of design skills can adequately be identified, elicited, and measured.
 
 
 
-\todo{<SEE ALSO 2016 constructing_assessment_tasks_Science SRI>}
 
+\noindent \textbf{Physical Computing}\newline
+%    \item 2b. Physical Computing: How can knowledge of concepts of Physical Computing (embedded systems) be identified and measured?
+Physical Computing is a newly emerging field in computer science education.
 
-%%%%% TOT HIER INPERKEN EN NAAR BACKGROUND
-
-
-As outlined in the background section, many researches show an attempt to classify tasks according to task-oriented features, however do so without isolating the elementary concepts from the strategies, and as a result try to assess (nested) concepts and (problem-solving) strategies simultaneously. It is our opinion that this type of research could be mediated by using tasks which clearly separate concepts from plans. The starting point is to use a bottom-up approach to identify tasks that assess concepts individually. Then, systematically apply merging, abutment and nesting to individual concepts in combination with a top-down plan decomposition approach (similar to the work of Luxton-Reilly et al., 2018 and de Raadt, 2009) to establish a (hierarchical) set of assessment tasks for more complex plans and programming strategies. For this research we focus specifically on the level of understanding (the reading and tracing), and leave creating for further research. This set of assessment tasks could be used to adequately determine the mastery of a student for a specific aspect (for either a fundamental concept or a plan composition problem) and discover any alternative conceptions. In addition, it facilitates the identification of variable features.
-
-Our approach is novel because, to our knowledge, there has not yet been an attempt to systematically untangle assessment tasks and in doing so, isolating and identifying elementary concepts and plans.
+This leads us to the fourth question, about how the knowledge of concepts of Physical Computing (embedded systems) can be identified and measured.
 
 
 
-The aim of the study is two-fold. We investigate methods for teachers to develop qualitative summative assessment instruments for computational thinking and algorithms for CS secondary education. We also explore, pilot, and report on a method for effectively determining students' programming levels of mastery, variable features in tasks, and identifying specific misconceptions.
+\noindent \textbf{Assessment PCK}\newline
+%    \item 3. PCK:  What characterizes the PCK of Physical Computing, Algorithms and computational practices, specifically the PCK component pertaining to effective assessment?
+Teachers find it difficult to assess student learning in computer science \cite{yadav2016pck}. There is a gap between the (lean) research and classroom practice \cite{Yadav2015}. In their research \citeA{2010TewGuzdial}, argument the importance of validated assessment that could be widely applicable across tertiary curricular approaches. This is even more so for secondary education, where far less relevant research has been done in the first place.
+
+
+
+  %In addition, research developments are not accessible to teachers. They need a paid subscription, and academic literature may be written in an incomprehensible manner, or not practical as it can't be implemented in the classroom in a cost-effective manner (for example think-aloud sessions).
+
+Teachers will and should create assessments tailored specifically to their classroom needs, but lack specific PCK to do so. As the more conceptual topics and their corresponding student skills are new, teachers may be concerned about not matching the expectations of the curriculum's standards. The introduction of the new computing curriculum could benefit from understanding how to support teachers whilst creating qualitative knowledge and competency based assessments. Not only is creating a qualitative assessment acknowledged as a difficult task, in the current situation, teachers must first acquire and internalize knowledge about the new concepts. It would be interesting to understand what characterizes and typfies PCK for effective assessment. This could provide insight on knowledge patters and (evaluation) strategies with regards to assessment. This insight is three-fold:
+\begin{itemize}
+\item inform required professional development,
+\item typify knowledge to analyse and prescribe assessment design practices of teachers, and
+\item establish good practices and evidence of assessment principles.
+\end{itemize}
+
+This leads us to the fifth question, namely what characterizes the PCK of Physical Computing, Algorithms and computational practices, specifically the PCK component pertaining to effective assessment.
+
 
 %We report on our finding and propose a set of  lessons learned for similar %future initiatives. and PD initiatives
 
@@ -56,6 +69,30 @@ The aim of the study is two-fold. We investigate methods for teachers to develop
 
 \subsection*{Research Questions}
 
+
+%The main research question is: \emph{How can teachers be empowered to adequately assess the reformed CS curriculum topics of algorithms and physical computing and the related computational practices?}
+To summarize, the following research questions will be addressed:
+\begin{enumerate}
+\item \textbf{Algorithms}
+    \begin{enumerate}
+    \item How can the variable features of task difficulty related to computational practices be identified, accounted for and integrated into an assessment?
+    \item How can the variable features of task contexts be identified, accounted for and integrated into an assessment?
+    \end{enumerate}
+
+\item \textbf{Physical Computing}
+    \begin{enumerate}
+    \item How can attainment levels of design skills be identified, elicited, and measured?
+    \item How can knowledge of concepts of Physical Computing (embedded systems) be identified and measured?
+    \end{enumerate}
+
+\item \textbf{PCK}
+
+    What characterizes the PCK of Physical Computing, Algorithms and computational practices, specifically the PCK component pertaining to effective assessment?
+
+
+\end{enumerate}
+
+
 %Our approach with a strong focus on algorithmic design and thinking-first supports the problem % solving process during programming.
 %
 % How does an approach in which
@@ -63,16 +100,16 @@ The aim of the study is two-fold. We investigate methods for teachers to develop
 %prior to implementation (in code), guide and support students in the problem solving
 %process of programming?
 
-The main research question is: \emph{How can teachers be empowered to adequately assess the reformed CS curriculum topic of algorithms?}
-
-
-In order to answer this question, the following subquestions are addressed:
-\begin{enumerate}
-\item What are the relevant assessment design principles?
-\item How to elicit and judge evidence of relevant knowledge and skills?
-\item How to effectively bridge teachers' assessment knowledge (as part of PCK) gap?
-\item How can the variable features of task difficulty be identified and accounted for and integrated in an assessment?
-
-
-\end{enumerate}
+%The main research question is: \emph{How can teachers be empowered to adequately assess the reformed CS curriculum topic of algorithms?}
+%
+%
+%In order to answer this question, the following subquestions are addressed:
+%\begin{enumerate}
+%\item What are the relevant assessment design principles?
+%\item How to elicit and judge evidence of relevant knowledge and skills?
+%\item How to effectively bridge teachers' assessment knowledge (as part of PCK) gap?
+%\item How can the variable features of task difficulty be identified and accounted for and integrated in an assessment?
+%
+%
+%\end{enumerate}
 
