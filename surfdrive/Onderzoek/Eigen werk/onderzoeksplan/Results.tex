@@ -1,217 +1,29 @@
 \section{Results}\label{sec:results}
 
-The written assessments (tasks, quizzes and tests) were coded (in
-\emph{Atlas.ti}\footnote{\url{http://atlasti.com/}}) and the 981 tags were
-subjected to a qualitative analysis. We summarize our findings below.%, organized of the research questions.
 
 
-\subsection*{Construct-based errors}
-
-The most predominant construct-based misconceptions are related to methods
-(definition, use), variables (declaration, initialization, assignments), and
-boolean conditions. The majority of these errors can be detected with the
-assistance of a compiler. Some cause logical errors, such as missing out
-entire cases when conjugate boolean statements (combined with negation) were
-used. These were evident on written tests, but not in the compiler-assisted
-assignments. The number of mistakes improved over time, but did not
-disappear.
+%For this research we focus specifically on the level of understanding (the reading and tracing), and leave creating for further research. This set of assessment tasks could be used to adequately determine the mastery of a student for a specific aspect (for either a fundamental concept or a plan composition problem) and discover any alternative conceptions. In addition, it facilitates the identification of variable features.
 
 
-\subsection*{Plan Composition problems}
-
-
-\subsubsection*{Plans}
-
-Section \ref{sec:courseObjectives} summarizes the plans taught. Each of these
-were each assessed in quizzes or tests:
-
-\begin{itemize}[leftmargin=1em]
-\item Triangular swap plan and comparison-based sort algorithm: Every
-    student was able to correctly trace and summarize the goal of each.
-
-
-\item Counter-controlled loop: Application was assessed in the final test
-    while creating a generic multi-structural or relational solution. Only
-    one student, a student lagging behind on homework, was not able to
-    select the appropriate plan. Three students were able to generate
-    correct solutions. The others were able to select the appropriate plan
-    and recall all the details of the plan, but made some implementation
-    errors.
-
-\item Min/Max plan: Through all students were able to select the
-    appropriate plan for application, many construct-based errors were made
-    during implementation and details were omitted.
-
-\item Guarded exception plan (divide-by-zero, a variant on the rainfall
-    problem): This plan was not taught explicitly nor implicitly. We
-        surprised the students just to see how far they could get on their
-        own. Without explicit instruction, no student guarded against the
-        unexpected divide-by-zero in the Rainfall-problem.
-
-
-\end{itemize}
-
-
-To summarize, students understood how plans work and selected them
-appropriately. However, a plan must be taught (either explicitly or
-    implicitly) in advance. Students
-successfully related the given problem to a previous problem they solved
-(generalisation), and tried to either apply the plan directly, or fine-tune
-the plan to solve the problem at hand, but made (mainly syntax) mistakes in
-the process.
-
-The condition in the loop-plan was the largest source of boundary-errors.
-With one exception, students were capable of coming up with a generic
-solution to a complex (relational-level problem) requiring an adequate
-control variable and updating it appropriately. The errors were caused when
-choosing the specific boundary. For example, a student correctly applied the
-traverse-list plan and recalled that a \jav{while} loop must terminate when a
-list is empty (correct idea for a plan), but a \emph{type} misconception is
-evident as the student tried to compare a list to the integer value '0'
-instead of using the method \jav{isEmpty()}.
-
-These mistakes pertain to paper tests and prevail throughout the entire
-course, however, were not evident in computer-assisted homework assignments.
-Apparently, syntax errors were solved with the help of the compiler, and
-Greenfoot's visualisation helped locate and alleviate any logical errors.
+%The assessments created by the teachers along with samples of their graded work will be analyzed in Atlas. In addition to semi-structured interviews, and teachers' notes on their thoughts and experiences during implementation will be used to investigate characteristics of PCK:
+%\begin{itemize}
+%\item experience using the design template (i.e., how much time they spent, if they encountered any problems, if they felt it was useful, if they felt they had sufficient knowledge and skills, what they used, what they didn't use)
+%\item how they approached the task (i.e., how they started, what they did to overcome any hurdles),
+%\item the quality criteria aspects discussed in section \ref{sec:qualityCriteria} (i.e. how satisfied are they about their own assessment),
+%\item any suggestions for improvements.
+%\end{itemize}
 
 
 
-
-
-\subsubsection*{Flowcharts First}
-
-In two assessment questions, students were given the choice whether to answer
-using code or flowchart. Novice students always chose flowcharts over writing
-code. On a unistructural level task, the students were rather uniformly
-distributed, about half chose to answer using a flowchart. However, on a more
-complex relational level task, substantially more students (three quarters)
-choose flowcharts over code.
-
-As problems become more complex students tend to make careless mistakes
-(putting detailed steps in an incorrect order), forgot steps in a plan or
-just can't seem to focus on small details at a time (choosing correct
-boundaries). These problems did not arise when they were asked to focus on a
-specific subtask (at a unistructural level). Though these errors are found in
-both flowcharts and code, these details actually don't belong in a high-level
-flowchart. Details should be left to work out when the student is translating
-a specific subtask into code. The student can then focus on just that
-specific subproblem, ignoring the rest of the algorithm, in effect lowering
-cognitive burden.
-
-
-
-Summarization problems (omitting secondary requirements such as guarding for
-an error) increased with complexity. During coding, students often omitted
-the last specified step, such as printing or returning a specified value.
-Less summarization errors are made using flowcharts than with code. It
-appears that flowcharts help maintain a bird's-eye view and keep goals in
-mind.
-
-
-
-
-
-Students have been trained to initially abstract from unnecessary details and
-describe their algorithm at a high-level, leaving the details to be
-elaborated on at a later point in time. Using flowcharts students decompose
-problems into subtasks. The sub-methods themselves then became rather
-straightforward, allowing for direct implementation into code.
-
-
-%\begin{figure*}\label{fig:BramFTaskSloppyWork}
-%\includegraphics[scale=0.6]{images/BramFTaskSloppyWork.png}
-%\caption{Flowchart skeptic}
-%\end{figure*}
+%This study starts with a literary review to inventory what is known about challenges that teachers face regarding assessment (as a part of PCK) in general, and pertaining to algorithms and algorithmic thinking in particular.
 %
-
-%\begin{figure*}[H]
-%\centering
-%\begin{subfigure}{.5\textwidth}
-%  \centering
-%  \includegraphics[scale=.7,width=.7\linewidth]{images/BramFTaskSloppyWork}
-%  \caption{Code with evidence of cognitive-load errors}
-%  \label{fig:BramFTaskSloppyWork}
-%\end{subfigure}%
-%\begin{subfigure}{.5\textwidth}
-%  \centering
-%  \includegraphics[scale=.7,width=.7\linewidth]{images/bramcoding}
-%  \caption{Corresponding coding}
-%  \label{fig:squareEnd}
-%\end{subfigure}
-%\caption{Flowchart skeptic}
-%\label{fig:flowchart-skeptic}
-%\end{figure*}
-
-\begin{figure*}
-\centering
-  \includegraphics[scale=.57]{images/BramFTaskSloppyWork}\quad
-  \includegraphics[scale=.57]{images/bramcoding}
-\caption{Flowchart skeptic (left: code with evidence of cognitive load errors; right: coding in Atlas)}
-\label{fig:BramFTaskSloppyWork}
-\end{figure*}
-
-
-
-Figure \ref{fig:BramFTaskSloppyWork} illustrates the work of a student who is
-capable of producing syntax-error free code (on paper). He has previously
-shown to be capable in creating correct flowcharts on a multistructural
-level, but here shows ample PCP issues while writing his solution directly in
-code (without using a flowchart first). This code snippet contains no less
-than 7 errors (incorrect parameters, initialization error, wrong boundary
-choice, \jav{else} without \jav{if},\ldots).
-
-Inspection of other direct-code implementations show similar misplaced,
-omitted or superfluous method calls. These types of errors are less abundant
-when students sketch a flowchart first. When directly coding, students also
-fail to link subtasks together properly (algorithmic thinking), and in doing
-so omit loops (using an \jav{if..then..else} where a \jav{while} is
-expected), omit or misplace method calls or call a method unnecessarily.
-These are cognitive overload errors which the same students do not make on a
-unistructural level.
-
-Analysis of the final test and homework assignments indicates that the students
-have absolutely no trouble creating and applying \emph{their own} sub-methods
-appropriately (multistructural or relational level). Apparently, training to
-design a flowchart first, helps students identify subtasks and modularize
-their solution. Moreover, decomposition into subtasks reduces a
-multistructural problem into multiple unistructural tasks. In turn, this
-diminishes overload as each is tackled individually.
-
-\subsection*{Translating flowchart to code}
-
-Students correctly translate their flowcharts into code. Students trust their
-initial design and translate this accordingly. Mistakes in flowchart design
-are incorporated directly into their resulting code. In only two cases,
-students introduced Plan Composition errors during translation from flowchart
-to code: (1) omitting a specific method call, and (2) mistaking the scope of
-a for-loop. On both occasions students were dealing with a rather complex
-relational-create level question. Both students had previously revealed to be
-capable of adequately making a translation in lower-level tasks.
-
 %
-%\subsection*{Testing and reflecting}
+%The study continues with a document analysis of related work pertaining to assessment of CS concepts and skills. Research on existing assessment instruments and relevant international curricula are reviewed. To select the curricula, we first listed those curricula which have been referred to in recent publications. The next selection criteria pertained to the relevancy of the learning objectives. Those must coincide with the reformed Dutch curriculum, with a particular focus on algorithms or problem solving, as well as explicitly embedding Computational Thinking as a core competency. In the third selection, relevant supportive documentation was considered, such as progression pathways (CAS, corresponding to the national curriculum in the U.K.) or specific description of the KSA outcomes and mappings to their corresponding curricula (ECS and AP CS Principles as specifications of the U.S. CSTA, and AQA as specifications of the England national curriculum). This narrowed down to the following short-list of curricula: U.S. CSTA, the Israel nationwide CS curriculum, National curriculum for computing England, and the NCEA Digital Technologies curriculum in New Zealand. From these curricula, sample assessment tasks and the way in which they elicited evidence in relation to their KSAs was analyzed together with any available research generally describing the curriculum or specifically describing the development of assessments. In addition, relevant (inquiry based) tasks from Process Oriented Guided Inquiry Learning in Computer Science (CS-POGIL), the International Baccalaureate (IB) program, and the Computer Science Field Guide \cite{CSFieldGuide} were reviewed.
 %
-%Learning to program doesn't stop after drawing a flowchart. Translating the
-%proposed solution into code is an immanent step for testing and evaluating an
-%algorithmic solution. Students who don't code continue to make many logical
-%errors. Though it improves over time, students who code continue to make both
-%logical and syntax mistakes on paper tests. Strikingly, they don't make these
-%mistakes in the computer-assisted homework.
+%
+%Similar to the ECS, we use the structured ECD approach to establish a design template for assessments which can be fine-tuned by teachers to adhere to their own specific classroom needs. This structured approach results in a clear link between potential observations (evidence of students' knowledge or skills), evaluation procedures, and measurement models (see section \ref{sec:ECD}).\todo{evt rubrics etc}
+%
+%
+%The design pattern is piloted in two stages. The results from literary review will be triangulated with teacher interviews and observations during the implementation and delivery phases in which teachers use templates to implement and deliver their customized assessments. Via qualitative analysis (teacher interviews, student think-aloud sessions, student self-evaluation, assessment task analysis, scoring process analysis) we seek to determine which characteristics in the design-patterns are feasible as PCK-enablers, and which aspects require refinement or further investigation (see also table \ref{table:MappingCriteriaMethod}). In an iterative process, the results are analyzed and evaluated, and the assessment instrument adjusted and refined. This process is repeated twice, first in a small-scale pilot, and then the candidate template assessment tasks will be deployed at multiple institutions for testing on a larger scale. We subsequently report our findings.
 
 
-
-%
-%\subsection*{On-track vs. laggers}
-%
-%In the final test and post task, all on-track students show that they have
-%reached an adequate level of understanding, irrespective of their previous
-%knowledge levels. The two students lagging behind on homework were
-%responsible for about 75\% of the construction-based errors and 80\% of the
-%plan composition problems. Over time there was a slight decrease in the
-%amount of errors they made. Compared to the on-track students, they made
-%relatively less construct-based mistakes related to flow control, control
-%structures and loops, but more boolean, method-related, type and assignment
-%errors. With respect to plan composition, they failed entirely to create
-%complete solutions to the problems specified. In particular, they were
-%incapable of selecting appropriate boundaries.
