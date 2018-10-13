@@ -1,21 +1,40 @@
 \section{Method}\label{sec:method}
 
 The qualitative research will be implemented via an educational design research. The research questions will be answered throughout three studies:
-\begin{enumerate}[label=\Roman*.]
-\item The first study focusses on assessing student's attainment level of computational practices with respect to Algorithms. %docenten worden indirect betrokken
+%
+%
+
+\vspace{3mm}
+
+I. The first study focusses on assessing student's attainment level of computational practices with respect to Algorithms.
+
+II. The second study is concerned with assessing recontextualization and transfer of algorithmic concepts, and typifying the PCK aspects that play a role in the assessment of this domain.
+
+III. The third study is concerned with assessing Physical Computing concepts and design practices, and typifying the PCK aspects that play a role in the assessment of this domain. \newline
 
 
-% pertains to investigating ways in which teachers can establish qualitative assessment tasks for the new Dutch curriculum.
-%\item The second is called "untangling programming tasks" and investigates a framework for decomposing and arranging programming (sub)tasks in a manner to specifically identify misconceptions in student learning, and variable features in programming tasks.
-
-\item The second study is concerned with assessing recontextualization and transfer of algorithmic concepts, and typifying the PCK aspects that play a role in the assessment of this domain.
-
-\item The third study is concerned with assessing Physical Computing concepts and design practices, and typifying the PCK aspects that play a role in the assessment of this domain.
-\end{enumerate}
 
 
+%\begin{enumerate}[label=\Roman*.]
+%\begin{enumerate}
+%\item I. The first study focusses on assessing student's attainment level of computational practices with respect to Algorithms.
+%%
+%\item II. The second study is concerned with assessing recontextualization and transfer of algorithmic concepts, and typifying the PCK aspects that play a role in the assessment of this domain.
+%%
+%\item III. The third study is concerned with assessing Physical Computing concepts and design practices, and typifying the PCK aspects that play a role in the assessment of this domain.
+%%
+%
+%\end{enumerate}
 
-\begin{table*}
+%
+% docenten worden indirect betrokken
+%
+%
+%% pertains to investigating ways in which teachers can establish qualitative assessment tasks for the new Dutch curriculum.
+%%\item The second is called "untangling programming tasks" and investigates a framework for decomposing and arranging programming (sub)tasks in a manner to specifically identify misconceptions in student learning, and variable features in programming tasks.
+
+
+\begin{table}
   \centering
 \begin{tabular}{|c|c|}
   \hline
@@ -27,7 +46,7 @@ The qualitative research will be implemented via an educational design research.
     III & 3, 4, 5 \\ \hline
 \end{tabular}
 \caption{Relationship between studies and research questions}\label{table:studiesVsQues}
-\end{table*}
+\end{table}
 
 The focus lies on the summative school exam, as prescribed by the Dutch national curriculum.
 It includes cognitive factors (algorithmic and physical computing concepts), computational practices (CT), and the assessment of knowledge according to \citeauthor{streun2001kennis}'s segregation:
@@ -43,7 +62,7 @@ The objective is to find a balance between scientifically grounded and useful in
 \subsection{Study I. Assessment of Algorithms}
 
 The first study focusses on assessing student's attainment level of computational practices with respect to Algorithms. This study answers question 1, see table \ref{table:StudyIresearchQues}.
-\begin{table*}
+\begin{table}
   \centering
 \begin{tabular}{|c|l|l|l|}
 %\begin{tabular}{|c|l|l|l|l|}
@@ -55,7 +74,7 @@ The first study focusses on assessing student's attainment level of computationa
   \hline
 \end{tabular}
 \caption{Overview study I: Assessment of Algorithms}\label{table:StudyIresearchQues}
-\end{table*}
+\end{table}
 
 
 In this study we employ the Evidence Centered Assessment Design (ECD, see section \ref{sec:ECD}) framework to systematically develop computing science assessment tasks for secondary education. ECD involves an iterative process of developing, piloting, testing and evaluating an assessment design pattern. The process ensures coherence between learning objectives and tasks which elicit evidence in order to adequately assess these. Two related studies report positive results from a (semi-)structured approach to establishing assessments, \citeA{mislevy2006implications} and \citeA{snow2017CTECD} for the ECS framework and \citeA{catete2017framework} for Advanced Placement CS Principles. Both the AP CS Principles and the ECS exams have been validated \cite{2010TewGuzdial}. This research borrows aspects from both. In order to systematically design assessment tasks, we combine the ECD framework with expert review for validation purposes.
@@ -72,7 +91,7 @@ We pursue with the work of \cite{LyeKoh2014} who use \citeauthor{BrennanResnick2
 
 \end{enumerate}
 
-In our design process, we first concretize the learning objectives and then specify learning performances that describe what students need to be able to know and do. Input are the performance expectations articulated in the reformed Dutch curriculum. Other international standards (such as U.S. CSTA, U.K. National Curriculum, International Baccalaureate, New Zealand NCEA) are analyzed and discrepancies reviewed by experts to ensure completeness, or if otherwise chosen, to indicate specific differences and implications for further use of our model for other curricula. 
+In our design process, we first concretize the learning objectives and then specify learning performances that describe what students need to be able to know and do. Input are the performance expectations articulated in the reformed Dutch curriculum. Other international standards (such as U.S. CSTA, U.K. National Curriculum, International Baccalaureate, New Zealand NCEA) are analyzed and discrepancies reviewed by experts to ensure completeness, or if otherwise chosen, to indicate specific differences and implications for further use of our model for other curricula.
 
 Next, in an iterative process, we define potential observations (evidence) and work products (tasks, challenges or situations) which can be used to elicit these learning performances. Next, existing assessment tasks (such as those used in the research of \citeauthor{LuxtonReilly2018}) will be analyzed in \emph{Atlas.ti}\footnote{\url{http://atlasti.com/}} and decomposed, or '\emph{untangled}', to separate the computational concepts from the computational practices (assessment of strategies through the application of plans). Using the coded work in Atlas, the tasks will be analyzed the hierarchy of precedence. In doing so, we combine:
 \begin{itemize}
@@ -80,17 +99,17 @@ Next, in an iterative process, we define potential observations (evidence) and w
 \item a top-down plan decomposition approach (similar to the work of \citeauthor{LuxtonReilly2018})
 \end{itemize}
 to establish a (hierarchical) set of tasks to assess programming strategies through plans. As such, we are interested in which concepts or plans are prerequisite to which type of algorithmic composition plans. For example, a task including a selection statement with a compound boolean expression:
-\begin{verbatim}
+%
+\begin{PYTHON}
 if (x>3 and x<5):
     print B
 
 print E
-\end{verbatim}
+\end{PYTHON}
+%
 requires knowledge about how a (one-branch) selection statement works (and its range), arithmetic operators (\jav{<} and \jav{>}), and the Boolean operator (\jav{and}). A student failing to understand this code could be dealing with a misconception pertaining to any one of these three concepts.
 
 Using \citeauthor{LuxtonReilly2018}'s concept map and CAS's Computing Progression Pathways \cite{CASProgressionPathways} as a starting point, computational practices will be integrated into a competency model for Algorithms. We then define variable task features in terms of difficulty (including computational practices) to elicit students' attainment levels. In the final step these are integrated into a design pattern to construct tasks that measure mastery of the topic of algorithms and identify specifical misconceptions.
-
-
 
 Subsequently, example tasks will be piloted in a classroom setting. Think-aloud sessions will be held with the students (and audio-recorded) to reveal if the task does indeed assess the correct concept and achievement level as intended. As proposed by \citeA{2010TewGuzdial}, as an indication of reliability, students' results from the pilot are evaluated and compared to assessments throughout the rest of the course. The analysis of te assessment tasks will be used to test the competency model and proposed progression pathway.
 
@@ -105,7 +124,7 @@ We present our design approach, provide examples of tasks, and consider the impl
 %docenten thema teams
 
 The second study is concerned with assessing recontextualization and transfer of algorithmic concepts. The study is two-fold, it includes determining a student competency model as well as typifying the PCK aspects that play a role in the assessment of this domain. This study answers question 2 and 5, see table \ref{table:StudyIIresearchQues}.
-\begin{table*}
+\begin{table}
   \centering
 \begin{tabular}{|c|p{70mm}|l|p{50mm}|}
 %\begin{tabular}{|c|l|l|l|l|}
@@ -118,7 +137,7 @@ The second study is concerned with assessing recontextualization and transfer of
   \hline
 \end{tabular}
 \caption{Overview study II: Assessment of algorithmic concepts with recontextualization}\label{table:StudyIIresearchQues}
-\end{table*}
+\end{table}
 
 
 The initial part of this study is combined with study I. The first phases of the ECD design will be performed simultaneously with study I.  Specific to this study, the variable task features will be described in terms of contexts of given algorithmic tasks in order to facilitate the recontextualization and fine-tuning of assessment tasks to a teachers' specific needs. Again, expert review, with master teachers, teacher educators and curricular experts from two universities will be used to validate the intermediate products. An assessment pattern (consisting of templates and example assessments) is created, implemented and deployed, and its significance and implications investigated.
@@ -127,7 +146,7 @@ The initial part of this study is combined with study I. The first phases of the
 To determine how to effectively support teachers with their assessments we let teachers create their own assessments based on template and model tasks from the ECD process. Thus, a participatory design is used involving teachers who play an active role in creating assessments. In three subsequent phases, these design patterns together with example tasks are then distributed to a group of teachers who will teach and assess algorithms in a secondary school setting. After a short instruction, teachers are given the design pattern and accompanying example tasks and are asked to create, implement and deliver a personalized assessment of their own.
 
 
-Teachers and students alike will be subject to research during the implementation and delivery phases of the assessment process. Data will be collected through think-aloud sessions, semi-structured interviews, student self-evaluation, the tasks created and marked by the teachers, and comparison of student grades with prior student work. It would be interesting to see if, and to which extent, a design pattern supports teachers in creating an assessment tasks that is tailored to individual classroom needs. Particularly the teacher’s perception of the tool is of interest, such as its ease-of-use, use-for-purpose. In addition, we were interested in resulting assessment itself, which has been created by the teacher. Aspects of interest are quality (such as validity, objectiveness, fairness). To evaluate the quality of the design template, it (or its resulting teachers' assessment) is aligned across the quality criteria described in section \ref{sec:qualityCriteria}.
+Teachers and students alike will be subject to research during the implementation and delivery phases of the assessment process. Data will be collected through think-aloud sessions, semi-structured interviews, student self-evaluation, the tasks created and marked by the teachers, and comparison of student grades with prior student work. It would be interesting to see if, and to which extent, a design pattern supports teachers in creating an assessment tasks that is tailored to individual classroom needs. Particularly the teacher's perception of the tool is of interest, such as its ease-of-use, use-for-purpose. In addition, we were interested in resulting assessment itself, which has been created by the teacher. Aspects of interest are quality (such as validity, objectiveness, fairness). To evaluate the quality of the design template, it (or its resulting teachers' assessment) is aligned across the quality criteria described in section \ref{sec:qualityCriteria}.
 
 
 
@@ -137,7 +156,7 @@ Table \ref{table:MappingCriteriaMethod} shows how the different methodological a
 We present a student competency model for Algorithmic concepts. We describe our design approach, provide examples of tasks, and consider implications of this work for (PCK) assessment of algorithms. We hope the results will provide insight into characteristics of PCK assessment on algorithms, how to effectively fine-tune a design template to a teacher's own specific classroom needs, how to embed recontextualization into assessments, and as such yield guidelines for teacher training to inform effective classroom practice.
 
 
-\begin{table*}
+\begin{table}
   \centering
 \begin{tabular}{|c|p{30mm}|p{33mm}|p{30mm}|p{43mm}|}
 %\begin{tabular}{|c|l|l|l|l|}
@@ -161,7 +180,7 @@ We present a student competency model for Algorithmic concepts. We describe our 
   \hline
 \end{tabular}
 \caption{Methods for evaluating quality criteria}\label{table:MappingCriteriaMethod}
-\end{table*}
+\end{table}
 
 %In some cases, conjecture about the quality will be made based on the design template, in others on the fine-tuned assessment implemented by the teacher (for example with data from student interviews or think-aloud sessions). The origin of the data will be considered during evaluation of the results.
 
@@ -172,7 +191,7 @@ We present a student competency model for Algorithmic concepts. We describe our 
 
 The third study is concerned with assessing Physical Computing concepts and digital artefact design practices. The study is two-fold, it includes determining a student competency model for Physical Computing (concepts and design skills), as well as typifying the PCK aspects that play a role in the assessment of this domain. This study answers questions 3, 4, and 5, see table \ref{table:StudyIIIresearchQues}.
 
-\begin{table*}
+\begin{table}
   \centering
 \begin{tabular}{|c|p{50mm}|l|p{48mm}|}
 %\begin{tabular}{|c|l|l|l|l|}
@@ -186,14 +205,26 @@ The third study is concerned with assessing Physical Computing concepts and digi
   \hline
 \end{tabular}
 \caption{Overview study III: Assessment of Physical Computing}\label{table:StudyIIIresearchQues}
-\end{table*}
-
-
-Following up on the work of \cite{mareen2018PhysComp}, in a similar fashion as in study II, the ECD methodology will be employed. The outcomes of this process are integrated into a design pattern and to construct tasks that measure proficiency of both computational concepts of Physical Computing (embedded systems) and the design process as an aspect of computational practice. The design template is distributed to a group of teachers who will implement and deliver the assessment in a secondary school setting and provide feedback. In a similar fashion to study II, teachers and students will be involved during data collection. The results will be analyzed and used to refine the design pattern. In addition, the results will address the required professional development plans for teachers assessing Physical Computing.
+\end{table}
 
 
 
-Particularly, the (CT) computational practices are often not easily measurable, and as a result, educators can have a difficult time assessing these. In their review study \citeA{voogt2017effecten} conclude that researchers employ diverse methods for establishing CT attainment levels, however either not valid nor reliable. Promising, however is the work of \cite{LyeKoh2014}. We follow in their footsteps, based on \citeauthor{BrennanResnick2012}'s 3D model, we investigate the assessment of computational practices relevant for the design of digital artifacts (particularly, Physical Computing).
+Through educational reconstruction, \citeauthor{mareen2018PhysComp} investigated the relevant concepts of embedded systems and its relations to physical computing. Using a design-based research approach she implemented and evaluated teaching approaches for computing perspectives. This can be used as a starting point and extended to include computational concepts and practices. In their work, \citeauthor{atmatzidou2012evaluating} connect CT skills (abstraction, generalisation, algorithm, modularity and decomposition) to specific evidence statements and self-reflection questions which can be used to determine students' attainment levels. They also propose a rubric to assess specific CT criteria.
+
+Thus, following up on the work of \citeauthor{mareen2018PhysComp} and \citeauthor{atmatzidou2012evaluating}, in a similar fashion as in study II, the ECD methodology will be employed to focus more specifically on assessment and inclusion of computational practices and design aspects. The outcomes of this ECD process are integrated into a design pattern. We construct tasks that measure proficiency of both computational concepts of Physical Computing (embedded systems) and computational practices, such as those pertaining to the design process. The design template is distributed to a group of teachers who will implement and deliver the assessment in a secondary school setting and provide feedback. In a similar fashion to study II, teachers and students will be involved during data collection. The results will be analyzed and used to refine the design pattern. In addition, the results will address the required professional development plans for teachers assessing Physical Computing.
+
+
+
+Particularly, the (CT) computational practices are often not easily measurable, and as a result, educators can have a difficult time assessing these. In their review study \citeA{voogt2017effecten} conclude that researchers employ diverse methods for establishing CT attainment levels, however either not valid nor reliable. Promising, however is the work of \citeA{LyeKoh2014}. We follow in their footsteps, based on \citeauthor{BrennanResnick2012}'s 3D model, and investigate the assessment of computational practices relevant for the design of digital artifacts (particularly, Physical Computing).
+The goal is to establish a competency model for physical computing.
+%
+%Closely related is the need of developing a competency model for physical computing.
+%While this work provides a basis with the summary and explication of relevant content,
+%future work should strive for a concise model to structure the central aspects of the field
+%and give a more compact overview of the key concepts of physical computing, for example
+%with the approach described by Grillenberger and Romeike [GR17]. Based on such a model,
+%competency levels can be defined and empirically investigated, which would also help to
+%develop criteria for assessment and grading.
 
 
 We present our design approach, provide examples of tasks, and consider implications of this work for (PCK) assessment of Physical Computing and design of digital artifacts.
@@ -201,11 +232,6 @@ We present our design approach, provide examples of tasks, and consider implicat
 
 \todo{<SEE ALSO 2016 constructing_assessment_tasks_Science SRI>}
 
-
-
-
-
-%
 
 %Over het algemeen kan worden gesteld dat er in de onderzoeken op verschillende manieren is gemeten. Er
 %moet nog verder onderzoek worden gedaan om voor verschillende doelgroepen te komen tot het meten van
@@ -276,20 +302,20 @@ The experts will contribute in the following stages:
 
 %How does knowing about PCK as a construct (and about CoRes and PaP-eRs as a way
 %of concretizing that construct) influence teacher thinking about teaching science, and
-%about one’s development as a science teacher?
+%about one's development as a science teacher?
 
 
 %subGOALS
 
 %As noted earlier, this question is explored from the perspectives of a science teacher
 %educator and his student-teachers in order to better understand:
-%(a) the science teacher educator’s thinking about how introducing PCK to his
+%(a) the science teacher educator's thinking about how introducing PCK to his
 %student-teachers influenced their development as science teachers;
-%(b) student-teachers’ perceptions of any links between PCK (as a construct) and
-%their observations of experienced teachers’ practice;
-%(c) the influences of ideas about PCK on student-teachers’ approaches to planning
+%(b) student-teachers' perceptions of any links between PCK (as a construct) and
+%their observations of experienced teachers' practice;
+%(c) the influences of ideas about PCK on student-teachers' approaches to planning
 %for their teaching;
-%(d) the influences of ideas about PCK on student-teachers’ views about engaging
+%(d) the influences of ideas about PCK on student-teachers' views about engaging
 %science students in learning; and
-%(e) how student-teachers’ developing ideas about PCK shaped their views about
+%(e) how student-teachers' developing ideas about PCK shaped their views about
 %learning about science teaching.
