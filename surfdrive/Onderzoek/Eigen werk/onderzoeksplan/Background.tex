@@ -1,13 +1,15 @@
 \section{Background}\label{sec:background}
 
 \subsection{Computational Thinking}\label{sec:CTdef}
-We start off by explaining the notion of Computational Thinking (CT).
-
-In 2006 Computational Thinking was described by Wing as the extension of every child's analytical ability \cite{Wing2006}. Since then, CT has found its way into primary and secondary curricula around the globe, including the reformed Dutch Curriculum. CT refers to thought processes that are involved when solving complex problems and generalizing and transferring this problem solving process to a wide variety of problems \cite{voogt2015computational}. CT are higher-order-thinking skills \cite{Yadav2017CTteacherEd}.
+We start off by explaining the notion of Computational Thinking (CT). In 2006 Computational Thinking was described by Wing as the extension of every child's analytical ability \cite{Wing2006}. Since then, CT has found its way into primary and secondary curricula around the globe, including the reformed Dutch Curriculum. CT refers to thought processes that are involved when solving complex problems and generalizing and transferring this problem solving process to a wide variety of problems \cite{voogt2015computational}. CT are higher-order-thinking skills \cite{Yadav2017CTteacherEd}.
 
 
+\citeA{Wing2006} describes CT as a linking pin in CS: "solving problems, designing systems, and understanding human behavior, by drawing on the concepts fundamental to computer science". ISTE and CSTA define CT as "a problem-solving process" \cite{CSTA2011CT} and characterize it as "automating solutions through algorithmic thinking". The reformed curriculum refers to computational thinking and problem solving in the \emph{Using informatics as a perspective} sub-domain as: "analytical skills to formulate problems in such a way that one can use computers and other tools to help solve them, as well as problem solving skills,
+such as finding solutions in terms of algorithms and data" \cite{Barendsen2016}. This coincides with the ISTE-CSTA definition.
 
-There is no general consensus on the definition of Computational Thinking \cite{Yadav2015}. \citeA{voogt2015computational} call for a flexible and pragmatic approach and use an operationalization of CT, such as has been done by \citeA{Yadav2015}. \citeA{selby2013computational} sought a narrower definition to facilitate assessment. They tallied occurring terms, descriptions, and meanings for CT in different definitions found in literature. Then, considering the motivation by each individual author for either incorporating or neglecting the term, they came to ordered criteria, which do not necessarily to accommodate all viewpoints. \citeA{selby2013computational} describe Computational Thinking as a focused approach to problem solving, incorporating thought processes that utilize \emph{abstraction}, \emph{decomposition}, \emph{algorithmic design}, \emph{evaluation}, and \emph{generalizations}. \citeA{BrennanResnick2012} propose three dimensions: Computational concepts (such as variables and loops), practices (such as debugging, abstracting, and being incremental) and perspectives (such as  questioning about the technology world). \citeA{barrStephenson2011CTdef} come to the following set of CT concepts and capabilities: decomposition, abstraction, algorithms, automation, parallelization, simulation and data collection, analysis, and representation.
+
+
+Through there is a widespread belief that each student should be equipped with these skills, there is no general consensus on the definition of Computational Thinking \cite{Yadav2015}. \citeA{voogt2015computational} call for a flexible and pragmatic approach and use an operationalization of CT, such as has been done by \citeA{Yadav2015}. \citeA{selby2013computational} sought a narrower definition to facilitate assessment. They tallied occurring terms, descriptions, and meanings for CT in different definitions found in literature. Then, considering the motivation by each individual author for either incorporating or neglecting the term, they came to ordered criteria, which do not necessarily to accommodate all viewpoints. \citeA{selby2013computational} describe Computational Thinking as a focused approach to problem solving, incorporating thought processes that utilize \emph{abstraction}, \emph{decomposition}, \emph{algorithmic design}, \emph{evaluation}, and \emph{generalizations}. \citeA{BrennanResnick2012} propose three dimensions: Computational concepts (such as variables and loops), practices (such as debugging, abstracting, and being incremental) and perspectives (such as  questioning about the technology world). \citeA{barrStephenson2011CTdef} come to the following set of CT concepts and capabilities: decomposition, abstraction, algorithms, automation, parallelization, simulation and data collection, analysis, and representation.
 %
 %\begin{itemize}
 %\item Algorithmic Thinking: thinking in terms of rules, steps and repetitions (of subtasks).
@@ -18,12 +20,16 @@ There is no general consensus on the definition of Computational Thinking \cite{
 %\item Automation: implementation (through computing tools).
 %\end{itemize}
 
-In their paper,  \citeA{BrennanResnick2012} differentiate 3 dimensions. \emph{Computational concepts} (programming knowledge such as sequences, conditionals, operators, data, etc.), \emph{computational practices} (strategies such as being incremental and
-iterative, testing and debugging, reusing and remixing, and abstracting and modularizing), and \emph{computational perspectives} (understanding of themselves and their relationship with the world around them themselves).
+In their well-cited paper,  \citeA{BrennanResnick2012} differentiate 3 dimensions of CT.
+\begin{itemize}
+\item \emph{Computational concepts} (programming knowledge such as sequences, conditionals, operators, data, etc.),
+\item \emph{computational practices} (strategies such as being incremental and
+iterative, testing and debugging, reusing and remixing, and abstracting and modularizing), and
+\item \emph{computational perspectives} (understanding of themselves and their relationship with the world around them themselves).
+\end{itemize}
 
 
-
-\citeA{corradini2017conceptions} compared and analyzed five well-cited definitions (\cite{Wing2006}, \cite{CSTA2011CT}, Google\cite{Google2017CT}, \cite{BrennanResnick2012}, and Barefoot CAS \cite{CAS2014CT}) to come to common grounds. They grouped common aspects to four categories:
+\citeA{corradini2017conceptions} compared and analyzed five well-cited definitions (\cite{Wing2006}, \cite{CSTA2011CT}, Google \cite{Google2017CT}, \cite{BrennanResnick2012}, and Barefoot CAS \cite{CAS2014CT}) to come to common grounds. They grouped common aspects to four categories:
 \begin{itemize}
 \item \emph{mental processes}: algorithmic thinking, logical thinking, decomposition, abstraction, pattern recognition, generalisation.
 \item \emph{methods}: automation, data collection, analysis and representation, parallelization, simulation, evaluation and programming.
@@ -35,14 +41,14 @@ The approaches and attitudes from CAS and CSTA definitions also coincide with th
 
 
 
-There is a (subtle) difference between CT skills and abilities. An example of an ability is "to formulate problems in such a way that one can use computers and other tools to help solve them" \cite{Barendsen2016}. The CT skill is the performance that a student must do to demonstrate this ability. In the case of the ability to formulate a problem, the relevant CT skills would be applying decomposition and algorithmic thinking.
+There is a (subtle) difference between CT skills and abilities. An ability is distilled directly from a learning outcome, whilst a skill is the performance which a student can undertake to demonstrate the ability. For example, an ability is "to formulate problems in such a way that one can use computers and other tools to help solve them" \cite{Barendsen2016}. In this case, the relevant CT skills would be applying decomposition and algorithmic thinking.
 
 \subsection{Programming}
 Programming is the automation of a solution such that it can be executed by a computer. In this section we describe the role of programming in CS secondary education, in particular we describe knowledge, skills, difficulties and approaches to programming and what is known about assessing these aspects. In addition we discuss some viewpoints with respect to its relationship with Computational Thinking. Does programming help develop CT skills, or is CT pre-requisite for programming?
 
 
 
-\subsubsection{Programming Knowledge and Skills} \label{ProgrammingKnowledgeAndSkills}
+\subsubsection{Programming Knowledge and Skills} \label{sec:ProgrammingKnowledgeAndSkills}
 
 Programming requires a combination of conceptual knowledge, skills and attitudes. In addition to the syntax of a particular programming language, it requires knowledge about concepts (just to name a few: loops, conditionals, and mathematical and logical operators) and the notion of the machine (how the computer interprets and executes the commands, for example, that the code in a function definition is not executed if the function itself is not called). Moreover, as code grows in magnitude or complexity, aspects such as decomposition and abstraction come into place to keep the code manageable and robust. Coding also involves practices such as being incremental and iterative, testing and debugging, reusing and remixing, and tinkering. Furthermore, attitudes and transversal skills, such as (meta-) reflection, communication and collaboration, being tolerant for ambiguity, and last but not least, being persistent when dealing with open-ended or complex problems play a role. These aspects coincide with the three dimensions of CT (computational concepts, computational practices, and computational perspectives) as described by \citeA{BrennanResnick2012}. All-in-all, programming requires a plethora of knowledge and skills.
 
@@ -68,7 +74,17 @@ So, in order to assess both CT and programming knowledge and skills requires evi
 %questionable hypotheses.[Robins, Rountree, Rountre (2003).  ]
 
 \subsubsection{Programming Difficulties}
-Sources of programming difficulties (or 'misconceptions') which novice programmers encounter have been extensively researched and documented. Misconceptions can keep students from producing correct programs (efficiently). In their meta-analysis, \citeA{Sheard2009} investigated 164 relevant full-refereed papers about programming education. \citeauthor{robins2003learning} gives a general account of misconceptions \cite{robins2003learning}. Others focus on specific concepts such as variables \cite{Kuittinen2004}, loops \cite{Dancik2003}, functions and parameters \cite{sorva2012misconceptions}, boolean conditions and control structures \cite{Almstrum1999}. \citeA{spohrer1986novice} analyze difficulties related to \emph{plan composition} problems, and argue that these have even more impact on programming errors than construct-based misconceptions.
+Sources of programming difficulties ('alternative' conceptions or 'misconceptions') which novice programmers encounter have been extensively researched and documented. Misconceptions can keep students from producing correct programs (efficiently).
+
+In their meta-analysis, \citeA{Sheard2009} investigated 164 relevant full-refereed papers about programming education. \citeauthor{robins2003learning} give a general account of misconceptions \cite{robins2003learning}.
+
+\begin{enumerate}
+\item  More specifically, some focus on specific concepts such as variables \cite{Kuittinen2004}, loops \cite{Dancik2003}, functions and parameters \cite{sorva2012misconceptions}, boolean conditions and control structures \cite{Almstrum1999}.
+
+\item \citeA{spohrer1986novice} analyze difficulties related to \emph{plan composition} problems, and argue that these have even more impact on programming errors than construct-based misconceptions. Fundamental knowledge of the concepts of algorithms are needed, i.e., how algorithms work, which common algorithms and plans exist, and knowledge about strategies for composing (or combining) algorithmic components \cite{deRaadt2008}. In his article, \citeA{denning2017remaining} explains that learning certain concepts produces programming ability, rather than the other way around. Typically, plan composition requires the application of CT skills.
+
+
+\end{enumerate}
 
 
 %Researchers have catalogued a vast number of misconceptions pertaining to programming\todo{(see [3, 27] for reviews of these studies)}. Misconceptions can keep students from producing correct programs (efficiently). In their research, \cite{sorva2012misconceptions} investigate common misconception-related mistakes made by students and categorize these according to basic concepts, functions and object-oriented programming. The most common misconceptions they found which are relevant for secondary education are:
@@ -102,7 +118,7 @@ Sources of programming difficulties (or 'misconceptions') which novice programme
 
 \subsubsection{Programming Strategies and Plans}\label{sec:plans}
 
-One of the skills needed for programming is dealing with complexity\todo{is dit zo, of kun je beter open-ended of ambiguousu gebruken}. As programs increase in magnitude, aspects such as decomposition, modularisation, and generalisation become important. The enable the programmer to interpret and oversee the program as a whole (and thus on a relational level). These processes are a subset of the computational practices dimension of CT as described by \citeA{BrennanResnick2012}, which are described in section \ref{ProgrammingKnowledgeAndSkills}.
+One of the skills needed for programming is dealing with complexity\todo{is dit zo, of kun je beter open-ended of ambiguousu gebruken}. As programs increase in magnitude, aspects such as decomposition, modularisation, and generalisation become important. They enable the programmer to interpret and oversee the program as a whole (and thus on a relational level). These processes are a subset of the computational practices dimension of CT as described by \citeA{BrennanResnick2012}, described in section \ref{ProgrammingKnowledgeAndSkills}.
 
 
 \citeA{deRaadt2009teachingPlans} describe a set of elementary plans (i.e. programming strategies) that can be combined in different ways to create solutions. Examples of elementary plans are Initialization plan (variables), Average plan, Triangular Swap plan, Guarded Division plan, Counter-Controlled Loop plan, Sum and Count plans, Bubble Sort algorithm. They explain that the identification, selection and application of plans can be seen as a representation for strategy (similarly described by Soloway (1985), also known as applying patterns (Wallingford, 1996)) and should be taught and assessed explicitly. The new Dutch curriculum \cite{Barendsen2016}\todo{eingenlijk de handreiking} refers to some of these plans, such as the Maximum, Sum and Sort plans.
@@ -129,24 +145,20 @@ while not done():
 \item Merging: interleaving (at least) two plans. For example,the averaging problem merges input, summing and counting plans.
 \end{itemize}
 
-\citeauthor{deRaadt2009teachingPlans}'s research is not directly applicable to secondary education. Underlying concepts at a basic unistructural level which may assumed to be trivial (at CS1 level), may not be so trivial at all in secondary education. For example, the 'average plan', explicitly states the need to understand the division operator, but doesn't say anything about pre-requisite knowledge about the assignment of variables. There are also other concepts which are (explicitly or implicitly) stated in reformed CS curricula but not included in the plans. These are: procedures, functions, parameters, and a Boolean-Flag loop plan as a specific form of a primed sentinel controlled loop plan. That it is essential to regard these concepts, even, or especially at a unistructural level becomes apparent from the long lists of related misconceptions that researchers and educators have established. Misconceptions about these concepts has been researched and documented, for example by \citeauthor{sorva2012misconceptions} and \url{PD4CS.org}.
+The step of integrating these plans is exactly what \citeA{spohrer1986novice} describe as having a high-impact on programming difficulties.
+
+\citeauthor{deRaadt2009teachingPlans}'s research is not directly applicable to secondary education. The underlying concepts at a basic unistructural level which may assumed to be trivial (at CS1 level), may not be so trivial at all in secondary education. For example, the 'average plan', explicitly states the need to understand the division operator, but doesn't say anything about pre-requisite knowledge about the assignment of variables. There are also other concepts which are (explicitly or implicitly) stated in reformed CS curricula but not included in the plans. These are: procedures, functions, parameters, and a Boolean-Flag loop plan as a specific form of a primed sentinel controlled loop plan. That it is essential to regard these concepts, even, or especially at a unistructural level becomes apparent from the long lists of related misconceptions that researchers and educators have established. Misconceptions pertaining to these concepts has been researched and documented, for example by \citeauthor{sorva2012misconceptions} and \url{PD4CS.org}.
+Concluding, several researches express plan composition strategies as being valuable. Though explicitly teaching these plans seems promising, current research on teaching and assessing application of plan strategies focusses on tertiary education, where learning outcomes do not coincide with knowledge levels in secondary education. Relevant plans, strategies and assessments for secondary education should be established and researched.
+
+
+\subsection{Computational Thinking in Computer Science}\label{sec:CTinCS} %\label{AlgProblemsolving...}
+Computational problem-solving, logical and algorithmic thinking have been identified as aspects of CT \cite{grover2017measuring}. CT thought processes are involved in formulating problems so their solutions can be represented as computational steps and algorithms \cite{aho2012computation}. Algorithmic thinking (as part of CT) and problem-solving skills are essential for programming, and thus developing algorithms \cite{McCracken2001}. In this section we describe its relationship with algorithms, in light of CS secondary education.
 
 
 
-\subsection{Algorithms, Algorithmic Thinking, and Problem Solving}\label{sec:AlgProblemSolving}
-Computational problem-solving, logical and algorithmic thinking have been identified as aspects of CT \cite{grover2017measuring}. In this section we describe its relationship with algorithms, in light of CS secondary education.
+\subsubsection{Algorithms and Algorithmic Thinking}\label{sec:AlgThinking}
 
-Algorithmic Thinking is one of CT's fundamental aspects (see section \ref{sec:CTdef}). While many recent efforts have focussed on definition issues of CT \cite{GroverPea2013}, work specifically pertaining to algorithmic thinking remains sparse. As algorithmic thinking is a prominent component of CT, and there is more research on CT than on algorithmic thinking, we incorporate general CT research in our review on algorithms.
-
-
-\citeA{Wing2006} describes CT as a linking pin in CS: "solving problems, designing systems, and understanding human behavior, by drawing on the concepts fundamental to computer science". ISTE and CSTA define CT as "a problem-solving process" \cite{CSTA2011CT} and characterize it as "automating solutions through algorithmic thinking". The reformed curriculum refers to computational thinking and problem solving in the \emph{Using informatics as a perspective} sub-domain: "analytical skills to formulate problems in such a way that one can use computers and other tools to help solve them, as well as problem solving skills,
-such as finding solutions in terms of algorithms and data" \cite{Barendsen2016}. This coincides with the ISTE-CSTA definition.
-
-
-
-
-Algorithms are a fundamental CS concept. \citeA{gal2002efficiency}'s review of international university and high school curricula, show that the concepts of algorithms and algorithm efficiency are central to the study of CS. Algorithms are tools for developing and expressing solutions to computational problems \cite{GroverPea2013}.
-
+Algorithms are a fundamental CS concept. \citeA{gal2002efficiency}'s review of international tertiary and secondary education curricula, show that the concepts of algorithms and algorithm efficiency are central to the study of CS. Algorithms are tools for developing and expressing solutions to computational problems \cite{GroverPea2013}. In 1974, Donald Knuth stated that that articulating a solution as an algorithm and implementing (and testing) the concept on a computer leads to a deep understanding of concepts of all kinds in many fields.
 
 Algorithmic thinking pertains to abilities needed to construct and understand algorithms that solve given problems. \citeA{futschek2006algorithmicThinking} distinguishes the following abilities:
 \begin{itemize}
@@ -156,10 +168,14 @@ Algorithmic thinking pertains to abilities needed to construct and understand al
 \item think about all possible special and normal cases of a problem
 \item improve the efficiency of an algorithm
 \end{itemize}
-Based on the CT definitions from \citeauthor{CAS2014CT}, \citeauthor{Google2017CT}, \citeauthor{BrennanResnick2012} and \citeauthor{CSTA2011CT}, algorithmic thinking can be seen as the process of designing a sequence of ordered steps (thus an algorithm) to solve a problem, achieve a goal or perform a task \cite{corradini2017conceptions}. Algorithmic thinking is an aspect of Computational Thinking (CT) as it involves abstraction and decomposition of open-ended problems, the construction of a solution through algorithmic thinking, generalization and the evaluation of its result \cite{Wing2006}.
+Based on the CT definitions from \citeauthor{CAS2014CT}, \citeauthor{Google2017CT}, \citeauthor{BrennanResnick2012} and \citeauthor{CSTA2011CT}, algorithmic thinking can be seen as the process of designing a sequence of ordered steps (thus an algorithm) to solve a problem, achieve a goal or perform a task \cite{corradini2017conceptions}. So, algorithmic thinking is as one of the aspects of Computational Thinking (CT) as it involves abstraction and decomposition of open-ended problems, the construction of a solution through algorithmic thinking, generalization and the evaluation of its result \cite{Wing2006}.
 
 
 
+While many recent efforts have focussed on definition issues of CT \cite{GroverPea2013}, work specifically pertaining to algorithmic thinking remains sparse. As algorithmic thinking is a prominent component of CT, and there is more research on CT than on algorithmic thinking, we incorporate general CT research in our review on algorithms.
+
+
+\subsubsection{Problem Solving}\label{sec:ProbSolving}
 Computer science learners often experience difficulties during problem analysis, planning and design of solutions \cite{Hazzan2011}. \citeA{kirschner2006minimal} argue that learning a complex task like programming, not only requires conceptual knowledge, but also \emph{explicit procedural guidance}. It is essential to understand which steps must be taken in order to solve a problem, as well as how to recognize an acceptable solution.
 
 
@@ -195,18 +211,6 @@ Computer science learners often experience difficulties during problem analysis,
 
 
 
-Plans (as described in section \ref{sec:plans}) enable reasoning on a higher level of abstraction. Decomposing complex problems (or solutions), recognizing relevant plans and incorporating them into a solution facilitates reasoning about the purpose, correctness, and efficiency of code.  The use of plans thus assists students to deal with open-ended problems.
-
-In 1974, Donald Knuth said that articulating a solution as an algorithm and implementing (and testing) the concept on a computer leads to a deep understanding of concepts of all kinds in many fields. CT thought processes are involved in formulating problems so their solutions can be represented as computational steps and algorithms \cite{aho2012computation}. On the one hand, algorithmic thinking (as part of CT) and problem-solving skills are essential for programming, and thus developing algorithms \cite{McCracken2001}. On the other, fundamental knowledge of the concepts of algorithms are needed, i.e., how algorithms work, which common algorithms and plans exist, and knowledge about strategies for composing (or combining) algorithmic components \cite{deRaadt2008}. In his article, \citeA{denning2017remaining} explains that learning certain concepts produces programming ability, rather than the other way around.
-
-
-
-
-
-\todo{How to develop skills and reinforce knowledge related to algorithms… either through concepts or programming. <SEE VERHAAL VAN DENNING, 2017>}
-
-
-
 \subsection{Physical Computing}
 
 
@@ -218,7 +222,7 @@ critical thinking, problem solving and meta-cognitive skills. Furthermore, robot
 creativity \cite{miller2008robots}.
 
 
-The field of physical computing is relatively new. Meanwhile, software and hardware suitable for educational purposes has been made available. For example, BBC's Micro:Bit has been given to every 7 or 8th grade student across the UK. To increase usability, block-based tooling including emulators has been developed to ensure "low-floors" (easy ways for novices to get started) while enabling a "high-ceiling" (capabilities to work on increasingly sophisticated projects over time) and meanwhile providing "wide-walls" (engaging all kids by enabling multiple personally relevant projects). However, despite the advances and availability to students, studies emphasize the lack of a pedagogical framework for its implementation \cite{atmatzidou2012evaluating}.
+The field of physical computing is relatively new. Meanwhile, software and hardware suitable for educational purposes has been made available. For example, BBC's Micro:Bit has been given to every 7 and 8th grade student across the UK. To increase usability, block-based tooling including emulators has been developed to ensure "low-floors" (easy ways for novices to get started) while enabling a "high-ceiling" (capabilities to work on increasingly sophisticated projects over time) and meanwhile providing "wide-walls" (engaging all kids by enabling multiple personally relevant projects). However, despite the advances and availability to students, studies emphasize the lack of a pedagogical framework for its implementation \cite{atmatzidou2012evaluating}.
 
 
 
@@ -248,18 +252,22 @@ The field of physical computing is relatively new. Meanwhile, software and hardw
 
 
 \subsection{Recontextualization}
-Recontextualization, or transfer, has been defined by Yamnill and McLean (2001) as a person's ability to apply his or her learning acquisitions in a variety of new, often previously unseen situations. In his paper \citeauthor{oers2004recontextualization} describes it as an essential skill in our modern world as the growing body of knowledge and the increasing complexity of problems makes it impossible to learn individual solutions for a possibly infinite number of specific situations. The ability to transfer knowledge to a new domain is perceived as a higher-order skill, as can be seen in the SOLO taxonomy (extended abstract) and Bloom's taxonomy levels \textit{Analyze}, \textit{Evaluate} and \textit{Create} (see section \ref{sec:taxProgramming}).
 
 
-Despite the call for transferability of learning results, researchers have not yet been able to pinpoint the mechanisms behind transfer \cite{oers2004recontextualization}. One of the candidates for understanding the theory of transfer is via abstraction. Fuchs et. al. (2003) state that abstractions can enhance the transfer knowledge or abilities. Abstractions can be used to articulate what situations have in common. As they can thus be shared in a number of situations, and based on the analogies, it makes it easier for a problem solver to apply knowledge or skills in a new situation (Reeves and Weisberg, 1994). That the process of abstraction (as an aspect of CT) is perceived as an important skill for computer science has been discussed in section \ref{sec:AlgProblemSolving}. Problem solving involves a continuous process of abstracting and choosing new contextualizations within new situations \cite{oers2004recontextualization}.
+In this section we discuss the role of recontectualization and related challenges that teachers face. Recontextualization in assessments has two objectives:
+\begin{enumerate}
+\item to \emph{assess transfer}: Recontextualization has been defined by Yamnill and McLean (2001) as a person's ability to apply his or her learning acquisitions in a variety of new, often previously unseen situations. In his paper \citeA{oers2004recontextualization} describes it as an essential skill in our modern world as the growing body of knowledge and the increasing complexity of problems makes it impossible to learn individual solutions for a possibly infinite number of specific situations.
+\item to \emph{tweak existing tasks} to adhere to distinct classroom needs such as specific learning objectives, types of students or to create new versions of tasks for subsequent assessments. In his review on developing generic resources for assessment, \citeauthor{hermansen2014reworking} describe, based on several researches, that assessment tools aren't plug-and-play modules that can be relocated and implemented as-is. Rather, in order to remain operable they must be adapted and 'recontextualized' according to classroom needs.
+\end{enumerate}
 
 
-Such abstraction (models) are applied in all domains of computer science. Just to mention a few:
+
+Despite the call for transferability of learning results in different subjects and domains, researchers have not yet been able to pinpoint the mechanisms behind transfer \cite{oers2004recontextualization}. One of the candidates for understanding the theory of transfer is via abstraction. Fuchs et. al. (2003) state that abstractions can enhance the transfer of knowledge or abilities. Abstractions can be used to articulate what different situations have in common. As these commonalities can be shared in a number of situations, the mechanism of applying abstraction facilitates the application of knowledge or skills in a new situation (Reeves and Weisberg, 1994). Exactly that process of abstraction (as an aspect of CT) is perceived as an important skill for computer science (see section \ref{sec:sec:CTinCS}). Problem solving involves a continuous process of abstracting and choosing new contextualizations within new situations \cite{oers2004recontextualization}. Abstraction (models) are applied in all domains of computer science. Just to mention a few:
 \begin{itemize}
 \item Flowcharts, state charts, and UML diagrams as an high-level abstraction of an algorithm or description of interaction;
 \item Use of methods and functions with parameters in programming;
 \item Choice and use of (abstract) data types or representations (such as storing data in a list or a tree);
-\item Application of \textit{plans} to solve a problem with a more or less 'standard' solution (see section \ref{sec:plans});
+\item Application of \textit{plans} to solve a problem by combining 'standard' strategies or solutions (see section \ref{sec:plans});
 \item A graph as an abstraction for (routing or scheduling) algorithms.
 \end{itemize}
 
@@ -268,39 +276,69 @@ In his paper, \citeA{oers2004recontextualization} describes that teachers should
 \begin{enumerate}
 \item \textit{Intended focus}: Viewing the situation or problem from a perspective in which the inscription makes sense.
 
-\item \textit{Attended focus}: Selection of an appropriate inscription (model or tool) to transform the given situation into
+\item \textit{Attended focus}: Selection of an appropriate inscription (model or tool) to transform the given situation into.
 
 \item \textit{Transform}: Transform the inscriptions to make them fit in the new situation.
 \end{enumerate}
 
 
-The skill of transfer may be assessed via the identification and application of inscriptions. Focussing assessment on the three individual steps in the process can help an educator to determine the attainment level of a student and pinpoint and isolate which difficulties the student encounters.
+\citeA{rodriguez2017assessingCTunplugged} established and researched unplugged-like projects aimed at assessing both CT and specific curricular CS concepts. A critique note on unplugged activities is that they have been developed merely for introducing CS concepts and engaging and enthusing children, reside at the bottom of Bloom's taxonomy, and thereby do not match curricular learning outcomes in secondary education\cite{thies2012unpluggedLearningObjectives}. \citeauthor{rodriguez2017assessingCTunplugged} designed work sheets to specifically assess secondary education CS concepts (such as Algorithms) across all the levels of Bloom's taxonomy. Interestingly, they designed several isomorphic tasks. One task was used to introduce a concept, and another to assess CT skills (such as Algorithmic Thinking and abstraction) and CS concepts in a new context. Though not specifically mentioned in their paper, \citeauthor{rodriguez2017assessingCTunplugged}'s isomorphic projects actually also assessed students' skills to apply transfer.
+
+The ability to transfer knowledge to a new domain is perceived as a higher-order skill. Transfer belongs to the extended abstract level in the SOLO taxonomy and \textit{Analyze}, \textit{Evaluate} and \textit{Create} levels in Bloom's taxonomy (see section \ref{sec:taxProgramming}). \citeA{oers2004recontextualization} describes that the skill of transfer may be assessed via the identification and application of inscriptions. Focussing assessment on each of \citeauthor{oers2004recontextualization}'s three steps individually can help an educator to determine the attainment level of a student and pinpoint and isolate which difficulties the student encounters. The first step relates to \emph{abstraction} as it requires generalizing a problem to see if techniques from similar problems can be use d to solve the current task\cite{CSTA2011CT}. Eliciting evidence for the first could be done through think-aloud sessions. Evidence for the last two steps ('attended focus' and 'transform') could be evoked through tasks similar to those in \citeA{rodriguez2017assessingCTunplugged}'s educational design research.
 
 
 
+
+\subsection{Modelling and design}
+%Hier iets vertellen over design van een artefact.
+%CT skills zoals abstractie die daar een belangrijk rol bij spelen
+
+
+%integrating them into the original conditional, suggesting they are
+%added as an afterthought [25]. This is an example of what the
+%researchers call extremely fine-grained programming (EFGP), and
+%they point out that these techniques can lead to bugs that are
+%particularly hard to identify and fix. Since lack of upfront
+%consideration of boundary cases been identified as a common
+%problem and not intuitive
+
+'Bad Habits' can lead to poorly structured programs \cite{meerbaum2011habitsScratch}. In their research, \citeauthor{meerbaum2011habitsScratch} saw that lacking a design phase during development lead to bugs that are particularly hard to identify and fix. They note that students should be encouraged to start by designing an algorithm to solve a problem, and then use programming constructs to cleanly structure programs. The use of a design phase facilitates abstraction and thus helps students to deal with complex, open-ended problems.
+
+
+In order to assess design strategies, students need to create evidence of their thought processes and (abstraction) strategies. \citeauthor{deRaadt2009teachingPlans} suggests explicitly teaching and assessing programming strategies in the form of plans. Plans (as described in section \ref{sec:plans}) enable reasoning on a higher level of abstraction. Decomposing complex problems (or solutions), recognizing relevant plans, and incorporating them into a solution facilitates reasoning about the purpose, correctness, and efficiency of code. \citeA{waite2018designPlanWriting} suggest the use annotated diagrams, concept maps and storyboards. In their research, \citeA{Smetsers2017} suggest that designing a high-level flowchart to describe the algorithm, prior to diving into (and getting lost in) coding details, results code with less logical plan-composition errors.
+
+The application of the suggestions above is twofold. Firstly, it can facilitate a student's process of planning, understanding and decomposing the problem and step-wise implementation. Secondly, it aids the communication of ideas that a student has, and evaluation and reflection on both the solution and approach. Such a deliverable can be used by a teacher to give feedback and as evidence of students' attainment levels.
+
+
+
+
+
+
+\todo{How to develop skills and reinforce knowledge related to algorithms… either through concepts or programming. <SEE VERHAAL VAN DENNING, 2017>}
 
 
 \subsection{Assessment and criteria}
-This section will discuss what we know about assessments, such as taxonomies and pathways.
+This section will discuss what is known about assessments, such as models, taxonomies and pathways.
 
 
 Assessments are used for several purposes. \citeA{mcmillan2007formative} distinguishes between two types of assessments, summative and formative. Summative assessment refers to the use of assessment-based evidence to help us arrive at go/no-go decisions based on the success of a completed course or instructional program \cite{popham2009assessment}. On the other hand, assessment for learning is formative. Formative assessment is used by both students and teachers to adjust ongoing instructional and learning activities in order to improve the manner in which learning is taking place. Summative assessment can also be treated formatively, for example to determine the effectiveness of instruction.
 
 
+A substantial amount of research has been done into the effect of assessment in education. In his study \citeauthor{frederiksen1984} describe assessment as a motivator for learning. Alderson and Wall (1993) and Prodromou (1996) elaborate by stating that what is assessed strongly influences what is learned. \citeA{biggs1996} prescribes that instruction, learning, and assessment must be well-aligned. This alignment exists in most traditional knowledge-based tests, yet constructive alignment for competency-based instruction is not self-evident \cite{baartman2006wheel}.
 
 
-A substantial amount of research has been done into the effect of assessment in education. In his study \citeauthor{frederiksen1984} describe assessment as a motivator for learning. Alderson and Wall (1993) and Prodromou (1996) elaborate by stating that what is assessed strongly influences what is learned. \citeA{biggs1996} prescribes that instruction, learning, and assessment must be well-aligned. This alignment exists in most traditional knowledge-based tests, yet constructive alignment for competency-based instruction is not self-evident \cite{baartman2006wheel}. With the emphasis of Computational Thinking and problem solving in reformed CS curricula, learning and instruction is increasingly competency-based. Assessment of competencies is complex, mainly because it comprises a multi-facetted blend of knowledge, skills and attitudes \cite{merrienboer2002competenties}.
 
 
-As discussed in section \ref{ProgrammingKnowledgeAndSkills}, though they complement each other, CT and programming are fundamentally different. CT is a skill and this tacit knowledge should be assessed directly\cite{denning2017remaining}. Assessment should thus elicit behaviors which indicate that a student can master the competency. As Denning formulates it: "\emph{given that so much education is formulated around students acquiring knowledge, looking carefully at skill development in computational thinking is a new and challenging idea}."\cite{denning2017remaining}\todo{Erik: alignment = validity +?}
+\subsubsection*{Criteria for qualitative assessments}\label{sec:qualityCriteria}
+Computer Science is a multi-facetted subject. In the core, the CS concepts are taught and must be assessed. However, with the emphasis of Computational Thinking and problem solving in reformed CS curricula, learning and instruction is increasingly competency-based. In this section we discuss which characteristics constitute both qualitative knowledge-based (pertaining to CS concepts) and (CS and CT) competency-based assessments. We start by discussing aspects pertaining to the assessment of competenties. This is followed up by a discussion about research and practices of assessing fundamental CS concepts and programming.
+
+As discussed in section \ref{ProgrammingKnowledgeAndSkills}, though they complement each other, CT and programming are fundamentally different. CT is a skill and this tacit knowledge should be assessed directly\cite{denning2017remaining}. Assessment should thus elicit behaviors which indicate that a student can master the competency. As Denning formulates it: "\emph{given that so much education is formulated around students acquiring knowledge, looking carefully at skill development in computational thinking is a new and challenging idea}."\cite{denning2017remaining} Assessment of competencies is complex, mainly because it comprises a blend of knowledge, skills and attitudes \cite{merrienboer2002competenties}. \citeA{baartman2006wheel} proposes a 'wheel of competency assessment' framework of quality criteria for competency-based assessments, illustrated in the diagram below.
+
+\todo{Erik: alignment = validity +?}
 
 
-\subsubsection*{Assessment Criteria}\label{sec:qualityCriteria}
-Effective assessments call for qualitative assessment techniques. Extensive research has been done into the characteristics of qualitative assessments. In this section we discuss the characteristics for knowledge-based (pertaining to CS concepts) and (CS and CT) competency-based assessments.
 
-\todo{dan moet je hier ook iets over knowledge based zeggen.... die gaan sowieso op, competency komt erbij}
 
-Instruction and learning based on competencies, such as CT, call for assessment methods to adequately determine competency acquisition. Because of the multi-facetted nature of competency assessment, one single assessment method seems not to be sufficient. \citeA{baartman2006wheel} proposes a 'wheel of competency assessment' framework of quality criteria for competency-based assessments, based on a combination of different assessment methods. The diagram below illustrates the different aspects.
 
 
 %
@@ -315,7 +353,7 @@ The Wheel of Competency Assessment \cite{baartman2006wheel}\label{fig:AssQuality
 \end{center}
 
 
-It constitutes the following quality criteria:
+\citeauthor{baartman2006wheel}'s competency assessment framework constitutes the following quality criteria:
 
 \begin{itemize}
 \item \emph{Fitness for purpose}: There is alignment between assessment, learning process and instruction.
@@ -353,6 +391,10 @@ In addition the following other success criteria have been mentioned in (CS) ass
 \item Engaging and motivating tasks (Deci and Ryan, 1985)
 \item Do-able tasks: lessen the cognitive load and remove troublesome knowledge to adequately assess students' capabilities. \citeA{mccartney2013assessmentsProgramming} modified the \citeauthor{McCracken2001} Working group assessment and found that students performed significantly better whilst stil eliciting information about what students could and couldn't do.
 
+\item Multi-facetted assessments (multiple measures assessing several cognitive levels): Instruction and learning based on competencies, such as CT, call for assessment methods that adequately determine competency acquisition. Because of the multi-facetted nature of competency assessment, a single assessment method will not suffice. In their research, \citeA{grover2017measuring} argue for a multi-facetted assessment. \citeA{BrennanResnick2012} also use multiple approaches to assess student's learning. Due to the both the cognitive and non-cognitive aspects of learning CT, multiple measures contribute to an accurate picture of the students capabilities. Some tasks may be better suited to elicit particular (levels) of attainment than others, others may focus on different types of knowledge or skills. In order to give students ample possibility to provide evidence of their knowledge and skills, assessments should assess on multiple cognitive levels.
+\item Avoiding plagiarism: the assessment should have solutions that are unlikely to appear in the textbooks \cite{McCracken2001} or available on internet. This can be achieved by adding specific constraints to the task.
+
+
 %Assuring authentic, appropriate and engaging tasks:
 %	- Summative- Have the students had previous practice and feedback to prepare for this
 %	- Weight- Is this evaluation tool appropriate for the weight attached to it?
@@ -378,14 +420,22 @@ In addition the following other success criteria have been mentioned in (CS) ass
 
 \subsubsection*{Evaluation models}\label{sec:evaluationModels}
 
-
-A test specification is a detailed description of the instrument that specifies the percentage of questions dedicated to each construct, the question format, and the scoring procedures.
-
-\noindent \textbf{Rubrics}\todo{ook iets vertellen over andere evaluation models.. toets matrijs, voorbeeld uitwerking?, etc?}
+Psychometrics is a field of study that focuses on the theory and techniques associated primarily with the measurement of constructs (a concept or a mental representation) as well as the development, interpretation, and evaluation of tests and measures \cite{eignor2013APAstandards}. A test or measure is a standardized procedure for sampling behavior. To establish standardization,and thus to adhere to the quality criteria discussed in section \ref{sec:qualityCriteria}, the procedures and rules for quantifying (or scaling) an attainment level should be defined. In this section we describe several tools for doing so.
 
 
-Rubrics are one of the most common assessment tools used to evaluate student projects. Rubrics use descriptive measures to separate levels of performance on a given task. While grading a particular task, each level is assigned a value. Rubrics are important to use because each student project is rated individually against the same criteria, thus increasing comparability. Rubrics can increase transparency (what is being assessed and how) and reproducibility (accurate evaluation independent of the assessor). Rubrics help clarify expectations for students and teachers, while also speeding up grading \cite{catete2017framework}.
 
+\noindent \textbf{Test specification}\newline
+A test specification is a detailed description of the instrument that specifies how many questions assess each construct, what the format of the question is, and how to score evidence \cite{2010TewGuzdial}. Such a specification is thus describes the assessment on both a:
+\begin{itemize}
+\item \emph{high-level}: An indication to which extent each learning-objective participates, and thus weighs in the final score. To ensure that the assessment covers a large extent of the learning-objectives, with each fairly distributed, a matrix can be included to indicate which learning-objectives are assessed with which question.
+
+\item \emph{low-level}: An indication of which evidence is expected and a value what each piece of evidence is 'worth'. It is good practice to include a model response.
+\end{itemize}
+
+\noindent \textbf{Rubrics} \newline
+Rubrics are one of the most common assessment tools used to evaluate student projects. Rubrics use descriptive measures to separate non-overlapping levels of performance on a given task and outline which success criteria are required to reach the 'next level'.  Descriptors illustrate which evidence characterizes a particular level for a particular criteria or (part of a) learning objective. \citeA{catete2017framework} distinguish between two types of descriptive measures in rubrics, the formative learning-based rubric which is learning-goal oriented, and summative performance-based rubrics to evaluate an end product.
+
+Well-designed rubrics can help teachers align their assessments according to the \citeauthor{baartman2006wheel}'s 'wheel of competency' criteria. Each student project is rated individually against the same criteria, thus increasing comparability. Rubrics help clarify expectations for students and teachers, thus increasing transparency (what is being assessed and how). They also help speed up grading \cite{catete2017framework} (cost and efficiency), improve reproducibility (accurate evaluation independent of the assessor), and can be used for self-evaluation.
 
 
 Rubrics can be either holistic or analytical. Table \ref{table:RubricsHolisticAnalytical} summarizes the differences.
@@ -406,48 +456,20 @@ Rubrics can be either holistic or analytical. Table \ref{table:RubricsHolisticAn
 
 
 
+\subsubsection{Taxonomies for the assessment}\label{sec:taxAssessment}
+
+Taxonomies provide a language for describing learning outcomes and performance in assessments. This knowledge can be divided into domains (such as cognitive, affective, and psychomotor) or categories based on complexity of the task. Two widely used taxonomies for assessment of learning are the (revised) Bloom taxonomy \cite{krathwohl2002revision} and the SOLO taxonomy (Biggs and Collis, 1982). Both have been used in CS education research, for example, the revised Bloom by \citeA{Whalley2006} and SOLO by \citeA{lister2006not} and \citeA{lister2010naturally}.
 
 
-\citeA{catete2017framework} distinguishes between two types of descriptive measures in rubrics, the learning-based rubric which is learning-goal oriented, and performance-based rubrics which evaluate the end product.
-
-
-
-\citeA{smith2005rubricsCriteria} provide a detailed rubric for grading programs and describe rationale for their criteria. Their criteria includes
-program correctness (correct output, output quality, adhering to specifications, testing, and efficiency) and style criteria (coding
-style, program design/decomposition/modularity, and parameter usage).
-
-
-While revisiting the \citeauthor{McCracken2001} working group research, \citeA{mccartney2013assessmentsProgramming} assessed programs using the same two sets of criteria: General Evaluation (largely objective and based on black-box testing) and Degree-of-closeness (a subjective measure based on the code structure, function and how close to working the program was). Evaluation was based on similar criteria as those discussed in \citeA{smith2005rubricsCriteria}:
-\begin{itemize}
-\item Execution: compiles, no syntax errors.
-\item Verification: correct output on desired input, error handling.
-\item Validation: adheres to the specifications.
-\item Style: correct naming of variables and methods, correct use of access level modifiers public/private, use of parameter passing.
-\end{itemize}
-
-
-
-
-\subsubsection{Taxonomies for the assessment of programming}\label{sec:taxProgramming}
-
-
-Knowledge can be segregated into the following four categories \cite{streun2001kennis}, used by both scientists and practitioners:
+\noindent \textbf{Revised Bloom Taxonomy}\newline
+Bloom's taxonomy was designed to aid systematic assessment. It distinguishes between different types of learning objectives (from simple understanding to complex creating) and across multiple domains of learning:
 \begin{enumerate}
 \item Factual knowledge (knowing what)
 \item Procedural knowledge (knowing how)
 \item Conceptual knowledge (knowing why)
 \item Meta-cognitive knowledge (knowing about knowing)
-\end{enumerate}
-
-
-Taxonomies provide a language for describing learning outcomes and performance in assessments. These can be divided into domains (such as cognitive, affective, and psychomotor) or categories based on complexity of the task. Two widely used taxonomies for assessment of learning are the (revised) Bloom taxonomy (Anderson et al., 2001) and the SOLO taxonomy. Both have been used in CS education research, for example, the revised Bloom by \citeA{Whalley2006} and SOLO by \citeA{lister2006not} and \citeA{lister2010naturally}.
-
-
-
-
-
-\noindent \textbf{Revised Bloom Taxonomy}\newline
-Bloom's taxonomy was designed to aid systematic assessment. It distinguishes between different types of learning objectives (from simple understanding to complex creating) and across multiple domains of learning (from concrete factual, conceptual, procedural, to abstract meta-cognitive)\cite{krathwohl2002revision}. Figure \ref{fig:BloomsRevised} depicts the hierarchy of the types of learning objectives.
+\end{enumerate}\cite{krathwohl2002revision}
+These domains, also described by \citeA{streun2001kennis} have been used by scientists and practitioners alike. Figure \ref{fig:BloomsRevised} depicts the hierarchy.
 
 
 %\includegraphics[scale=0.4]{figures/bloomsrevised.png}
@@ -461,27 +483,29 @@ Bloom's taxonomy was designed to aid systematic assessment. It distinguishes bet
 
 
 
-Drawbacks of Bloom's taxonomy in CS have been reported. \citeA{thompson2008bloom} conclude that experts have difficulties applying Bloom's taxonomy consistently in introductory programming courses. \citeA{Meerbaum2013} similarly report issues with classification, and relate them specifically to the nature of the tasks. \citeA{lister2003} describe that, depending on the magnitude, the act of writing code can belong to either understanding, applying or creating, and code-tracing can belong to remembering, understanding, or analyzing. \citeA{Whalley2006} express that Bloom's taxonomy is helpful for generating example tasks, but had difficulty placing them within the revised taxonomy. As a result, all comprehension (reading) questions were categorized into one and the same level, namely understanding. Classification becomes meaningless if every task, irrespective of its complexity, falls into the same category.
+Drawbacks of Bloom's taxonomy have been reported for CS assessment. \citeA{thompson2008bloom} conclude that experts have difficulty applying Bloom's taxonomy consistently in introductory programming courses. \citeA{lister2003} describe that depending on the magnitude, the act of writing code can belong to either understanding, applying or creating, and code-tracing can belong to remembering, understanding, or analyzing. \citeA{Meerbaum2013} report similar issues with classification, specifically due to the nature of the tasks, as do \cite{LuxtonReilly2018}. \citeA{Whalley2006} express that Bloom's taxonomy is helpful for generating example tasks, but had difficulty placing them within the revised taxonomy. As a result, all comprehension (reading) questions were categorized into one and the same level, namely understanding. Classification becomes meaningless if every task, irrespective of its complexity, falls into the same category.
 %%
 %
 
 \noindent \textbf{SOLO Taxonomy}\newline
-\citeA{biggs1996} proposes the Structure of the Observed Learning Outcome (SOLO) taxonomy, which classifies learning outcomes in terms of their complexity. The SOLO taxonomy differentiates between a local and a holistic perspective. Understanding can reside along the following scale:
+\citeA{biggs1996} proposes the Structure of the Observed Learning Outcome (SOLO) taxonomy which classifies learning outcomes in terms of their complexity. The SOLO taxonomy differentiates between a local and a holistic perspective. Understanding can reside along the following scale:
 \begin{itemize}
-\item \emph{prestructural}: incompetent,
-\item \emph{unistructural}: able to identify one relevant aspect,
-\item \emph{multistructural}: able to combine several relevant but independent aspects,
-\item \emph{relational}: able to analyse or apply that what is integrated into a structure, and
-\item \emph{extended abstract}: being able to generalize to a new domain.
+\item \emph{Prestructural}: incompetent,
+\item \emph{Unistructural}: able to identify one relevant aspect,
+\item \emph{Multistructural}: able to combine several relevant but independent aspects,
+\item \emph{Relational}: able to analyse or apply that what is integrated into a structure, and
+\item \emph{Extended abstract}: being able to generalize to a new domain.
 \end{itemize}
- As such, the scale can be used to discriminate between being able to read code line-by-line (but not understanding its purposeful intent) from fully understanding and summarizing the goal of a piece of code as an entity. Due to this perspective, SOLO's framework can be used for holistic marking \cite{Fuller2007}. Which type of cognitive processing is involved, such as recalling items or drawing conclusions, are not part of the framework.\todo{Erik: dit herfomuleren... solo rich }
 
 
-\todo{Classifying tasks is not straightforward: (\cite{Fuller2007}, \cite{LuxtonReilly2018},  Hu, and Robbins, 2008)}
+The scale can be used to discriminate between being able to read code line-by-line (but not understanding its purposeful intent) from fully understanding and summarizing the goal of a piece of code as an entity. Due to this perspective, SOLO's framework can be applied for holistic marking, and has been used for this purpose by \citeA{Fuller2007} and \citeA{thompson2007holisticAssCriteria}. Though this rich framework  overcomes some classification issues which has been reported using Bloom's taxonomy, the SOLO framework does not discriminate between the type of cognitive processing involved, such as recalling items or drawing conclusions.
 
 
 
-Given the difficulties in categorizing programming activities within the existing taxonomies, several attempts have been made to propose new taxonomies which may be more appropriate for CS education. \citeA{Fuller2007} suggest to separate Bloom's levels into two dimensions, producing (writing/composition) and interpreting (reading/comprehension). \citeA{lister2003} attempt to differentiate in terms of magnitude of the code (i.e. number of lines of code). \citeA{lister2010naturally} propose a refinement of the SOLO taxonomy to account for both the practical and conceptual learning goals in CS. For example, they propose an extension of the taxonomy for code-writing questions by considering a degree of 'partial correctness' for each level on the scale.
+\subsubsection{Taxonomies for the assessment of programming}\label{sec:taxProgramming}
+
+
+Given the difficulties in categorizing programming activities within the existing taxonomies, several attempts have been made to propose new taxonomies which may be more appropriate for CS education. \citeA{Fuller2007} suggest to separate Bloom's levels into two dimensions, producing (writing/composition) and interpreting (reading/comprehension). \citeA{lister2003} attempt to differentiate in terms of magnitude of the code (i.e. number of lines of code). \citeA{lister2010naturally} propose a refinement of the SOLO taxonomy to account for both practical and conceptual learning goals in CS. For example, they propose an extension of the taxonomy for code-writing questions by considering a degree of 'partial correctness' for each level on the scale.
 
 
 \noindent \textbf{Combined Bloom-SOLO Taxonomy}\newline
@@ -512,7 +536,7 @@ Given the difficulties in categorizing programming activities within the existin
     as concurrency) and to coherently explain its various facets.
 \end{description}
 
-\citeA{Meerbaum2013} conclude that their novel taxonomy enabled them to overcome some of the obstacles with respect to the Bloom or SOLO taxonomies. They acknowledge that more research is needed. One aspect is to consider a continuum between cognitive categories, another is whether the task or concepts involved may overrule the effect of SOLO complexity.
+\citeA{Meerbaum2013} claim that their novel taxonomy enabled them to overcome some of the obstacles with respect to the Bloom or SOLO taxonomies. They acknowledge that more research is needed. One aspect is to consider a continuum between cognitive categories, another is whether the task or concepts involved may overrule the effect of SOLO complexity.
 
 
 
@@ -521,7 +545,9 @@ Though the proposed taxonomies have their differences, they all consider two imp
 %
 
 \noindent \textbf{(Neo)-Piagetian theory}\newline
-In his work, Lister \citeyear{lister2010naturally}, \citeyear{lister2016toward} position the Piagetian and neo-Piagetian theories. The Piagetian theory describes how students may reside in different stages of cognitive development for each fundamental concept being taught: pre-operational, concrete operations, and formal operational. The neo-Piagetian theory extends this with the idea of an "overlapping waves" model, a novice programmer can reside in multiple stages simultaneously. In their work, \citeA{lister2004multi} describe that the transition between different levels takes place on a concept-by-concept basis. This theory describes how students may reside in a different stages of cognitive development for each fundamental concept being taught. Thus, whilst a student resides on a certain level for a particular concept, the same student could be on a complete other level another concept. See figure \ref{fig:ListerFases}. Misconceptions on a particular concept may lead to problems when learning other related concepts, for which knowledge about that is pre-requisite. It is thus important to identify the level of understanding per individual concept.
+In his work, Lister (\citeyear{lister2010naturally}, \citeyear{lister2016toward}) positions the Piagetian and neo-Piagetian theories. The Piagetian theory describes how students can reside in different stages of cognitive development for each fundamental concept: pre-operational, concrete operations, and formal operational. \citeA{Luxton-Reilly2017CompundProgAssessments} explain that the neo-Piagetian stages coincide with those of the SOLO taxonomy. 
+
+In their work, \citeA{lister2004multi} describe that the transition between different levels takes place on a concept-by-concept basis. Thus, whilst a student resides on a certain level for a particular concept, the same student could be on a complete other level for another concept. See figure \ref{fig:ListerFases}. The neo-Piagetian theory extends this idea with an "overlapping waves" model, a novice programmer can reside in multiple stages simultaneously depending on the specific concept.
 
 %\includegraphics[scale=0.8]{figures/ListerFases.png}\label{fig:ListerFases}
 %\caption{General model of concept formation (2010Lister), after Sfard (1991)}
@@ -532,54 +558,106 @@ In his work, Lister \citeyear{lister2010naturally}, \citeyear{lister2016toward} 
 \end{figure}\label{fig:ListerFases}
 
 
-\citeA{Luxton-Reilly2017CompundProgAssessments} explain that neo-Piagetian the stages coincide with those of the SOLO taxonomy. In their paper, \citeA{szabo2014neo} propose a curriculum analysis methodology based on neo-Piagetian theory to facilitate lecturers in tracing the development and assessment of concepts throughout their courses.
+Misconceptions pertaining to a particular concept may lead to problems when learning other related concepts. For a teacher, it is important to identify a student's level of understanding per individual concept, in addition to understanding the relationships between the concepts (for example, which is pre-requisite to another). In their paper, \citeA{szabo2014neo} propose a curriculum analysis methodology based on neo-Piagetian theory to facilitate lecturers in tracing the development of and assessing concepts throughout their courses.
+
+
 
 
 
 \subsubsection{Research about assessing programming}\label{sec:researchAssProgramming}
 
 
-In this section we discus a review of the research about programming assessments.
+In this section we review of the research about assessing programming knowledge and skills.
 
 Assessment tasks should adequately indicate a students' programming comprehension and clearly discriminate between achieved performance levels.
 %ASSESSING UNISTRUCTRURAL CONCEPTS IS A CHALLENGE
-A substantial body of work has previously explored the assessments used in novice programming courses in tertiary education. In prior work, researchers claimed that the subject itself was difficult. \citeA{McCracken2001} discuss how students fail to complete tasks, and \citeA{robins2003learning} associate it with high dropout rates in introductory programming courses. The 2001 ITiCSE report by the McCracken Group \cite{McCracken2001}, cited to be a keystone in assessment literature on CS concepts \cite{Giordano2015}, describes the difficulties pertaining to the development and validation of assessment activities. They raise concerns about task selection and the difficulties of standardizing assessments for multiple institutes.  \citeA{lister2004multi} gave students two types of multiple choice questions. The first to predict the outcome of a short piece of code and the second finish near-complete code. Students were weak at both tasks, especially the latter. Using that work as a starting point, the "Leeds" ITiCSE working group inferred that students lacked basic skills pre-requisite for problem-solving, such as reading program code. Other aspects, such as teacher's pedagogical knowledge and approaches have also been researched. \citeA{sheard2011assInstruments} recognized patterns in how academics developed assessment questions. Their primary strategy is to reuse previous materials, without applying any theoretical framework or sound pedagogical foundation.
+A substantial body of research has previously explored the assessments used in novice programming courses in tertiary education. In prior work, researchers claimed that the subject itself was difficult. \citeA{McCracken2001} discuss how students fail to complete tasks. \citeA{robins2003learning} associate high dropout rates in introductory programming courses with this perceived difficulty. The 2001 ITiCSE report by the McCracken Group \cite{McCracken2001}, cited to be a keystone in assessment literature on CS concepts \cite{Giordano2015}, describe what makes the development and validation of assessment activities complex. They raise concerns about task selection and the lack of standardizing assessments over multiple institutes. They attempted to make universal programming questions that could be translated to the specific programming language used at that institute. However, a programming task in one programming language can assess different learning objectives in another programming language. Consider for simple example a task to assess the correct initialization of a variable. Java requires the type declaration of a variable, while Python doesn't. The naive translation of the task from pseudo-code or Python into Java would result in a Java task which assesses both type declaration and variable initialization, with the Python task only assessing variable initialization.  In order to ensure that both tasks assess precisely the same learning objectives, requires careful examination of the implications due to differences in programming languages, and determining if, and which information could be added to a particular task (for example, the type-declaration part of the code could be given) without giving away too much information.
 
-
-Predicting the difficulty of programming tasks and understanding alternative conceptions has shown to be difficult \cite{Lonati2017Bebras}.\todo{ Toelichten: bv een invulopgave kan op verschillende manieren aangepakt worden, zie hiervoor: V. Dagiene˙ and G. Futschek. Bebras international contest on informatics and computer literacy: Criteria for good tasks. In LNCS, vol. 5090, p. 19–30, 2008.} In their research to investigate how novices comprehend code, \citeA{Whalley2006} explain that students may use a variety of approaches to solving 'skeleton-code' (multiple choice) questions, making categorization into the revised Bloom's taxonomy more difficult than fixed-code questions:
+As discussed in section \ref{sec:taxProgramming}, several attempts have been made to apply existing and new taxonomies for CS education. Predicting the difficulty of programming tasks and understanding alternative conceptions has been reported to be difficult \cite{Lonati2017Bebras}. \cite{zur-burgury2013israelExam} exclaim that "the pattern of achievement is not clear" making analysis difficult and inconclusive. Whatever taxonomy is chosen, scientists agree that classifying tasks is far from straightforward. Possibly the issue is not the taxonomy, but the task being classified. For example, in their research aimed at investigating how novices comprehend code \citeA{Whalley2006} explain that students may use a variety of approaches to solving 'skeleton-code' (multiple choice) questions, making categorization into the revised Bloom's taxonomy more difficult than fixed-code questions. The approach chosen has impact on its taxonomical classification:
 \begin{enumerate}
-\item Apply: a student could execute the code for each of the possible answers given and select the one with the intended behavior,
-\item Analyse or Evaluate: reason about how the parts of the code relate to one another, or
-\item Create: write the code entirely themselves.
+\item \emph{Apply}: a student could execute the code for each of the possible answers given and select the one with the intended behavior,
+\item \emph{Analyse or Evaluate}: reason about how the parts of the code relate to one another, or
+\item \emph{Create}: write the code entirely themselves.
 \end{enumerate}
-In their findings, \citeA{Oliver2004} indicate that introductory and intermediate programming courses assess at a constant level of difficulty and restricted solely to Bloom's application and analysis level. The inability to accurately measure student performance may well contribute more to the poor results highlighted in several studies (such as proclaimed by \citeA{McCracken2001}), than failures of student comprehension (such as justified by \cite{2010TewGuzdial}). In their paper, \citeA{Whalley2006} also relate the high failure rate in introductory programming courses to unfair and inappropriate assessment instruments, and express that this may be especially true for non-elite institutions where less expertise is available.
+Along the same line, \citeA{dagiene2008bebras} describe similar issues with classifying fill-in question for the Bebras competition.
 
-As discussed in section \ref{sec:taxProgramming}, several attempts have been made to apply existing and new taxonomies for CS education. However, whatever taxonomy chosen, scientists agree that classifying tasks is far from straightforward. As a result, researchers exclaim that "the pattern of achievement is not clear" \cite{ZurBargury2013}, making analysis difficult and inconclusive. Possibly the issue is not the taxonomy, but rather the task being classified. More recently, in their research, \citeA{LuxtonReilly2018} found that assessment tasks were more complex than academics expected. The main cause was due to tasks which combine multiple heterogeneous concepts, an in effect, making it difficult for teachers to diagnose difficulties faced by students. For example, tasks typically require both algorithmic thinking (initialize before changing), as well as a more advanced understanding of data representation (assigning a value to a property) \cite{Seiter2013}. In their research on Israel's 2012 CS nationwide exam, \citeA{ZurBargury2013} conclude that tracing a loop is not a simple task for novice students, and becomes more difficult when counters and accumulators are integrated.
 
-In a combined effort, \citeA{LuxtonReilly2018} use a concept inventory to decompose tasks and determine their individually assessable syntactical and semantical elements. Their approach focusses on programming specific concepts, such as recognizing and identifying initialization, use of conditionals and nesting. They use a top-down approach in which they decompose a complex task into its constituent concepts.  However, such a top-down approach based on existing assessment tasks for tertiary education does not consider all concept combinations, and therefore may omit sources of difficulties and alternative conceptions, especially those that are problematic for students secondary education. Algorithmic concepts, such as plans described by \citeA{deRaadt2009teachingPlans}, can be used to decompose a solution, are not considered. For example, in their nesting-task, a student may not understand the difference between a loop nested in a conditional and a conditional nested in a loop. This is typically a plan-related problem. Apparently, creating tasks which assess only those concepts we wish to assess, or those that focus on algorithmic concepts, is not straightforward.
+In their findings, \citeA{Oliver2004} reviewed introductory and intermediate programming courses and claimed that these assess at a constant level of difficulty, restricted solely to Bloom's application and analysis level. The inability to accurately measure student performance may well contribute more to the poor results highlighted in several studies (such as proclaimed by \citeA{McCracken2001}), than failures of student comprehension (such as justified by \cite{2010TewGuzdial}). In their paper, \citeA{Whalley2006} also relate the high failure rate in introductory programming courses to unfair and inappropriate assessment instruments, and express that this may be especially true for non-elite institutions where less expertise is available.
+
+
+More recently, in their research, \citeA{LuxtonReilly2018} found that assessment tasks were more complex than academics expected. The main cause was due to tasks which combine multiple heterogeneous concepts, and in effect, making it difficult for teachers to diagnose the specific difficulties faced by students. In their research on Israel's 2012 CS nationwide exam, \citeA{ZurBargury2013} conclude that tracing a loop is not a simple task for novice students, and becomes more difficult when counters and accumulators are integrated. Thus, tasks typically require both algorithmic thinking (initialize before changing), as well as a more advanced understanding of data representation (assigning a value to a property) \cite{Seiter2013}.
+
+
+\citeA{lister2004multi} gave students two types of multiple choice questions. The first to predict the outcome of a short piece of code and the second finish near-complete code. Students were weak at both tasks, especially the latter. Using that work as a starting point, the "Leeds" ITiCSE working group inferred that students lacked basic skills pre-requisite for problem-solving, such as reading program code. 
+
+
+
+In a combined effort, \citeA{LuxtonReilly2018} use a concept inventory to decompose tasks and determine their individually assessable syntactical and semantical elements. Their approach focusses on programming specific concepts, such as recognizing and identifying initialization, use of conditionals and nesting. They use a top-down approach in which they decompose a complex task into its constituent concepts.  However, such a top-down approach based on existing assessment tasks for tertiary education does not consider 
+\begin{enumerate}
+\item all concept combinations, and therefore may omit sources of difficulties and alternative conceptions, especially those that are problematic for students \emph{secondary education}.
+\item algorithmic concepts, such as \emph{plans} described by \citeA{deRaadt2009teachingPlans}, which can be used to decompose a solution.
+\end{enumerate}
+
+
+For example, in their nesting-task, a student may not understand the difference between a loop nested in a conditional and a conditional nested in a loop. This is typically a plan-related problem. Apparently, creating tasks which assess only those concepts we wish to assess, or those that focus on algorithmic concepts, is not straightforward.
 \todo{evt lezen: However,it
 hasrecentlybeenarguedthatthedifficultyisduetotheassessment tasksthatweuse,ratherthanthesubjectitself[luxton-reiley2006; Robert McCartney, Jonas Boustedt, Anna Eckerdal, Kate Sanders, and Carol Zander. 2013. Can First-year Students Program Yet?: A Study Revisited. In Proceedings of the Ninth International Computing Education Research Conference (ICER '13).91–98. https://doi.org/10.1145/2493394.2493412]}
 
+
 %NEED FOR TEMPATES:
-To tackle the difficulties of establishing qualitative assessments, some initiatives aim to increase collaboration between institutes. \citeA{snow2017CTECD} describe that the higher CS education community has made an effort to create programming language-independent assessments, which are in various stages of being evaluated. The primary goal of these efforts is to establish qualitative benchmark tasks that can be used across multiple institutions. In their research, \citeA{Whalley2006} noted, while translating questions from one language to another, that unique idiomatic and syntactical features may have effect on the appropriate choice of distracters (i.e. subtle differences in initialization values for indexes and in relational operators). So, establishing standardized program-language independent benchmark assessments is not straightforward. The idea of using template tasks that can be modified according to specific classroom needs may have potential of being successful.
+To tackle the difficulties of establishing qualitative assessments, some initiatives aim to increase collaboration between institutes. \citeA{snow2017CTECD} describe that the higher CS education community has made an effort to create programming language-independent assessments, which are in various stages of being evaluated. The primary goal of these efforts is to establish qualitative benchmark tasks that can be used across multiple institutions. In their research, \citeA{Whalley2006} noted, while translating questions from one language to another, that unique idiomatic and syntactical features may have effect on the appropriate choice of distracters (i.e. subtle differences in initialization values for indexes and in relational operators). So, establishing standardized program-language independent benchmark assessments is not straightforward.
 
 
-\subsubsection{Research about assessing Algorithmic concepts}
+Other aspects, such as teacher's pedagogical knowledge and approaches have been researched by \citeA{sheard2011assInstruments}. They recognized patterns in how academics developed assessment questions. Their primary strategy is to reuse previous materials, without applying any theoretical framework or sound pedagogical foundation.
 
 
-As algorithmic concepts exist throughout programming, they can (partially) be assessed using programming tasks (as described in section \ref{sec:researchAssProgramming}). However, as also described, most (research in) programming assessment focusses on programming tasks. The algorithmic concepts, such as composition and decomposition of plans, is not specifically considered nor assessed. \citeA{deRaadt2009teachingPlans} have laid down a foundation for the explicit teaching and assessing of programming strategies (i.e. plans) in tertiary education (see section \ref{sec:plans} for more information about plans and strategies). Their study showed that strategy-related questions can be a valid part of assessment, they elicit results consistent with questions that assess programming knowledge skills. With careful problem design and objective criteria for evaluation, assessment items can be used to focus testing of knowledge and strategies independently. They claim that strategy-related tasks can be used for both comprehension (reading) and composition (writing) tasks. However, in his dissertation \citeauthor{deRaadt2008} also mentions that assessment remains an issue as his approach assessment towards plan composition requires students to generate code before strategy skill can be assessed. Referring to the poor results from the \citeA{McCracken2001} research, \citeA{deRaadt2009teachingPlans} note that programming instructors might begin to deliver more acceptable student outcomes by explicitly teaching and assessing and (sub-)algorithmic strategies. In addition to conducting a similar research on more participants, as future work he proposes extending the set of plans and creating more assessment item examples to test programming strategy skill.
+The idea of using template tasks which can be modified according to specific classroom needs may show to be useful. However, the potential and the implications for its use by teachers must be researched.
+
+\noindent \textbf{Criteria for assessment of programming tasks}\newline
+To determine attainment levels, one must decide across which specific criteria to assess and which evidence informs attaining a particular level. A teacher can then use this for a grading rubric (see section \ref{sec:evaluationModels}).
+
+\citeA{smith2005rubricsCriteria} provide a detailed rubric for grading programs and describe rationale for their criteria. Their criteria includes program correctness (correct output, output quality, adhering to specifications, testing, and efficiency) and style criteria (coding style, program design/decomposition/modularity, and parameter usage). While revisiting the \citeauthor{McCracken2001}'s working group research, \citeA{mccartney2013assessmentsProgramming} assessed programs using the same two sets of criteria:
+\begin{itemize}
+\item \emph{General Evaluation}: largely objective and based on black-box testing. This was based on similar criteria as those discussed in \citeauthor{smith2005rubricsCriteria}'s work:
+    \begin{itemize}
+    \item Execution: compiles, no syntax errors.
+    \item Verification: correct output on desired input, error handling.
+    \item Validation: adheres to the specifications.
+    \item Style: correct naming of variables and methods, correct use of access level modifiers public/private, use of parameter passing.
+    \end{itemize}
+
+
+\item \emph{Degree-of-closeness}: a subjective measure based on the code structure, function and how close to working the program was. This 'partial correctness' has also been used by \citeA{lister2010naturally} and \citeA{Smetsers2017} to indicate that the attempt or strategy contains particular flaws or misconceptions, but would otherwise have potential to be successful.
+
+\end{itemize}
+
+In essence, \cite{thompson2007holisticAssCriteria} included both sets. For example, which percentage (degree-of-closeness) of the required features according to the specified requirements (validation) were implemented. Furthermore, he extended the 'style' category consistency in applying (degree-of-closeness) with aspects such as programming standards, application structures, and user interface design standards.
+
+\subsubsection{Research about assessing Algorithms}
+
+
+As algorithmic concepts exist throughout programming, they can partially be assessed using programming tasks. As described in section \ref{sec:researchAssProgramming}, programming tasks alone do not suffice. 
 
 
 
-\citeA{BrennanResnick2012} distinguish between structure/plan knowledge (Computational Concepts) and strategic knowledge (Computational Practice). Strategic knowledge, such as algorithmic plan composition strategies can rarely be deduced by merely inspecting a given answer. Thus, to give insight on how the student tackles the problem at hand, and evaluate if this was on the intended cognitive level, evidence must be collected in a different manner.  Ericsson and Simon (1993) used a think-aloud protocol so that students can verbalize their cognitive processes. In their research into CT skills \citeA{atmatzidou2016CTrobots} employ the same method to allow students to express their thinking more freely. Along the same line, \citeA{Whalley2006} and \citeA{snow2017CTECD} mimicked \citeA{lister2004multi}'s think aloud protocol sessions. After having done so, they conclude that this is the best way to determine the corresponding taxonomy level of a task.
+
+\noindent \textbf{Assessing Programming Strategies}\newline
+\cite{BrennanResnick2012} distinguish between structure/plan knowledge (Computational Concepts) and strategic knowledge (Computational Practice). Strategic knowledge, such as algorithmic plan composition strategies can rarely be deduced by merely inspecting a given answer. Thus, to give insight on how the student tackles the problem at hand, and evaluate if this was on the intended cognitive level, evidence must be collected in a different manner. \cite{McCracken2001} conclude that a student's reflections can provide important clues to whether the student understands his or her own limitations in knowledge.  For example, the terminology that the student uses to describe his or her difficulties provides glimpses into the student's processes and problem-solving knowledge. In a questionnaire they asked students which difficulties they encountered. Students who knew that they should go through a process of understanding, planning, and implementing seemed to correctly identify their own difficulties. Students who complained that they didn't have enough time had no idea how to solve the task. Thus, these insight could help better how competent a student is on a strategic level. Ericsson and Simon (1993) used a think-aloud protocol so that students can verbalize their cognitive processes. In their research into CT skills \citeA{atmatzidou2016CTrobots} employ the same method to allow students to express their thinking more freely. Along the same line, \citeA{Whalley2006} and \citeA{snow2017CTECD} mimicked \citeA{lister2004multi}'s think aloud protocol sessions. After having done so, they conclude that this an adequate manner to determine the corresponding taxonomy level of a task.
+
+Most (research on) programming assessment focusses on programming tasks rather than on algorithmic concepts. The algorithmic concepts, such as composition and decomposition of plans, are not considered.
 
 
+
+ Referring to the poor results from the \citeA{McCracken2001} research, \citeA{deRaadt2009teachingPlans} note that programming instructors might begin to deliver more acceptable student outcomes by explicitly teaching and assessing and (sub-)algorithmic strategies. \citeA{deRaadt2009teachingPlans} have laid down a foundation for explicitly teaching and assessing programming strategies (i.e. plans) in tertiary education (see section \ref{sec:plans} for more information about plans and strategies). Their study showed that strategy-related questions can be a valid part of assessment. With careful task design and objective criteria for evaluation, task items can be used to focus on the assessment of knowledge and strategies independently. They claim that strategy-related tasks can be used for both comprehension (reading) and composition (writing) tasks. However, in his dissertation \citeauthor{deRaadt2008} also mentions that assessment remains an issue as his approach towards the assessment of plan composition strategies requires students to generate code before strategy skill can be assessed. In addition to conducting a similar research on more participants, as future work he proposes extending the set of plans and creating more assessment item examples to test programming strategy skill.
+
+
+
+
+\noindent \textbf{Assessing knowledge about algorithm efficiency}\newline
 
 Algorithms, algorithmic thinking, and the efficiency of algorithms have been positioned at the core of a new CS curriculum being implemented in Israeli high schools starting from 2012. Results show that the students were able to deal with questions that require abstraction, algorithmic thinking, and comparing two different programs. However, students found loops problematic \cite{zur-burgury2013israelExam}. \citeA{gal2002efficiency} specifically scrutinized students' misconceptions about algorithm efficiency. In their research they conclude that efficiency in particular is a difficult concept for students. To determine their understanding on algorithms and efficiency, students were given multiple-choice questions and asked to explain the choice of response. They were also asked to write an efficient program to solve algorithmic problems. They conclude that after having studied the topic, even in theory, students are unable to internalize the concept of algorithm efficiency, let alone design and write an efficient algorithmic solution. They found that students mistakenly relate the efficiency of an algorithm to its length or amount of variable used. Furthermore they incorrectly assume that if two programs accomplish the same task they are equally efficient. They go on to discuss the need to address these misconceptions, as they could become a serious stumbling block to understanding the core CS concepts and therefore to their ability to write an efficient program in practice. In doing so, they also recognize the need for rigorous assessment. \citeA{gal2002efficiency} also found a significant correlation between the level of mathematics studied and success in learning fundamentals of computer science.
 
 
-Other forms of assessment, in addition to programming can be used to assess algorithmic concepts. From the new CT viewpoint as described by \citeA{denning2017remaining}, algorithms can also be articulated and assessed without involving programming. The output could be a flowchart \cite{Smetsers2017} or pseudo-code. For example, \citeA{2010TewGuzdial} choose a wordy pseudo-code to create programming-language independent assessments.
-\todo{bij practices verwijs ook naar CS Principes die ook op andere manier Algoritmiek assessen}
 
 
 \subsubsection{Research about assessing CT}
@@ -589,8 +667,6 @@ Other forms of assessment, in addition to programming can be used to assess algo
 
 
 In their review study \citeA{LyeKoh2014} note that 85\% of the studies focus on computational concepts, and underline the importance of also assessing computational practices and perspectives. They explicitly call for more intervention studies in regular K-12 classrooms to entail all three dimensions described by \citeA{BrennanResnick2012}. Recently some research into assessment of Computational Thinking has been published. These researches can be divided into three categories: literature-reviews (such as \citeA{GroverPea2013} and \citeA{crick2017}), research-based pilot programs (such as \citeA{grover2017measuring} and \citeA{snow2017CTECD}, and \citeA{atmatzidou2016CTrobots}), or research into teachers' PCK \citeA{Yadav2017CTteacherEd} and \citeA{Yadav2016}. Research-based pilots for assessing CT make use of elicitation methods, such as interviews, observations, and think-aloud protocols, which yield both a holistic view on student learning and valuable data for research \cite{grover2017measuring}. Its results can be used to better understand student learning, teaching, and assessment and make conjectures about alignment and pedagogy. These lessons learned can be used to inform and educate teachers, possibly through professional development.
-
-\citeA{grover2017measuring} also call for measures that enable educators to assess student learning of CT. Specifically they signal the necessity to test and validate materials in various settings with diverse learners. Diverse learners here refers to two aspects, namely the type of learners (some students prefer and perform better in oral presentations, others in written exams) and including diversity (backgrounds and sexes). Including diversity alone is an important issue. Worldwide hundreds of initiatives have taken place to promote CS under girls (Girls code clubs and hackathons such as \emph{Girls who code}, \emph{Coding Girls}, \emph{Django Girls}, \emph{Girls' Programming Network}s such as Google, NCSS, EDU, and other initiatives to increase the number of women in tech such as \emph{Code First: Girls} and Career days) and other minorities (the entire ECS curriculum was initiated to battle this issue). As quality aspects of assessments include "engaging" and "meaningful" (see section \ref{sec:qualityCriteria}) creating assessments which can be tailored to specific classroom and student needs seems necessary.
 
 
 
@@ -643,6 +719,51 @@ Thus, assessments of CT remain underdeveloped and under-researched \cite{Yadav20
 
 
 \todo{NAAR METHODE: Though research-based elicitation methods, such as interviews and think-aloud protocols, provide a holistic view on student learning, they are not practical in the classroom setting [Grover2017Assessing] (i.e. they contradict the cost-efficient aspect of assessment criteria, see \ref{fig:AdaptedQualityCriteriaCatete}).}
+
+\subsubsection{Research about assessing models and design}\label{sec:researchModels}
+
+
+%Aho and Ullman described computer science as the “science of abstraction – creating the right model for thinking about a problem and devising the appropriate techniques to solve it” [1]. Source: Statter2016teaching
+%
+% Perrenet 4 levels of abstraction
+%For example, talking about the sorting problem is on Level 4. Learning about Quicksort is on Level 3. Implementing Quicksort in Java is on Level 2, and running the program on the input (2,3,1) belongs to Level 1. Source: Statter2016teaching
+%
+% STATTER2016teaching describes why abstraction is so important 1) leave out irrelevant details, 2) black-box use of existing algorithmsSource: Statter2016teaching
+
+
+%MOET DIT STUK OVER BASTRACTION WEL HIER EN NIET BIJ CT?
+In their research on teach abstraction skills in CS, \citeA{statter2016teachingAbstractThinking} describe abstraction as an essential pattern of thinking in CS: ''We assume that since abstraction is a fundamental idea of CS, abstract thinking,
+expressed in better abstraction skills, will lead to better overall CS performance.'' They describe that on the one hand, ignoring irrelevant details is an essential skill to problem solving. On the other, reducing the problem by using existing solutions as a black-box. Thus, abstraction facilitates dealing with complexity.
+
+
+
+Assessing abstraction skills is by no means an easy task.  \citeA{waite2016abstraction} report the successful use of labelled diagrams, concept maps and storyboards to indicate features of abstraction. There are no validated tools that assess abstraction ability\cite{armoni2013teachingAbstraction}. \citeA{waite2016abstraction} report the successful use of labelled diagrams, concept maps and storyboards to indicate features of abstraction. In their research, \citeA{statter2016teachingAbstractThinking} assessed abstraction by focusing on a few characteristics of the solution process which indicate the use of abstraction. These include designing algorithms as a pre-step (providing verbal descriptions), using a black-box, using documentation in order to explain and connect the verbal description to the script, conducting discussions about the problem at the correct abstraction level (i.e. knowing clearly on a higher level of abstraction (recognizing that a verbal description is sufficient in order to describe a solution to an algorithmic problem), and changing the abstraction level freely and consciously.
+
+A hierarchy of abstraction levels can be used by teachers to differentiate students' attainment levels. \citeA{perrenet2005abstractionAlgorithm} defined a hierarchy of abstraction levels which has been used in several studies \cite{perrenet2005abstractionAlgorithm} \cite{perrenet2006levelsAbstractionAlgorithm}\cite{statter2016teachingAbstractThinking}
+to assess students' levels of abstraction regarding solutions to algorithmic problems. The hierarchy was defined as follows, from lowest to highest:
+
+\begin{enumerate}
+\item \emph{Execution level}: A solution to an algorithmic problem is viewed as a specific run on
+a specific input and a specific concrete machine. The execution time and the results of this run are determined by the specific machine and input.
+
+\item \emph{Program (process) level}: A solution to an algorithmic problem is considered a process, described by a specific executable program written in a specific programming language.
+
+\item \emph{Object level}: An algorithm is considered an object
+that is not associated with a specific programming language. Complexity is measured in terms of magnitude
+of input.
+
+\item \emph{Problem level}: An algorithm can be viewed as a black box. One can reason about an algorithm in terms of the general problem it solves, without being associated with specific characteristics, attributes, and solution.
+\end{enumerate}
+
+
+Following a literature review study of 108 articles on learning objectives, \citeA{rich2017CSlearningGoals} describe that from a computational thinking perspective, it makes sense to determine and assess how students use and evaluate models, as opposed to focussing only on the \emph{creation} of a model or a design. The motivation for this is that creating a computational model requires programming skills, whereas use and evaluation do not.
+The evaluation of a model as a learning outcome was only found four times in \citeauthor{rich2017CSlearningGoals} review. Indeed, the Dutch curriculum does not explicitly mandate it, however, the teacher guide does describe the creation of a model (such as a flowchart) as a learning objective. Models can be used to support abstraction. The ability to recognize and change levels of abstraction has been cited as an important skill\cite{statter2016teachingAbstractThinking}. A model can be used to reason about the correctness and efficiency of a solution prior to implementation. In addition, plans and models can help decompose a complex activity and reduce cognitive load by focussing on one specific part at a time\cite{Smetsers2017}. It can give guidance (what has already been done and what is to be done next) and can be used to check for completeness and cohesion\cite{waite2018designPlanWriting}. It would therefore seem natural to incorporate the use and evaluation of such models, in addition to the creation, and distinguish manners to assess these skills. In their research on teacher's views and use of designing and planning, \cite{waite2018designPlanWriting} conclude that teachers consider these as important processes but don't use them. This is in line with  \citeA{falkner2015CSresources}'s review of international resources where they describe design as lacking. Possibly this effect is related to \citeauthor{yadav2016pck}'s observations of teachers' \emph{incapacity to act} (they know they should, but just don't know how to) when it comes to assessment. Teachers need to be capable of assessing the creation, use and evaluation of design models. There may be links here to annotating designs. \citeA{waite2016abstraction} describes that they could support assessment by providing a historical snapshot of understanding. The contribution of this research is to acquire understanding on how to assess these skills and support teachers in doing so.
+
+
+\subsubsection{Research about assessing recontextualization}\label{sec:researchRecontextualization}
+In their research, \citeA{grover2017measuring} call for measures that enable educators to assess student learning of CT, and more specifically they signal the necessity to test and validate materials in various settings with diverse learners. Diverse learners here refers to two aspects, namely the type of learners (some students prefer and perform better in oral presentations, others in written exams) and including diversity (backgrounds and sexes). Including diversity alone is an important issue. Worldwide hundreds of initiatives have taken place to promote CS under girls (Girls code clubs and hackathons such as \emph{Girls who code}, \emph{Coding Girls}, \emph{Django Girls}, \emph{Girls' Programming Network}s such as Google, NCSS, EDU, and other initiatives to increase the number of women in tech such as \emph{Code First: Girls} and Career days) and other minorities (the entire ECS curriculum was initiated to battle this issue). As quality aspects of assessments include "engaging" and "meaningful" (see section \ref{sec:qualityCriteria}) creating assessments which can be tailored to specific classroom and student needs seems necessary.
+
+
 
 
 \subsubsection{Research about assessing Physical Computing}\label{sec:researchPhyComp}
@@ -729,13 +850,16 @@ These assessments can take different forms, from individual written exams to pro
 
 Gathering evidence of task performance can take many forms:
 \begin{itemize}
-\item written exams
-\item short programming assignments, such as used in Informatics Olympiads \cite{Lonati2017Bebras}
-\item (open-ended) projects (and the end of, or across an entire course)
-\item charettes (fixed-length laboratory assignments)\todo{cite}
-\item game design tasks \cite{snow2017CTECD}
-\item (CT) puzzles, such as used in Bebras competition (Dagiene and Sentance, 2016)
-
+\item written exams,
+\item short programming assignments, such as used in Informatics Olympiads \cite{Lonati2017Bebras},
+\item (open-ended) projects (and the end of, or across an entire course),
+\item charettes (fixed-length laboratory assignments) \cite{McCracken2001},
+\item game design tasks \cite{snow2017CTECD},
+\item (CT) puzzles, such as used in Bebras competition (Dagiene and Sentance, 2016),
+\item interviews,
+\item presentations or peer instructions sessions,
+\item unplugged activities \cite{rodriguez2017assessingCTunplugged},
+\item feedback from teachers, support staff, peers or customers.
 \end{itemize}
 
 
@@ -743,12 +867,17 @@ The deliverables of a project can be:
 \begin{itemize}
 \item written report,
 \item digital artifact,
+\item portfolio,
 \item comments in code,
 \item presentation,
 \item logbook,
+\item simulation or demonstration,
+\item model or design,
 \item self-reflection,
 \item project notes,
 \item creative design report,
+\item worksheets,
+\item charts, posters and tables
 \end{itemize}
 or a combination of one or more of these.
 
@@ -773,21 +902,20 @@ Written exams can consist of tasks of different nature. \citeA{lister2010natural
 \item \emph{Parsons problems}: All the required code to solve a problem is provided in random order, and students must be rearrange these into the correct order. Whilst lowering the cognitive load, Parsons problems can be used to focus assessment specifically on misconceptions or areas that learners typically struggle, and their difficulty is easily adapted \cite{ericson2017parsons}. A clear advantage is that marking is fast and objective. Students complete Parsons problems faster than writing code. \citeA{denny2008parsons} note a direct correlation between Parsons-problem and code writing scores.
 \item \emph{semi-open}: Fill-in-the-blank type questions. \todo{According to the description of open and semi-open tasks used by \citeA{Zhong2016}, a mapping to multi-structural and relational cognitive levels on the SOLO taxonomy seems plausible}
 \item \emph{open}: Such as, write a program to solve an algorithmic problem (used by \citeA{gal2002efficiency}).\todo{harder to mark: more time, less objective}\todo{According to the description of open and semi-open tasks used by \citeA{Zhong2016}, a mapping to multi-structural and relational cognitive levels on the SOLO taxonomy seems plausible}
+ 
+\item \emph{output as a design rather than code}: From the new CT viewpoint as described by \citeA{denning2017remaining}, algorithms can also be articulated and assessed without involving programming. The output could be a flowchart \cite{Smetsers2017} or pseudo-code. For example, \citeA{2010TewGuzdial} choose a wordy pseudo-code to create programming-language independent assessments.
+\todo{bij practices verwijs ook naar CS Principes die ook op andere manier Algoritmiek assessen}
+    
 \end{itemize}
-
-
-
-Due to the both the cognitive and non-cognitive aspects of learning CT, multiple measures contribute to an accurate picture of the students capabilities. Some tasks may be better suited to elicit particular (levels) of attainment than others. In order to give students ample possibility to provide evidence of their knowledge and skills, assessments should assess on multiple cognitive levels. In their research, \citeA{grover2017measuring} argue for a multi-facetted assessment. There has been quite some research done on the effectiveness of different types of assessments, each with its own advantages and disadvantages. \citeA{BrennanResnick2012} use multiple approaches to assess student's learning.
 
 
 
 
 %CS1 much research to assessment tasks: mc, parsons, sniplets,
 %meet the criteria in \ref{sec:qualityCriteria} in addition
-\todo{kijken waar dit hoort:}
-In his review on developing generic resources for assessment, \citeauthor{hermansen2014reworking} conclude, based on several researches, that assessment tools aren't plug-and-play modules that can be relocated and implemented as-is. Rather, in order to remain operable they must be adapted and 'recontextualized' according to classroom needs.
 
-Concluding, many different types and forms of tasks and situations can be used to elicit evidence about a student's knowledge and skills. For a complete picture of attainment levels for both CT skills and CS concepts, a mix of assessment forms should be used.
+
+Thus, many different types and forms of tasks and situations can be used to elicit evidence about a student's knowledge and skills. There has been quite some research done on the effectiveness of different types of assessments, each has its own advantages and disadvantages. For a complete picture of attainment levels for both CT skills and CS concepts, a mix of assessment forms should be used (see section \ref{sec:qualityCriteria}).
 
 
 We summarize how assessments are currently practiced in other countries and some best practices for determining levels of mastery. Only curricula similar to the reformed Dutch curriculum are considered:
@@ -946,7 +1074,7 @@ Initiatives in the U.S. follow a structured path, incorporating validity evidenc
 \item The \emph{task model} describes the environment in which students say, do, or make something to provide evidence.
 \end{itemize}
 
-Evidence is obtained by deliberately putting students in those situations, with challenges, or tasks that will elicit evidence of the desired KSAs (Grover and Bienkowski, forthcoming). \citeA{mislevy2006implications} report on the application of this method has received many citations. This methodology was recently applied in CS by \citeA{grover2017measuring} to assess problem-solving processes, and for the development of assessment instruments for the Exploring Computer Science curriculum by \citeA{McGee2018ECS}, \citeA{rutstein2014computational}, and \citeA{snow2017CTECD}). ECS incorporates both CS concepts and CT skills.
+Evidence is obtained by deliberately putting students in those situations, with challenges, or tasks that will elicit evidence of the desired KSAs (Grover and Bienkowski, forthcoming). \citeA{mislevy2006implications} report on the application of this method has received many citations. This methodology was recently applied in CS by \citeA{grover2017measuring} to assess problem-solving processes, and for the development of assessment instruments for the Exploring Computer Science curriculum by \citeA{McGee2018ECS}, \citeA{rutstein2014computational}, and \citeA{snow2017CTECD}). ECS incorporates both CS concepts and CT skills. ECD has also been used in educational design research by \cite{rodriguez2017assessingCTunplugged} to assess CT in (kinesthetic and engaging) CS Unplugged activities.
 
 
 
